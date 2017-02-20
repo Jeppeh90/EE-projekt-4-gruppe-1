@@ -1,0 +1,126 @@
+\documentclass[a4paper, 11pt,oneside,openany, danish]{memoir} % Starter dokumentet af klassen memoir
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+		       % PREAMBLE %			
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Papirstørrelse og margener
+\usepackage[paper=a4paper, hmargin=1.5in, vmargin=0.9in]{geometry}
+
+% Font encoding og sprog
+\usepackage[T1]{fontenc}					% Output encoding
+\usepackage[utf8]{inputenc}				% Input encoding
+\usepackage[danish]{babel}				% Sprog (orddeling)
+\renewcommand{\danishhyphenmins}{22} 	% bedre orddeling, minimum to tegn før og efter deling
+\usepackage{lmodern}  					% gør underscores pænere
+\usepackage{microtype} 					% laver micro ændringer i text for at udgå luft og orddeling
+
+%% Forside text
+%\usepackage{soul} % lege lege
+%\sodef\an{}{0.2em}{.9em plus.6em}{1em plus.1em minus.1em}
+%\newcommand\stext[1]{\an{\scshape#1}}
+
+% Fyldetekst (Lorem ipsum)
+\usepackage{blindtext}
+
+% Tabeller
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage[tableposition=top]{caption}
+\usepackage{tabularx}
+
+%matematik
+\usepackage{amsmath,amssymb,mathtools,bm}
+\newcommand{\tsub}[1]{_{\textup{#1}}}
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
+
+% XColor: Farver
+\usepackage[svgnames,dvipsnames,x11names]{xcolor}
+
+% Figurer og floats
+\usepackage[]{graphicx}
+\graphicspath{{figurer/}}
+\usepackage{placeins}
+
+%%% Tegning af kasser
+%\usepackage{calc,graphicx,color}
+%\definecolor{mygreen}{rgb}{0,0.6,0}
+%\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+
+% Biblatex til referencer
+%\usepackage[backend=biber]{biblatex}
+%\addbibresource{bib.bib}
+
+% Hyper ref
+\usepackage[ unicode=true, colorlinks=false, linktocpage=true, 
+pdfborder={0 0 0}, pdfstartpage=1, pdfstartview=FitV, breaklinks=true,
+pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+plainpages=false, bookmarksnumbered, bookmarksopen=true,
+bookmarksopenlevel=1, hypertexnames=true, pdfhighlight=/O, urlcolor=Black,
+linkcolor=Black, citecolor=Black]{hyperref}
+
+% Clever ref
+\usepackage{cleveref}
+
+
+
+\settocdepth{subsection}
+\setsecnumdepth{subsection}
+
+% Sidetal
+\let\footruleskip\undefined
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy} 
+\fancyhf{} 
+
+\fancyhead[R]{\leftmark}
+\fancyfoot[R]{\thepage \hspace{0.008in} af \pageref{LastPage}}
+
+\fancypagestyle{}{
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyhf{}
+	\fancyfoot[R]{\thepage \hspace{0.008in} af \pageref{LastPage}}%
+	
+}
+
+% Biblatex til referencer
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{bibfil.bib}
+
+% Starten på dokumentet
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+		       % FORSIDEN %			
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{sektioner/forside}
+\frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%
+             % RESUME & ABSTRACT %			
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+         % INDHOLDSFORTEGNELSE %			
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%
+                        % KAPITLER %			
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+
+
+\printbibliography
+
+\end{document}
+
+
