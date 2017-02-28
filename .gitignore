@@ -10,7 +10,8 @@
 *.fot
 *.cb
 *.cb2
-*.pdf
+
+/prj4projektdokumentation.pdf
 
 ## Intermediate documents:
 *.dvi
