@@ -148,7 +148,7 @@ sympy-plots-for-*.tex/
 # pdfcomment
 *.upa
 *.upb
-Projekt Dokumentation/prj4projektdokumentation.pdf
+*prj4projektdokumentation.pdf
 
 # pythontex
 *.pytxcode
