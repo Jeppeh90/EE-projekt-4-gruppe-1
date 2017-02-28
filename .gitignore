@@ -11,7 +11,7 @@
 *.cb
 *.cb2
 
-*prj4projektdokumentation.pdf
+/ProjektDokumentation/prj4projektdokumentation.pdf
 
 ## Intermediate documents:
 *.dvi
