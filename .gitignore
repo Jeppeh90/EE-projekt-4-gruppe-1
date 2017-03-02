@@ -11,6 +11,10 @@
 *.cb
 *.cb2
 
+/ProjektDokumentation/prj4projektdokumentation.pdf
+/ProcesDokumentation/prj4procesdokumentation.pdf
+/ProjektRapport/prj4projektrapport.pdf
+
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
@@ -148,7 +152,6 @@ sympy-plots-for-*.tex/
 # pdfcomment
 *.upa
 *.upb
-prj3projektrapport.pdf
 
 # pythontex
 *.pytxcode
