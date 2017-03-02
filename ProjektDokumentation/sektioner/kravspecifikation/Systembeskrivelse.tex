@@ -3,7 +3,17 @@
 
 \section{Systembeskrivelse}
 
-Systembeskrivelsen kommer senere.. Lige om snart nu her test1 878
+Systemet der er udviklet har til opgave at regulere spændingsniveauet på en distributionslinje, afhængigt af målingerne fra sensorer ved hver forbruger.
+I dette projekt er det ikke muligt at realisere, derfor udvikles et produkt, der kan simulere scenariet. Det simuleres ved at skalere spændingsniveauet fra standardniveauet på 230V ned til 4V på distributionssiden. Dette gør det muligt at arbejde med en 8-trins transformer med specifikationen 24V/8-0V.\\
+I prototypen er udviklet en impedans til simulering af en distributionslinje med en længde svarende til en typisk distributionslinje.\\
+På distributionslinjen er så placeret et antal belastninger, der skal illustrere en husstand. Disse er designet således, at skalering passer med resten af systemet. Dette er rammen systemet skal arbejde indenfor. \\
+To typer måleenheder er fremstillet; en placeret centralt på sekundær side af transformeren, og en som er placeret ved hver belastning. De decentrale måleenheder kan måle spænding, strøm og faseforskydning. Den centrale måleenhed kan også måle indeholdet af harmoniske frekvenser. Systemets frekvens er 50Hz ligesom frekvensen på det danske elnet.\\
+Data fra måleenhederne samles så i en styringsenhed, der har til opgave at regulere spændingsniveauet, så det altid ligger på 4V på distributionssiden ved at skifte trin på transformeren. Selve trinskiftet står trinskiftenheden for.\\
+På styringsenheden er det muligt at observere de målte værdier på en touchskærm. Ved manuel styring er det på samme touchskærm, der kan skiftes trin på transformeren.\\
+Systemet, der er fremstillet, er en simulering af et produkt, der kan løse problemformuleringen. Den overordnet struktur er dog tænkt sådan, at den kan skaleres op.\\
+
+
+
 
 \subsection{Termliste}
 
