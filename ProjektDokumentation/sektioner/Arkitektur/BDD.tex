@@ -7,14 +7,14 @@ Et BDD for spændingsregulator ses på figur \ref{fig:BDDSpaendingsregulator}. P
 \begin{figure}[htbp] % (alternativt [H])
 	\centering
 	\includegraphics[width=0.9\textwidth]{Figure/BDDSpaendingsregulator}
-	\caption{BDD Spaendingsregulator}
+	\caption{BDD Spændingsregulator}
 	\label{fig:BDDSpaendingsregulator}
 \end{figure}
 
-\textbf{Forbruger måleenhed} står for at måle spænding, strøm og faseforskydningen herimellem. Den består af nogle modstande og en PSoC 5. ?? På enheden ligger også noget af behandlingen af rådataet, så dette kan formidles til styringsenheden.
+\textbf{Forbruger måleenhed} står for at måle spænding, strøm og faseforskydningen herimellem. Den består af nogle modstande og en PSoC 5. På enheden ligger også noget af behandlingen af rådataet, så dette kan formidles til styringsenheden.
 
 \textbf{Central målenehed} skal kunne måle spænding, strøm, faseforskydningen herimellem og indeholdet af harmoniske frekvenser. Den består af en PSoC 5 og hardware til måling af de nævnte parametre. Ligesom Forbruger måleenheden skal den kunne formidle dataet til styringsenheden.
 
-\textbf{Styringsenhed} har til opgave at styre trinskifteren ud fra de data den får fra Forburger måleenheden og Central måleenheden. Den består af en PLC.....
+\textbf{Styringsenhed} har til opgave at styre trinskifteren ud fra de data den får fra målenehderne. Den består af en PLC, tl styringen og et HMI, der skal give en bruger overblik over status for distributionslinjen.
 
-\textbf{Trinskifter}
+\textbf{Trinskifter} er en enhed der kan skifte trin på transformeren ud fra et signal fra styringsenheden. Den består altå af en kontakter for hvert trin, der kan kontrolleres af styringsenheden.
