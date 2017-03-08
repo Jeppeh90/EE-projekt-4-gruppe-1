@@ -7,10 +7,10 @@
 Emir udleverede to transformere. Den ene er der ingen mærkeplade og ledningerne var alle samme farve. Den anden har mærkeplade og forskellige farvet ledninger. De to transformere blev begge undersøgt i laboratoriet, med en 18VAC på primærside, derefter måltes spændingen på de forskellige trin. Transformeren uden mærkeplade hoppede små skridt fra ca 3 - 4.5V, hvor transformeren med mærkeplade havde skridt på 1 V fra 0 til 8V. Gruppen blev enige om at det var ligegyldigt om det var små eller store skridt transformeren hoppede, bare protypen blev lavet så den passede til transformeren. Det blev derfor besluttet at anvende transformeren med mærkeplade og forskellige farvet ledninger. 
 
 \section{Valg af styringsenhed}
-Det er besluttet at lave den overordnet styring af automationen PLC, dette gøres for at realisere, hvordan det ville laves i virkeligheden. Alternativt kunne det laves på en PSOC eller Arduino, men da der på dette semester er undervisning i PLC styring virker det derfor oplagt.
+Det er besluttet at lave Styringsenheden på en PLC, dette gøres for at realisere, hvordan det ville laves i virkeligheden. Alternativt kunne det laves på en PSOC eller Arduino, men da der på dette semester er undervisning i PLC styring virker det derfor oplagt.
 
 \section{Overvejelser omkring måleenhederne}
-Det var først tænkt at der kunne laves eller købes nogle sensorer som skulle tilsluttes PLC'en. PLC'en kan dog ikke måle hurtigt nok på AC forbindelse til at få et reelt billed af signalet. Derfor bruges PSOC til at måle og sample signalet og sende det derfra til PLC'en.
+Det var først tænkt at der kunne laves eller købes nogle sensorer som skulle tilsluttes PLC'en. PLC'en kan dog ikke måle hurtigt nok på AC forbindelser til at få et reelt billed af signalet. Derfor bruges PSOC til at måle og sample signalet og sende det derfra til PLC'en.
 
 \section{Protokoller}
 
