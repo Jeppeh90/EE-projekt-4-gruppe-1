@@ -2,7 +2,7 @@
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
 \section{Blok definitionsdiagram}
-Et BDD for spændingsregulator ses på figur \ref{fig:BDDSpaendingsregulator}. På diagrammet ses de overordnet blokke spædingsregulator består af. En beskrivelse af hver blok kan læses under figur \ref{fig:BDDSpaendingsregulator}.
+Et BDD for spændingsregulator ses på figur \ref{fig:BDDSpaendingsregulator}. På diagrammet ses de overordnede blokke spædingsregulator består af. En beskrivelse af hver blok kan læses under figur \ref{fig:BDDSpaendingsregulator}.
 
 \begin{figure}[htbp] % (alternativt [H])
 	\centering
@@ -11,8 +11,10 @@ Et BDD for spændingsregulator ses på figur \ref{fig:BDDSpaendingsregulator}. P
 	\label{fig:BDDSpaendingsregulator}
 \end{figure}
 
-\textbf{Måleenhed} står for at måle spænding, strøm og faseforskydningen herimellem. Ligeledes skal denne kunne måle indeholdet af harmoniske frekvenser. Den består af hardware til måling af de nævnte parametre og en PSoC 5. På enheden ligger også en del af behandlingen af rådataet, så dette kan formidles til styringsenheden.
+\textbf{Brugergrænsefladen} skal stå for formidle af måledata til brugeren gennem en skærm, men det er også her at brugeren skal kunne inteagere med systemet i manuel tilstand.
 
-\textbf{Styringsenhed} har til opgave at styre trinskifteren ud fra de data den får fra målenehderne. Den består af en PLC, tl styringen og et HMI, der skal give en bruger overblik over status for distributionslinjen.
+\textbf{Måleenhed} står for at måle spænding, strøm og faseforskydningen herimellem. Ligeledes skal denne kunne måle indeholdet af harmoniske frekvenser. Den skal bestå af hardware til måling af de nævnte parametre og en PSoC. På enheden skal behandlingen af rådataet også ligge, så dette kan formidles til styringsenheden.
 
-\textbf{Trinskifter} er en enhed der kan skifte trin på transformeren ud fra et signal fra styringsenheden. Den består altå af en kontakt for hvert trin, der kan kontrolleres af styringsenheden.
+\textbf{Styringsenhed} har til opgave at styre trinskifteren ud fra de data den får fra målenehderne. Den består af en PLC, der skal kommunikerer med brugergrænsefladen, så en bruger kan følge med i data fra målenehderne.
+
+\textbf{Trinskifter} er en enhed der kan skifte trin på en transformer ud fra et signal fra styringsenheden. Den skal altså bestå af et relæ for hvert trin, der kan kontrolleres af styringsenheden.
