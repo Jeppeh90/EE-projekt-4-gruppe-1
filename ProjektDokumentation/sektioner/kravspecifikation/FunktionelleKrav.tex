@@ -2,7 +2,18 @@
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
 \section{Funktionelle krav}
-I dette afsnit beskrives de funktionelle krav for systemet. Herunder usecase diagram og fullydressed usecases.
+I dette afsnit beskrives de funktionelle krav for systemet. De dele, hvor en bruger interager med systemet er beskrevet med usecase diagrammer. Den automatiske del er beskrevet og vist vha. et STM diagram.
+
+\subsection{Beskrivelse af automatisk mode}
+\label{Afsnit: Automatisk mode}
+
+Når spændingsregulatoren er i automatisk mode, kontrolleres spænding ved forbrugerne. Hvis den spænding er for høj eller lav iht. de 4V skiftes der et trin op eller et trin ned.  
+\begin{figure}[htbp] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figure/STM}
+	\caption{Beskrivelse af automatisk mode}
+	\label{fig:automode}
+\end{figure}
 
 \subsection{Usecase Diagram}
 
@@ -127,12 +138,3 @@ Systemet indholder 3 usecases, der alle er initieret af brugeren. Den automatisk
 \end{table}
 
 
-\subsection{Beskrivelse af automatisk mode}
-\label{Afsnit: Automatisk mode}
-
-\begin{figure}[htbp] % (alternativt [H])
-	\centering
-	\includegraphics[width=0.8\textwidth]{Figure/STM}
-	\caption{Beskrivelse af automatisk mode}
-	\label{fig:automode}
-\end{figure}
