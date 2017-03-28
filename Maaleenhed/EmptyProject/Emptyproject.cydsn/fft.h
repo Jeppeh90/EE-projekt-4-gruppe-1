@@ -12,7 +12,7 @@
 #include <math.h>
 
 
-void FFT(double* data, unsigned long nn);
+void FFT (double data[], unsigned long number_of_complex_samples);
 
 
 /* [] END OF FILE */

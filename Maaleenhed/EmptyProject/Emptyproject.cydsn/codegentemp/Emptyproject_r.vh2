@@ -1,6 +1,6 @@
 -- Project:   Emptyproject
--- Generated: 03/28/2017 17:43:30
--- PSoC Creator  4.0
+-- Generated: 03/28/2017 17:47:36
+-- PSoC Creator  4.0 Update 1
 
 ENTITY Emptyproject IS
     ATTRIBUTE voltage_VDDABUF OF __DEFAULT__ : ENTITY IS 5e0;

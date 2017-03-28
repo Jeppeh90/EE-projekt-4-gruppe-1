@@ -1,6 +1,6 @@
--- Project:   X:\SKOLE\4. Semester\PRJ4 - Semesterprojekt 4\Maaleenhed\EmptyProject\Emptyproject.cydsn\Emptyproject.cyprj
--- Generated: 03/28/2017 17:43:31
--- PSoC Creator  4.0
+-- Project:   C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\EmptyProject\Emptyproject.cydsn\Emptyproject.cyprj
+-- Generated: 03/28/2017 17:47:38
+-- PSoC Creator  4.0 Update 1
 
 ENTITY Emptyproject IS
     ATTRIBUTE voltage_VDDABUF OF __DEFAULT__ : ENTITY IS 5e0;
