@@ -11,7 +11,7 @@
 */
 #include "project.h"
 #include "stdio.h"
-#define SIZE 5000
+#define SIZE 40
 
 int main(void)
 {
@@ -36,7 +36,7 @@ int main(void)
          int indexU = 0, indexI = 0;
         for(i=0;i<SIZE;i++)
         {
-           
+           //CyDelay(1);
             if(i%2 == 0)
             {
                 //Skriver spændingsmålong i ArrayU
@@ -55,7 +55,7 @@ int main(void)
 
             debugValue = SampleArrayU[i];
             dV = SampleArrayI[i];
-            //CyDelay(1);
+            CyDelay(1);
         }
         printf("Hello %d %d",debugValue,dV);
         //CyDelay(1000);

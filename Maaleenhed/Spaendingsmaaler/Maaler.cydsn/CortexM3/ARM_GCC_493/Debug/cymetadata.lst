@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\cceSLo5u.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
   55 001b 40       		.byte	64
   56 001c 03       		.byte	3
   57 001d 46       		.byte	70
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 2
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\cceSLo5u.s 			page 2
 
 
   58 001e 01       		.byte	1
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  112 0054 EC       		.byte	-20
  113 0055 08       		.byte	8
  114 0056 25       		.byte	37
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 3
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\cceSLo5u.s 			page 3
 
 
  115 0057 10       		.byte	16
@@ -150,7 +150,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  141 0071 00       		.byte	0
  142 0072 00       		.byte	0
  143 0073 00       		.byte	0
- 144 0074 25       		.byte	37
+ 144 0074 BB       		.byte	-69
  145 0075 00       		.byte	0
  146 0076 18       		.byte	24
  147 0077 01       		.byte	1
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  169              		.size	cy_metadata, 12
  170              	cy_metadata:
  171 0000 00       		.byte	0
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 4
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\cceSLo5u.s 			page 4
 
 
  172 0001 01       		.byte	1
@@ -213,46 +213,46 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  197 0006 00000000 		.4byte	.Ldebug_abbrev0
  198 000a 04       		.byte	0x4
  199 000b 01       		.uleb128 0x1
- 200 000c B0000000 		.4byte	.LASF18
+ 200 000c CF000000 		.4byte	.LASF18
  201 0010 01       		.byte	0x1
- 202 0011 C6010000 		.4byte	.LASF19
- 203 0015 0C000000 		.4byte	.LASF20
+ 202 0011 E5010000 		.4byte	.LASF19
+ 203 0015 45000000 		.4byte	.LASF20
  204 0019 00000000 		.4byte	.Ldebug_line0
  205 001d 02       		.uleb128 0x2
  206 001e 01       		.byte	0x1
  207 001f 06       		.byte	0x6
- 208 0020 BA010000 		.4byte	.LASF0
+ 208 0020 D9010000 		.4byte	.LASF0
  209 0024 02       		.uleb128 0x2
  210 0025 01       		.byte	0x1
  211 0026 08       		.byte	0x8
- 212 0027 54000000 		.4byte	.LASF1
+ 212 0027 12000000 		.4byte	.LASF1
  213 002b 02       		.uleb128 0x2
  214 002c 02       		.byte	0x2
  215 002d 05       		.byte	0x5
- 216 002e A1010000 		.4byte	.LASF2
+ 216 002e C0010000 		.4byte	.LASF2
  217 0032 02       		.uleb128 0x2
  218 0033 02       		.byte	0x2
  219 0034 07       		.byte	0x7
- 220 0035 74000000 		.4byte	.LASF3
+ 220 0035 32000000 		.4byte	.LASF3
  221 0039 02       		.uleb128 0x2
  222 003a 04       		.byte	0x4
  223 003b 05       		.byte	0x5
- 224 003c B1010000 		.4byte	.LASF4
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 5
+ 224 003c D0010000 		.4byte	.LASF4
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\cceSLo5u.s 			page 5
 
 
  225 0040 02       		.uleb128 0x2
  226 0041 04       		.byte	0x4
  227 0042 07       		.byte	0x7
- 228 0043 62000000 		.4byte	.LASF5
+ 228 0043 20000000 		.4byte	.LASF5
  229 0047 02       		.uleb128 0x2
  230 0048 08       		.byte	0x8
  231 0049 05       		.byte	0x5
- 232 004a 8E010000 		.4byte	.LASF6
+ 232 004a AD010000 		.4byte	.LASF6
  233 004e 02       		.uleb128 0x2
  234 004f 08       		.byte	0x8
  235 0050 07       		.byte	0x7
- 236 0051 4B010000 		.4byte	.LASF7
+ 236 0051 6A010000 		.4byte	.LASF7
  237 0055 03       		.uleb128 0x3
  238 0056 04       		.byte	0x4
  239 0057 05       		.byte	0x5
@@ -260,24 +260,24 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  241 005c 02       		.uleb128 0x2
  242 005d 04       		.byte	0x4
  243 005e 07       		.byte	0x7
- 244 005f 3E010000 		.4byte	.LASF8
+ 244 005f 5D010000 		.4byte	.LASF8
  245 0063 04       		.uleb128 0x4
- 246 0064 AB010000 		.4byte	.LASF21
+ 246 0064 CA010000 		.4byte	.LASF21
  247 0068 02       		.byte	0x2
  248 0069 9201     		.2byte	0x192
  249 006b 24000000 		.4byte	0x24
  250 006f 02       		.uleb128 0x2
  251 0070 04       		.byte	0x4
  252 0071 04       		.byte	0x4
- 253 0072 4E000000 		.4byte	.LASF9
+ 253 0072 0C000000 		.4byte	.LASF9
  254 0076 02       		.uleb128 0x2
  255 0077 08       		.byte	0x8
  256 0078 04       		.byte	0x4
- 257 0079 87000000 		.4byte	.LASF10
+ 257 0079 A6000000 		.4byte	.LASF10
  258 007d 02       		.uleb128 0x2
  259 007e 01       		.byte	0x1
  260 007f 08       		.byte	0x8
- 261 0080 9C010000 		.4byte	.LASF11
+ 261 0080 BB010000 		.4byte	.LASF11
  262 0084 05       		.uleb128 0x5
  263 0085 63000000 		.4byte	0x63
  264 0089 94000000 		.4byte	0x94
@@ -288,9 +288,9 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  269 0094 02       		.uleb128 0x2
  270 0095 04       		.byte	0x4
  271 0096 07       		.byte	0x7
- 272 0097 85010000 		.4byte	.LASF12
+ 272 0097 A4010000 		.4byte	.LASF12
  273 009b 07       		.uleb128 0x7
- 274 009c 9E000000 		.4byte	.LASF13
+ 274 009c BD000000 		.4byte	.LASF13
  275 00a0 01       		.byte	0x1
  276 00a1 1F       		.byte	0x1f
  277 00a2 AC000000 		.4byte	0xac
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  279 00a7 03       		.byte	0x3
  280 00a8 00000000 		.4byte	cy_meta_configecc
  281 00ac 08       		.uleb128 0x8
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 6
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\cceSLo5u.s 			page 6
 
 
  282 00ad 84000000 		.4byte	0x84
@@ -310,7 +310,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  288 00bf 03       		.byte	0x3
  289 00c0 00       		.byte	0
  290 00c1 07       		.uleb128 0x7
- 291 00c2 8E000000 		.4byte	.LASF14
+ 291 00c2 AD000000 		.4byte	.LASF14
  292 00c6 01       		.byte	0x1
  293 00c7 3B       		.byte	0x3b
  294 00c8 D2000000 		.4byte	0xd2
@@ -320,7 +320,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  298 00d2 08       		.uleb128 0x8
  299 00d3 B1000000 		.4byte	0xb1
  300 00d7 07       		.uleb128 0x7
- 301 00d8 77010000 		.4byte	.LASF15
+ 301 00d8 96010000 		.4byte	.LASF15
  302 00dc 01       		.byte	0x1
  303 00dd 49       		.byte	0x49
  304 00de E8000000 		.4byte	0xe8
@@ -337,7 +337,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  315 00fb FF       		.byte	0xff
  316 00fc 00       		.byte	0
  317 00fd 07       		.uleb128 0x7
- 318 00fe 62010000 		.4byte	.LASF16
+ 318 00fe 81010000 		.4byte	.LASF16
  319 0102 01       		.byte	0x1
  320 0103 57       		.byte	0x57
  321 0104 0E010000 		.4byte	0x10e
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  336 0128 01       		.byte	0x1
  337 0129 84       		.byte	0x84
  338 012a 34010000 		.4byte	0x134
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 7
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\cceSLo5u.s 			page 7
 
 
  339 012e 05       		.uleb128 0x5
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  393 002e 49       		.uleb128 0x49
  394 002f 13       		.uleb128 0x13
  395 0030 00       		.byte	0
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 8
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\cceSLo5u.s 			page 8
 
 
  396 0031 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  450              		.section	.debug_line,"",%progbits
  451              	.Ldebug_line0:
  452 0000 4D000000 		.section	.debug_str,"MS",%progbits,1
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 9
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\cceSLo5u.s 			page 9
 
 
  452      02004700 
@@ -489,126 +489,127 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 1
  454 0000 63795F6D 		.ascii	"cy_metadata\000"
  454      65746164 
  454      61746100 
- 455              	.LASF20:
- 456 000c 583A5C53 		.ascii	"X:\\SKOLE\\4. Semester\\Lokalt projekt\\Spaendingsm"
- 456      4B4F4C45 
- 456      5C342E20 
- 456      53656D65 
- 456      73746572 
- 457 003b 61616C65 		.ascii	"aaler\\Maaler.cydsn\000"
- 457      725C4D61 
- 457      616C6572 
- 457      2E637964 
- 457      736E00
- 458              	.LASF9:
- 459 004e 666C6F61 		.ascii	"float\000"
- 459      7400
- 460              	.LASF1:
- 461 0054 756E7369 		.ascii	"unsigned char\000"
- 461      676E6564 
- 461      20636861 
- 461      7200
- 462              	.LASF5:
- 463 0062 6C6F6E67 		.ascii	"long unsigned int\000"
- 463      20756E73 
- 463      69676E65 
- 463      6420696E 
- 463      7400
- 464              	.LASF3:
- 465 0074 73686F72 		.ascii	"short unsigned int\000"
- 465      7420756E 
- 465      7369676E 
- 465      65642069 
- 465      6E7400
- 466              	.LASF10:
- 467 0087 646F7562 		.ascii	"double\000"
- 467      6C6500
- 468              	.LASF14:
- 469 008e 63795F6D 		.ascii	"cy_meta_custnvl\000"
- 469      6574615F 
- 469      63757374 
- 469      6E766C00 
- 470              	.LASF13:
- 471 009e 63795F6D 		.ascii	"cy_meta_configecc\000"
- 471      6574615F 
- 471      636F6E66 
- 471      69676563 
- 471      6300
- 472              	.LASF18:
- 473 00b0 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 473      4320342E 
- 473      392E3320 
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 10
+ 455              	.LASF9:
+ 456 000c 666C6F61 		.ascii	"float\000"
+ 456      7400
+ 457              	.LASF1:
+ 458 0012 756E7369 		.ascii	"unsigned char\000"
+ 458      676E6564 
+ 458      20636861 
+ 458      7200
+ 459              	.LASF5:
+ 460 0020 6C6F6E67 		.ascii	"long unsigned int\000"
+ 460      20756E73 
+ 460      69676E65 
+ 460      6420696E 
+ 460      7400
+ 461              	.LASF3:
+ 462 0032 73686F72 		.ascii	"short unsigned int\000"
+ 462      7420756E 
+ 462      7369676E 
+ 462      65642069 
+ 462      6E7400
+ 463              	.LASF20:
+ 464 0045 5C5C4D61 		.ascii	"\\\\Mac\\iCloud\\SKOLE\\4. Semester\\PRJ4 - Semeste"
+ 464      635C6943 
+ 464      6C6F7564 
+ 464      5C534B4F 
+ 464      4C455C34 
+ 465 0072 7270726F 		.ascii	"rprojekt 4\\Maaleenhed\\Spaendingsmaaler\\Maaler.cy"
+ 465      6A656B74 
+ 465      20345C4D 
+ 465      61616C65 
+ 465      656E6865 
+ 466 00a2 64736E00 		.ascii	"dsn\000"
+ 467              	.LASF10:
+ 468 00a6 646F7562 		.ascii	"double\000"
+ 468      6C6500
+ 469              	.LASF14:
+ 470 00ad 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 470      6574615F 
+ 470      63757374 
+ 470      6E766C00 
+ 471              	.LASF13:
+ 472 00bd 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 472      6574615F 
+ 472      636F6E66 
+ 472      69676563 
+ 472      6300
+ 473              	.LASF18:
+ 474 00cf 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 474      4320342E 
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\cceSLo5u.s 			page 10
 
 
- 473      32303135 
- 473      30333033 
- 474 00e3 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 474      20726576 
- 474      6973696F 
- 474      6E203232 
- 474      31323230 
- 475 0116 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 475      66756E63 
- 475      74696F6E 
- 475      2D736563 
- 475      74696F6E 
- 476              	.LASF8:
- 477 013e 756E7369 		.ascii	"unsigned int\000"
- 477      676E6564 
- 477      20696E74 
- 477      00
- 478              	.LASF7:
- 479 014b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 479      206C6F6E 
- 479      6720756E 
- 479      7369676E 
- 479      65642069 
- 480              	.LASF16:
- 481 0162 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 481      6574615F 
- 481      666C6173 
- 481      6870726F 
- 481      74656374 
- 482              	.LASF15:
- 483 0177 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 483      6574615F 
- 483      776F6E76 
- 483      6C00
- 484              	.LASF12:
- 485 0185 73697A65 		.ascii	"sizetype\000"
- 485      74797065 
- 485      00
- 486              	.LASF6:
- 487 018e 6C6F6E67 		.ascii	"long long int\000"
- 487      206C6F6E 
- 487      6720696E 
- 487      7400
- 488              	.LASF11:
- 489 019c 63686172 		.ascii	"char\000"
- 489      00
- 490              	.LASF2:
- 491 01a1 73686F72 		.ascii	"short int\000"
- 491      7420696E 
- 491      7400
- 492              	.LASF21:
- 493 01ab 75696E74 		.ascii	"uint8\000"
- 493      3800
- 494              	.LASF4:
- 495 01b1 6C6F6E67 		.ascii	"long int\000"
- 495      20696E74 
- 495      00
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfABAkY.s 			page 11
+ 474      392E3320 
+ 474      32303135 
+ 474      30333033 
+ 475 0102 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 475      20726576 
+ 475      6973696F 
+ 475      6E203232 
+ 475      31323230 
+ 476 0135 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 476      66756E63 
+ 476      74696F6E 
+ 476      2D736563 
+ 476      74696F6E 
+ 477              	.LASF8:
+ 478 015d 756E7369 		.ascii	"unsigned int\000"
+ 478      676E6564 
+ 478      20696E74 
+ 478      00
+ 479              	.LASF7:
+ 480 016a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 480      206C6F6E 
+ 480      6720756E 
+ 480      7369676E 
+ 480      65642069 
+ 481              	.LASF16:
+ 482 0181 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 482      6574615F 
+ 482      666C6173 
+ 482      6870726F 
+ 482      74656374 
+ 483              	.LASF15:
+ 484 0196 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 484      6574615F 
+ 484      776F6E76 
+ 484      6C00
+ 485              	.LASF12:
+ 486 01a4 73697A65 		.ascii	"sizetype\000"
+ 486      74797065 
+ 486      00
+ 487              	.LASF6:
+ 488 01ad 6C6F6E67 		.ascii	"long long int\000"
+ 488      206C6F6E 
+ 488      6720696E 
+ 488      7400
+ 489              	.LASF11:
+ 490 01bb 63686172 		.ascii	"char\000"
+ 490      00
+ 491              	.LASF2:
+ 492 01c0 73686F72 		.ascii	"short int\000"
+ 492      7420696E 
+ 492      7400
+ 493              	.LASF21:
+ 494 01ca 75696E74 		.ascii	"uint8\000"
+ 494      3800
+ 495              	.LASF4:
+ 496 01d0 6C6F6E67 		.ascii	"long int\000"
+ 496      20696E74 
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\cceSLo5u.s 			page 11
 
 
- 496              	.LASF0:
- 497 01ba 7369676E 		.ascii	"signed char\000"
- 497      65642063 
- 497      68617200 
- 498              	.LASF19:
- 499 01c6 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
- 499      72617465 
- 499      645F536F 
- 499      75726365 
- 499      5C50536F 
- 500              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 496      00
+ 497              	.LASF0:
+ 498 01d9 7369676E 		.ascii	"signed char\000"
+ 498      65642063 
+ 498      68617200 
+ 499              	.LASF19:
+ 500 01e5 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 500      72617465 
+ 500      645F536F 
+ 500      75726365 
+ 500      5C50536F 
+ 501              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
