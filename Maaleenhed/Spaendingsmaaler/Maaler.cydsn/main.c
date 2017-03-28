@@ -40,14 +40,14 @@ int main(void)
             if(i%2 == 0)
             {
                 //Skriver spændingsmålong i ArrayU
-                AMux_1_FastSelect(0);
-                AMux_2_FastSelect(0);
+                AMux_1_FastSelect(1);
+                AMux_2_FastSelect(1);
                 while(!ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS));
                 SampleArrayU[indexU++] = ADC_DelSig_1_CountsTo_mVolts( ADC_DelSig_1_GetResult16());
             }else
             {
                 //Skriver strømmåling i ArrayI
-                AMux_1_FastSelect(1);
+                AMux_1_FastSelect(2);
                 AMux_2_FastSelect(1);
                 while(!ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS));
                 SampleArrayI[indexI++] = ADC_DelSig_1_CountsTo_mVolts( ADC_DelSig_1_GetResult16());

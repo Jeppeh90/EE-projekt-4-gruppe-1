@@ -280,6 +280,10 @@ static void AnalogSetDefault(void)
 	uint8 bg_xover_inl_trim = CY_GET_XTND_REG8((void CYFAR *)(CYREG_FLSHID_MFG_CFG_BG_XOVER_INL_TRIM + 1u));
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_BG_DFT0), (bg_xover_inl_trim & 0x07u));
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_BG_DFT1), ((bg_xover_inl_trim >> 4) & 0x0Fu));
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_CMP2_CR, 0x02u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_PM_ACT_CFG7, 0x04u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_CMP2_SW3, 0x20u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_DSM0_SW0, 0x20u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_DSM0_SW4, 0x80u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_PUMP_CR0, 0x44u);
 }
@@ -319,16 +323,18 @@ void SetAnalogRoutingPumps(uint8 enabled)
 #define CY_AMUX_UNUSED CYREG_BOOST_SR
 /* This is an implementation detail of the AMux. Code that depends on it may be
    incompatible with other versions of PSoC Creator. */
-uint8 CYXDATA * const CYCODE AMux_1__addrTable[4] = {
+uint8 CYXDATA * const CYCODE AMux_1__addrTable[6] = {
+	(uint8 CYXDATA *)CYREG_CMP2_SW4, (uint8 CYXDATA *)CY_AMUX_UNUSED, 
 	(uint8 CYXDATA *)CYREG_PRT0_AG, (uint8 CYXDATA *)CYREG_DSM0_SW0, 
-	(uint8 CYXDATA *)CYREG_PRT0_AG, (uint8 CYXDATA *)CYREG_DSM0_SW0, 
+	(uint8 CYXDATA *)CYREG_PRT0_AG, (uint8 CYXDATA *)CY_AMUX_UNUSED, 
 };
 
 /* This is an implementation detail of the AMux. Code that depends on it may be
    incompatible with other versions of PSoC Creator. */
-const uint8 CYCODE AMux_1__maskTable[4] = {
+const uint8 CYCODE AMux_1__maskTable[6] = {
+	0x20u, 0x00u, 
 	0x40u, 0x40u, 
-	0x20u, 0x20u, 
+	0x20u, 0x00u, 
 };
 
 /*******************************************************************************
@@ -346,7 +352,7 @@ const uint8 CYCODE AMux_1__maskTable[4] = {
 *******************************************************************************/
 void AMux_1_Set(uint8 channel)
 {
-	if (channel < 2)
+	if (channel < 3)
 	{
 		channel += channel;
 		*AMux_1__addrTable[channel] |= AMux_1__maskTable[channel];
@@ -371,7 +377,7 @@ void AMux_1_Set(uint8 channel)
 *******************************************************************************/
 void AMux_1_Unset(uint8 channel)
 {
-	if (channel < 2)
+	if (channel < 3)
 	{
 		channel += channel;
 		*AMux_1__addrTable[channel] &= (uint8)~AMux_1__maskTable[channel];
@@ -504,6 +510,7 @@ void cyfitter_cfg(void)
 
 		/* Perform normal device configuration. Order is not critical for these items. */
 		CY_SET_XTND_REG8((void CYFAR *)(CYREG_DSM0_CR3), 0x0Au);
+		CY_SET_XTND_REG16((void CYFAR *)(CYREG_LUT2_CR), 0x0203u);
 
 		/* Enable digital routing */
 		CY_SET_XTND_REG8((void CYFAR *)CYREG_BCTL0_BANK_CTL, CY_GET_XTND_REG8((void CYFAR *)CYREG_BCTL0_BANK_CTL) | 0x02u);
