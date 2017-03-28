@@ -55,7 +55,7 @@ int main(void)
 
             debugValue = SampleArrayU[i];
             dV = SampleArrayI[i];
-            CyDelay(1);
+            //CyDelay(1);
         }
         printf("Hello %d %d",debugValue,dV);
         //CyDelay(1000);
