@@ -9,5 +9,10 @@
  *
  * ========================================
 */
+#include <math.h>
+
+
+void FFT (float data[], unsigned long number_of_complex_samples, int isign);
+
 
 /* [] END OF FILE */
