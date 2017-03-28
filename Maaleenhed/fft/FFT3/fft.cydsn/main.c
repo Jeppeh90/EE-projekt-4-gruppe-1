@@ -9,10 +9,18 @@
  *
  * ========================================
 */
-#include <math.h>
+#include "project.h"
 
+int main(void)
+{
+    CyGlobalIntEnable; /* Enable global interrupts. */
 
-void FFT (double data[], unsigned long number_of_complex_samples);
+    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
 
+    for(;;)
+    {
+        /* Place your application code here. */
+    }
+}
 
 /* [] END OF FILE */

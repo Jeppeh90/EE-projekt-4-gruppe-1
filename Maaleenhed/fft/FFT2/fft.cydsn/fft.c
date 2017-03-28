@@ -9,11 +9,16 @@
  *
  * ========================================
 */
+#include "fft.h"
+#include "math.h"
 
+#define SWAP(a,b)tempr=(a);(a)=(b);(b)=tempr
+
+//tempr is a variable from our FFT function  
 //data -> float array that represent the array of complex samples
 //number_of_complex_samples -> number of samples (N^2 order number) 
 //isign -> 1 to calculate FFT and -1 to calculate Reverse FFT
-void FFT (float data[], unsigned long number_of_complex_samples)
+void FFT (double data[], unsigned long number_of_complex_samples)
 {
     //variables for trigonometric recurrences
     unsigned long n,mmax,m,j,istep,i;
@@ -25,6 +30,9 @@ void FFT (float data[], unsigned long number_of_complex_samples)
 // real part is the data[index] and the complex part is the data[index+1]
 n=number_of_complex_samples * 2;
 
+    
+  
+    
 //binary inversion (note that
 //the indexes start from 1 witch means that the
 //real part of the complex is on the odd-indexes

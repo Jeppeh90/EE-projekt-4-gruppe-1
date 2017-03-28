@@ -1,5 +1,5 @@
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c3228a95-a2fa-4ccc-8233-159b135e1f99
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|d42598c0-6b8b-41fa-a44b-d30f23b64bb2
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|33ccaad2-ca7f-4cc4-864a-065b83889d16
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|813a11b4-50e3-4d6c-b1f4-498e1ca9ef46
-C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\fft\FFT2\fft.cydsn\fft.cyprj|da5eea66-bbac-498c-bfc8-c6fd957e2ae3
+C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\fft\FFT2\fft.cydsn\fft.cyprj|771d337c-d37d-47df-b53e-5cc2c5689fd8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|90fc2c22-075b-4276-827c-437183a4a88e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|db4c6889-2f31-48d0-a0d1-2626dc33c04c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|863a1b2c-4418-40f4-92c6-05d1aa2d847c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|3a22a745-2e3f-495c-92cc-f3d12bd020cd
