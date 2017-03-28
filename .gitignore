@@ -203,7 +203,7 @@ TSWLatexianTemp*
 
 ## PSOC creator.
 .DS_Store
-##*.cywrk.*
+*.cywrk.*
 *.cyprj.*
 *.cycdx
 *.cyfit
