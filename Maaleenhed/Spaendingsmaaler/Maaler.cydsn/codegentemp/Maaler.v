@@ -1,6 +1,6 @@
 // ======================================================================
 // Maaler.v generated from TopDesign.cysch
-// 03/28/2017 at 17:30
+// 04/02/2017 at 10:36
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -342,32 +342,18 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.v"
 `endif
 
-// Component: cy_vref_v1_70
-`ifdef CY_BLK_DIR
-`undef CY_BLK_DIR
-`endif
-
-`ifdef WARP
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_70"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.v"
-`else
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_70"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.v"
-`endif
-
 // top
 module top ;
 
     electrical  Net_26;
-    electrical  Net_34;
+    electrical  Net_37;
     electrical  Net_23;
-    electrical  Net_33;
+    electrical  Net_36;
           wire  Net_7;
     electrical  Net_6;
           wire  Net_5;
           wire  Net_4;
           wire  Net_3;
-    electrical  Net_35;
     electrical  Net_2;
     electrical  Net_1;
 
@@ -443,7 +429,7 @@ module top ;
 		 (.oe(tmpOE__ProbeU1_net),
 		  .y({1'b0}),
 		  .fb({tmpFB_0__ProbeU1_net[0:0]}),
-		  .analog({Net_33}),
+		  .analog({Net_36}),
 		  .io({tmpIO_0__ProbeU1_net[0:0]}),
 		  .siovref(tmpSIOVREF__ProbeU1_net),
 		  .interrupt({tmpINTERRUPT_0__ProbeU1_net[0:0]}),
@@ -612,15 +598,14 @@ module top ;
     
     cy_psoc3_amux_v1_0 AMux_1(
         .muxin({
-            Net_34,
-            Net_33,
-            Net_35
+            Net_37,
+            Net_36
             }),
         .vout(Net_1)
         );
     
-    defparam AMux_1.muxin_width = 3;
-    defparam AMux_1.init_mux_sel = 3'h0;
+    defparam AMux_1.muxin_width = 2;
+    defparam AMux_1.init_mux_sel = 2'h0;
     defparam AMux_1.one_active = 0;
     defparam AMux_1.connect_mode = 1;
     
@@ -689,7 +674,7 @@ module top ;
 		 (.oe(tmpOE__ProbeI1_net),
 		  .y({1'b0}),
 		  .fb({tmpFB_0__ProbeI1_net[0:0]}),
-		  .analog({Net_34}),
+		  .analog({Net_37}),
 		  .io({tmpIO_0__ProbeI1_net[0:0]}),
 		  .siovref(tmpSIOVREF__ProbeI1_net),
 		  .interrupt({tmpINTERRUPT_0__ProbeI1_net[0:0]}),
@@ -795,15 +780,6 @@ module top ;
     defparam AMux_2.connect_mode = 1;
     
     // -- AMux AMux_2 end --
-
-
-	cy_vref_v1_0
-		#(.autoenable(1),
-		  .guid("89B398AD-36A8-4627-9212-707F2986319E"),
-		  .name("1.024V"))
-		vRef_1
-		 (.vout(Net_35));
-
 
 
 

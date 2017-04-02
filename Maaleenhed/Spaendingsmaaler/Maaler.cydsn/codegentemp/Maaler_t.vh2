@@ -1,5 +1,5 @@
 -- Project:   \\Mac\iCloud\SKOLE\4. Semester\PRJ4 - Semesterprojekt 4\Maaleenhed\Spaendingsmaaler\Maaler.cydsn\Maaler.cyprj
--- Generated: 03/28/2017 17:30:22
+-- Generated: 04/02/2017 10:36:45
 -- PSoC Creator  4.0
 
 ENTITY Maaler IS
@@ -77,7 +77,6 @@ ARCHITECTURE __DEFAULT__ OF Maaler IS
     ATTRIBUTE Location OF ProbeI1(0) : LABEL IS "P0[5]";
     ATTRIBUTE lib_model OF ProbeI2(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF ProbeI2(0) : LABEL IS "P0[4]";
-    ATTRIBUTE Location OF autoVrefComparator_0 : LABEL IS "F(Comparator,2)";
     ATTRIBUTE Location OF \ADC_DelSig_1:DSM\ : LABEL IS "F(DSM,0)";
     ATTRIBUTE Location OF \ADC_DelSig_1:IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(29)]";
     ATTRIBUTE Location OF \ADC_DelSig_1:DEC\ : LABEL IS "F(Decimator,0)";
@@ -162,12 +161,6 @@ ARCHITECTURE __DEFAULT__ OF Maaler IS
             dclk_glb_ff_5 : OUT std_ulogic;
             dclk_glb_ff_6 : OUT std_ulogic;
             dclk_glb_ff_7 : OUT std_ulogic);
-    END COMPONENT;
-    COMPONENT comparatorcell
-        PORT (
-            out : OUT std_ulogic;
-            clk_udb : IN std_ulogic;
-            clock : IN std_ulogic);
     END COMPONENT;
     COMPONENT decimatorcell
         PORT (
@@ -752,10 +745,6 @@ BEGIN
             out_clock => open,
             out_clock_en => '1',
             out_reset => '0');
-
-    autoVrefComparator_0:comparatorcell
-        PORT MAP(
-            clock => open);
 
     \ADC_DelSig_1:DSM\:dsmodcell
         GENERIC MAP(

@@ -11,7 +11,7 @@
 */
 #include "project.h"
 #include "stdio.h"
-#define SIZE 40
+#define SIZE 128
 
 int main(void)
 {
@@ -32,7 +32,7 @@ int main(void)
     for(;;)
     {
         /* Place your application code here. */
-        test_Write(1);
+        //test_Write(1);
          int indexU = 0, indexI = 0;
         for(i=0;i<SIZE;i++)
         {
@@ -40,27 +40,29 @@ int main(void)
             if(i%2 == 0)
             {
                 //Skriver spændingsmålong i ArrayU
-                AMux_1_FastSelect(1);
-                AMux_2_FastSelect(1);
-                while(!ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS));
-                SampleArrayU[indexU++] = ADC_DelSig_1_CountsTo_mVolts( ADC_DelSig_1_GetResult16());
+                AMux_1_FastSelect(0u);
+                AMux_2_FastSelect(0u);
+                //while(!ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS));
+                SampleArrayU[indexU++] = ADC_DelSig_1_CountsTo_mVolts( ADC_DelSig_1_Read16());
+                test_Write(1);
             }else
             {
                 //Skriver strømmåling i ArrayI
-                AMux_1_FastSelect(2);
-                AMux_2_FastSelect(1);
-                while(!ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS));
-                SampleArrayI[indexI++] = ADC_DelSig_1_CountsTo_mVolts( ADC_DelSig_1_GetResult16());
+                AMux_1_FastSelect(1u);
+                AMux_2_FastSelect(1u);
+                //while(!ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS));
+                SampleArrayI[indexI++] = ADC_DelSig_1_CountsTo_mVolts( ADC_DelSig_1_Read16());
+                test_Write(0);
             }
 
             debugValue = SampleArrayU[i];
             dV = SampleArrayI[i];
             if(i%2 != 0)
-            CyDelay(1);
+            CyDelayUs(500);
         }
         printf("Hello %d %d",debugValue,dV);
         //CyDelay(1000);
-        test_Write(0);
+        //test_Write(0);
     }
 }
 

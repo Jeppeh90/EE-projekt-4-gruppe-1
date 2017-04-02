@@ -1,5 +1,5 @@
 # Maaler
-# 2017-03-28 15:30:19Z
+# 2017-04-02 08:36:42Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -12,5 +12,4 @@ set_io "ProbeU2(0)" iocell 0 7
 set_io "test(0)" iocell 1 7
 set_io "ProbeI1(0)" iocell 0 5
 set_io "ProbeI2(0)" iocell 0 4
-set_location "autoVrefComparator_0" comparatorcell -1 -1 2
 set_location "\ADC_DelSig_1:DSM\" dsmodcell -1 -1 0

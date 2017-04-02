@@ -2,7 +2,7 @@
 --	Conversion of Maaler.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Mar 28 17:30:16 2017
+--	Sun Apr 02 10:36:42 2017
 --
 
 USE cypress.cypress.all;
@@ -52,7 +52,7 @@ SIGNAL \ADC_DelSig_1:Net_268\ : bit;
 SIGNAL \ADC_DelSig_1:Net_270\ : bit;
 SIGNAL tmpOE__ProbeU1_net_0 : bit;
 SIGNAL tmpFB_0__ProbeU1_net_0 : bit;
-TERMINAL Net_33 : bit;
+TERMINAL Net_36 : bit;
 SIGNAL tmpIO_0__ProbeU1_net_0 : bit;
 TERMINAL tmpSIOVREF__ProbeU1_net_0 : bit;
 SIGNAL one : bit;
@@ -68,8 +68,7 @@ SIGNAL tmpFB_0__test_net_0 : bit;
 SIGNAL tmpIO_0__test_net_0 : bit;
 TERMINAL tmpSIOVREF__test_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__test_net_0 : bit;
-TERMINAL Net_34 : bit;
-TERMINAL Net_35 : bit;
+TERMINAL Net_37 : bit;
 SIGNAL tmpOE__ProbeI1_net_0 : bit;
 SIGNAL tmpFB_0__ProbeI1_net_0 : bit;
 SIGNAL tmpIO_0__ProbeI1_net_0 : bit;
@@ -234,7 +233,7 @@ ProbeU1:cy_psoc3_pins_v1_10
 	PORT MAP(oe=>(tmpOE__ProbeU1_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__ProbeU1_net_0),
-		analog=>Net_33,
+		analog=>Net_36,
 		io=>(tmpIO_0__ProbeU1_net_0),
 		siovref=>(tmpSIOVREF__ProbeU1_net_0),
 		annotation=>(open),
@@ -387,13 +386,13 @@ test:cy_psoc3_pins_v1_10
 		interrupt=>tmpINTERRUPT_0__test_net_0);
 AMux_1:cy_psoc3_amux_v1_0
 	GENERIC MAP(cy_registers=>"",
-		muxin_width=>3,
+		muxin_width=>2,
 		hw_control=>'0',
 		one_active=>'0',
-		init_mux_sel=>"000",
+		init_mux_sel=>"00",
 		api_type=>0,
 		connect_mode=>1)
-	PORT MAP(muxin=>(Net_34, Net_33, Net_35),
+	PORT MAP(muxin=>(Net_37, Net_36),
 		hw_ctrl_en=>(others => zero),
 		vout=>Net_1);
 ProbeI1:cy_psoc3_pins_v1_10
@@ -455,7 +454,7 @@ ProbeI1:cy_psoc3_pins_v1_10
 	PORT MAP(oe=>(tmpOE__ProbeU1_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__ProbeI1_net_0),
-		analog=>Net_34,
+		analog=>Net_37,
 		io=>(tmpIO_0__ProbeI1_net_0),
 		siovref=>(tmpSIOVREF__ProbeI1_net_0),
 		annotation=>(open),
@@ -547,11 +546,5 @@ AMux_2:cy_psoc3_amux_v1_0
 	PORT MAP(muxin=>(Net_26, Net_23),
 		hw_ctrl_en=>(others => zero),
 		vout=>Net_2);
-vRef_1:cy_vref_v1_0
-	GENERIC MAP(guid=>"89B398AD-36A8-4627-9212-707F2986319E",
-		name=>"1.024V",
-		autoenable=>'1',
-		ignoresleep=>'0')
-	PORT MAP(vout=>Net_35);
 
 END R_T_L;
