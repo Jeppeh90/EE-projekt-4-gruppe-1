@@ -1,5 +1,5 @@
-\\Mac\iCloud\SKOLE\4. Semester\PRJ4 - Semesterprojekt 4\Maaleenhed\Spaendingsmaaler\Maaler.cydsn\Maaler.cyprj|e4dabc0e-eb49-4db6-90fd-fdea90e88867
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|4ab7da77-a61b-4614-aefe-8a7f7dd37f02
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|f2e8f793-f263-42db-8df3-01749978ba76
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|6ef611bc-617d-46c7-b4c8-e1026bf08b72
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|c4c7969c-4ae5-4021-b01d-e8df02f9722e
+C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Spaendingsmaaler\Maaler.cydsn\Maaler.cyprj|5da43c46-2af1-41c6-a303-259ea0b30c10
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|a5a55abf-1779-4265-a6b6-aaee4e860197
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|07152a3a-5ebe-4a20-8a1c-65fb2548d52e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|a41086a2-e33f-478c-b5e0-69cd5e07e3ea
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|3c57500e-ef33-47ca-8a2e-e69c195a9b0a

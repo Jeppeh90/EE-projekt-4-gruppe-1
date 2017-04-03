@@ -1,6 +1,6 @@
--- Project:   \\Mac\iCloud\SKOLE\4. Semester\PRJ4 - Semesterprojekt 4\Maaleenhed\Spaendingsmaaler\Maaler.cydsn\Maaler.cyprj
--- Generated: 04/02/2017 10:36:45
--- PSoC Creator  4.0
+-- Project:   C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Spaendingsmaaler\Maaler.cydsn\Maaler.cyprj
+-- Generated: 04/03/2017 08:55:17
+-- PSoC Creator  4.0 Update 1
 
 ENTITY Maaler IS
     PORT(
