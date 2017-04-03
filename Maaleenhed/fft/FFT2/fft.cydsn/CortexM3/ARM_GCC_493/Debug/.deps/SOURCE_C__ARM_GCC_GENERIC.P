@@ -1,6 +1,0 @@
-C:/Users/User/Desktop/GIT/EE-projekt-4-gruppe-1/Maaleenhed/fft/FFT2/fft.cydsn/CortexM3/ARM_GCC_493/Debug/fft.o : C:/Users/User/Desktop/GIT/EE-projekt-4-gruppe-1/Maaleenhed/fft/FFT2/fft.cydsn/fft.c C:/Users/User/Desktop/GIT/EE-projekt-4-gruppe-1/Maaleenhed/fft/FFT2/fft.cydsn/fft.h 
-
-C:/Users/User/Desktop/GIT/EE-projekt-4-gruppe-1/Maaleenhed/fft/FFT2/fft.cydsn/fft.c : 
-
-C:/Users/User/Desktop/GIT/EE-projekt-4-gruppe-1/Maaleenhed/fft/FFT2/fft.cydsn/fft.h : 
-
