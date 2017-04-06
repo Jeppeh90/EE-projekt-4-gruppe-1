@@ -37,8 +37,13 @@
       <Folder BuildType="STRICT" Path="C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Spaendingsmaaler\Maaler.cydsn">
         <Files Root="C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Spaendingsmaaler\Maaler.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
+          <File BuildType="BUILD" Toolchain="">sample.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
+<<<<<<< Updated upstream
           <File BuildType="BUILD" Toolchain="">fft.h</File>
+=======
+          <File BuildType="BUILD" Toolchain="">sample.h</File>
+>>>>>>> Stashed changes
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Spaendingsmaaler\Maaler.cydsn\Generated_Source\PSoC5">
