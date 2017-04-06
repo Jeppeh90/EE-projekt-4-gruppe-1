@@ -15,7 +15,7 @@ Archive member included because of file (symbol)
 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
                               .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o) (CyPmReadStatus)
 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
-                              .\CortexM3\ARM_GCC_493\Debug\main.o (test_Write)
+                              .\CortexM3\ARM_GCC_493\Debug\sample.o (test_Write)
 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
                               .\CortexM3\ARM_GCC_493\Debug\main.o (AMux_1_Start)
 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
@@ -242,6 +242,7 @@ Discarded input sections
                 0x00000000       0x38 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
  .text.CySoftwareReset
                 0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+ .text.CyDelay  0x00000000       0x44 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
  .text.CyDelayFreq
                 0x00000000       0x7c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
  .text.CyWdtStart
@@ -531,7 +532,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 0x00000000                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000     0x1896
+.text           0x00000000     0x184e
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -548,153 +549,154 @@ END GROUP
                 0x00000001                ASSERT ((((appl_start + .) <= 0x10000) || 0x1), DMA Init must be within the first 64k of flash)
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x00000028       0x5c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .text.main     0x00000084       0xf4 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .text.main     0x00000084       0x50 .\CortexM3\ARM_GCC_493\Debug\main.o
                 0x00000084                main
+ .text.sampleUandI
+                0x000000d4       0xa0 .\CortexM3\ARM_GCC_493\Debug\sample.o
+                0x000000d4                sampleUandI
  .text.IntDefaultHandler
-                0x00000178       0x14 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x00000178                IntDefaultHandler
- .text.Start_c  0x0000018c       0x98 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x0000018c                Start_c
+                0x00000174       0x14 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000174                IntDefaultHandler
+ .text.Start_c  0x00000188       0x98 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000188                Start_c
  .text.initialize_psoc
-                0x00000224       0x8c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x00000224                initialize_psoc
+                0x00000220       0x8c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000220                initialize_psoc
  .text.CYMEMZERO
-                0x000002b0       0x1c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x000002ac       0x1c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
  .text.CYCONFIGCPY
-                0x000002cc       0x1c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x000002c8       0x1c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
  .text.CyClockStartupError
-                0x000002e8        0xc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x000002e4        0xc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
  .text.cfg_write_bytes32
-                0x000002f4       0x74 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x000002f0       0x74 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
  .text.ClockSetup
-                0x00000368      0x144 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x00000364      0x144 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
  .text.AnalogSetDefault
-                0x000004ac       0x4c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x000004a8       0x4c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
  .text.AMux_1_Set
-                0x000004f8       0x6c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
-                0x000004f8                AMux_1_Set
+                0x000004f4       0x6c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x000004f4                AMux_1_Set
  .text.AMux_1_Unset
-                0x00000564       0x74 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
-                0x00000564                AMux_1_Unset
+                0x00000560       0x74 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x00000560                AMux_1_Unset
  .text.AMux_2_Set
-                0x000005d8       0x6c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
-                0x000005d8                AMux_2_Set
+                0x000005d4       0x6c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x000005d4                AMux_2_Set
  .text.AMux_2_Unset
-                0x00000644       0x74 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
-                0x00000644                AMux_2_Unset
+                0x00000640       0x74 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x00000640                AMux_2_Unset
  .text.cyfitter_cfg
-                0x000006b8      0x12c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
-                0x000006b8                cyfitter_cfg
+                0x000006b4      0x12c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x000006b4                cyfitter_cfg
  .text.ADC_DelSig_1_Init
-                0x000007e4      0x158 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
-                0x000007e4                ADC_DelSig_1_Init
+                0x000007e0      0x158 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x000007e0                ADC_DelSig_1_Init
  .text.ADC_DelSig_1_Enable
-                0x0000093c      0x158 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
-                0x0000093c                ADC_DelSig_1_Enable
+                0x00000938      0x158 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x00000938                ADC_DelSig_1_Enable
  .text.ADC_DelSig_1_Start
-                0x00000a94       0x30 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
-                0x00000a94                ADC_DelSig_1_Start
+                0x00000a90       0x30 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x00000a90                ADC_DelSig_1_Start
  .text.ADC_DelSig_1_StartConvert
-                0x00000ac4       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
-                0x00000ac4                ADC_DelSig_1_StartConvert
+                0x00000ac0       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x00000ac0                ADC_DelSig_1_StartConvert
  .text.ADC_DelSig_1_StopConvert
-                0x00000ae4       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
-                0x00000ae4                ADC_DelSig_1_StopConvert
+                0x00000ae0       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x00000ae0                ADC_DelSig_1_StopConvert
  .text.ADC_DelSig_1_IsEndConversion
-                0x00000b04       0x50 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
-                0x00000b04                ADC_DelSig_1_IsEndConversion
+                0x00000b00       0x50 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x00000b00                ADC_DelSig_1_IsEndConversion
  .text.ADC_DelSig_1_GetResult16
-                0x00000b54       0x7c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
-                0x00000b54                ADC_DelSig_1_GetResult16
+                0x00000b50       0x7c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x00000b50                ADC_DelSig_1_GetResult16
  .text.ADC_DelSig_1_CountsTo_mVolts
-                0x00000bd0       0x40 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
-                0x00000bd0                ADC_DelSig_1_CountsTo_mVolts
+                0x00000bcc       0x40 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x00000bcc                ADC_DelSig_1_CountsTo_mVolts
  .text.ADC_DelSig_1_InitConfig
-                0x00000c10      0x3f0 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x00000c0c      0x3f0 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
  .text.ADC_DelSig_1_GainCompensation
-                0x00001000      0x16c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x00000ffc      0x16c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
  .text.ADC_DelSig_1_SetDSMRef0Reg
-                0x0000116c       0x78 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x00001168       0x78 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
  .text.ADC_DelSig_1_Read16
-                0x000011e4       0x3c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
-                0x000011e4                ADC_DelSig_1_Read16
+                0x000011e0       0x3c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x000011e0                ADC_DelSig_1_Read16
  .text.ADC_DelSig_1_ISR1
-                0x00001220        0xc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
-                0x00001220                ADC_DelSig_1_ISR1
+                0x0000121c        0xc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+                0x0000121c                ADC_DelSig_1_ISR1
  .text.ADC_DelSig_1_ISR2
-                0x0000122c        0xc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
-                0x0000122c                ADC_DelSig_1_ISR2
+                0x00001228        0xc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+                0x00001228                ADC_DelSig_1_ISR2
  .text.ADC_DelSig_1_ISR3
-                0x00001238        0xc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
-                0x00001238                ADC_DelSig_1_ISR3
+                0x00001234        0xc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+                0x00001234                ADC_DelSig_1_ISR3
  .text.ADC_DelSig_1_ISR4
-                0x00001244        0xc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
-                0x00001244                ADC_DelSig_1_ISR4
+                0x00001240        0xc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+                0x00001240                ADC_DelSig_1_ISR4
  .text.ADC_DelSig_1_Ext_CP_Clk_SetDividerRegister
-                0x00001250      0x160 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
-                0x00001250                ADC_DelSig_1_Ext_CP_Clk_SetDividerRegister
+                0x0000124c      0x160 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                0x0000124c                ADC_DelSig_1_Ext_CP_Clk_SetDividerRegister
  .text.ADC_DelSig_1_Ext_CP_Clk_GetDividerRegister
-                0x000013b0       0x18 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
-                0x000013b0                ADC_DelSig_1_Ext_CP_Clk_GetDividerRegister
+                0x000013ac       0x18 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                0x000013ac                ADC_DelSig_1_Ext_CP_Clk_GetDividerRegister
  .text.ADC_DelSig_1_Ext_CP_Clk_SetModeRegister
-                0x000013c8       0x34 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
-                0x000013c8                ADC_DelSig_1_Ext_CP_Clk_SetModeRegister
+                0x000013c4       0x34 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                0x000013c4                ADC_DelSig_1_Ext_CP_Clk_SetModeRegister
  .text.ADC_DelSig_1_Ext_CP_Clk_GetSourceRegister
-                0x000013fc       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
-                0x000013fc                ADC_DelSig_1_Ext_CP_Clk_GetSourceRegister
+                0x000013f8       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                0x000013f8                ADC_DelSig_1_Ext_CP_Clk_GetSourceRegister
  .text.ADC_DelSig_1_theACLK_SetDividerRegister
-                0x0000141c      0x160 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
-                0x0000141c                ADC_DelSig_1_theACLK_SetDividerRegister
+                0x00001418      0x160 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+                0x00001418                ADC_DelSig_1_theACLK_SetDividerRegister
  .text.ADC_DelSig_1_theACLK_GetDividerRegister
-                0x0000157c       0x18 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
-                0x0000157c                ADC_DelSig_1_theACLK_GetDividerRegister
+                0x00001578       0x18 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+                0x00001578                ADC_DelSig_1_theACLK_GetDividerRegister
  .text.ADC_DelSig_1_theACLK_SetModeRegister
-                0x00001594       0x34 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
-                0x00001594                ADC_DelSig_1_theACLK_SetModeRegister
+                0x00001590       0x34 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+                0x00001590                ADC_DelSig_1_theACLK_SetModeRegister
  .text.ADC_DelSig_1_theACLK_GetSourceRegister
-                0x000015c8       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
-                0x000015c8                ADC_DelSig_1_theACLK_GetSourceRegister
- .text.CyHalt   0x000015e8       0x18 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
-                0x000015e8                CyHalt
- .text.CyDelay  0x00001600       0x44 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
-                0x00001600                CyDelay
+                0x000015c4       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+                0x000015c4                ADC_DelSig_1_theACLK_GetSourceRegister
+ .text.CyHalt   0x000015e4       0x18 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+                0x000015e4                CyHalt
  .text.CyDelayUs
-                0x00001644       0x24 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
-                0x00001644                CyDelayUs
+                0x000015fc       0x24 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+                0x000015fc                CyDelayUs
  .text.CyIntSetVector
-                0x00001668       0x50 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
-                0x00001668                CyIntSetVector
+                0x00001620       0x50 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+                0x00001620                CyIntSetVector
  .text.CyIntSetPriority
-                0x000016b8       0x44 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
-                0x000016b8                CyIntSetPriority
+                0x00001670       0x44 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+                0x00001670                CyIntSetPriority
  .text.test_Write
-                0x000016fc       0x34 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
-                0x000016fc                test_Write
+                0x000016b4       0x34 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
+                0x000016b4                test_Write
  .text.AMux_1_Start
-                0x00001730       0x30 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
-                0x00001730                AMux_1_Start
+                0x000016e8       0x30 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
+                0x000016e8                AMux_1_Start
  .text.AMux_1_FastSelect
-                0x00001760       0x34 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
-                0x00001760                AMux_1_FastSelect
+                0x00001718       0x34 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
+                0x00001718                AMux_1_FastSelect
  .text.AMux_2_Start
-                0x00001794       0x30 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
-                0x00001794                AMux_2_Start
+                0x0000174c       0x30 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
+                0x0000174c                AMux_2_Start
  .text.AMux_2_FastSelect
-                0x000017c4       0x34 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
-                0x000017c4                AMux_2_FastSelect
- .text          0x000017f8       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
-                0x000017f8                CyDelayCycles
-                0x00001808                CyEnterCriticalSection
-                0x00001810                CyExitCriticalSection
- .text.__errno  0x00001818        0xc c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
-                0x00001818                __errno
+                0x0000177c       0x34 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
+                0x0000177c                AMux_2_FastSelect
+ .text          0x000017b0       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
+                0x000017b0                CyDelayCycles
+                0x000017c0                CyEnterCriticalSection
+                0x000017c8                CyExitCriticalSection
+ .text.__errno  0x000017d0        0xc c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x000017d0                __errno
  .text.__libc_init_array
-                0x00001824       0x4c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
-                0x00001824                __libc_init_array
- .text.memcpy   0x00001870       0x16 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
-                0x00001870                memcpy
- .text.memset   0x00001886       0x10 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
-                0x00001886                memset
+                0x000017dc       0x4c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x000017dc                __libc_init_array
+ .text.memcpy   0x00001828       0x16 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+                0x00001828                memcpy
+ .text.memset   0x0000183e       0x10 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x0000183e                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -707,85 +709,85 @@ END GROUP
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00001898        0x0
+.v4_bx          0x00001850        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00001898        0x0
+.iplt           0x00001850        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00001898        0x4
+.eh_frame       0x00001850        0x4
  *(.eh_frame)
- .eh_frame      0x00001898        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .eh_frame      0x00001898        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
-                0x0000189c                PROVIDE (__exidx_start, .)
+ .eh_frame      0x00001850        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .eh_frame      0x00001850        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+                0x00001854                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000189c                __exidx_end = .
+                0x00001854                __exidx_end = .
 
-.rodata         0x0000189c       0x94
+.rodata         0x00001854       0x94
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000189c       0x58 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
-                0x0000189c                AMux_1__addrTable
-                0x000018ac                AMux_1__maskTable
-                0x000018b0                AMux_2__addrTable
-                0x000018c0                AMux_2__maskTable
+ .rodata        0x00001854       0x58 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x00001854                AMux_1__addrTable
+                0x00001864                AMux_1__maskTable
+                0x00001868                AMux_2__addrTable
+                0x00001878                AMux_2__maskTable
  .rodata.str1.1
-                0x000018f4        0x2 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
-                0x000018f8                . = ALIGN (0x4)
- *fill*         0x000018f6        0x2 
+                0x000018ac        0x2 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x000018b0                . = ALIGN (0x4)
+ *fill*         0x000018ae        0x2 
  *(.init)
- .init          0x000018f8        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
-                0x000018f8                _init
- .init          0x000018fc        0x8 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
-                0x00001904                . = ALIGN (0x4)
-                0x00001904                __preinit_array_start = .
+ .init          0x000018b0        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x000018b0                _init
+ .init          0x000018b4        0x8 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x000018bc                . = ALIGN (0x4)
+                0x000018bc                __preinit_array_start = .
  *(.preinit_array)
-                0x00001904                __preinit_array_end = .
-                0x00001904                . = ALIGN (0x4)
-                0x00001904                __init_array_start = .
+                0x000018bc                __preinit_array_end = .
+                0x000018bc                . = ALIGN (0x4)
+                0x000018bc                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00001904        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .init_array    0x00001908        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x0000190c                __init_array_end = .
-                0x0000190c                . = ALIGN (0x4)
+ .init_array    0x000018bc        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .init_array    0x000018c0        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x000018c4                __init_array_end = .
+                0x000018c4                . = ALIGN (0x4)
  *(.fini)
- .fini          0x0000190c        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
-                0x0000190c                _fini
- .fini          0x00001910        0x8 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
-                0x00001918                . = ALIGN (0x4)
-                0x00001918                __fini_array_start = .
+ .fini          0x000018c4        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x000018c4                _fini
+ .fini          0x000018c8        0x8 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x000018d0                . = ALIGN (0x4)
+                0x000018d0                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00001918        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .fini_array    0x000018d0        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x0000191c                __fini_array_end = .
-                0x0000191c                . = ALIGN (0x4)
+                0x000018d4                __fini_array_end = .
+                0x000018d4                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x0000191c                . = ALIGN (0x4)
+                0x000018d4                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x0000191c                . = ALIGN (0x4)
-                0x0000191c                __cy_regions = .
-                0x0000191c        0x4 LONG 0x1930 __cy_region_init_ram
-                0x00001920        0x4 LONG 0x1fff8108 __cy_region_start_data
-                0x00001924        0x4 LONG 0x80 __cy_region_init_size_ram
-                0x00001928        0x4 LONG 0x38 __cy_region_zero_size_ram
-                0x0000192c                __cy_regions_end = .
-                0x00001930                . = ALIGN (0x8)
- *fill*         0x0000192c        0x4 
-                0x00001930                _etext = .
+                0x000018d4                . = ALIGN (0x4)
+                0x000018d4                __cy_regions = .
+                0x000018d4        0x4 LONG 0x18e8 __cy_region_init_ram
+                0x000018d8        0x4 LONG 0x1fff8108 __cy_region_start_data
+                0x000018dc        0x4 LONG 0x80 __cy_region_init_size_ram
+                0x000018e0        0x4 LONG 0x38 __cy_region_zero_size_ram
+                0x000018e4                __cy_regions_end = .
+                0x000018e8                . = ALIGN (0x8)
+ *fill*         0x000018e4        0x4 
+                0x000018e8                _etext = .
 
 .cy_checksum_exclude
-                0x00001930        0x0
+                0x000018e8        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x1fff8000      0x100
@@ -800,7 +802,7 @@ END GROUP
  .noinit        0x1fff8104        0x1 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
                 0x1fff8104                CyResetStatus
 
-.data           0x1fff8108       0x80 load address 0x00001930
+.data           0x1fff8108       0x80 load address 0x000018e8
                 0x1fff8108                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff8108        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
@@ -829,10 +831,10 @@ END GROUP
  *(.ram)
                 0x1fff8188                _edata = .
 
-.igot.plt       0x1fff8188        0x0 load address 0x000019b0
+.igot.plt       0x1fff8188        0x0 load address 0x00001968
  .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
-.bss            0x1fff8188       0x38 load address 0x000019b0
+.bss            0x1fff8188       0x38 load address 0x00001968
                 0x1fff8188                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -852,11 +854,11 @@ END GROUP
                 0x1fff81c0                __end = .
                 0x1fff81c0                PROVIDE (end, .)
                 0x1fff81c0                PROVIDE (__bss_end__, .)
-                0x00001930                __cy_region_init_ram = LOADADDR (.data)
+                0x000018e8                __cy_region_init_ram = LOADADDR (.data)
                 0x00000080                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00000038                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff81c0       0x80 load address 0x000019b0
+.heap           0x1fff81c0       0x80 load address 0x00001968
                 0x1fff81c0                . = _end
                 0x1fff8240                . = (. + 0x80)
  *fill*         0x1fff81c0       0x80 
@@ -907,7 +909,7 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x000019b0        0x0 load address 0x9050000c
+.rel.dyn        0x00001968        0x0 load address 0x9050000c
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
 .stab
@@ -928,157 +930,162 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x7f8
+.debug_aranges  0x00000000      0x818
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\main.o
  .debug_aranges
-                0x00000020       0x18 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x00000020       0x20 .\CortexM3\ARM_GCC_493\Debug\sample.o
  .debug_aranges
-                0x00000038       0x48 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000040       0x18 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
  .debug_aranges
-                0x00000080       0x80 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                0x00000058       0x48 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
  .debug_aranges
-                0x00000100       0xe8 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                0x000000a0       0x80 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
  .debug_aranges
-                0x000001e8       0x38 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+                0x00000120       0xe8 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
  .debug_aranges
-                0x00000220       0x70 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                0x00000208       0x38 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
  .debug_aranges
-                0x00000290       0x80 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+                0x00000240       0x70 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
  .debug_aranges
-                0x00000310      0x2a0 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+                0x000002b0       0x80 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
  .debug_aranges
-                0x000005b0       0x98 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
+                0x00000330      0x2a0 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
  .debug_aranges
-                0x00000648       0x38 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
+                0x000005d0       0x98 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
  .debug_aranges
-                0x00000680       0x30 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
+                0x00000668       0x38 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
  .debug_aranges
-                0x000006b0       0x30 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
+                0x000006a0       0x30 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
  .debug_aranges
-                0x000006e0       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
+                0x000006d0       0x30 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
  .debug_aranges
-                0x00000700       0x80 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
+                0x00000700       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
  .debug_aranges
-                0x00000780       0x78 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
+                0x00000720       0x80 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
+ .debug_aranges
+                0x000007a0       0x78 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x367b
+.debug_info     0x00000000     0x3751
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x13e .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_info    0x0000013e      0x13a .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
- .debug_info    0x00000278      0x319 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_info    0x00000591      0x4b1 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
- .debug_info    0x00000a42      0x725 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
- .debug_info    0x00001167       0xcc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
- .debug_info    0x00001233      0x25d .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
- .debug_info    0x00001490      0x299 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
- .debug_info    0x00001729      0xe4a .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
- .debug_info    0x00002573      0x561 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
- .debug_info    0x00002ad4      0x11e .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
- .debug_info    0x00002bf2      0x10a .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
- .debug_info    0x00002cfc      0x10a .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
- .debug_info    0x00002e06       0xb8 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
- .debug_info    0x00002ebe      0x36a .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
- .debug_info    0x00003228      0x453 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
+ .debug_info    0x00000000       0xf7 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_info    0x000000f7      0x11d .\CortexM3\ARM_GCC_493\Debug\sample.o
+ .debug_info    0x00000214      0x13a .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_info    0x0000034e      0x319 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_info    0x00000667      0x4b1 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+ .debug_info    0x00000b18      0x725 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+ .debug_info    0x0000123d       0xcc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+ .debug_info    0x00001309      0x25d .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+ .debug_info    0x00001566      0x299 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+ .debug_info    0x000017ff      0xe4a .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+ .debug_info    0x00002649      0x561 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
+ .debug_info    0x00002baa      0x11e .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
+ .debug_info    0x00002cc8      0x10a .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
+ .debug_info    0x00002dd2      0x10a .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
+ .debug_info    0x00002edc       0xb8 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
+ .debug_info    0x00002f94      0x36a .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
+ .debug_info    0x000032fe      0x453 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
 
-.debug_abbrev   0x00000000     0x103c
+.debug_abbrev   0x00000000     0x10a9
  *(.debug_abbrev)
- .debug_abbrev  0x00000000       0xbe .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_abbrev  0x000000be       0x5d .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
- .debug_abbrev  0x0000011b      0x1b6 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_abbrev  0x000002d1      0x1b0 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
- .debug_abbrev  0x00000481      0x19d .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
- .debug_abbrev  0x0000061e       0x42 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
- .debug_abbrev  0x00000660      0x11d .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
- .debug_abbrev  0x0000077d      0x11d .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
- .debug_abbrev  0x0000089a      0x217 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
- .debug_abbrev  0x00000ab1      0x161 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
- .debug_abbrev  0x00000c12       0x90 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
- .debug_abbrev  0x00000ca2       0x6f .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
- .debug_abbrev  0x00000d11       0x6f .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
- .debug_abbrev  0x00000d80       0x14 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00000d94      0x13c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
- .debug_abbrev  0x00000ed0      0x16c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
+ .debug_abbrev  0x00000000       0x8c .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_abbrev  0x0000008c       0x9f .\CortexM3\ARM_GCC_493\Debug\sample.o
+ .debug_abbrev  0x0000012b       0x5d .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_abbrev  0x00000188      0x1b6 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_abbrev  0x0000033e      0x1b0 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+ .debug_abbrev  0x000004ee      0x19d .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+ .debug_abbrev  0x0000068b       0x42 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+ .debug_abbrev  0x000006cd      0x11d .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+ .debug_abbrev  0x000007ea      0x11d .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+ .debug_abbrev  0x00000907      0x217 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+ .debug_abbrev  0x00000b1e      0x161 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
+ .debug_abbrev  0x00000c7f       0x90 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
+ .debug_abbrev  0x00000d0f       0x6f .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
+ .debug_abbrev  0x00000d7e       0x6f .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
+ .debug_abbrev  0x00000ded       0x14 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00000e01      0x13c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
+ .debug_abbrev  0x00000f3d      0x16c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
 
-.debug_line     0x00000000     0x2024
+.debug_line     0x00000000     0x2180
  *(.debug_line)
- .debug_line    0x00000000      0x179 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_line    0x00000179        0x0 .\CortexM3\ARM_GCC_493\Debug\sample.o
- .debug_line    0x00000179       0x51 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
- .debug_line    0x000001ca      0x1dc .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_line    0x000003a6      0x250 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
- .debug_line    0x000005f6      0x3ca .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
- .debug_line    0x000009c0       0x95 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
- .debug_line    0x00000a55      0x1b2 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
- .debug_line    0x00000c07      0x1d3 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
- .debug_line    0x00000dda      0x882 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
- .debug_line    0x0000165c      0x37f .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
- .debug_line    0x000019db       0x93 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
- .debug_line    0x00001a6e       0x9b .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
- .debug_line    0x00001b09       0x9b .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
- .debug_line    0x00001ba4       0x66 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
- .debug_line    0x00001c0a      0x205 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
- .debug_line    0x00001e0f      0x215 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
+ .debug_line    0x00000000      0x163 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_line    0x00000163      0x172 .\CortexM3\ARM_GCC_493\Debug\sample.o
+ .debug_line    0x000002d5       0x51 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_line    0x00000326      0x1dc .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_line    0x00000502      0x250 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+ .debug_line    0x00000752      0x3ca .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+ .debug_line    0x00000b1c       0x95 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+ .debug_line    0x00000bb1      0x1b2 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+ .debug_line    0x00000d63      0x1d3 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+ .debug_line    0x00000f36      0x882 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+ .debug_line    0x000017b8      0x37f .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
+ .debug_line    0x00001b37       0x93 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
+ .debug_line    0x00001bca       0x9b .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
+ .debug_line    0x00001c65       0x9b .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
+ .debug_line    0x00001d00       0x66 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
+ .debug_line    0x00001d66      0x205 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
+ .debug_line    0x00001f6b      0x215 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
 
-.debug_frame    0x00000000     0x2034
+.debug_frame    0x00000000     0x206c
  *(.debug_frame)
- .debug_frame   0x00000000       0x34 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_frame   0x00000034       0xd8 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_frame   0x0000010c      0x20c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
- .debug_frame   0x00000318      0x40c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
- .debug_frame   0x00000724       0xa0 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
- .debug_frame   0x000007c4      0x1b4 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
- .debug_frame   0x00000978      0x200 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
- .debug_frame   0x00000b78      0xc0c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
- .debug_frame   0x00001784      0x234 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
- .debug_frame   0x000019b8       0xa8 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
- .debug_frame   0x00001a60       0x88 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
- .debug_frame   0x00001ae8       0x88 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
- .debug_frame   0x00001b70      0x210 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
- .debug_frame   0x00001d80      0x1f8 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
- .debug_frame   0x00001f78       0x20 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x00001f98       0x28 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x00001fc0       0x2c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x00001fec       0x28 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
- .debug_frame   0x00002014       0x20 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000000       0x30 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_frame   0x00000030       0x3c .\CortexM3\ARM_GCC_493\Debug\sample.o
+ .debug_frame   0x0000006c       0xd8 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_frame   0x00000144      0x20c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+ .debug_frame   0x00000350      0x40c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+ .debug_frame   0x0000075c       0xa0 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+ .debug_frame   0x000007fc      0x1b4 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+ .debug_frame   0x000009b0      0x200 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+ .debug_frame   0x00000bb0      0xc0c .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+ .debug_frame   0x000017bc      0x234 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
+ .debug_frame   0x000019f0       0xa8 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
+ .debug_frame   0x00001a98       0x88 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
+ .debug_frame   0x00001b20       0x88 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
+ .debug_frame   0x00001ba8      0x210 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
+ .debug_frame   0x00001db8      0x1f8 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
+ .debug_frame   0x00001fb0       0x20 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00001fd0       0x28 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00001ff8       0x2c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00002024       0x28 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .debug_frame   0x0000204c       0x20 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x1d1d
+.debug_str      0x00000000     0x1d26
  *(.debug_str)
- .debug_str     0x00000000      0x1b4 .\CortexM3\ARM_GCC_493\Debug\main.o
-                                0x1f5 (size before relaxing)
- .debug_str     0x000001b4        0x9 .\CortexM3\ARM_GCC_493\Debug\sample.o
-                                0x101 (size before relaxing)
- .debug_str     0x000001bd       0x7b .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_str     0x00000000      0x19b .\CortexM3\ARM_GCC_493\Debug\main.o
+                                0x1dc (size before relaxing)
+ .debug_str     0x0000019b       0x31 .\CortexM3\ARM_GCC_493\Debug\sample.o
+                                0x1ec (size before relaxing)
+ .debug_str     0x000001cc       0x7b .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
                                 0x212 (size before relaxing)
- .debug_str     0x00000238      0x13c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_str     0x00000247      0x13c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
                                 0x2f3 (size before relaxing)
- .debug_str     0x00000374      0x1dc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+ .debug_str     0x00000383      0x1dc .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
                                 0x39f (size before relaxing)
- .debug_str     0x00000550      0x43e .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+ .debug_str     0x0000055f      0x43e .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
                                 0x63f (size before relaxing)
- .debug_str     0x0000098e       0x72 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+ .debug_str     0x0000099d       0x72 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
                                 0x209 (size before relaxing)
- .debug_str     0x00000a00      0x220 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+ .debug_str     0x00000a0f      0x220 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
                                 0x3d6 (size before relaxing)
- .debug_str     0x00000c20      0x208 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+ .debug_str     0x00000c2f      0x208 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
                                 0x407 (size before relaxing)
- .debug_str     0x00000e28      0x806 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+ .debug_str     0x00000e37      0x806 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
                                 0xa06 (size before relaxing)
- .debug_str     0x0000162e      0x365 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
+ .debug_str     0x0000163d      0x365 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
                                 0x553 (size before relaxing)
- .debug_str     0x00001993       0x61 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
+ .debug_str     0x000019a2       0x61 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
                                 0x205 (size before relaxing)
- .debug_str     0x000019f4       0x65 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
+ .debug_str     0x00001a03       0x65 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
                                 0x201 (size before relaxing)
- .debug_str     0x00001a59       0x60 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
+ .debug_str     0x00001a68       0x60 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
                                 0x201 (size before relaxing)
- .debug_str     0x00001ab9      0x145 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
+ .debug_str     0x00001ac8      0x145 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
                                 0x312 (size before relaxing)
- .debug_str     0x00001bfe      0x11f .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
+ .debug_str     0x00001c0d      0x119 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
                                 0x30f (size before relaxing)
 
 .debug_loc
@@ -1087,22 +1094,23 @@ END GROUP
 .debug_macinfo
  *(.debug_macinfo)
 
-.debug_ranges   0x00000000      0x6e0
+.debug_ranges   0x00000000      0x6f0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_ranges  0x00000010       0x38 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_ranges  0x00000048       0x70 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
- .debug_ranges  0x000000b8       0xd8 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
- .debug_ranges  0x00000190       0x28 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
- .debug_ranges  0x000001b8       0x60 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
- .debug_ranges  0x00000218       0x70 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
- .debug_ranges  0x00000288      0x290 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
- .debug_ranges  0x00000518       0x88 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
- .debug_ranges  0x000005a0       0x28 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
- .debug_ranges  0x000005c8       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
- .debug_ranges  0x000005e8       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
- .debug_ranges  0x00000608       0x70 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
- .debug_ranges  0x00000678       0x68 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
+ .debug_ranges  0x00000010       0x10 .\CortexM3\ARM_GCC_493\Debug\sample.o
+ .debug_ranges  0x00000020       0x38 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_ranges  0x00000058       0x70 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+ .debug_ranges  0x000000c8       0xd8 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+ .debug_ranges  0x000001a0       0x28 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+ .debug_ranges  0x000001c8       0x60 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+ .debug_ranges  0x00000228       0x70 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+ .debug_ranges  0x00000298      0x290 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+ .debug_ranges  0x00000528       0x88 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
+ .debug_ranges  0x000005b0       0x28 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
+ .debug_ranges  0x000005d8       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
+ .debug_ranges  0x000005f8       0x20 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
+ .debug_ranges  0x00000618       0x70 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
+ .debug_ranges  0x00000688       0x68 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 .\CortexM3\ARM_GCC_493\Debug\main.o
