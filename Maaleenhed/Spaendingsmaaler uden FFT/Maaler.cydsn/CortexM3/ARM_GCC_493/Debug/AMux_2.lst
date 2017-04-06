@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 1
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 1
 
 
    1              		.syntax unified
@@ -10,7 +10,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 1
    7              		.eabi_attribute 24, 1
    8              		.eabi_attribute 25, 1
    9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 30, 6
   11              		.eabi_attribute 34, 1
   12              		.eabi_attribute 18, 4
   13              		.thumb
@@ -18,15 +18,20 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 1
   15              		.text
   16              	.Ltext0:
   17              		.cfi_sections	.debug_frame
-  18              		.section	.text.AMux_2_Start,"ax",%progbits
-  19              		.align	2
-  20              		.global	AMux_2_Start
-  21              		.thumb
-  22              		.thumb_func
-  23              		.type	AMux_2_Start, %function
-  24              	AMux_2_Start:
-  25              	.LFB0:
-  26              		.file 1 "Generated_Source\\PSoC5\\AMux_2.c"
+  18              		.data
+  19              		.type	AMux_2_lastChannel, %object
+  20              		.size	AMux_2_lastChannel, 1
+  21              	AMux_2_lastChannel:
+  22 0000 FF       		.byte	-1
+  23              		.section	.text.AMux_2_Start,"ax",%progbits
+  24              		.align	2
+  25              		.global	AMux_2_Start
+  26              		.thumb
+  27              		.thumb_func
+  28              		.type	AMux_2_Start, %function
+  29              	AMux_2_Start:
+  30              	.LFB0:
+  31              		.file 1 "Generated_Source\\PSoC5\\AMux_2.c"
    1:Generated_Source\PSoC5/AMux_2.c **** /*******************************************************************************
    2:Generated_Source\PSoC5/AMux_2.c **** * File Name: AMux_2.c
    3:Generated_Source\PSoC5/AMux_2.c **** * Version 1.80
@@ -53,55 +58,58 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 1
   24:Generated_Source\PSoC5/AMux_2.c **** * Function Name: AMux_2_Start
   25:Generated_Source\PSoC5/AMux_2.c **** ********************************************************************************
   26:Generated_Source\PSoC5/AMux_2.c **** * Summary:
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 2
+
+
   27:Generated_Source\PSoC5/AMux_2.c **** *  Disconnect all channels.
   28:Generated_Source\PSoC5/AMux_2.c **** *
   29:Generated_Source\PSoC5/AMux_2.c **** * Parameters:
   30:Generated_Source\PSoC5/AMux_2.c **** *  void
   31:Generated_Source\PSoC5/AMux_2.c **** *
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 2
-
-
   32:Generated_Source\PSoC5/AMux_2.c **** * Return:
   33:Generated_Source\PSoC5/AMux_2.c **** *  void
   34:Generated_Source\PSoC5/AMux_2.c **** *
   35:Generated_Source\PSoC5/AMux_2.c **** *******************************************************************************/
   36:Generated_Source\PSoC5/AMux_2.c **** void AMux_2_Start(void) 
   37:Generated_Source\PSoC5/AMux_2.c **** {
-  27              		.loc 1 37 0
-  28              		.cfi_startproc
-  29              		@ args = 0, pretend = 0, frame = 0
-  30              		@ frame_needed = 0, uses_anonymous_args = 0
-  31 0000 10B5     		push	{r4, lr}
-  32              		.cfi_def_cfa_offset 8
-  33              		.cfi_offset 4, -8
-  34              		.cfi_offset 14, -4
-  35              	.LVL0:
+  32              		.loc 1 37 0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 8
+  35              		@ frame_needed = 1, uses_anonymous_args = 0
+  36 0000 80B5     		push	{r7, lr}
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 7, -8
+  39              		.cfi_offset 14, -4
+  40 0002 82B0     		sub	sp, sp, #8
+  41              		.cfi_def_cfa_offset 16
+  42 0004 00AF     		add	r7, sp, #0
+  43              		.cfi_def_cfa_register 7
   38:Generated_Source\PSoC5/AMux_2.c ****     uint8 chan;
   39:Generated_Source\PSoC5/AMux_2.c **** 
   40:Generated_Source\PSoC5/AMux_2.c ****     for(chan = 0u; chan < AMux_2_CHANNELS ; chan++)
-  36              		.loc 1 40 0
-  37 0002 0024     		movs	r4, #0
-  38 0004 04E0     		b	.L2
-  39              	.LVL1:
-  40              	.L3:
+  44              		.loc 1 40 0
+  45 0006 0023     		movs	r3, #0
+  46 0008 FB71     		strb	r3, [r7, #7]
+  47 000a 06E0     		b	.L2
+  48              	.L3:
   41:Generated_Source\PSoC5/AMux_2.c ****     {
   42:Generated_Source\PSoC5/AMux_2.c **** #if (AMux_2_MUXTYPE == AMux_2_MUX_SINGLE)
   43:Generated_Source\PSoC5/AMux_2.c ****         AMux_2_Unset(chan);
-  41              		.loc 1 43 0 discriminator 3
-  42 0006 2046     		mov	r0, r4
-  43 0008 FFF7FEFF 		bl	AMux_2_Unset
-  44              	.LVL2:
+  49              		.loc 1 43 0 discriminator 3
+  50 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  51 000e 1846     		mov	r0, r3
+  52 0010 FFF7FEFF 		bl	AMux_2_Unset
   40:Generated_Source\PSoC5/AMux_2.c ****     {
-  45              		.loc 1 40 0 discriminator 3
-  46 000c 0134     		adds	r4, r4, #1
-  47              	.LVL3:
-  48 000e E4B2     		uxtb	r4, r4
-  49              	.LVL4:
-  50              	.L2:
+  53              		.loc 1 40 0 discriminator 3
+  54 0014 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  55 0016 0133     		adds	r3, r3, #1
+  56 0018 FB71     		strb	r3, [r7, #7]
+  57              	.L2:
   40:Generated_Source\PSoC5/AMux_2.c ****     {
-  51              		.loc 1 40 0 is_stmt 0 discriminator 1
-  52 0010 012C     		cmp	r4, #1
-  53 0012 F8D9     		bls	.L3
+  58              		.loc 1 40 0 is_stmt 0 discriminator 1
+  59 001a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  60 001c 012B     		cmp	r3, #1
+  61 001e F5D9     		bls	.L3
   44:Generated_Source\PSoC5/AMux_2.c **** #else
   45:Generated_Source\PSoC5/AMux_2.c ****         AMux_2_CYAMUXSIDE_A_Unset(chan);
   46:Generated_Source\PSoC5/AMux_2.c ****         AMux_2_CYAMUXSIDE_B_Unset(chan);
@@ -109,31 +117,36 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 1
   48:Generated_Source\PSoC5/AMux_2.c ****     }
   49:Generated_Source\PSoC5/AMux_2.c **** 
   50:Generated_Source\PSoC5/AMux_2.c ****     AMux_2_lastChannel = AMux_2_NULL_CHANNEL;
-  54              		.loc 1 50 0 is_stmt 1
-  55 0014 FF22     		movs	r2, #255
-  56 0016 014B     		ldr	r3, .L5
-  57 0018 1A70     		strb	r2, [r3]
-  58 001a 10BD     		pop	{r4, pc}
-  59              	.LVL5:
-  60              	.L6:
-  61              		.align	2
-  62              	.L5:
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 3
+  62              		.loc 1 50 0 is_stmt 1
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 3
 
 
-  63 001c 00000000 		.word	.LANCHOR0
-  64              		.cfi_endproc
-  65              	.LFE0:
-  66              		.size	AMux_2_Start, .-AMux_2_Start
-  67              		.section	.text.AMux_2_Select,"ax",%progbits
-  68              		.align	2
-  69              		.global	AMux_2_Select
-  70              		.thumb
-  71              		.thumb_func
-  72              		.type	AMux_2_Select, %function
-  73              	AMux_2_Select:
-  74              	.LFB1:
+  63 0020 024B     		ldr	r3, .L4
+  64 0022 FF22     		movs	r2, #255
+  65 0024 1A70     		strb	r2, [r3]
   51:Generated_Source\PSoC5/AMux_2.c **** }
+  66              		.loc 1 51 0
+  67 0026 0837     		adds	r7, r7, #8
+  68              		.cfi_def_cfa_offset 8
+  69 0028 BD46     		mov	sp, r7
+  70              		.cfi_def_cfa_register 13
+  71              		@ sp needed
+  72 002a 80BD     		pop	{r7, pc}
+  73              	.L5:
+  74              		.align	2
+  75              	.L4:
+  76 002c 00000000 		.word	AMux_2_lastChannel
+  77              		.cfi_endproc
+  78              	.LFE0:
+  79              		.size	AMux_2_Start, .-AMux_2_Start
+  80              		.section	.text.AMux_2_Select,"ax",%progbits
+  81              		.align	2
+  82              		.global	AMux_2_Select
+  83              		.thumb
+  84              		.thumb_func
+  85              		.type	AMux_2_Select, %function
+  86              	AMux_2_Select:
+  87              	.LFB1:
   52:Generated_Source\PSoC5/AMux_2.c **** 
   53:Generated_Source\PSoC5/AMux_2.c **** 
   54:Generated_Source\PSoC5/AMux_2.c **** #if (!AMux_2_ATMOSTONE)
@@ -153,49 +166,59 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 1
   68:Generated_Source\PSoC5/AMux_2.c **** *******************************************************************************/
   69:Generated_Source\PSoC5/AMux_2.c **** void AMux_2_Select(uint8 channel) 
   70:Generated_Source\PSoC5/AMux_2.c **** {
-  75              		.loc 1 70 0
-  76              		.cfi_startproc
-  77              		@ args = 0, pretend = 0, frame = 0
-  78              		@ frame_needed = 0, uses_anonymous_args = 0
-  79              	.LVL6:
-  80 0000 10B5     		push	{r4, lr}
-  81              		.cfi_def_cfa_offset 8
-  82              		.cfi_offset 4, -8
-  83              		.cfi_offset 14, -4
-  84 0002 0446     		mov	r4, r0
+  88              		.loc 1 70 0
+  89              		.cfi_startproc
+  90              		@ args = 0, pretend = 0, frame = 8
+  91              		@ frame_needed = 1, uses_anonymous_args = 0
+  92 0000 80B5     		push	{r7, lr}
+  93              		.cfi_def_cfa_offset 8
+  94              		.cfi_offset 7, -8
+  95              		.cfi_offset 14, -4
+  96 0002 82B0     		sub	sp, sp, #8
+  97              		.cfi_def_cfa_offset 16
+  98 0004 00AF     		add	r7, sp, #0
+  99              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 4
+
+
+ 100 0006 0346     		mov	r3, r0
+ 101 0008 FB71     		strb	r3, [r7, #7]
   71:Generated_Source\PSoC5/AMux_2.c ****     AMux_2_DisconnectAll();        /* Disconnect all previous connections */
-  85              		.loc 1 71 0
-  86 0004 FFF7FEFF 		bl	AMux_2_Start
-  87              	.LVL7:
+ 102              		.loc 1 71 0
+ 103 000a FFF7FEFF 		bl	AMux_2_Start
   72:Generated_Source\PSoC5/AMux_2.c ****     AMux_2_Connect(channel);       /* Make the given selection */
-  88              		.loc 1 72 0
-  89 0008 2046     		mov	r0, r4
-  90 000a FFF7FEFF 		bl	AMux_2_Set
-  91              	.LVL8:
+ 104              		.loc 1 72 0
+ 105 000e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 106 0010 1846     		mov	r0, r3
+ 107 0012 FFF7FEFF 		bl	AMux_2_Set
   73:Generated_Source\PSoC5/AMux_2.c ****     AMux_2_lastChannel = channel;  /* Update last channel */
-  92              		.loc 1 73 0
-  93 000e 014B     		ldr	r3, .L9
-  94 0010 1C70     		strb	r4, [r3]
-  95 0012 10BD     		pop	{r4, pc}
-  96              	.L10:
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 4
-
-
-  97              		.align	2
-  98              	.L9:
-  99 0014 00000000 		.word	.LANCHOR0
- 100              		.cfi_endproc
- 101              	.LFE1:
- 102              		.size	AMux_2_Select, .-AMux_2_Select
- 103              		.section	.text.AMux_2_FastSelect,"ax",%progbits
- 104              		.align	2
- 105              		.global	AMux_2_FastSelect
- 106              		.thumb
- 107              		.thumb_func
- 108              		.type	AMux_2_FastSelect, %function
- 109              	AMux_2_FastSelect:
- 110              	.LFB2:
+ 108              		.loc 1 73 0
+ 109 0016 034A     		ldr	r2, .L7
+ 110 0018 FB79     		ldrb	r3, [r7, #7]
+ 111 001a 1370     		strb	r3, [r2]
   74:Generated_Source\PSoC5/AMux_2.c **** }
+ 112              		.loc 1 74 0
+ 113 001c 0837     		adds	r7, r7, #8
+ 114              		.cfi_def_cfa_offset 8
+ 115 001e BD46     		mov	sp, r7
+ 116              		.cfi_def_cfa_register 13
+ 117              		@ sp needed
+ 118 0020 80BD     		pop	{r7, pc}
+ 119              	.L8:
+ 120 0022 00BF     		.align	2
+ 121              	.L7:
+ 122 0024 00000000 		.word	AMux_2_lastChannel
+ 123              		.cfi_endproc
+ 124              	.LFE1:
+ 125              		.size	AMux_2_Select, .-AMux_2_Select
+ 126              		.section	.text.AMux_2_FastSelect,"ax",%progbits
+ 127              		.align	2
+ 128              		.global	AMux_2_FastSelect
+ 129              		.thumb
+ 130              		.thumb_func
+ 131              		.type	AMux_2_FastSelect, %function
+ 132              	AMux_2_FastSelect:
+ 133              	.LFB2:
   75:Generated_Source\PSoC5/AMux_2.c **** #endif
   76:Generated_Source\PSoC5/AMux_2.c **** 
   77:Generated_Source\PSoC5/AMux_2.c **** 
@@ -215,44 +238,49 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 1
   91:Generated_Source\PSoC5/AMux_2.c **** *  void
   92:Generated_Source\PSoC5/AMux_2.c **** *
   93:Generated_Source\PSoC5/AMux_2.c **** *******************************************************************************/
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 5
+
+
   94:Generated_Source\PSoC5/AMux_2.c **** void AMux_2_FastSelect(uint8 channel) 
   95:Generated_Source\PSoC5/AMux_2.c **** {
- 111              		.loc 1 95 0
- 112              		.cfi_startproc
- 113              		@ args = 0, pretend = 0, frame = 0
- 114              		@ frame_needed = 0, uses_anonymous_args = 0
- 115              	.LVL9:
- 116 0000 10B5     		push	{r4, lr}
- 117              		.cfi_def_cfa_offset 8
- 118              		.cfi_offset 4, -8
- 119              		.cfi_offset 14, -4
- 120 0002 0446     		mov	r4, r0
+ 134              		.loc 1 95 0
+ 135              		.cfi_startproc
+ 136              		@ args = 0, pretend = 0, frame = 8
+ 137              		@ frame_needed = 1, uses_anonymous_args = 0
+ 138 0000 80B5     		push	{r7, lr}
+ 139              		.cfi_def_cfa_offset 8
+ 140              		.cfi_offset 7, -8
+ 141              		.cfi_offset 14, -4
+ 142 0002 82B0     		sub	sp, sp, #8
+ 143              		.cfi_def_cfa_offset 16
+ 144 0004 00AF     		add	r7, sp, #0
+ 145              		.cfi_def_cfa_register 7
+ 146 0006 0346     		mov	r3, r0
+ 147 0008 FB71     		strb	r3, [r7, #7]
   96:Generated_Source\PSoC5/AMux_2.c ****     /* Disconnect the last valid channel */
   97:Generated_Source\PSoC5/AMux_2.c ****     if( AMux_2_lastChannel != AMux_2_NULL_CHANNEL)
- 121              		.loc 1 97 0
- 122 0004 054B     		ldr	r3, .L14
- 123 0006 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
- 124              	.LVL10:
- 125 0008 FF28     		cmp	r0, #255
- 126 000a 01D0     		beq	.L12
+ 148              		.loc 1 97 0
+ 149 000a 094B     		ldr	r3, .L11
+ 150 000c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 151 000e FF2B     		cmp	r3, #255
+ 152 0010 04D0     		beq	.L10
   98:Generated_Source\PSoC5/AMux_2.c ****     {
   99:Generated_Source\PSoC5/AMux_2.c ****         AMux_2_Disconnect(AMux_2_lastChannel);
- 127              		.loc 1 99 0
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 5
-
-
- 128 000c FFF7FEFF 		bl	AMux_2_Unset
- 129              	.LVL11:
- 130              	.L12:
+ 153              		.loc 1 99 0
+ 154 0012 074B     		ldr	r3, .L11
+ 155 0014 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 156 0016 1846     		mov	r0, r3
+ 157 0018 FFF7FEFF 		bl	AMux_2_Unset
+ 158              	.L10:
  100:Generated_Source\PSoC5/AMux_2.c ****     }
  101:Generated_Source\PSoC5/AMux_2.c **** 
  102:Generated_Source\PSoC5/AMux_2.c ****     /* Make the new channel connection */
  103:Generated_Source\PSoC5/AMux_2.c **** #if (AMux_2_MUXTYPE == AMux_2_MUX_SINGLE)
  104:Generated_Source\PSoC5/AMux_2.c ****     AMux_2_Set(channel);
- 131              		.loc 1 104 0
- 132 0010 2046     		mov	r0, r4
- 133 0012 FFF7FEFF 		bl	AMux_2_Set
- 134              	.LVL12:
+ 159              		.loc 1 104 0
+ 160 001c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 161 001e 1846     		mov	r0, r3
+ 162 0020 FFF7FEFF 		bl	AMux_2_Set
  105:Generated_Source\PSoC5/AMux_2.c **** #else
  106:Generated_Source\PSoC5/AMux_2.c ****     AMux_2_CYAMUXSIDE_A_Set(channel);
  107:Generated_Source\PSoC5/AMux_2.c ****     AMux_2_CYAMUXSIDE_B_Set(channel);
@@ -260,638 +288,451 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 1
  109:Generated_Source\PSoC5/AMux_2.c **** 
  110:Generated_Source\PSoC5/AMux_2.c **** 
  111:Generated_Source\PSoC5/AMux_2.c ****     AMux_2_lastChannel = channel;   /* Update last channel */
- 135              		.loc 1 111 0
- 136 0016 014B     		ldr	r3, .L14
- 137 0018 1C70     		strb	r4, [r3]
- 138 001a 10BD     		pop	{r4, pc}
- 139              	.L15:
- 140              		.align	2
- 141              	.L14:
- 142 001c 00000000 		.word	.LANCHOR0
- 143              		.cfi_endproc
- 144              	.LFE2:
- 145              		.size	AMux_2_FastSelect, .-AMux_2_FastSelect
- 146              		.data
- 147              		.set	.LANCHOR0,. + 0
- 148              		.type	AMux_2_lastChannel, %object
- 149              		.size	AMux_2_lastChannel, 1
- 150              	AMux_2_lastChannel:
- 151 0000 FF       		.byte	-1
- 152              		.text
- 153              	.Letext0:
- 154              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
- 155              		.file 3 "Generated_Source\\PSoC5\\cyfitter_cfg.h"
- 156              		.section	.debug_info,"",%progbits
- 157              	.Ldebug_info0:
- 158 0000 69010000 		.4byte	0x169
- 159 0004 0400     		.2byte	0x4
- 160 0006 00000000 		.4byte	.Ldebug_abbrev0
- 161 000a 04       		.byte	0x4
- 162 000b 01       		.uleb128 0x1
- 163 000c E1000000 		.4byte	.LASF18
- 164 0010 01       		.byte	0x1
- 165 0011 BA000000 		.4byte	.LASF19
- 166 0015 59000000 		.4byte	.LASF20
- 167 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 168 001d 00000000 		.4byte	0
- 169 0021 00000000 		.4byte	.Ldebug_line0
- 170 0025 02       		.uleb128 0x2
- 171 0026 01       		.byte	0x1
- 172 0027 06       		.byte	0x6
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 6
+ 163              		.loc 1 111 0
+ 164 0024 024A     		ldr	r2, .L11
+ 165 0026 FB79     		ldrb	r3, [r7, #7]
+ 166 0028 1370     		strb	r3, [r2]
+ 112:Generated_Source\PSoC5/AMux_2.c **** }
+ 167              		.loc 1 112 0
+ 168 002a 0837     		adds	r7, r7, #8
+ 169              		.cfi_def_cfa_offset 8
+ 170 002c BD46     		mov	sp, r7
+ 171              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 6
 
 
- 173 0028 F6010000 		.4byte	.LASF0
- 174 002c 02       		.uleb128 0x2
- 175 002d 01       		.byte	0x1
- 176 002e 08       		.byte	0x8
- 177 002f 26000000 		.4byte	.LASF1
- 178 0033 02       		.uleb128 0x2
- 179 0034 02       		.byte	0x2
- 180 0035 05       		.byte	0x5
- 181 0036 DD010000 		.4byte	.LASF2
- 182 003a 02       		.uleb128 0x2
- 183 003b 02       		.byte	0x2
- 184 003c 07       		.byte	0x7
- 185 003d 46000000 		.4byte	.LASF3
- 186 0041 02       		.uleb128 0x2
- 187 0042 04       		.byte	0x4
- 188 0043 05       		.byte	0x5
- 189 0044 ED010000 		.4byte	.LASF4
- 190 0048 02       		.uleb128 0x2
- 191 0049 04       		.byte	0x4
- 192 004a 07       		.byte	0x7
- 193 004b 34000000 		.4byte	.LASF5
- 194 004f 02       		.uleb128 0x2
- 195 0050 08       		.byte	0x8
- 196 0051 05       		.byte	0x5
- 197 0052 B8010000 		.4byte	.LASF6
- 198 0056 02       		.uleb128 0x2
- 199 0057 08       		.byte	0x8
- 200 0058 07       		.byte	0x7
- 201 0059 89010000 		.4byte	.LASF7
- 202 005d 03       		.uleb128 0x3
- 203 005e 04       		.byte	0x4
- 204 005f 05       		.byte	0x5
- 205 0060 696E7400 		.ascii	"int\000"
- 206 0064 02       		.uleb128 0x2
- 207 0065 04       		.byte	0x4
- 208 0066 07       		.byte	0x7
- 209 0067 6F010000 		.4byte	.LASF8
- 210 006b 04       		.uleb128 0x4
- 211 006c E7010000 		.4byte	.LASF21
- 212 0070 02       		.byte	0x2
- 213 0071 9201     		.2byte	0x192
- 214 0073 2C000000 		.4byte	0x2c
- 215 0077 02       		.uleb128 0x2
- 216 0078 04       		.byte	0x4
- 217 0079 04       		.byte	0x4
- 218 007a 20000000 		.4byte	.LASF9
- 219 007e 02       		.uleb128 0x2
- 220 007f 08       		.byte	0x8
- 221 0080 04       		.byte	0x4
- 222 0081 DA000000 		.4byte	.LASF10
- 223 0085 02       		.uleb128 0x2
- 224 0086 01       		.byte	0x1
- 225 0087 08       		.byte	0x8
- 226 0088 C6010000 		.4byte	.LASF11
- 227 008c 05       		.uleb128 0x5
- 228 008d 7C010000 		.4byte	.LASF12
- 229 0091 01       		.byte	0x1
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 7
+ 172              		@ sp needed
+ 173 002e 80BD     		pop	{r7, pc}
+ 174              	.L12:
+ 175              		.align	2
+ 176              	.L11:
+ 177 0030 00000000 		.word	AMux_2_lastChannel
+ 178              		.cfi_endproc
+ 179              	.LFE2:
+ 180              		.size	AMux_2_FastSelect, .-AMux_2_FastSelect
+ 181              		.text
+ 182              	.Letext0:
+ 183              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 184              		.section	.debug_info,"",%progbits
+ 185              	.Ldebug_info0:
+ 186 0000 06010000 		.4byte	0x106
+ 187 0004 0400     		.2byte	0x4
+ 188 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 189 000a 04       		.byte	0x4
+ 190 000b 01       		.uleb128 0x1
+ 191 000c 0E000000 		.4byte	.LASF18
+ 192 0010 01       		.byte	0x1
+ 193 0011 39010000 		.4byte	.LASF19
+ 194 0015 9C000000 		.4byte	.LASF20
+ 195 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 196 001d 00000000 		.4byte	0
+ 197 0021 00000000 		.4byte	.Ldebug_line0
+ 198 0025 02       		.uleb128 0x2
+ 199 0026 01       		.byte	0x1
+ 200 0027 06       		.byte	0x6
+ 201 0028 E7010000 		.4byte	.LASF0
+ 202 002c 02       		.uleb128 0x2
+ 203 002d 01       		.byte	0x1
+ 204 002e 08       		.byte	0x8
+ 205 002f 06010000 		.4byte	.LASF1
+ 206 0033 02       		.uleb128 0x2
+ 207 0034 02       		.byte	0x2
+ 208 0035 05       		.byte	0x5
+ 209 0036 CE010000 		.4byte	.LASF2
+ 210 003a 02       		.uleb128 0x2
+ 211 003b 02       		.byte	0x2
+ 212 003c 07       		.byte	0x7
+ 213 003d 26010000 		.4byte	.LASF3
+ 214 0041 02       		.uleb128 0x2
+ 215 0042 04       		.byte	0x4
+ 216 0043 05       		.byte	0x5
+ 217 0044 DE010000 		.4byte	.LASF4
+ 218 0048 02       		.uleb128 0x2
+ 219 0049 04       		.byte	0x4
+ 220 004a 07       		.byte	0x7
+ 221 004b 14010000 		.4byte	.LASF5
+ 222 004f 02       		.uleb128 0x2
+ 223 0050 08       		.byte	0x8
+ 224 0051 05       		.byte	0x5
+ 225 0052 A9010000 		.4byte	.LASF6
+ 226 0056 02       		.uleb128 0x2
+ 227 0057 08       		.byte	0x8
+ 228 0058 07       		.byte	0x7
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 7
 
 
- 230 0092 24       		.byte	0x24
- 231 0093 00000000 		.4byte	.LFB0
- 232 0097 20000000 		.4byte	.LFE0-.LFB0
- 233 009b 01       		.uleb128 0x1
- 234 009c 9C       		.byte	0x9c
- 235 009d C1000000 		.4byte	0xc1
- 236 00a1 06       		.uleb128 0x6
- 237 00a2 A0010000 		.4byte	.LASF16
- 238 00a6 01       		.byte	0x1
- 239 00a7 26       		.byte	0x26
- 240 00a8 6B000000 		.4byte	0x6b
- 241 00ac 00000000 		.4byte	.LLST0
- 242 00b0 07       		.uleb128 0x7
- 243 00b1 0C000000 		.4byte	.LVL2
- 244 00b5 4E010000 		.4byte	0x14e
- 245 00b9 08       		.uleb128 0x8
- 246 00ba 01       		.uleb128 0x1
- 247 00bb 50       		.byte	0x50
- 248 00bc 02       		.uleb128 0x2
- 249 00bd 74       		.byte	0x74
- 250 00be 00       		.sleb128 0
- 251 00bf 00       		.byte	0
- 252 00c0 00       		.byte	0
- 253 00c1 05       		.uleb128 0x5
- 254 00c2 02020000 		.4byte	.LASF13
- 255 00c6 01       		.byte	0x1
- 256 00c7 45       		.byte	0x45
- 257 00c8 00000000 		.4byte	.LFB1
- 258 00cc 18000000 		.4byte	.LFE1-.LFB1
- 259 00d0 01       		.uleb128 0x1
- 260 00d1 9C       		.byte	0x9c
- 261 00d2 FF000000 		.4byte	0xff
- 262 00d6 09       		.uleb128 0x9
- 263 00d7 00000000 		.4byte	.LASF15
- 264 00db 01       		.byte	0x1
- 265 00dc 45       		.byte	0x45
- 266 00dd 6B000000 		.4byte	0x6b
- 267 00e1 2A000000 		.4byte	.LLST1
- 268 00e5 0A       		.uleb128 0xa
- 269 00e6 08000000 		.4byte	.LVL7
- 270 00ea 8C000000 		.4byte	0x8c
- 271 00ee 07       		.uleb128 0x7
- 272 00ef 0E000000 		.4byte	.LVL8
- 273 00f3 5F010000 		.4byte	0x15f
- 274 00f7 08       		.uleb128 0x8
- 275 00f8 01       		.uleb128 0x1
- 276 00f9 50       		.byte	0x50
- 277 00fa 02       		.uleb128 0x2
- 278 00fb 74       		.byte	0x74
- 279 00fc 00       		.sleb128 0
- 280 00fd 00       		.byte	0
- 281 00fe 00       		.byte	0
- 282 00ff 05       		.uleb128 0x5
- 283 0100 CB010000 		.4byte	.LASF14
- 284 0104 01       		.byte	0x1
- 285 0105 5E       		.byte	0x5e
- 286 0106 00000000 		.4byte	.LFB2
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 8
+ 229 0059 7A010000 		.4byte	.LASF7
+ 230 005d 03       		.uleb128 0x3
+ 231 005e 04       		.byte	0x4
+ 232 005f 05       		.byte	0x5
+ 233 0060 696E7400 		.ascii	"int\000"
+ 234 0064 02       		.uleb128 0x2
+ 235 0065 04       		.byte	0x4
+ 236 0066 07       		.byte	0x7
+ 237 0067 60010000 		.4byte	.LASF8
+ 238 006b 04       		.uleb128 0x4
+ 239 006c D8010000 		.4byte	.LASF21
+ 240 0070 02       		.byte	0x2
+ 241 0071 9201     		.2byte	0x192
+ 242 0073 2C000000 		.4byte	0x2c
+ 243 0077 02       		.uleb128 0x2
+ 244 0078 04       		.byte	0x4
+ 245 0079 04       		.byte	0x4
+ 246 007a 08000000 		.4byte	.LASF9
+ 247 007e 02       		.uleb128 0x2
+ 248 007f 08       		.byte	0x8
+ 249 0080 04       		.byte	0x4
+ 250 0081 59010000 		.4byte	.LASF10
+ 251 0085 02       		.uleb128 0x2
+ 252 0086 01       		.byte	0x1
+ 253 0087 08       		.byte	0x8
+ 254 0088 B7010000 		.4byte	.LASF11
+ 255 008c 05       		.uleb128 0x5
+ 256 008d 6D010000 		.4byte	.LASF12
+ 257 0091 01       		.byte	0x1
+ 258 0092 24       		.byte	0x24
+ 259 0093 00000000 		.4byte	.LFB0
+ 260 0097 30000000 		.4byte	.LFE0-.LFB0
+ 261 009b 01       		.uleb128 0x1
+ 262 009c 9C       		.byte	0x9c
+ 263 009d B0000000 		.4byte	0xb0
+ 264 00a1 06       		.uleb128 0x6
+ 265 00a2 91010000 		.4byte	.LASF16
+ 266 00a6 01       		.byte	0x1
+ 267 00a7 26       		.byte	0x26
+ 268 00a8 6B000000 		.4byte	0x6b
+ 269 00ac 02       		.uleb128 0x2
+ 270 00ad 91       		.byte	0x91
+ 271 00ae 77       		.sleb128 -9
+ 272 00af 00       		.byte	0
+ 273 00b0 05       		.uleb128 0x5
+ 274 00b1 F3010000 		.4byte	.LASF13
+ 275 00b5 01       		.byte	0x1
+ 276 00b6 45       		.byte	0x45
+ 277 00b7 00000000 		.4byte	.LFB1
+ 278 00bb 28000000 		.4byte	.LFE1-.LFB1
+ 279 00bf 01       		.uleb128 0x1
+ 280 00c0 9C       		.byte	0x9c
+ 281 00c1 D4000000 		.4byte	0xd4
+ 282 00c5 07       		.uleb128 0x7
+ 283 00c6 00000000 		.4byte	.LASF15
+ 284 00ca 01       		.byte	0x1
+ 285 00cb 45       		.byte	0x45
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 8
 
 
- 287 010a 20000000 		.4byte	.LFE2-.LFB2
- 288 010e 01       		.uleb128 0x1
- 289 010f 9C       		.byte	0x9c
- 290 0110 3D010000 		.4byte	0x13d
- 291 0114 09       		.uleb128 0x9
- 292 0115 00000000 		.4byte	.LASF15
- 293 0119 01       		.byte	0x1
- 294 011a 5E       		.byte	0x5e
- 295 011b 6B000000 		.4byte	0x6b
- 296 011f 4B000000 		.4byte	.LLST2
- 297 0123 0A       		.uleb128 0xa
- 298 0124 10000000 		.4byte	.LVL11
- 299 0128 4E010000 		.4byte	0x14e
- 300 012c 07       		.uleb128 0x7
- 301 012d 16000000 		.4byte	.LVL12
- 302 0131 5F010000 		.4byte	0x15f
- 303 0135 08       		.uleb128 0x8
- 304 0136 01       		.uleb128 0x1
- 305 0137 50       		.byte	0x50
- 306 0138 02       		.uleb128 0x2
- 307 0139 74       		.byte	0x74
- 308 013a 00       		.sleb128 0
- 309 013b 00       		.byte	0
- 310 013c 00       		.byte	0
- 311 013d 0B       		.uleb128 0xb
- 312 013e A5010000 		.4byte	.LASF17
- 313 0142 01       		.byte	0x1
- 314 0143 14       		.byte	0x14
- 315 0144 6B000000 		.4byte	0x6b
- 316 0148 05       		.uleb128 0x5
- 317 0149 03       		.byte	0x3
- 318 014a 00000000 		.4byte	AMux_2_lastChannel
- 319 014e 0C       		.uleb128 0xc
- 320 014f 13000000 		.4byte	.LASF22
- 321 0153 03       		.byte	0x3
- 322 0154 25       		.byte	0x25
- 323 0155 5F010000 		.4byte	0x15f
- 324 0159 0D       		.uleb128 0xd
- 325 015a 6B000000 		.4byte	0x6b
- 326 015e 00       		.byte	0
- 327 015f 0E       		.uleb128 0xe
- 328 0160 08000000 		.4byte	.LASF23
- 329 0164 03       		.byte	0x3
- 330 0165 24       		.byte	0x24
- 331 0166 0D       		.uleb128 0xd
- 332 0167 6B000000 		.4byte	0x6b
- 333 016b 00       		.byte	0
- 334 016c 00       		.byte	0
- 335              		.section	.debug_abbrev,"",%progbits
- 336              	.Ldebug_abbrev0:
- 337 0000 01       		.uleb128 0x1
- 338 0001 11       		.uleb128 0x11
- 339 0002 01       		.byte	0x1
- 340 0003 25       		.uleb128 0x25
- 341 0004 0E       		.uleb128 0xe
- 342 0005 13       		.uleb128 0x13
- 343 0006 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 9
+ 286 00cc 6B000000 		.4byte	0x6b
+ 287 00d0 02       		.uleb128 0x2
+ 288 00d1 91       		.byte	0x91
+ 289 00d2 77       		.sleb128 -9
+ 290 00d3 00       		.byte	0
+ 291 00d4 05       		.uleb128 0x5
+ 292 00d5 BC010000 		.4byte	.LASF14
+ 293 00d9 01       		.byte	0x1
+ 294 00da 5E       		.byte	0x5e
+ 295 00db 00000000 		.4byte	.LFB2
+ 296 00df 34000000 		.4byte	.LFE2-.LFB2
+ 297 00e3 01       		.uleb128 0x1
+ 298 00e4 9C       		.byte	0x9c
+ 299 00e5 F8000000 		.4byte	0xf8
+ 300 00e9 07       		.uleb128 0x7
+ 301 00ea 00000000 		.4byte	.LASF15
+ 302 00ee 01       		.byte	0x1
+ 303 00ef 5E       		.byte	0x5e
+ 304 00f0 6B000000 		.4byte	0x6b
+ 305 00f4 02       		.uleb128 0x2
+ 306 00f5 91       		.byte	0x91
+ 307 00f6 77       		.sleb128 -9
+ 308 00f7 00       		.byte	0
+ 309 00f8 06       		.uleb128 0x6
+ 310 00f9 96010000 		.4byte	.LASF17
+ 311 00fd 01       		.byte	0x1
+ 312 00fe 14       		.byte	0x14
+ 313 00ff 6B000000 		.4byte	0x6b
+ 314 0103 05       		.uleb128 0x5
+ 315 0104 03       		.byte	0x3
+ 316 0105 00000000 		.4byte	AMux_2_lastChannel
+ 317 0109 00       		.byte	0
+ 318              		.section	.debug_abbrev,"",%progbits
+ 319              	.Ldebug_abbrev0:
+ 320 0000 01       		.uleb128 0x1
+ 321 0001 11       		.uleb128 0x11
+ 322 0002 01       		.byte	0x1
+ 323 0003 25       		.uleb128 0x25
+ 324 0004 0E       		.uleb128 0xe
+ 325 0005 13       		.uleb128 0x13
+ 326 0006 0B       		.uleb128 0xb
+ 327 0007 03       		.uleb128 0x3
+ 328 0008 0E       		.uleb128 0xe
+ 329 0009 1B       		.uleb128 0x1b
+ 330 000a 0E       		.uleb128 0xe
+ 331 000b 55       		.uleb128 0x55
+ 332 000c 17       		.uleb128 0x17
+ 333 000d 11       		.uleb128 0x11
+ 334 000e 01       		.uleb128 0x1
+ 335 000f 10       		.uleb128 0x10
+ 336 0010 17       		.uleb128 0x17
+ 337 0011 00       		.byte	0
+ 338 0012 00       		.byte	0
+ 339 0013 02       		.uleb128 0x2
+ 340 0014 24       		.uleb128 0x24
+ 341 0015 00       		.byte	0
+ 342 0016 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 9
 
 
- 344 0007 03       		.uleb128 0x3
- 345 0008 0E       		.uleb128 0xe
- 346 0009 1B       		.uleb128 0x1b
- 347 000a 0E       		.uleb128 0xe
- 348 000b 55       		.uleb128 0x55
- 349 000c 17       		.uleb128 0x17
- 350 000d 11       		.uleb128 0x11
- 351 000e 01       		.uleb128 0x1
- 352 000f 10       		.uleb128 0x10
- 353 0010 17       		.uleb128 0x17
- 354 0011 00       		.byte	0
- 355 0012 00       		.byte	0
- 356 0013 02       		.uleb128 0x2
- 357 0014 24       		.uleb128 0x24
- 358 0015 00       		.byte	0
- 359 0016 0B       		.uleb128 0xb
- 360 0017 0B       		.uleb128 0xb
- 361 0018 3E       		.uleb128 0x3e
- 362 0019 0B       		.uleb128 0xb
- 363 001a 03       		.uleb128 0x3
- 364 001b 0E       		.uleb128 0xe
- 365 001c 00       		.byte	0
- 366 001d 00       		.byte	0
- 367 001e 03       		.uleb128 0x3
- 368 001f 24       		.uleb128 0x24
- 369 0020 00       		.byte	0
- 370 0021 0B       		.uleb128 0xb
- 371 0022 0B       		.uleb128 0xb
- 372 0023 3E       		.uleb128 0x3e
- 373 0024 0B       		.uleb128 0xb
- 374 0025 03       		.uleb128 0x3
- 375 0026 08       		.uleb128 0x8
- 376 0027 00       		.byte	0
- 377 0028 00       		.byte	0
- 378 0029 04       		.uleb128 0x4
- 379 002a 16       		.uleb128 0x16
- 380 002b 00       		.byte	0
- 381 002c 03       		.uleb128 0x3
- 382 002d 0E       		.uleb128 0xe
- 383 002e 3A       		.uleb128 0x3a
- 384 002f 0B       		.uleb128 0xb
- 385 0030 3B       		.uleb128 0x3b
- 386 0031 05       		.uleb128 0x5
- 387 0032 49       		.uleb128 0x49
- 388 0033 13       		.uleb128 0x13
- 389 0034 00       		.byte	0
- 390 0035 00       		.byte	0
- 391 0036 05       		.uleb128 0x5
- 392 0037 2E       		.uleb128 0x2e
- 393 0038 01       		.byte	0x1
- 394 0039 3F       		.uleb128 0x3f
- 395 003a 19       		.uleb128 0x19
- 396 003b 03       		.uleb128 0x3
- 397 003c 0E       		.uleb128 0xe
- 398 003d 3A       		.uleb128 0x3a
- 399 003e 0B       		.uleb128 0xb
- 400 003f 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 10
+ 343 0017 0B       		.uleb128 0xb
+ 344 0018 3E       		.uleb128 0x3e
+ 345 0019 0B       		.uleb128 0xb
+ 346 001a 03       		.uleb128 0x3
+ 347 001b 0E       		.uleb128 0xe
+ 348 001c 00       		.byte	0
+ 349 001d 00       		.byte	0
+ 350 001e 03       		.uleb128 0x3
+ 351 001f 24       		.uleb128 0x24
+ 352 0020 00       		.byte	0
+ 353 0021 0B       		.uleb128 0xb
+ 354 0022 0B       		.uleb128 0xb
+ 355 0023 3E       		.uleb128 0x3e
+ 356 0024 0B       		.uleb128 0xb
+ 357 0025 03       		.uleb128 0x3
+ 358 0026 08       		.uleb128 0x8
+ 359 0027 00       		.byte	0
+ 360 0028 00       		.byte	0
+ 361 0029 04       		.uleb128 0x4
+ 362 002a 16       		.uleb128 0x16
+ 363 002b 00       		.byte	0
+ 364 002c 03       		.uleb128 0x3
+ 365 002d 0E       		.uleb128 0xe
+ 366 002e 3A       		.uleb128 0x3a
+ 367 002f 0B       		.uleb128 0xb
+ 368 0030 3B       		.uleb128 0x3b
+ 369 0031 05       		.uleb128 0x5
+ 370 0032 49       		.uleb128 0x49
+ 371 0033 13       		.uleb128 0x13
+ 372 0034 00       		.byte	0
+ 373 0035 00       		.byte	0
+ 374 0036 05       		.uleb128 0x5
+ 375 0037 2E       		.uleb128 0x2e
+ 376 0038 01       		.byte	0x1
+ 377 0039 3F       		.uleb128 0x3f
+ 378 003a 19       		.uleb128 0x19
+ 379 003b 03       		.uleb128 0x3
+ 380 003c 0E       		.uleb128 0xe
+ 381 003d 3A       		.uleb128 0x3a
+ 382 003e 0B       		.uleb128 0xb
+ 383 003f 3B       		.uleb128 0x3b
+ 384 0040 0B       		.uleb128 0xb
+ 385 0041 27       		.uleb128 0x27
+ 386 0042 19       		.uleb128 0x19
+ 387 0043 11       		.uleb128 0x11
+ 388 0044 01       		.uleb128 0x1
+ 389 0045 12       		.uleb128 0x12
+ 390 0046 06       		.uleb128 0x6
+ 391 0047 40       		.uleb128 0x40
+ 392 0048 18       		.uleb128 0x18
+ 393 0049 9642     		.uleb128 0x2116
+ 394 004b 19       		.uleb128 0x19
+ 395 004c 01       		.uleb128 0x1
+ 396 004d 13       		.uleb128 0x13
+ 397 004e 00       		.byte	0
+ 398 004f 00       		.byte	0
+ 399 0050 06       		.uleb128 0x6
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 10
 
 
- 401 0040 0B       		.uleb128 0xb
- 402 0041 27       		.uleb128 0x27
- 403 0042 19       		.uleb128 0x19
- 404 0043 11       		.uleb128 0x11
- 405 0044 01       		.uleb128 0x1
- 406 0045 12       		.uleb128 0x12
- 407 0046 06       		.uleb128 0x6
- 408 0047 40       		.uleb128 0x40
- 409 0048 18       		.uleb128 0x18
- 410 0049 9742     		.uleb128 0x2117
- 411 004b 19       		.uleb128 0x19
- 412 004c 01       		.uleb128 0x1
- 413 004d 13       		.uleb128 0x13
- 414 004e 00       		.byte	0
- 415 004f 00       		.byte	0
- 416 0050 06       		.uleb128 0x6
- 417 0051 34       		.uleb128 0x34
- 418 0052 00       		.byte	0
- 419 0053 03       		.uleb128 0x3
- 420 0054 0E       		.uleb128 0xe
- 421 0055 3A       		.uleb128 0x3a
- 422 0056 0B       		.uleb128 0xb
- 423 0057 3B       		.uleb128 0x3b
- 424 0058 0B       		.uleb128 0xb
- 425 0059 49       		.uleb128 0x49
- 426 005a 13       		.uleb128 0x13
- 427 005b 02       		.uleb128 0x2
- 428 005c 17       		.uleb128 0x17
- 429 005d 00       		.byte	0
- 430 005e 00       		.byte	0
- 431 005f 07       		.uleb128 0x7
- 432 0060 898201   		.uleb128 0x4109
- 433 0063 01       		.byte	0x1
- 434 0064 11       		.uleb128 0x11
- 435 0065 01       		.uleb128 0x1
- 436 0066 31       		.uleb128 0x31
- 437 0067 13       		.uleb128 0x13
- 438 0068 00       		.byte	0
- 439 0069 00       		.byte	0
- 440 006a 08       		.uleb128 0x8
- 441 006b 8A8201   		.uleb128 0x410a
- 442 006e 00       		.byte	0
- 443 006f 02       		.uleb128 0x2
- 444 0070 18       		.uleb128 0x18
- 445 0071 9142     		.uleb128 0x2111
- 446 0073 18       		.uleb128 0x18
- 447 0074 00       		.byte	0
- 448 0075 00       		.byte	0
- 449 0076 09       		.uleb128 0x9
- 450 0077 05       		.uleb128 0x5
- 451 0078 00       		.byte	0
- 452 0079 03       		.uleb128 0x3
- 453 007a 0E       		.uleb128 0xe
- 454 007b 3A       		.uleb128 0x3a
- 455 007c 0B       		.uleb128 0xb
- 456 007d 3B       		.uleb128 0x3b
- 457 007e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 11
+ 400 0051 34       		.uleb128 0x34
+ 401 0052 00       		.byte	0
+ 402 0053 03       		.uleb128 0x3
+ 403 0054 0E       		.uleb128 0xe
+ 404 0055 3A       		.uleb128 0x3a
+ 405 0056 0B       		.uleb128 0xb
+ 406 0057 3B       		.uleb128 0x3b
+ 407 0058 0B       		.uleb128 0xb
+ 408 0059 49       		.uleb128 0x49
+ 409 005a 13       		.uleb128 0x13
+ 410 005b 02       		.uleb128 0x2
+ 411 005c 18       		.uleb128 0x18
+ 412 005d 00       		.byte	0
+ 413 005e 00       		.byte	0
+ 414 005f 07       		.uleb128 0x7
+ 415 0060 05       		.uleb128 0x5
+ 416 0061 00       		.byte	0
+ 417 0062 03       		.uleb128 0x3
+ 418 0063 0E       		.uleb128 0xe
+ 419 0064 3A       		.uleb128 0x3a
+ 420 0065 0B       		.uleb128 0xb
+ 421 0066 3B       		.uleb128 0x3b
+ 422 0067 0B       		.uleb128 0xb
+ 423 0068 49       		.uleb128 0x49
+ 424 0069 13       		.uleb128 0x13
+ 425 006a 02       		.uleb128 0x2
+ 426 006b 18       		.uleb128 0x18
+ 427 006c 00       		.byte	0
+ 428 006d 00       		.byte	0
+ 429 006e 00       		.byte	0
+ 430              		.section	.debug_aranges,"",%progbits
+ 431 0000 2C000000 		.4byte	0x2c
+ 432 0004 0200     		.2byte	0x2
+ 433 0006 00000000 		.4byte	.Ldebug_info0
+ 434 000a 04       		.byte	0x4
+ 435 000b 00       		.byte	0
+ 436 000c 0000     		.2byte	0
+ 437 000e 0000     		.2byte	0
+ 438 0010 00000000 		.4byte	.LFB0
+ 439 0014 30000000 		.4byte	.LFE0-.LFB0
+ 440 0018 00000000 		.4byte	.LFB1
+ 441 001c 28000000 		.4byte	.LFE1-.LFB1
+ 442 0020 00000000 		.4byte	.LFB2
+ 443 0024 34000000 		.4byte	.LFE2-.LFB2
+ 444 0028 00000000 		.4byte	0
+ 445 002c 00000000 		.4byte	0
+ 446              		.section	.debug_ranges,"",%progbits
+ 447              	.Ldebug_ranges0:
+ 448 0000 00000000 		.4byte	.LFB0
+ 449 0004 30000000 		.4byte	.LFE0
+ 450 0008 00000000 		.4byte	.LFB1
+ 451 000c 28000000 		.4byte	.LFE1
+ 452 0010 00000000 		.4byte	.LFB2
+ 453 0014 34000000 		.4byte	.LFE2
+ 454 0018 00000000 		.4byte	0
+ 455 001c 00000000 		.4byte	0
+ 456              		.section	.debug_line,"",%progbits
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 11
 
 
- 458 007f 49       		.uleb128 0x49
- 459 0080 13       		.uleb128 0x13
- 460 0081 02       		.uleb128 0x2
- 461 0082 17       		.uleb128 0x17
- 462 0083 00       		.byte	0
- 463 0084 00       		.byte	0
- 464 0085 0A       		.uleb128 0xa
- 465 0086 898201   		.uleb128 0x4109
- 466 0089 00       		.byte	0
- 467 008a 11       		.uleb128 0x11
- 468 008b 01       		.uleb128 0x1
- 469 008c 31       		.uleb128 0x31
- 470 008d 13       		.uleb128 0x13
- 471 008e 00       		.byte	0
- 472 008f 00       		.byte	0
- 473 0090 0B       		.uleb128 0xb
- 474 0091 34       		.uleb128 0x34
- 475 0092 00       		.byte	0
- 476 0093 03       		.uleb128 0x3
- 477 0094 0E       		.uleb128 0xe
- 478 0095 3A       		.uleb128 0x3a
- 479 0096 0B       		.uleb128 0xb
- 480 0097 3B       		.uleb128 0x3b
- 481 0098 0B       		.uleb128 0xb
- 482 0099 49       		.uleb128 0x49
- 483 009a 13       		.uleb128 0x13
- 484 009b 02       		.uleb128 0x2
- 485 009c 18       		.uleb128 0x18
- 486 009d 00       		.byte	0
- 487 009e 00       		.byte	0
- 488 009f 0C       		.uleb128 0xc
- 489 00a0 2E       		.uleb128 0x2e
- 490 00a1 01       		.byte	0x1
- 491 00a2 3F       		.uleb128 0x3f
- 492 00a3 19       		.uleb128 0x19
- 493 00a4 03       		.uleb128 0x3
- 494 00a5 0E       		.uleb128 0xe
- 495 00a6 3A       		.uleb128 0x3a
- 496 00a7 0B       		.uleb128 0xb
- 497 00a8 3B       		.uleb128 0x3b
- 498 00a9 0B       		.uleb128 0xb
- 499 00aa 27       		.uleb128 0x27
- 500 00ab 19       		.uleb128 0x19
- 501 00ac 3C       		.uleb128 0x3c
- 502 00ad 19       		.uleb128 0x19
- 503 00ae 01       		.uleb128 0x1
- 504 00af 13       		.uleb128 0x13
- 505 00b0 00       		.byte	0
- 506 00b1 00       		.byte	0
- 507 00b2 0D       		.uleb128 0xd
- 508 00b3 05       		.uleb128 0x5
- 509 00b4 00       		.byte	0
- 510 00b5 49       		.uleb128 0x49
- 511 00b6 13       		.uleb128 0x13
- 512 00b7 00       		.byte	0
- 513 00b8 00       		.byte	0
- 514 00b9 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 12
+ 457              	.Ldebug_line0:
+ 458 0000 97000000 		.section	.debug_str,"MS",%progbits,1
+ 458      02004300 
+ 458      00000201 
+ 458      FB0E0D00 
+ 458      01010101 
+ 459              	.LASF15:
+ 460 0000 6368616E 		.ascii	"channel\000"
+ 460      6E656C00 
+ 461              	.LASF9:
+ 462 0008 666C6F61 		.ascii	"float\000"
+ 462      7400
+ 463              	.LASF18:
+ 464 000e 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 464      4320342E 
+ 464      392E3320 
+ 464      32303135 
+ 464      30333033 
+ 465 0041 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 465      20726576 
+ 465      6973696F 
+ 465      6E203232 
+ 465      31323230 
+ 466 0074 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 466      66756E63 
+ 466      74696F6E 
+ 466      2D736563 
+ 466      74696F6E 
+ 467              	.LASF20:
+ 468 009c 5C5C4D61 		.ascii	"\\\\Mac\\iCloud\\SKOLE\\4. Semester\\PRJ4 - Semeste"
+ 468      635C6943 
+ 468      6C6F7564 
+ 468      5C534B4F 
+ 468      4C455C34 
+ 469 00c9 7270726F 		.ascii	"rprojekt 4\\Maaleenhed\\Spaendingsmaaler uden FFT\\"
+ 469      6A656B74 
+ 469      20345C4D 
+ 469      61616C65 
+ 469      656E6865 
+ 470 00f9 4D61616C 		.ascii	"Maaler.cydsn\000"
+ 470      65722E63 
+ 470      7964736E 
+ 470      00
+ 471              	.LASF1:
+ 472 0106 756E7369 		.ascii	"unsigned char\000"
+ 472      676E6564 
+ 472      20636861 
+ 472      7200
+ 473              	.LASF5:
+ 474 0114 6C6F6E67 		.ascii	"long unsigned int\000"
+ 474      20756E73 
+ 474      69676E65 
+ 474      6420696E 
+ 474      7400
+ 475              	.LASF3:
+ 476 0126 73686F72 		.ascii	"short unsigned int\000"
+ 476      7420756E 
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 12
 
 
- 515 00ba 2E       		.uleb128 0x2e
- 516 00bb 01       		.byte	0x1
- 517 00bc 3F       		.uleb128 0x3f
- 518 00bd 19       		.uleb128 0x19
- 519 00be 03       		.uleb128 0x3
- 520 00bf 0E       		.uleb128 0xe
- 521 00c0 3A       		.uleb128 0x3a
- 522 00c1 0B       		.uleb128 0xb
- 523 00c2 3B       		.uleb128 0x3b
- 524 00c3 0B       		.uleb128 0xb
- 525 00c4 27       		.uleb128 0x27
- 526 00c5 19       		.uleb128 0x19
- 527 00c6 3C       		.uleb128 0x3c
- 528 00c7 19       		.uleb128 0x19
- 529 00c8 00       		.byte	0
- 530 00c9 00       		.byte	0
- 531 00ca 00       		.byte	0
- 532              		.section	.debug_loc,"",%progbits
- 533              	.Ldebug_loc0:
- 534              	.LLST0:
- 535 0000 02000000 		.4byte	.LVL0
- 536 0004 06000000 		.4byte	.LVL1
- 537 0008 0200     		.2byte	0x2
- 538 000a 30       		.byte	0x30
- 539 000b 9F       		.byte	0x9f
- 540 000c 06000000 		.4byte	.LVL1
- 541 0010 0E000000 		.4byte	.LVL3
- 542 0014 0100     		.2byte	0x1
- 543 0016 54       		.byte	0x54
- 544 0017 10000000 		.4byte	.LVL4
- 545 001b 1C000000 		.4byte	.LVL5
- 546 001f 0100     		.2byte	0x1
- 547 0021 54       		.byte	0x54
- 548 0022 00000000 		.4byte	0
- 549 0026 00000000 		.4byte	0
- 550              	.LLST1:
- 551 002a 00000000 		.4byte	.LVL6
- 552 002e 07000000 		.4byte	.LVL7-1
- 553 0032 0100     		.2byte	0x1
- 554 0034 50       		.byte	0x50
- 555 0035 07000000 		.4byte	.LVL7-1
- 556 0039 18000000 		.4byte	.LFE1
- 557 003d 0400     		.2byte	0x4
- 558 003f F3       		.byte	0xf3
- 559 0040 01       		.uleb128 0x1
- 560 0041 50       		.byte	0x50
- 561 0042 9F       		.byte	0x9f
- 562 0043 00000000 		.4byte	0
- 563 0047 00000000 		.4byte	0
- 564              	.LLST2:
- 565 004b 00000000 		.4byte	.LVL9
- 566 004f 08000000 		.4byte	.LVL10
- 567 0053 0100     		.2byte	0x1
- 568 0055 50       		.byte	0x50
- 569 0056 08000000 		.4byte	.LVL10
- 570 005a 20000000 		.4byte	.LFE2
- 571 005e 0400     		.2byte	0x4
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 13
+ 476      7369676E 
+ 476      65642069 
+ 476      6E7400
+ 477              	.LASF19:
+ 478 0139 47656E65 		.ascii	"Generated_Source\\PSoC5\\AMux_2.c\000"
+ 478      72617465 
+ 478      645F536F 
+ 478      75726365 
+ 478      5C50536F 
+ 479              	.LASF10:
+ 480 0159 646F7562 		.ascii	"double\000"
+ 480      6C6500
+ 481              	.LASF8:
+ 482 0160 756E7369 		.ascii	"unsigned int\000"
+ 482      676E6564 
+ 482      20696E74 
+ 482      00
+ 483              	.LASF12:
+ 484 016d 414D7578 		.ascii	"AMux_2_Start\000"
+ 484      5F325F53 
+ 484      74617274 
+ 484      00
+ 485              	.LASF7:
+ 486 017a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 486      206C6F6E 
+ 486      6720756E 
+ 486      7369676E 
+ 486      65642069 
+ 487              	.LASF16:
+ 488 0191 6368616E 		.ascii	"chan\000"
+ 488      00
+ 489              	.LASF17:
+ 490 0196 414D7578 		.ascii	"AMux_2_lastChannel\000"
+ 490      5F325F6C 
+ 490      61737443 
+ 490      68616E6E 
+ 490      656C00
+ 491              	.LASF6:
+ 492 01a9 6C6F6E67 		.ascii	"long long int\000"
+ 492      206C6F6E 
+ 492      6720696E 
+ 492      7400
+ 493              	.LASF11:
+ 494 01b7 63686172 		.ascii	"char\000"
+ 494      00
+ 495              	.LASF14:
+ 496 01bc 414D7578 		.ascii	"AMux_2_FastSelect\000"
+ 496      5F325F46 
+ 496      61737453 
+ 496      656C6563 
+ 496      7400
+ 497              	.LASF2:
+ 498 01ce 73686F72 		.ascii	"short int\000"
+ 498      7420696E 
+ 498      7400
+ 499              	.LASF21:
+ 500 01d8 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfjwJAA.s 			page 13
 
 
- 572 0060 F3       		.byte	0xf3
- 573 0061 01       		.uleb128 0x1
- 574 0062 50       		.byte	0x50
- 575 0063 9F       		.byte	0x9f
- 576 0064 00000000 		.4byte	0
- 577 0068 00000000 		.4byte	0
- 578              		.section	.debug_aranges,"",%progbits
- 579 0000 2C000000 		.4byte	0x2c
- 580 0004 0200     		.2byte	0x2
- 581 0006 00000000 		.4byte	.Ldebug_info0
- 582 000a 04       		.byte	0x4
- 583 000b 00       		.byte	0
- 584 000c 0000     		.2byte	0
- 585 000e 0000     		.2byte	0
- 586 0010 00000000 		.4byte	.LFB0
- 587 0014 20000000 		.4byte	.LFE0-.LFB0
- 588 0018 00000000 		.4byte	.LFB1
- 589 001c 18000000 		.4byte	.LFE1-.LFB1
- 590 0020 00000000 		.4byte	.LFB2
- 591 0024 20000000 		.4byte	.LFE2-.LFB2
- 592 0028 00000000 		.4byte	0
- 593 002c 00000000 		.4byte	0
- 594              		.section	.debug_ranges,"",%progbits
- 595              	.Ldebug_ranges0:
- 596 0000 00000000 		.4byte	.LFB0
- 597 0004 20000000 		.4byte	.LFE0
- 598 0008 00000000 		.4byte	.LFB1
- 599 000c 18000000 		.4byte	.LFE1
- 600 0010 00000000 		.4byte	.LFB2
- 601 0014 20000000 		.4byte	.LFE2
- 602 0018 00000000 		.4byte	0
- 603 001c 00000000 		.4byte	0
- 604              		.section	.debug_line,"",%progbits
- 605              	.Ldebug_line0:
- 606 0000 A6000000 		.section	.debug_str,"MS",%progbits,1
- 606      02005500 
- 606      00000201 
- 606      FB0E0D00 
- 606      01010101 
- 607              	.LASF15:
- 608 0000 6368616E 		.ascii	"channel\000"
- 608      6E656C00 
- 609              	.LASF23:
- 610 0008 414D7578 		.ascii	"AMux_2_Set\000"
- 610      5F325F53 
- 610      657400
- 611              	.LASF22:
- 612 0013 414D7578 		.ascii	"AMux_2_Unset\000"
- 612      5F325F55 
- 612      6E736574 
- 612      00
- 613              	.LASF9:
- 614 0020 666C6F61 		.ascii	"float\000"
- 614      7400
- 615              	.LASF1:
- 616 0026 756E7369 		.ascii	"unsigned char\000"
- 616      676E6564 
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 14
-
-
- 616      20636861 
- 616      7200
- 617              	.LASF5:
- 618 0034 6C6F6E67 		.ascii	"long unsigned int\000"
- 618      20756E73 
- 618      69676E65 
- 618      6420696E 
- 618      7400
- 619              	.LASF3:
- 620 0046 73686F72 		.ascii	"short unsigned int\000"
- 620      7420756E 
- 620      7369676E 
- 620      65642069 
- 620      6E7400
- 621              	.LASF20:
- 622 0059 5C5C4D61 		.ascii	"\\\\Mac\\iCloud\\SKOLE\\4. Semester\\PRJ4 - Semeste"
- 622      635C6943 
- 622      6C6F7564 
- 622      5C534B4F 
- 622      4C455C34 
- 623 0086 7270726F 		.ascii	"rprojekt 4\\Maaleenhed\\Spaendingsmaaler\\Maaler.cy"
- 623      6A656B74 
- 623      20345C4D 
- 623      61616C65 
- 623      656E6865 
- 624 00b6 64736E00 		.ascii	"dsn\000"
- 625              	.LASF19:
- 626 00ba 47656E65 		.ascii	"Generated_Source\\PSoC5\\AMux_2.c\000"
- 626      72617465 
- 626      645F536F 
- 626      75726365 
- 626      5C50536F 
- 627              	.LASF10:
- 628 00da 646F7562 		.ascii	"double\000"
- 628      6C6500
- 629              	.LASF18:
- 630 00e1 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 630      4320342E 
- 630      392E3320 
- 630      32303135 
- 630      30333033 
- 631 0114 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 631      20726576 
- 631      6973696F 
- 631      6E203232 
- 631      31323230 
- 632 0147 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 632      66756E63 
- 632      74696F6E 
- 632      2D736563 
- 632      74696F6E 
- 633              	.LASF8:
- 634 016f 756E7369 		.ascii	"unsigned int\000"
- 634      676E6564 
- 634      20696E74 
- 634      00
- 635              	.LASF12:
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\cc9EKHPp.s 			page 15
-
-
- 636 017c 414D7578 		.ascii	"AMux_2_Start\000"
- 636      5F325F53 
- 636      74617274 
- 636      00
- 637              	.LASF7:
- 638 0189 6C6F6E67 		.ascii	"long long unsigned int\000"
- 638      206C6F6E 
- 638      6720756E 
- 638      7369676E 
- 638      65642069 
- 639              	.LASF16:
- 640 01a0 6368616E 		.ascii	"chan\000"
- 640      00
- 641              	.LASF17:
- 642 01a5 414D7578 		.ascii	"AMux_2_lastChannel\000"
- 642      5F325F6C 
- 642      61737443 
- 642      68616E6E 
- 642      656C00
- 643              	.LASF6:
- 644 01b8 6C6F6E67 		.ascii	"long long int\000"
- 644      206C6F6E 
- 644      6720696E 
- 644      7400
- 645              	.LASF11:
- 646 01c6 63686172 		.ascii	"char\000"
- 646      00
- 647              	.LASF14:
- 648 01cb 414D7578 		.ascii	"AMux_2_FastSelect\000"
- 648      5F325F46 
- 648      61737453 
- 648      656C6563 
- 648      7400
- 649              	.LASF2:
- 650 01dd 73686F72 		.ascii	"short int\000"
- 650      7420696E 
- 650      7400
- 651              	.LASF21:
- 652 01e7 75696E74 		.ascii	"uint8\000"
- 652      3800
- 653              	.LASF4:
- 654 01ed 6C6F6E67 		.ascii	"long int\000"
- 654      20696E74 
- 654      00
- 655              	.LASF0:
- 656 01f6 7369676E 		.ascii	"signed char\000"
- 656      65642063 
- 656      68617200 
- 657              	.LASF13:
- 658 0202 414D7578 		.ascii	"AMux_2_Select\000"
- 658      5F325F53 
- 658      656C6563 
- 658      7400
- 659              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 500      3800
+ 501              	.LASF4:
+ 502 01de 6C6F6E67 		.ascii	"long int\000"
+ 502      20696E74 
+ 502      00
+ 503              	.LASF0:
+ 504 01e7 7369676E 		.ascii	"signed char\000"
+ 504      65642063 
+ 504      68617200 
+ 505              	.LASF13:
+ 506 01f3 414D7578 		.ascii	"AMux_2_Select\000"
+ 506      5F325F53 
+ 506      656C6563 
+ 506      7400
+ 507              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

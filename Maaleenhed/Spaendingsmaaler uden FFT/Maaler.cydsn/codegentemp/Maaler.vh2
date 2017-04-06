@@ -2,7 +2,7 @@
 --	Conversion of Maaler.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun Apr 02 10:36:42 2017
+--	Thu Apr 06 10:16:34 2017
 --
 
 USE cypress.cypress.all;
