@@ -23,7 +23,7 @@ int main(void)
     double Amp_Ampere = 0;
     double RMS_Ampere = 0;
     double PF = 0;
-    
+    double THD;
     
     double samples_Ampere[N_points] = {3452,3579,3599,3509,3319,3048,2726,2386,2063,1792,1600,1510,1528,1654,1875,2168,2500,2838,3147,3393,3452,3579,3599,3509,3319,3048,2726,2386,2063,1792,1600,1510,1528,1654,1875,2168,2500,2838,3147,3393,3452,3579,3599,3509,3319,3048,2726,2386,2063,1792,1600,1510,1528,1654,1875,2168,2500,2838,3147,3393,3452,3579,3599,3509};
     
@@ -37,12 +37,11 @@ int main(void)
     for(p = 0; p<N_points ; p++)
     {
         Re_volt[p] = samples_volt[p];
-    }
-    
-    for(p = 0; p<N_points ; p++)
-    {
+        Im_volt[p] = 0;
+        
         Re_Ampere[p] = samples_Ampere[p];
-    }    
+        Im_Ampere[p] = 0;
+    }   
     
     FFT(1,exponent,Re_volt,Im_volt,Abs_volt);
     FFT(1,exponent,Re_Ampere,Im_Ampere,Abs_Ampere);
@@ -53,10 +52,8 @@ int main(void)
     Amp_Ampere = calculate_50Hz_Amp(Abs_Ampere);
     RMS_Ampere = calculate_50Hz_RMS(Abs_Ampere);
     PF = calculate_50Hz_PF();
-    
- 
-    
-    
+    THD = calculate_THD();
+     
     }
 }
 
