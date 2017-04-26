@@ -29,8 +29,6 @@
 #include "AMux_1.h"
 #include "ProbeI1_aliases.h"
 #include "ProbeI1.h"
-#include "ProbeI2_aliases.h"
-#include "ProbeI2.h"
 #include "AMux_2.h"
 #include "ADC_DelSig_1_Ext_CP_Clk.h"
 #include "ADC_DelSig_1_IRQ.h"

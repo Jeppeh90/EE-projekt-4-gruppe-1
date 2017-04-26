@@ -12,6 +12,7 @@
 #include "project.h"
 #include "stdio.h"
 #include "sample.h"
+#include "fft.h"
 #define SIZE 128
 
 int main(void)
@@ -28,13 +29,42 @@ int main(void)
     
     int SampleArrayU[SIZE/2]={0};
     int SampleArrayI[SIZE/2]={0};
+    int p = 0;
+    double Amp_Volt = 0;
+    double RMS_Volt = 0;
+    double Amp_Ampere = 0;
+    double RMS_Ampere = 0;
+    double PF = 0;
 
     while(1)
     {
     /*Samplefunktion*/
     
     sampleUandI(SampleArrayU,SampleArrayI,SIZE);
+
+    
+    for(p = 0; p<N_points ; p++)
+    {
+        Re_volt[p] = SampleArrayU[p];
+        Im_volt[p] = 0;
+        
+        Re_Ampere[p] = SampleArrayI[p];
+        Im_Ampere[p] = 0;
     }
+      
+    
+    FFT(2,exponent,Re_volt,Im_volt,Abs_volt);
+    FFT(2,exponent,Re_Ampere,Im_Ampere,Abs_Ampere);
+    
+    
+    Amp_Volt = calculate_50Hz_Amp(Abs_volt);
+    RMS_Volt = calculate_50Hz_RMS(Abs_volt);
+    Amp_Ampere = calculate_50Hz_Amp(Abs_Ampere);
+    RMS_Ampere = calculate_50Hz_RMS(Abs_Ampere);
+    PF = calculate_50Hz_PF();
+    }   
+    
+    
 }
 
 /* [] END OF FILE */

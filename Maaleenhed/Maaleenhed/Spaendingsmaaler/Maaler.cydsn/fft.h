@@ -101,22 +101,22 @@ double calculate_50Hz_Amp(double *u)
 //    double delta_f_bin = fsample/N_points;
 //    int bin_number = frekvens/delta_f_bin;
     
-    return u[3];
+    return u[1];
     
     
 }
 
 double calculate_50Hz_RMS(double *u)
 {
-    return u[3]/sqrt(2);  
+    return u[1]/sqrt(2);  
 }
 
 double calculate_50Hz_PF()
 {
-    double angle_Volt = atan(Im_volt[3]/Re_volt[3]);
-    double angle_Ampere = atan(Im_Ampere[3]/Re_Ampere[3]);
+    double angle_Volt = atan(Im_volt[1]/Re_volt[1]);
+    double angle_Ampere = atan(Im_Ampere[1]/Re_Ampere[1]);
     
-    return cos(angle_Volt - angle_Ampere);
+    return cos(angle_Ampere-angle_Volt);
     
 }
 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 1
 
 
    1              		.syntax unified
@@ -18,15 +18,965 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 1
   15              		.text
   16              	.Ltext0:
   17              		.cfi_sections	.debug_frame
-  18              		.section	.text.main,"ax",%progbits
-  19              		.align	2
-  20              		.global	main
-  21              		.thumb
-  22              		.thumb_func
-  23              		.type	main, %function
-  24              	main:
-  25              	.LFB63:
-  26              		.file 1 "main.c"
+  18              		.global	Abs_volt
+  19              		.bss
+  20              		.align	3
+  21              		.type	Abs_volt, %object
+  22              		.size	Abs_volt, 512
+  23              	Abs_volt:
+  24 0000 00000000 		.space	512
+  24      00000000 
+  24      00000000 
+  24      00000000 
+  24      00000000 
+  25              		.global	Re_volt
+  26              		.align	3
+  27              		.type	Re_volt, %object
+  28              		.size	Re_volt, 512
+  29              	Re_volt:
+  30 0200 00000000 		.space	512
+  30      00000000 
+  30      00000000 
+  30      00000000 
+  30      00000000 
+  31              		.global	Im_volt
+  32              		.align	3
+  33              		.type	Im_volt, %object
+  34              		.size	Im_volt, 512
+  35              	Im_volt:
+  36 0400 00000000 		.space	512
+  36      00000000 
+  36      00000000 
+  36      00000000 
+  36      00000000 
+  37              		.global	Abs_Ampere
+  38              		.align	3
+  39              		.type	Abs_Ampere, %object
+  40              		.size	Abs_Ampere, 512
+  41              	Abs_Ampere:
+  42 0600 00000000 		.space	512
+  42      00000000 
+  42      00000000 
+  42      00000000 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 2
+
+
+  42      00000000 
+  43              		.global	Re_Ampere
+  44              		.align	3
+  45              		.type	Re_Ampere, %object
+  46              		.size	Re_Ampere, 512
+  47              	Re_Ampere:
+  48 0800 00000000 		.space	512
+  48      00000000 
+  48      00000000 
+  48      00000000 
+  48      00000000 
+  49              		.global	Im_Ampere
+  50              		.align	3
+  51              		.type	Im_Ampere, %object
+  52              		.size	Im_Ampere, 512
+  53              	Im_Ampere:
+  54 0a00 00000000 		.space	512
+  54      00000000 
+  54      00000000 
+  54      00000000 
+  54      00000000 
+  55              		.global	__aeabi_dmul
+  56              		.global	__aeabi_dsub
+  57              		.global	__aeabi_dadd
+  58              		.global	__aeabi_ddiv
+  59              		.section	.text.FFT,"ax",%progbits
+  60              		.align	2
+  61              		.global	FFT
+  62              		.thumb
+  63              		.thumb_func
+  64              		.type	FFT, %function
+  65              	FFT:
+  66              	.LFB63:
+  67              		.file 1 "fft.h"
+   1:fft.h         **** #include "math.h"				 //mathematical library
+   2:fft.h         **** 
+   3:fft.h         **** // FFT parameters
+   4:fft.h         **** #define N_points 64              //number of points				
+   5:fft.h         **** #define exponent log(64)/log(2)  //log2(N_points); for N_points=64 -> exponent=6
+   6:fft.h         **** #define pi 3.14159265359
+   7:fft.h         **** 
+   8:fft.h         **** 
+   9:fft.h         **** 
+  10:fft.h         **** // FFT variables
+  11:fft.h         **** double Abs_volt[N_points]={0};        //arrays
+  12:fft.h         **** double Re_volt[N_points]={0};
+  13:fft.h         **** double Im_volt[N_points]={0};
+  14:fft.h         **** 
+  15:fft.h         **** double Abs_Ampere[N_points]={0};        //arrays
+  16:fft.h         **** double Re_Ampere[N_points]={0};
+  17:fft.h         **** double Im_Ampere[N_points]={0};
+  18:fft.h         **** 
+  19:fft.h         **** 
+  20:fft.h         **** // FFT function
+  21:fft.h         **** void FFT(int dir,long m,double *x,double *y, double *u)
+  22:fft.h         **** {
+  68              		.loc 1 22 0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 3
+
+
+  69              		.cfi_startproc
+  70              		@ args = 4, pretend = 0, frame = 128
+  71              		@ frame_needed = 1, uses_anonymous_args = 0
+  72 0000 2DE9B043 		push	{r4, r5, r7, r8, r9, lr}
+  73              		.cfi_def_cfa_offset 24
+  74              		.cfi_offset 4, -24
+  75              		.cfi_offset 5, -20
+  76              		.cfi_offset 7, -16
+  77              		.cfi_offset 8, -12
+  78              		.cfi_offset 9, -8
+  79              		.cfi_offset 14, -4
+  80 0004 A0B0     		sub	sp, sp, #128
+  81              		.cfi_def_cfa_offset 152
+  82 0006 00AF     		add	r7, sp, #0
+  83              		.cfi_def_cfa_register 7
+  84 0008 F860     		str	r0, [r7, #12]
+  85 000a B960     		str	r1, [r7, #8]
+  86 000c 7A60     		str	r2, [r7, #4]
+  87 000e 3B60     		str	r3, [r7]
+  23:fft.h         ****    // dir:  forward (=1) o inverse (!=1) transform; 
+  24:fft.h         ****    // m exponent;
+  25:fft.h         ****    
+  26:fft.h         ****    long n,i,i1,j,k,i2,l,l1,l2;
+  27:fft.h         ****    double c1,c2,tx,ty,t1,t2,u1,u2,z;
+  28:fft.h         **** 
+  29:fft.h         ****    /* Calculate the number of points */
+  30:fft.h         ****    n = 1;
+  88              		.loc 1 30 0
+  89 0010 0123     		movs	r3, #1
+  90 0012 FB67     		str	r3, [r7, #124]
+  31:fft.h         ****    for (i=0;i<m;i++) 
+  91              		.loc 1 31 0
+  92 0014 0023     		movs	r3, #0
+  93 0016 BB67     		str	r3, [r7, #120]
+  94 0018 05E0     		b	.L2
+  95              	.L3:
+  32:fft.h         ****       n *= 2;
+  96              		.loc 1 32 0 discriminator 3
+  97 001a FB6F     		ldr	r3, [r7, #124]
+  98 001c 5B00     		lsls	r3, r3, #1
+  99 001e FB67     		str	r3, [r7, #124]
+  31:fft.h         ****    for (i=0;i<m;i++) 
+ 100              		.loc 1 31 0 discriminator 3
+ 101 0020 BB6F     		ldr	r3, [r7, #120]
+ 102 0022 0133     		adds	r3, r3, #1
+ 103 0024 BB67     		str	r3, [r7, #120]
+ 104              	.L2:
+  31:fft.h         ****    for (i=0;i<m;i++) 
+ 105              		.loc 1 31 0 is_stmt 0 discriminator 1
+ 106 0026 BA6F     		ldr	r2, [r7, #120]
+ 107 0028 BB68     		ldr	r3, [r7, #8]
+ 108 002a 9A42     		cmp	r2, r3
+ 109 002c F5DB     		blt	.L3
+  33:fft.h         **** 
+  34:fft.h         ****    /* Do the bit reversal */
+  35:fft.h         ****    i2 = n >> 1;
+ 110              		.loc 1 35 0 is_stmt 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 4
+
+
+ 111 002e FB6F     		ldr	r3, [r7, #124]
+ 112 0030 5B10     		asrs	r3, r3, #1
+ 113 0032 7B64     		str	r3, [r7, #68]
+  36:fft.h         ****    j = 0;
+ 114              		.loc 1 36 0
+ 115 0034 0023     		movs	r3, #0
+ 116 0036 7B67     		str	r3, [r7, #116]
+  37:fft.h         ****    for (i=0;i<n-1;i++) {
+ 117              		.loc 1 37 0
+ 118 0038 0023     		movs	r3, #0
+ 119 003a BB67     		str	r3, [r7, #120]
+ 120 003c 50E0     		b	.L4
+ 121              	.L8:
+  38:fft.h         ****       if (i < j) {
+ 122              		.loc 1 38 0
+ 123 003e BA6F     		ldr	r2, [r7, #120]
+ 124 0040 7B6F     		ldr	r3, [r7, #116]
+ 125 0042 9A42     		cmp	r2, r3
+ 126 0044 37DA     		bge	.L5
+  39:fft.h         ****          tx = x[i];
+ 127              		.loc 1 39 0
+ 128 0046 BB6F     		ldr	r3, [r7, #120]
+ 129 0048 DB00     		lsls	r3, r3, #3
+ 130 004a 7A68     		ldr	r2, [r7, #4]
+ 131 004c 1344     		add	r3, r3, r2
+ 132 004e D3E90023 		ldrd	r2, [r3]
+ 133 0052 C7E90E23 		strd	r2, [r7, #56]
+  40:fft.h         ****          ty = y[i];
+ 134              		.loc 1 40 0
+ 135 0056 BB6F     		ldr	r3, [r7, #120]
+ 136 0058 DB00     		lsls	r3, r3, #3
+ 137 005a 3A68     		ldr	r2, [r7]
+ 138 005c 1344     		add	r3, r3, r2
+ 139 005e D3E90023 		ldrd	r2, [r3]
+ 140 0062 C7E90C23 		strd	r2, [r7, #48]
+  41:fft.h         ****          x[i] = x[j];
+ 141              		.loc 1 41 0
+ 142 0066 BB6F     		ldr	r3, [r7, #120]
+ 143 0068 DB00     		lsls	r3, r3, #3
+ 144 006a 7A68     		ldr	r2, [r7, #4]
+ 145 006c D118     		adds	r1, r2, r3
+ 146 006e 7B6F     		ldr	r3, [r7, #116]
+ 147 0070 DB00     		lsls	r3, r3, #3
+ 148 0072 7A68     		ldr	r2, [r7, #4]
+ 149 0074 1344     		add	r3, r3, r2
+ 150 0076 D3E90023 		ldrd	r2, [r3]
+ 151 007a C1E90023 		strd	r2, [r1]
+  42:fft.h         ****          y[i] = y[j];
+ 152              		.loc 1 42 0
+ 153 007e BB6F     		ldr	r3, [r7, #120]
+ 154 0080 DB00     		lsls	r3, r3, #3
+ 155 0082 3A68     		ldr	r2, [r7]
+ 156 0084 D118     		adds	r1, r2, r3
+ 157 0086 7B6F     		ldr	r3, [r7, #116]
+ 158 0088 DB00     		lsls	r3, r3, #3
+ 159 008a 3A68     		ldr	r2, [r7]
+ 160 008c 1344     		add	r3, r3, r2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 5
+
+
+ 161 008e D3E90023 		ldrd	r2, [r3]
+ 162 0092 C1E90023 		strd	r2, [r1]
+  43:fft.h         ****          x[j] = tx;
+ 163              		.loc 1 43 0
+ 164 0096 7B6F     		ldr	r3, [r7, #116]
+ 165 0098 DB00     		lsls	r3, r3, #3
+ 166 009a 7A68     		ldr	r2, [r7, #4]
+ 167 009c D118     		adds	r1, r2, r3
+ 168 009e D7E90E23 		ldrd	r2, [r7, #56]
+ 169 00a2 C1E90023 		strd	r2, [r1]
+  44:fft.h         ****          y[j] = ty;
+ 170              		.loc 1 44 0
+ 171 00a6 7B6F     		ldr	r3, [r7, #116]
+ 172 00a8 DB00     		lsls	r3, r3, #3
+ 173 00aa 3A68     		ldr	r2, [r7]
+ 174 00ac D118     		adds	r1, r2, r3
+ 175 00ae D7E90C23 		ldrd	r2, [r7, #48]
+ 176 00b2 C1E90023 		strd	r2, [r1]
+ 177              	.L5:
+  45:fft.h         ****       }
+  46:fft.h         ****       k = i2;
+ 178              		.loc 1 46 0
+ 179 00b6 7B6C     		ldr	r3, [r7, #68]
+ 180 00b8 3B67     		str	r3, [r7, #112]
+  47:fft.h         ****       while (k <= j) {
+ 181              		.loc 1 47 0
+ 182 00ba 06E0     		b	.L6
+ 183              	.L7:
+  48:fft.h         ****          j -= k;
+ 184              		.loc 1 48 0
+ 185 00bc 7A6F     		ldr	r2, [r7, #116]
+ 186 00be 3B6F     		ldr	r3, [r7, #112]
+ 187 00c0 D31A     		subs	r3, r2, r3
+ 188 00c2 7B67     		str	r3, [r7, #116]
+  49:fft.h         ****          k >>= 1;
+ 189              		.loc 1 49 0
+ 190 00c4 3B6F     		ldr	r3, [r7, #112]
+ 191 00c6 5B10     		asrs	r3, r3, #1
+ 192 00c8 3B67     		str	r3, [r7, #112]
+ 193              	.L6:
+  47:fft.h         ****       while (k <= j) {
+ 194              		.loc 1 47 0
+ 195 00ca 3A6F     		ldr	r2, [r7, #112]
+ 196 00cc 7B6F     		ldr	r3, [r7, #116]
+ 197 00ce 9A42     		cmp	r2, r3
+ 198 00d0 F4DD     		ble	.L7
+  50:fft.h         ****       }
+  51:fft.h         ****       j += k;
+ 199              		.loc 1 51 0 discriminator 2
+ 200 00d2 7A6F     		ldr	r2, [r7, #116]
+ 201 00d4 3B6F     		ldr	r3, [r7, #112]
+ 202 00d6 1344     		add	r3, r3, r2
+ 203 00d8 7B67     		str	r3, [r7, #116]
+  37:fft.h         ****       if (i < j) {
+ 204              		.loc 1 37 0 discriminator 2
+ 205 00da BB6F     		ldr	r3, [r7, #120]
+ 206 00dc 0133     		adds	r3, r3, #1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 6
+
+
+ 207 00de BB67     		str	r3, [r7, #120]
+ 208              	.L4:
+  37:fft.h         ****       if (i < j) {
+ 209              		.loc 1 37 0 is_stmt 0 discriminator 1
+ 210 00e0 FB6F     		ldr	r3, [r7, #124]
+ 211 00e2 5A1E     		subs	r2, r3, #1
+ 212 00e4 BB6F     		ldr	r3, [r7, #120]
+ 213 00e6 9A42     		cmp	r2, r3
+ 214 00e8 A9DC     		bgt	.L8
+  52:fft.h         ****    }
+  53:fft.h         **** 
+  54:fft.h         ****    /* Compute the FFT */
+  55:fft.h         ****    c1 = -1.0; 
+ 215              		.loc 1 55 0 is_stmt 1
+ 216 00ea 4FF00002 		mov	r2, #0
+ 217 00ee A94B     		ldr	r3, .L18
+ 218 00f0 C7E91823 		strd	r2, [r7, #96]
+  56:fft.h         ****    c2 = 0.0;
+ 219              		.loc 1 56 0
+ 220 00f4 4FF00002 		mov	r2, #0
+ 221 00f8 4FF00003 		mov	r3, #0
+ 222 00fc C7E91623 		strd	r2, [r7, #88]
+  57:fft.h         ****    l2 = 1;
+ 223              		.loc 1 57 0
+ 224 0100 0123     		movs	r3, #1
+ 225 0102 BB66     		str	r3, [r7, #104]
+  58:fft.h         ****    for (l=0;l<m;l++) {
+ 226              		.loc 1 58 0
+ 227 0104 0023     		movs	r3, #0
+ 228 0106 FB66     		str	r3, [r7, #108]
+ 229 0108 3CE1     		b	.L9
+ 230              	.L15:
+  59:fft.h         ****       l1 = l2;
+ 231              		.loc 1 59 0
+ 232 010a BB6E     		ldr	r3, [r7, #104]
+ 233 010c FB62     		str	r3, [r7, #44]
+  60:fft.h         ****       l2 <<= 1;
+ 234              		.loc 1 60 0
+ 235 010e BB6E     		ldr	r3, [r7, #104]
+ 236 0110 5B00     		lsls	r3, r3, #1
+ 237 0112 BB66     		str	r3, [r7, #104]
+  61:fft.h         ****       u1 = 1.0; 
+ 238              		.loc 1 61 0
+ 239 0114 4FF00002 		mov	r2, #0
+ 240 0118 9F4B     		ldr	r3, .L18+4
+ 241 011a C7E91423 		strd	r2, [r7, #80]
+  62:fft.h         ****       u2 = 0.0;
+ 242              		.loc 1 62 0
+ 243 011e 4FF00002 		mov	r2, #0
+ 244 0122 4FF00003 		mov	r3, #0
+ 245 0126 C7E91223 		strd	r2, [r7, #72]
+  63:fft.h         ****       for (j=0;j<l1;j++) {
+ 246              		.loc 1 63 0
+ 247 012a 0023     		movs	r3, #0
+ 248 012c 7B67     		str	r3, [r7, #116]
+ 249 012e E6E0     		b	.L10
+ 250              	.L13:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 7
+
+
+  64:fft.h         ****          for (i=j;i<n;i+=l2) {
+ 251              		.loc 1 64 0
+ 252 0130 7B6F     		ldr	r3, [r7, #116]
+ 253 0132 BB67     		str	r3, [r7, #120]
+ 254 0134 A3E0     		b	.L11
+ 255              	.L12:
+  65:fft.h         ****             i1 = i + l1;
+ 256              		.loc 1 65 0 discriminator 3
+ 257 0136 BA6F     		ldr	r2, [r7, #120]
+ 258 0138 FB6A     		ldr	r3, [r7, #44]
+ 259 013a 1344     		add	r3, r3, r2
+ 260 013c BB62     		str	r3, [r7, #40]
+  66:fft.h         ****             t1 = u1 * x[i1] - u2 * y[i1];
+ 261              		.loc 1 66 0 discriminator 3
+ 262 013e BB6A     		ldr	r3, [r7, #40]
+ 263 0140 DB00     		lsls	r3, r3, #3
+ 264 0142 7A68     		ldr	r2, [r7, #4]
+ 265 0144 1344     		add	r3, r3, r2
+ 266 0146 D3E90023 		ldrd	r2, [r3]
+ 267 014a 1046     		mov	r0, r2
+ 268 014c 1946     		mov	r1, r3
+ 269 014e D7E91423 		ldrd	r2, [r7, #80]
+ 270 0152 FFF7FEFF 		bl	__aeabi_dmul
+ 271 0156 0246     		mov	r2, r0
+ 272 0158 0B46     		mov	r3, r1
+ 273 015a 1446     		mov	r4, r2
+ 274 015c 1D46     		mov	r5, r3
+ 275 015e BB6A     		ldr	r3, [r7, #40]
+ 276 0160 DB00     		lsls	r3, r3, #3
+ 277 0162 3A68     		ldr	r2, [r7]
+ 278 0164 1344     		add	r3, r3, r2
+ 279 0166 D3E90023 		ldrd	r2, [r3]
+ 280 016a 1046     		mov	r0, r2
+ 281 016c 1946     		mov	r1, r3
+ 282 016e D7E91223 		ldrd	r2, [r7, #72]
+ 283 0172 FFF7FEFF 		bl	__aeabi_dmul
+ 284 0176 0246     		mov	r2, r0
+ 285 0178 0B46     		mov	r3, r1
+ 286 017a 2046     		mov	r0, r4
+ 287 017c 2946     		mov	r1, r5
+ 288 017e FFF7FEFF 		bl	__aeabi_dsub
+ 289 0182 0246     		mov	r2, r0
+ 290 0184 0B46     		mov	r3, r1
+ 291 0186 C7E90823 		strd	r2, [r7, #32]
+  67:fft.h         ****             t2 = u1 * y[i1] + u2 * x[i1];
+ 292              		.loc 1 67 0 discriminator 3
+ 293 018a BB6A     		ldr	r3, [r7, #40]
+ 294 018c DB00     		lsls	r3, r3, #3
+ 295 018e 3A68     		ldr	r2, [r7]
+ 296 0190 1344     		add	r3, r3, r2
+ 297 0192 D3E90023 		ldrd	r2, [r3]
+ 298 0196 1046     		mov	r0, r2
+ 299 0198 1946     		mov	r1, r3
+ 300 019a D7E91423 		ldrd	r2, [r7, #80]
+ 301 019e FFF7FEFF 		bl	__aeabi_dmul
+ 302 01a2 0246     		mov	r2, r0
+ 303 01a4 0B46     		mov	r3, r1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 8
+
+
+ 304 01a6 1446     		mov	r4, r2
+ 305 01a8 1D46     		mov	r5, r3
+ 306 01aa BB6A     		ldr	r3, [r7, #40]
+ 307 01ac DB00     		lsls	r3, r3, #3
+ 308 01ae 7A68     		ldr	r2, [r7, #4]
+ 309 01b0 1344     		add	r3, r3, r2
+ 310 01b2 D3E90023 		ldrd	r2, [r3]
+ 311 01b6 1046     		mov	r0, r2
+ 312 01b8 1946     		mov	r1, r3
+ 313 01ba D7E91223 		ldrd	r2, [r7, #72]
+ 314 01be FFF7FEFF 		bl	__aeabi_dmul
+ 315 01c2 0246     		mov	r2, r0
+ 316 01c4 0B46     		mov	r3, r1
+ 317 01c6 2046     		mov	r0, r4
+ 318 01c8 2946     		mov	r1, r5
+ 319 01ca FFF7FEFF 		bl	__aeabi_dadd
+ 320 01ce 0246     		mov	r2, r0
+ 321 01d0 0B46     		mov	r3, r1
+ 322 01d2 C7E90623 		strd	r2, [r7, #24]
+  68:fft.h         ****             x[i1] = x[i] - t1; 
+ 323              		.loc 1 68 0 discriminator 3
+ 324 01d6 BB6A     		ldr	r3, [r7, #40]
+ 325 01d8 DB00     		lsls	r3, r3, #3
+ 326 01da 7A68     		ldr	r2, [r7, #4]
+ 327 01dc D418     		adds	r4, r2, r3
+ 328 01de BB6F     		ldr	r3, [r7, #120]
+ 329 01e0 DB00     		lsls	r3, r3, #3
+ 330 01e2 7A68     		ldr	r2, [r7, #4]
+ 331 01e4 1344     		add	r3, r3, r2
+ 332 01e6 D3E90023 		ldrd	r2, [r3]
+ 333 01ea 1046     		mov	r0, r2
+ 334 01ec 1946     		mov	r1, r3
+ 335 01ee D7E90823 		ldrd	r2, [r7, #32]
+ 336 01f2 FFF7FEFF 		bl	__aeabi_dsub
+ 337 01f6 0246     		mov	r2, r0
+ 338 01f8 0B46     		mov	r3, r1
+ 339 01fa C4E90023 		strd	r2, [r4]
+  69:fft.h         ****             y[i1] = y[i] - t2;
+ 340              		.loc 1 69 0 discriminator 3
+ 341 01fe BB6A     		ldr	r3, [r7, #40]
+ 342 0200 DB00     		lsls	r3, r3, #3
+ 343 0202 3A68     		ldr	r2, [r7]
+ 344 0204 D418     		adds	r4, r2, r3
+ 345 0206 BB6F     		ldr	r3, [r7, #120]
+ 346 0208 DB00     		lsls	r3, r3, #3
+ 347 020a 3A68     		ldr	r2, [r7]
+ 348 020c 1344     		add	r3, r3, r2
+ 349 020e D3E90023 		ldrd	r2, [r3]
+ 350 0212 1046     		mov	r0, r2
+ 351 0214 1946     		mov	r1, r3
+ 352 0216 D7E90623 		ldrd	r2, [r7, #24]
+ 353 021a FFF7FEFF 		bl	__aeabi_dsub
+ 354 021e 0246     		mov	r2, r0
+ 355 0220 0B46     		mov	r3, r1
+ 356 0222 C4E90023 		strd	r2, [r4]
+  70:fft.h         ****             x[i] += t1;
+ 357              		.loc 1 70 0 discriminator 3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 9
+
+
+ 358 0226 BB6F     		ldr	r3, [r7, #120]
+ 359 0228 DB00     		lsls	r3, r3, #3
+ 360 022a 7A68     		ldr	r2, [r7, #4]
+ 361 022c D418     		adds	r4, r2, r3
+ 362 022e BB6F     		ldr	r3, [r7, #120]
+ 363 0230 DB00     		lsls	r3, r3, #3
+ 364 0232 7A68     		ldr	r2, [r7, #4]
+ 365 0234 1344     		add	r3, r3, r2
+ 366 0236 D3E90023 		ldrd	r2, [r3]
+ 367 023a 1046     		mov	r0, r2
+ 368 023c 1946     		mov	r1, r3
+ 369 023e D7E90823 		ldrd	r2, [r7, #32]
+ 370 0242 FFF7FEFF 		bl	__aeabi_dadd
+ 371 0246 0246     		mov	r2, r0
+ 372 0248 0B46     		mov	r3, r1
+ 373 024a C4E90023 		strd	r2, [r4]
+  71:fft.h         ****             y[i] += t2;
+ 374              		.loc 1 71 0 discriminator 3
+ 375 024e BB6F     		ldr	r3, [r7, #120]
+ 376 0250 DB00     		lsls	r3, r3, #3
+ 377 0252 3A68     		ldr	r2, [r7]
+ 378 0254 D418     		adds	r4, r2, r3
+ 379 0256 BB6F     		ldr	r3, [r7, #120]
+ 380 0258 DB00     		lsls	r3, r3, #3
+ 381 025a 3A68     		ldr	r2, [r7]
+ 382 025c 1344     		add	r3, r3, r2
+ 383 025e D3E90023 		ldrd	r2, [r3]
+ 384 0262 1046     		mov	r0, r2
+ 385 0264 1946     		mov	r1, r3
+ 386 0266 D7E90623 		ldrd	r2, [r7, #24]
+ 387 026a FFF7FEFF 		bl	__aeabi_dadd
+ 388 026e 0246     		mov	r2, r0
+ 389 0270 0B46     		mov	r3, r1
+ 390 0272 C4E90023 		strd	r2, [r4]
+  64:fft.h         ****             i1 = i + l1;
+ 391              		.loc 1 64 0 discriminator 3
+ 392 0276 BA6F     		ldr	r2, [r7, #120]
+ 393 0278 BB6E     		ldr	r3, [r7, #104]
+ 394 027a 1344     		add	r3, r3, r2
+ 395 027c BB67     		str	r3, [r7, #120]
+ 396              	.L11:
+  64:fft.h         ****             i1 = i + l1;
+ 397              		.loc 1 64 0 is_stmt 0 discriminator 1
+ 398 027e BA6F     		ldr	r2, [r7, #120]
+ 399 0280 FB6F     		ldr	r3, [r7, #124]
+ 400 0282 9A42     		cmp	r2, r3
+ 401 0284 FFF657AF 		blt	.L12
+  72:fft.h         ****          }
+  73:fft.h         ****          z =  u1 * c1 - u2 * c2;
+ 402              		.loc 1 73 0 is_stmt 1 discriminator 2
+ 403 0288 D7E91401 		ldrd	r0, [r7, #80]
+ 404 028c D7E91823 		ldrd	r2, [r7, #96]
+ 405 0290 FFF7FEFF 		bl	__aeabi_dmul
+ 406 0294 0246     		mov	r2, r0
+ 407 0296 0B46     		mov	r3, r1
+ 408 0298 1446     		mov	r4, r2
+ 409 029a 1D46     		mov	r5, r3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 10
+
+
+ 410 029c D7E91201 		ldrd	r0, [r7, #72]
+ 411 02a0 D7E91623 		ldrd	r2, [r7, #88]
+ 412 02a4 FFF7FEFF 		bl	__aeabi_dmul
+ 413 02a8 0246     		mov	r2, r0
+ 414 02aa 0B46     		mov	r3, r1
+ 415 02ac 2046     		mov	r0, r4
+ 416 02ae 2946     		mov	r1, r5
+ 417 02b0 FFF7FEFF 		bl	__aeabi_dsub
+ 418 02b4 0246     		mov	r2, r0
+ 419 02b6 0B46     		mov	r3, r1
+ 420 02b8 C7E90423 		strd	r2, [r7, #16]
+  74:fft.h         ****          u2 = u1 * c2 + u2 * c1;
+ 421              		.loc 1 74 0 discriminator 2
+ 422 02bc D7E91401 		ldrd	r0, [r7, #80]
+ 423 02c0 D7E91623 		ldrd	r2, [r7, #88]
+ 424 02c4 FFF7FEFF 		bl	__aeabi_dmul
+ 425 02c8 0246     		mov	r2, r0
+ 426 02ca 0B46     		mov	r3, r1
+ 427 02cc 1446     		mov	r4, r2
+ 428 02ce 1D46     		mov	r5, r3
+ 429 02d0 D7E91201 		ldrd	r0, [r7, #72]
+ 430 02d4 D7E91823 		ldrd	r2, [r7, #96]
+ 431 02d8 FFF7FEFF 		bl	__aeabi_dmul
+ 432 02dc 0246     		mov	r2, r0
+ 433 02de 0B46     		mov	r3, r1
+ 434 02e0 2046     		mov	r0, r4
+ 435 02e2 2946     		mov	r1, r5
+ 436 02e4 FFF7FEFF 		bl	__aeabi_dadd
+ 437 02e8 0246     		mov	r2, r0
+ 438 02ea 0B46     		mov	r3, r1
+ 439 02ec C7E91223 		strd	r2, [r7, #72]
+  75:fft.h         ****          u1 = z;
+ 440              		.loc 1 75 0 discriminator 2
+ 441 02f0 D7E90423 		ldrd	r2, [r7, #16]
+ 442 02f4 C7E91423 		strd	r2, [r7, #80]
+  63:fft.h         ****          for (i=j;i<n;i+=l2) {
+ 443              		.loc 1 63 0 discriminator 2
+ 444 02f8 7B6F     		ldr	r3, [r7, #116]
+ 445 02fa 0133     		adds	r3, r3, #1
+ 446 02fc 7B67     		str	r3, [r7, #116]
+ 447              	.L10:
+  63:fft.h         ****          for (i=j;i<n;i+=l2) {
+ 448              		.loc 1 63 0 is_stmt 0 discriminator 1
+ 449 02fe 7A6F     		ldr	r2, [r7, #116]
+ 450 0300 FB6A     		ldr	r3, [r7, #44]
+ 451 0302 9A42     		cmp	r2, r3
+ 452 0304 FFF614AF 		blt	.L13
+  76:fft.h         ****       }
+  77:fft.h         ****       c2 = sqrt((1.0 - c1) / 2.0);
+ 453              		.loc 1 77 0 is_stmt 1
+ 454 0308 4FF00000 		mov	r0, #0
+ 455 030c 2249     		ldr	r1, .L18+4
+ 456 030e D7E91823 		ldrd	r2, [r7, #96]
+ 457 0312 FFF7FEFF 		bl	__aeabi_dsub
+ 458 0316 0246     		mov	r2, r0
+ 459 0318 0B46     		mov	r3, r1
+ 460 031a 1046     		mov	r0, r2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 11
+
+
+ 461 031c 1946     		mov	r1, r3
+ 462 031e 4FF00002 		mov	r2, #0
+ 463 0322 4FF08043 		mov	r3, #1073741824
+ 464 0326 FFF7FEFF 		bl	__aeabi_ddiv
+ 465 032a 0246     		mov	r2, r0
+ 466 032c 0B46     		mov	r3, r1
+ 467 032e 1046     		mov	r0, r2
+ 468 0330 1946     		mov	r1, r3
+ 469 0332 FFF7FEFF 		bl	sqrt
+ 470 0336 C7E91601 		strd	r0, [r7, #88]
+  78:fft.h         ****       if (dir == 1) 
+ 471              		.loc 1 78 0
+ 472 033a FB68     		ldr	r3, [r7, #12]
+ 473 033c 012B     		cmp	r3, #1
+ 474 033e 05D1     		bne	.L14
+  79:fft.h         ****          c2 = -c2;
+ 475              		.loc 1 79 0
+ 476 0340 BB6D     		ldr	r3, [r7, #88]
+ 477 0342 BB65     		str	r3, [r7, #88]
+ 478 0344 FB6D     		ldr	r3, [r7, #92]
+ 479 0346 83F00043 		eor	r3, r3, #-2147483648
+ 480 034a FB65     		str	r3, [r7, #92]
+ 481              	.L14:
+  80:fft.h         ****       c1 = sqrt((1.0 + c1) / 2.0);
+ 482              		.loc 1 80 0 discriminator 2
+ 483 034c D7E91801 		ldrd	r0, [r7, #96]
+ 484 0350 4FF00002 		mov	r2, #0
+ 485 0354 104B     		ldr	r3, .L18+4
+ 486 0356 FFF7FEFF 		bl	__aeabi_dadd
+ 487 035a 0246     		mov	r2, r0
+ 488 035c 0B46     		mov	r3, r1
+ 489 035e 1046     		mov	r0, r2
+ 490 0360 1946     		mov	r1, r3
+ 491 0362 4FF00002 		mov	r2, #0
+ 492 0366 4FF08043 		mov	r3, #1073741824
+ 493 036a FFF7FEFF 		bl	__aeabi_ddiv
+ 494 036e 0246     		mov	r2, r0
+ 495 0370 0B46     		mov	r3, r1
+ 496 0372 1046     		mov	r0, r2
+ 497 0374 1946     		mov	r1, r3
+ 498 0376 FFF7FEFF 		bl	sqrt
+ 499 037a C7E91801 		strd	r0, [r7, #96]
+  58:fft.h         ****       l1 = l2;
+ 500              		.loc 1 58 0 discriminator 2
+ 501 037e FB6E     		ldr	r3, [r7, #108]
+ 502 0380 0133     		adds	r3, r3, #1
+ 503 0382 FB66     		str	r3, [r7, #108]
+ 504              	.L9:
+  58:fft.h         ****       l1 = l2;
+ 505              		.loc 1 58 0 is_stmt 0 discriminator 1
+ 506 0384 FA6E     		ldr	r2, [r7, #108]
+ 507 0386 BB68     		ldr	r3, [r7, #8]
+ 508 0388 9A42     		cmp	r2, r3
+ 509 038a FFF6BEAE 		blt	.L15
+  81:fft.h         ****    }
+  82:fft.h         **** 
+  83:fft.h         ****    /* Scaling factor for forward transform */
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 12
+
+
+  84:fft.h         **** //   if (dir == 1) {
+  85:fft.h         **** //      for (i=0;i<n;i++) {
+  86:fft.h         **** //         x[i] /= n;
+  87:fft.h         **** //         y[i] /= n;
+  88:fft.h         **** //      }
+  89:fft.h         **** //   }
+  90:fft.h         ****    
+  91:fft.h         ****    for(i=0;i<N_points;i++)
+ 510              		.loc 1 91 0 is_stmt 1
+ 511 038e 0023     		movs	r3, #0
+ 512 0390 BB67     		str	r3, [r7, #120]
+ 513 0392 4AE0     		b	.L16
+ 514              	.L19:
+ 515              		.align	2
+ 516              	.L18:
+ 517 0394 0000F0BF 		.word	-1074790400
+ 518 0398 0000F03F 		.word	1072693248
+ 519              	.L17:
+  92:fft.h         ****    {
+  93:fft.h         ****     /* Absolute value */
+  94:fft.h         ****    u[i]=2*sqrt((x[i]*x[i])+(y[i]*y[i]))/N_points;  
+ 520              		.loc 1 94 0 discriminator 3
+ 521 039c BB6F     		ldr	r3, [r7, #120]
+ 522 039e DB00     		lsls	r3, r3, #3
+ 523 03a0 D7F89820 		ldr	r2, [r7, #152]
+ 524 03a4 D418     		adds	r4, r2, r3
+ 525 03a6 BB6F     		ldr	r3, [r7, #120]
+ 526 03a8 DB00     		lsls	r3, r3, #3
+ 527 03aa 7A68     		ldr	r2, [r7, #4]
+ 528 03ac 1344     		add	r3, r3, r2
+ 529 03ae D3E90001 		ldrd	r0, [r3]
+ 530 03b2 BB6F     		ldr	r3, [r7, #120]
+ 531 03b4 DB00     		lsls	r3, r3, #3
+ 532 03b6 7A68     		ldr	r2, [r7, #4]
+ 533 03b8 1344     		add	r3, r3, r2
+ 534 03ba D3E90023 		ldrd	r2, [r3]
+ 535 03be FFF7FEFF 		bl	__aeabi_dmul
+ 536 03c2 0246     		mov	r2, r0
+ 537 03c4 0B46     		mov	r3, r1
+ 538 03c6 9046     		mov	r8, r2
+ 539 03c8 9946     		mov	r9, r3
+ 540 03ca BB6F     		ldr	r3, [r7, #120]
+ 541 03cc DB00     		lsls	r3, r3, #3
+ 542 03ce 3A68     		ldr	r2, [r7]
+ 543 03d0 1344     		add	r3, r3, r2
+ 544 03d2 D3E90001 		ldrd	r0, [r3]
+ 545 03d6 BB6F     		ldr	r3, [r7, #120]
+ 546 03d8 DB00     		lsls	r3, r3, #3
+ 547 03da 3A68     		ldr	r2, [r7]
+ 548 03dc 1344     		add	r3, r3, r2
+ 549 03de D3E90023 		ldrd	r2, [r3]
+ 550 03e2 FFF7FEFF 		bl	__aeabi_dmul
+ 551 03e6 0246     		mov	r2, r0
+ 552 03e8 0B46     		mov	r3, r1
+ 553 03ea 4046     		mov	r0, r8
+ 554 03ec 4946     		mov	r1, r9
+ 555 03ee FFF7FEFF 		bl	__aeabi_dadd
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 13
+
+
+ 556 03f2 0246     		mov	r2, r0
+ 557 03f4 0B46     		mov	r3, r1
+ 558 03f6 1046     		mov	r0, r2
+ 559 03f8 1946     		mov	r1, r3
+ 560 03fa FFF7FEFF 		bl	sqrt
+ 561 03fe 0246     		mov	r2, r0
+ 562 0400 0B46     		mov	r3, r1
+ 563 0402 1046     		mov	r0, r2
+ 564 0404 1946     		mov	r1, r3
+ 565 0406 FFF7FEFF 		bl	__aeabi_dadd
+ 566 040a 0246     		mov	r2, r0
+ 567 040c 0B46     		mov	r3, r1
+ 568 040e 1046     		mov	r0, r2
+ 569 0410 1946     		mov	r1, r3
+ 570 0412 4FF00002 		mov	r2, #0
+ 571 0416 084B     		ldr	r3, .L20
+ 572 0418 FFF7FEFF 		bl	__aeabi_ddiv
+ 573 041c 0246     		mov	r2, r0
+ 574 041e 0B46     		mov	r3, r1
+ 575 0420 C4E90023 		strd	r2, [r4]
+  91:fft.h         ****    {
+ 576              		.loc 1 91 0 discriminator 3
+ 577 0424 BB6F     		ldr	r3, [r7, #120]
+ 578 0426 0133     		adds	r3, r3, #1
+ 579 0428 BB67     		str	r3, [r7, #120]
+ 580              	.L16:
+  91:fft.h         ****    {
+ 581              		.loc 1 91 0 is_stmt 0 discriminator 1
+ 582 042a BB6F     		ldr	r3, [r7, #120]
+ 583 042c 3F2B     		cmp	r3, #63
+ 584 042e B5DD     		ble	.L17
+  95:fft.h         ****    }
+  96:fft.h         **** }
+ 585              		.loc 1 96 0 is_stmt 1
+ 586 0430 8037     		adds	r7, r7, #128
+ 587              		.cfi_def_cfa_offset 24
+ 588 0432 BD46     		mov	sp, r7
+ 589              		.cfi_def_cfa_register 13
+ 590              		@ sp needed
+ 591 0434 BDE8B083 		pop	{r4, r5, r7, r8, r9, pc}
+ 592              	.L21:
+ 593              		.align	2
+ 594              	.L20:
+ 595 0438 00005040 		.word	1078984704
+ 596              		.cfi_endproc
+ 597              	.LFE63:
+ 598              		.size	FFT, .-FFT
+ 599              		.section	.text.calculate_50Hz_Amp,"ax",%progbits
+ 600              		.align	2
+ 601              		.global	calculate_50Hz_Amp
+ 602              		.thumb
+ 603              		.thumb_func
+ 604              		.type	calculate_50Hz_Amp, %function
+ 605              	calculate_50Hz_Amp:
+ 606              	.LFB64:
+  97:fft.h         **** 
+  98:fft.h         **** double calculate_50Hz_Amp(double *u)
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 14
+
+
+  99:fft.h         **** {
+ 607              		.loc 1 99 0
+ 608              		.cfi_startproc
+ 609              		@ args = 0, pretend = 0, frame = 8
+ 610              		@ frame_needed = 1, uses_anonymous_args = 0
+ 611              		@ link register save eliminated.
+ 612 0000 80B4     		push	{r7}
+ 613              		.cfi_def_cfa_offset 4
+ 614              		.cfi_offset 7, -4
+ 615 0002 83B0     		sub	sp, sp, #12
+ 616              		.cfi_def_cfa_offset 16
+ 617 0004 00AF     		add	r7, sp, #0
+ 618              		.cfi_def_cfa_register 7
+ 619 0006 7860     		str	r0, [r7, #4]
+ 100:fft.h         **** //    double fsample = 1067;  
+ 101:fft.h         **** //    double delta_f_bin = fsample/N_points;
+ 102:fft.h         **** //    int bin_number = frekvens/delta_f_bin;
+ 103:fft.h         ****     
+ 104:fft.h         ****     return u[1];
+ 620              		.loc 1 104 0
+ 621 0008 7B68     		ldr	r3, [r7, #4]
+ 622 000a D3E90223 		ldrd	r2, [r3, #8]
+ 105:fft.h         ****     
+ 106:fft.h         ****     
+ 107:fft.h         **** }
+ 623              		.loc 1 107 0
+ 624 000e 1046     		mov	r0, r2
+ 625 0010 1946     		mov	r1, r3
+ 626 0012 0C37     		adds	r7, r7, #12
+ 627              		.cfi_def_cfa_offset 4
+ 628 0014 BD46     		mov	sp, r7
+ 629              		.cfi_def_cfa_register 13
+ 630              		@ sp needed
+ 631 0016 5DF8047B 		ldr	r7, [sp], #4
+ 632              		.cfi_restore 7
+ 633              		.cfi_def_cfa_offset 0
+ 634 001a 7047     		bx	lr
+ 635              		.cfi_endproc
+ 636              	.LFE64:
+ 637              		.size	calculate_50Hz_Amp, .-calculate_50Hz_Amp
+ 638              		.section	.text.calculate_50Hz_RMS,"ax",%progbits
+ 639              		.align	2
+ 640              		.global	calculate_50Hz_RMS
+ 641              		.thumb
+ 642              		.thumb_func
+ 643              		.type	calculate_50Hz_RMS, %function
+ 644              	calculate_50Hz_RMS:
+ 645              	.LFB65:
+ 108:fft.h         **** 
+ 109:fft.h         **** double calculate_50Hz_RMS(double *u)
+ 110:fft.h         **** {
+ 646              		.loc 1 110 0
+ 647              		.cfi_startproc
+ 648              		@ args = 0, pretend = 0, frame = 8
+ 649              		@ frame_needed = 1, uses_anonymous_args = 0
+ 650 0000 80B5     		push	{r7, lr}
+ 651              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 15
+
+
+ 652              		.cfi_offset 7, -8
+ 653              		.cfi_offset 14, -4
+ 654 0002 82B0     		sub	sp, sp, #8
+ 655              		.cfi_def_cfa_offset 16
+ 656 0004 00AF     		add	r7, sp, #0
+ 657              		.cfi_def_cfa_register 7
+ 658 0006 7860     		str	r0, [r7, #4]
+ 111:fft.h         ****     return u[1]/sqrt(2);  
+ 659              		.loc 1 111 0
+ 660 0008 7B68     		ldr	r3, [r7, #4]
+ 661 000a 0833     		adds	r3, r3, #8
+ 662 000c D3E90023 		ldrd	r2, [r3]
+ 663 0010 1046     		mov	r0, r2
+ 664 0012 1946     		mov	r1, r3
+ 665 0014 06A3     		adr	r3, .L26
+ 666 0016 D3E90023 		ldrd	r2, [r3]
+ 667 001a FFF7FEFF 		bl	__aeabi_ddiv
+ 668 001e 0246     		mov	r2, r0
+ 669 0020 0B46     		mov	r3, r1
+ 112:fft.h         **** }
+ 670              		.loc 1 112 0
+ 671 0022 1046     		mov	r0, r2
+ 672 0024 1946     		mov	r1, r3
+ 673 0026 0837     		adds	r7, r7, #8
+ 674              		.cfi_def_cfa_offset 8
+ 675 0028 BD46     		mov	sp, r7
+ 676              		.cfi_def_cfa_register 13
+ 677              		@ sp needed
+ 678 002a 80BD     		pop	{r7, pc}
+ 679              	.L27:
+ 680 002c AFF30080 		.align	3
+ 681              	.L26:
+ 682 0030 CD3B7F66 		.word	1719614413
+ 683 0034 9EA0F63F 		.word	1073127582
+ 684              		.cfi_endproc
+ 685              	.LFE65:
+ 686              		.size	calculate_50Hz_RMS, .-calculate_50Hz_RMS
+ 687              		.section	.text.calculate_50Hz_PF,"ax",%progbits
+ 688              		.align	2
+ 689              		.global	calculate_50Hz_PF
+ 690              		.thumb
+ 691              		.thumb_func
+ 692              		.type	calculate_50Hz_PF, %function
+ 693              	calculate_50Hz_PF:
+ 694              	.LFB66:
+ 113:fft.h         **** 
+ 114:fft.h         **** double calculate_50Hz_PF()
+ 115:fft.h         **** {
+ 695              		.loc 1 115 0
+ 696              		.cfi_startproc
+ 697              		@ args = 0, pretend = 0, frame = 16
+ 698              		@ frame_needed = 1, uses_anonymous_args = 0
+ 699 0000 80B5     		push	{r7, lr}
+ 700              		.cfi_def_cfa_offset 8
+ 701              		.cfi_offset 7, -8
+ 702              		.cfi_offset 14, -4
+ 703 0002 84B0     		sub	sp, sp, #16
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 16
+
+
+ 704              		.cfi_def_cfa_offset 24
+ 705 0004 00AF     		add	r7, sp, #0
+ 706              		.cfi_def_cfa_register 7
+ 116:fft.h         ****     double angle_Volt = atan(Im_volt[1]/Re_volt[1]);
+ 707              		.loc 1 116 0
+ 708 0006 194B     		ldr	r3, .L30
+ 709 0008 D3E90201 		ldrd	r0, [r3, #8]
+ 710 000c 184B     		ldr	r3, .L30+4
+ 711 000e D3E90223 		ldrd	r2, [r3, #8]
+ 712 0012 FFF7FEFF 		bl	__aeabi_ddiv
+ 713 0016 0246     		mov	r2, r0
+ 714 0018 0B46     		mov	r3, r1
+ 715 001a 1046     		mov	r0, r2
+ 716 001c 1946     		mov	r1, r3
+ 717 001e FFF7FEFF 		bl	atan
+ 718 0022 C7E90201 		strd	r0, [r7, #8]
+ 117:fft.h         ****     double angle_Ampere = atan(Im_Ampere[1]/Re_Ampere[1]);
+ 719              		.loc 1 117 0
+ 720 0026 134B     		ldr	r3, .L30+8
+ 721 0028 D3E90201 		ldrd	r0, [r3, #8]
+ 722 002c 124B     		ldr	r3, .L30+12
+ 723 002e D3E90223 		ldrd	r2, [r3, #8]
+ 724 0032 FFF7FEFF 		bl	__aeabi_ddiv
+ 725 0036 0246     		mov	r2, r0
+ 726 0038 0B46     		mov	r3, r1
+ 727 003a 1046     		mov	r0, r2
+ 728 003c 1946     		mov	r1, r3
+ 729 003e FFF7FEFF 		bl	atan
+ 730 0042 C7E90001 		strd	r0, [r7]
+ 118:fft.h         ****     
+ 119:fft.h         ****     return cos(angle_Ampere-angle_Volt);
+ 731              		.loc 1 119 0
+ 732 0046 D7E90001 		ldrd	r0, [r7]
+ 733 004a D7E90223 		ldrd	r2, [r7, #8]
+ 734 004e FFF7FEFF 		bl	__aeabi_dsub
+ 735 0052 0246     		mov	r2, r0
+ 736 0054 0B46     		mov	r3, r1
+ 737 0056 1046     		mov	r0, r2
+ 738 0058 1946     		mov	r1, r3
+ 739 005a FFF7FEFF 		bl	cos
+ 740 005e 0246     		mov	r2, r0
+ 741 0060 0B46     		mov	r3, r1
+ 120:fft.h         ****     
+ 121:fft.h         **** }
+ 742              		.loc 1 121 0
+ 743 0062 1046     		mov	r0, r2
+ 744 0064 1946     		mov	r1, r3
+ 745 0066 1037     		adds	r7, r7, #16
+ 746              		.cfi_def_cfa_offset 8
+ 747 0068 BD46     		mov	sp, r7
+ 748              		.cfi_def_cfa_register 13
+ 749              		@ sp needed
+ 750 006a 80BD     		pop	{r7, pc}
+ 751              	.L31:
+ 752              		.align	2
+ 753              	.L30:
+ 754 006c 00000000 		.word	Im_volt
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 17
+
+
+ 755 0070 00000000 		.word	Re_volt
+ 756 0074 00000000 		.word	Im_Ampere
+ 757 0078 00000000 		.word	Re_Ampere
+ 758              		.cfi_endproc
+ 759              	.LFE66:
+ 760              		.size	calculate_50Hz_PF, .-calculate_50Hz_PF
+ 761              		.global	__aeabi_i2d
+ 762              		.section	.text.main,"ax",%progbits
+ 763              		.align	2
+ 764              		.global	main
+ 765              		.thumb
+ 766              		.thumb_func
+ 767              		.type	main, %function
+ 768              	main:
+ 769              	.LFB67:
+ 770              		.file 2 "main.c"
    1:main.c        **** /* ========================================
    2:main.c        ****  *
    3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
@@ -41,514 +991,1300 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 1
   12:main.c        **** #include "project.h"
   13:main.c        **** #include "stdio.h"
   14:main.c        **** #include "sample.h"
-  15:main.c        **** #define SIZE 128
-  16:main.c        **** 
-  17:main.c        **** int main(void)
-  18:main.c        **** {
-  27              		.loc 1 18 0
-  28              		.cfi_startproc
-  29              		@ args = 0, pretend = 0, frame = 512
-  30              		@ frame_needed = 1, uses_anonymous_args = 0
-  31 0000 80B5     		push	{r7, lr}
-  32              		.cfi_def_cfa_offset 8
-  33              		.cfi_offset 7, -8
-  34              		.cfi_offset 14, -4
-  35 0002 ADF5007D 		sub	sp, sp, #512
-  36              		.cfi_def_cfa_offset 520
-  37 0006 00AF     		add	r7, sp, #0
-  38              		.cfi_def_cfa_register 7
-  19:main.c        ****     //CyGlobalIntEnable; /* Enable global interrupts. */
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 2
+  15:main.c        **** #include "fft.h"
+  16:main.c        **** #define SIZE 128
+  17:main.c        **** 
+  18:main.c        **** int main(void)
+  19:main.c        **** {
+ 771              		.loc 2 19 0
+ 772              		.cfi_startproc
+ 773              		@ args = 0, pretend = 0, frame = 560
+ 774              		@ frame_needed = 1, uses_anonymous_args = 0
+ 775 0000 80B5     		push	{r7, lr}
+ 776              		.cfi_def_cfa_offset 8
+ 777              		.cfi_offset 7, -8
+ 778              		.cfi_offset 14, -4
+ 779 0002 ADF50E7D 		sub	sp, sp, #568
+ 780              		.cfi_def_cfa_offset 576
+ 781 0006 02AF     		add	r7, sp, #8
+ 782              		.cfi_def_cfa 7, 568
+  20:main.c        ****     //CyGlobalIntEnable; /* Enable global interrupts. */
+  21:main.c        **** 
+  22:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  23:main.c        ****     
+  24:main.c        ****     ADC_DelSig_1_Start();
+ 783              		.loc 2 24 0
+ 784 0008 FFF7FEFF 		bl	ADC_DelSig_1_Start
+  25:main.c        ****     ADC_DelSig_1_StartConvert();
+ 785              		.loc 2 25 0
+ 786 000c FFF7FEFF 		bl	ADC_DelSig_1_StartConvert
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 18
 
 
-  20:main.c        **** 
-  21:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-  22:main.c        ****     
-  23:main.c        ****     ADC_DelSig_1_Start();
-  39              		.loc 1 23 0
-  40 0008 FFF7FEFF 		bl	ADC_DelSig_1_Start
-  24:main.c        ****     ADC_DelSig_1_StartConvert();
-  41              		.loc 1 24 0
-  42 000c FFF7FEFF 		bl	ADC_DelSig_1_StartConvert
-  25:main.c        ****     
-  26:main.c        ****     AMux_1_Start();
-  43              		.loc 1 26 0
-  44 0010 FFF7FEFF 		bl	AMux_1_Start
-  27:main.c        ****     AMux_2_Start();
-  45              		.loc 1 27 0
-  46 0014 FFF7FEFF 		bl	AMux_2_Start
-  28:main.c        ****     
-  29:main.c        ****     int SampleArrayU[SIZE/2]={0};
-  47              		.loc 1 29 0
-  48 0018 07F58073 		add	r3, r7, #256
-  49 001c 1A46     		mov	r2, r3
-  50 001e 4FF48073 		mov	r3, #256
-  51 0022 1046     		mov	r0, r2
-  52 0024 0021     		movs	r1, #0
-  53 0026 1A46     		mov	r2, r3
-  54 0028 FFF7FEFF 		bl	memset
-  30:main.c        ****     int SampleArrayI[SIZE/2]={0};
-  55              		.loc 1 30 0
-  56 002c 3B46     		mov	r3, r7
-  57 002e 1A46     		mov	r2, r3
-  58 0030 4FF48073 		mov	r3, #256
-  59 0034 1046     		mov	r0, r2
-  60 0036 0021     		movs	r1, #0
-  61 0038 1A46     		mov	r2, r3
-  62 003a FFF7FEFF 		bl	memset
-  63              	.L2:
-  31:main.c        **** 
-  32:main.c        ****     while(1)
-  33:main.c        ****     {
-  34:main.c        ****     /*Samplefunktion*/
-  35:main.c        ****     
-  36:main.c        ****     sampleUandI(SampleArrayU,SampleArrayI,SIZE);
-  64              		.loc 1 36 0 discriminator 1
-  65 003e 07F58072 		add	r2, r7, #256
-  66 0042 3B46     		mov	r3, r7
-  67 0044 1046     		mov	r0, r2
-  68 0046 1946     		mov	r1, r3
-  69 0048 8022     		movs	r2, #128
-  70 004a FFF7FEFF 		bl	sampleUandI
-  37:main.c        ****     }
-  71              		.loc 1 37 0 discriminator 1
-  72 004e F6E7     		b	.L2
-  73              		.cfi_endproc
-  74              	.LFE63:
-  75              		.size	main, .-main
-  76              		.text
-  77              	.Letext0:
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 3
+  26:main.c        ****     
+  27:main.c        ****     AMux_1_Start();
+ 787              		.loc 2 27 0
+ 788 0010 FFF7FEFF 		bl	AMux_1_Start
+  28:main.c        ****     AMux_2_Start();
+ 789              		.loc 2 28 0
+ 790 0014 FFF7FEFF 		bl	AMux_2_Start
+  29:main.c        ****     
+  30:main.c        ****     int SampleArrayU[SIZE/2]={0};
+ 791              		.loc 2 30 0
+ 792 0018 07F58073 		add	r3, r7, #256
+ 793 001c 1A46     		mov	r2, r3
+ 794 001e 4FF48073 		mov	r3, #256
+ 795 0022 1046     		mov	r0, r2
+ 796 0024 0021     		movs	r1, #0
+ 797 0026 1A46     		mov	r2, r3
+ 798 0028 FFF7FEFF 		bl	memset
+  31:main.c        ****     int SampleArrayI[SIZE/2]={0};
+ 799              		.loc 2 31 0
+ 800 002c 3B46     		mov	r3, r7
+ 801 002e 1A46     		mov	r2, r3
+ 802 0030 4FF48073 		mov	r3, #256
+ 803 0034 1046     		mov	r0, r2
+ 804 0036 0021     		movs	r1, #0
+ 805 0038 1A46     		mov	r2, r3
+ 806 003a FFF7FEFF 		bl	memset
+  32:main.c        ****     int p = 0;
+ 807              		.loc 2 32 0
+ 808 003e 0023     		movs	r3, #0
+ 809 0040 C7F82C32 		str	r3, [r7, #556]
+  33:main.c        ****     double Amp_Volt = 0;
+ 810              		.loc 2 33 0
+ 811 0044 4FF00002 		mov	r2, #0
+ 812 0048 4FF00003 		mov	r3, #0
+ 813 004c 07F50871 		add	r1, r7, #544
+ 814 0050 C1E90023 		strd	r2, [r1]
+  34:main.c        ****     double RMS_Volt = 0;
+ 815              		.loc 2 34 0
+ 816 0054 4FF00002 		mov	r2, #0
+ 817 0058 4FF00003 		mov	r3, #0
+ 818 005c 07F50671 		add	r1, r7, #536
+ 819 0060 C1E90023 		strd	r2, [r1]
+  35:main.c        ****     double Amp_Ampere = 0;
+ 820              		.loc 2 35 0
+ 821 0064 4FF00002 		mov	r2, #0
+ 822 0068 4FF00003 		mov	r3, #0
+ 823 006c 07F50471 		add	r1, r7, #528
+ 824 0070 C1E90023 		strd	r2, [r1]
+  36:main.c        ****     double RMS_Ampere = 0;
+ 825              		.loc 2 36 0
+ 826 0074 4FF00002 		mov	r2, #0
+ 827 0078 4FF00003 		mov	r3, #0
+ 828 007c 07F50271 		add	r1, r7, #520
+ 829 0080 C1E90023 		strd	r2, [r1]
+  37:main.c        ****     double PF = 0;
+ 830              		.loc 2 37 0
+ 831 0084 4FF00002 		mov	r2, #0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 19
 
 
-  78              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
-  79              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
-  80              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
-  81              		.section	.debug_info,"",%progbits
-  82              	.Ldebug_info0:
-  83 0000 F3000000 		.4byte	0xf3
-  84 0004 0400     		.2byte	0x4
-  85 0006 00000000 		.4byte	.Ldebug_abbrev0
-  86 000a 04       		.byte	0x4
-  87 000b 01       		.uleb128 0x1
-  88 000c 0A010000 		.4byte	.LASF17
-  89 0010 01       		.byte	0x1
-  90 0011 AD000000 		.4byte	.LASF18
-  91 0015 21000000 		.4byte	.LASF19
-  92 0019 00000000 		.4byte	.Ldebug_ranges0+0
-  93 001d 00000000 		.4byte	0
-  94 0021 00000000 		.4byte	.Ldebug_line0
-  95 0025 02       		.uleb128 0x2
-  96 0026 01       		.byte	0x1
-  97 0027 06       		.byte	0x6
-  98 0028 B9000000 		.4byte	.LASF0
-  99 002c 02       		.uleb128 0x2
- 100 002d 01       		.byte	0x1
- 101 002e 08       		.byte	0x8
- 102 002f EE000000 		.4byte	.LASF1
- 103 0033 02       		.uleb128 0x2
- 104 0034 02       		.byte	0x2
- 105 0035 05       		.byte	0x5
- 106 0036 C9010000 		.4byte	.LASF2
- 107 003a 02       		.uleb128 0x2
- 108 003b 02       		.byte	0x2
- 109 003c 07       		.byte	0x7
- 110 003d 0E000000 		.4byte	.LASF3
- 111 0041 03       		.uleb128 0x3
- 112 0042 B9010000 		.4byte	.LASF9
- 113 0046 02       		.byte	0x2
- 114 0047 3F       		.byte	0x3f
- 115 0048 4C000000 		.4byte	0x4c
- 116 004c 02       		.uleb128 0x2
- 117 004d 04       		.byte	0x4
- 118 004e 05       		.byte	0x5
- 119 004f 01010000 		.4byte	.LASF4
- 120 0053 02       		.uleb128 0x2
- 121 0054 04       		.byte	0x4
- 122 0055 07       		.byte	0x7
- 123 0056 C5000000 		.4byte	.LASF5
- 124 005a 02       		.uleb128 0x2
- 125 005b 08       		.byte	0x8
- 126 005c 05       		.byte	0x5
- 127 005d 00000000 		.4byte	.LASF6
- 128 0061 02       		.uleb128 0x2
- 129 0062 08       		.byte	0x8
- 130 0063 07       		.byte	0x7
- 131 0064 D7000000 		.4byte	.LASF7
- 132 0068 04       		.uleb128 0x4
- 133 0069 04       		.byte	0x4
- 134 006a 05       		.byte	0x5
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 4
+ 832 0088 4FF00003 		mov	r3, #0
+ 833 008c 07F50071 		add	r1, r7, #512
+ 834 0090 C1E90023 		strd	r2, [r1]
+ 835              	.L35:
+  38:main.c        **** 
+  39:main.c        ****     while(1)
+  40:main.c        ****     {
+  41:main.c        ****     /*Samplefunktion*/
+  42:main.c        ****     
+  43:main.c        ****     sampleUandI(SampleArrayU,SampleArrayI,SIZE);
+ 836              		.loc 2 43 0
+ 837 0094 07F58072 		add	r2, r7, #256
+ 838 0098 3B46     		mov	r3, r7
+ 839 009a 1046     		mov	r0, r2
+ 840 009c 1946     		mov	r1, r3
+ 841 009e 8022     		movs	r2, #128
+ 842 00a0 FFF7FEFF 		bl	sampleUandI
+  44:main.c        **** 
+  45:main.c        ****     
+  46:main.c        ****     for(p = 0; p<N_points ; p++)
+ 843              		.loc 2 46 0
+ 844 00a4 0023     		movs	r3, #0
+ 845 00a6 C7F82C32 		str	r3, [r7, #556]
+ 846 00aa 3DE0     		b	.L33
+ 847              	.L34:
+  47:main.c        ****     {
+  48:main.c        ****         Re_volt[p] = SampleArrayU[p];
+ 848              		.loc 2 48 0 discriminator 3
+ 849 00ac 07F58073 		add	r3, r7, #256
+ 850 00b0 D7F82C22 		ldr	r2, [r7, #556]
+ 851 00b4 53F82230 		ldr	r3, [r3, r2, lsl #2]
+ 852 00b8 1846     		mov	r0, r3
+ 853 00ba FFF7FEFF 		bl	__aeabi_i2d
+ 854 00be 0246     		mov	r2, r0
+ 855 00c0 0B46     		mov	r3, r1
+ 856 00c2 3548     		ldr	r0, .L36
+ 857 00c4 D7F82C12 		ldr	r1, [r7, #556]
+ 858 00c8 C900     		lsls	r1, r1, #3
+ 859 00ca 0144     		add	r1, r1, r0
+ 860 00cc C1E90023 		strd	r2, [r1]
+  49:main.c        ****         Im_volt[p] = 0;
+ 861              		.loc 2 49 0 discriminator 3
+ 862 00d0 324A     		ldr	r2, .L36+4
+ 863 00d2 D7F82C32 		ldr	r3, [r7, #556]
+ 864 00d6 DB00     		lsls	r3, r3, #3
+ 865 00d8 D118     		adds	r1, r2, r3
+ 866 00da 4FF00002 		mov	r2, #0
+ 867 00de 4FF00003 		mov	r3, #0
+ 868 00e2 C1E90023 		strd	r2, [r1]
+  50:main.c        ****         
+  51:main.c        ****         Re_Ampere[p] = SampleArrayI[p];
+ 869              		.loc 2 51 0 discriminator 3
+ 870 00e6 3B46     		mov	r3, r7
+ 871 00e8 D7F82C22 		ldr	r2, [r7, #556]
+ 872 00ec 53F82230 		ldr	r3, [r3, r2, lsl #2]
+ 873 00f0 1846     		mov	r0, r3
+ 874 00f2 FFF7FEFF 		bl	__aeabi_i2d
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 20
 
 
- 135 006b 696E7400 		.ascii	"int\000"
- 136 006f 02       		.uleb128 0x2
- 137 0070 04       		.byte	0x4
- 138 0071 07       		.byte	0x7
- 139 0072 A0000000 		.4byte	.LASF8
- 140 0076 03       		.uleb128 0x3
- 141 0077 D3010000 		.4byte	.LASF10
- 142 007b 03       		.byte	0x3
- 143 007c 2C       		.byte	0x2c
- 144 007d 41000000 		.4byte	0x41
- 145 0081 02       		.uleb128 0x2
- 146 0082 04       		.byte	0x4
- 147 0083 04       		.byte	0x4
- 148 0084 C3010000 		.4byte	.LASF11
- 149 0088 02       		.uleb128 0x2
- 150 0089 08       		.byte	0x8
- 151 008a 04       		.byte	0x4
- 152 008b 98010000 		.4byte	.LASF12
- 153 008f 02       		.uleb128 0x2
- 154 0090 01       		.byte	0x1
- 155 0091 08       		.byte	0x8
- 156 0092 FC000000 		.4byte	.LASF13
- 157 0096 02       		.uleb128 0x2
- 158 0097 04       		.byte	0x4
- 159 0098 07       		.byte	0x7
- 160 0099 E8010000 		.4byte	.LASF14
- 161 009d 05       		.uleb128 0x5
- 162 009e B4000000 		.4byte	.LASF20
- 163 00a2 01       		.byte	0x1
- 164 00a3 11       		.byte	0x11
- 165 00a4 68000000 		.4byte	0x68
- 166 00a8 00000000 		.4byte	.LFB63
- 167 00ac 50000000 		.4byte	.LFE63-.LFB63
- 168 00b0 01       		.uleb128 0x1
- 169 00b1 9C       		.byte	0x9c
- 170 00b2 D5000000 		.4byte	0xd5
- 171 00b6 06       		.uleb128 0x6
- 172 00b7 DB010000 		.4byte	.LASF15
- 173 00bb 01       		.byte	0x1
- 174 00bc 1D       		.byte	0x1d
- 175 00bd D5000000 		.4byte	0xd5
- 176 00c1 03       		.uleb128 0x3
- 177 00c2 91       		.byte	0x91
- 178 00c3 F87D     		.sleb128 -264
- 179 00c5 06       		.uleb128 0x6
- 180 00c6 AC010000 		.4byte	.LASF16
- 181 00ca 01       		.byte	0x1
- 182 00cb 1E       		.byte	0x1e
- 183 00cc D5000000 		.4byte	0xd5
- 184 00d0 03       		.uleb128 0x3
- 185 00d1 91       		.byte	0x91
- 186 00d2 F87B     		.sleb128 -520
- 187 00d4 00       		.byte	0
- 188 00d5 07       		.uleb128 0x7
- 189 00d6 68000000 		.4byte	0x68
- 190 00da E5000000 		.4byte	0xe5
- 191 00de 08       		.uleb128 0x8
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 5
+ 875 00f6 0246     		mov	r2, r0
+ 876 00f8 0B46     		mov	r3, r1
+ 877 00fa 2948     		ldr	r0, .L36+8
+ 878 00fc D7F82C12 		ldr	r1, [r7, #556]
+ 879 0100 C900     		lsls	r1, r1, #3
+ 880 0102 0144     		add	r1, r1, r0
+ 881 0104 C1E90023 		strd	r2, [r1]
+  52:main.c        ****         Im_Ampere[p] = 0;
+ 882              		.loc 2 52 0 discriminator 3
+ 883 0108 264A     		ldr	r2, .L36+12
+ 884 010a D7F82C32 		ldr	r3, [r7, #556]
+ 885 010e DB00     		lsls	r3, r3, #3
+ 886 0110 D118     		adds	r1, r2, r3
+ 887 0112 4FF00002 		mov	r2, #0
+ 888 0116 4FF00003 		mov	r3, #0
+ 889 011a C1E90023 		strd	r2, [r1]
+  46:main.c        ****     {
+ 890              		.loc 2 46 0 discriminator 3
+ 891 011e D7F82C32 		ldr	r3, [r7, #556]
+ 892 0122 0133     		adds	r3, r3, #1
+ 893 0124 C7F82C32 		str	r3, [r7, #556]
+ 894              	.L33:
+  46:main.c        ****     {
+ 895              		.loc 2 46 0 is_stmt 0 discriminator 1
+ 896 0128 D7F82C32 		ldr	r3, [r7, #556]
+ 897 012c 3F2B     		cmp	r3, #63
+ 898 012e BDDD     		ble	.L34
+  53:main.c        ****     }
+  54:main.c        ****       
+  55:main.c        ****     
+  56:main.c        ****     FFT(2,exponent,Re_volt,Im_volt,Abs_volt);
+ 899              		.loc 2 56 0 is_stmt 1
+ 900 0130 1D4B     		ldr	r3, .L36+16
+ 901 0132 0093     		str	r3, [sp]
+ 902 0134 0220     		movs	r0, #2
+ 903 0136 0621     		movs	r1, #6
+ 904 0138 174A     		ldr	r2, .L36
+ 905 013a 184B     		ldr	r3, .L36+4
+ 906 013c FFF7FEFF 		bl	FFT
+  57:main.c        ****     FFT(2,exponent,Re_Ampere,Im_Ampere,Abs_Ampere);
+ 907              		.loc 2 57 0
+ 908 0140 1A4B     		ldr	r3, .L36+20
+ 909 0142 0093     		str	r3, [sp]
+ 910 0144 0220     		movs	r0, #2
+ 911 0146 0621     		movs	r1, #6
+ 912 0148 154A     		ldr	r2, .L36+8
+ 913 014a 164B     		ldr	r3, .L36+12
+ 914 014c FFF7FEFF 		bl	FFT
+  58:main.c        ****     
+  59:main.c        ****     
+  60:main.c        ****     Amp_Volt = calculate_50Hz_Amp(Abs_volt);
+ 915              		.loc 2 60 0
+ 916 0150 1548     		ldr	r0, .L36+16
+ 917 0152 FFF7FEFF 		bl	calculate_50Hz_Amp
+ 918 0156 07F50873 		add	r3, r7, #544
+ 919 015a C3E90001 		strd	r0, [r3]
+  61:main.c        ****     RMS_Volt = calculate_50Hz_RMS(Abs_volt);
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 21
 
 
- 192 00df 96000000 		.4byte	0x96
- 193 00e3 3F       		.byte	0x3f
- 194 00e4 00       		.byte	0
- 195 00e5 09       		.uleb128 0x9
- 196 00e6 9F010000 		.4byte	.LASF21
- 197 00ea 04       		.byte	0x4
- 198 00eb 9606     		.2byte	0x696
- 199 00ed F1000000 		.4byte	0xf1
- 200 00f1 0A       		.uleb128 0xa
- 201 00f2 76000000 		.4byte	0x76
- 202 00f6 00       		.byte	0
- 203              		.section	.debug_abbrev,"",%progbits
- 204              	.Ldebug_abbrev0:
- 205 0000 01       		.uleb128 0x1
- 206 0001 11       		.uleb128 0x11
- 207 0002 01       		.byte	0x1
- 208 0003 25       		.uleb128 0x25
- 209 0004 0E       		.uleb128 0xe
- 210 0005 13       		.uleb128 0x13
- 211 0006 0B       		.uleb128 0xb
- 212 0007 03       		.uleb128 0x3
- 213 0008 0E       		.uleb128 0xe
- 214 0009 1B       		.uleb128 0x1b
- 215 000a 0E       		.uleb128 0xe
- 216 000b 55       		.uleb128 0x55
- 217 000c 17       		.uleb128 0x17
- 218 000d 11       		.uleb128 0x11
- 219 000e 01       		.uleb128 0x1
- 220 000f 10       		.uleb128 0x10
- 221 0010 17       		.uleb128 0x17
- 222 0011 00       		.byte	0
- 223 0012 00       		.byte	0
- 224 0013 02       		.uleb128 0x2
- 225 0014 24       		.uleb128 0x24
- 226 0015 00       		.byte	0
- 227 0016 0B       		.uleb128 0xb
- 228 0017 0B       		.uleb128 0xb
- 229 0018 3E       		.uleb128 0x3e
- 230 0019 0B       		.uleb128 0xb
- 231 001a 03       		.uleb128 0x3
- 232 001b 0E       		.uleb128 0xe
- 233 001c 00       		.byte	0
- 234 001d 00       		.byte	0
- 235 001e 03       		.uleb128 0x3
- 236 001f 16       		.uleb128 0x16
- 237 0020 00       		.byte	0
- 238 0021 03       		.uleb128 0x3
- 239 0022 0E       		.uleb128 0xe
- 240 0023 3A       		.uleb128 0x3a
- 241 0024 0B       		.uleb128 0xb
- 242 0025 3B       		.uleb128 0x3b
- 243 0026 0B       		.uleb128 0xb
- 244 0027 49       		.uleb128 0x49
- 245 0028 13       		.uleb128 0x13
- 246 0029 00       		.byte	0
- 247 002a 00       		.byte	0
- 248 002b 04       		.uleb128 0x4
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 6
+ 920              		.loc 2 61 0
+ 921 015e 1248     		ldr	r0, .L36+16
+ 922 0160 FFF7FEFF 		bl	calculate_50Hz_RMS
+ 923 0164 07F50673 		add	r3, r7, #536
+ 924 0168 C3E90001 		strd	r0, [r3]
+  62:main.c        ****     Amp_Ampere = calculate_50Hz_Amp(Abs_Ampere);
+ 925              		.loc 2 62 0
+ 926 016c 0F48     		ldr	r0, .L36+20
+ 927 016e FFF7FEFF 		bl	calculate_50Hz_Amp
+ 928 0172 07F50473 		add	r3, r7, #528
+ 929 0176 C3E90001 		strd	r0, [r3]
+  63:main.c        ****     RMS_Ampere = calculate_50Hz_RMS(Abs_Ampere);
+ 930              		.loc 2 63 0
+ 931 017a 0C48     		ldr	r0, .L36+20
+ 932 017c FFF7FEFF 		bl	calculate_50Hz_RMS
+ 933 0180 07F50273 		add	r3, r7, #520
+ 934 0184 C3E90001 		strd	r0, [r3]
+  64:main.c        ****     PF = calculate_50Hz_PF();
+ 935              		.loc 2 64 0
+ 936 0188 FFF7FEFF 		bl	calculate_50Hz_PF
+ 937 018c 07F50073 		add	r3, r7, #512
+ 938 0190 C3E90001 		strd	r0, [r3]
+  65:main.c        ****     }   
+ 939              		.loc 2 65 0
+ 940 0194 7EE7     		b	.L35
+ 941              	.L37:
+ 942 0196 00BF     		.align	2
+ 943              	.L36:
+ 944 0198 00000000 		.word	Re_volt
+ 945 019c 00000000 		.word	Im_volt
+ 946 01a0 00000000 		.word	Re_Ampere
+ 947 01a4 00000000 		.word	Im_Ampere
+ 948 01a8 00000000 		.word	Abs_volt
+ 949 01ac 00000000 		.word	Abs_Ampere
+ 950              		.cfi_endproc
+ 951              	.LFE67:
+ 952              		.size	main, .-main
+ 953              		.text
+ 954              	.Letext0:
+ 955              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 956              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 957              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 958              		.section	.debug_info,"",%progbits
+ 959              	.Ldebug_info0:
+ 960 0000 8F030000 		.4byte	0x38f
+ 961 0004 0400     		.2byte	0x4
+ 962 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 963 000a 04       		.byte	0x4
+ 964 000b 01       		.uleb128 0x1
+ 965 000c 80000000 		.4byte	.LASF35
+ 966 0010 01       		.byte	0x1
+ 967 0011 38020000 		.4byte	.LASF36
+ 968 0015 62010000 		.4byte	.LASF37
+ 969 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 970 001d 00000000 		.4byte	0
+ 971 0021 00000000 		.4byte	.Ldebug_line0
+ 972 0025 02       		.uleb128 0x2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 22
 
 
- 249 002c 24       		.uleb128 0x24
- 250 002d 00       		.byte	0
- 251 002e 0B       		.uleb128 0xb
- 252 002f 0B       		.uleb128 0xb
- 253 0030 3E       		.uleb128 0x3e
- 254 0031 0B       		.uleb128 0xb
- 255 0032 03       		.uleb128 0x3
- 256 0033 08       		.uleb128 0x8
- 257 0034 00       		.byte	0
- 258 0035 00       		.byte	0
- 259 0036 05       		.uleb128 0x5
- 260 0037 2E       		.uleb128 0x2e
- 261 0038 01       		.byte	0x1
- 262 0039 3F       		.uleb128 0x3f
- 263 003a 19       		.uleb128 0x19
- 264 003b 03       		.uleb128 0x3
- 265 003c 0E       		.uleb128 0xe
- 266 003d 3A       		.uleb128 0x3a
- 267 003e 0B       		.uleb128 0xb
- 268 003f 3B       		.uleb128 0x3b
- 269 0040 0B       		.uleb128 0xb
- 270 0041 27       		.uleb128 0x27
- 271 0042 19       		.uleb128 0x19
- 272 0043 49       		.uleb128 0x49
- 273 0044 13       		.uleb128 0x13
- 274 0045 11       		.uleb128 0x11
- 275 0046 01       		.uleb128 0x1
- 276 0047 12       		.uleb128 0x12
- 277 0048 06       		.uleb128 0x6
- 278 0049 40       		.uleb128 0x40
- 279 004a 18       		.uleb128 0x18
- 280 004b 9642     		.uleb128 0x2116
- 281 004d 19       		.uleb128 0x19
- 282 004e 01       		.uleb128 0x1
- 283 004f 13       		.uleb128 0x13
- 284 0050 00       		.byte	0
- 285 0051 00       		.byte	0
- 286 0052 06       		.uleb128 0x6
- 287 0053 34       		.uleb128 0x34
- 288 0054 00       		.byte	0
- 289 0055 03       		.uleb128 0x3
- 290 0056 0E       		.uleb128 0xe
- 291 0057 3A       		.uleb128 0x3a
- 292 0058 0B       		.uleb128 0xb
- 293 0059 3B       		.uleb128 0x3b
- 294 005a 0B       		.uleb128 0xb
- 295 005b 49       		.uleb128 0x49
- 296 005c 13       		.uleb128 0x13
- 297 005d 02       		.uleb128 0x2
- 298 005e 18       		.uleb128 0x18
- 299 005f 00       		.byte	0
- 300 0060 00       		.byte	0
- 301 0061 07       		.uleb128 0x7
- 302 0062 01       		.uleb128 0x1
- 303 0063 01       		.byte	0x1
- 304 0064 49       		.uleb128 0x49
- 305 0065 13       		.uleb128 0x13
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 7
+ 973 0026 01       		.byte	0x1
+ 974 0027 06       		.byte	0x6
+ 975 0028 3F010000 		.4byte	.LASF0
+ 976 002c 02       		.uleb128 0x2
+ 977 002d 01       		.byte	0x1
+ 978 002e 08       		.byte	0x8
+ 979 002f 19010000 		.4byte	.LASF1
+ 980 0033 02       		.uleb128 0x2
+ 981 0034 02       		.byte	0x2
+ 982 0035 05       		.byte	0x5
+ 983 0036 2A000000 		.4byte	.LASF2
+ 984 003a 02       		.uleb128 0x2
+ 985 003b 02       		.byte	0x2
+ 986 003c 07       		.byte	0x7
+ 987 003d D3010000 		.4byte	.LASF3
+ 988 0041 03       		.uleb128 0x3
+ 989 0042 58020000 		.4byte	.LASF9
+ 990 0046 03       		.byte	0x3
+ 991 0047 3F       		.byte	0x3f
+ 992 0048 4C000000 		.4byte	0x4c
+ 993 004c 02       		.uleb128 0x2
+ 994 004d 04       		.byte	0x4
+ 995 004e 05       		.byte	0x5
+ 996 004f 07020000 		.4byte	.LASF4
+ 997 0053 02       		.uleb128 0x2
+ 998 0054 04       		.byte	0x4
+ 999 0055 07       		.byte	0x7
+ 1000 0056 3F020000 		.4byte	.LASF5
+ 1001 005a 02       		.uleb128 0x2
+ 1002 005b 08       		.byte	0x8
+ 1003 005c 05       		.byte	0x5
+ 1004 005d 72000000 		.4byte	.LASF6
+ 1005 0061 02       		.uleb128 0x2
+ 1006 0062 08       		.byte	0x8
+ 1007 0063 07       		.byte	0x7
+ 1008 0064 4B010000 		.4byte	.LASF7
+ 1009 0068 04       		.uleb128 0x4
+ 1010 0069 04       		.byte	0x4
+ 1011 006a 05       		.byte	0x5
+ 1012 006b 696E7400 		.ascii	"int\000"
+ 1013 006f 02       		.uleb128 0x2
+ 1014 0070 04       		.byte	0x4
+ 1015 0071 07       		.byte	0x7
+ 1016 0072 C6010000 		.4byte	.LASF8
+ 1017 0076 03       		.uleb128 0x3
+ 1018 0077 15020000 		.4byte	.LASF10
+ 1019 007b 04       		.byte	0x4
+ 1020 007c 2C       		.byte	0x2c
+ 1021 007d 41000000 		.4byte	0x41
+ 1022 0081 02       		.uleb128 0x2
+ 1023 0082 04       		.byte	0x4
+ 1024 0083 04       		.byte	0x4
+ 1025 0084 6C000000 		.4byte	.LASF11
+ 1026 0088 02       		.uleb128 0x2
+ 1027 0089 08       		.byte	0x8
+ 1028 008a 04       		.byte	0x4
+ 1029 008b 51020000 		.4byte	.LASF12
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 23
 
 
- 306 0066 01       		.uleb128 0x1
- 307 0067 13       		.uleb128 0x13
- 308 0068 00       		.byte	0
- 309 0069 00       		.byte	0
- 310 006a 08       		.uleb128 0x8
- 311 006b 21       		.uleb128 0x21
- 312 006c 00       		.byte	0
- 313 006d 49       		.uleb128 0x49
- 314 006e 13       		.uleb128 0x13
- 315 006f 2F       		.uleb128 0x2f
- 316 0070 0B       		.uleb128 0xb
- 317 0071 00       		.byte	0
- 318 0072 00       		.byte	0
- 319 0073 09       		.uleb128 0x9
- 320 0074 34       		.uleb128 0x34
- 321 0075 00       		.byte	0
- 322 0076 03       		.uleb128 0x3
- 323 0077 0E       		.uleb128 0xe
- 324 0078 3A       		.uleb128 0x3a
- 325 0079 0B       		.uleb128 0xb
- 326 007a 3B       		.uleb128 0x3b
- 327 007b 05       		.uleb128 0x5
- 328 007c 49       		.uleb128 0x49
- 329 007d 13       		.uleb128 0x13
- 330 007e 3F       		.uleb128 0x3f
- 331 007f 19       		.uleb128 0x19
- 332 0080 3C       		.uleb128 0x3c
- 333 0081 19       		.uleb128 0x19
- 334 0082 00       		.byte	0
- 335 0083 00       		.byte	0
- 336 0084 0A       		.uleb128 0xa
- 337 0085 35       		.uleb128 0x35
- 338 0086 00       		.byte	0
- 339 0087 49       		.uleb128 0x49
- 340 0088 13       		.uleb128 0x13
- 341 0089 00       		.byte	0
- 342 008a 00       		.byte	0
- 343 008b 00       		.byte	0
- 344              		.section	.debug_aranges,"",%progbits
- 345 0000 1C000000 		.4byte	0x1c
- 346 0004 0200     		.2byte	0x2
- 347 0006 00000000 		.4byte	.Ldebug_info0
- 348 000a 04       		.byte	0x4
- 349 000b 00       		.byte	0
- 350 000c 0000     		.2byte	0
- 351 000e 0000     		.2byte	0
- 352 0010 00000000 		.4byte	.LFB63
- 353 0014 50000000 		.4byte	.LFE63-.LFB63
- 354 0018 00000000 		.4byte	0
- 355 001c 00000000 		.4byte	0
- 356              		.section	.debug_ranges,"",%progbits
- 357              	.Ldebug_ranges0:
- 358 0000 00000000 		.4byte	.LFB63
- 359 0004 50000000 		.4byte	.LFE63
- 360 0008 00000000 		.4byte	0
- 361 000c 00000000 		.4byte	0
- 362              		.section	.debug_line,"",%progbits
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 8
+ 1030 008f 02       		.uleb128 0x2
+ 1031 0090 01       		.byte	0x1
+ 1032 0091 08       		.byte	0x8
+ 1033 0092 02020000 		.4byte	.LASF13
+ 1034 0096 02       		.uleb128 0x2
+ 1035 0097 04       		.byte	0x4
+ 1036 0098 07       		.byte	0x7
+ 1037 0099 34000000 		.4byte	.LASF14
+ 1038 009d 02       		.uleb128 0x2
+ 1039 009e 08       		.byte	0x8
+ 1040 009f 04       		.byte	0x4
+ 1041 00a0 00000000 		.4byte	.LASF15
+ 1042 00a4 05       		.uleb128 0x5
+ 1043 00a5 46465400 		.ascii	"FFT\000"
+ 1044 00a9 01       		.byte	0x1
+ 1045 00aa 15       		.byte	0x15
+ 1046 00ab 00000000 		.4byte	.LFB63
+ 1047 00af 3C040000 		.4byte	.LFE63-.LFB63
+ 1048 00b3 01       		.uleb128 0x1
+ 1049 00b4 9C       		.byte	0x9c
+ 1050 00b5 EA010000 		.4byte	0x1ea
+ 1051 00b9 06       		.uleb128 0x6
+ 1052 00ba 64697200 		.ascii	"dir\000"
+ 1053 00be 01       		.byte	0x1
+ 1054 00bf 15       		.byte	0x15
+ 1055 00c0 68000000 		.4byte	0x68
+ 1056 00c4 03       		.uleb128 0x3
+ 1057 00c5 91       		.byte	0x91
+ 1058 00c6 F47E     		.sleb128 -140
+ 1059 00c8 06       		.uleb128 0x6
+ 1060 00c9 6D00     		.ascii	"m\000"
+ 1061 00cb 01       		.byte	0x1
+ 1062 00cc 15       		.byte	0x15
+ 1063 00cd 4C000000 		.4byte	0x4c
+ 1064 00d1 03       		.uleb128 0x3
+ 1065 00d2 91       		.byte	0x91
+ 1066 00d3 F07E     		.sleb128 -144
+ 1067 00d5 06       		.uleb128 0x6
+ 1068 00d6 7800     		.ascii	"x\000"
+ 1069 00d8 01       		.byte	0x1
+ 1070 00d9 15       		.byte	0x15
+ 1071 00da EA010000 		.4byte	0x1ea
+ 1072 00de 03       		.uleb128 0x3
+ 1073 00df 91       		.byte	0x91
+ 1074 00e0 EC7E     		.sleb128 -148
+ 1075 00e2 06       		.uleb128 0x6
+ 1076 00e3 7900     		.ascii	"y\000"
+ 1077 00e5 01       		.byte	0x1
+ 1078 00e6 15       		.byte	0x15
+ 1079 00e7 EA010000 		.4byte	0x1ea
+ 1080 00eb 03       		.uleb128 0x3
+ 1081 00ec 91       		.byte	0x91
+ 1082 00ed E87E     		.sleb128 -152
+ 1083 00ef 06       		.uleb128 0x6
+ 1084 00f0 7500     		.ascii	"u\000"
+ 1085 00f2 01       		.byte	0x1
+ 1086 00f3 15       		.byte	0x15
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 24
 
 
- 363              	.Ldebug_line0:
- 364 0000 5F010000 		.section	.debug_str,"MS",%progbits,1
- 364      02003A01 
- 364      00000201 
- 364      FB0E0D00 
- 364      01010101 
- 365              	.LASF6:
- 366 0000 6C6F6E67 		.ascii	"long long int\000"
- 366      206C6F6E 
- 366      6720696E 
- 366      7400
- 367              	.LASF3:
- 368 000e 73686F72 		.ascii	"short unsigned int\000"
- 368      7420756E 
- 368      7369676E 
- 368      65642069 
- 368      6E7400
- 369              	.LASF19:
- 370 0021 5C5C4D61 		.ascii	"\\\\Mac\\iCloud\\SKOLE\\4. Semester\\PRJ4 - Semeste"
- 370      635C6943 
- 370      6C6F7564 
- 370      5C534B4F 
- 370      4C455C34 
- 371 004e 7270726F 		.ascii	"rprojekt 4\\Maaleenhed\\Maaleenhed med samplefunkti"
- 371      6A656B74 
- 371      20345C4D 
- 371      61616C65 
- 371      656E6865 
- 372 007f 6F6E5C53 		.ascii	"on\\Spaendingsmaaler\\Maaler.cydsn\000"
- 372      7061656E 
- 372      64696E67 
- 372      736D6161 
- 372      6C65725C 
- 373              	.LASF8:
- 374 00a0 756E7369 		.ascii	"unsigned int\000"
- 374      676E6564 
- 374      20696E74 
- 374      00
- 375              	.LASF18:
- 376 00ad 6D61696E 		.ascii	"main.c\000"
- 376      2E6300
- 377              	.LASF20:
- 378 00b4 6D61696E 		.ascii	"main\000"
- 378      00
- 379              	.LASF0:
- 380 00b9 7369676E 		.ascii	"signed char\000"
- 380      65642063 
- 380      68617200 
- 381              	.LASF5:
- 382 00c5 6C6F6E67 		.ascii	"long unsigned int\000"
- 382      20756E73 
- 382      69676E65 
- 382      6420696E 
- 382      7400
- 383              	.LASF7:
- 384 00d7 6C6F6E67 		.ascii	"long long unsigned int\000"
- 384      206C6F6E 
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 9
+ 1087 00f4 EA010000 		.4byte	0x1ea
+ 1088 00f8 02       		.uleb128 0x2
+ 1089 00f9 91       		.byte	0x91
+ 1090 00fa 00       		.sleb128 0
+ 1091 00fb 07       		.uleb128 0x7
+ 1092 00fc 6E00     		.ascii	"n\000"
+ 1093 00fe 01       		.byte	0x1
+ 1094 00ff 1A       		.byte	0x1a
+ 1095 0100 4C000000 		.4byte	0x4c
+ 1096 0104 02       		.uleb128 0x2
+ 1097 0105 91       		.byte	0x91
+ 1098 0106 64       		.sleb128 -28
+ 1099 0107 07       		.uleb128 0x7
+ 1100 0108 6900     		.ascii	"i\000"
+ 1101 010a 01       		.byte	0x1
+ 1102 010b 1A       		.byte	0x1a
+ 1103 010c 4C000000 		.4byte	0x4c
+ 1104 0110 02       		.uleb128 0x2
+ 1105 0111 91       		.byte	0x91
+ 1106 0112 60       		.sleb128 -32
+ 1107 0113 07       		.uleb128 0x7
+ 1108 0114 693100   		.ascii	"i1\000"
+ 1109 0117 01       		.byte	0x1
+ 1110 0118 1A       		.byte	0x1a
+ 1111 0119 4C000000 		.4byte	0x4c
+ 1112 011d 03       		.uleb128 0x3
+ 1113 011e 91       		.byte	0x91
+ 1114 011f 907F     		.sleb128 -112
+ 1115 0121 07       		.uleb128 0x7
+ 1116 0122 6A00     		.ascii	"j\000"
+ 1117 0124 01       		.byte	0x1
+ 1118 0125 1A       		.byte	0x1a
+ 1119 0126 4C000000 		.4byte	0x4c
+ 1120 012a 02       		.uleb128 0x2
+ 1121 012b 91       		.byte	0x91
+ 1122 012c 5C       		.sleb128 -36
+ 1123 012d 07       		.uleb128 0x7
+ 1124 012e 6B00     		.ascii	"k\000"
+ 1125 0130 01       		.byte	0x1
+ 1126 0131 1A       		.byte	0x1a
+ 1127 0132 4C000000 		.4byte	0x4c
+ 1128 0136 02       		.uleb128 0x2
+ 1129 0137 91       		.byte	0x91
+ 1130 0138 58       		.sleb128 -40
+ 1131 0139 07       		.uleb128 0x7
+ 1132 013a 693200   		.ascii	"i2\000"
+ 1133 013d 01       		.byte	0x1
+ 1134 013e 1A       		.byte	0x1a
+ 1135 013f 4C000000 		.4byte	0x4c
+ 1136 0143 03       		.uleb128 0x3
+ 1137 0144 91       		.byte	0x91
+ 1138 0145 AC7F     		.sleb128 -84
+ 1139 0147 07       		.uleb128 0x7
+ 1140 0148 6C00     		.ascii	"l\000"
+ 1141 014a 01       		.byte	0x1
+ 1142 014b 1A       		.byte	0x1a
+ 1143 014c 4C000000 		.4byte	0x4c
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 25
 
 
- 384      6720756E 
- 384      7369676E 
- 384      65642069 
- 385              	.LASF1:
- 386 00ee 756E7369 		.ascii	"unsigned char\000"
- 386      676E6564 
- 386      20636861 
- 386      7200
- 387              	.LASF13:
- 388 00fc 63686172 		.ascii	"char\000"
- 388      00
- 389              	.LASF4:
- 390 0101 6C6F6E67 		.ascii	"long int\000"
- 390      20696E74 
- 390      00
- 391              	.LASF17:
- 392 010a 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 392      4320342E 
- 392      392E3320 
- 392      32303135 
- 392      30333033 
- 393 013d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 393      20726576 
- 393      6973696F 
- 393      6E203232 
- 393      31323230 
- 394 0170 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 394      66756E63 
- 394      74696F6E 
- 394      2D736563 
- 394      74696F6E 
- 395              	.LASF12:
- 396 0198 646F7562 		.ascii	"double\000"
- 396      6C6500
- 397              	.LASF21:
- 398 019f 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 398      52784275 
- 398      66666572 
- 398      00
- 399              	.LASF16:
- 400 01ac 53616D70 		.ascii	"SampleArrayI\000"
- 400      6C654172 
- 400      72617949 
- 400      00
- 401              	.LASF9:
- 402 01b9 5F5F696E 		.ascii	"__int32_t\000"
- 402      7433325F 
- 402      7400
- 403              	.LASF11:
- 404 01c3 666C6F61 		.ascii	"float\000"
- 404      7400
- 405              	.LASF2:
- 406 01c9 73686F72 		.ascii	"short int\000"
- 406      7420696E 
- 406      7400
- 407              	.LASF10:
- 408 01d3 696E7433 		.ascii	"int32_t\000"
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccG4ZSFt.s 			page 10
+ 1144 0150 02       		.uleb128 0x2
+ 1145 0151 91       		.byte	0x91
+ 1146 0152 54       		.sleb128 -44
+ 1147 0153 07       		.uleb128 0x7
+ 1148 0154 6C3100   		.ascii	"l1\000"
+ 1149 0157 01       		.byte	0x1
+ 1150 0158 1A       		.byte	0x1a
+ 1151 0159 4C000000 		.4byte	0x4c
+ 1152 015d 03       		.uleb128 0x3
+ 1153 015e 91       		.byte	0x91
+ 1154 015f 947F     		.sleb128 -108
+ 1155 0161 07       		.uleb128 0x7
+ 1156 0162 6C3200   		.ascii	"l2\000"
+ 1157 0165 01       		.byte	0x1
+ 1158 0166 1A       		.byte	0x1a
+ 1159 0167 4C000000 		.4byte	0x4c
+ 1160 016b 02       		.uleb128 0x2
+ 1161 016c 91       		.byte	0x91
+ 1162 016d 50       		.sleb128 -48
+ 1163 016e 07       		.uleb128 0x7
+ 1164 016f 633100   		.ascii	"c1\000"
+ 1165 0172 01       		.byte	0x1
+ 1166 0173 1B       		.byte	0x1b
+ 1167 0174 88000000 		.4byte	0x88
+ 1168 0178 02       		.uleb128 0x2
+ 1169 0179 91       		.byte	0x91
+ 1170 017a 48       		.sleb128 -56
+ 1171 017b 07       		.uleb128 0x7
+ 1172 017c 633200   		.ascii	"c2\000"
+ 1173 017f 01       		.byte	0x1
+ 1174 0180 1B       		.byte	0x1b
+ 1175 0181 88000000 		.4byte	0x88
+ 1176 0185 02       		.uleb128 0x2
+ 1177 0186 91       		.byte	0x91
+ 1178 0187 40       		.sleb128 -64
+ 1179 0188 07       		.uleb128 0x7
+ 1180 0189 747800   		.ascii	"tx\000"
+ 1181 018c 01       		.byte	0x1
+ 1182 018d 1B       		.byte	0x1b
+ 1183 018e 88000000 		.4byte	0x88
+ 1184 0192 03       		.uleb128 0x3
+ 1185 0193 91       		.byte	0x91
+ 1186 0194 A07F     		.sleb128 -96
+ 1187 0196 07       		.uleb128 0x7
+ 1188 0197 747900   		.ascii	"ty\000"
+ 1189 019a 01       		.byte	0x1
+ 1190 019b 1B       		.byte	0x1b
+ 1191 019c 88000000 		.4byte	0x88
+ 1192 01a0 03       		.uleb128 0x3
+ 1193 01a1 91       		.byte	0x91
+ 1194 01a2 987F     		.sleb128 -104
+ 1195 01a4 07       		.uleb128 0x7
+ 1196 01a5 743100   		.ascii	"t1\000"
+ 1197 01a8 01       		.byte	0x1
+ 1198 01a9 1B       		.byte	0x1b
+ 1199 01aa 88000000 		.4byte	0x88
+ 1200 01ae 03       		.uleb128 0x3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 26
 
 
- 408      325F7400 
- 409              	.LASF15:
- 410 01db 53616D70 		.ascii	"SampleArrayU\000"
- 410      6C654172 
- 410      72617955 
- 410      00
- 411              	.LASF14:
- 412 01e8 73697A65 		.ascii	"sizetype\000"
- 412      74797065 
- 412      00
- 413              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 1201 01af 91       		.byte	0x91
+ 1202 01b0 887F     		.sleb128 -120
+ 1203 01b2 07       		.uleb128 0x7
+ 1204 01b3 743200   		.ascii	"t2\000"
+ 1205 01b6 01       		.byte	0x1
+ 1206 01b7 1B       		.byte	0x1b
+ 1207 01b8 88000000 		.4byte	0x88
+ 1208 01bc 03       		.uleb128 0x3
+ 1209 01bd 91       		.byte	0x91
+ 1210 01be 807F     		.sleb128 -128
+ 1211 01c0 07       		.uleb128 0x7
+ 1212 01c1 753100   		.ascii	"u1\000"
+ 1213 01c4 01       		.byte	0x1
+ 1214 01c5 1B       		.byte	0x1b
+ 1215 01c6 88000000 		.4byte	0x88
+ 1216 01ca 03       		.uleb128 0x3
+ 1217 01cb 91       		.byte	0x91
+ 1218 01cc B87F     		.sleb128 -72
+ 1219 01ce 07       		.uleb128 0x7
+ 1220 01cf 753200   		.ascii	"u2\000"
+ 1221 01d2 01       		.byte	0x1
+ 1222 01d3 1B       		.byte	0x1b
+ 1223 01d4 88000000 		.4byte	0x88
+ 1224 01d8 03       		.uleb128 0x3
+ 1225 01d9 91       		.byte	0x91
+ 1226 01da B07F     		.sleb128 -80
+ 1227 01dc 07       		.uleb128 0x7
+ 1228 01dd 7A00     		.ascii	"z\000"
+ 1229 01df 01       		.byte	0x1
+ 1230 01e0 1B       		.byte	0x1b
+ 1231 01e1 88000000 		.4byte	0x88
+ 1232 01e5 03       		.uleb128 0x3
+ 1233 01e6 91       		.byte	0x91
+ 1234 01e7 F87E     		.sleb128 -136
+ 1235 01e9 00       		.byte	0
+ 1236 01ea 08       		.uleb128 0x8
+ 1237 01eb 04       		.byte	0x4
+ 1238 01ec 88000000 		.4byte	0x88
+ 1239 01f0 09       		.uleb128 0x9
+ 1240 01f1 EF010000 		.4byte	.LASF16
+ 1241 01f5 01       		.byte	0x1
+ 1242 01f6 62       		.byte	0x62
+ 1243 01f7 88000000 		.4byte	0x88
+ 1244 01fb 00000000 		.4byte	.LFB64
+ 1245 01ff 1C000000 		.4byte	.LFE64-.LFB64
+ 1246 0203 01       		.uleb128 0x1
+ 1247 0204 9C       		.byte	0x9c
+ 1248 0205 16020000 		.4byte	0x216
+ 1249 0209 06       		.uleb128 0x6
+ 1250 020a 7500     		.ascii	"u\000"
+ 1251 020c 01       		.byte	0x1
+ 1252 020d 62       		.byte	0x62
+ 1253 020e EA010000 		.4byte	0x1ea
+ 1254 0212 02       		.uleb128 0x2
+ 1255 0213 91       		.byte	0x91
+ 1256 0214 74       		.sleb128 -12
+ 1257 0215 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 27
+
+
+ 1258 0216 0A       		.uleb128 0xa
+ 1259 0217 17000000 		.4byte	.LASF17
+ 1260 021b 01       		.byte	0x1
+ 1261 021c 6D       		.byte	0x6d
+ 1262 021d 88000000 		.4byte	0x88
+ 1263 0221 00000000 		.4byte	.LFB65
+ 1264 0225 38000000 		.4byte	.LFE65-.LFB65
+ 1265 0229 01       		.uleb128 0x1
+ 1266 022a 9C       		.byte	0x9c
+ 1267 022b 3C020000 		.4byte	0x23c
+ 1268 022f 06       		.uleb128 0x6
+ 1269 0230 7500     		.ascii	"u\000"
+ 1270 0232 01       		.byte	0x1
+ 1271 0233 6D       		.byte	0x6d
+ 1272 0234 EA010000 		.4byte	0x1ea
+ 1273 0238 02       		.uleb128 0x2
+ 1274 0239 91       		.byte	0x91
+ 1275 023a 74       		.sleb128 -12
+ 1276 023b 00       		.byte	0
+ 1277 023c 0B       		.uleb128 0xb
+ 1278 023d 1D020000 		.4byte	.LASF18
+ 1279 0241 01       		.byte	0x1
+ 1280 0242 72       		.byte	0x72
+ 1281 0243 88000000 		.4byte	0x88
+ 1282 0247 00000000 		.4byte	.LFB66
+ 1283 024b 7C000000 		.4byte	.LFE66-.LFB66
+ 1284 024f 01       		.uleb128 0x1
+ 1285 0250 9C       		.byte	0x9c
+ 1286 0251 72020000 		.4byte	0x272
+ 1287 0255 0C       		.uleb128 0xc
+ 1288 0256 0C000000 		.4byte	.LASF19
+ 1289 025a 01       		.byte	0x1
+ 1290 025b 74       		.byte	0x74
+ 1291 025c 88000000 		.4byte	0x88
+ 1292 0260 02       		.uleb128 0x2
+ 1293 0261 91       		.byte	0x91
+ 1294 0262 70       		.sleb128 -16
+ 1295 0263 0C       		.uleb128 0xc
+ 1296 0264 27010000 		.4byte	.LASF20
+ 1297 0268 01       		.byte	0x1
+ 1298 0269 75       		.byte	0x75
+ 1299 026a 88000000 		.4byte	0x88
+ 1300 026e 02       		.uleb128 0x2
+ 1301 026f 91       		.byte	0x91
+ 1302 0270 68       		.sleb128 -24
+ 1303 0271 00       		.byte	0
+ 1304 0272 0A       		.uleb128 0xa
+ 1305 0273 10020000 		.4byte	.LASF21
+ 1306 0277 02       		.byte	0x2
+ 1307 0278 12       		.byte	0x12
+ 1308 0279 68000000 		.4byte	0x68
+ 1309 027d 00000000 		.4byte	.LFB67
+ 1310 0281 B0010000 		.4byte	.LFE67-.LFB67
+ 1311 0285 01       		.uleb128 0x1
+ 1312 0286 9C       		.byte	0x9c
+ 1313 0287 FB020000 		.4byte	0x2fb
+ 1314 028b 0C       		.uleb128 0xc
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 28
+
+
+ 1315 028c 85020000 		.4byte	.LASF22
+ 1316 0290 02       		.byte	0x2
+ 1317 0291 1E       		.byte	0x1e
+ 1318 0292 FB020000 		.4byte	0x2fb
+ 1319 0296 03       		.uleb128 0x3
+ 1320 0297 91       		.byte	0x91
+ 1321 0298 C87D     		.sleb128 -312
+ 1322 029a 0C       		.uleb128 0xc
+ 1323 029b 62020000 		.4byte	.LASF23
+ 1324 029f 02       		.byte	0x2
+ 1325 02a0 1F       		.byte	0x1f
+ 1326 02a1 FB020000 		.4byte	0x2fb
+ 1327 02a5 03       		.uleb128 0x3
+ 1328 02a6 91       		.byte	0x91
+ 1329 02a7 C87B     		.sleb128 -568
+ 1330 02a9 07       		.uleb128 0x7
+ 1331 02aa 7000     		.ascii	"p\000"
+ 1332 02ac 02       		.byte	0x2
+ 1333 02ad 20       		.byte	0x20
+ 1334 02ae 68000000 		.4byte	0x68
+ 1335 02b2 02       		.uleb128 0x2
+ 1336 02b3 91       		.byte	0x91
+ 1337 02b4 74       		.sleb128 -12
+ 1338 02b5 0C       		.uleb128 0xc
+ 1339 02b6 7C020000 		.4byte	.LASF24
+ 1340 02ba 02       		.byte	0x2
+ 1341 02bb 21       		.byte	0x21
+ 1342 02bc 88000000 		.4byte	0x88
+ 1343 02c0 02       		.uleb128 0x2
+ 1344 02c1 91       		.byte	0x91
+ 1345 02c2 68       		.sleb128 -24
+ 1346 02c3 0C       		.uleb128 0xc
+ 1347 02c4 E6010000 		.4byte	.LASF25
+ 1348 02c8 02       		.byte	0x2
+ 1349 02c9 22       		.byte	0x22
+ 1350 02ca 88000000 		.4byte	0x88
+ 1351 02ce 02       		.uleb128 0x2
+ 1352 02cf 91       		.byte	0x91
+ 1353 02d0 60       		.sleb128 -32
+ 1354 02d1 0C       		.uleb128 0xc
+ 1355 02d2 57000000 		.4byte	.LASF26
+ 1356 02d6 02       		.byte	0x2
+ 1357 02d7 23       		.byte	0x23
+ 1358 02d8 88000000 		.4byte	0x88
+ 1359 02dc 02       		.uleb128 0x2
+ 1360 02dd 91       		.byte	0x91
+ 1361 02de 58       		.sleb128 -40
+ 1362 02df 0C       		.uleb128 0xc
+ 1363 02e0 34010000 		.4byte	.LASF27
+ 1364 02e4 02       		.byte	0x2
+ 1365 02e5 24       		.byte	0x24
+ 1366 02e6 88000000 		.4byte	0x88
+ 1367 02ea 02       		.uleb128 0x2
+ 1368 02eb 91       		.byte	0x91
+ 1369 02ec 50       		.sleb128 -48
+ 1370 02ed 07       		.uleb128 0x7
+ 1371 02ee 504600   		.ascii	"PF\000"
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 29
+
+
+ 1372 02f1 02       		.byte	0x2
+ 1373 02f2 25       		.byte	0x25
+ 1374 02f3 88000000 		.4byte	0x88
+ 1375 02f7 02       		.uleb128 0x2
+ 1376 02f8 91       		.byte	0x91
+ 1377 02f9 48       		.sleb128 -56
+ 1378 02fa 00       		.byte	0
+ 1379 02fb 0D       		.uleb128 0xd
+ 1380 02fc 68000000 		.4byte	0x68
+ 1381 0300 0B030000 		.4byte	0x30b
+ 1382 0304 0E       		.uleb128 0xe
+ 1383 0305 96000000 		.4byte	0x96
+ 1384 0309 3F       		.byte	0x3f
+ 1385 030a 00       		.byte	0
+ 1386 030b 0F       		.uleb128 0xf
+ 1387 030c 6F020000 		.4byte	.LASF28
+ 1388 0310 05       		.byte	0x5
+ 1389 0311 9606     		.2byte	0x696
+ 1390 0313 17030000 		.4byte	0x317
+ 1391 0317 10       		.uleb128 0x10
+ 1392 0318 76000000 		.4byte	0x76
+ 1393 031c 0D       		.uleb128 0xd
+ 1394 031d 88000000 		.4byte	0x88
+ 1395 0321 2C030000 		.4byte	0x32c
+ 1396 0325 0E       		.uleb128 0xe
+ 1397 0326 96000000 		.4byte	0x96
+ 1398 032a 3F       		.byte	0x3f
+ 1399 032b 00       		.byte	0
+ 1400 032c 11       		.uleb128 0x11
+ 1401 032d 2F020000 		.4byte	.LASF29
+ 1402 0331 01       		.byte	0x1
+ 1403 0332 0B       		.byte	0xb
+ 1404 0333 1C030000 		.4byte	0x31c
+ 1405 0337 05       		.uleb128 0x5
+ 1406 0338 03       		.byte	0x3
+ 1407 0339 00000000 		.4byte	Abs_volt
+ 1408 033d 11       		.uleb128 0x11
+ 1409 033e 3D000000 		.4byte	.LASF30
+ 1410 0342 01       		.byte	0x1
+ 1411 0343 0C       		.byte	0xc
+ 1412 0344 1C030000 		.4byte	0x31c
+ 1413 0348 05       		.uleb128 0x5
+ 1414 0349 03       		.byte	0x3
+ 1415 034a 00000000 		.4byte	Re_volt
+ 1416 034e 11       		.uleb128 0x11
+ 1417 034f 4F000000 		.4byte	.LASF31
+ 1418 0353 01       		.byte	0x1
+ 1419 0354 0D       		.byte	0xd
+ 1420 0355 1C030000 		.4byte	0x31c
+ 1421 0359 05       		.uleb128 0x5
+ 1422 035a 03       		.byte	0x3
+ 1423 035b 00000000 		.4byte	Im_volt
+ 1424 035f 11       		.uleb128 0x11
+ 1425 0360 0E010000 		.4byte	.LASF32
+ 1426 0364 01       		.byte	0x1
+ 1427 0365 0F       		.byte	0xf
+ 1428 0366 1C030000 		.4byte	0x31c
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 30
+
+
+ 1429 036a 05       		.uleb128 0x5
+ 1430 036b 03       		.byte	0x3
+ 1431 036c 00000000 		.4byte	Abs_Ampere
+ 1432 0370 11       		.uleb128 0x11
+ 1433 0371 62000000 		.4byte	.LASF33
+ 1434 0375 01       		.byte	0x1
+ 1435 0376 10       		.byte	0x10
+ 1436 0377 1C030000 		.4byte	0x31c
+ 1437 037b 05       		.uleb128 0x5
+ 1438 037c 03       		.byte	0x3
+ 1439 037d 00000000 		.4byte	Re_Ampere
+ 1440 0381 11       		.uleb128 0x11
+ 1441 0382 45000000 		.4byte	.LASF34
+ 1442 0386 01       		.byte	0x1
+ 1443 0387 11       		.byte	0x11
+ 1444 0388 1C030000 		.4byte	0x31c
+ 1445 038c 05       		.uleb128 0x5
+ 1446 038d 03       		.byte	0x3
+ 1447 038e 00000000 		.4byte	Im_Ampere
+ 1448 0392 00       		.byte	0
+ 1449              		.section	.debug_abbrev,"",%progbits
+ 1450              	.Ldebug_abbrev0:
+ 1451 0000 01       		.uleb128 0x1
+ 1452 0001 11       		.uleb128 0x11
+ 1453 0002 01       		.byte	0x1
+ 1454 0003 25       		.uleb128 0x25
+ 1455 0004 0E       		.uleb128 0xe
+ 1456 0005 13       		.uleb128 0x13
+ 1457 0006 0B       		.uleb128 0xb
+ 1458 0007 03       		.uleb128 0x3
+ 1459 0008 0E       		.uleb128 0xe
+ 1460 0009 1B       		.uleb128 0x1b
+ 1461 000a 0E       		.uleb128 0xe
+ 1462 000b 55       		.uleb128 0x55
+ 1463 000c 17       		.uleb128 0x17
+ 1464 000d 11       		.uleb128 0x11
+ 1465 000e 01       		.uleb128 0x1
+ 1466 000f 10       		.uleb128 0x10
+ 1467 0010 17       		.uleb128 0x17
+ 1468 0011 00       		.byte	0
+ 1469 0012 00       		.byte	0
+ 1470 0013 02       		.uleb128 0x2
+ 1471 0014 24       		.uleb128 0x24
+ 1472 0015 00       		.byte	0
+ 1473 0016 0B       		.uleb128 0xb
+ 1474 0017 0B       		.uleb128 0xb
+ 1475 0018 3E       		.uleb128 0x3e
+ 1476 0019 0B       		.uleb128 0xb
+ 1477 001a 03       		.uleb128 0x3
+ 1478 001b 0E       		.uleb128 0xe
+ 1479 001c 00       		.byte	0
+ 1480 001d 00       		.byte	0
+ 1481 001e 03       		.uleb128 0x3
+ 1482 001f 16       		.uleb128 0x16
+ 1483 0020 00       		.byte	0
+ 1484 0021 03       		.uleb128 0x3
+ 1485 0022 0E       		.uleb128 0xe
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 31
+
+
+ 1486 0023 3A       		.uleb128 0x3a
+ 1487 0024 0B       		.uleb128 0xb
+ 1488 0025 3B       		.uleb128 0x3b
+ 1489 0026 0B       		.uleb128 0xb
+ 1490 0027 49       		.uleb128 0x49
+ 1491 0028 13       		.uleb128 0x13
+ 1492 0029 00       		.byte	0
+ 1493 002a 00       		.byte	0
+ 1494 002b 04       		.uleb128 0x4
+ 1495 002c 24       		.uleb128 0x24
+ 1496 002d 00       		.byte	0
+ 1497 002e 0B       		.uleb128 0xb
+ 1498 002f 0B       		.uleb128 0xb
+ 1499 0030 3E       		.uleb128 0x3e
+ 1500 0031 0B       		.uleb128 0xb
+ 1501 0032 03       		.uleb128 0x3
+ 1502 0033 08       		.uleb128 0x8
+ 1503 0034 00       		.byte	0
+ 1504 0035 00       		.byte	0
+ 1505 0036 05       		.uleb128 0x5
+ 1506 0037 2E       		.uleb128 0x2e
+ 1507 0038 01       		.byte	0x1
+ 1508 0039 3F       		.uleb128 0x3f
+ 1509 003a 19       		.uleb128 0x19
+ 1510 003b 03       		.uleb128 0x3
+ 1511 003c 08       		.uleb128 0x8
+ 1512 003d 3A       		.uleb128 0x3a
+ 1513 003e 0B       		.uleb128 0xb
+ 1514 003f 3B       		.uleb128 0x3b
+ 1515 0040 0B       		.uleb128 0xb
+ 1516 0041 27       		.uleb128 0x27
+ 1517 0042 19       		.uleb128 0x19
+ 1518 0043 11       		.uleb128 0x11
+ 1519 0044 01       		.uleb128 0x1
+ 1520 0045 12       		.uleb128 0x12
+ 1521 0046 06       		.uleb128 0x6
+ 1522 0047 40       		.uleb128 0x40
+ 1523 0048 18       		.uleb128 0x18
+ 1524 0049 9642     		.uleb128 0x2116
+ 1525 004b 19       		.uleb128 0x19
+ 1526 004c 01       		.uleb128 0x1
+ 1527 004d 13       		.uleb128 0x13
+ 1528 004e 00       		.byte	0
+ 1529 004f 00       		.byte	0
+ 1530 0050 06       		.uleb128 0x6
+ 1531 0051 05       		.uleb128 0x5
+ 1532 0052 00       		.byte	0
+ 1533 0053 03       		.uleb128 0x3
+ 1534 0054 08       		.uleb128 0x8
+ 1535 0055 3A       		.uleb128 0x3a
+ 1536 0056 0B       		.uleb128 0xb
+ 1537 0057 3B       		.uleb128 0x3b
+ 1538 0058 0B       		.uleb128 0xb
+ 1539 0059 49       		.uleb128 0x49
+ 1540 005a 13       		.uleb128 0x13
+ 1541 005b 02       		.uleb128 0x2
+ 1542 005c 18       		.uleb128 0x18
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 32
+
+
+ 1543 005d 00       		.byte	0
+ 1544 005e 00       		.byte	0
+ 1545 005f 07       		.uleb128 0x7
+ 1546 0060 34       		.uleb128 0x34
+ 1547 0061 00       		.byte	0
+ 1548 0062 03       		.uleb128 0x3
+ 1549 0063 08       		.uleb128 0x8
+ 1550 0064 3A       		.uleb128 0x3a
+ 1551 0065 0B       		.uleb128 0xb
+ 1552 0066 3B       		.uleb128 0x3b
+ 1553 0067 0B       		.uleb128 0xb
+ 1554 0068 49       		.uleb128 0x49
+ 1555 0069 13       		.uleb128 0x13
+ 1556 006a 02       		.uleb128 0x2
+ 1557 006b 18       		.uleb128 0x18
+ 1558 006c 00       		.byte	0
+ 1559 006d 00       		.byte	0
+ 1560 006e 08       		.uleb128 0x8
+ 1561 006f 0F       		.uleb128 0xf
+ 1562 0070 00       		.byte	0
+ 1563 0071 0B       		.uleb128 0xb
+ 1564 0072 0B       		.uleb128 0xb
+ 1565 0073 49       		.uleb128 0x49
+ 1566 0074 13       		.uleb128 0x13
+ 1567 0075 00       		.byte	0
+ 1568 0076 00       		.byte	0
+ 1569 0077 09       		.uleb128 0x9
+ 1570 0078 2E       		.uleb128 0x2e
+ 1571 0079 01       		.byte	0x1
+ 1572 007a 3F       		.uleb128 0x3f
+ 1573 007b 19       		.uleb128 0x19
+ 1574 007c 03       		.uleb128 0x3
+ 1575 007d 0E       		.uleb128 0xe
+ 1576 007e 3A       		.uleb128 0x3a
+ 1577 007f 0B       		.uleb128 0xb
+ 1578 0080 3B       		.uleb128 0x3b
+ 1579 0081 0B       		.uleb128 0xb
+ 1580 0082 27       		.uleb128 0x27
+ 1581 0083 19       		.uleb128 0x19
+ 1582 0084 49       		.uleb128 0x49
+ 1583 0085 13       		.uleb128 0x13
+ 1584 0086 11       		.uleb128 0x11
+ 1585 0087 01       		.uleb128 0x1
+ 1586 0088 12       		.uleb128 0x12
+ 1587 0089 06       		.uleb128 0x6
+ 1588 008a 40       		.uleb128 0x40
+ 1589 008b 18       		.uleb128 0x18
+ 1590 008c 9742     		.uleb128 0x2117
+ 1591 008e 19       		.uleb128 0x19
+ 1592 008f 01       		.uleb128 0x1
+ 1593 0090 13       		.uleb128 0x13
+ 1594 0091 00       		.byte	0
+ 1595 0092 00       		.byte	0
+ 1596 0093 0A       		.uleb128 0xa
+ 1597 0094 2E       		.uleb128 0x2e
+ 1598 0095 01       		.byte	0x1
+ 1599 0096 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 33
+
+
+ 1600 0097 19       		.uleb128 0x19
+ 1601 0098 03       		.uleb128 0x3
+ 1602 0099 0E       		.uleb128 0xe
+ 1603 009a 3A       		.uleb128 0x3a
+ 1604 009b 0B       		.uleb128 0xb
+ 1605 009c 3B       		.uleb128 0x3b
+ 1606 009d 0B       		.uleb128 0xb
+ 1607 009e 27       		.uleb128 0x27
+ 1608 009f 19       		.uleb128 0x19
+ 1609 00a0 49       		.uleb128 0x49
+ 1610 00a1 13       		.uleb128 0x13
+ 1611 00a2 11       		.uleb128 0x11
+ 1612 00a3 01       		.uleb128 0x1
+ 1613 00a4 12       		.uleb128 0x12
+ 1614 00a5 06       		.uleb128 0x6
+ 1615 00a6 40       		.uleb128 0x40
+ 1616 00a7 18       		.uleb128 0x18
+ 1617 00a8 9642     		.uleb128 0x2116
+ 1618 00aa 19       		.uleb128 0x19
+ 1619 00ab 01       		.uleb128 0x1
+ 1620 00ac 13       		.uleb128 0x13
+ 1621 00ad 00       		.byte	0
+ 1622 00ae 00       		.byte	0
+ 1623 00af 0B       		.uleb128 0xb
+ 1624 00b0 2E       		.uleb128 0x2e
+ 1625 00b1 01       		.byte	0x1
+ 1626 00b2 3F       		.uleb128 0x3f
+ 1627 00b3 19       		.uleb128 0x19
+ 1628 00b4 03       		.uleb128 0x3
+ 1629 00b5 0E       		.uleb128 0xe
+ 1630 00b6 3A       		.uleb128 0x3a
+ 1631 00b7 0B       		.uleb128 0xb
+ 1632 00b8 3B       		.uleb128 0x3b
+ 1633 00b9 0B       		.uleb128 0xb
+ 1634 00ba 49       		.uleb128 0x49
+ 1635 00bb 13       		.uleb128 0x13
+ 1636 00bc 11       		.uleb128 0x11
+ 1637 00bd 01       		.uleb128 0x1
+ 1638 00be 12       		.uleb128 0x12
+ 1639 00bf 06       		.uleb128 0x6
+ 1640 00c0 40       		.uleb128 0x40
+ 1641 00c1 18       		.uleb128 0x18
+ 1642 00c2 9642     		.uleb128 0x2116
+ 1643 00c4 19       		.uleb128 0x19
+ 1644 00c5 01       		.uleb128 0x1
+ 1645 00c6 13       		.uleb128 0x13
+ 1646 00c7 00       		.byte	0
+ 1647 00c8 00       		.byte	0
+ 1648 00c9 0C       		.uleb128 0xc
+ 1649 00ca 34       		.uleb128 0x34
+ 1650 00cb 00       		.byte	0
+ 1651 00cc 03       		.uleb128 0x3
+ 1652 00cd 0E       		.uleb128 0xe
+ 1653 00ce 3A       		.uleb128 0x3a
+ 1654 00cf 0B       		.uleb128 0xb
+ 1655 00d0 3B       		.uleb128 0x3b
+ 1656 00d1 0B       		.uleb128 0xb
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 34
+
+
+ 1657 00d2 49       		.uleb128 0x49
+ 1658 00d3 13       		.uleb128 0x13
+ 1659 00d4 02       		.uleb128 0x2
+ 1660 00d5 18       		.uleb128 0x18
+ 1661 00d6 00       		.byte	0
+ 1662 00d7 00       		.byte	0
+ 1663 00d8 0D       		.uleb128 0xd
+ 1664 00d9 01       		.uleb128 0x1
+ 1665 00da 01       		.byte	0x1
+ 1666 00db 49       		.uleb128 0x49
+ 1667 00dc 13       		.uleb128 0x13
+ 1668 00dd 01       		.uleb128 0x1
+ 1669 00de 13       		.uleb128 0x13
+ 1670 00df 00       		.byte	0
+ 1671 00e0 00       		.byte	0
+ 1672 00e1 0E       		.uleb128 0xe
+ 1673 00e2 21       		.uleb128 0x21
+ 1674 00e3 00       		.byte	0
+ 1675 00e4 49       		.uleb128 0x49
+ 1676 00e5 13       		.uleb128 0x13
+ 1677 00e6 2F       		.uleb128 0x2f
+ 1678 00e7 0B       		.uleb128 0xb
+ 1679 00e8 00       		.byte	0
+ 1680 00e9 00       		.byte	0
+ 1681 00ea 0F       		.uleb128 0xf
+ 1682 00eb 34       		.uleb128 0x34
+ 1683 00ec 00       		.byte	0
+ 1684 00ed 03       		.uleb128 0x3
+ 1685 00ee 0E       		.uleb128 0xe
+ 1686 00ef 3A       		.uleb128 0x3a
+ 1687 00f0 0B       		.uleb128 0xb
+ 1688 00f1 3B       		.uleb128 0x3b
+ 1689 00f2 05       		.uleb128 0x5
+ 1690 00f3 49       		.uleb128 0x49
+ 1691 00f4 13       		.uleb128 0x13
+ 1692 00f5 3F       		.uleb128 0x3f
+ 1693 00f6 19       		.uleb128 0x19
+ 1694 00f7 3C       		.uleb128 0x3c
+ 1695 00f8 19       		.uleb128 0x19
+ 1696 00f9 00       		.byte	0
+ 1697 00fa 00       		.byte	0
+ 1698 00fb 10       		.uleb128 0x10
+ 1699 00fc 35       		.uleb128 0x35
+ 1700 00fd 00       		.byte	0
+ 1701 00fe 49       		.uleb128 0x49
+ 1702 00ff 13       		.uleb128 0x13
+ 1703 0100 00       		.byte	0
+ 1704 0101 00       		.byte	0
+ 1705 0102 11       		.uleb128 0x11
+ 1706 0103 34       		.uleb128 0x34
+ 1707 0104 00       		.byte	0
+ 1708 0105 03       		.uleb128 0x3
+ 1709 0106 0E       		.uleb128 0xe
+ 1710 0107 3A       		.uleb128 0x3a
+ 1711 0108 0B       		.uleb128 0xb
+ 1712 0109 3B       		.uleb128 0x3b
+ 1713 010a 0B       		.uleb128 0xb
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 35
+
+
+ 1714 010b 49       		.uleb128 0x49
+ 1715 010c 13       		.uleb128 0x13
+ 1716 010d 3F       		.uleb128 0x3f
+ 1717 010e 19       		.uleb128 0x19
+ 1718 010f 02       		.uleb128 0x2
+ 1719 0110 18       		.uleb128 0x18
+ 1720 0111 00       		.byte	0
+ 1721 0112 00       		.byte	0
+ 1722 0113 00       		.byte	0
+ 1723              		.section	.debug_aranges,"",%progbits
+ 1724 0000 3C000000 		.4byte	0x3c
+ 1725 0004 0200     		.2byte	0x2
+ 1726 0006 00000000 		.4byte	.Ldebug_info0
+ 1727 000a 04       		.byte	0x4
+ 1728 000b 00       		.byte	0
+ 1729 000c 0000     		.2byte	0
+ 1730 000e 0000     		.2byte	0
+ 1731 0010 00000000 		.4byte	.LFB63
+ 1732 0014 3C040000 		.4byte	.LFE63-.LFB63
+ 1733 0018 00000000 		.4byte	.LFB64
+ 1734 001c 1C000000 		.4byte	.LFE64-.LFB64
+ 1735 0020 00000000 		.4byte	.LFB65
+ 1736 0024 38000000 		.4byte	.LFE65-.LFB65
+ 1737 0028 00000000 		.4byte	.LFB66
+ 1738 002c 7C000000 		.4byte	.LFE66-.LFB66
+ 1739 0030 00000000 		.4byte	.LFB67
+ 1740 0034 B0010000 		.4byte	.LFE67-.LFB67
+ 1741 0038 00000000 		.4byte	0
+ 1742 003c 00000000 		.4byte	0
+ 1743              		.section	.debug_ranges,"",%progbits
+ 1744              	.Ldebug_ranges0:
+ 1745 0000 00000000 		.4byte	.LFB63
+ 1746 0004 3C040000 		.4byte	.LFE63
+ 1747 0008 00000000 		.4byte	.LFB64
+ 1748 000c 1C000000 		.4byte	.LFE64
+ 1749 0010 00000000 		.4byte	.LFB65
+ 1750 0014 38000000 		.4byte	.LFE65
+ 1751 0018 00000000 		.4byte	.LFB66
+ 1752 001c 7C000000 		.4byte	.LFE66
+ 1753 0020 00000000 		.4byte	.LFB67
+ 1754 0024 B0010000 		.4byte	.LFE67
+ 1755 0028 00000000 		.4byte	0
+ 1756 002c 00000000 		.4byte	0
+ 1757              		.section	.debug_line,"",%progbits
+ 1758              	.Ldebug_line0:
+ 1759 0000 A9020000 		.section	.debug_str,"MS",%progbits,1
+ 1759      02004301 
+ 1759      00000201 
+ 1759      FB0E0D00 
+ 1759      01010101 
+ 1760              	.LASF15:
+ 1761 0000 6C6F6E67 		.ascii	"long double\000"
+ 1761      20646F75 
+ 1761      626C6500 
+ 1762              	.LASF19:
+ 1763 000c 616E676C 		.ascii	"angle_Volt\000"
+ 1763      655F566F 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 36
+
+
+ 1763      6C7400
+ 1764              	.LASF17:
+ 1765 0017 63616C63 		.ascii	"calculate_50Hz_RMS\000"
+ 1765      756C6174 
+ 1765      655F3530 
+ 1765      487A5F52 
+ 1765      4D5300
+ 1766              	.LASF2:
+ 1767 002a 73686F72 		.ascii	"short int\000"
+ 1767      7420696E 
+ 1767      7400
+ 1768              	.LASF14:
+ 1769 0034 73697A65 		.ascii	"sizetype\000"
+ 1769      74797065 
+ 1769      00
+ 1770              	.LASF30:
+ 1771 003d 52655F76 		.ascii	"Re_volt\000"
+ 1771      6F6C7400 
+ 1772              	.LASF34:
+ 1773 0045 496D5F41 		.ascii	"Im_Ampere\000"
+ 1773      6D706572 
+ 1773      6500
+ 1774              	.LASF31:
+ 1775 004f 496D5F76 		.ascii	"Im_volt\000"
+ 1775      6F6C7400 
+ 1776              	.LASF26:
+ 1777 0057 416D705F 		.ascii	"Amp_Ampere\000"
+ 1777      416D7065 
+ 1777      726500
+ 1778              	.LASF33:
+ 1779 0062 52655F41 		.ascii	"Re_Ampere\000"
+ 1779      6D706572 
+ 1779      6500
+ 1780              	.LASF11:
+ 1781 006c 666C6F61 		.ascii	"float\000"
+ 1781      7400
+ 1782              	.LASF6:
+ 1783 0072 6C6F6E67 		.ascii	"long long int\000"
+ 1783      206C6F6E 
+ 1783      6720696E 
+ 1783      7400
+ 1784              	.LASF35:
+ 1785 0080 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1785      4320342E 
+ 1785      392E3320 
+ 1785      32303135 
+ 1785      30333033 
+ 1786 00b3 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1786      20726576 
+ 1786      6973696F 
+ 1786      6E203232 
+ 1786      31323230 
+ 1787 00e6 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1787      66756E63 
+ 1787      74696F6E 
+ 1787      2D736563 
+ 1787      74696F6E 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 37
+
+
+ 1788              	.LASF32:
+ 1789 010e 4162735F 		.ascii	"Abs_Ampere\000"
+ 1789      416D7065 
+ 1789      726500
+ 1790              	.LASF1:
+ 1791 0119 756E7369 		.ascii	"unsigned char\000"
+ 1791      676E6564 
+ 1791      20636861 
+ 1791      7200
+ 1792              	.LASF20:
+ 1793 0127 616E676C 		.ascii	"angle_Ampere\000"
+ 1793      655F416D 
+ 1793      70657265 
+ 1793      00
+ 1794              	.LASF27:
+ 1795 0134 524D535F 		.ascii	"RMS_Ampere\000"
+ 1795      416D7065 
+ 1795      726500
+ 1796              	.LASF0:
+ 1797 013f 7369676E 		.ascii	"signed char\000"
+ 1797      65642063 
+ 1797      68617200 
+ 1798              	.LASF7:
+ 1799 014b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1799      206C6F6E 
+ 1799      6720756E 
+ 1799      7369676E 
+ 1799      65642069 
+ 1800              	.LASF37:
+ 1801 0162 433A5C55 		.ascii	"C:\\Users\\User\\Desktop\\GIT\\EE-projekt-4-gruppe-"
+ 1801      73657273 
+ 1801      5C557365 
+ 1801      725C4465 
+ 1801      736B746F 
+ 1802 0190 315C4D61 		.ascii	"1\\Maaleenhed\\Maaleenhed\\Spaendingsmaaler\\Maaler"
+ 1802      616C6565 
+ 1802      6E686564 
+ 1802      5C4D6161 
+ 1802      6C65656E 
+ 1803 01bf 2E637964 		.ascii	".cydsn\000"
+ 1803      736E00
+ 1804              	.LASF8:
+ 1805 01c6 756E7369 		.ascii	"unsigned int\000"
+ 1805      676E6564 
+ 1805      20696E74 
+ 1805      00
+ 1806              	.LASF3:
+ 1807 01d3 73686F72 		.ascii	"short unsigned int\000"
+ 1807      7420756E 
+ 1807      7369676E 
+ 1807      65642069 
+ 1807      6E7400
+ 1808              	.LASF25:
+ 1809 01e6 524D535F 		.ascii	"RMS_Volt\000"
+ 1809      566F6C74 
+ 1809      00
+ 1810              	.LASF16:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 38
+
+
+ 1811 01ef 63616C63 		.ascii	"calculate_50Hz_Amp\000"
+ 1811      756C6174 
+ 1811      655F3530 
+ 1811      487A5F41 
+ 1811      6D7000
+ 1812              	.LASF13:
+ 1813 0202 63686172 		.ascii	"char\000"
+ 1813      00
+ 1814              	.LASF4:
+ 1815 0207 6C6F6E67 		.ascii	"long int\000"
+ 1815      20696E74 
+ 1815      00
+ 1816              	.LASF21:
+ 1817 0210 6D61696E 		.ascii	"main\000"
+ 1817      00
+ 1818              	.LASF10:
+ 1819 0215 696E7433 		.ascii	"int32_t\000"
+ 1819      325F7400 
+ 1820              	.LASF18:
+ 1821 021d 63616C63 		.ascii	"calculate_50Hz_PF\000"
+ 1821      756C6174 
+ 1821      655F3530 
+ 1821      487A5F50 
+ 1821      4600
+ 1822              	.LASF29:
+ 1823 022f 4162735F 		.ascii	"Abs_volt\000"
+ 1823      766F6C74 
+ 1823      00
+ 1824              	.LASF36:
+ 1825 0238 6D61696E 		.ascii	"main.c\000"
+ 1825      2E6300
+ 1826              	.LASF5:
+ 1827 023f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1827      20756E73 
+ 1827      69676E65 
+ 1827      6420696E 
+ 1827      7400
+ 1828              	.LASF12:
+ 1829 0251 646F7562 		.ascii	"double\000"
+ 1829      6C6500
+ 1830              	.LASF9:
+ 1831 0258 5F5F696E 		.ascii	"__int32_t\000"
+ 1831      7433325F 
+ 1831      7400
+ 1832              	.LASF23:
+ 1833 0262 53616D70 		.ascii	"SampleArrayI\000"
+ 1833      6C654172 
+ 1833      72617949 
+ 1833      00
+ 1834              	.LASF28:
+ 1835 026f 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1835      52784275 
+ 1835      66666572 
+ 1835      00
+ 1836              	.LASF24:
+ 1837 027c 416D705F 		.ascii	"Amp_Volt\000"
+ 1837      566F6C74 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccbEPpJ6.s 			page 39
+
+
+ 1837      00
+ 1838              	.LASF22:
+ 1839 0285 53616D70 		.ascii	"SampleArrayU\000"
+ 1839      6C654172 
+ 1839      72617955 
+ 1839      00
+ 1840              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

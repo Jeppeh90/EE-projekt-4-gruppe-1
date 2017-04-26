@@ -91,7 +91,15 @@ void FFT(int dir,long m,double *x,double *y, double *u)
    for(i=0;i<N_points;i++)
    {
     /* Absolute value */
-   u[i]=2*sqrt((x[i]*x[i])+(y[i]*y[i]))/N_points;  
+   //u[i]=2*sqrt((x[i]*x[i])+(y[i]*y[i]))/N_points;
+      double real = 0;
+      double imaginar = 0;
+        real = x[i]*(2/N_points);
+        imaginar = y[i]*(2/N_points);
+        
+        u[i] = sqrt(real*real+imaginar*imaginar);
+    
+    
    }
 }
 
@@ -101,20 +109,20 @@ double calculate_50Hz_Amp(double *u)
 //    double delta_f_bin = fsample/N_points;
 //    int bin_number = frekvens/delta_f_bin;
     
-    return u[3];
+    return u[1];
     
     
 }
 
 double calculate_50Hz_RMS(double *u)
 {
-    return u[3]/sqrt(2);  
+    return u[1]/sqrt(2);  
 }
 
 double calculate_50Hz_PF()
 {
-    double angle_Volt = atan(Im_volt[3]/Re_volt[3]);
-    double angle_Ampere = atan(Im_Ampere[3]/Re_Ampere[3]);
+    double angle_Volt = atan(Im_volt[1]/Re_volt[1]);
+    double angle_Ampere = atan(Im_Ampere[1]/Re_Ampere[1]);
     
     return cos(angle_Volt - angle_Ampere);
     

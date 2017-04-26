@@ -9,5 +9,4 @@ set_io "ProbeU1(0)" iocell 0 6
 set_io "ProbeU2(0)" iocell 0 7
 set_io "test(0)" iocell 1 7
 set_io "ProbeI1(0)" iocell 0 5
-set_io "ProbeI2(0)" iocell 0 4
 set_location "\ADC_DelSig_1:DEC\" decimatorcell -1 -1 0

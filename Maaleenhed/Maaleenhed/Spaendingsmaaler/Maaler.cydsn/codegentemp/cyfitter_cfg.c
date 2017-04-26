@@ -280,7 +280,6 @@ static void AnalogSetDefault(void)
 	uint8 bg_xover_inl_trim = CY_GET_XTND_REG8((void CYFAR *)(CYREG_FLSHID_MFG_CFG_BG_XOVER_INL_TRIM + 1u));
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_BG_DFT0), (bg_xover_inl_trim & 0x07u));
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_BG_DFT1), ((bg_xover_inl_trim >> 4) & 0x0Fu));
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_DSM0_SW4, 0x80u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_PUMP_CR0, 0x44u);
 }
 
@@ -383,15 +382,15 @@ void AMux_1_Unset(uint8 channel)
 /* This is an implementation detail of the AMux. Code that depends on it may be
    incompatible with other versions of PSoC Creator. */
 uint8 CYXDATA * const CYCODE AMux_2__addrTable[4] = {
-	(uint8 CYXDATA *)CYREG_PRT0_AG, (uint8 CYXDATA *)CY_AMUX_UNUSED, 
-	(uint8 CYXDATA *)CYREG_OPAMP2_SW, (uint8 CYXDATA *)CYREG_OPAMP2_MX, 
+	(uint8 CYXDATA *)CYREG_PRT0_AG, (uint8 CYXDATA *)CYREG_DSM0_SW4, 
+	(uint8 CYXDATA *)CYREG_PRT0_AG, (uint8 CYXDATA *)CYREG_DSM0_SW4, 
 };
 
 /* This is an implementation detail of the AMux. Code that depends on it may be
    incompatible with other versions of PSoC Creator. */
 const uint8 CYCODE AMux_2__maskTable[4] = {
-	0x80u, 0x00u, 
-	0x04u, 0x04u, 
+	0x80u, 0x80u, 
+	0x80u, 0x80u, 
 };
 
 /*******************************************************************************
