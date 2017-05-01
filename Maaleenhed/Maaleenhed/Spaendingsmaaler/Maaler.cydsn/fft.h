@@ -120,6 +120,10 @@ double calculate_50Hz_PF()
     
 }
 
+double calculate_THD()
+{
+   return sqrt(Abs_volt[2]*Abs_volt[2]+Abs_volt[3]*Abs_volt[3]+Abs_volt[4]*Abs_volt[4]+Abs_volt[5]*Abs_volt[5])/Abs_volt[1];  
+}
 
 
 

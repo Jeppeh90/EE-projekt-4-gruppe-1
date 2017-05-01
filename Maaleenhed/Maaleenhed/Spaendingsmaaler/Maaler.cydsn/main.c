@@ -35,6 +35,7 @@ int main(void)
     double Amp_Ampere = 0;
     double RMS_Ampere = 0;
     double PF = 0;
+    double THD = 0;
 
     while(1)
     {
@@ -62,6 +63,7 @@ int main(void)
     Amp_Ampere = calculate_50Hz_Amp(Abs_Ampere);
     RMS_Ampere = calculate_50Hz_RMS(Abs_Ampere);
     PF = calculate_50Hz_PF();
+    THD = calculate_THD();
     }   
     
     

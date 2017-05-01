@@ -1,5 +1,5 @@
-C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Maaleenhed\Spaendingsmaaler\Maaler.cydsn\Maaler.cyprj|cd6f0f46-3444-4b85-b19b-926754d9e3e9
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|ff7fef1e-c078-4ab8-8254-dbcce7a50525
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|30eb4d1f-db80-414c-ab79-1a4a4a66ef9b
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|5ee3651e-55bd-46c1-9cf6-1dec55f89eb3
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|76ce11f1-5b82-4c06-9193-c8b3df69c188
+\\Mac\Home\Desktop\Projekt\Maaleenhed\Maaleenhed\Spaendingsmaaler\Maaler.cydsn\Maaler.cyprj|96ed5ae8-1666-44fe-8326-536cdf0a95ea
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|5fde80db-a001-46e1-b130-ba855ee204a6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|f027656e-344d-478b-9235-4000db9ec4dc
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|cd59bc0a-6075-4a1f-b10a-a3dfb24bf208
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|59464c00-6df5-401a-a842-d7b29214651a
