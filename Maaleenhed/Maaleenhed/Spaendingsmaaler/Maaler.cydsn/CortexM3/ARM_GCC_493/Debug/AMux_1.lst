@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
   24:Generated_Source\PSoC5/AMux_1.c **** * Function Name: AMux_1_Start
   25:Generated_Source\PSoC5/AMux_1.c **** ********************************************************************************
   26:Generated_Source\PSoC5/AMux_1.c **** * Summary:
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 2
 
 
   27:Generated_Source\PSoC5/AMux_1.c **** *  Disconnect all channels.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
   49:Generated_Source\PSoC5/AMux_1.c **** 
   50:Generated_Source\PSoC5/AMux_1.c ****     AMux_1_lastChannel = AMux_1_NULL_CHANNEL;
   62              		.loc 1 50 0 is_stmt 1
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 3
 
 
   63 0020 024B     		ldr	r3, .L4
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
   97              		.cfi_def_cfa_offset 16
   98 0004 00AF     		add	r7, sp, #0
   99              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 4
 
 
  100 0006 0346     		mov	r3, r0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
   91:Generated_Source\PSoC5/AMux_1.c **** *  void
   92:Generated_Source\PSoC5/AMux_1.c **** *
   93:Generated_Source\PSoC5/AMux_1.c **** *******************************************************************************/
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 5
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 5
 
 
   94:Generated_Source\PSoC5/AMux_1.c **** void AMux_1_FastSelect(uint8 channel) 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  169              		.cfi_def_cfa_offset 8
  170 002c BD46     		mov	sp, r7
  171              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 6
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 6
 
 
  172              		@ sp needed
@@ -323,14 +323,14 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  191 000c 28000000 		.4byte	.LASF18
  192 0010 01       		.byte	0x1
  193 0011 08000000 		.4byte	.LASF19
- 194 0015 08010000 		.4byte	.LASF20
+ 194 0015 3E010000 		.4byte	.LASF20
  195 0019 00000000 		.4byte	.Ldebug_ranges0+0
  196 001d 00000000 		.4byte	0
  197 0021 00000000 		.4byte	.Ldebug_line0
  198 0025 02       		.uleb128 0x2
  199 0026 01       		.byte	0x1
  200 0027 06       		.byte	0x6
- 201 0028 C7010000 		.4byte	.LASF0
+ 201 0028 DC010000 		.4byte	.LASF0
  202 002c 02       		.uleb128 0x2
  203 002d 01       		.byte	0x1
  204 002e 08       		.byte	0x8
@@ -338,7 +338,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  206 0033 02       		.uleb128 0x2
  207 0034 02       		.byte	0x2
  208 0035 05       		.byte	0x5
- 209 0036 AE010000 		.4byte	.LASF2
+ 209 0036 C3010000 		.4byte	.LASF2
  210 003a 02       		.uleb128 0x2
  211 003b 02       		.byte	0x2
  212 003c 07       		.byte	0x7
@@ -346,7 +346,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  214 0041 02       		.uleb128 0x2
  215 0042 04       		.byte	0x4
  216 0043 05       		.byte	0x5
- 217 0044 BE010000 		.4byte	.LASF4
+ 217 0044 D3010000 		.4byte	.LASF4
  218 0048 02       		.uleb128 0x2
  219 0049 04       		.byte	0x4
  220 004a 07       		.byte	0x7
@@ -354,14 +354,14 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  222 004f 02       		.uleb128 0x2
  223 0050 08       		.byte	0x8
  224 0051 05       		.byte	0x5
- 225 0052 8D010000 		.4byte	.LASF6
+ 225 0052 A2010000 		.4byte	.LASF6
  226 0056 02       		.uleb128 0x2
  227 0057 08       		.byte	0x8
  228 0058 07       		.byte	0x7
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 7
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 7
 
 
- 229 0059 71010000 		.4byte	.LASF7
+ 229 0059 22010000 		.4byte	.LASF7
  230 005d 03       		.uleb128 0x3
  231 005e 04       		.byte	0x4
  232 005f 05       		.byte	0x5
@@ -369,9 +369,9 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  234 0064 02       		.uleb128 0x2
  235 0065 04       		.byte	0x4
  236 0066 07       		.byte	0x7
- 237 0067 64010000 		.4byte	.LASF8
+ 237 0067 15010000 		.4byte	.LASF8
  238 006b 04       		.uleb128 0x4
- 239 006c B8010000 		.4byte	.LASF21
+ 239 006c CD010000 		.4byte	.LASF21
  240 0070 02       		.byte	0x2
  241 0071 9201     		.2byte	0x192
  242 0073 2C000000 		.4byte	0x2c
@@ -386,9 +386,9 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  251 0085 02       		.uleb128 0x2
  252 0086 01       		.byte	0x1
  253 0087 08       		.byte	0x8
- 254 0088 9B010000 		.4byte	.LASF11
+ 254 0088 B0010000 		.4byte	.LASF11
  255 008c 05       		.uleb128 0x5
- 256 008d 57010000 		.4byte	.LASF12
+ 256 008d 08010000 		.4byte	.LASF12
  257 0091 01       		.byte	0x1
  258 0092 24       		.byte	0x24
  259 0093 00000000 		.4byte	.LFB0
@@ -397,7 +397,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  262 009c 9C       		.byte	0x9c
  263 009d B0000000 		.4byte	0xb0
  264 00a1 06       		.uleb128 0x6
- 265 00a2 88010000 		.4byte	.LASF16
+ 265 00a2 39010000 		.4byte	.LASF16
  266 00a6 01       		.byte	0x1
  267 00a7 26       		.byte	0x26
  268 00a8 6B000000 		.4byte	0x6b
@@ -406,7 +406,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  271 00ae 77       		.sleb128 -9
  272 00af 00       		.byte	0
  273 00b0 05       		.uleb128 0x5
- 274 00b1 A0010000 		.4byte	.LASF13
+ 274 00b1 B5010000 		.4byte	.LASF13
  275 00b5 01       		.byte	0x1
  276 00b6 45       		.byte	0x45
  277 00b7 00000000 		.4byte	.LFB1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  283 00c6 00000000 		.4byte	.LASF15
  284 00ca 01       		.byte	0x1
  285 00cb 45       		.byte	0x45
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 8
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 8
 
 
  286 00cc 6B000000 		.4byte	0x6b
@@ -445,7 +445,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  307 00f6 77       		.sleb128 -9
  308 00f7 00       		.byte	0
  309 00f8 06       		.uleb128 0x6
- 310 00f9 D3010000 		.4byte	.LASF17
+ 310 00f9 E8010000 		.4byte	.LASF17
  311 00fd 01       		.byte	0x1
  312 00fe 14       		.byte	0x14
  313 00ff 6B000000 		.4byte	0x6b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  340 0014 24       		.uleb128 0x24
  341 0015 00       		.byte	0
  342 0016 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 9
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 9
 
 
  343 0017 0B       		.uleb128 0xb
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  397 004e 00       		.byte	0
  398 004f 00       		.byte	0
  399 0050 06       		.uleb128 0x6
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 10
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 10
 
 
  400 0051 34       		.uleb128 0x34
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  454 0018 00000000 		.4byte	0
  455 001c 00000000 		.4byte	0
  456              		.section	.debug_line,"",%progbits
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 11
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 11
 
 
  457              	.Ldebug_line0:
@@ -658,77 +658,79 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 1
  476      7369676E 
  476      65642069 
  476      6E7400
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 12
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 12
 
 
  477              	.LASF10:
  478 0101 646F7562 		.ascii	"double\000"
  478      6C6500
- 479              	.LASF20:
- 480 0108 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Projekt\\Maaleenhed\\Maalee"
- 480      635C486F 
- 480      6D655C44 
- 480      65736B74 
- 480      6F705C50 
- 481 0134 6E686564 		.ascii	"nhed\\Spaendingsmaaler\\Maaler.cydsn\000"
- 481      5C537061 
- 481      656E6469 
- 481      6E67736D 
- 481      61616C65 
- 482              	.LASF12:
- 483 0157 414D7578 		.ascii	"AMux_1_Start\000"
- 483      5F315F53 
- 483      74617274 
- 483      00
- 484              	.LASF8:
- 485 0164 756E7369 		.ascii	"unsigned int\000"
- 485      676E6564 
- 485      20696E74 
- 485      00
- 486              	.LASF7:
- 487 0171 6C6F6E67 		.ascii	"long long unsigned int\000"
- 487      206C6F6E 
- 487      6720756E 
- 487      7369676E 
- 487      65642069 
- 488              	.LASF16:
- 489 0188 6368616E 		.ascii	"chan\000"
- 489      00
- 490              	.LASF6:
- 491 018d 6C6F6E67 		.ascii	"long long int\000"
- 491      206C6F6E 
- 491      6720696E 
- 491      7400
- 492              	.LASF11:
- 493 019b 63686172 		.ascii	"char\000"
- 493      00
- 494              	.LASF13:
- 495 01a0 414D7578 		.ascii	"AMux_1_Select\000"
- 495      5F315F53 
- 495      656C6563 
- 495      7400
- 496              	.LASF2:
- 497 01ae 73686F72 		.ascii	"short int\000"
- 497      7420696E 
- 497      7400
- 498              	.LASF21:
- 499 01b8 75696E74 		.ascii	"uint8\000"
- 499      3800
- 500              	.LASF4:
- 501 01be 6C6F6E67 		.ascii	"long int\000"
- 501      20696E74 
- 501      00
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccfPzVNB.s 			page 13
+ 479              	.LASF12:
+ 480 0108 414D7578 		.ascii	"AMux_1_Start\000"
+ 480      5F315F53 
+ 480      74617274 
+ 480      00
+ 481              	.LASF8:
+ 482 0115 756E7369 		.ascii	"unsigned int\000"
+ 482      676E6564 
+ 482      20696E74 
+ 482      00
+ 483              	.LASF7:
+ 484 0122 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 484      206C6F6E 
+ 484      6720756E 
+ 484      7369676E 
+ 484      65642069 
+ 485              	.LASF16:
+ 486 0139 6368616E 		.ascii	"chan\000"
+ 486      00
+ 487              	.LASF20:
+ 488 013e 433A5C55 		.ascii	"C:\\Users\\User\\Desktop\\GIT\\EE-projekt-4-gruppe-"
+ 488      73657273 
+ 488      5C557365 
+ 488      725C4465 
+ 488      736B746F 
+ 489 016c 315C4D61 		.ascii	"1\\Maaleenhed\\Maaleenhed\\Spaendingsmaaler\\Maaler"
+ 489      616C6565 
+ 489      6E686564 
+ 489      5C4D6161 
+ 489      6C65656E 
+ 490 019b 2E637964 		.ascii	".cydsn\000"
+ 490      736E00
+ 491              	.LASF6:
+ 492 01a2 6C6F6E67 		.ascii	"long long int\000"
+ 492      206C6F6E 
+ 492      6720696E 
+ 492      7400
+ 493              	.LASF11:
+ 494 01b0 63686172 		.ascii	"char\000"
+ 494      00
+ 495              	.LASF13:
+ 496 01b5 414D7578 		.ascii	"AMux_1_Select\000"
+ 496      5F315F53 
+ 496      656C6563 
+ 496      7400
+ 497              	.LASF2:
+ 498 01c3 73686F72 		.ascii	"short int\000"
+ 498      7420696E 
+ 498      7400
+ 499              	.LASF21:
+ 500 01cd 75696E74 		.ascii	"uint8\000"
+ 500      3800
+ 501              	.LASF4:
+ 502 01d3 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccM8sk0Y.s 			page 13
 
 
- 502              	.LASF0:
- 503 01c7 7369676E 		.ascii	"signed char\000"
- 503      65642063 
- 503      68617200 
- 504              	.LASF17:
- 505 01d3 414D7578 		.ascii	"AMux_1_lastChannel\000"
- 505      5F315F6C 
- 505      61737443 
- 505      68616E6E 
- 505      656C00
- 506              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 502      20696E74 
+ 502      00
+ 503              	.LASF0:
+ 504 01dc 7369676E 		.ascii	"signed char\000"
+ 504      65642063 
+ 504      68617200 
+ 505              	.LASF17:
+ 506 01e8 414D7578 		.ascii	"AMux_1_lastChannel\000"
+ 506      5F315F6C 
+ 506      61737443 
+ 506      68616E6E 
+ 506      656C00
+ 507              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
