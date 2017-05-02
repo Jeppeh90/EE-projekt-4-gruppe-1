@@ -58,10 +58,10 @@ int main(void)
     FFT(2,exponent,Re_Ampere,Im_Ampere,Abs_Ampere);
     
     
-    Amp_Volt = calculate_50Hz_Amp(Abs_volt);
-    RMS_Volt = calculate_50Hz_RMS(Abs_volt);
-    Amp_Ampere = calculate_50Hz_Amp(Abs_Ampere);
-    RMS_Ampere = calculate_50Hz_RMS(Abs_Ampere);
+    Amp_Volt = calculate_50Hz_Amp(Abs_volt)*V_faktor-56.9;
+    RMS_Volt = calculate_50Hz_RMS(Abs_volt)*V_faktor-56.9;
+    Amp_Ampere = calculate_50Hz_Amp(Abs_Ampere)*I_faktor-2.5;
+    RMS_Ampere = calculate_50Hz_RMS(Abs_Ampere)*I_faktor-2.5;
     PF = calculate_50Hz_PF();
     THD = calculate_THD();
     }   

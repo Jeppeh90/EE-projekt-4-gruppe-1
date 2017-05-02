@@ -4,6 +4,8 @@
 #define N_points 64              //number of points				
 #define exponent log(64)/log(2)  //log2(N_points); for N_points=64 -> exponent=6
 #define pi 3.14159265359
+#define V_faktor 5.4391
+#define I_faktor 0.3291
 
 
 
