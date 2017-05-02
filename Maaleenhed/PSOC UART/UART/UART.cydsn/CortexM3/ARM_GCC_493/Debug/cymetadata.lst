@@ -1,0 +1,1485 @@
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"cymetadata.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	cy_metadata
+  19              		.global	cy_meta_flashprotect
+  20              		.global	cy_meta_wonvl
+  21              		.global	cy_meta_custnvl
+  22              		.global	cy_meta_configecc
+  23              		.section	.cyconfigecc,"a",%progbits
+  24              		.align	2
+  25              		.type	cy_meta_configecc, %object
+  26              		.size	cy_meta_configecc, 940
+  27              	cy_meta_configecc:
+  28 0000 02       		.byte	2
+  29 0001 52       		.byte	82
+  30 0002 00       		.byte	0
+  31 0003 40       		.byte	64
+  32 0004 01       		.byte	1
+  33 0005 64       		.byte	100
+  34 0006 00       		.byte	0
+  35 0007 40       		.byte	64
+  36 0008 02       		.byte	2
+  37 0009 65       		.byte	101
+  38 000a 00       		.byte	0
+  39 000b 40       		.byte	64
+  40 000c 5D       		.byte	93
+  41 000d 08       		.byte	8
+  42 000e 01       		.byte	1
+  43 000f 40       		.byte	64
+  44 0010 35       		.byte	53
+  45 0011 09       		.byte	9
+  46 0012 01       		.byte	1
+  47 0013 40       		.byte	64
+  48 0014 01       		.byte	1
+  49 0015 17       		.byte	23
+  50 0016 01       		.byte	1
+  51 0017 40       		.byte	64
+  52 0018 44       		.byte	68
+  53 0019 18       		.byte	24
+  54 001a 01       		.byte	1
+  55 001b 40       		.byte	64
+  56 001c 34       		.byte	52
+  57 001d 19       		.byte	25
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 2
+
+
+  58 001e 01       		.byte	1
+  59 001f 40       		.byte	64
+  60 0020 40       		.byte	64
+  61 0021 1A       		.byte	26
+  62 0022 01       		.byte	1
+  63 0023 40       		.byte	64
+  64 0024 43       		.byte	67
+  65 0025 1B       		.byte	27
+  66 0026 01       		.byte	1
+  67 0027 40       		.byte	64
+  68 0028 02       		.byte	2
+  69 0029 40       		.byte	64
+  70 002a 01       		.byte	1
+  71 002b 40       		.byte	64
+  72 002c 01       		.byte	1
+  73 002d 41       		.byte	65
+  74 002e 01       		.byte	1
+  75 002f 40       		.byte	64
+  76 0030 01       		.byte	1
+  77 0031 42       		.byte	66
+  78 0032 01       		.byte	1
+  79 0033 40       		.byte	64
+  80 0034 01       		.byte	1
+  81 0035 43       		.byte	67
+  82 0036 01       		.byte	1
+  83 0037 40       		.byte	64
+  84 0038 03       		.byte	3
+  85 0039 48       		.byte	72
+  86 003a 01       		.byte	1
+  87 003b 40       		.byte	64
+  88 003c 07       		.byte	7
+  89 003d 4D       		.byte	77
+  90 003e 01       		.byte	1
+  91 003f 40       		.byte	64
+  92 0040 04       		.byte	4
+  93 0041 50       		.byte	80
+  94 0042 01       		.byte	1
+  95 0043 40       		.byte	64
+  96 0044 01       		.byte	1
+  97 0045 51       		.byte	81
+  98 0046 01       		.byte	1
+  99 0047 40       		.byte	64
+ 100 0048 61       		.byte	97
+ 101 0049 80       		.byte	-128
+ 102 004a 64       		.byte	100
+ 103 004b 40       		.byte	64
+ 104 004c 88       		.byte	-120
+ 105 004d 0F       		.byte	15
+ 106 004e 88       		.byte	-120
+ 107 004f 38       		.byte	56
+ 108 0050 8B       		.byte	-117
+ 109 0051 72       		.byte	114
+ 110 0052 00       		.byte	0
+ 111 0053 13       		.byte	19
+ 112 0054 01       		.byte	1
+ 113 0055 10       		.byte	16
+ 114 0056 02       		.byte	2
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 3
+
+
+ 115 0057 04       		.byte	4
+ 116 0058 05       		.byte	5
+ 117 0059 09       		.byte	9
+ 118 005a 06       		.byte	6
+ 119 005b 15       		.byte	21
+ 120 005c 07       		.byte	7
+ 121 005d 10       		.byte	16
+ 122 005e 0A       		.byte	10
+ 123 005f 20       		.byte	32
+ 124 0060 0D       		.byte	13
+ 125 0061 14       		.byte	20
+ 126 0062 10       		.byte	16
+ 127 0063 13       		.byte	19
+ 128 0064 11       		.byte	17
+ 129 0065 10       		.byte	16
+ 130 0066 12       		.byte	18
+ 131 0067 0C       		.byte	12
+ 132 0068 13       		.byte	19
+ 133 0069 0C       		.byte	12
+ 134 006a 14       		.byte	20
+ 135 006b 0A       		.byte	10
+ 136 006c 15       		.byte	21
+ 137 006d 1C       		.byte	28
+ 138 006e 16       		.byte	22
+ 139 006f 14       		.byte	20
+ 140 0070 17       		.byte	23
+ 141 0071 02       		.byte	2
+ 142 0072 1A       		.byte	26
+ 143 0073 08       		.byte	8
+ 144 0074 1E       		.byte	30
+ 145 0075 20       		.byte	32
+ 146 0076 1F       		.byte	31
+ 147 0077 03       		.byte	3
+ 148 0078 21       		.byte	33
+ 149 0079 0C       		.byte	12
+ 150 007a 23       		.byte	35
+ 151 007b 11       		.byte	17
+ 152 007c 28       		.byte	40
+ 153 007d 03       		.byte	3
+ 154 007e 2A       		.byte	42
+ 155 007f 14       		.byte	20
+ 156 0080 30       		.byte	48
+ 157 0081 10       		.byte	16
+ 158 0082 31       		.byte	49
+ 159 0083 1F       		.byte	31
+ 160 0084 34       		.byte	52
+ 161 0085 20       		.byte	32
+ 162 0086 36       		.byte	54
+ 163 0087 0F       		.byte	15
+ 164 0088 3A       		.byte	58
+ 165 0089 80       		.byte	-128
+ 166 008a 3E       		.byte	62
+ 167 008b 11       		.byte	17
+ 168 008c 40       		.byte	64
+ 169 008d 12       		.byte	18
+ 170 008e 41       		.byte	65
+ 171 008f 04       		.byte	4
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 4
+
+
+ 172 0090 45       		.byte	69
+ 173 0091 E0       		.byte	-32
+ 174 0092 46       		.byte	70
+ 175 0093 0B       		.byte	11
+ 176 0094 47       		.byte	71
+ 177 0095 0C       		.byte	12
+ 178 0096 48       		.byte	72
+ 179 0097 16       		.byte	22
+ 180 0098 49       		.byte	73
+ 181 0099 FF       		.byte	-1
+ 182 009a 4A       		.byte	74
+ 183 009b FF       		.byte	-1
+ 184 009c 4B       		.byte	75
+ 185 009d FF       		.byte	-1
+ 186 009e 4E       		.byte	78
+ 187 009f F0       		.byte	-16
+ 188 00a0 4F       		.byte	79
+ 189 00a1 44       		.byte	68
+ 190 00a2 50       		.byte	80
+ 191 00a3 0C       		.byte	12
+ 192 00a4 54       		.byte	84
+ 193 00a5 01       		.byte	1
+ 194 00a6 58       		.byte	88
+ 195 00a7 04       		.byte	4
+ 196 00a8 59       		.byte	89
+ 197 00a9 04       		.byte	4
+ 198 00aa 5A       		.byte	90
+ 199 00ab 04       		.byte	4
+ 200 00ac 5B       		.byte	91
+ 201 00ad 04       		.byte	4
+ 202 00ae 5F       		.byte	95
+ 203 00af 01       		.byte	1
+ 204 00b0 66       		.byte	102
+ 205 00b1 C0       		.byte	-64
+ 206 00b2 6A       		.byte	106
+ 207 00b3 40       		.byte	64
+ 208 00b4 6B       		.byte	107
+ 209 00b5 02       		.byte	2
+ 210 00b6 82       		.byte	-126
+ 211 00b7 02       		.byte	2
+ 212 00b8 86       		.byte	-122
+ 213 00b9 06       		.byte	6
+ 214 00ba 87       		.byte	-121
+ 215 00bb 0C       		.byte	12
+ 216 00bc 95       		.byte	-107
+ 217 00bd 2C       		.byte	44
+ 218 00be 97       		.byte	-105
+ 219 00bf 43       		.byte	67
+ 220 00c0 99       		.byte	-103
+ 221 00c1 80       		.byte	-128
+ 222 00c2 9B       		.byte	-101
+ 223 00c3 13       		.byte	19
+ 224 00c4 9E       		.byte	-98
+ 225 00c5 05       		.byte	5
+ 226 00c6 9F       		.byte	-97
+ 227 00c7 08       		.byte	8
+ 228 00c8 A1       		.byte	-95
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 5
+
+
+ 229 00c9 71       		.byte	113
+ 230 00ca A2       		.byte	-94
+ 231 00cb 03       		.byte	3
+ 232 00cc A3       		.byte	-93
+ 233 00cd 0E       		.byte	14
+ 234 00ce A6       		.byte	-90
+ 235 00cf 01       		.byte	1
+ 236 00d0 A8       		.byte	-88
+ 237 00d1 06       		.byte	6
+ 238 00d2 AA       		.byte	-86
+ 239 00d3 01       		.byte	1
+ 240 00d4 AD       		.byte	-83
+ 241 00d5 71       		.byte	113
+ 242 00d6 AF       		.byte	-81
+ 243 00d7 06       		.byte	6
+ 244 00d8 B0       		.byte	-80
+ 245 00d9 07       		.byte	7
+ 246 00da B1       		.byte	-79
+ 247 00db 30       		.byte	48
+ 248 00dc B3       		.byte	-77
+ 249 00dd 0F       		.byte	15
+ 250 00de B5       		.byte	-75
+ 251 00df C0       		.byte	-64
+ 252 00e0 B9       		.byte	-71
+ 253 00e1 22       		.byte	34
+ 254 00e2 BA       		.byte	-70
+ 255 00e3 02       		.byte	2
+ 256 00e4 BB       		.byte	-69
+ 257 00e5 08       		.byte	8
+ 258 00e6 BF       		.byte	-65
+ 259 00e7 01       		.byte	1
+ 260 00e8 C0       		.byte	-64
+ 261 00e9 04       		.byte	4
+ 262 00ea C5       		.byte	-59
+ 263 00eb 40       		.byte	64
+ 264 00ec C9       		.byte	-55
+ 265 00ed FF       		.byte	-1
+ 266 00ee CA       		.byte	-54
+ 267 00ef 07       		.byte	7
+ 268 00f0 CB       		.byte	-53
+ 269 00f1 FF       		.byte	-1
+ 270 00f2 CC       		.byte	-52
+ 271 00f3 40       		.byte	64
+ 272 00f4 CD       		.byte	-51
+ 273 00f5 20       		.byte	32
+ 274 00f6 CE       		.byte	-50
+ 275 00f7 F0       		.byte	-16
+ 276 00f8 CF       		.byte	-49
+ 277 00f9 05       		.byte	5
+ 278 00fa D0       		.byte	-48
+ 279 00fb 08       		.byte	8
+ 280 00fc D8       		.byte	-40
+ 281 00fd 04       		.byte	4
+ 282 00fe D9       		.byte	-39
+ 283 00ff 04       		.byte	4
+ 284 0100 DA       		.byte	-38
+ 285 0101 04       		.byte	4
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 6
+
+
+ 286 0102 DF       		.byte	-33
+ 287 0103 01       		.byte	1
+ 288 0104 E0       		.byte	-32
+ 289 0105 40       		.byte	64
+ 290 0106 E1       		.byte	-31
+ 291 0107 A8       		.byte	-88
+ 292 0108 E2       		.byte	-30
+ 293 0109 40       		.byte	64
+ 294 010a E3       		.byte	-29
+ 295 010b 20       		.byte	32
+ 296 010c 00       		.byte	0
+ 297 010d 05       		.byte	5
+ 298 010e 01       		.byte	1
+ 299 010f 02       		.byte	2
+ 300 0110 05       		.byte	5
+ 301 0111 01       		.byte	1
+ 302 0112 07       		.byte	7
+ 303 0113 18       		.byte	24
+ 304 0114 09       		.byte	9
+ 305 0115 80       		.byte	-128
+ 306 0116 0C       		.byte	12
+ 307 0117 01       		.byte	1
+ 308 0118 0D       		.byte	13
+ 309 0119 14       		.byte	20
+ 310 011a 0F       		.byte	15
+ 311 011b 02       		.byte	2
+ 312 011c 10       		.byte	16
+ 313 011d 60       		.byte	96
+ 314 011e 12       		.byte	18
+ 315 011f 08       		.byte	8
+ 316 0120 16       		.byte	22
+ 317 0121 04       		.byte	4
+ 318 0122 17       		.byte	23
+ 319 0123 20       		.byte	32
+ 320 0124 19       		.byte	25
+ 321 0125 01       		.byte	1
+ 322 0126 1D       		.byte	29
+ 323 0127 C0       		.byte	-64
+ 324 0128 1E       		.byte	30
+ 325 0129 40       		.byte	64
+ 326 012a 1F       		.byte	31
+ 327 012b 20       		.byte	32
+ 328 012c 20       		.byte	32
+ 329 012d 44       		.byte	68
+ 330 012e 21       		.byte	33
+ 331 012f 14       		.byte	20
+ 332 0130 22       		.byte	34
+ 333 0131 08       		.byte	8
+ 334 0132 26       		.byte	38
+ 335 0133 01       		.byte	1
+ 336 0134 27       		.byte	39
+ 337 0135 40       		.byte	64
+ 338 0136 28       		.byte	40
+ 339 0137 41       		.byte	65
+ 340 0138 29       		.byte	41
+ 341 0139 41       		.byte	65
+ 342 013a 2C       		.byte	44
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 7
+
+
+ 343 013b 40       		.byte	64
+ 344 013c 30       		.byte	48
+ 345 013d A0       		.byte	-96
+ 346 013e 32       		.byte	50
+ 347 013f 08       		.byte	8
+ 348 0140 33       		.byte	51
+ 349 0141 10       		.byte	16
+ 350 0142 34       		.byte	52
+ 351 0143 01       		.byte	1
+ 352 0144 36       		.byte	54
+ 353 0145 08       		.byte	8
+ 354 0146 37       		.byte	55
+ 355 0147 40       		.byte	64
+ 356 0148 38       		.byte	56
+ 357 0149 04       		.byte	4
+ 358 014a 3C       		.byte	60
+ 359 014b 05       		.byte	5
+ 360 014c 3F       		.byte	63
+ 361 014d 80       		.byte	-128
+ 362 014e 40       		.byte	64
+ 363 014f 40       		.byte	64
+ 364 0150 44       		.byte	68
+ 365 0151 40       		.byte	64
+ 366 0152 45       		.byte	69
+ 367 0153 80       		.byte	-128
+ 368 0154 47       		.byte	71
+ 369 0155 10       		.byte	16
+ 370 0156 48       		.byte	72
+ 371 0157 A0       		.byte	-96
+ 372 0158 49       		.byte	73
+ 373 0159 02       		.byte	2
+ 374 015a 4D       		.byte	77
+ 375 015b 01       		.byte	1
+ 376 015c 56       		.byte	86
+ 377 015d 04       		.byte	4
+ 378 015e 57       		.byte	87
+ 379 015f 40       		.byte	64
+ 380 0160 5D       		.byte	93
+ 381 0161 01       		.byte	1
+ 382 0162 5E       		.byte	94
+ 383 0163 48       		.byte	72
+ 384 0164 5F       		.byte	95
+ 385 0165 20       		.byte	32
+ 386 0166 C0       		.byte	-64
+ 387 0167 7C       		.byte	124
+ 388 0168 C2       		.byte	-62
+ 389 0169 F1       		.byte	-15
+ 390 016a C4       		.byte	-60
+ 391 016b 4E       		.byte	78
+ 392 016c CA       		.byte	-54
+ 393 016d 89       		.byte	-119
+ 394 016e CC       		.byte	-52
+ 395 016f DE       		.byte	-34
+ 396 0170 CE       		.byte	-50
+ 397 0171 D2       		.byte	-46
+ 398 0172 D0       		.byte	-48
+ 399 0173 B1       		.byte	-79
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 8
+
+
+ 400 0174 D6       		.byte	-42
+ 401 0175 F0       		.byte	-16
+ 402 0176 E6       		.byte	-26
+ 403 0177 08       		.byte	8
+ 404 0178 01       		.byte	1
+ 405 0179 1C       		.byte	28
+ 406 017a 02       		.byte	2
+ 407 017b 01       		.byte	1
+ 408 017c 03       		.byte	3
+ 409 017d 01       		.byte	1
+ 410 017e 05       		.byte	5
+ 411 017f 07       		.byte	7
+ 412 0180 06       		.byte	6
+ 413 0181 02       		.byte	2
+ 414 0182 07       		.byte	7
+ 415 0183 18       		.byte	24
+ 416 0184 08       		.byte	8
+ 417 0185 01       		.byte	1
+ 418 0186 09       		.byte	9
+ 419 0187 1F       		.byte	31
+ 420 0188 0F       		.byte	15
+ 421 0189 03       		.byte	3
+ 422 018a 11       		.byte	17
+ 423 018b 10       		.byte	16
+ 424 018c 12       		.byte	18
+ 425 018d 02       		.byte	2
+ 426 018e 14       		.byte	20
+ 427 018f 01       		.byte	1
+ 428 0190 15       		.byte	21
+ 429 0191 1C       		.byte	28
+ 430 0192 17       		.byte	23
+ 431 0193 02       		.byte	2
+ 432 0194 19       		.byte	25
+ 433 0195 18       		.byte	24
+ 434 0196 1F       		.byte	31
+ 435 0197 20       		.byte	32
+ 436 0198 20       		.byte	32
+ 437 0199 04       		.byte	4
+ 438 019a 23       		.byte	35
+ 439 019b 04       		.byte	4
+ 440 019c 25       		.byte	37
+ 441 019d 08       		.byte	8
+ 442 019e 2A       		.byte	42
+ 443 019f 01       		.byte	1
+ 444 01a0 2B       		.byte	43
+ 445 01a1 40       		.byte	64
+ 446 01a2 2D       		.byte	45
+ 447 01a3 04       		.byte	4
+ 448 01a4 2F       		.byte	47
+ 449 01a5 40       		.byte	64
+ 450 01a6 30       		.byte	48
+ 451 01a7 01       		.byte	1
+ 452 01a8 31       		.byte	49
+ 453 01a9 60       		.byte	96
+ 454 01aa 32       		.byte	50
+ 455 01ab 02       		.byte	2
+ 456 01ac 33       		.byte	51
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 9
+
+
+ 457 01ad 1F       		.byte	31
+ 458 01ae 34       		.byte	52
+ 459 01af 04       		.byte	4
+ 460 01b0 38       		.byte	56
+ 461 01b1 02       		.byte	2
+ 462 01b2 3B       		.byte	59
+ 463 01b3 08       		.byte	8
+ 464 01b4 3E       		.byte	62
+ 465 01b5 14       		.byte	20
+ 466 01b6 3F       		.byte	63
+ 467 01b7 01       		.byte	1
+ 468 01b8 40       		.byte	64
+ 469 01b9 25       		.byte	37
+ 470 01ba 41       		.byte	65
+ 471 01bb 06       		.byte	6
+ 472 01bc 42       		.byte	66
+ 473 01bd 03       		.byte	3
+ 474 01be 44       		.byte	68
+ 475 01bf 01       		.byte	1
+ 476 01c0 45       		.byte	69
+ 477 01c1 0E       		.byte	14
+ 478 01c2 47       		.byte	71
+ 479 01c3 C0       		.byte	-64
+ 480 01c4 48       		.byte	72
+ 481 01c5 21       		.byte	33
+ 482 01c6 49       		.byte	73
+ 483 01c7 FF       		.byte	-1
+ 484 01c8 4A       		.byte	74
+ 485 01c9 FF       		.byte	-1
+ 486 01ca 4B       		.byte	75
+ 487 01cb FF       		.byte	-1
+ 488 01cc 4C       		.byte	76
+ 489 01cd 62       		.byte	98
+ 490 01ce 4D       		.byte	77
+ 491 01cf A0       		.byte	-96
+ 492 01d0 4E       		.byte	78
+ 493 01d1 F0       		.byte	-16
+ 494 01d2 4F       		.byte	79
+ 495 01d3 41       		.byte	65
+ 496 01d4 50       		.byte	80
+ 497 01d5 0C       		.byte	12
+ 498 01d6 54       		.byte	84
+ 499 01d7 18       		.byte	24
+ 500 01d8 56       		.byte	86
+ 501 01d9 04       		.byte	4
+ 502 01da 58       		.byte	88
+ 503 01db 04       		.byte	4
+ 504 01dc 59       		.byte	89
+ 505 01dd 04       		.byte	4
+ 506 01de 5A       		.byte	90
+ 507 01df 04       		.byte	4
+ 508 01e0 5B       		.byte	91
+ 509 01e1 04       		.byte	4
+ 510 01e2 5F       		.byte	95
+ 511 01e3 01       		.byte	1
+ 512 01e4 66       		.byte	102
+ 513 01e5 40       		.byte	64
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 10
+
+
+ 514 01e6 67       		.byte	103
+ 515 01e7 02       		.byte	2
+ 516 01e8 69       		.byte	105
+ 517 01e9 10       		.byte	16
+ 518 01ea 6A       		.byte	106
+ 519 01eb 30       		.byte	48
+ 520 01ec 6B       		.byte	107
+ 521 01ed 10       		.byte	16
+ 522 01ee 6D       		.byte	109
+ 523 01ef 10       		.byte	16
+ 524 01f0 6E       		.byte	110
+ 525 01f1 10       		.byte	16
+ 526 01f2 6F       		.byte	111
+ 527 01f3 12       		.byte	18
+ 528 01f4 88       		.byte	-120
+ 529 01f5 01       		.byte	1
+ 530 01f6 8C       		.byte	-116
+ 531 01f7 01       		.byte	1
+ 532 01f8 A4       		.byte	-92
+ 533 01f9 01       		.byte	1
+ 534 01fa B6       		.byte	-74
+ 535 01fb 01       		.byte	1
+ 536 01fc D8       		.byte	-40
+ 537 01fd 04       		.byte	4
+ 538 01fe DF       		.byte	-33
+ 539 01ff 01       		.byte	1
+ 540 0200 01       		.byte	1
+ 541 0201 40       		.byte	64
+ 542 0202 03       		.byte	3
+ 543 0203 04       		.byte	4
+ 544 0204 04       		.byte	4
+ 545 0205 01       		.byte	1
+ 546 0206 05       		.byte	5
+ 547 0207 08       		.byte	8
+ 548 0208 06       		.byte	6
+ 549 0209 08       		.byte	8
+ 550 020a 0C       		.byte	12
+ 551 020b 08       		.byte	8
+ 552 020c 0E       		.byte	14
+ 553 020d 80       		.byte	-128
+ 554 020e 11       		.byte	17
+ 555 020f 04       		.byte	4
+ 556 0210 15       		.byte	21
+ 557 0211 01       		.byte	1
+ 558 0212 17       		.byte	23
+ 559 0213 10       		.byte	16
+ 560 0214 19       		.byte	25
+ 561 0215 40       		.byte	64
+ 562 0216 1B       		.byte	27
+ 563 0217 40       		.byte	64
+ 564 0218 1E       		.byte	30
+ 565 0219 88       		.byte	-120
+ 566 021a 1F       		.byte	31
+ 567 021b 04       		.byte	4
+ 568 021c 26       		.byte	38
+ 569 021d 08       		.byte	8
+ 570 021e 27       		.byte	39
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 11
+
+
+ 571 021f 50       		.byte	80
+ 572 0220 2C       		.byte	44
+ 573 0221 22       		.byte	34
+ 574 0222 2D       		.byte	45
+ 575 0223 22       		.byte	34
+ 576 0224 36       		.byte	54
+ 577 0225 88       		.byte	-120
+ 578 0226 37       		.byte	55
+ 579 0227 21       		.byte	33
+ 580 0228 3C       		.byte	60
+ 581 0229 01       		.byte	1
+ 582 022a 3D       		.byte	61
+ 583 022b 10       		.byte	16
+ 584 022c 3E       		.byte	62
+ 585 022d 08       		.byte	8
+ 586 022e 3F       		.byte	63
+ 587 022f 80       		.byte	-128
+ 588 0230 45       		.byte	69
+ 589 0231 20       		.byte	32
+ 590 0232 46       		.byte	70
+ 591 0233 08       		.byte	8
+ 592 0234 47       		.byte	71
+ 593 0235 48       		.byte	72
+ 594 0236 4C       		.byte	76
+ 595 0237 0C       		.byte	12
+ 596 0238 4D       		.byte	77
+ 597 0239 18       		.byte	24
+ 598 023a 4F       		.byte	79
+ 599 023b 80       		.byte	-128
+ 600 023c 57       		.byte	87
+ 601 023d 01       		.byte	1
+ 602 023e 5C       		.byte	92
+ 603 023f 02       		.byte	2
+ 604 0240 66       		.byte	102
+ 605 0241 02       		.byte	2
+ 606 0242 67       		.byte	103
+ 607 0243 0A       		.byte	10
+ 608 0244 86       		.byte	-122
+ 609 0245 02       		.byte	2
+ 610 0246 91       		.byte	-111
+ 611 0247 01       		.byte	1
+ 612 0248 93       		.byte	-109
+ 613 0249 02       		.byte	2
+ 614 024a 9F       		.byte	-97
+ 615 024b 08       		.byte	8
+ 616 024c A2       		.byte	-94
+ 617 024d 01       		.byte	1
+ 618 024e A6       		.byte	-90
+ 619 024f 04       		.byte	4
+ 620 0250 A7       		.byte	-89
+ 621 0251 01       		.byte	1
+ 622 0252 B7       		.byte	-73
+ 623 0253 21       		.byte	33
+ 624 0254 C0       		.byte	-64
+ 625 0255 73       		.byte	115
+ 626 0256 C2       		.byte	-62
+ 627 0257 30       		.byte	48
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 12
+
+
+ 628 0258 C4       		.byte	-60
+ 629 0259 54       		.byte	84
+ 630 025a CA       		.byte	-54
+ 631 025b F0       		.byte	-16
+ 632 025c CC       		.byte	-52
+ 633 025d F0       		.byte	-16
+ 634 025e CE       		.byte	-50
+ 635 025f F0       		.byte	-16
+ 636 0260 D0       		.byte	-48
+ 637 0261 70       		.byte	112
+ 638 0262 D2       		.byte	-46
+ 639 0263 30       		.byte	48
+ 640 0264 D6       		.byte	-42
+ 641 0265 80       		.byte	-128
+ 642 0266 D8       		.byte	-40
+ 643 0267 B0       		.byte	-80
+ 644 0268 04       		.byte	4
+ 645 0269 04       		.byte	4
+ 646 026a 05       		.byte	5
+ 647 026b 07       		.byte	7
+ 648 026c 06       		.byte	6
+ 649 026d 02       		.byte	2
+ 650 026e 08       		.byte	8
+ 651 026f 06       		.byte	6
+ 652 0270 11       		.byte	17
+ 653 0271 02       		.byte	2
+ 654 0272 13       		.byte	19
+ 655 0273 01       		.byte	1
+ 656 0274 15       		.byte	21
+ 657 0275 07       		.byte	7
+ 658 0276 1D       		.byte	29
+ 659 0277 01       		.byte	1
+ 660 0278 1F       		.byte	31
+ 661 0279 06       		.byte	6
+ 662 027a 24       		.byte	36
+ 663 027b 06       		.byte	6
+ 664 027c 29       		.byte	41
+ 665 027d 04       		.byte	4
+ 666 027e 2B       		.byte	43
+ 667 027f 01       		.byte	1
+ 668 0280 2C       		.byte	44
+ 669 0281 02       		.byte	2
+ 670 0282 2E       		.byte	46
+ 671 0283 05       		.byte	5
+ 672 0284 30       		.byte	48
+ 673 0285 01       		.byte	1
+ 674 0286 34       		.byte	52
+ 675 0287 06       		.byte	6
+ 676 0288 37       		.byte	55
+ 677 0289 07       		.byte	7
+ 678 028a 58       		.byte	88
+ 679 028b 04       		.byte	4
+ 680 028c 59       		.byte	89
+ 681 028d 04       		.byte	4
+ 682 028e 5F       		.byte	95
+ 683 028f 01       		.byte	1
+ 684 0290 80       		.byte	-128
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 13
+
+
+ 685 0291 1F       		.byte	31
+ 686 0292 81       		.byte	-127
+ 687 0293 0C       		.byte	12
+ 688 0294 82       		.byte	-126
+ 689 0295 20       		.byte	32
+ 690 0296 83       		.byte	-125
+ 691 0297 32       		.byte	50
+ 692 0298 84       		.byte	-124
+ 693 0299 3F       		.byte	63
+ 694 029a 85       		.byte	-123
+ 695 029b 04       		.byte	4
+ 696 029c 88       		.byte	-120
+ 697 029d 04       		.byte	4
+ 698 029e 89       		.byte	-119
+ 699 029f 0E       		.byte	14
+ 700 02a0 8B       		.byte	-117
+ 701 02a1 30       		.byte	48
+ 702 02a2 8E       		.byte	-114
+ 703 02a3 23       		.byte	35
+ 704 02a4 8F       		.byte	-113
+ 705 02a5 32       		.byte	50
+ 706 02a6 90       		.byte	-112
+ 707 02a7 01       		.byte	1
+ 708 02a8 91       		.byte	-111
+ 709 02a9 01       		.byte	1
+ 710 02aa 94       		.byte	-108
+ 711 02ab 0C       		.byte	12
+ 712 02ac 95       		.byte	-107
+ 713 02ad 3E       		.byte	62
+ 714 02ae 98       		.byte	-104
+ 715 02af 33       		.byte	51
+ 716 02b0 99       		.byte	-103
+ 717 02b1 0C       		.byte	12
+ 718 02b2 9A       		.byte	-102
+ 719 02b3 0C       		.byte	12
+ 720 02b4 9C       		.byte	-100
+ 721 02b5 08       		.byte	8
+ 722 02b6 9D       		.byte	-99
+ 723 02b7 30       		.byte	48
+ 724 02b8 A0       		.byte	-96
+ 725 02b9 03       		.byte	3
+ 726 02ba A1       		.byte	-95
+ 727 02bb 08       		.byte	8
+ 728 02bc A4       		.byte	-92
+ 729 02bd 02       		.byte	2
+ 730 02be A5       		.byte	-91
+ 731 02bf 32       		.byte	50
+ 732 02c0 A7       		.byte	-89
+ 733 02c1 0C       		.byte	12
+ 734 02c2 A8       		.byte	-88
+ 735 02c3 1C       		.byte	28
+ 736 02c4 A9       		.byte	-87
+ 737 02c5 20       		.byte	32
+ 738 02c6 AA       		.byte	-86
+ 739 02c7 23       		.byte	35
+ 740 02c8 AD       		.byte	-83
+ 741 02c9 10       		.byte	16
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 14
+
+
+ 742 02ca B0       		.byte	-80
+ 743 02cb 10       		.byte	16
+ 744 02cc B3       		.byte	-77
+ 745 02cd 30       		.byte	48
+ 746 02ce B4       		.byte	-76
+ 747 02cf 0F       		.byte	15
+ 748 02d0 B5       		.byte	-75
+ 749 02d1 0E       		.byte	14
+ 750 02d2 B6       		.byte	-74
+ 751 02d3 2C       		.byte	44
+ 752 02d4 B7       		.byte	-73
+ 753 02d5 01       		.byte	1
+ 754 02d6 BA       		.byte	-70
+ 755 02d7 A8       		.byte	-88
+ 756 02d8 BE       		.byte	-66
+ 757 02d9 01       		.byte	1
+ 758 02da BF       		.byte	-65
+ 759 02db 40       		.byte	64
+ 760 02dc D6       		.byte	-42
+ 761 02dd 02       		.byte	2
+ 762 02de D7       		.byte	-41
+ 763 02df 10       		.byte	16
+ 764 02e0 D8       		.byte	-40
+ 765 02e1 04       		.byte	4
+ 766 02e2 D9       		.byte	-39
+ 767 02e3 04       		.byte	4
+ 768 02e4 DB       		.byte	-37
+ 769 02e5 04       		.byte	4
+ 770 02e6 DF       		.byte	-33
+ 771 02e7 01       		.byte	1
+ 772 02e8 02       		.byte	2
+ 773 02e9 10       		.byte	16
+ 774 02ea 03       		.byte	3
+ 775 02eb 04       		.byte	4
+ 776 02ec 04       		.byte	4
+ 777 02ed 09       		.byte	9
+ 778 02ee 05       		.byte	5
+ 779 02ef 54       		.byte	84
+ 780 02f0 0C       		.byte	12
+ 781 02f1 8A       		.byte	-118
+ 782 02f2 0D       		.byte	13
+ 783 02f3 20       		.byte	32
+ 784 02f4 10       		.byte	16
+ 785 02f5 02       		.byte	2
+ 786 02f6 11       		.byte	17
+ 787 02f7 04       		.byte	4
+ 788 02f8 14       		.byte	20
+ 789 02f9 40       		.byte	64
+ 790 02fa 15       		.byte	21
+ 791 02fb 10       		.byte	16
+ 792 02fc 16       		.byte	22
+ 793 02fd 10       		.byte	16
+ 794 02fe 17       		.byte	23
+ 795 02ff 10       		.byte	16
+ 796 0300 19       		.byte	25
+ 797 0301 22       		.byte	34
+ 798 0302 1C       		.byte	28
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 15
+
+
+ 799 0303 01       		.byte	1
+ 800 0304 1D       		.byte	29
+ 801 0305 24       		.byte	36
+ 802 0306 1E       		.byte	30
+ 803 0307 40       		.byte	64
+ 804 0308 1F       		.byte	31
+ 805 0309 20       		.byte	32
+ 806 030a 22       		.byte	34
+ 807 030b 80       		.byte	-128
+ 808 030c 24       		.byte	36
+ 809 030d 10       		.byte	16
+ 810 030e 25       		.byte	37
+ 811 030f 40       		.byte	64
+ 812 0310 27       		.byte	39
+ 813 0311 08       		.byte	8
+ 814 0312 29       		.byte	41
+ 815 0313 20       		.byte	32
+ 816 0314 2A       		.byte	42
+ 817 0315 10       		.byte	16
+ 818 0316 2C       		.byte	44
+ 819 0317 82       		.byte	-126
+ 820 0318 2D       		.byte	45
+ 821 0319 20       		.byte	32
+ 822 031a 2F       		.byte	47
+ 823 031b 20       		.byte	32
+ 824 031c 30       		.byte	48
+ 825 031d 42       		.byte	66
+ 826 031e 32       		.byte	50
+ 827 031f 80       		.byte	-128
+ 828 0320 33       		.byte	51
+ 829 0321 04       		.byte	4
+ 830 0322 35       		.byte	53
+ 831 0323 04       		.byte	4
+ 832 0324 36       		.byte	54
+ 833 0325 81       		.byte	-127
+ 834 0326 37       		.byte	55
+ 835 0327 20       		.byte	32
+ 836 0328 39       		.byte	57
+ 837 0329 04       		.byte	4
+ 838 032a 3C       		.byte	60
+ 839 032b 01       		.byte	1
+ 840 032c 3D       		.byte	61
+ 841 032d 10       		.byte	16
+ 842 032e 3E       		.byte	62
+ 843 032f 08       		.byte	8
+ 844 0330 3F       		.byte	63
+ 845 0331 80       		.byte	-128
+ 846 0332 5E       		.byte	94
+ 847 0333 40       		.byte	64
+ 848 0334 6D       		.byte	109
+ 849 0335 44       		.byte	68
+ 850 0336 6F       		.byte	111
+ 851 0337 04       		.byte	4
+ 852 0338 74       		.byte	116
+ 853 0339 A8       		.byte	-88
+ 854 033a 75       		.byte	117
+ 855 033b 10       		.byte	16
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 16
+
+
+ 856 033c 76       		.byte	118
+ 857 033d 08       		.byte	8
+ 858 033e 77       		.byte	119
+ 859 033f 21       		.byte	33
+ 860 0340 80       		.byte	-128
+ 861 0341 12       		.byte	18
+ 862 0342 85       		.byte	-123
+ 863 0343 40       		.byte	64
+ 864 0344 8C       		.byte	-116
+ 865 0345 02       		.byte	2
+ 866 0346 94       		.byte	-108
+ 867 0347 09       		.byte	9
+ 868 0348 95       		.byte	-107
+ 869 0349 44       		.byte	68
+ 870 034a 99       		.byte	-103
+ 871 034b 40       		.byte	64
+ 872 034c 9B       		.byte	-101
+ 873 034d 10       		.byte	16
+ 874 034e 9C       		.byte	-100
+ 875 034f 02       		.byte	2
+ 876 0350 9D       		.byte	-99
+ 877 0351 22       		.byte	34
+ 878 0352 9F       		.byte	-97
+ 879 0353 2D       		.byte	45
+ 880 0354 A2       		.byte	-94
+ 881 0355 01       		.byte	1
+ 882 0356 A3       		.byte	-93
+ 883 0357 40       		.byte	64
+ 884 0358 A4       		.byte	-92
+ 885 0359 22       		.byte	34
+ 886 035a A5       		.byte	-91
+ 887 035b 20       		.byte	32
+ 888 035c A6       		.byte	-90
+ 889 035d 80       		.byte	-128
+ 890 035e C0       		.byte	-64
+ 891 035f F6       		.byte	-10
+ 892 0360 C2       		.byte	-62
+ 893 0361 F0       		.byte	-16
+ 894 0362 C4       		.byte	-60
+ 895 0363 75       		.byte	117
+ 896 0364 CA       		.byte	-54
+ 897 0365 F4       		.byte	-12
+ 898 0366 CC       		.byte	-52
+ 899 0367 FB       		.byte	-5
+ 900 0368 CE       		.byte	-50
+ 901 0369 F2       		.byte	-14
+ 902 036a D6       		.byte	-42
+ 903 036b 10       		.byte	16
+ 904 036c E0       		.byte	-32
+ 905 036d 02       		.byte	2
+ 906 036e 33       		.byte	51
+ 907 036f 80       		.byte	-128
+ 908 0370 CC       		.byte	-52
+ 909 0371 10       		.byte	16
+ 910 0372 A7       		.byte	-89
+ 911 0373 80       		.byte	-128
+ 912 0374 A7       		.byte	-89
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 17
+
+
+ 913 0375 80       		.byte	-128
+ 914 0376 A7       		.byte	-89
+ 915 0377 80       		.byte	-128
+ 916 0378 87       		.byte	-121
+ 917 0379 80       		.byte	-128
+ 918 037a A7       		.byte	-89
+ 919 037b 80       		.byte	-128
+ 920 037c E6       		.byte	-26
+ 921 037d 10       		.byte	16
+ 922 037e 10       		.byte	16
+ 923 037f 80       		.byte	-128
+ 924 0380 71       		.byte	113
+ 925 0381 02       		.byte	2
+ 926 0382 85       		.byte	-123
+ 927 0383 02       		.byte	2
+ 928 0384 8C       		.byte	-116
+ 929 0385 80       		.byte	-128
+ 930 0386 C4       		.byte	-60
+ 931 0387 08       		.byte	8
+ 932 0388 DC       		.byte	-36
+ 933 0389 01       		.byte	1
+ 934 038a E6       		.byte	-26
+ 935 038b 02       		.byte	2
+ 936 038c 00       		.byte	0
+ 937 038d 01       		.byte	1
+ 938 038e 0C       		.byte	12
+ 939 038f 01       		.byte	1
+ 940 0390 10       		.byte	16
+ 941 0391 01       		.byte	1
+ 942 0392 1C       		.byte	28
+ 943 0393 01       		.byte	1
+ 944 0394 00       		.byte	0
+ 945 0395 03       		.byte	3
+ 946 0396 00       		.byte	0
+ 947 0397 00       		.byte	0
+ 948 0398 80       		.byte	-128
+ 949 0399 00       		.byte	0
+ 950 039a 40       		.byte	64
+ 951 039b 80       		.byte	-128
+ 952 039c 80       		.byte	-128
+ 953 039d 00       		.byte	0
+ 954 039e 80       		.byte	-128
+ 955 039f 00       		.byte	0
+ 956 03a0 00       		.byte	0
+ 957 03a1 00       		.byte	0
+ 958 03a2 00       		.byte	0
+ 959 03a3 00       		.byte	0
+ 960 03a4 00       		.byte	0
+ 961 03a5 0B       		.byte	11
+ 962 03a6 0B       		.byte	11
+ 963 03a7 00       		.byte	0
+ 964 03a8 00       		.byte	0
+ 965 03a9 00       		.byte	0
+ 966 03aa 00       		.byte	0
+ 967 03ab 00       		.byte	0
+ 968              		.section	.cywolatch,"a",%progbits
+ 969              		.align	2
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 18
+
+
+ 970              		.type	cy_meta_wonvl, %object
+ 971              		.size	cy_meta_wonvl, 4
+ 972              	cy_meta_wonvl:
+ 973 0000 BC       		.byte	-68
+ 974 0001 90       		.byte	-112
+ 975 0002 AC       		.byte	-84
+ 976 0003 AF       		.byte	-81
+ 977              		.section	.cycustnvl,"a",%progbits
+ 978              		.align	2
+ 979              		.type	cy_meta_custnvl, %object
+ 980              		.size	cy_meta_custnvl, 4
+ 981              	cy_meta_custnvl:
+ 982 0000 00       		.byte	0
+ 983 0001 00       		.byte	0
+ 984 0002 40       		.byte	64
+ 985 0003 05       		.byte	5
+ 986              		.section	.cymeta,"a",%progbits
+ 987              		.align	2
+ 988              		.type	cy_metadata, %object
+ 989              		.size	cy_metadata, 12
+ 990              	cy_metadata:
+ 991 0000 00       		.byte	0
+ 992 0001 01       		.byte	1
+ 993 0002 2E       		.byte	46
+ 994 0003 16       		.byte	22
+ 995 0004 10       		.byte	16
+ 996 0005 69       		.byte	105
+ 997 0006 00       		.byte	0
+ 998 0007 01       		.byte	1
+ 999 0008 00       		.byte	0
+ 1000 0009 00       		.byte	0
+ 1001 000a 00       		.byte	0
+ 1002 000b 00       		.byte	0
+ 1003              		.section	.cyflashprotect,"a",%progbits
+ 1004              		.align	2
+ 1005              		.type	cy_meta_flashprotect, %object
+ 1006              		.size	cy_meta_flashprotect, 256
+ 1007              	cy_meta_flashprotect:
+ 1008 0000 00000000 		.space	256
+ 1008      00000000 
+ 1008      00000000 
+ 1008      00000000 
+ 1008      00000000 
+ 1009              		.text
+ 1010              	.Letext0:
+ 1011              		.file 1 "Generated_Source\\PSoC5\\cymetadata.c"
+ 1012              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 1013              		.section	.debug_info,"",%progbits
+ 1014              	.Ldebug_info0:
+ 1015 0000 37010000 		.4byte	0x137
+ 1016 0004 0400     		.2byte	0x4
+ 1017 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1018 000a 04       		.byte	0x4
+ 1019 000b 01       		.uleb128 0x1
+ 1020 000c C0000000 		.4byte	.LASF18
+ 1021 0010 01       		.byte	0x1
+ 1022 0011 D6010000 		.4byte	.LASF19
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 19
+
+
+ 1023 0015 00000000 		.4byte	.LASF20
+ 1024 0019 00000000 		.4byte	.Ldebug_line0
+ 1025 001d 02       		.uleb128 0x2
+ 1026 001e 01       		.byte	0x1
+ 1027 001f 06       		.byte	0x6
+ 1028 0020 CA010000 		.4byte	.LASF0
+ 1029 0024 02       		.uleb128 0x2
+ 1030 0025 01       		.byte	0x1
+ 1031 0026 08       		.byte	0x8
+ 1032 0027 64000000 		.4byte	.LASF1
+ 1033 002b 02       		.uleb128 0x2
+ 1034 002c 02       		.byte	0x2
+ 1035 002d 05       		.byte	0x5
+ 1036 002e B1010000 		.4byte	.LASF2
+ 1037 0032 02       		.uleb128 0x2
+ 1038 0033 02       		.byte	0x2
+ 1039 0034 07       		.byte	0x7
+ 1040 0035 84000000 		.4byte	.LASF3
+ 1041 0039 02       		.uleb128 0x2
+ 1042 003a 04       		.byte	0x4
+ 1043 003b 05       		.byte	0x5
+ 1044 003c C1010000 		.4byte	.LASF4
+ 1045 0040 02       		.uleb128 0x2
+ 1046 0041 04       		.byte	0x4
+ 1047 0042 07       		.byte	0x7
+ 1048 0043 72000000 		.4byte	.LASF5
+ 1049 0047 02       		.uleb128 0x2
+ 1050 0048 08       		.byte	0x8
+ 1051 0049 05       		.byte	0x5
+ 1052 004a 9E010000 		.4byte	.LASF6
+ 1053 004e 02       		.uleb128 0x2
+ 1054 004f 08       		.byte	0x8
+ 1055 0050 07       		.byte	0x7
+ 1056 0051 5B010000 		.4byte	.LASF7
+ 1057 0055 03       		.uleb128 0x3
+ 1058 0056 04       		.byte	0x4
+ 1059 0057 05       		.byte	0x5
+ 1060 0058 696E7400 		.ascii	"int\000"
+ 1061 005c 02       		.uleb128 0x2
+ 1062 005d 04       		.byte	0x4
+ 1063 005e 07       		.byte	0x7
+ 1064 005f 4E010000 		.4byte	.LASF8
+ 1065 0063 04       		.uleb128 0x4
+ 1066 0064 BB010000 		.4byte	.LASF21
+ 1067 0068 02       		.byte	0x2
+ 1068 0069 9201     		.2byte	0x192
+ 1069 006b 24000000 		.4byte	0x24
+ 1070 006f 02       		.uleb128 0x2
+ 1071 0070 04       		.byte	0x4
+ 1072 0071 04       		.byte	0x4
+ 1073 0072 5E000000 		.4byte	.LASF9
+ 1074 0076 02       		.uleb128 0x2
+ 1075 0077 08       		.byte	0x8
+ 1076 0078 04       		.byte	0x4
+ 1077 0079 97000000 		.4byte	.LASF10
+ 1078 007d 02       		.uleb128 0x2
+ 1079 007e 01       		.byte	0x1
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 20
+
+
+ 1080 007f 08       		.byte	0x8
+ 1081 0080 AC010000 		.4byte	.LASF11
+ 1082 0084 05       		.uleb128 0x5
+ 1083 0085 63000000 		.4byte	0x63
+ 1084 0089 95000000 		.4byte	0x95
+ 1085 008d 06       		.uleb128 0x6
+ 1086 008e 95000000 		.4byte	0x95
+ 1087 0092 AB03     		.2byte	0x3ab
+ 1088 0094 00       		.byte	0
+ 1089 0095 02       		.uleb128 0x2
+ 1090 0096 04       		.byte	0x4
+ 1091 0097 07       		.byte	0x7
+ 1092 0098 95010000 		.4byte	.LASF12
+ 1093 009c 07       		.uleb128 0x7
+ 1094 009d AE000000 		.4byte	.LASF13
+ 1095 00a1 01       		.byte	0x1
+ 1096 00a2 1F       		.byte	0x1f
+ 1097 00a3 AD000000 		.4byte	0xad
+ 1098 00a7 05       		.uleb128 0x5
+ 1099 00a8 03       		.byte	0x3
+ 1100 00a9 00000000 		.4byte	cy_meta_configecc
+ 1101 00ad 08       		.uleb128 0x8
+ 1102 00ae 84000000 		.4byte	0x84
+ 1103 00b2 05       		.uleb128 0x5
+ 1104 00b3 63000000 		.4byte	0x63
+ 1105 00b7 C2000000 		.4byte	0xc2
+ 1106 00bb 09       		.uleb128 0x9
+ 1107 00bc 95000000 		.4byte	0x95
+ 1108 00c0 03       		.byte	0x3
+ 1109 00c1 00       		.byte	0
+ 1110 00c2 07       		.uleb128 0x7
+ 1111 00c3 9E000000 		.4byte	.LASF14
+ 1112 00c7 01       		.byte	0x1
+ 1113 00c8 A2       		.byte	0xa2
+ 1114 00c9 D3000000 		.4byte	0xd3
+ 1115 00cd 05       		.uleb128 0x5
+ 1116 00ce 03       		.byte	0x3
+ 1117 00cf 00000000 		.4byte	cy_meta_custnvl
+ 1118 00d3 08       		.uleb128 0x8
+ 1119 00d4 B2000000 		.4byte	0xb2
+ 1120 00d8 07       		.uleb128 0x7
+ 1121 00d9 87010000 		.4byte	.LASF15
+ 1122 00dd 01       		.byte	0x1
+ 1123 00de B0       		.byte	0xb0
+ 1124 00df E9000000 		.4byte	0xe9
+ 1125 00e3 05       		.uleb128 0x5
+ 1126 00e4 03       		.byte	0x3
+ 1127 00e5 00000000 		.4byte	cy_meta_wonvl
+ 1128 00e9 08       		.uleb128 0x8
+ 1129 00ea B2000000 		.4byte	0xb2
+ 1130 00ee 05       		.uleb128 0x5
+ 1131 00ef 63000000 		.4byte	0x63
+ 1132 00f3 FE000000 		.4byte	0xfe
+ 1133 00f7 09       		.uleb128 0x9
+ 1134 00f8 95000000 		.4byte	0x95
+ 1135 00fc FF       		.byte	0xff
+ 1136 00fd 00       		.byte	0
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 21
+
+
+ 1137 00fe 07       		.uleb128 0x7
+ 1138 00ff 72010000 		.4byte	.LASF16
+ 1139 0103 01       		.byte	0x1
+ 1140 0104 BE       		.byte	0xbe
+ 1141 0105 0F010000 		.4byte	0x10f
+ 1142 0109 05       		.uleb128 0x5
+ 1143 010a 03       		.byte	0x3
+ 1144 010b 00000000 		.4byte	cy_meta_flashprotect
+ 1145 010f 08       		.uleb128 0x8
+ 1146 0110 EE000000 		.4byte	0xee
+ 1147 0114 05       		.uleb128 0x5
+ 1148 0115 63000000 		.4byte	0x63
+ 1149 0119 24010000 		.4byte	0x124
+ 1150 011d 09       		.uleb128 0x9
+ 1151 011e 95000000 		.4byte	0x95
+ 1152 0122 0B       		.byte	0xb
+ 1153 0123 00       		.byte	0
+ 1154 0124 07       		.uleb128 0x7
+ 1155 0125 52000000 		.4byte	.LASF17
+ 1156 0129 01       		.byte	0x1
+ 1157 012a EB       		.byte	0xeb
+ 1158 012b 35010000 		.4byte	0x135
+ 1159 012f 05       		.uleb128 0x5
+ 1160 0130 03       		.byte	0x3
+ 1161 0131 00000000 		.4byte	cy_metadata
+ 1162 0135 08       		.uleb128 0x8
+ 1163 0136 14010000 		.4byte	0x114
+ 1164 013a 00       		.byte	0
+ 1165              		.section	.debug_abbrev,"",%progbits
+ 1166              	.Ldebug_abbrev0:
+ 1167 0000 01       		.uleb128 0x1
+ 1168 0001 11       		.uleb128 0x11
+ 1169 0002 01       		.byte	0x1
+ 1170 0003 25       		.uleb128 0x25
+ 1171 0004 0E       		.uleb128 0xe
+ 1172 0005 13       		.uleb128 0x13
+ 1173 0006 0B       		.uleb128 0xb
+ 1174 0007 03       		.uleb128 0x3
+ 1175 0008 0E       		.uleb128 0xe
+ 1176 0009 1B       		.uleb128 0x1b
+ 1177 000a 0E       		.uleb128 0xe
+ 1178 000b 10       		.uleb128 0x10
+ 1179 000c 17       		.uleb128 0x17
+ 1180 000d 00       		.byte	0
+ 1181 000e 00       		.byte	0
+ 1182 000f 02       		.uleb128 0x2
+ 1183 0010 24       		.uleb128 0x24
+ 1184 0011 00       		.byte	0
+ 1185 0012 0B       		.uleb128 0xb
+ 1186 0013 0B       		.uleb128 0xb
+ 1187 0014 3E       		.uleb128 0x3e
+ 1188 0015 0B       		.uleb128 0xb
+ 1189 0016 03       		.uleb128 0x3
+ 1190 0017 0E       		.uleb128 0xe
+ 1191 0018 00       		.byte	0
+ 1192 0019 00       		.byte	0
+ 1193 001a 03       		.uleb128 0x3
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 22
+
+
+ 1194 001b 24       		.uleb128 0x24
+ 1195 001c 00       		.byte	0
+ 1196 001d 0B       		.uleb128 0xb
+ 1197 001e 0B       		.uleb128 0xb
+ 1198 001f 3E       		.uleb128 0x3e
+ 1199 0020 0B       		.uleb128 0xb
+ 1200 0021 03       		.uleb128 0x3
+ 1201 0022 08       		.uleb128 0x8
+ 1202 0023 00       		.byte	0
+ 1203 0024 00       		.byte	0
+ 1204 0025 04       		.uleb128 0x4
+ 1205 0026 16       		.uleb128 0x16
+ 1206 0027 00       		.byte	0
+ 1207 0028 03       		.uleb128 0x3
+ 1208 0029 0E       		.uleb128 0xe
+ 1209 002a 3A       		.uleb128 0x3a
+ 1210 002b 0B       		.uleb128 0xb
+ 1211 002c 3B       		.uleb128 0x3b
+ 1212 002d 05       		.uleb128 0x5
+ 1213 002e 49       		.uleb128 0x49
+ 1214 002f 13       		.uleb128 0x13
+ 1215 0030 00       		.byte	0
+ 1216 0031 00       		.byte	0
+ 1217 0032 05       		.uleb128 0x5
+ 1218 0033 01       		.uleb128 0x1
+ 1219 0034 01       		.byte	0x1
+ 1220 0035 49       		.uleb128 0x49
+ 1221 0036 13       		.uleb128 0x13
+ 1222 0037 01       		.uleb128 0x1
+ 1223 0038 13       		.uleb128 0x13
+ 1224 0039 00       		.byte	0
+ 1225 003a 00       		.byte	0
+ 1226 003b 06       		.uleb128 0x6
+ 1227 003c 21       		.uleb128 0x21
+ 1228 003d 00       		.byte	0
+ 1229 003e 49       		.uleb128 0x49
+ 1230 003f 13       		.uleb128 0x13
+ 1231 0040 2F       		.uleb128 0x2f
+ 1232 0041 05       		.uleb128 0x5
+ 1233 0042 00       		.byte	0
+ 1234 0043 00       		.byte	0
+ 1235 0044 07       		.uleb128 0x7
+ 1236 0045 34       		.uleb128 0x34
+ 1237 0046 00       		.byte	0
+ 1238 0047 03       		.uleb128 0x3
+ 1239 0048 0E       		.uleb128 0xe
+ 1240 0049 3A       		.uleb128 0x3a
+ 1241 004a 0B       		.uleb128 0xb
+ 1242 004b 3B       		.uleb128 0x3b
+ 1243 004c 0B       		.uleb128 0xb
+ 1244 004d 49       		.uleb128 0x49
+ 1245 004e 13       		.uleb128 0x13
+ 1246 004f 3F       		.uleb128 0x3f
+ 1247 0050 19       		.uleb128 0x19
+ 1248 0051 02       		.uleb128 0x2
+ 1249 0052 18       		.uleb128 0x18
+ 1250 0053 00       		.byte	0
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 23
+
+
+ 1251 0054 00       		.byte	0
+ 1252 0055 08       		.uleb128 0x8
+ 1253 0056 26       		.uleb128 0x26
+ 1254 0057 00       		.byte	0
+ 1255 0058 49       		.uleb128 0x49
+ 1256 0059 13       		.uleb128 0x13
+ 1257 005a 00       		.byte	0
+ 1258 005b 00       		.byte	0
+ 1259 005c 09       		.uleb128 0x9
+ 1260 005d 21       		.uleb128 0x21
+ 1261 005e 00       		.byte	0
+ 1262 005f 49       		.uleb128 0x49
+ 1263 0060 13       		.uleb128 0x13
+ 1264 0061 2F       		.uleb128 0x2f
+ 1265 0062 0B       		.uleb128 0xb
+ 1266 0063 00       		.byte	0
+ 1267 0064 00       		.byte	0
+ 1268 0065 00       		.byte	0
+ 1269              		.section	.debug_aranges,"",%progbits
+ 1270 0000 14000000 		.4byte	0x14
+ 1271 0004 0200     		.2byte	0x2
+ 1272 0006 00000000 		.4byte	.Ldebug_info0
+ 1273 000a 04       		.byte	0x4
+ 1274 000b 00       		.byte	0
+ 1275 000c 0000     		.2byte	0
+ 1276 000e 0000     		.2byte	0
+ 1277 0010 00000000 		.4byte	0
+ 1278 0014 00000000 		.4byte	0
+ 1279              		.section	.debug_line,"",%progbits
+ 1280              	.Ldebug_line0:
+ 1281 0000 4D000000 		.section	.debug_str,"MS",%progbits,1
+ 1281      02004700 
+ 1281      00000201 
+ 1281      FB0E0D00 
+ 1281      01010101 
+ 1282              	.LASF20:
+ 1283 0000 433A5C55 		.ascii	"C:\\Users\\Dennis\\Desktop\\Ase\\Semester4\\Projekt"
+ 1283      73657273 
+ 1283      5C44656E 
+ 1283      6E69735C 
+ 1283      4465736B 
+ 1284 002d 5C4D696E 		.ascii	"\\Min mappe\\PSOC UART\\UART\\UART.cydsn\000"
+ 1284      206D6170 
+ 1284      70655C50 
+ 1284      534F4320 
+ 1284      55415254 
+ 1285              	.LASF17:
+ 1286 0052 63795F6D 		.ascii	"cy_metadata\000"
+ 1286      65746164 
+ 1286      61746100 
+ 1287              	.LASF9:
+ 1288 005e 666C6F61 		.ascii	"float\000"
+ 1288      7400
+ 1289              	.LASF1:
+ 1290 0064 756E7369 		.ascii	"unsigned char\000"
+ 1290      676E6564 
+ 1290      20636861 
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 24
+
+
+ 1290      7200
+ 1291              	.LASF5:
+ 1292 0072 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1292      20756E73 
+ 1292      69676E65 
+ 1292      6420696E 
+ 1292      7400
+ 1293              	.LASF3:
+ 1294 0084 73686F72 		.ascii	"short unsigned int\000"
+ 1294      7420756E 
+ 1294      7369676E 
+ 1294      65642069 
+ 1294      6E7400
+ 1295              	.LASF10:
+ 1296 0097 646F7562 		.ascii	"double\000"
+ 1296      6C6500
+ 1297              	.LASF14:
+ 1298 009e 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1298      6574615F 
+ 1298      63757374 
+ 1298      6E766C00 
+ 1299              	.LASF13:
+ 1300 00ae 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1300      6574615F 
+ 1300      636F6E66 
+ 1300      69676563 
+ 1300      6300
+ 1301              	.LASF18:
+ 1302 00c0 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1302      4320342E 
+ 1302      392E3320 
+ 1302      32303135 
+ 1302      30333033 
+ 1303 00f3 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1303      20726576 
+ 1303      6973696F 
+ 1303      6E203232 
+ 1303      31323230 
+ 1304 0126 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1304      66756E63 
+ 1304      74696F6E 
+ 1304      2D736563 
+ 1304      74696F6E 
+ 1305              	.LASF8:
+ 1306 014e 756E7369 		.ascii	"unsigned int\000"
+ 1306      676E6564 
+ 1306      20696E74 
+ 1306      00
+ 1307              	.LASF7:
+ 1308 015b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1308      206C6F6E 
+ 1308      6720756E 
+ 1308      7369676E 
+ 1308      65642069 
+ 1309              	.LASF16:
+ 1310 0172 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1310      6574615F 
+ARM GAS  C:\Users\Dennis\AppData\Local\Temp\cckl92Jc.s 			page 25
+
+
+ 1310      666C6173 
+ 1310      6870726F 
+ 1310      74656374 
+ 1311              	.LASF15:
+ 1312 0187 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1312      6574615F 
+ 1312      776F6E76 
+ 1312      6C00
+ 1313              	.LASF12:
+ 1314 0195 73697A65 		.ascii	"sizetype\000"
+ 1314      74797065 
+ 1314      00
+ 1315              	.LASF6:
+ 1316 019e 6C6F6E67 		.ascii	"long long int\000"
+ 1316      206C6F6E 
+ 1316      6720696E 
+ 1316      7400
+ 1317              	.LASF11:
+ 1318 01ac 63686172 		.ascii	"char\000"
+ 1318      00
+ 1319              	.LASF2:
+ 1320 01b1 73686F72 		.ascii	"short int\000"
+ 1320      7420696E 
+ 1320      7400
+ 1321              	.LASF21:
+ 1322 01bb 75696E74 		.ascii	"uint8\000"
+ 1322      3800
+ 1323              	.LASF4:
+ 1324 01c1 6C6F6E67 		.ascii	"long int\000"
+ 1324      20696E74 
+ 1324      00
+ 1325              	.LASF0:
+ 1326 01ca 7369676E 		.ascii	"signed char\000"
+ 1326      65642063 
+ 1326      68617200 
+ 1327              	.LASF19:
+ 1328 01d6 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1328      72617465 
+ 1328      645F536F 
+ 1328      75726365 
+ 1328      5C50536F 
+ 1329              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
