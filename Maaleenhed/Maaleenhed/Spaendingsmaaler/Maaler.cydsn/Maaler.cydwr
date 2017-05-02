@@ -253,6 +253,7 @@
       <Data key="1d756dad-1ba0-4f18-9d96-1b93c0eb8426" value="ProbeI2" />
       <Data key="53aa6ed3-02d1-4dab-9959-cf1a8888a3a8" value="ProbeI1" />
       <Data key="77715107-f8d5-47e5-a629-0fb83101ac6b" value="ProbeU1" />
+      <Data key="b2408061-42a5-4a90-8e90-4eae18cb9f85" value="ProbeI2" />
       <Data key="cdf97f31-de08-4878-876d-af98e73797d5" value="ProbeU2" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="test" />
     </Group>
@@ -3356,6 +3357,11 @@
         <Data key="Port Format" value="0,6" />
       </Group>
     </Group>
+    <Group key="b2408061-42a5-4a90-8e90-4eae18cb9f85">
+      <Group key="0">
+        <Data key="Port Format" value="0,4" />
+      </Group>
+    </Group>
     <Group key="cdf97f31-de08-4878-876d-af98e73797d5">
       <Group key="0">
         <Data key="Port Format" value="0,7" />
@@ -3367,6 +3373,7 @@
       </Group>
     </Group>
     <Group key="UnAssigned Pins" />
+    <Group key="Unlocked Pins" />
   </Group>
   <Group key="PlaceDir">
     <Data key="count" value="0" />
