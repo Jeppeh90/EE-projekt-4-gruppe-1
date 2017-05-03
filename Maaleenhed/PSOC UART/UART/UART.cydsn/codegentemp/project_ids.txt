@@ -1,5 +1,5 @@
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|e813b62d-614d-4af3-b83d-83d2266b8018
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|43c31198-3ffd-4f88-ab77-9742c2a710b8
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|53b4f207-d040-4897-9587-052a7b48e27c
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|77d37da3-0d17-42fd-a8da-0900947eabd4
-C:\Users\Dennis\Desktop\Ase\Semester4\Projekt\Min mappe\PSOC UART\UART\UART.cydsn\UART.cyprj|e021c092-6461-4061-917c-436b055528c9
+\\Mac\Home\Desktop\Projekt\Maaleenhed\PSOC UART\UART\UART.cydsn\UART.cyprj|4183188f-afe1-414d-ad56-c0aa9cbd34d2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|390454a8-423c-4f89-a087-f7b334e04264
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|21d29d09-fe20-47d8-9055-9502f378c1a0
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|715ab85a-403a-457e-bd7e-d43c133abf17
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|768c1b17-1fd0-432e-8b13-5be986ba4db1

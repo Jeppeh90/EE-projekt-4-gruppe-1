@@ -1,3 +1,3 @@
-# Component constraints for C:\Users\Dennis\Desktop\Ase\Semester4\Projekt\Min mappe\PSOC UART\UART\UART.cydsn\TopDesign\TopDesign.cysch
-# Project: C:\Users\Dennis\Desktop\Ase\Semester4\Projekt\Min mappe\PSOC UART\UART\UART.cydsn\UART.cyprj
-# Date: Wed, 26 Apr 2017 12:18:07 GMT
+# Component constraints for \\Mac\Home\Desktop\Projekt\Maaleenhed\PSOC UART\UART\UART.cydsn\TopDesign\TopDesign.cysch
+# Project: \\Mac\Home\Desktop\Projekt\Maaleenhed\PSOC UART\UART\UART.cydsn\UART.cyprj
+# Date: Wed, 03 May 2017 08:00:26 GMT
