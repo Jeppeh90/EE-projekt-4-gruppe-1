@@ -3,3 +3,14 @@
 \section{Modultest}
 
 For at tjekke, at distributionslinjen og de forskellige belastninger giver det spændingsfald, der forventes laves en modultest af det samlede system med distributionslinje, belastninger og trinskifter. Der vælges forskellige belastninger og trin på transformeren og for hver indstilling måles spændingsfaldet over belastningen. Resultaterne heraf ses i tabellen nedenfor. 
+
+\begin{center}
+	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
+		\hline
+		\textbf{Test}					&Trinskifter. \\ \hline
+		\textbf{Testbeskrivelse}		&Spændingsfald over $16\Omega\parallel 50\Omega$ belastning passer med forventet/simuleret værdi. \\ \hline
+		\textbf{Input}					&4 V AC \\ \hline
+		\textbf{Forventet resultat}		&2,6 V målt over belastningen \\ \hline
+		\textbf{Resultat}				&Det forventede output passer, dog er vores firkant signal ikke så pænt, som vi havde regnet med. Test resultater kan ses på figurer: \ref{fig:sinustest}, \ref{fig:taktaktest}, \ref{fig:trekanttest}, \ref{fig:firkanttest}.  \\ \hline
+	\end{tabular}
+\end{center}
