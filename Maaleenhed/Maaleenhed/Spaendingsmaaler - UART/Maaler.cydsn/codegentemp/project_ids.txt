@@ -1,0 +1,5 @@
+\\Mac\Home\Desktop\Projekt\Maaleenhed\Maaleenhed\Spaendingsmaaler - UART\Maaler.cydsn\Maaler.cyprj|317a2159-75a2-4c68-afda-e691555f26ba
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|365f0afb-9281-4e2c-8e79-ad03d25519df
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|eb639fda-c165-4221-a976-aaffa9343d63
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|465c0f4e-6a2b-4373-b2f8-697b9801abac
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e37cda8d-4ffc-49d2-8a58-3a30d2ba99bb
