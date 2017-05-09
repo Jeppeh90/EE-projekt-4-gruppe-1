@@ -1,4 +1,4 @@
-C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Maaleenhed\Spaendingsmaaler\Maaler.cydsn\TopDesign\TopDesign.cysch
+C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Gamle versioner\Spaendingsmaaler - kalibreret\Maaler.cydsn\TopDesign\TopDesign.cysch
 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ADC_DelSig_v3_20\ADC_DelSig_v3_20.cydmacap
 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ADC_DelSig_v3_20\ADC_DelSig_v3_20.cysym
 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ADC_DelSig_v3_20\ADC_DelSig_v3_20.pdf
@@ -281,7 +281,7 @@ C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomp
 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\AMux_v1_80\API\AMux.h
 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\AMux_v1_80\Custom\cyamuxcustomizer.cs
 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\AMux_v1_80\Custom\cyverilogbuilder.cs
-C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Maaleenhed\Spaendingsmaaler\Maaler.cydsn\Maaler.cydwr
+C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Gamle versioner\Spaendingsmaaler - kalibreret\Maaler.cydsn\Maaler.cydwr
 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v5_50\PSoC5\API\cm3gcc.ld
 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v5_50\PSoC5\API\Cm3RealView.scat
 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v5_50\PSoC5\API\Cm3Start.c

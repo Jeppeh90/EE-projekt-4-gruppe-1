@@ -1,5 +1,5 @@
 -- Project:   Maaler
--- Generated: 05/09/2017 06:28:50
+-- Generated: 05/09/2017 11:19:25
 -- PSoC Creator  4.0 Update 1
 
 ENTITY Maaler IS
@@ -117,11 +117,12 @@ ARCHITECTURE __DEFAULT__ OF Maaler IS
     ATTRIBUTE Location OF ProbeU1(0) : LABEL IS "P0[6]";
     ATTRIBUTE lib_model OF ProbeU2(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF ProbeU2(0) : LABEL IS "P0[7]";
-    ATTRIBUTE lib_model OF test(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF test(0) : LABEL IS "P1[7]";
-    ATTRIBUTE lib_model OF ProbeI1(0) : LABEL IS "iocell4";
+    ATTRIBUTE lib_model OF ProbeI1(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF ProbeI1(0) : LABEL IS "P0[5]";
-    ATTRIBUTE lib_model OF Rx_1(0) : LABEL IS "iocell_ireg";
+    ATTRIBUTE lib_model OF Rx_1(0) : LABEL IS "iocell4";
+    ATTRIBUTE Location OF Rx_1(0) : LABEL IS "P1[7]";
+    ATTRIBUTE lib_model OF Tx_1(0) : LABEL IS "iocell5";
+    ATTRIBUTE Location OF Tx_1(0) : LABEL IS "P1[6]";
     ATTRIBUTE lib_model OF Net_41 : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF \UART_1:BUART:counter_load_not\ : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_0\ : LABEL IS "macrocell3";

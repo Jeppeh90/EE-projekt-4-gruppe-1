@@ -252,10 +252,12 @@
     <Group key="Pin">
       <Data key="1d756dad-1ba0-4f18-9d96-1b93c0eb8426" value="ProbeI2" />
       <Data key="53aa6ed3-02d1-4dab-9959-cf1a8888a3a8" value="ProbeI1" />
+      <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="Rx_1" />
       <Data key="77715107-f8d5-47e5-a629-0fb83101ac6b" value="ProbeU1" />
       <Data key="b2408061-42a5-4a90-8e90-4eae18cb9f85" value="ProbeI2" />
       <Data key="cdf97f31-de08-4878-876d-af98e73797d5" value="ProbeU2" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="test" />
+      <Data key="ed092b9b-d398-4703-be89-cebf998501f6" value="Tx_1" />
     </Group>
   </Group>
   <Group key="EEPROM">
@@ -3352,6 +3354,11 @@
         <Data key="Port Format" value="0,5" />
       </Group>
     </Group>
+    <Group key="1425177d-0d0e-4468-8bcc-e638e5509a9b">
+      <Group key="0">
+        <Data key="Port Format" value="1,7" />
+      </Group>
+    </Group>
     <Group key="77715107-f8d5-47e5-a629-0fb83101ac6b">
       <Group key="0">
         <Data key="Port Format" value="0,6" />
@@ -3367,12 +3374,16 @@
         <Data key="Port Format" value="0,7" />
       </Group>
     </Group>
-    <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">
+    <Group key="ed092b9b-d398-4703-be89-cebf998501f6">
       <Group key="0">
-        <Data key="Port Format" value="1,7" />
+        <Data key="Port Format" value="1,6" />
       </Group>
     </Group>
-    <Group key="UnAssigned Pins" />
+    <Group key="UnAssigned Pins">
+      <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">
+        <Data key="0" value="131387942116433181" />
+      </Group>
+    </Group>
     <Group key="Unlocked Pins" />
   </Group>
   <Group key="PlaceDir">

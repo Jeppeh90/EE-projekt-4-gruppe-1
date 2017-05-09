@@ -1,5 +1,5 @@
-C:\Users\User\Desktop\Spaendingsmaaler - UART\Maaler.cydsn\Maaler.cyprj|a9f0c062-08f0-4db3-977e-7dc51215f0dc
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|85835934-4b8c-4e8a-9de0-56d7ea897c8e
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|8ab869df-c286-427c-afb0-f31b4beded75
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|84658e45-ae9a-4914-810d-9588b48a42dd
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|eff91b8b-95aa-499a-81aa-0984281ae14f
+C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Maaleenhed\Spaendingsmaaler - UART - Build OK\Maaler.cydsn\Maaler.cyprj|a6cd03a3-6f04-4a5d-87fd-e4b6fb0c8ef0
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|1de77849-bbc3-413e-93ea-26aa7d2715be
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|927d4c76-21e5-4515-ab15-33b870e82e29
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|83583ac4-0430-40b5-b954-995d912a5761
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|f24134d2-3b21-4ec6-93b2-3216e314b61f

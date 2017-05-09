@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccfJRqJF.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
   55 001f 40       		.byte	64
   56 0020 03       		.byte	3
   57 0021 47       		.byte	71
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccfJRqJF.s 			page 2
 
 
   58 0022 01       		.byte	1
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  112 0058 C8       		.byte	-56
  113 0059 20       		.byte	32
  114 005a B5       		.byte	-75
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccfJRqJF.s 			page 3
 
 
  115 005b 10       		.byte	16
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  169              	cy_meta_flashprotect:
  170 0000 00000000 		.space	256
  170      00000000 
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccfJRqJF.s 			page 4
 
 
  170      00000000 
@@ -215,44 +215,44 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  199 000b 01       		.uleb128 0x1
  200 000c 00000000 		.4byte	.LASF18
  201 0010 01       		.byte	0x1
- 202 0011 E8010000 		.4byte	.LASF19
- 203 0015 4C010000 		.4byte	.LASF20
+ 202 0011 FA010000 		.4byte	.LASF19
+ 203 0015 A0000000 		.4byte	.LASF20
  204 0019 00000000 		.4byte	.Ldebug_line0
  205 001d 02       		.uleb128 0x2
  206 001e 01       		.byte	0x1
  207 001f 06       		.byte	0x6
- 208 0020 DC010000 		.4byte	.LASF0
+ 208 0020 EE010000 		.4byte	.LASF0
  209 0024 02       		.uleb128 0x2
  210 0025 01       		.byte	0x1
  211 0026 08       		.byte	0x8
- 212 0027 A0000000 		.4byte	.LASF1
+ 212 0027 16010000 		.4byte	.LASF1
  213 002b 02       		.uleb128 0x2
  214 002c 02       		.byte	0x2
  215 002d 05       		.byte	0x5
- 216 002e C3010000 		.4byte	.LASF2
+ 216 002e D5010000 		.4byte	.LASF2
  217 0032 02       		.uleb128 0x2
  218 0033 02       		.byte	0x2
  219 0034 07       		.byte	0x7
- 220 0035 C0000000 		.4byte	.LASF3
+ 220 0035 36010000 		.4byte	.LASF3
  221 0039 02       		.uleb128 0x2
  222 003a 04       		.byte	0x4
  223 003b 05       		.byte	0x5
- 224 003c D3010000 		.4byte	.LASF4
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 5
+ 224 003c E5010000 		.4byte	.LASF4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccfJRqJF.s 			page 5
 
 
  225 0040 02       		.uleb128 0x2
  226 0041 04       		.byte	0x4
  227 0042 07       		.byte	0x7
- 228 0043 AE000000 		.4byte	.LASF5
+ 228 0043 24010000 		.4byte	.LASF5
  229 0047 02       		.uleb128 0x2
  230 0048 08       		.byte	0x8
  231 0049 05       		.byte	0x5
- 232 004a B0010000 		.4byte	.LASF6
+ 232 004a C2010000 		.4byte	.LASF6
  233 004e 02       		.uleb128 0x2
  234 004f 08       		.byte	0x8
  235 0050 07       		.byte	0x7
- 236 0051 09010000 		.4byte	.LASF7
+ 236 0051 7F010000 		.4byte	.LASF7
  237 0055 03       		.uleb128 0x3
  238 0056 04       		.byte	0x4
  239 0057 05       		.byte	0x5
@@ -260,9 +260,9 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  241 005c 02       		.uleb128 0x2
  242 005d 04       		.byte	0x4
  243 005e 07       		.byte	0x7
- 244 005f FC000000 		.4byte	.LASF8
+ 244 005f 72010000 		.4byte	.LASF8
  245 0063 04       		.uleb128 0x4
- 246 0064 CD010000 		.4byte	.LASF21
+ 246 0064 DF010000 		.4byte	.LASF21
  247 0068 02       		.byte	0x2
  248 0069 9201     		.2byte	0x192
  249 006b 24000000 		.4byte	0x24
@@ -273,11 +273,11 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  254 0076 02       		.uleb128 0x2
  255 0077 08       		.byte	0x8
  256 0078 04       		.byte	0x4
- 257 0079 D3000000 		.4byte	.LASF10
+ 257 0079 49010000 		.4byte	.LASF10
  258 007d 02       		.uleb128 0x2
  259 007e 01       		.byte	0x1
  260 007f 08       		.byte	0x8
- 261 0080 BE010000 		.4byte	.LASF11
+ 261 0080 D0010000 		.4byte	.LASF11
  262 0084 05       		.uleb128 0x5
  263 0085 63000000 		.4byte	0x63
  264 0089 94000000 		.4byte	0x94
@@ -288,9 +288,9 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  269 0094 02       		.uleb128 0x2
  270 0095 04       		.byte	0x4
  271 0096 07       		.byte	0x7
- 272 0097 43010000 		.4byte	.LASF12
+ 272 0097 B9010000 		.4byte	.LASF12
  273 009b 07       		.uleb128 0x7
- 274 009c EA000000 		.4byte	.LASF13
+ 274 009c 60010000 		.4byte	.LASF13
  275 00a0 01       		.byte	0x1
  276 00a1 1F       		.byte	0x1f
  277 00a2 AC000000 		.4byte	0xac
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  279 00a7 03       		.byte	0x3
  280 00a8 00000000 		.4byte	cy_meta_configecc
  281 00ac 08       		.uleb128 0x8
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 6
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccfJRqJF.s 			page 6
 
 
  282 00ad 84000000 		.4byte	0x84
@@ -310,7 +310,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  288 00bf 03       		.byte	0x3
  289 00c0 00       		.byte	0
  290 00c1 07       		.uleb128 0x7
- 291 00c2 DA000000 		.4byte	.LASF14
+ 291 00c2 50010000 		.4byte	.LASF14
  292 00c6 01       		.byte	0x1
  293 00c7 3B       		.byte	0x3b
  294 00c8 D2000000 		.4byte	0xd2
@@ -320,7 +320,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  298 00d2 08       		.uleb128 0x8
  299 00d3 B1000000 		.4byte	0xb1
  300 00d7 07       		.uleb128 0x7
- 301 00d8 35010000 		.4byte	.LASF15
+ 301 00d8 AB010000 		.4byte	.LASF15
  302 00dc 01       		.byte	0x1
  303 00dd 49       		.byte	0x49
  304 00de E8000000 		.4byte	0xe8
@@ -337,7 +337,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  315 00fb FF       		.byte	0xff
  316 00fc 00       		.byte	0
  317 00fd 07       		.uleb128 0x7
- 318 00fe 20010000 		.4byte	.LASF16
+ 318 00fe 96010000 		.4byte	.LASF16
  319 0102 01       		.byte	0x1
  320 0103 57       		.byte	0x57
  321 0104 0E010000 		.4byte	0x10e
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  336 0128 01       		.byte	0x1
  337 0129 84       		.byte	0x84
  338 012a 34010000 		.4byte	0x134
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 7
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccfJRqJF.s 			page 7
 
 
  339 012e 05       		.uleb128 0x5
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  393 002e 49       		.uleb128 0x49
  394 002f 13       		.uleb128 0x13
  395 0030 00       		.byte	0
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 8
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccfJRqJF.s 			page 8
 
 
  396 0031 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  450              		.section	.debug_line,"",%progbits
  451              	.Ldebug_line0:
  452 0000 4D000000 		.section	.debug_str,"MS",%progbits,1
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 9
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccfJRqJF.s 			page 9
 
 
  452      02004700 
@@ -508,107 +508,110 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 1
  459              	.LASF9:
  460 009a 666C6F61 		.ascii	"float\000"
  460      7400
- 461              	.LASF1:
- 462 00a0 756E7369 		.ascii	"unsigned char\000"
- 462      676E6564 
- 462      20636861 
- 462      7200
- 463              	.LASF5:
- 464 00ae 6C6F6E67 		.ascii	"long unsigned int\000"
- 464      20756E73 
- 464      69676E65 
- 464      6420696E 
- 464      7400
- 465              	.LASF3:
- 466 00c0 73686F72 		.ascii	"short unsigned int\000"
- 466      7420756E 
- 466      7369676E 
- 466      65642069 
- 466      6E7400
- 467              	.LASF10:
- 468 00d3 646F7562 		.ascii	"double\000"
- 468      6C6500
- 469              	.LASF14:
- 470 00da 63795F6D 		.ascii	"cy_meta_custnvl\000"
- 470      6574615F 
- 470      63757374 
- 470      6E766C00 
- 471              	.LASF13:
- 472 00ea 63795F6D 		.ascii	"cy_meta_configecc\000"
- 472      6574615F 
- 472      636F6E66 
- 472      69676563 
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 10
+ 461              	.LASF20:
+ 462 00a0 433A5C55 		.ascii	"C:\\Users\\User\\Desktop\\GIT\\EE-projekt-4-gruppe-"
+ 462      73657273 
+ 462      5C557365 
+ 462      725C4465 
+ 462      736B746F 
+ 463 00ce 315C4D61 		.ascii	"1\\Maaleenhed\\Gamle versioner\\Spaendingsmaaler - "
+ 463      616C6565 
+ 463      6E686564 
+ 463      5C47616D 
+ 463      6C652076 
+ 464 00fe 6B616C69 		.ascii	"kalibreret\\Maaler.cydsn\000"
+ 464      62726572 
+ 464      65745C4D 
+ 464      61616C65 
+ 464      722E6379 
+ 465              	.LASF1:
+ 466 0116 756E7369 		.ascii	"unsigned char\000"
+ 466      676E6564 
+ 466      20636861 
+ 466      7200
+ 467              	.LASF5:
+ 468 0124 6C6F6E67 		.ascii	"long unsigned int\000"
+ 468      20756E73 
+ 468      69676E65 
+ 468      6420696E 
+ 468      7400
+ 469              	.LASF3:
+ 470 0136 73686F72 		.ascii	"short unsigned int\000"
+ 470      7420756E 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccfJRqJF.s 			page 10
 
 
- 472      6300
- 473              	.LASF8:
- 474 00fc 756E7369 		.ascii	"unsigned int\000"
- 474      676E6564 
- 474      20696E74 
- 474      00
- 475              	.LASF7:
- 476 0109 6C6F6E67 		.ascii	"long long unsigned int\000"
- 476      206C6F6E 
- 476      6720756E 
- 476      7369676E 
- 476      65642069 
- 477              	.LASF16:
- 478 0120 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 478      6574615F 
- 478      666C6173 
- 478      6870726F 
- 478      74656374 
- 479              	.LASF15:
- 480 0135 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 480      6574615F 
- 480      776F6E76 
- 480      6C00
- 481              	.LASF12:
- 482 0143 73697A65 		.ascii	"sizetype\000"
- 482      74797065 
- 482      00
- 483              	.LASF20:
- 484 014c 433A5C55 		.ascii	"C:\\Users\\User\\Desktop\\GIT\\EE-projekt-4-gruppe-"
- 484      73657273 
- 484      5C557365 
- 484      725C4465 
- 484      736B746F 
- 485 017a 315C4D61 		.ascii	"1\\Maaleenhed\\Maaleenhed\\Spaendingsmaaler\\Maaler"
- 485      616C6565 
- 485      6E686564 
- 485      5C4D6161 
- 485      6C65656E 
- 486 01a9 2E637964 		.ascii	".cydsn\000"
- 486      736E00
+ 470      7369676E 
+ 470      65642069 
+ 470      6E7400
+ 471              	.LASF10:
+ 472 0149 646F7562 		.ascii	"double\000"
+ 472      6C6500
+ 473              	.LASF14:
+ 474 0150 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 474      6574615F 
+ 474      63757374 
+ 474      6E766C00 
+ 475              	.LASF13:
+ 476 0160 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 476      6574615F 
+ 476      636F6E66 
+ 476      69676563 
+ 476      6300
+ 477              	.LASF8:
+ 478 0172 756E7369 		.ascii	"unsigned int\000"
+ 478      676E6564 
+ 478      20696E74 
+ 478      00
+ 479              	.LASF7:
+ 480 017f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 480      206C6F6E 
+ 480      6720756E 
+ 480      7369676E 
+ 480      65642069 
+ 481              	.LASF16:
+ 482 0196 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 482      6574615F 
+ 482      666C6173 
+ 482      6870726F 
+ 482      74656374 
+ 483              	.LASF15:
+ 484 01ab 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 484      6574615F 
+ 484      776F6E76 
+ 484      6C00
+ 485              	.LASF12:
+ 486 01b9 73697A65 		.ascii	"sizetype\000"
+ 486      74797065 
+ 486      00
  487              	.LASF6:
- 488 01b0 6C6F6E67 		.ascii	"long long int\000"
+ 488 01c2 6C6F6E67 		.ascii	"long long int\000"
  488      206C6F6E 
  488      6720696E 
  488      7400
  489              	.LASF11:
- 490 01be 63686172 		.ascii	"char\000"
+ 490 01d0 63686172 		.ascii	"char\000"
  490      00
  491              	.LASF2:
- 492 01c3 73686F72 		.ascii	"short int\000"
+ 492 01d5 73686F72 		.ascii	"short int\000"
  492      7420696E 
  492      7400
  493              	.LASF21:
- 494 01cd 75696E74 		.ascii	"uint8\000"
+ 494 01df 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccfJRqJF.s 			page 11
+
+
  494      3800
  495              	.LASF4:
- 496 01d3 6C6F6E67 		.ascii	"long int\000"
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccTDqNGb.s 			page 11
-
-
+ 496 01e5 6C6F6E67 		.ascii	"long int\000"
  496      20696E74 
  496      00
  497              	.LASF0:
- 498 01dc 7369676E 		.ascii	"signed char\000"
+ 498 01ee 7369676E 		.ascii	"signed char\000"
  498      65642063 
  498      68617200 
  499              	.LASF19:
- 500 01e8 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 500 01fa 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
  500      72617465 
  500      645F536F 
  500      75726365 
