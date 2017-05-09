@@ -1,5 +1,0 @@
-\\Mac\iCloud\SKOLE\4. Semester\PRJ4 - Semesterprojekt 4\Maaleenhed\Maaleenhed med samplefunktion\Spaendingsmaaler\Maaler.cydsn\Maaler.cyprj|2f50760f-a5f7-4807-bf58-70c5ce3e41e9
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|0beea3db-6e5c-4d3d-89b9-343daf55c24e
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|c1d8a904-baac-4a3a-b3e3-f0e1623eeea1
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|5f1f1874-1e38-4172-8c67-a8294ac142c4
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|af5ae516-44e6-4785-8cf3-f42d6e381cf8

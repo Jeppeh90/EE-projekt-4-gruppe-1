@@ -1,0 +1,5 @@
+\\Mac\Home\Desktop\Projekt\Maaleenhed\PSOC UART\UART\UART.cydsn\UART.cyprj|4183188f-afe1-414d-ad56-c0aa9cbd34d2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|390454a8-423c-4f89-a087-f7b334e04264
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|21d29d09-fe20-47d8-9055-9502f378c1a0
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|715ab85a-403a-457e-bd7e-d43c133abf17
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|768c1b17-1fd0-432e-8b13-5be986ba4db1
