@@ -1,0 +1,5 @@
+C:\Users\User\Desktop\GIT\EE-projekt-4-gruppe-1\Maaleenhed\Gamle versioner\Spaendingsmaaler - kalibreret\Maaler.cydsn\Maaler.cyprj|8c33e7a5-6bc7-42f6-8cb3-c0858e65d804
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|7cb41880-c86e-4407-9986-eff614a53b7f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|11b28af6-83e6-499a-aa78-cca59bf0e548
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|6f35e5f6-f049-434d-a5f5-c621594aa48a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|959dfa66-35f0-4ed2-a1b2-efba074c8e30

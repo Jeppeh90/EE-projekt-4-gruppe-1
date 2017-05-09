@@ -1,16 +1,41 @@
 % !TEX root = ../../prj4projektdokumentation.tex
 
+\restylefloat{table}
+
 \section{Modultest}
 
-For at tjekke, at distributionslinjen og de forskellige belastninger giver det spændingsfald, der forventes laves en modultest af det samlede system med distributionslinje, belastninger og trinskifter. Der vælges forskellige belastninger og trin på transformeren og for hver indstilling måles spændingsfaldet over belastningen. Resultaterne heraf ses i tabellen nedenfor. 
+For at tjekke, at distributionslinjen og de forskellige belastninger giver det spændingsfald, der forventes laves en modultest af det samlede system med distributionslinje, belastninger og trinskifter. Der vælges forskellige belastninger og trin på transformeren, hvor for hver indstilling måles spændingsfaldet over belastningen. Resultaterne heraf ses i tabellen nedenfor. 
 
-\begin{center}
-	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
 		\hline
-		\textbf{Test}					&Trinskifter. \\ \hline
-		\textbf{Testbeskrivelse}		&Spændingsfald over $16\Omega\parallel 50\Omega$ belastning passer med forventet/simuleret værdi. \\ \hline
-		\textbf{Input}					&4 V AC \\ \hline
-		\textbf{Forventet resultat}		&2,6 V målt over belastningen \\ \hline
-		\textbf{Resultat}				&Det forventede output passer, dog er vores firkant signal ikke så pænt, som vi havde regnet med. Test resultater kan ses på figurer: \ref{fig:sinustest}, \ref{fig:taktaktest}, \ref{fig:trekanttest}, \ref{fig:firkanttest}.  \\ \hline
+		\textbf{Trin} & \textbf{Belastning} & \textbf{Forventet resultat} & \textbf{Resultat} \\\hline
+		
+		\multirow{5}{*}{4 V AC} 
+		& $50 \Omega\parallel 50 \Omega$ & 3,2 V AC over belastning & 2,9 V AC målt over belastning \\\hhline{~---} 	
+		& $50 \Omega\parallel 16 \Omega$ & 2,6 V AC over belastning & 2,0 V AC målt over belastning \\\hhline{~---}
+		& $50 \Omega$ & 3,6 V AC over belastning & 3,5 V AC målt over belastning \\\hhline{~---} 	
+		& $39 \Omega$ & 3,5 V AC over belastning & 3,4 V AC målt over belastning \\\hhline{~---} 
+		& $16 \Omega$ & 2,8 V AC over belastning & 2,5 V AC målt over belastning \\\hhline{~---} 
+		& $x \Omega$ & x V AC over belastning & x V AC målt over belastning \\\hhline{~---} 
+		& $x \Omega$ & x V AC over belastning & x V AC målt over belastning \\\hline 
+	
+		
+		\multirow{5}{*}{5 V AC} 
+		& $50 \Omega\parallel 50 \Omega$ & 4,0 V AC over belastning & 3,7 V AC målt over belastning \\\hhline{~---} 	
+		& $50 \Omega\parallel 16 \Omega$ & 3,22 V AC over belastning & 2,76 V AC målt over belastning \\\hhline{~---}
+		& $50 \Omega$ & 4,4 V AC over belastning & 4,6 V AC målt over belastning \\\hhline{~---} 	
+		& $39 \Omega$ & 4,3 V AC over belastning & 4,2 V AC målt over belastning \\\hhline{~---} 
+		& $16 \Omega$ & 3,5 V AC over belastning & 3,1 V AC målt over belastning \\\hhline{~---} 
+		& $x \Omega$ & x V AC over belastning & x V AC målt over belastning \\\hhline{~---} 
+		& $x \Omega$ & x V AC over belastning & x V AC målt over belastning \\\hline 
+		
 	\end{tabular}
-\end{center}
+	\caption{Modultest for distributionslinje, belastninger og trinskifter}
+	\label{tab:Modultesttrin}
+\end{table}
+
+Det kan dermed ud fra modultesten konkluderes, at spændingen over belastningerne falder som forventet, dog med en afvigelse på maksimalt 0,5V. Afvigelsen er størst, jo lavere belastning som tilsluttes. 
+

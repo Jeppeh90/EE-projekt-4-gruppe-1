@@ -35,7 +35,7 @@
 \usepackage{multirow}					% For at lave pæne tabeller
 \usepackage{hhline}						% For at lave endnu pænere tabller
 \newcolumntype{C}{>{\let\newline\\\arraybackslash\hspace{0pt}}X}
-
+\usepackage{float}
 %matematik
 \usepackage{amsmath,amssymb,mathtools,bm}
 \newcommand{\tsub}[1]{_{\textup{#1}}}
@@ -137,6 +137,7 @@ linkcolor=Black, citecolor=Black]{hyperref}
 \input{sektioner/Accepttestspecifikation/accepttestspecifikation}
 \input{sektioner/Accepttestspecifikation/FunktionelleKrav}
 \input{sektioner/Accepttestspecifikation/IkkeFunktionelleKrav}
+\input{sektioner/Metode/Metode}
 \input{sektioner/Arkitektur/Arkitektur}
 \input{sektioner/Arkitektur/BDD}
 \input{sektioner/Arkitektur/IBD}
@@ -147,6 +148,7 @@ linkcolor=Black, citecolor=Black]{hyperref}
 \input{sektioner/Design/Belastning}
 \input{sektioner/Design/Trinskifter}
 \input{sektioner/Trinskifter/Modultest}
+\input{sektioner/Integrationstest/MaalTilPlc}
 \input{modulSkabelon}
 \printbibliography
 
