@@ -1,0 +1,33 @@
+% !TEX root = ../../prj4projektdokumentation.tex
+
+\section{Samlet integrationstest}
+Denne test indeholder alle de enkelte moduler, som systemet består af, herunder Brugergrænseflade, Måleenhed, styringsenhed og trinskifter. 
+
+I dette afsnit testes at udregninger for hvordan nettet opfører sig stemmer overens med det, der måles med Måleenheden, og det der vises på brugergrænsefladen.
+Testene laves ved at måle på nettet med Måleenheden, som er forbundet til brugergrænsefladen, så resultaterne for målinger kan aflæses på skærmen. Værdierne sammenholdes med resultaterne fra simulering og beregning. 
+
+
+
+\begin{center}
+	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
+		\hline
+		\textbf{Test}					&Udregning og simulering passer med systemets værdier. \\ \hline
+		\textbf{Testbeskrivelse}		&Der testes ved at forsyne nettet med trintrinskifteren og derefter måle spænding, strøm og Pf med Måleenheden ved en forbruger \\ \hline
+		\textbf{Input}					&4Vrms fra trinskifter \\ \hline
+		\textbf{Forventet output}		&At resultaterne i tabel \ref{tab:intTest2} stemmer overens \\ \hline
+		\textbf{Resultat}				&Se tabel \ref{tab:intTest2} \\ \hline
+	\end{tabular}
+\end{center}
+
+
+\begin{table}[H]
+	\begin{tabular}{ | m{0.2\textwidth} | m{0.2\textwidth} | m{0.2\textwidth} | m{0.2\textwidth}|}  
+		\hline
+		\textbf{Test}			& \textbf{Spænding} & \textbf{Strøm}  	& \textbf{PF}			\\ \hline
+		\textbf{Simulering}		&1					&1				  	&1 					\\ \hline
+		\textbf{Beregnet}		&1 					&1					&1					\\ \hline
+		\textbf{Målt}			&1 					&1					&1					\\ \hline
+	\end{tabular}
+	\caption{Resultatet af integrationstest mellem nettet og Måleenhed}
+	\label{tab:intTest2}
+\end{table}
