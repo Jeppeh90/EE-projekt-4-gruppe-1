@@ -1,13 +1,13 @@
-% !TEX root = ../prj4projektdokumentation.tex
+% !TEX root = ../../prj4projektdokumentation.tex
 
 \section{Funktionelle Krav}
 %usecase 1
 \begin{table}[htbp]
 	\centering
-	\begin{tabular}{|p{2cm}|p{3.5cm}|p{4cm}|p{2cm}|p{2.5cm}|}
+	\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{4.5cm}|p{1cm}|}
 		\hline
-		\textbf{UC1} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{Kommentar} \\\hline
-		Start manuel styring & Bruger vælger manuel mode & Systemet er i manuel mode & xxx & xxx \\\hline
+		\textbf{UC1} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
+		Start manuel styring & Bruger vælger Manuel Mode & På skærmen vises Manuel Mode med mulighed for valg af trin & Skærmen viser Manuel Mode & \checkmark \\\hline
 		
 		
 	\end{tabular}
@@ -18,20 +18,26 @@
 %usecase2
 \begin{table}[htbp]
 	\centering
-	\begin{tabular}{|p{2cm}|p{3.5cm}|p{4cm}|p{2cm}|p{2.5cm}|}
+	\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{4.5cm}|p{1cm}|}
 		\hline
-		\textbf{UC2} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{Kommentar} \\\hline
-		Stop manuel styring & Bruger vælger automatisk mode & Systemet er i automatisk mode & xxx & xxx \\\hline	
+		\textbf{UC2} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
+		Stop manuel styring & Bruger vælger Automatisk Mode & Skærmen viser Automatisk Mode, hvor trinknapperne er deaktiverede & Der vises Automatisk Mode & \checkmark \\\hline
+		
+		
 	\end{tabular}
 \end{table}
 
-% usecase3
+	
+\end{table}
+% usecase3a
 \begin{table}[htbp]
 	\centering
-	\begin{tabular}{|p{2cm}|p{3.5cm}|p{4cm}|p{2cm}|p{2.5cm}|}
+	\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{4.5cm}|p{1cm}|}
 		\hline
-		\textbf{UC3} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{Kommentar} \\\hline
-		Skift trin & Bruger vælger trin op på skærm & Systemet skifter et trin op på transformer & xxx & xxx \\\hline
+		\textbf{UC3} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
+		Skift trin op & Systemet er i Manuel Mode. Bruger vælger Trin Op på skærmen & Systemet skifter trin op på transformeren og skærmen opdateres med nye værdier. & Transformeren skifter trin efter 2s. Derefter opdateres spænding, strøm, pf og THD på skærmen inden 2s.  & \checkmark \\\hline
+		
+		
 	\end{tabular}
 \end{table}
 
@@ -42,4 +48,18 @@
 		\textbf{UC3} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{Kommentar} \\\hline
 		Skift trin & Bruger vælger trin ned på skærm & Systemet skifter et trin ned på transformer & xxx & xxx \\\hline
 	\end{tabular}
+\end{table}
+
+%usecase3b
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{4.5cm}|p{1cm}|}
+		\hline
+		\textbf{UC3} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
+		Skift trin ned & Systemet er i Manuel Mode. Bruger vælger Trin Ned på skærmen & Systemet skifter trin ned på transformeren og skærmen opdateres med nye værdier. & Transformeren skifter trin efter 2s. Derefter opdateres spænding, strøm, pf og THD på skærmen inden 2s.  & \checkmark \\\hline
+		
+		
+	\end{tabular}
+	
+	
 \end{table}
