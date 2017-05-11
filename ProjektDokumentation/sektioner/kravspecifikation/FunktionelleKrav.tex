@@ -54,7 +54,7 @@ Systemet indholder 3 usecases, der alle er initieret af brugeren. Den automatisk
 			
 			1 	& Brugeren trykker "Manuel styring" på skærmen.\\
 			2	& Systemet skifter til "Manuel mode" \\
-			3 	& Systemet viser mulige spændingsniveauer på skærm 	\\
+			3 	& Systemet viser mulige spændingsniveauer på skærmen. 	\\
 			
 			\bottomrule
 			
@@ -90,7 +90,8 @@ Systemet indholder 3 usecases, der alle er initieret af brugeren. Den automatisk
 			
 			
 			1 	& Brugeren trykker "Autmatisk styring" på skærmen.\\
-			2 	& Systemet skifter til automatisk mode.\\		
+			2 	& Systemet skifter til automatisk mode.\\
+			3 	& Systemet viser mulige spændingsniveauer på skærmen. 	\\		
 				
 			
 			\bottomrule
@@ -101,7 +102,7 @@ Systemet indholder 3 usecases, der alle er initieret af brugeren. Den automatisk
 	\label{table:UC2}
 \end{table}
 
-\subsection{Usecase 3 - Skift trin}
+\subsection{Usecase 3a - Skift trin}
 
 \begin{table}[H]
 	\centering
@@ -111,7 +112,7 @@ Systemet indholder 3 usecases, der alle er initieret af brugeren. Den automatisk
 			\toprule
 			\bfseries{Navn:}				& UC3 - Skift trin  \\
 			\midrule
-			\bfseries{Mål:} 				& At skifte trin på transformeren \\
+			\bfseries{Mål:} 				& At skifte et trin op på transformeren \\
 			\midrule
 			\bfseries{Initiering:} 			& Initieres af brugeren. \\
 			\midrule
@@ -121,13 +122,53 @@ Systemet indholder 3 usecases, der alle er initieret af brugeren. Den automatisk
 			\midrule
 			\bfseries{Forudsætninger:} 		& At systemet er funktionelt og i manuel mode\\
 			\midrule
-			\bfseries{Resultat:} 			& Transformerens trin er skiftet \\
+			\bfseries{Resultat:} 			& Transformerens trin er skiftet et trin op \\
 			\midrule
 			\bfseries{Hovedscenariet:} 	& \\
 			
 			
-			1 	& Brugeren vælger trin på skærmen.\\
-			2 	& Systemet skifter trin på transformeren.\\			
+			1 	& Brugeren vælger Trin Op på skærmen.\\
+			2 	& Systemet skifter et trin op på transformeren.\\
+			3 	& Aktuelt trin vises på skærmen.\\
+			4 	& Måleværdier opdateres på skærmen.\\		
+			
+			\bottomrule
+			
+		\end{tabularx}
+	\end{threeparttable}
+	\caption{Fully dressed use case for UC3 - Skift trin}
+	\label{table:UC3}
+\end{table}
+
+\subsection{Usecase 3b - Skift trin}
+
+\begin{table}[H]
+	\centering
+	
+	\begin{threeparttable}
+		\begin{tabularx}{\linewidth}{ l X }
+			\toprule
+			\bfseries{Navn:}				& UC3 - Skift trin  \\
+			\midrule
+			\bfseries{Mål:} 				& At skifte et trin ned på transformeren \\
+			\midrule
+			\bfseries{Initiering:} 			& Initieres af brugeren. \\
+			\midrule
+			\bfseries{Aktører:} 			& Brugeren (Primær) \\
+			\midrule
+			\bfseries{Samtidige forekomster:} & 1 \\
+			\midrule
+			\bfseries{Forudsætninger:} 		& At systemet er funktionelt og i manuel mode\\
+			\midrule
+			\bfseries{Resultat:} 			& Transformerens trin er skiftet et trin ned \\
+			\midrule
+			\bfseries{Hovedscenariet:} 	& \\
+			
+			
+			1 	& Brugeren vælger Trin Ned på skærmen.\\
+			2 	& Systemet skifter et trin ned på transformeren.\\
+			3 	& Aktuelt trin vises på skærmen.\\
+			4 	& Måleværdier opdateres på skærmen.\\			
 			
 			\bottomrule
 			
