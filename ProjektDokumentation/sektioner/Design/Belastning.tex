@@ -1,7 +1,7 @@
 % !TEX root = ../../prj4projektdokumentation.tex
 
 \section{Belastning}
-
+\subsection{Beregning for Belastning}
 Med denne distributionslinje og med trinskifteren, der står på 4V trinnet, kan det beregnes hvilken belastning, der vil medføre, at spændingen hos forbrugeren falder til under 10 \% \\ af 4V. Kredsløbet og beregningen ses nedenfor.
 
 \begin{figure}[htbp] % (alternativt [H])
@@ -59,7 +59,8 @@ R_B=\frac{-12,4\pm\sqrt{153,76-4\cdot(-0,24)\cdot18,23}}{-0,24\cdot 2}=\frac{-12
 
 Denne modstandsværdi i det viste kredsløb og med den valgte distributionslinje vil resultere i at spændingen falder under det ønskede niveau som er 4V. Der tages derfor udgangspunkt i denne værdi, men efterfølgende vil belastninger bestemmes ud fra simuleringer i værktøjet Multisim. 
 
-Til implementering af belastninger/forbrugere er på baggrund af foregående beregninger valgt modstande i intervallet 16 $\Omega$ til 100 $\Omega$. Belastninger er placeret i parallel og til hver belastning hører en kontakt, således der let kan skiftes mellem forskellige værdier. Der er desuden monteret pin til forbindelse til distributionslinje og bananstik til forbindelse til 0V på transformeren. Yderligere er der for hver belastning monteret en 1 $\Omega$ modstand således Måleenheden kan overvåge tilstanden hos hver forbruger. Det færdige print med belastninger ses på figur \ref{fig:Belastning1}
+\subsection{Implementering af Belastning}
+Til implementering af belastninger/forbrugere er der på baggrund af foregående beregninger valgt modstande i intervallet 16 $\Omega$ til 100 $\Omega$. Belastninger er placeret i parallel og til hver belastning hører en kontakt, således der let kan skiftes mellem forskellige værdier. Der er desuden monteret pin til forbindelse til distributionslinje og bananstik til forbindelse til 0V på transformeren. Yderligere er der for hver belastning monteret en 1 $\Omega$ modstand således Måleenheden kan overvåge tilstanden hos hver forbruger. Det færdige print med belastninger ses på figur \ref{fig:Belastning1}
 
 \begin{figure}[H] 
 	\centering
@@ -69,4 +70,32 @@ Til implementering af belastninger/forbrugere er på baggrund af foregående ber
 \end{figure}
 
 
+\subsection{Power factor beregning}
 
+\begin{align}
+Z_R=54 \Omega
+\end{align}
+
+\begin{align}
+Z_D=6,2+4,27j
+\end{align}
+
+\begin{align}
+Z_L=Z_R+Z_D=60,2+4,27j
+\end{align}
+
+\begin{align}
+I=\frac{4}{\vert Z_L \vert} = 0,07 A
+\end{align}
+
+\begin{align}
+S_L=I^2\cdot Z_L = 0,26+0,02j VA
+\end{align}
+
+\begin{align}
+P=0,26 W
+\end{align}
+
+\begin{align}
+pf= \frac{P}{\vert S_L \vert} = 0,996
+\end{align}
