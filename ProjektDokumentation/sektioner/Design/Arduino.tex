@@ -1,1 +1,25 @@
 % !TEX root = ../../prj4projektdokumentation.tex
+
+\section{Kommunikationsmodul}
+
+Kommunikationsmodulets egenskaber er at indsamle data fra måleenheder og sende dem videre til kontrolmodulet. Kommunikations modulet består af en Arduino Mega2560 med et tilknyttet Ethernet Shield R3. Dette shield er designet med udgangspunkt i W5100-microchippen, der er en standard ethernet controller chip. Dette ethernet shield bliver opsat fra Arduinoen igennem en SPI forbindelse, der oprettes i Arduino koden. 
+
+Kommunikationsmodulet efterspørger måledata fra måleenheden over en UART forbindelse. Da der kan kobles mange enheder op på samme UART linje, vil kommunikationsmodulet være i stand til at hente information fra så mange måleenheder som ønskes. Hvis der kobles flere måleenheder på samme UART linje kræver det blot en lille ændring i protokollen, således der ikke opstår situationer hvor 2 enheder sender data retur samtidig. 
+
+
+Herunder ses et eksempel af koden, hvor kommunikationsmodulet modtager data fra måleenhederne. For at få en bedre opløsning i målingerne bliver der sendt 16 bit, som er realiseret ved at dele 16bit op i to 8bits: 
+
+\lstset{caption={Modtagelse},label=ModtagelsesKode}
+\begin{lstlisting} % Start your code-block
+  Serial1.write('A');
+  
+  while(read1!=1);
+  read1 = 0;
+  
+  MCStrom = Serial1.read();
+  delay(3);
+  MCStrom1 = Serial1.read();
+\end{lstlisting}
+
+
+
