@@ -1342,7 +1342,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x4587
+.debug_info     0x00000000     0x4580
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x1e9 .\CortexM3\ARM_GCC_493\Debug\main.o
  .debug_info    0x000001e9      0x4ba .\CortexM3\ARM_GCC_493\Debug\sample.o
@@ -1361,9 +1361,9 @@ END GROUP
  .debug_info    0x0000336c      0x503 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(UART_1.o)
  .debug_info    0x0000386f      0x23a .\CortexM3\ARM_GCC_493\Debug\Maaler.a(isr_RX.o)
  .debug_info    0x00003aa9      0x25d .\CortexM3\ARM_GCC_493\Debug\Maaler.a(UART_1_IntClock.o)
- .debug_info    0x00003d06       0xc4 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
- .debug_info    0x00003dca      0x36a .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
- .debug_info    0x00004134      0x453 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
+ .debug_info    0x00003d06       0xbd .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyBootAsmGnu.o)
+ .debug_info    0x00003dc3      0x36a .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
+ .debug_info    0x0000412d      0x453 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
 
 .debug_abbrev   0x00000000     0x15b9
  *(.debug_abbrev)
@@ -1451,46 +1451,46 @@ END GROUP
  .debug_frame   0x00002c58       0x28 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
  .debug_frame   0x00002c80       0x20 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x232d
+.debug_str      0x00000000     0x2326
  *(.debug_str)
- .debug_str     0x00000000      0x213 .\CortexM3\ARM_GCC_493\Debug\main.o
-                                0x25b (size before relaxing)
- .debug_str     0x00000213       0xc1 .\CortexM3\ARM_GCC_493\Debug\sample.o
-                                0x30e (size before relaxing)
- .debug_str     0x000002d4       0x75 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
-                                0x21e (size before relaxing)
- .debug_str     0x00000349      0x13c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                                0x2ff (size before relaxing)
- .debug_str     0x00000485      0x1d5 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
-                                0x3ab (size before relaxing)
- .debug_str     0x0000065a      0x43e .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
-                                0x64b (size before relaxing)
- .debug_str     0x00000a98       0x72 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
-                                0x215 (size before relaxing)
- .debug_str     0x00000b0a      0x220 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
-                                0x3e2 (size before relaxing)
- .debug_str     0x00000d2a      0x208 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
-                                0x413 (size before relaxing)
- .debug_str     0x00000f32      0x806 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
-                                0xa12 (size before relaxing)
- .debug_str     0x00001738      0x365 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
-                                0x55f (size before relaxing)
- .debug_str     0x00001a9d       0x61 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
-                                0x211 (size before relaxing)
- .debug_str     0x00001afe       0x65 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
-                                0x20d (size before relaxing)
- .debug_str     0x00001b63       0x60 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
-                                0x20d (size before relaxing)
- .debug_str     0x00001bc3      0x2a1 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(UART_1.o)
-                                0x483 (size before relaxing)
- .debug_str     0x00001e64       0xf4 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(isr_RX.o)
-                                0x2dc (size before relaxing)
- .debug_str     0x00001f58      0x177 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(UART_1_IntClock.o)
-                                0x382 (size before relaxing)
- .debug_str     0x000020cf      0x145 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
-                                0x31e (size before relaxing)
- .debug_str     0x00002214      0x119 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
-                                0x31b (size before relaxing)
+ .debug_str     0x00000000      0x20c .\CortexM3\ARM_GCC_493\Debug\main.o
+                                0x254 (size before relaxing)
+ .debug_str     0x0000020c       0xc1 .\CortexM3\ARM_GCC_493\Debug\sample.o
+                                0x307 (size before relaxing)
+ .debug_str     0x000002cd       0x75 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                                0x217 (size before relaxing)
+ .debug_str     0x00000342      0x13c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                                0x2f8 (size before relaxing)
+ .debug_str     0x0000047e      0x1d5 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyfitter_cfg.o)
+                                0x3a4 (size before relaxing)
+ .debug_str     0x00000653      0x43e .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1.o)
+                                0x644 (size before relaxing)
+ .debug_str     0x00000a91       0x72 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_INT.o)
+                                0x20e (size before relaxing)
+ .debug_str     0x00000b03      0x220 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                                0x3db (size before relaxing)
+ .debug_str     0x00000d23      0x208 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(ADC_DelSig_1_theACLK.o)
+                                0x40c (size before relaxing)
+ .debug_str     0x00000f2b      0x806 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyLib.o)
+                                0xa0b (size before relaxing)
+ .debug_str     0x00001731      0x365 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(cyPm.o)
+                                0x558 (size before relaxing)
+ .debug_str     0x00001a96       0x61 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(test.o)
+                                0x20a (size before relaxing)
+ .debug_str     0x00001af7       0x65 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_1.o)
+                                0x206 (size before relaxing)
+ .debug_str     0x00001b5c       0x60 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(AMux_2.o)
+                                0x206 (size before relaxing)
+ .debug_str     0x00001bbc      0x2a1 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(UART_1.o)
+                                0x47c (size before relaxing)
+ .debug_str     0x00001e5d       0xf4 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(isr_RX.o)
+                                0x2d5 (size before relaxing)
+ .debug_str     0x00001f51      0x177 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(UART_1_IntClock.o)
+                                0x37b (size before relaxing)
+ .debug_str     0x000020c8      0x145 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CyFlash.o)
+                                0x317 (size before relaxing)
+ .debug_str     0x0000220d      0x119 .\CortexM3\ARM_GCC_493\Debug\Maaler.a(CySpc.o)
+                                0x314 (size before relaxing)
 
 .debug_loc
  *(.debug_loc)
