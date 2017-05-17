@@ -7,9 +7,19 @@ For at kunne skifte trin og dermed spændingsniveau på tranformeren er der opby
 
 \begin{figure}[H] 
 	\centering
-	\includegraphics[width=1\textwidth]{Figure/Trinskiftertegning}
+	\includegraphics[width=1\textwidth]{Figure/Trinskiftertegning2}
 	\caption{Kredsløbstegning af distributionslinje, belastninger og trinskifter}
-	\label{fig:Trinskiftertegning}
+	\label{fig:Trinskiftertegning2}
 \end{figure}
 
 Som vist på tegningen er hvert relæ forbundet til hver sin udgang på PLC, og det er herfra de modtager styresignalet. Hvert relæ er desuden forbundet til henholdsvis trin 4, 5 og 6. Gennem en Normally Open contact er hvert relæ videre forbundet ud til distributionslinjen. Ved skift af trin fra for eksempel 4 til 5 sendes højt signal til begge trin og hereftes slukkes signalet til trin 4. Der er altså et overlap ved skift af trin, og på den måde forsvinder forsyningen til belastningen ikke undervejs. 
+
+Relækredsløbet er implementeret på et printkort, der forbindes til transformertrinene via bananstik, og til PLC og distributionslinje via pins. Det færdige kredsløb ses på figur \ref{fig:Relaekredsloeb}
+
+\begin{figure}[H] 
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figure/Relaekredsl}
+	\caption{Relæer på printkort}
+	\label{fig:Relaekredsloeb}
+\end{figure}
+
