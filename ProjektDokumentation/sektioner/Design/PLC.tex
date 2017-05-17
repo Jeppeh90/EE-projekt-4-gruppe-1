@@ -1,2 +1,13 @@
 % !TEX root = ../../prj4projektdokumentation.tex
 
+\section{Kontrolmodul}
+
+Kontrolmodulet består primært af to processer; En kommunikationsdel der kan håndtere at modtage data gennem en TCP forbindelse og konvertere disse data til noget der kan bruges i resten af programmet, herunder også HMI delen. En styringsdel der kan bruge disse data i styringen af trinskifteren.
+
+\subsection{TCP kommunikation}
+Kontorlmodulet er lavet som en client i forhold til kommunikationsmodulet, der er server. Den sender altså en forespørgelse på at modtage data til kommunikationsmodulet, hvorefter den modtager ny data fra den forespurgte enhed. Mere om selve protokollen kan findes i afsnit \ref{TCPprotokol} TCP protokol. Det er kontrolmodulet der oprette TCP forbindelse og står for at nedlægge den igen.
+TCP komunikationen er opdelt i 4 FC'er; OpretForbindelse, Send, Modtag og AfslutForbindelse. Simatic TIA portal har nogle indbyggede blokke, man bruge når til Ethernetkommunikation.
+OpretForbindelse består af funktionsblokken TCON, som er vist på 
+
+
+\subsection{Styring af trinskifter}
