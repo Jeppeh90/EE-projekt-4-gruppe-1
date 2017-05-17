@@ -1,1 +1,71 @@
 % !TEX root = ../../prj4projektdokumentation.tex
+
+\section{Kommunikationsmodul}
+
+Kommunikationsmodulets egenskaber er at indsamle data fra måleenheder og sende dem videre til kontrolmodulet. Kommunikations modulet består af en Arduino Mega2560 med et tilknyttet Ethernet Shield R3. Dette shield er designet med udgangspunkt i W5100-microchippen, der er en standard ethernet controller chip. Dette ethernet shield bliver opsat fra Arduinoen igennem en SPI forbindelse, der oprettes i Arduino koden. 
+
+Kommunikationsmodulet efterspørger måledata fra måleenheden over en UART forbindelse. Da der kan kobles mange enheder op på samme UART linje, vil kommunikationsmodulet være i stand til at hente information fra så mange måleenheder som ønskes. Hvis der kobles flere måleenheder på samme UART linje kræver det blot en lille ændring i protokollen, således der ikke opstår situationer hvor 2 enheder sender data retur samtidig. 
+
+
+Herunder ses et eksempel af koden, hvor kommunikationsmodulet modtager data fra måleenhederne. For at få en bedre opløsning i målingerne bliver der sendt 16 bit, som er realiseret ved at dele 16bit op i to 8bits: 
+
+\lstset{caption={Modtagelse},label={ModtagelsesKode}}
+\begin{lstlisting} % Start your code-block
+  Serial1.write('A');
+  
+  while(read1!=1);
+  read1 = 0;
+  
+  MCStrom = Serial1.read();
+  delay(3);
+  MCStrom1 = Serial1.read();
+\end{lstlisting}
+
+
+For hver måledata er der oprettet 2 integers, der skrives til individuelt. Dette ses med MCStrom og MCStrom1, der tilsammen giver måleenhedens strømværdi i milliampere. 
+Den variable read1, der ses i kodeeksemplet \ref{ModtagelsesKode} er interruptstyret. Interruptet er benyttet for at vente på måleenheden får samplet en hel periode. Interruptet er implementeret på følgende måde i Arduinokoden: 
+
+\lstset{caption={Interrupt},label={InterruptKode}}
+\begin{lstlisting} % Start your code-block
+
+// Skrevet i den globale del af koden:
+
+int receive()
+{
+	read1 = 1;
+}
+
+// Skrevet i setup-delen:
+
+  attachInterrupt(digitalPinToInterrupt(19),receive, RISING);
+
+\end{lstlisting}
+
+
+Funktionen attachInterrupt() er en allerede implementeret funktion i Arduino udviklingsværktøjet. Funktionen skal have 3 parametre, hvor den første er lidt speciel, da den skal hedde digitalPinToInterrupt(pin), hvor pin er nummeret på arduinopinen der skal interruptes. Den anden parameter er navnet på Interrupt Service Routinen der skal køres når der fås et interrupt på pinen. Den sidste parameter bestemmer om interruptet skal triggeres på en lav værdi, et skift i tilstand, en rising edge eller falling edge. Der er i dette tilfælde valgt et interrupte på rising edge, da det er en UART-modtagelse der skal interruptes på. 
+
+Opsætningen af ethernet på Arduinoen: 
+
+
+\lstset{caption={Ethernet},label={EthernetKode}}
+\begin{lstlisting} % Start your code-block
+
+
+// Skrevet i den globale del af koden:
+#include <SPI.h>
+#include <Ethernet.h>
+
+byte mac[] = {0x90, 0xA2, 0xDA, 0x0F, 0x1B, 0x82};   // MAC Address
+byte ip[] = {192, 168, 0, 129};                // Network Address
+
+
+EthernetServer server = EthernetServer(27015);
+
+
+// Skrevet i setup delen af koden:
+      Ethernet.begin(mac,ip);
+      server.begin();
+
+
+
+\end{lstlisting}
