@@ -57,7 +57,7 @@ Andengrads ligning løses og derved findes den modstandsværdi, der vil give et 
 R_B=\frac{-12,4\pm\sqrt{153,76-4\cdot(-0,24)\cdot18,23}}{-0,24\cdot 2}=\frac{-12,4\pm 13,1}{-0,47}=54,3 \Omega
 \end{align}
 
-Denne modstandsværdi i det viste kredsløb og med den valgte distributionslinje vil resultere i at spændingen falder under det ønskede niveau som er 4V. Der tages derfor udgangspunkt i denne værdi, men efterfølgende vil belastninger bestemmes ud fra simuleringer i værktøjet Multisim. 
+Denne modstandsværdi i det viste kredsløb og med den valgte distributionslinje vil resultere i at spændingen falder under det ønskede niveau som er 4V. Der tages derfor udgangspunkt i denne værdi, men efterfølgende vil belastninger bestemmes ud fra simuleringer i værktøjet Multisim. Simulering der understøtter beregningerne ses på figur \ref{fig:powfacsim}
 
 \subsection{Implementering af Belastning}
 Til implementering af belastninger/forbrugere er der på baggrund af foregående beregninger valgt modstande i intervallet 16 $\Omega$ til 100 $\Omega$. Belastninger er placeret i parallel og til hver belastning hører en kontakt, således der let kan skiftes mellem forskellige værdier. Der er desuden monteret pin til forbindelse til distributionslinje og bananstik til forbindelse til 0V på transformeren. Yderligere er der for hver belastning monteret en 1 $\Omega$ modstand således Måleenheden kan overvåge tilstanden hos hver forbruger. Det færdige print med belastninger ses på figur \ref{fig:Belastning1}
@@ -70,7 +70,18 @@ Til implementering af belastninger/forbrugere er der på baggrund af foregående
 \end{figure}
 
 
-\subsection{Power factor beregning}
+\section{Power factor}
+
+For yderligere monitorering ønskes det også at undersøge power factor i systemet. Når effekt transporteres gennem en distributionslinje består det af både aktiv og reaktiv effekt, og power factor fortæller ratioen mellem aktiv og tilsyneladende effekt. Denne parameter fortæller hvor meget effekt, der kan tages ud af systemet og udnyttes hos en belastning/forbruger. Da belastningerne i dette system er rent ohmske, forventes en power factor tæt på 1. Da der også er en spole på distributionslinjen forventes det dog også at der vil være en lagging power factor. Forholdet mellem aktiv, reaktiv og tilsyneladende effekt kan ses på figur \ref{fig:Effekttrekant}
+
+\begin{figure}[H] 
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figure/Effekttrekant}
+	\caption{Effekttrekant}
+	\label{fig:Effekttrekant}
+\end{figure}
+
+På baggrund af dette kan den aktuelle power factor med de valgte kabelparametre og en belastning på 54 $\Omega$ nu beregnes. Beregninger ses nedenfor.
 
 \begin{align}
 Z_R=54 \Omega
@@ -99,3 +110,12 @@ P=0,26 W
 \begin{align}
 pf= \frac{P}{\vert S_L \vert} = 0,996
 \end{align}
+
+For at tjekke og understøtte disse beregninger er der lavet en simulering af systemet i Multisim. Denne simulering giver en power factor på 0,997, hvilket stemmer fint overens med forventningen fra beregningen. Simuleringen ses på figur \ref{fig:powfacsim} 
+
+\begin{figure}[H] 
+	\centering
+	\includegraphics[width=1\textwidth]{Figure/powerfactormultisim}
+	\caption{Simulering, der viser power factor}
+	\label{fig:powfacsim}
+\end{figure}
