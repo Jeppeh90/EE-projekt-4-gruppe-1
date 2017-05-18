@@ -3,7 +3,7 @@
 
 \section{Modultest}
 \subsection{Spænding over belastning}
-For at tjekke, at distributionslinjen og de forskellige belastninger giver det spændingsfald, der forventes laves en modultest af det samlede system med distributionslinje, belastninger og trinskifter. Der vælges forskellige belastninger og trin på transformeren, hvor for hver indstilling måles spændingsfaldet over belastningen. Resultaterne heraf ses i tabellen nedenfor. 
+For at tjekke, at distributionslinjen og de forskellige belastninger giver det spændingsfald, der forventes laves en modultest af det samlede system med distributionslinje, belastninger og trinskifter. Der vælges forskellige belastninger og trin på transformeren, hvor for hver indstilling måles spændingsfaldet over belastningen. Resultaterne heraf ses i tabel \ref{tab:Modultesttrin}. 
 
 
 \begin{table}[H]
@@ -39,7 +39,7 @@ Det kan dermed ud fra modultesten konkluderes, at spændingen over belastningern
 
 \subsection{Power factor}
 
-
+For at teste at systemet virker som ønsket, laves en sammenligning af forventede power factor værdier og de værdier, der rent faktisk måles i systemet. Resultaterne herfra ses i tabel \ref{tab:Modultestpow}
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
@@ -47,24 +47,24 @@ Det kan dermed ud fra modultesten konkluderes, at spændingen over belastningern
 		\textbf{Trin} & \textbf{Belastning} & \textbf{Forventet resultat} & \textbf{Resultat} \\\hline
 		
 		\multirow{6}{*}{4 V AC} 
-		& $50 \Omega\parallel 50 \Omega$ & 3,2 V AC over belastning & 2,9 V AC målt over belastning \\\hhline{~---} 	
-		& $50 \Omega\parallel 16 \Omega$ & 2,6 V AC over belastning & 2,0 V AC målt over belastning \\\hhline{~---}
-		& $55 \Omega$ &  &  \\\hhline{~---} 
-		& $50 \Omega$ &  &  \\\hhline{~---} 	
-		& $39 \Omega$ &  &  \\\hhline{~---} 
-		& $16 \Omega$ &  &  \\\hline 
+		& $50 \Omega\parallel 50 \Omega$ & 0,990 & 2,9 V AC målt over belastning \\\hhline{~---} 	
+		& $50 \Omega\parallel 16 \Omega$ & 0,974 & 2,0 V AC målt over belastning \\\hhline{~---}
+		& $54 \Omega$ & 0,997 &  \\\hhline{~---} 
+		& $50 \Omega$ &0,997  &  \\\hhline{~---} 	
+		& $39 \Omega$ & 0,996 &  \\\hhline{~---} 
+		& $16 \Omega$ & 0,982 &  \\\hline 
 		
 		
 		\multirow{6}{*}{5 V AC} 
-		& $50 \Omega\parallel 50 \Omega$ & 3,2 V AC over belastning & 2,9 V AC målt over belastning \\\hhline{~---} 	
-		& $50 \Omega\parallel 16 \Omega$ & 2,6 V AC over belastning & 2,0 V AC målt over belastning \\\hhline{~---}
-		& $55 \Omega$ &  &  \\\hhline{~---} 
-		& $50 \Omega$ &  &  \\\hhline{~---} 	
-		& $39 \Omega$ &  &  \\\hhline{~---} 
-		& $16 \Omega$ &  &  \\\hline 
+		& $50 \Omega\parallel 50 \Omega$ & 0,990 & 2,9 V AC målt over belastning \\\hhline{~---} 	
+		& $50 \Omega\parallel 16 \Omega$ & 0,974 & 2,0 V AC målt over belastning \\\hhline{~---}
+		& $54 \Omega$ & 0,997 &  \\\hhline{~---} 
+		& $50 \Omega$ & 0,997 &  \\\hhline{~---} 	
+		& $39 \Omega$ & 0,996 &  \\\hhline{~---} 
+		& $16 \Omega$ & 0,982 &  \\\hline 
 
 		
 	\end{tabular}
-	\caption{Modultest for distributionslinje, belastninger og trinskifter}
-	\label{tab:Modultesttrin}
+	\caption{Modultest for power factor}
+	\label{tab:Modultestpow}
 \end{table}
