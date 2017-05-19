@@ -129,7 +129,7 @@ void FFT(long m,double *x,double *y, double *u)
    for (l=0;l<m;l++) {
       l1 = l2;
       l2 <<= 1;
-      u1 = 1.0; 
+      u1 = 1.0;
       u2 = 0.0;
       for (j=0;j<l1;j++) {
          for (i=j;i<n;i+=l2) {
@@ -170,9 +170,8 @@ double calculate_50Hz_RMS(double *u)
 double calculate_50Hz_PF()
 {
     double angle_Volt = atan(Im_volt[1]/Re_volt[1]);
-    double angle_Ampere = atan(Im_Ampere[1]/Re_Ampere[1]);
-    
-    return cos(angle_Ampere-angle_Volt);
+    double angle_Ampere = atan(Im_Ampere[1]/Re_Ampere[1]);    
+    return cos(angle_Volt-angle_Ampere);
     
 }
 
