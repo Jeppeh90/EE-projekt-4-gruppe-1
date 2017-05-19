@@ -1,1 +1,48 @@
 % !TEX root = ../../prj4projektdokumentation.tex
+
+\subsection{Udregninger på PSOC}
+I dette afsnit beskrives, hvordan fourier er lavet i PSOC'en men også hvordan udregninger er lavet til rms, power factor og THD.
+
+\subsubsection{Fourier algoritme}
+Når Strøm og spænding er samplet ned i 2 arrays, kan de sættes ind i funktionen:
+
+\lstset{caption={FFT prototype},label={FFTproto}}
+\begin{lstlisting}
+void FFT(long m,double *x,double *y, double *u);
+\end{lstlisting}
+
+Denne funktion dækker over en algoritme der kan lave FFT\footnote{Fast Fourier Transformation}. Algoritmen er fundet på et Cypress forum\cite{FFTalgo}. Funktionen kan lave FFT på et array med 64 tal, hvor den laver det array om til de reale tal og fylder et andet array med de imaginær tal. Derudover fylder den et tredje array med absolute amplitude værdiger. Det første argument m er eksponent til 2, så det giver størrelsen af arrayet. Ved 64 bliver eksponent 6.
+
+
+Ved samplingstiden der svare til at der kan måles over en periode på 50Hz og der samples 64 gange bliver samplefrekvensen:
+
+\begin{align}
+f_{sample} = 64 * 50Hz = 3200Hz
+\end{align}   
+
+Hvilket betyder at hver bin i array'ne giver:
+
+\begin{align}
+f_{Bin} = \dfrac{3200Hz}{64} = 50
+\end{align}
+
+Dette betyder at på plads nummer 2 i arrayet med absolute værdiger, ligger størrelsen på de signaler der har en frekvens på 50Hz og på plads nummer 3, signaler med 100Hz osv.
+
+\subsubsection{Beregning af rms ved 50Hz}
+Rms kan per definition beregnes for strøm og spænding på ved følgende: 
+\begin{align}
+ X_{rms}= \dfrac{X_{amplitude}}{\sqrt{2}}
+\end{align}
+Derfor kan rms værdigen ved 50Hz beregnes med følgende funktion:
+\lstset{caption={Funktion til beregning af 50Hz rms},label={rmsfunk}}
+\begin{lstlisting}
+double calculate_50Hz_RMS(double *u)
+{
+return u[1]/sqrt(2);  
+}
+\end{lstlisting}
+
+Hvor "u" er et array med absolute værdiger for spænding eller strøm med frekvensbin på 50.
+
+\subsubsection{title}
+  

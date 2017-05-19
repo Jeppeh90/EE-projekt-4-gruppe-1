@@ -60,7 +60,7 @@ uint8 makeLSB(double);
 
 //FFT.h
 
-void FFT(int dir,long m,double *x,double *y, double *u);
+void FFT(long m,double *x,double *y, double *u);
 
 
 double calculate_50Hz_Amp(double *u);

@@ -59,8 +59,8 @@ void sampleAndCalc()
     }
       
     
-    FFT(2,exponent,Re_volt,Im_volt,Abs_volt);
-    FFT(2,exponent,Re_Ampere,Im_Ampere,Abs_Ampere);
+    FFT(exponent,Re_volt,Im_volt,Abs_volt);
+    FFT(exponent,Re_Ampere,Im_Ampere,Abs_Ampere);
     
     
     Amp_Volt = calculate_50Hz_Amp(Abs_volt)*V_faktor-56.9;
@@ -89,7 +89,7 @@ uint8 makeLSB (double num)
 
 
 //FFT.C
-void FFT(int dir,long m,double *x,double *y, double *u)
+void FFT(long m,double *x,double *y, double *u)
 {
    // dir:  forward (=1) o inverse (!=1) transform; 
    // m exponent;
@@ -146,18 +146,9 @@ void FFT(int dir,long m,double *x,double *y, double *u)
          u1 = z;
       }
       c2 = sqrt((1.0 - c1) / 2.0);
-      if (dir == 1) 
-         c2 = -c2;
       c1 = sqrt((1.0 + c1) / 2.0);
    }
 
-   /* Scaling factor for forward transform */
-//   if (dir == 1) {
-//      for (i=0;i<n;i++) {
-//         x[i] /= n;
-//         y[i] /= n;
-//      }
-//   }
    
    for(i=0;i<N_points;i++)
    {

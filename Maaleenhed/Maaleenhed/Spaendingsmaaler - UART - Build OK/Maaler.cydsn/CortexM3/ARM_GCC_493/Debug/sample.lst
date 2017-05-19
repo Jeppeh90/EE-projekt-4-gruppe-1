@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 1
   15:sample.c      **** {       
   41              		.loc 1 15 0
   42              		.cfi_startproc
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 2
 
 
   43              		@ args = 0, pretend = 0, frame = 32
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 1
   83 0038 5A1C     		adds	r2, r3, #1
   84 003a FA61     		str	r2, [r7, #28]
   85 003c 9B00     		lsls	r3, r3, #2
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 3
 
 
   86 003e FA68     		ldr	r2, [r7, #12]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 1
  127 008e 0133     		adds	r3, r3, #1
  128 0090 7B61     		str	r3, [r7, #20]
  129              	.L2:
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 4
 
 
   20:sample.c      ****         {
@@ -221,10 +221,10 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 1
  161              		.cfi_def_cfa_offset 8
  162              		.cfi_offset 7, -8
  163              		.cfi_offset 14, -4
- 164 0002 84B0     		sub	sp, sp, #16
- 165              		.cfi_def_cfa_offset 24
- 166 0004 02AF     		add	r7, sp, #8
- 167              		.cfi_def_cfa 7, 16
+ 164 0002 82B0     		sub	sp, sp, #8
+ 165              		.cfi_def_cfa_offset 16
+ 166 0004 00AF     		add	r7, sp, #0
+ 167              		.cfi_def_cfa_register 7
   47:sample.c      ****         /*Samplefunktion*/
   48:sample.c      ****     int p = 0;
  168              		.loc 1 48 0
@@ -232,13 +232,13 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 1
  170 0008 7B60     		str	r3, [r7, #4]
   49:sample.c      ****     sampleUandI(SampleArrayU,SampleArrayI,SIZE);
  171              		.loc 1 49 0
- 172 000a 6B48     		ldr	r0, .L10+24
- 173 000c 6B49     		ldr	r1, .L10+28
+ 172 000a 6948     		ldr	r0, .L10+24
+ 173 000c 6949     		ldr	r1, .L10+28
  174 000e 8022     		movs	r2, #128
  175 0010 FFF7FEFF 		bl	sampleUandI
   50:sample.c      **** 
   51:sample.c      ****     
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 5
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 5
 
 
   52:sample.c      ****     for(p = 0; p<N_points ; p++)
@@ -250,21 +250,21 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 1
   53:sample.c      ****     {
   54:sample.c      ****         Re_volt[p] = SampleArrayU[p];
  181              		.loc 1 54 0 discriminator 3
- 182 001a 674A     		ldr	r2, .L10+24
+ 182 001a 654A     		ldr	r2, .L10+24
  183 001c 7B68     		ldr	r3, [r7, #4]
  184 001e 52F82330 		ldr	r3, [r2, r3, lsl #2]
  185 0022 1846     		mov	r0, r3
  186 0024 FFF7FEFF 		bl	__aeabi_i2d
  187 0028 0246     		mov	r2, r0
  188 002a 0B46     		mov	r3, r1
- 189 002c 6448     		ldr	r0, .L10+32
+ 189 002c 6248     		ldr	r0, .L10+32
  190 002e 7968     		ldr	r1, [r7, #4]
  191 0030 C900     		lsls	r1, r1, #3
  192 0032 0144     		add	r1, r1, r0
  193 0034 C1E90023 		strd	r2, [r1]
   55:sample.c      ****         Im_volt[p] = 0;
  194              		.loc 1 55 0 discriminator 3
- 195 0038 624A     		ldr	r2, .L10+36
+ 195 0038 604A     		ldr	r2, .L10+36
  196 003a 7B68     		ldr	r3, [r7, #4]
  197 003c DB00     		lsls	r3, r3, #3
  198 003e D118     		adds	r1, r2, r3
@@ -274,21 +274,21 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 1
   56:sample.c      ****         
   57:sample.c      ****         Re_Ampere[p] = SampleArrayI[p];
  202              		.loc 1 57 0 discriminator 3
- 203 004c 5B4A     		ldr	r2, .L10+28
+ 203 004c 594A     		ldr	r2, .L10+28
  204 004e 7B68     		ldr	r3, [r7, #4]
  205 0050 52F82330 		ldr	r3, [r2, r3, lsl #2]
  206 0054 1846     		mov	r0, r3
  207 0056 FFF7FEFF 		bl	__aeabi_i2d
  208 005a 0246     		mov	r2, r0
  209 005c 0B46     		mov	r3, r1
- 210 005e 5A48     		ldr	r0, .L10+40
+ 210 005e 5848     		ldr	r0, .L10+40
  211 0060 7968     		ldr	r1, [r7, #4]
  212 0062 C900     		lsls	r1, r1, #3
  213 0064 0144     		add	r1, r1, r0
  214 0066 C1E90023 		strd	r2, [r1]
   58:sample.c      ****         Im_Ampere[p] = 0;
  215              		.loc 1 58 0 discriminator 3
- 216 006a 584A     		ldr	r2, .L10+44
+ 216 006a 564A     		ldr	r2, .L10+44
  217 006c 7B68     		ldr	r3, [r7, #4]
  218 006e DB00     		lsls	r3, r3, #3
  219 0070 D118     		adds	r1, r2, r3
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 1
   52:sample.c      ****     {
  223              		.loc 1 52 0 discriminator 3
  224 007e 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 6
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 6
 
 
  225 0080 0133     		adds	r3, r3, #1
@@ -312,312 +312,308 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 1
   59:sample.c      ****     }
   60:sample.c      ****       
   61:sample.c      ****     
-  62:sample.c      ****     FFT(2,exponent,Re_volt,Im_volt,Abs_volt);
+  62:sample.c      ****     FFT(exponent,Re_volt,Im_volt,Abs_volt);
  232              		.loc 1 62 0 is_stmt 1
- 233 008a 514B     		ldr	r3, .L10+48
- 234 008c 0093     		str	r3, [sp]
- 235 008e 0220     		movs	r0, #2
- 236 0090 0621     		movs	r1, #6
- 237 0092 4B4A     		ldr	r2, .L10+32
- 238 0094 4B4B     		ldr	r3, .L10+36
- 239 0096 FFF7FEFF 		bl	FFT
-  63:sample.c      ****     FFT(2,exponent,Re_Ampere,Im_Ampere,Abs_Ampere);
- 240              		.loc 1 63 0
- 241 009a 4E4B     		ldr	r3, .L10+52
- 242 009c 0093     		str	r3, [sp]
- 243 009e 0220     		movs	r0, #2
- 244 00a0 0621     		movs	r1, #6
- 245 00a2 494A     		ldr	r2, .L10+40
- 246 00a4 494B     		ldr	r3, .L10+44
- 247 00a6 FFF7FEFF 		bl	FFT
+ 233 008a 0620     		movs	r0, #6
+ 234 008c 4A49     		ldr	r1, .L10+32
+ 235 008e 4B4A     		ldr	r2, .L10+36
+ 236 0090 4D4B     		ldr	r3, .L10+48
+ 237 0092 FFF7FEFF 		bl	FFT
+  63:sample.c      ****     FFT(exponent,Re_Ampere,Im_Ampere,Abs_Ampere);
+ 238              		.loc 1 63 0
+ 239 0096 0620     		movs	r0, #6
+ 240 0098 4949     		ldr	r1, .L10+40
+ 241 009a 4A4A     		ldr	r2, .L10+44
+ 242 009c 4B4B     		ldr	r3, .L10+52
+ 243 009e FFF7FEFF 		bl	FFT
   64:sample.c      ****     
   65:sample.c      ****     
   66:sample.c      ****     Amp_Volt = calculate_50Hz_Amp(Abs_volt)*V_faktor-56.9;
- 248              		.loc 1 66 0
- 249 00aa 4948     		ldr	r0, .L10+48
- 250 00ac FFF7FEFF 		bl	calculate_50Hz_Amp
- 251 00b0 0246     		mov	r2, r0
- 252 00b2 0B46     		mov	r3, r1
- 253 00b4 1046     		mov	r0, r2
- 254 00b6 1946     		mov	r1, r3
- 255 00b8 39A3     		adr	r3, .L10
- 256 00ba D3E90023 		ldrd	r2, [r3]
- 257 00be FFF7FEFF 		bl	__aeabi_dmul
- 258 00c2 0246     		mov	r2, r0
- 259 00c4 0B46     		mov	r3, r1
- 260 00c6 1046     		mov	r0, r2
- 261 00c8 1946     		mov	r1, r3
- 262 00ca 37A3     		adr	r3, .L10+8
- 263 00cc D3E90023 		ldrd	r2, [r3]
- 264 00d0 FFF7FEFF 		bl	__aeabi_dsub
- 265 00d4 0246     		mov	r2, r0
- 266 00d6 0B46     		mov	r3, r1
- 267 00d8 3F49     		ldr	r1, .L10+56
- 268 00da C1E90023 		strd	r2, [r1]
+ 244              		.loc 1 66 0
+ 245 00a2 4948     		ldr	r0, .L10+48
+ 246 00a4 FFF7FEFF 		bl	calculate_50Hz_Amp
+ 247 00a8 0246     		mov	r2, r0
+ 248 00aa 0B46     		mov	r3, r1
+ 249 00ac 1046     		mov	r0, r2
+ 250 00ae 1946     		mov	r1, r3
+ 251 00b0 39A3     		adr	r3, .L10
+ 252 00b2 D3E90023 		ldrd	r2, [r3]
+ 253 00b6 FFF7FEFF 		bl	__aeabi_dmul
+ 254 00ba 0246     		mov	r2, r0
+ 255 00bc 0B46     		mov	r3, r1
+ 256 00be 1046     		mov	r0, r2
+ 257 00c0 1946     		mov	r1, r3
+ 258 00c2 37A3     		adr	r3, .L10+8
+ 259 00c4 D3E90023 		ldrd	r2, [r3]
+ 260 00c8 FFF7FEFF 		bl	__aeabi_dsub
+ 261 00cc 0246     		mov	r2, r0
+ 262 00ce 0B46     		mov	r3, r1
+ 263 00d0 3F49     		ldr	r1, .L10+56
+ 264 00d2 C1E90023 		strd	r2, [r1]
   67:sample.c      ****     RMS_Volt = calculate_50Hz_RMS(Abs_volt)*V_faktor-56.9;
- 269              		.loc 1 67 0
- 270 00de 3C48     		ldr	r0, .L10+48
- 271 00e0 FFF7FEFF 		bl	calculate_50Hz_RMS
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 7
+ 265              		.loc 1 67 0
+ 266 00d6 3C48     		ldr	r0, .L10+48
+ 267 00d8 FFF7FEFF 		bl	calculate_50Hz_RMS
+ 268 00dc 0246     		mov	r2, r0
+ 269 00de 0B46     		mov	r3, r1
+ 270 00e0 1046     		mov	r0, r2
+ 271 00e2 1946     		mov	r1, r3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 7
 
 
- 272 00e4 0246     		mov	r2, r0
- 273 00e6 0B46     		mov	r3, r1
- 274 00e8 1046     		mov	r0, r2
- 275 00ea 1946     		mov	r1, r3
- 276 00ec 2CA3     		adr	r3, .L10
- 277 00ee D3E90023 		ldrd	r2, [r3]
- 278 00f2 FFF7FEFF 		bl	__aeabi_dmul
- 279 00f6 0246     		mov	r2, r0
- 280 00f8 0B46     		mov	r3, r1
- 281 00fa 1046     		mov	r0, r2
- 282 00fc 1946     		mov	r1, r3
- 283 00fe 2AA3     		adr	r3, .L10+8
- 284 0100 D3E90023 		ldrd	r2, [r3]
- 285 0104 FFF7FEFF 		bl	__aeabi_dsub
- 286 0108 0246     		mov	r2, r0
- 287 010a 0B46     		mov	r3, r1
- 288 010c 3349     		ldr	r1, .L10+60
- 289 010e C1E90023 		strd	r2, [r1]
+ 272 00e4 2CA3     		adr	r3, .L10
+ 273 00e6 D3E90023 		ldrd	r2, [r3]
+ 274 00ea FFF7FEFF 		bl	__aeabi_dmul
+ 275 00ee 0246     		mov	r2, r0
+ 276 00f0 0B46     		mov	r3, r1
+ 277 00f2 1046     		mov	r0, r2
+ 278 00f4 1946     		mov	r1, r3
+ 279 00f6 2AA3     		adr	r3, .L10+8
+ 280 00f8 D3E90023 		ldrd	r2, [r3]
+ 281 00fc FFF7FEFF 		bl	__aeabi_dsub
+ 282 0100 0246     		mov	r2, r0
+ 283 0102 0B46     		mov	r3, r1
+ 284 0104 3349     		ldr	r1, .L10+60
+ 285 0106 C1E90023 		strd	r2, [r1]
   68:sample.c      ****     Amp_Ampere = calculate_50Hz_Amp(Abs_Ampere)*I_faktor-2.5;
- 290              		.loc 1 68 0
- 291 0112 3048     		ldr	r0, .L10+52
- 292 0114 FFF7FEFF 		bl	calculate_50Hz_Amp
- 293 0118 0246     		mov	r2, r0
- 294 011a 0B46     		mov	r3, r1
- 295 011c 1046     		mov	r0, r2
- 296 011e 1946     		mov	r1, r3
- 297 0120 23A3     		adr	r3, .L10+16
- 298 0122 D3E90023 		ldrd	r2, [r3]
- 299 0126 FFF7FEFF 		bl	__aeabi_dmul
- 300 012a 0246     		mov	r2, r0
- 301 012c 0B46     		mov	r3, r1
- 302 012e 1046     		mov	r0, r2
- 303 0130 1946     		mov	r1, r3
- 304 0132 4FF00002 		mov	r2, #0
- 305 0136 2A4B     		ldr	r3, .L10+64
- 306 0138 FFF7FEFF 		bl	__aeabi_dsub
- 307 013c 0246     		mov	r2, r0
- 308 013e 0B46     		mov	r3, r1
- 309 0140 2849     		ldr	r1, .L10+68
- 310 0142 C1E90023 		strd	r2, [r1]
+ 286              		.loc 1 68 0
+ 287 010a 3048     		ldr	r0, .L10+52
+ 288 010c FFF7FEFF 		bl	calculate_50Hz_Amp
+ 289 0110 0246     		mov	r2, r0
+ 290 0112 0B46     		mov	r3, r1
+ 291 0114 1046     		mov	r0, r2
+ 292 0116 1946     		mov	r1, r3
+ 293 0118 23A3     		adr	r3, .L10+16
+ 294 011a D3E90023 		ldrd	r2, [r3]
+ 295 011e FFF7FEFF 		bl	__aeabi_dmul
+ 296 0122 0246     		mov	r2, r0
+ 297 0124 0B46     		mov	r3, r1
+ 298 0126 1046     		mov	r0, r2
+ 299 0128 1946     		mov	r1, r3
+ 300 012a 4FF00002 		mov	r2, #0
+ 301 012e 2A4B     		ldr	r3, .L10+64
+ 302 0130 FFF7FEFF 		bl	__aeabi_dsub
+ 303 0134 0246     		mov	r2, r0
+ 304 0136 0B46     		mov	r3, r1
+ 305 0138 2849     		ldr	r1, .L10+68
+ 306 013a C1E90023 		strd	r2, [r1]
   69:sample.c      ****     RMS_Ampere = calculate_50Hz_RMS(Abs_Ampere)*I_faktor-2.5;
- 311              		.loc 1 69 0
- 312 0146 2348     		ldr	r0, .L10+52
- 313 0148 FFF7FEFF 		bl	calculate_50Hz_RMS
- 314 014c 0246     		mov	r2, r0
- 315 014e 0B46     		mov	r3, r1
- 316 0150 1046     		mov	r0, r2
- 317 0152 1946     		mov	r1, r3
- 318 0154 16A3     		adr	r3, .L10+16
- 319 0156 D3E90023 		ldrd	r2, [r3]
- 320 015a FFF7FEFF 		bl	__aeabi_dmul
- 321 015e 0246     		mov	r2, r0
- 322 0160 0B46     		mov	r3, r1
- 323 0162 1046     		mov	r0, r2
- 324 0164 1946     		mov	r1, r3
- 325 0166 4FF00002 		mov	r2, #0
- 326 016a 1D4B     		ldr	r3, .L10+64
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 8
+ 307              		.loc 1 69 0
+ 308 013e 2348     		ldr	r0, .L10+52
+ 309 0140 FFF7FEFF 		bl	calculate_50Hz_RMS
+ 310 0144 0246     		mov	r2, r0
+ 311 0146 0B46     		mov	r3, r1
+ 312 0148 1046     		mov	r0, r2
+ 313 014a 1946     		mov	r1, r3
+ 314 014c 16A3     		adr	r3, .L10+16
+ 315 014e D3E90023 		ldrd	r2, [r3]
+ 316 0152 FFF7FEFF 		bl	__aeabi_dmul
+ 317 0156 0246     		mov	r2, r0
+ 318 0158 0B46     		mov	r3, r1
+ 319 015a 1046     		mov	r0, r2
+ 320 015c 1946     		mov	r1, r3
+ 321 015e 4FF00002 		mov	r2, #0
+ 322 0162 1D4B     		ldr	r3, .L10+64
+ 323 0164 FFF7FEFF 		bl	__aeabi_dsub
+ 324 0168 0246     		mov	r2, r0
+ 325 016a 0B46     		mov	r3, r1
+ 326 016c 1C49     		ldr	r1, .L10+72
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 8
 
 
- 327 016c FFF7FEFF 		bl	__aeabi_dsub
- 328 0170 0246     		mov	r2, r0
- 329 0172 0B46     		mov	r3, r1
- 330 0174 1C49     		ldr	r1, .L10+72
- 331 0176 C1E90023 		strd	r2, [r1]
+ 327 016e C1E90023 		strd	r2, [r1]
   70:sample.c      ****     PF = calculate_50Hz_PF();
- 332              		.loc 1 70 0
- 333 017a FFF7FEFF 		bl	calculate_50Hz_PF
- 334 017e 0246     		mov	r2, r0
- 335 0180 0B46     		mov	r3, r1
- 336 0182 1A49     		ldr	r1, .L10+76
- 337 0184 C1E90023 		strd	r2, [r1]
+ 328              		.loc 1 70 0
+ 329 0172 FFF7FEFF 		bl	calculate_50Hz_PF
+ 330 0176 0246     		mov	r2, r0
+ 331 0178 0B46     		mov	r3, r1
+ 332 017a 1A49     		ldr	r1, .L10+76
+ 333 017c C1E90023 		strd	r2, [r1]
   71:sample.c      ****     THD = calculate_THD();
- 338              		.loc 1 71 0
- 339 0188 FFF7FEFF 		bl	calculate_THD
- 340 018c 0246     		mov	r2, r0
- 341 018e 0B46     		mov	r3, r1
- 342 0190 1749     		ldr	r1, .L10+80
- 343 0192 C1E90023 		strd	r2, [r1]
+ 334              		.loc 1 71 0
+ 335 0180 FFF7FEFF 		bl	calculate_THD
+ 336 0184 0246     		mov	r2, r0
+ 337 0186 0B46     		mov	r3, r1
+ 338 0188 1749     		ldr	r1, .L10+80
+ 339 018a C1E90023 		strd	r2, [r1]
   72:sample.c      **** }
- 344              		.loc 1 72 0
- 345 0196 0837     		adds	r7, r7, #8
- 346              		.cfi_def_cfa_offset 8
- 347 0198 BD46     		mov	sp, r7
- 348              		.cfi_def_cfa_register 13
- 349              		@ sp needed
- 350 019a 80BD     		pop	{r7, pc}
- 351              	.L11:
- 352 019c AFF30080 		.align	3
- 353              	.L10:
- 354 01a0 C4B12E6E 		.word	1848553924
- 355 01a4 A3C11540 		.word	1075167651
- 356 01a8 33333333 		.word	858993459
- 357 01ac 33734C40 		.word	1078752051
- 358 01b0 39454772 		.word	1917273401
- 359 01b4 F90FD53F 		.word	1070927865
- 360 01b8 00000000 		.word	SampleArrayU
- 361 01bc 00000000 		.word	SampleArrayI
- 362 01c0 00000000 		.word	Re_volt
- 363 01c4 00000000 		.word	Im_volt
- 364 01c8 00000000 		.word	Re_Ampere
- 365 01cc 00000000 		.word	Im_Ampere
- 366 01d0 00000000 		.word	Abs_volt
- 367 01d4 00000000 		.word	Abs_Ampere
- 368 01d8 00000000 		.word	Amp_Volt
- 369 01dc 00000000 		.word	RMS_Volt
- 370 01e0 00000440 		.word	1074003968
- 371 01e4 00000000 		.word	Amp_Ampere
- 372 01e8 00000000 		.word	RMS_Ampere
- 373 01ec 00000000 		.word	PF
- 374 01f0 00000000 		.word	THD
- 375              		.cfi_endproc
- 376              	.LFE64:
- 377              		.size	sampleAndCalc, .-sampleAndCalc
- 378              		.global	__aeabi_d2uiz
- 379 01f4 AFF30080 		.section	.text.makeMSB,"ax",%progbits
- 380              		.align	2
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 9
+ 340              		.loc 1 72 0
+ 341 018e 0837     		adds	r7, r7, #8
+ 342              		.cfi_def_cfa_offset 8
+ 343 0190 BD46     		mov	sp, r7
+ 344              		.cfi_def_cfa_register 13
+ 345              		@ sp needed
+ 346 0192 80BD     		pop	{r7, pc}
+ 347              	.L11:
+ 348 0194 AFF30080 		.align	3
+ 349              	.L10:
+ 350 0198 C4B12E6E 		.word	1848553924
+ 351 019c A3C11540 		.word	1075167651
+ 352 01a0 33333333 		.word	858993459
+ 353 01a4 33734C40 		.word	1078752051
+ 354 01a8 39454772 		.word	1917273401
+ 355 01ac F90FD53F 		.word	1070927865
+ 356 01b0 00000000 		.word	SampleArrayU
+ 357 01b4 00000000 		.word	SampleArrayI
+ 358 01b8 00000000 		.word	Re_volt
+ 359 01bc 00000000 		.word	Im_volt
+ 360 01c0 00000000 		.word	Re_Ampere
+ 361 01c4 00000000 		.word	Im_Ampere
+ 362 01c8 00000000 		.word	Abs_volt
+ 363 01cc 00000000 		.word	Abs_Ampere
+ 364 01d0 00000000 		.word	Amp_Volt
+ 365 01d4 00000000 		.word	RMS_Volt
+ 366 01d8 00000440 		.word	1074003968
+ 367 01dc 00000000 		.word	Amp_Ampere
+ 368 01e0 00000000 		.word	RMS_Ampere
+ 369 01e4 00000000 		.word	PF
+ 370 01e8 00000000 		.word	THD
+ 371              		.cfi_endproc
+ 372              	.LFE64:
+ 373              		.size	sampleAndCalc, .-sampleAndCalc
+ 374              		.global	__aeabi_d2uiz
+ 375 01ec AFF30080 		.section	.text.makeMSB,"ax",%progbits
+ 376              		.align	2
+ 377              		.global	makeMSB
+ 378              		.thumb
+ 379              		.thumb_func
+ 380              		.type	makeMSB, %function
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 9
 
 
- 381              		.global	makeMSB
- 382              		.thumb
- 383              		.thumb_func
- 384              		.type	makeMSB, %function
- 385              	makeMSB:
- 386              	.LFB65:
+ 381              	makeMSB:
+ 382              	.LFB65:
   73:sample.c      **** 
   74:sample.c      **** uint8 makeMSB(double num)
   75:sample.c      **** {
- 387              		.loc 1 75 0
- 388              		.cfi_startproc
- 389              		@ args = 0, pretend = 0, frame = 16
- 390              		@ frame_needed = 1, uses_anonymous_args = 0
- 391 0000 80B5     		push	{r7, lr}
- 392              		.cfi_def_cfa_offset 8
- 393              		.cfi_offset 7, -8
- 394              		.cfi_offset 14, -4
- 395 0002 84B0     		sub	sp, sp, #16
- 396              		.cfi_def_cfa_offset 24
- 397 0004 00AF     		add	r7, sp, #0
- 398              		.cfi_def_cfa_register 7
- 399 0006 C7E90001 		strd	r0, [r7]
+ 383              		.loc 1 75 0
+ 384              		.cfi_startproc
+ 385              		@ args = 0, pretend = 0, frame = 16
+ 386              		@ frame_needed = 1, uses_anonymous_args = 0
+ 387 0000 80B5     		push	{r7, lr}
+ 388              		.cfi_def_cfa_offset 8
+ 389              		.cfi_offset 7, -8
+ 390              		.cfi_offset 14, -4
+ 391 0002 84B0     		sub	sp, sp, #16
+ 392              		.cfi_def_cfa_offset 24
+ 393 0004 00AF     		add	r7, sp, #0
+ 394              		.cfi_def_cfa_register 7
+ 395 0006 C7E90001 		strd	r0, [r7]
   76:sample.c      ****     uint16 numInt = num;
- 400              		.loc 1 76 0
- 401 000a D7E90001 		ldrd	r0, [r7]
- 402 000e FFF7FEFF 		bl	__aeabi_d2uiz
- 403 0012 0346     		mov	r3, r0
- 404 0014 FB81     		strh	r3, [r7, #14]	@ movhi
+ 396              		.loc 1 76 0
+ 397 000a D7E90001 		ldrd	r0, [r7]
+ 398 000e FFF7FEFF 		bl	__aeabi_d2uiz
+ 399 0012 0346     		mov	r3, r0
+ 400 0014 FB81     		strh	r3, [r7, #14]	@ movhi
   77:sample.c      ****     
   78:sample.c      ****     return numInt >> 8;
- 405              		.loc 1 78 0
- 406 0016 FB89     		ldrh	r3, [r7, #14]
- 407 0018 1B0A     		lsrs	r3, r3, #8
- 408 001a 9BB2     		uxth	r3, r3
- 409 001c DBB2     		uxtb	r3, r3
+ 401              		.loc 1 78 0
+ 402 0016 FB89     		ldrh	r3, [r7, #14]
+ 403 0018 1B0A     		lsrs	r3, r3, #8
+ 404 001a 9BB2     		uxth	r3, r3
+ 405 001c DBB2     		uxtb	r3, r3
   79:sample.c      ****    
   80:sample.c      **** }
- 410              		.loc 1 80 0
- 411 001e 1846     		mov	r0, r3
- 412 0020 1037     		adds	r7, r7, #16
- 413              		.cfi_def_cfa_offset 8
- 414 0022 BD46     		mov	sp, r7
- 415              		.cfi_def_cfa_register 13
- 416              		@ sp needed
- 417 0024 80BD     		pop	{r7, pc}
- 418              		.cfi_endproc
- 419              	.LFE65:
- 420              		.size	makeMSB, .-makeMSB
- 421 0026 00BF     		.section	.text.makeLSB,"ax",%progbits
- 422              		.align	2
- 423              		.global	makeLSB
- 424              		.thumb
- 425              		.thumb_func
- 426              		.type	makeLSB, %function
- 427              	makeLSB:
- 428              	.LFB66:
+ 406              		.loc 1 80 0
+ 407 001e 1846     		mov	r0, r3
+ 408 0020 1037     		adds	r7, r7, #16
+ 409              		.cfi_def_cfa_offset 8
+ 410 0022 BD46     		mov	sp, r7
+ 411              		.cfi_def_cfa_register 13
+ 412              		@ sp needed
+ 413 0024 80BD     		pop	{r7, pc}
+ 414              		.cfi_endproc
+ 415              	.LFE65:
+ 416              		.size	makeMSB, .-makeMSB
+ 417 0026 00BF     		.section	.text.makeLSB,"ax",%progbits
+ 418              		.align	2
+ 419              		.global	makeLSB
+ 420              		.thumb
+ 421              		.thumb_func
+ 422              		.type	makeLSB, %function
+ 423              	makeLSB:
+ 424              	.LFB66:
   81:sample.c      **** 
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 10
-
-
   82:sample.c      **** uint8 makeLSB (double num)
   83:sample.c      **** {
- 429              		.loc 1 83 0
- 430              		.cfi_startproc
- 431              		@ args = 0, pretend = 0, frame = 16
- 432              		@ frame_needed = 1, uses_anonymous_args = 0
- 433 0000 80B5     		push	{r7, lr}
- 434              		.cfi_def_cfa_offset 8
- 435              		.cfi_offset 7, -8
- 436              		.cfi_offset 14, -4
- 437 0002 84B0     		sub	sp, sp, #16
- 438              		.cfi_def_cfa_offset 24
- 439 0004 00AF     		add	r7, sp, #0
- 440              		.cfi_def_cfa_register 7
- 441 0006 C7E90001 		strd	r0, [r7]
+ 425              		.loc 1 83 0
+ 426              		.cfi_startproc
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 10
+
+
+ 427              		@ args = 0, pretend = 0, frame = 16
+ 428              		@ frame_needed = 1, uses_anonymous_args = 0
+ 429 0000 80B5     		push	{r7, lr}
+ 430              		.cfi_def_cfa_offset 8
+ 431              		.cfi_offset 7, -8
+ 432              		.cfi_offset 14, -4
+ 433 0002 84B0     		sub	sp, sp, #16
+ 434              		.cfi_def_cfa_offset 24
+ 435 0004 00AF     		add	r7, sp, #0
+ 436              		.cfi_def_cfa_register 7
+ 437 0006 C7E90001 		strd	r0, [r7]
   84:sample.c      ****     uint16 numInt = num;
- 442              		.loc 1 84 0
- 443 000a D7E90001 		ldrd	r0, [r7]
- 444 000e FFF7FEFF 		bl	__aeabi_d2uiz
- 445 0012 0346     		mov	r3, r0
- 446 0014 FB81     		strh	r3, [r7, #14]	@ movhi
+ 438              		.loc 1 84 0
+ 439 000a D7E90001 		ldrd	r0, [r7]
+ 440 000e FFF7FEFF 		bl	__aeabi_d2uiz
+ 441 0012 0346     		mov	r3, r0
+ 442 0014 FB81     		strh	r3, [r7, #14]	@ movhi
   85:sample.c      ****     
   86:sample.c      ****     return numInt & 0x00FF;
- 447              		.loc 1 86 0
- 448 0016 FB89     		ldrh	r3, [r7, #14]	@ movhi
- 449 0018 DBB2     		uxtb	r3, r3
+ 443              		.loc 1 86 0
+ 444 0016 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 445 0018 DBB2     		uxtb	r3, r3
   87:sample.c      **** }
- 450              		.loc 1 87 0
- 451 001a 1846     		mov	r0, r3
- 452 001c 1037     		adds	r7, r7, #16
- 453              		.cfi_def_cfa_offset 8
- 454 001e BD46     		mov	sp, r7
- 455              		.cfi_def_cfa_register 13
- 456              		@ sp needed
- 457 0020 80BD     		pop	{r7, pc}
- 458              		.cfi_endproc
- 459              	.LFE66:
- 460              		.size	makeLSB, .-makeLSB
- 461              		.global	__aeabi_dadd
- 462              		.global	__aeabi_ddiv
- 463 0022 00BF     		.section	.text.FFT,"ax",%progbits
- 464              		.align	2
- 465              		.global	FFT
- 466              		.thumb
- 467              		.thumb_func
- 468              		.type	FFT, %function
- 469              	FFT:
- 470              	.LFB67:
+ 446              		.loc 1 87 0
+ 447 001a 1846     		mov	r0, r3
+ 448 001c 1037     		adds	r7, r7, #16
+ 449              		.cfi_def_cfa_offset 8
+ 450 001e BD46     		mov	sp, r7
+ 451              		.cfi_def_cfa_register 13
+ 452              		@ sp needed
+ 453 0020 80BD     		pop	{r7, pc}
+ 454              		.cfi_endproc
+ 455              	.LFE66:
+ 456              		.size	makeLSB, .-makeLSB
+ 457              		.global	__aeabi_dadd
+ 458              		.global	__aeabi_ddiv
+ 459 0022 00BF     		.section	.text.FFT,"ax",%progbits
+ 460              		.align	2
+ 461              		.global	FFT
+ 462              		.thumb
+ 463              		.thumb_func
+ 464              		.type	FFT, %function
+ 465              	FFT:
+ 466              	.LFB67:
   88:sample.c      **** 
   89:sample.c      **** 
   90:sample.c      **** 
   91:sample.c      **** //FFT.C
-  92:sample.c      **** void FFT(int dir,long m,double *x,double *y, double *u)
+  92:sample.c      **** void FFT(long m,double *x,double *y, double *u)
   93:sample.c      **** {
- 471              		.loc 1 93 0
- 472              		.cfi_startproc
- 473              		@ args = 4, pretend = 0, frame = 128
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 11
+ 467              		.loc 1 93 0
+ 468              		.cfi_startproc
+ 469              		@ args = 0, pretend = 0, frame = 128
+ 470              		@ frame_needed = 1, uses_anonymous_args = 0
+ 471 0000 2DE9B043 		push	{r4, r5, r7, r8, r9, lr}
+ 472              		.cfi_def_cfa_offset 24
+ 473              		.cfi_offset 4, -24
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 11
 
 
- 474              		@ frame_needed = 1, uses_anonymous_args = 0
- 475 0000 2DE9B043 		push	{r4, r5, r7, r8, r9, lr}
- 476              		.cfi_def_cfa_offset 24
- 477              		.cfi_offset 4, -24
- 478              		.cfi_offset 5, -20
- 479              		.cfi_offset 7, -16
- 480              		.cfi_offset 8, -12
- 481              		.cfi_offset 9, -8
- 482              		.cfi_offset 14, -4
- 483 0004 A0B0     		sub	sp, sp, #128
- 484              		.cfi_def_cfa_offset 152
- 485 0006 00AF     		add	r7, sp, #0
- 486              		.cfi_def_cfa_register 7
- 487 0008 F860     		str	r0, [r7, #12]
- 488 000a B960     		str	r1, [r7, #8]
- 489 000c 7A60     		str	r2, [r7, #4]
- 490 000e 3B60     		str	r3, [r7]
+ 474              		.cfi_offset 5, -20
+ 475              		.cfi_offset 7, -16
+ 476              		.cfi_offset 8, -12
+ 477              		.cfi_offset 9, -8
+ 478              		.cfi_offset 14, -4
+ 479 0004 A0B0     		sub	sp, sp, #128
+ 480              		.cfi_def_cfa_offset 152
+ 481 0006 00AF     		add	r7, sp, #0
+ 482              		.cfi_def_cfa_register 7
+ 483 0008 F860     		str	r0, [r7, #12]
+ 484 000a B960     		str	r1, [r7, #8]
+ 485 000c 7A60     		str	r2, [r7, #4]
+ 486 000e 3B60     		str	r3, [r7]
   94:sample.c      ****    // dir:  forward (=1) o inverse (!=1) transform; 
   95:sample.c      ****    // m exponent;
   96:sample.c      ****    
@@ -626,2298 +622,2270 @@ ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 1
   99:sample.c      **** 
  100:sample.c      ****    /* Calculate the number of points */
  101:sample.c      ****    n = 1;
- 491              		.loc 1 101 0
- 492 0010 0123     		movs	r3, #1
- 493 0012 FB67     		str	r3, [r7, #124]
+ 487              		.loc 1 101 0
+ 488 0010 0123     		movs	r3, #1
+ 489 0012 FB67     		str	r3, [r7, #124]
  102:sample.c      ****    for (i=0;i<m;i++) 
- 494              		.loc 1 102 0
- 495 0014 0023     		movs	r3, #0
- 496 0016 BB67     		str	r3, [r7, #120]
- 497 0018 05E0     		b	.L17
- 498              	.L18:
+ 490              		.loc 1 102 0
+ 491 0014 0023     		movs	r3, #0
+ 492 0016 BB67     		str	r3, [r7, #120]
+ 493 0018 05E0     		b	.L17
+ 494              	.L18:
  103:sample.c      ****       n *= 2;
- 499              		.loc 1 103 0 discriminator 3
- 500 001a FB6F     		ldr	r3, [r7, #124]
- 501 001c 5B00     		lsls	r3, r3, #1
- 502 001e FB67     		str	r3, [r7, #124]
+ 495              		.loc 1 103 0 discriminator 3
+ 496 001a FB6F     		ldr	r3, [r7, #124]
+ 497 001c 5B00     		lsls	r3, r3, #1
+ 498 001e FB67     		str	r3, [r7, #124]
  102:sample.c      ****    for (i=0;i<m;i++) 
- 503              		.loc 1 102 0 discriminator 3
- 504 0020 BB6F     		ldr	r3, [r7, #120]
- 505 0022 0133     		adds	r3, r3, #1
- 506 0024 BB67     		str	r3, [r7, #120]
- 507              	.L17:
+ 499              		.loc 1 102 0 discriminator 3
+ 500 0020 BB6F     		ldr	r3, [r7, #120]
+ 501 0022 0133     		adds	r3, r3, #1
+ 502 0024 BB67     		str	r3, [r7, #120]
+ 503              	.L17:
  102:sample.c      ****    for (i=0;i<m;i++) 
- 508              		.loc 1 102 0 is_stmt 0 discriminator 1
- 509 0026 BA6F     		ldr	r2, [r7, #120]
- 510 0028 BB68     		ldr	r3, [r7, #8]
- 511 002a 9A42     		cmp	r2, r3
- 512 002c F5DB     		blt	.L18
+ 504              		.loc 1 102 0 is_stmt 0 discriminator 1
+ 505 0026 BA6F     		ldr	r2, [r7, #120]
+ 506 0028 FB68     		ldr	r3, [r7, #12]
+ 507 002a 9A42     		cmp	r2, r3
+ 508 002c F5DB     		blt	.L18
  104:sample.c      **** 
  105:sample.c      ****    /* Do the bit reversal */
  106:sample.c      ****    i2 = n >> 1;
- 513              		.loc 1 106 0 is_stmt 1
- 514 002e FB6F     		ldr	r3, [r7, #124]
- 515 0030 5B10     		asrs	r3, r3, #1
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 12
-
-
- 516 0032 7B64     		str	r3, [r7, #68]
+ 509              		.loc 1 106 0 is_stmt 1
+ 510 002e FB6F     		ldr	r3, [r7, #124]
+ 511 0030 5B10     		asrs	r3, r3, #1
+ 512 0032 7B64     		str	r3, [r7, #68]
  107:sample.c      ****    j = 0;
- 517              		.loc 1 107 0
- 518 0034 0023     		movs	r3, #0
- 519 0036 7B67     		str	r3, [r7, #116]
+ 513              		.loc 1 107 0
+ 514 0034 0023     		movs	r3, #0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 12
+
+
+ 515 0036 7B67     		str	r3, [r7, #116]
  108:sample.c      ****    for (i=0;i<n-1;i++) {
- 520              		.loc 1 108 0
- 521 0038 0023     		movs	r3, #0
- 522 003a BB67     		str	r3, [r7, #120]
- 523 003c 50E0     		b	.L19
- 524              	.L23:
+ 516              		.loc 1 108 0
+ 517 0038 0023     		movs	r3, #0
+ 518 003a BB67     		str	r3, [r7, #120]
+ 519 003c 50E0     		b	.L19
+ 520              	.L23:
  109:sample.c      ****       if (i < j) {
- 525              		.loc 1 109 0
- 526 003e BA6F     		ldr	r2, [r7, #120]
- 527 0040 7B6F     		ldr	r3, [r7, #116]
- 528 0042 9A42     		cmp	r2, r3
- 529 0044 37DA     		bge	.L20
+ 521              		.loc 1 109 0
+ 522 003e BA6F     		ldr	r2, [r7, #120]
+ 523 0040 7B6F     		ldr	r3, [r7, #116]
+ 524 0042 9A42     		cmp	r2, r3
+ 525 0044 37DA     		bge	.L20
  110:sample.c      ****          tx = x[i];
- 530              		.loc 1 110 0
- 531 0046 BB6F     		ldr	r3, [r7, #120]
- 532 0048 DB00     		lsls	r3, r3, #3
- 533 004a 7A68     		ldr	r2, [r7, #4]
- 534 004c 1344     		add	r3, r3, r2
- 535 004e D3E90023 		ldrd	r2, [r3]
- 536 0052 C7E90E23 		strd	r2, [r7, #56]
+ 526              		.loc 1 110 0
+ 527 0046 BB6F     		ldr	r3, [r7, #120]
+ 528 0048 DB00     		lsls	r3, r3, #3
+ 529 004a BA68     		ldr	r2, [r7, #8]
+ 530 004c 1344     		add	r3, r3, r2
+ 531 004e D3E90023 		ldrd	r2, [r3]
+ 532 0052 C7E90E23 		strd	r2, [r7, #56]
  111:sample.c      ****          ty = y[i];
- 537              		.loc 1 111 0
- 538 0056 BB6F     		ldr	r3, [r7, #120]
- 539 0058 DB00     		lsls	r3, r3, #3
- 540 005a 3A68     		ldr	r2, [r7]
- 541 005c 1344     		add	r3, r3, r2
- 542 005e D3E90023 		ldrd	r2, [r3]
- 543 0062 C7E90C23 		strd	r2, [r7, #48]
+ 533              		.loc 1 111 0
+ 534 0056 BB6F     		ldr	r3, [r7, #120]
+ 535 0058 DB00     		lsls	r3, r3, #3
+ 536 005a 7A68     		ldr	r2, [r7, #4]
+ 537 005c 1344     		add	r3, r3, r2
+ 538 005e D3E90023 		ldrd	r2, [r3]
+ 539 0062 C7E90C23 		strd	r2, [r7, #48]
  112:sample.c      ****          x[i] = x[j];
- 544              		.loc 1 112 0
- 545 0066 BB6F     		ldr	r3, [r7, #120]
- 546 0068 DB00     		lsls	r3, r3, #3
- 547 006a 7A68     		ldr	r2, [r7, #4]
- 548 006c D118     		adds	r1, r2, r3
- 549 006e 7B6F     		ldr	r3, [r7, #116]
- 550 0070 DB00     		lsls	r3, r3, #3
- 551 0072 7A68     		ldr	r2, [r7, #4]
- 552 0074 1344     		add	r3, r3, r2
- 553 0076 D3E90023 		ldrd	r2, [r3]
- 554 007a C1E90023 		strd	r2, [r1]
+ 540              		.loc 1 112 0
+ 541 0066 BB6F     		ldr	r3, [r7, #120]
+ 542 0068 DB00     		lsls	r3, r3, #3
+ 543 006a BA68     		ldr	r2, [r7, #8]
+ 544 006c D118     		adds	r1, r2, r3
+ 545 006e 7B6F     		ldr	r3, [r7, #116]
+ 546 0070 DB00     		lsls	r3, r3, #3
+ 547 0072 BA68     		ldr	r2, [r7, #8]
+ 548 0074 1344     		add	r3, r3, r2
+ 549 0076 D3E90023 		ldrd	r2, [r3]
+ 550 007a C1E90023 		strd	r2, [r1]
  113:sample.c      ****          y[i] = y[j];
- 555              		.loc 1 113 0
- 556 007e BB6F     		ldr	r3, [r7, #120]
- 557 0080 DB00     		lsls	r3, r3, #3
- 558 0082 3A68     		ldr	r2, [r7]
- 559 0084 D118     		adds	r1, r2, r3
- 560 0086 7B6F     		ldr	r3, [r7, #116]
- 561 0088 DB00     		lsls	r3, r3, #3
- 562 008a 3A68     		ldr	r2, [r7]
- 563 008c 1344     		add	r3, r3, r2
- 564 008e D3E90023 		ldrd	r2, [r3]
- 565 0092 C1E90023 		strd	r2, [r1]
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 13
-
-
+ 551              		.loc 1 113 0
+ 552 007e BB6F     		ldr	r3, [r7, #120]
+ 553 0080 DB00     		lsls	r3, r3, #3
+ 554 0082 7A68     		ldr	r2, [r7, #4]
+ 555 0084 D118     		adds	r1, r2, r3
+ 556 0086 7B6F     		ldr	r3, [r7, #116]
+ 557 0088 DB00     		lsls	r3, r3, #3
+ 558 008a 7A68     		ldr	r2, [r7, #4]
+ 559 008c 1344     		add	r3, r3, r2
+ 560 008e D3E90023 		ldrd	r2, [r3]
+ 561 0092 C1E90023 		strd	r2, [r1]
  114:sample.c      ****          x[j] = tx;
- 566              		.loc 1 114 0
- 567 0096 7B6F     		ldr	r3, [r7, #116]
- 568 0098 DB00     		lsls	r3, r3, #3
- 569 009a 7A68     		ldr	r2, [r7, #4]
- 570 009c D118     		adds	r1, r2, r3
- 571 009e D7E90E23 		ldrd	r2, [r7, #56]
- 572 00a2 C1E90023 		strd	r2, [r1]
+ 562              		.loc 1 114 0
+ 563 0096 7B6F     		ldr	r3, [r7, #116]
+ 564 0098 DB00     		lsls	r3, r3, #3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 13
+
+
+ 565 009a BA68     		ldr	r2, [r7, #8]
+ 566 009c D118     		adds	r1, r2, r3
+ 567 009e D7E90E23 		ldrd	r2, [r7, #56]
+ 568 00a2 C1E90023 		strd	r2, [r1]
  115:sample.c      ****          y[j] = ty;
- 573              		.loc 1 115 0
- 574 00a6 7B6F     		ldr	r3, [r7, #116]
- 575 00a8 DB00     		lsls	r3, r3, #3
- 576 00aa 3A68     		ldr	r2, [r7]
- 577 00ac D118     		adds	r1, r2, r3
- 578 00ae D7E90C23 		ldrd	r2, [r7, #48]
- 579 00b2 C1E90023 		strd	r2, [r1]
- 580              	.L20:
+ 569              		.loc 1 115 0
+ 570 00a6 7B6F     		ldr	r3, [r7, #116]
+ 571 00a8 DB00     		lsls	r3, r3, #3
+ 572 00aa 7A68     		ldr	r2, [r7, #4]
+ 573 00ac D118     		adds	r1, r2, r3
+ 574 00ae D7E90C23 		ldrd	r2, [r7, #48]
+ 575 00b2 C1E90023 		strd	r2, [r1]
+ 576              	.L20:
  116:sample.c      ****       }
  117:sample.c      ****       k = i2;
- 581              		.loc 1 117 0
- 582 00b6 7B6C     		ldr	r3, [r7, #68]
- 583 00b8 3B67     		str	r3, [r7, #112]
+ 577              		.loc 1 117 0
+ 578 00b6 7B6C     		ldr	r3, [r7, #68]
+ 579 00b8 3B67     		str	r3, [r7, #112]
  118:sample.c      ****       while (k <= j) {
- 584              		.loc 1 118 0
- 585 00ba 06E0     		b	.L21
- 586              	.L22:
+ 580              		.loc 1 118 0
+ 581 00ba 06E0     		b	.L21
+ 582              	.L22:
  119:sample.c      ****          j -= k;
- 587              		.loc 1 119 0
- 588 00bc 7A6F     		ldr	r2, [r7, #116]
- 589 00be 3B6F     		ldr	r3, [r7, #112]
- 590 00c0 D31A     		subs	r3, r2, r3
- 591 00c2 7B67     		str	r3, [r7, #116]
+ 583              		.loc 1 119 0
+ 584 00bc 7A6F     		ldr	r2, [r7, #116]
+ 585 00be 3B6F     		ldr	r3, [r7, #112]
+ 586 00c0 D31A     		subs	r3, r2, r3
+ 587 00c2 7B67     		str	r3, [r7, #116]
  120:sample.c      ****          k >>= 1;
- 592              		.loc 1 120 0
- 593 00c4 3B6F     		ldr	r3, [r7, #112]
- 594 00c6 5B10     		asrs	r3, r3, #1
- 595 00c8 3B67     		str	r3, [r7, #112]
- 596              	.L21:
+ 588              		.loc 1 120 0
+ 589 00c4 3B6F     		ldr	r3, [r7, #112]
+ 590 00c6 5B10     		asrs	r3, r3, #1
+ 591 00c8 3B67     		str	r3, [r7, #112]
+ 592              	.L21:
  118:sample.c      ****       while (k <= j) {
- 597              		.loc 1 118 0
- 598 00ca 3A6F     		ldr	r2, [r7, #112]
- 599 00cc 7B6F     		ldr	r3, [r7, #116]
- 600 00ce 9A42     		cmp	r2, r3
- 601 00d0 F4DD     		ble	.L22
+ 593              		.loc 1 118 0
+ 594 00ca 3A6F     		ldr	r2, [r7, #112]
+ 595 00cc 7B6F     		ldr	r3, [r7, #116]
+ 596 00ce 9A42     		cmp	r2, r3
+ 597 00d0 F4DD     		ble	.L22
  121:sample.c      ****       }
  122:sample.c      ****       j += k;
- 602              		.loc 1 122 0 discriminator 2
- 603 00d2 7A6F     		ldr	r2, [r7, #116]
- 604 00d4 3B6F     		ldr	r3, [r7, #112]
- 605 00d6 1344     		add	r3, r3, r2
- 606 00d8 7B67     		str	r3, [r7, #116]
+ 598              		.loc 1 122 0 discriminator 2
+ 599 00d2 7A6F     		ldr	r2, [r7, #116]
+ 600 00d4 3B6F     		ldr	r3, [r7, #112]
+ 601 00d6 1344     		add	r3, r3, r2
+ 602 00d8 7B67     		str	r3, [r7, #116]
  108:sample.c      ****       if (i < j) {
- 607              		.loc 1 108 0 discriminator 2
- 608 00da BB6F     		ldr	r3, [r7, #120]
- 609 00dc 0133     		adds	r3, r3, #1
- 610 00de BB67     		str	r3, [r7, #120]
- 611              	.L19:
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 14
+ 603              		.loc 1 108 0 discriminator 2
+ 604 00da BB6F     		ldr	r3, [r7, #120]
+ 605 00dc 0133     		adds	r3, r3, #1
+ 606 00de BB67     		str	r3, [r7, #120]
+ 607              	.L19:
+ 108:sample.c      ****       if (i < j) {
+ 608              		.loc 1 108 0 is_stmt 0 discriminator 1
+ 609 00e0 FB6F     		ldr	r3, [r7, #124]
+ 610 00e2 5A1E     		subs	r2, r3, #1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 14
 
 
- 108:sample.c      ****       if (i < j) {
- 612              		.loc 1 108 0 is_stmt 0 discriminator 1
- 613 00e0 FB6F     		ldr	r3, [r7, #124]
- 614 00e2 5A1E     		subs	r2, r3, #1
- 615 00e4 BB6F     		ldr	r3, [r7, #120]
- 616 00e6 9A42     		cmp	r2, r3
- 617 00e8 A9DC     		bgt	.L23
+ 611 00e4 BB6F     		ldr	r3, [r7, #120]
+ 612 00e6 9A42     		cmp	r2, r3
+ 613 00e8 A9DC     		bgt	.L23
  123:sample.c      ****    }
  124:sample.c      **** 
  125:sample.c      ****    /* Compute the FFT */
  126:sample.c      ****    c1 = -1.0; 
- 618              		.loc 1 126 0 is_stmt 1
- 619 00ea 4FF00002 		mov	r2, #0
- 620 00ee A94B     		ldr	r3, .L33
- 621 00f0 C7E91823 		strd	r2, [r7, #96]
+ 614              		.loc 1 126 0 is_stmt 1
+ 615 00ea 4FF00002 		mov	r2, #0
+ 616 00ee A54B     		ldr	r3, .L32
+ 617 00f0 C7E91823 		strd	r2, [r7, #96]
  127:sample.c      ****    c2 = 0.0;
- 622              		.loc 1 127 0
- 623 00f4 4FF00002 		mov	r2, #0
- 624 00f8 4FF00003 		mov	r3, #0
- 625 00fc C7E91623 		strd	r2, [r7, #88]
+ 618              		.loc 1 127 0
+ 619 00f4 4FF00002 		mov	r2, #0
+ 620 00f8 4FF00003 		mov	r3, #0
+ 621 00fc C7E91623 		strd	r2, [r7, #88]
  128:sample.c      ****    l2 = 1;
- 626              		.loc 1 128 0
- 627 0100 0123     		movs	r3, #1
- 628 0102 BB66     		str	r3, [r7, #104]
+ 622              		.loc 1 128 0
+ 623 0100 0123     		movs	r3, #1
+ 624 0102 BB66     		str	r3, [r7, #104]
  129:sample.c      ****    for (l=0;l<m;l++) {
- 629              		.loc 1 129 0
- 630 0104 0023     		movs	r3, #0
- 631 0106 FB66     		str	r3, [r7, #108]
- 632 0108 3CE1     		b	.L24
- 633              	.L30:
+ 625              		.loc 1 129 0
+ 626 0104 0023     		movs	r3, #0
+ 627 0106 FB66     		str	r3, [r7, #108]
+ 628 0108 33E1     		b	.L24
+ 629              	.L29:
  130:sample.c      ****       l1 = l2;
- 634              		.loc 1 130 0
- 635 010a BB6E     		ldr	r3, [r7, #104]
- 636 010c FB62     		str	r3, [r7, #44]
+ 630              		.loc 1 130 0
+ 631 010a BB6E     		ldr	r3, [r7, #104]
+ 632 010c FB62     		str	r3, [r7, #44]
  131:sample.c      ****       l2 <<= 1;
- 637              		.loc 1 131 0
- 638 010e BB6E     		ldr	r3, [r7, #104]
- 639 0110 5B00     		lsls	r3, r3, #1
- 640 0112 BB66     		str	r3, [r7, #104]
+ 633              		.loc 1 131 0
+ 634 010e BB6E     		ldr	r3, [r7, #104]
+ 635 0110 5B00     		lsls	r3, r3, #1
+ 636 0112 BB66     		str	r3, [r7, #104]
  132:sample.c      ****       u1 = 1.0; 
- 641              		.loc 1 132 0
- 642 0114 4FF00002 		mov	r2, #0
- 643 0118 9F4B     		ldr	r3, .L33+4
- 644 011a C7E91423 		strd	r2, [r7, #80]
+ 637              		.loc 1 132 0
+ 638 0114 4FF00002 		mov	r2, #0
+ 639 0118 9B4B     		ldr	r3, .L32+4
+ 640 011a C7E91423 		strd	r2, [r7, #80]
  133:sample.c      ****       u2 = 0.0;
- 645              		.loc 1 133 0
- 646 011e 4FF00002 		mov	r2, #0
- 647 0122 4FF00003 		mov	r3, #0
- 648 0126 C7E91223 		strd	r2, [r7, #72]
+ 641              		.loc 1 133 0
+ 642 011e 4FF00002 		mov	r2, #0
+ 643 0122 4FF00003 		mov	r3, #0
+ 644 0126 C7E91223 		strd	r2, [r7, #72]
  134:sample.c      ****       for (j=0;j<l1;j++) {
- 649              		.loc 1 134 0
- 650 012a 0023     		movs	r3, #0
- 651 012c 7B67     		str	r3, [r7, #116]
- 652 012e E6E0     		b	.L25
- 653              	.L28:
+ 645              		.loc 1 134 0
+ 646 012a 0023     		movs	r3, #0
+ 647 012c 7B67     		str	r3, [r7, #116]
+ 648 012e E6E0     		b	.L25
+ 649              	.L28:
  135:sample.c      ****          for (i=j;i<n;i+=l2) {
- 654              		.loc 1 135 0
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 15
+ 650              		.loc 1 135 0
+ 651 0130 7B6F     		ldr	r3, [r7, #116]
+ 652 0132 BB67     		str	r3, [r7, #120]
+ 653 0134 A3E0     		b	.L26
+ 654              	.L27:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 15
 
 
- 655 0130 7B6F     		ldr	r3, [r7, #116]
- 656 0132 BB67     		str	r3, [r7, #120]
- 657 0134 A3E0     		b	.L26
- 658              	.L27:
  136:sample.c      ****             i1 = i + l1;
- 659              		.loc 1 136 0 discriminator 3
- 660 0136 BA6F     		ldr	r2, [r7, #120]
- 661 0138 FB6A     		ldr	r3, [r7, #44]
- 662 013a 1344     		add	r3, r3, r2
- 663 013c BB62     		str	r3, [r7, #40]
+ 655              		.loc 1 136 0 discriminator 3
+ 656 0136 BA6F     		ldr	r2, [r7, #120]
+ 657 0138 FB6A     		ldr	r3, [r7, #44]
+ 658 013a 1344     		add	r3, r3, r2
+ 659 013c BB62     		str	r3, [r7, #40]
  137:sample.c      ****             t1 = u1 * x[i1] - u2 * y[i1];
- 664              		.loc 1 137 0 discriminator 3
- 665 013e BB6A     		ldr	r3, [r7, #40]
- 666 0140 DB00     		lsls	r3, r3, #3
- 667 0142 7A68     		ldr	r2, [r7, #4]
- 668 0144 1344     		add	r3, r3, r2
- 669 0146 D3E90023 		ldrd	r2, [r3]
- 670 014a 1046     		mov	r0, r2
- 671 014c 1946     		mov	r1, r3
- 672 014e D7E91423 		ldrd	r2, [r7, #80]
- 673 0152 FFF7FEFF 		bl	__aeabi_dmul
- 674 0156 0246     		mov	r2, r0
- 675 0158 0B46     		mov	r3, r1
- 676 015a 1446     		mov	r4, r2
- 677 015c 1D46     		mov	r5, r3
- 678 015e BB6A     		ldr	r3, [r7, #40]
- 679 0160 DB00     		lsls	r3, r3, #3
- 680 0162 3A68     		ldr	r2, [r7]
- 681 0164 1344     		add	r3, r3, r2
- 682 0166 D3E90023 		ldrd	r2, [r3]
- 683 016a 1046     		mov	r0, r2
- 684 016c 1946     		mov	r1, r3
- 685 016e D7E91223 		ldrd	r2, [r7, #72]
- 686 0172 FFF7FEFF 		bl	__aeabi_dmul
- 687 0176 0246     		mov	r2, r0
- 688 0178 0B46     		mov	r3, r1
- 689 017a 2046     		mov	r0, r4
- 690 017c 2946     		mov	r1, r5
- 691 017e FFF7FEFF 		bl	__aeabi_dsub
- 692 0182 0246     		mov	r2, r0
- 693 0184 0B46     		mov	r3, r1
- 694 0186 C7E90823 		strd	r2, [r7, #32]
+ 660              		.loc 1 137 0 discriminator 3
+ 661 013e BB6A     		ldr	r3, [r7, #40]
+ 662 0140 DB00     		lsls	r3, r3, #3
+ 663 0142 BA68     		ldr	r2, [r7, #8]
+ 664 0144 1344     		add	r3, r3, r2
+ 665 0146 D3E90023 		ldrd	r2, [r3]
+ 666 014a 1046     		mov	r0, r2
+ 667 014c 1946     		mov	r1, r3
+ 668 014e D7E91423 		ldrd	r2, [r7, #80]
+ 669 0152 FFF7FEFF 		bl	__aeabi_dmul
+ 670 0156 0246     		mov	r2, r0
+ 671 0158 0B46     		mov	r3, r1
+ 672 015a 1446     		mov	r4, r2
+ 673 015c 1D46     		mov	r5, r3
+ 674 015e BB6A     		ldr	r3, [r7, #40]
+ 675 0160 DB00     		lsls	r3, r3, #3
+ 676 0162 7A68     		ldr	r2, [r7, #4]
+ 677 0164 1344     		add	r3, r3, r2
+ 678 0166 D3E90023 		ldrd	r2, [r3]
+ 679 016a 1046     		mov	r0, r2
+ 680 016c 1946     		mov	r1, r3
+ 681 016e D7E91223 		ldrd	r2, [r7, #72]
+ 682 0172 FFF7FEFF 		bl	__aeabi_dmul
+ 683 0176 0246     		mov	r2, r0
+ 684 0178 0B46     		mov	r3, r1
+ 685 017a 2046     		mov	r0, r4
+ 686 017c 2946     		mov	r1, r5
+ 687 017e FFF7FEFF 		bl	__aeabi_dsub
+ 688 0182 0246     		mov	r2, r0
+ 689 0184 0B46     		mov	r3, r1
+ 690 0186 C7E90823 		strd	r2, [r7, #32]
  138:sample.c      ****             t2 = u1 * y[i1] + u2 * x[i1];
- 695              		.loc 1 138 0 discriminator 3
- 696 018a BB6A     		ldr	r3, [r7, #40]
- 697 018c DB00     		lsls	r3, r3, #3
- 698 018e 3A68     		ldr	r2, [r7]
- 699 0190 1344     		add	r3, r3, r2
- 700 0192 D3E90023 		ldrd	r2, [r3]
- 701 0196 1046     		mov	r0, r2
- 702 0198 1946     		mov	r1, r3
- 703 019a D7E91423 		ldrd	r2, [r7, #80]
- 704 019e FFF7FEFF 		bl	__aeabi_dmul
- 705 01a2 0246     		mov	r2, r0
- 706 01a4 0B46     		mov	r3, r1
- 707 01a6 1446     		mov	r4, r2
- 708 01a8 1D46     		mov	r5, r3
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 16
+ 691              		.loc 1 138 0 discriminator 3
+ 692 018a BB6A     		ldr	r3, [r7, #40]
+ 693 018c DB00     		lsls	r3, r3, #3
+ 694 018e 7A68     		ldr	r2, [r7, #4]
+ 695 0190 1344     		add	r3, r3, r2
+ 696 0192 D3E90023 		ldrd	r2, [r3]
+ 697 0196 1046     		mov	r0, r2
+ 698 0198 1946     		mov	r1, r3
+ 699 019a D7E91423 		ldrd	r2, [r7, #80]
+ 700 019e FFF7FEFF 		bl	__aeabi_dmul
+ 701 01a2 0246     		mov	r2, r0
+ 702 01a4 0B46     		mov	r3, r1
+ 703 01a6 1446     		mov	r4, r2
+ 704 01a8 1D46     		mov	r5, r3
+ 705 01aa BB6A     		ldr	r3, [r7, #40]
+ 706 01ac DB00     		lsls	r3, r3, #3
+ 707 01ae BA68     		ldr	r2, [r7, #8]
+ 708 01b0 1344     		add	r3, r3, r2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 16
 
 
- 709 01aa BB6A     		ldr	r3, [r7, #40]
- 710 01ac DB00     		lsls	r3, r3, #3
- 711 01ae 7A68     		ldr	r2, [r7, #4]
- 712 01b0 1344     		add	r3, r3, r2
- 713 01b2 D3E90023 		ldrd	r2, [r3]
- 714 01b6 1046     		mov	r0, r2
- 715 01b8 1946     		mov	r1, r3
- 716 01ba D7E91223 		ldrd	r2, [r7, #72]
- 717 01be FFF7FEFF 		bl	__aeabi_dmul
- 718 01c2 0246     		mov	r2, r0
- 719 01c4 0B46     		mov	r3, r1
- 720 01c6 2046     		mov	r0, r4
- 721 01c8 2946     		mov	r1, r5
- 722 01ca FFF7FEFF 		bl	__aeabi_dadd
- 723 01ce 0246     		mov	r2, r0
- 724 01d0 0B46     		mov	r3, r1
- 725 01d2 C7E90623 		strd	r2, [r7, #24]
+ 709 01b2 D3E90023 		ldrd	r2, [r3]
+ 710 01b6 1046     		mov	r0, r2
+ 711 01b8 1946     		mov	r1, r3
+ 712 01ba D7E91223 		ldrd	r2, [r7, #72]
+ 713 01be FFF7FEFF 		bl	__aeabi_dmul
+ 714 01c2 0246     		mov	r2, r0
+ 715 01c4 0B46     		mov	r3, r1
+ 716 01c6 2046     		mov	r0, r4
+ 717 01c8 2946     		mov	r1, r5
+ 718 01ca FFF7FEFF 		bl	__aeabi_dadd
+ 719 01ce 0246     		mov	r2, r0
+ 720 01d0 0B46     		mov	r3, r1
+ 721 01d2 C7E90623 		strd	r2, [r7, #24]
  139:sample.c      ****             x[i1] = x[i] - t1; 
- 726              		.loc 1 139 0 discriminator 3
- 727 01d6 BB6A     		ldr	r3, [r7, #40]
- 728 01d8 DB00     		lsls	r3, r3, #3
- 729 01da 7A68     		ldr	r2, [r7, #4]
- 730 01dc D418     		adds	r4, r2, r3
- 731 01de BB6F     		ldr	r3, [r7, #120]
- 732 01e0 DB00     		lsls	r3, r3, #3
- 733 01e2 7A68     		ldr	r2, [r7, #4]
- 734 01e4 1344     		add	r3, r3, r2
- 735 01e6 D3E90023 		ldrd	r2, [r3]
- 736 01ea 1046     		mov	r0, r2
- 737 01ec 1946     		mov	r1, r3
- 738 01ee D7E90823 		ldrd	r2, [r7, #32]
- 739 01f2 FFF7FEFF 		bl	__aeabi_dsub
- 740 01f6 0246     		mov	r2, r0
- 741 01f8 0B46     		mov	r3, r1
- 742 01fa C4E90023 		strd	r2, [r4]
+ 722              		.loc 1 139 0 discriminator 3
+ 723 01d6 BB6A     		ldr	r3, [r7, #40]
+ 724 01d8 DB00     		lsls	r3, r3, #3
+ 725 01da BA68     		ldr	r2, [r7, #8]
+ 726 01dc D418     		adds	r4, r2, r3
+ 727 01de BB6F     		ldr	r3, [r7, #120]
+ 728 01e0 DB00     		lsls	r3, r3, #3
+ 729 01e2 BA68     		ldr	r2, [r7, #8]
+ 730 01e4 1344     		add	r3, r3, r2
+ 731 01e6 D3E90023 		ldrd	r2, [r3]
+ 732 01ea 1046     		mov	r0, r2
+ 733 01ec 1946     		mov	r1, r3
+ 734 01ee D7E90823 		ldrd	r2, [r7, #32]
+ 735 01f2 FFF7FEFF 		bl	__aeabi_dsub
+ 736 01f6 0246     		mov	r2, r0
+ 737 01f8 0B46     		mov	r3, r1
+ 738 01fa C4E90023 		strd	r2, [r4]
  140:sample.c      ****             y[i1] = y[i] - t2;
- 743              		.loc 1 140 0 discriminator 3
- 744 01fe BB6A     		ldr	r3, [r7, #40]
- 745 0200 DB00     		lsls	r3, r3, #3
- 746 0202 3A68     		ldr	r2, [r7]
- 747 0204 D418     		adds	r4, r2, r3
- 748 0206 BB6F     		ldr	r3, [r7, #120]
- 749 0208 DB00     		lsls	r3, r3, #3
- 750 020a 3A68     		ldr	r2, [r7]
- 751 020c 1344     		add	r3, r3, r2
- 752 020e D3E90023 		ldrd	r2, [r3]
- 753 0212 1046     		mov	r0, r2
- 754 0214 1946     		mov	r1, r3
- 755 0216 D7E90623 		ldrd	r2, [r7, #24]
- 756 021a FFF7FEFF 		bl	__aeabi_dsub
- 757 021e 0246     		mov	r2, r0
- 758 0220 0B46     		mov	r3, r1
- 759 0222 C4E90023 		strd	r2, [r4]
+ 739              		.loc 1 140 0 discriminator 3
+ 740 01fe BB6A     		ldr	r3, [r7, #40]
+ 741 0200 DB00     		lsls	r3, r3, #3
+ 742 0202 7A68     		ldr	r2, [r7, #4]
+ 743 0204 D418     		adds	r4, r2, r3
+ 744 0206 BB6F     		ldr	r3, [r7, #120]
+ 745 0208 DB00     		lsls	r3, r3, #3
+ 746 020a 7A68     		ldr	r2, [r7, #4]
+ 747 020c 1344     		add	r3, r3, r2
+ 748 020e D3E90023 		ldrd	r2, [r3]
+ 749 0212 1046     		mov	r0, r2
+ 750 0214 1946     		mov	r1, r3
+ 751 0216 D7E90623 		ldrd	r2, [r7, #24]
+ 752 021a FFF7FEFF 		bl	__aeabi_dsub
+ 753 021e 0246     		mov	r2, r0
+ 754 0220 0B46     		mov	r3, r1
+ 755 0222 C4E90023 		strd	r2, [r4]
  141:sample.c      ****             x[i] += t1;
- 760              		.loc 1 141 0 discriminator 3
- 761 0226 BB6F     		ldr	r3, [r7, #120]
- 762 0228 DB00     		lsls	r3, r3, #3
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 17
+ 756              		.loc 1 141 0 discriminator 3
+ 757 0226 BB6F     		ldr	r3, [r7, #120]
+ 758 0228 DB00     		lsls	r3, r3, #3
+ 759 022a BA68     		ldr	r2, [r7, #8]
+ 760 022c D418     		adds	r4, r2, r3
+ 761 022e BB6F     		ldr	r3, [r7, #120]
+ 762 0230 DB00     		lsls	r3, r3, #3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 17
 
 
- 763 022a 7A68     		ldr	r2, [r7, #4]
- 764 022c D418     		adds	r4, r2, r3
- 765 022e BB6F     		ldr	r3, [r7, #120]
- 766 0230 DB00     		lsls	r3, r3, #3
- 767 0232 7A68     		ldr	r2, [r7, #4]
- 768 0234 1344     		add	r3, r3, r2
- 769 0236 D3E90023 		ldrd	r2, [r3]
- 770 023a 1046     		mov	r0, r2
- 771 023c 1946     		mov	r1, r3
- 772 023e D7E90823 		ldrd	r2, [r7, #32]
- 773 0242 FFF7FEFF 		bl	__aeabi_dadd
- 774 0246 0246     		mov	r2, r0
- 775 0248 0B46     		mov	r3, r1
- 776 024a C4E90023 		strd	r2, [r4]
+ 763 0232 BA68     		ldr	r2, [r7, #8]
+ 764 0234 1344     		add	r3, r3, r2
+ 765 0236 D3E90023 		ldrd	r2, [r3]
+ 766 023a 1046     		mov	r0, r2
+ 767 023c 1946     		mov	r1, r3
+ 768 023e D7E90823 		ldrd	r2, [r7, #32]
+ 769 0242 FFF7FEFF 		bl	__aeabi_dadd
+ 770 0246 0246     		mov	r2, r0
+ 771 0248 0B46     		mov	r3, r1
+ 772 024a C4E90023 		strd	r2, [r4]
  142:sample.c      ****             y[i] += t2;
- 777              		.loc 1 142 0 discriminator 3
- 778 024e BB6F     		ldr	r3, [r7, #120]
- 779 0250 DB00     		lsls	r3, r3, #3
- 780 0252 3A68     		ldr	r2, [r7]
- 781 0254 D418     		adds	r4, r2, r3
- 782 0256 BB6F     		ldr	r3, [r7, #120]
- 783 0258 DB00     		lsls	r3, r3, #3
- 784 025a 3A68     		ldr	r2, [r7]
- 785 025c 1344     		add	r3, r3, r2
- 786 025e D3E90023 		ldrd	r2, [r3]
- 787 0262 1046     		mov	r0, r2
- 788 0264 1946     		mov	r1, r3
- 789 0266 D7E90623 		ldrd	r2, [r7, #24]
- 790 026a FFF7FEFF 		bl	__aeabi_dadd
- 791 026e 0246     		mov	r2, r0
- 792 0270 0B46     		mov	r3, r1
- 793 0272 C4E90023 		strd	r2, [r4]
+ 773              		.loc 1 142 0 discriminator 3
+ 774 024e BB6F     		ldr	r3, [r7, #120]
+ 775 0250 DB00     		lsls	r3, r3, #3
+ 776 0252 7A68     		ldr	r2, [r7, #4]
+ 777 0254 D418     		adds	r4, r2, r3
+ 778 0256 BB6F     		ldr	r3, [r7, #120]
+ 779 0258 DB00     		lsls	r3, r3, #3
+ 780 025a 7A68     		ldr	r2, [r7, #4]
+ 781 025c 1344     		add	r3, r3, r2
+ 782 025e D3E90023 		ldrd	r2, [r3]
+ 783 0262 1046     		mov	r0, r2
+ 784 0264 1946     		mov	r1, r3
+ 785 0266 D7E90623 		ldrd	r2, [r7, #24]
+ 786 026a FFF7FEFF 		bl	__aeabi_dadd
+ 787 026e 0246     		mov	r2, r0
+ 788 0270 0B46     		mov	r3, r1
+ 789 0272 C4E90023 		strd	r2, [r4]
  135:sample.c      ****             i1 = i + l1;
- 794              		.loc 1 135 0 discriminator 3
- 795 0276 BA6F     		ldr	r2, [r7, #120]
- 796 0278 BB6E     		ldr	r3, [r7, #104]
- 797 027a 1344     		add	r3, r3, r2
- 798 027c BB67     		str	r3, [r7, #120]
- 799              	.L26:
+ 790              		.loc 1 135 0 discriminator 3
+ 791 0276 BA6F     		ldr	r2, [r7, #120]
+ 792 0278 BB6E     		ldr	r3, [r7, #104]
+ 793 027a 1344     		add	r3, r3, r2
+ 794 027c BB67     		str	r3, [r7, #120]
+ 795              	.L26:
  135:sample.c      ****             i1 = i + l1;
- 800              		.loc 1 135 0 is_stmt 0 discriminator 1
- 801 027e BA6F     		ldr	r2, [r7, #120]
- 802 0280 FB6F     		ldr	r3, [r7, #124]
- 803 0282 9A42     		cmp	r2, r3
- 804 0284 FFF657AF 		blt	.L27
+ 796              		.loc 1 135 0 is_stmt 0 discriminator 1
+ 797 027e BA6F     		ldr	r2, [r7, #120]
+ 798 0280 FB6F     		ldr	r3, [r7, #124]
+ 799 0282 9A42     		cmp	r2, r3
+ 800 0284 FFF657AF 		blt	.L27
  143:sample.c      ****          }
  144:sample.c      ****          z =  u1 * c1 - u2 * c2;
- 805              		.loc 1 144 0 is_stmt 1 discriminator 2
- 806 0288 D7E91401 		ldrd	r0, [r7, #80]
- 807 028c D7E91823 		ldrd	r2, [r7, #96]
- 808 0290 FFF7FEFF 		bl	__aeabi_dmul
- 809 0294 0246     		mov	r2, r0
- 810 0296 0B46     		mov	r3, r1
- 811 0298 1446     		mov	r4, r2
- 812 029a 1D46     		mov	r5, r3
- 813 029c D7E91201 		ldrd	r0, [r7, #72]
- 814 02a0 D7E91623 		ldrd	r2, [r7, #88]
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 18
+ 801              		.loc 1 144 0 is_stmt 1 discriminator 2
+ 802 0288 D7E91401 		ldrd	r0, [r7, #80]
+ 803 028c D7E91823 		ldrd	r2, [r7, #96]
+ 804 0290 FFF7FEFF 		bl	__aeabi_dmul
+ 805 0294 0246     		mov	r2, r0
+ 806 0296 0B46     		mov	r3, r1
+ 807 0298 1446     		mov	r4, r2
+ 808 029a 1D46     		mov	r5, r3
+ 809 029c D7E91201 		ldrd	r0, [r7, #72]
+ 810 02a0 D7E91623 		ldrd	r2, [r7, #88]
+ 811 02a4 FFF7FEFF 		bl	__aeabi_dmul
+ 812 02a8 0246     		mov	r2, r0
+ 813 02aa 0B46     		mov	r3, r1
+ 814 02ac 2046     		mov	r0, r4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 18
 
 
- 815 02a4 FFF7FEFF 		bl	__aeabi_dmul
- 816 02a8 0246     		mov	r2, r0
- 817 02aa 0B46     		mov	r3, r1
- 818 02ac 2046     		mov	r0, r4
- 819 02ae 2946     		mov	r1, r5
- 820 02b0 FFF7FEFF 		bl	__aeabi_dsub
- 821 02b4 0246     		mov	r2, r0
- 822 02b6 0B46     		mov	r3, r1
- 823 02b8 C7E90423 		strd	r2, [r7, #16]
+ 815 02ae 2946     		mov	r1, r5
+ 816 02b0 FFF7FEFF 		bl	__aeabi_dsub
+ 817 02b4 0246     		mov	r2, r0
+ 818 02b6 0B46     		mov	r3, r1
+ 819 02b8 C7E90423 		strd	r2, [r7, #16]
  145:sample.c      ****          u2 = u1 * c2 + u2 * c1;
- 824              		.loc 1 145 0 discriminator 2
- 825 02bc D7E91401 		ldrd	r0, [r7, #80]
- 826 02c0 D7E91623 		ldrd	r2, [r7, #88]
- 827 02c4 FFF7FEFF 		bl	__aeabi_dmul
- 828 02c8 0246     		mov	r2, r0
- 829 02ca 0B46     		mov	r3, r1
- 830 02cc 1446     		mov	r4, r2
- 831 02ce 1D46     		mov	r5, r3
- 832 02d0 D7E91201 		ldrd	r0, [r7, #72]
- 833 02d4 D7E91823 		ldrd	r2, [r7, #96]
- 834 02d8 FFF7FEFF 		bl	__aeabi_dmul
- 835 02dc 0246     		mov	r2, r0
- 836 02de 0B46     		mov	r3, r1
- 837 02e0 2046     		mov	r0, r4
- 838 02e2 2946     		mov	r1, r5
- 839 02e4 FFF7FEFF 		bl	__aeabi_dadd
- 840 02e8 0246     		mov	r2, r0
- 841 02ea 0B46     		mov	r3, r1
- 842 02ec C7E91223 		strd	r2, [r7, #72]
+ 820              		.loc 1 145 0 discriminator 2
+ 821 02bc D7E91401 		ldrd	r0, [r7, #80]
+ 822 02c0 D7E91623 		ldrd	r2, [r7, #88]
+ 823 02c4 FFF7FEFF 		bl	__aeabi_dmul
+ 824 02c8 0246     		mov	r2, r0
+ 825 02ca 0B46     		mov	r3, r1
+ 826 02cc 1446     		mov	r4, r2
+ 827 02ce 1D46     		mov	r5, r3
+ 828 02d0 D7E91201 		ldrd	r0, [r7, #72]
+ 829 02d4 D7E91823 		ldrd	r2, [r7, #96]
+ 830 02d8 FFF7FEFF 		bl	__aeabi_dmul
+ 831 02dc 0246     		mov	r2, r0
+ 832 02de 0B46     		mov	r3, r1
+ 833 02e0 2046     		mov	r0, r4
+ 834 02e2 2946     		mov	r1, r5
+ 835 02e4 FFF7FEFF 		bl	__aeabi_dadd
+ 836 02e8 0246     		mov	r2, r0
+ 837 02ea 0B46     		mov	r3, r1
+ 838 02ec C7E91223 		strd	r2, [r7, #72]
  146:sample.c      ****          u1 = z;
- 843              		.loc 1 146 0 discriminator 2
- 844 02f0 D7E90423 		ldrd	r2, [r7, #16]
- 845 02f4 C7E91423 		strd	r2, [r7, #80]
+ 839              		.loc 1 146 0 discriminator 2
+ 840 02f0 D7E90423 		ldrd	r2, [r7, #16]
+ 841 02f4 C7E91423 		strd	r2, [r7, #80]
  134:sample.c      ****          for (i=j;i<n;i+=l2) {
- 846              		.loc 1 134 0 discriminator 2
- 847 02f8 7B6F     		ldr	r3, [r7, #116]
- 848 02fa 0133     		adds	r3, r3, #1
- 849 02fc 7B67     		str	r3, [r7, #116]
- 850              	.L25:
+ 842              		.loc 1 134 0 discriminator 2
+ 843 02f8 7B6F     		ldr	r3, [r7, #116]
+ 844 02fa 0133     		adds	r3, r3, #1
+ 845 02fc 7B67     		str	r3, [r7, #116]
+ 846              	.L25:
  134:sample.c      ****          for (i=j;i<n;i+=l2) {
- 851              		.loc 1 134 0 is_stmt 0 discriminator 1
- 852 02fe 7A6F     		ldr	r2, [r7, #116]
- 853 0300 FB6A     		ldr	r3, [r7, #44]
- 854 0302 9A42     		cmp	r2, r3
- 855 0304 FFF614AF 		blt	.L28
+ 847              		.loc 1 134 0 is_stmt 0 discriminator 1
+ 848 02fe 7A6F     		ldr	r2, [r7, #116]
+ 849 0300 FB6A     		ldr	r3, [r7, #44]
+ 850 0302 9A42     		cmp	r2, r3
+ 851 0304 FFF614AF 		blt	.L28
  147:sample.c      ****       }
  148:sample.c      ****       c2 = sqrt((1.0 - c1) / 2.0);
- 856              		.loc 1 148 0 is_stmt 1
- 857 0308 4FF00000 		mov	r0, #0
- 858 030c 2249     		ldr	r1, .L33+4
- 859 030e D7E91823 		ldrd	r2, [r7, #96]
- 860 0312 FFF7FEFF 		bl	__aeabi_dsub
- 861 0316 0246     		mov	r2, r0
- 862 0318 0B46     		mov	r3, r1
- 863 031a 1046     		mov	r0, r2
- 864 031c 1946     		mov	r1, r3
- 865 031e 4FF00002 		mov	r2, #0
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 19
+ 852              		.loc 1 148 0 is_stmt 1 discriminator 2
+ 853 0308 4FF00000 		mov	r0, #0
+ 854 030c 1E49     		ldr	r1, .L32+4
+ 855 030e D7E91823 		ldrd	r2, [r7, #96]
+ 856 0312 FFF7FEFF 		bl	__aeabi_dsub
+ 857 0316 0246     		mov	r2, r0
+ 858 0318 0B46     		mov	r3, r1
+ 859 031a 1046     		mov	r0, r2
+ 860 031c 1946     		mov	r1, r3
+ 861 031e 4FF00002 		mov	r2, #0
+ 862 0322 4FF08043 		mov	r3, #1073741824
+ 863 0326 FFF7FEFF 		bl	__aeabi_ddiv
+ 864 032a 0246     		mov	r2, r0
+ 865 032c 0B46     		mov	r3, r1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 19
 
 
- 866 0322 4FF08043 		mov	r3, #1073741824
- 867 0326 FFF7FEFF 		bl	__aeabi_ddiv
- 868 032a 0246     		mov	r2, r0
- 869 032c 0B46     		mov	r3, r1
- 870 032e 1046     		mov	r0, r2
- 871 0330 1946     		mov	r1, r3
- 872 0332 FFF7FEFF 		bl	sqrt
- 873 0336 C7E91601 		strd	r0, [r7, #88]
- 149:sample.c      ****       if (dir == 1) 
- 874              		.loc 1 149 0
- 875 033a FB68     		ldr	r3, [r7, #12]
- 876 033c 012B     		cmp	r3, #1
- 877 033e 05D1     		bne	.L29
- 150:sample.c      ****          c2 = -c2;
- 878              		.loc 1 150 0
- 879 0340 BB6D     		ldr	r3, [r7, #88]
- 880 0342 BB65     		str	r3, [r7, #88]
- 881 0344 FB6D     		ldr	r3, [r7, #92]
- 882 0346 83F00043 		eor	r3, r3, #-2147483648
- 883 034a FB65     		str	r3, [r7, #92]
- 884              	.L29:
- 151:sample.c      ****       c1 = sqrt((1.0 + c1) / 2.0);
- 885              		.loc 1 151 0 discriminator 2
- 886 034c D7E91801 		ldrd	r0, [r7, #96]
- 887 0350 4FF00002 		mov	r2, #0
- 888 0354 104B     		ldr	r3, .L33+4
- 889 0356 FFF7FEFF 		bl	__aeabi_dadd
- 890 035a 0246     		mov	r2, r0
- 891 035c 0B46     		mov	r3, r1
- 892 035e 1046     		mov	r0, r2
- 893 0360 1946     		mov	r1, r3
- 894 0362 4FF00002 		mov	r2, #0
- 895 0366 4FF08043 		mov	r3, #1073741824
- 896 036a FFF7FEFF 		bl	__aeabi_ddiv
- 897 036e 0246     		mov	r2, r0
- 898 0370 0B46     		mov	r3, r1
- 899 0372 1046     		mov	r0, r2
- 900 0374 1946     		mov	r1, r3
- 901 0376 FFF7FEFF 		bl	sqrt
- 902 037a C7E91801 		strd	r0, [r7, #96]
+ 866 032e 1046     		mov	r0, r2
+ 867 0330 1946     		mov	r1, r3
+ 868 0332 FFF7FEFF 		bl	sqrt
+ 869 0336 C7E91601 		strd	r0, [r7, #88]
+ 149:sample.c      ****       c1 = sqrt((1.0 + c1) / 2.0);
+ 870              		.loc 1 149 0 discriminator 2
+ 871 033a D7E91801 		ldrd	r0, [r7, #96]
+ 872 033e 4FF00002 		mov	r2, #0
+ 873 0342 114B     		ldr	r3, .L32+4
+ 874 0344 FFF7FEFF 		bl	__aeabi_dadd
+ 875 0348 0246     		mov	r2, r0
+ 876 034a 0B46     		mov	r3, r1
+ 877 034c 1046     		mov	r0, r2
+ 878 034e 1946     		mov	r1, r3
+ 879 0350 4FF00002 		mov	r2, #0
+ 880 0354 4FF08043 		mov	r3, #1073741824
+ 881 0358 FFF7FEFF 		bl	__aeabi_ddiv
+ 882 035c 0246     		mov	r2, r0
+ 883 035e 0B46     		mov	r3, r1
+ 884 0360 1046     		mov	r0, r2
+ 885 0362 1946     		mov	r1, r3
+ 886 0364 FFF7FEFF 		bl	sqrt
+ 887 0368 C7E91801 		strd	r0, [r7, #96]
  129:sample.c      ****       l1 = l2;
- 903              		.loc 1 129 0 discriminator 2
- 904 037e FB6E     		ldr	r3, [r7, #108]
- 905 0380 0133     		adds	r3, r3, #1
- 906 0382 FB66     		str	r3, [r7, #108]
- 907              	.L24:
+ 888              		.loc 1 129 0 discriminator 2
+ 889 036c FB6E     		ldr	r3, [r7, #108]
+ 890 036e 0133     		adds	r3, r3, #1
+ 891 0370 FB66     		str	r3, [r7, #108]
+ 892              	.L24:
  129:sample.c      ****       l1 = l2;
- 908              		.loc 1 129 0 is_stmt 0 discriminator 1
- 909 0384 FA6E     		ldr	r2, [r7, #108]
- 910 0386 BB68     		ldr	r3, [r7, #8]
- 911 0388 9A42     		cmp	r2, r3
- 912 038a FFF6BEAE 		blt	.L30
- 152:sample.c      ****    }
- 153:sample.c      **** 
- 154:sample.c      ****    /* Scaling factor for forward transform */
- 155:sample.c      **** //   if (dir == 1) {
- 156:sample.c      **** //      for (i=0;i<n;i++) {
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 20
+ 893              		.loc 1 129 0 is_stmt 0 discriminator 1
+ 894 0372 FA6E     		ldr	r2, [r7, #108]
+ 895 0374 FB68     		ldr	r3, [r7, #12]
+ 896 0376 9A42     		cmp	r2, r3
+ 897 0378 FFF6C7AE 		blt	.L29
+ 150:sample.c      ****    }
+ 151:sample.c      **** 
+ 152:sample.c      ****    
+ 153:sample.c      ****    for(i=0;i<N_points;i++)
+ 898              		.loc 1 153 0 is_stmt 1
+ 899 037c 0023     		movs	r3, #0
+ 900 037e BB67     		str	r3, [r7, #120]
+ 901 0380 4AE0     		b	.L30
+ 902              	.L33:
+ 903 0382 00BF     		.align	2
+ 904              	.L32:
+ 905 0384 0000F0BF 		.word	-1074790400
+ 906 0388 0000F03F 		.word	1072693248
+ 907              	.L31:
+ 154:sample.c      ****    {
+ 155:sample.c      ****     /* Absolute value */
+ 156:sample.c      ****    u[i]=2*sqrt((x[i]*x[i])+(y[i]*y[i]))/N_points;  
+ 908              		.loc 1 156 0 discriminator 3
+ 909 038c BB6F     		ldr	r3, [r7, #120]
+ 910 038e DB00     		lsls	r3, r3, #3
+ 911 0390 3A68     		ldr	r2, [r7]
+ 912 0392 D418     		adds	r4, r2, r3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 20
 
 
- 157:sample.c      **** //         x[i] /= n;
- 158:sample.c      **** //         y[i] /= n;
- 159:sample.c      **** //      }
- 160:sample.c      **** //   }
- 161:sample.c      ****    
- 162:sample.c      ****    for(i=0;i<N_points;i++)
- 913              		.loc 1 162 0 is_stmt 1
- 914 038e 0023     		movs	r3, #0
- 915 0390 BB67     		str	r3, [r7, #120]
- 916 0392 4AE0     		b	.L31
- 917              	.L34:
- 918              		.align	2
- 919              	.L33:
- 920 0394 0000F0BF 		.word	-1074790400
- 921 0398 0000F03F 		.word	1072693248
- 922              	.L32:
- 163:sample.c      ****    {
- 164:sample.c      ****     /* Absolute value */
- 165:sample.c      ****    u[i]=2*sqrt((x[i]*x[i])+(y[i]*y[i]))/N_points;  
- 923              		.loc 1 165 0 discriminator 3
- 924 039c BB6F     		ldr	r3, [r7, #120]
- 925 039e DB00     		lsls	r3, r3, #3
- 926 03a0 D7F89820 		ldr	r2, [r7, #152]
- 927 03a4 D418     		adds	r4, r2, r3
- 928 03a6 BB6F     		ldr	r3, [r7, #120]
- 929 03a8 DB00     		lsls	r3, r3, #3
- 930 03aa 7A68     		ldr	r2, [r7, #4]
- 931 03ac 1344     		add	r3, r3, r2
- 932 03ae D3E90001 		ldrd	r0, [r3]
- 933 03b2 BB6F     		ldr	r3, [r7, #120]
- 934 03b4 DB00     		lsls	r3, r3, #3
- 935 03b6 7A68     		ldr	r2, [r7, #4]
- 936 03b8 1344     		add	r3, r3, r2
- 937 03ba D3E90023 		ldrd	r2, [r3]
- 938 03be FFF7FEFF 		bl	__aeabi_dmul
- 939 03c2 0246     		mov	r2, r0
- 940 03c4 0B46     		mov	r3, r1
- 941 03c6 9046     		mov	r8, r2
- 942 03c8 9946     		mov	r9, r3
- 943 03ca BB6F     		ldr	r3, [r7, #120]
- 944 03cc DB00     		lsls	r3, r3, #3
- 945 03ce 3A68     		ldr	r2, [r7]
- 946 03d0 1344     		add	r3, r3, r2
- 947 03d2 D3E90001 		ldrd	r0, [r3]
- 948 03d6 BB6F     		ldr	r3, [r7, #120]
- 949 03d8 DB00     		lsls	r3, r3, #3
- 950 03da 3A68     		ldr	r2, [r7]
- 951 03dc 1344     		add	r3, r3, r2
- 952 03de D3E90023 		ldrd	r2, [r3]
- 953 03e2 FFF7FEFF 		bl	__aeabi_dmul
- 954 03e6 0246     		mov	r2, r0
- 955 03e8 0B46     		mov	r3, r1
- 956 03ea 4046     		mov	r0, r8
- 957 03ec 4946     		mov	r1, r9
- 958 03ee FFF7FEFF 		bl	__aeabi_dadd
- 959 03f2 0246     		mov	r2, r0
- 960 03f4 0B46     		mov	r3, r1
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 21
+ 913 0394 BB6F     		ldr	r3, [r7, #120]
+ 914 0396 DB00     		lsls	r3, r3, #3
+ 915 0398 BA68     		ldr	r2, [r7, #8]
+ 916 039a 1344     		add	r3, r3, r2
+ 917 039c D3E90001 		ldrd	r0, [r3]
+ 918 03a0 BB6F     		ldr	r3, [r7, #120]
+ 919 03a2 DB00     		lsls	r3, r3, #3
+ 920 03a4 BA68     		ldr	r2, [r7, #8]
+ 921 03a6 1344     		add	r3, r3, r2
+ 922 03a8 D3E90023 		ldrd	r2, [r3]
+ 923 03ac FFF7FEFF 		bl	__aeabi_dmul
+ 924 03b0 0246     		mov	r2, r0
+ 925 03b2 0B46     		mov	r3, r1
+ 926 03b4 9046     		mov	r8, r2
+ 927 03b6 9946     		mov	r9, r3
+ 928 03b8 BB6F     		ldr	r3, [r7, #120]
+ 929 03ba DB00     		lsls	r3, r3, #3
+ 930 03bc 7A68     		ldr	r2, [r7, #4]
+ 931 03be 1344     		add	r3, r3, r2
+ 932 03c0 D3E90001 		ldrd	r0, [r3]
+ 933 03c4 BB6F     		ldr	r3, [r7, #120]
+ 934 03c6 DB00     		lsls	r3, r3, #3
+ 935 03c8 7A68     		ldr	r2, [r7, #4]
+ 936 03ca 1344     		add	r3, r3, r2
+ 937 03cc D3E90023 		ldrd	r2, [r3]
+ 938 03d0 FFF7FEFF 		bl	__aeabi_dmul
+ 939 03d4 0246     		mov	r2, r0
+ 940 03d6 0B46     		mov	r3, r1
+ 941 03d8 4046     		mov	r0, r8
+ 942 03da 4946     		mov	r1, r9
+ 943 03dc FFF7FEFF 		bl	__aeabi_dadd
+ 944 03e0 0246     		mov	r2, r0
+ 945 03e2 0B46     		mov	r3, r1
+ 946 03e4 1046     		mov	r0, r2
+ 947 03e6 1946     		mov	r1, r3
+ 948 03e8 FFF7FEFF 		bl	sqrt
+ 949 03ec 0246     		mov	r2, r0
+ 950 03ee 0B46     		mov	r3, r1
+ 951 03f0 1046     		mov	r0, r2
+ 952 03f2 1946     		mov	r1, r3
+ 953 03f4 FFF7FEFF 		bl	__aeabi_dadd
+ 954 03f8 0246     		mov	r2, r0
+ 955 03fa 0B46     		mov	r3, r1
+ 956 03fc 1046     		mov	r0, r2
+ 957 03fe 1946     		mov	r1, r3
+ 958 0400 4FF00002 		mov	r2, #0
+ 959 0404 084B     		ldr	r3, .L34
+ 960 0406 FFF7FEFF 		bl	__aeabi_ddiv
+ 961 040a 0246     		mov	r2, r0
+ 962 040c 0B46     		mov	r3, r1
+ 963 040e C4E90023 		strd	r2, [r4]
+ 153:sample.c      ****    {
+ 964              		.loc 1 153 0 discriminator 3
+ 965 0412 BB6F     		ldr	r3, [r7, #120]
+ 966 0414 0133     		adds	r3, r3, #1
+ 967 0416 BB67     		str	r3, [r7, #120]
+ 968              	.L30:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 21
 
 
- 961 03f6 1046     		mov	r0, r2
- 962 03f8 1946     		mov	r1, r3
- 963 03fa FFF7FEFF 		bl	sqrt
- 964 03fe 0246     		mov	r2, r0
- 965 0400 0B46     		mov	r3, r1
- 966 0402 1046     		mov	r0, r2
- 967 0404 1946     		mov	r1, r3
- 968 0406 FFF7FEFF 		bl	__aeabi_dadd
- 969 040a 0246     		mov	r2, r0
- 970 040c 0B46     		mov	r3, r1
- 971 040e 1046     		mov	r0, r2
- 972 0410 1946     		mov	r1, r3
- 973 0412 4FF00002 		mov	r2, #0
- 974 0416 084B     		ldr	r3, .L35
- 975 0418 FFF7FEFF 		bl	__aeabi_ddiv
- 976 041c 0246     		mov	r2, r0
- 977 041e 0B46     		mov	r3, r1
- 978 0420 C4E90023 		strd	r2, [r4]
- 162:sample.c      ****    {
- 979              		.loc 1 162 0 discriminator 3
- 980 0424 BB6F     		ldr	r3, [r7, #120]
- 981 0426 0133     		adds	r3, r3, #1
- 982 0428 BB67     		str	r3, [r7, #120]
- 983              	.L31:
- 162:sample.c      ****    {
- 984              		.loc 1 162 0 is_stmt 0 discriminator 1
- 985 042a BB6F     		ldr	r3, [r7, #120]
- 986 042c 3F2B     		cmp	r3, #63
- 987 042e B5DD     		ble	.L32
- 166:sample.c      ****    }
- 167:sample.c      **** }
- 988              		.loc 1 167 0 is_stmt 1
- 989 0430 8037     		adds	r7, r7, #128
- 990              		.cfi_def_cfa_offset 24
- 991 0432 BD46     		mov	sp, r7
- 992              		.cfi_def_cfa_register 13
- 993              		@ sp needed
- 994 0434 BDE8B083 		pop	{r4, r5, r7, r8, r9, pc}
- 995              	.L36:
- 996              		.align	2
- 997              	.L35:
- 998 0438 00005040 		.word	1078984704
- 999              		.cfi_endproc
- 1000              	.LFE67:
- 1001              		.size	FFT, .-FFT
- 1002              		.section	.text.calculate_50Hz_Amp,"ax",%progbits
- 1003              		.align	2
- 1004              		.global	calculate_50Hz_Amp
- 1005              		.thumb
- 1006              		.thumb_func
- 1007              		.type	calculate_50Hz_Amp, %function
- 1008              	calculate_50Hz_Amp:
- 1009              	.LFB68:
- 168:sample.c      **** 
- 169:sample.c      **** double calculate_50Hz_Amp(double *u)
- 170:sample.c      **** {
- 1010              		.loc 1 170 0
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 22
+ 153:sample.c      ****    {
+ 969              		.loc 1 153 0 is_stmt 0 discriminator 1
+ 970 0418 BB6F     		ldr	r3, [r7, #120]
+ 971 041a 3F2B     		cmp	r3, #63
+ 972 041c B6DD     		ble	.L31
+ 157:sample.c      ****    }
+ 158:sample.c      **** }
+ 973              		.loc 1 158 0 is_stmt 1
+ 974 041e 8037     		adds	r7, r7, #128
+ 975              		.cfi_def_cfa_offset 24
+ 976 0420 BD46     		mov	sp, r7
+ 977              		.cfi_def_cfa_register 13
+ 978              		@ sp needed
+ 979 0422 BDE8B083 		pop	{r4, r5, r7, r8, r9, pc}
+ 980              	.L35:
+ 981 0426 00BF     		.align	2
+ 982              	.L34:
+ 983 0428 00005040 		.word	1078984704
+ 984              		.cfi_endproc
+ 985              	.LFE67:
+ 986              		.size	FFT, .-FFT
+ 987              		.section	.text.calculate_50Hz_Amp,"ax",%progbits
+ 988              		.align	2
+ 989              		.global	calculate_50Hz_Amp
+ 990              		.thumb
+ 991              		.thumb_func
+ 992              		.type	calculate_50Hz_Amp, %function
+ 993              	calculate_50Hz_Amp:
+ 994              	.LFB68:
+ 159:sample.c      **** 
+ 160:sample.c      **** double calculate_50Hz_Amp(double *u)
+ 161:sample.c      **** {
+ 995              		.loc 1 161 0
+ 996              		.cfi_startproc
+ 997              		@ args = 0, pretend = 0, frame = 8
+ 998              		@ frame_needed = 1, uses_anonymous_args = 0
+ 999              		@ link register save eliminated.
+ 1000 0000 80B4     		push	{r7}
+ 1001              		.cfi_def_cfa_offset 4
+ 1002              		.cfi_offset 7, -4
+ 1003 0002 83B0     		sub	sp, sp, #12
+ 1004              		.cfi_def_cfa_offset 16
+ 1005 0004 00AF     		add	r7, sp, #0
+ 1006              		.cfi_def_cfa_register 7
+ 1007 0006 7860     		str	r0, [r7, #4]
+ 162:sample.c      ****     return u[1];  
+ 1008              		.loc 1 162 0
+ 1009 0008 7B68     		ldr	r3, [r7, #4]
+ 1010 000a D3E90223 		ldrd	r2, [r3, #8]
+ 163:sample.c      **** }
+ 1011              		.loc 1 163 0
+ 1012 000e 1046     		mov	r0, r2
+ 1013 0010 1946     		mov	r1, r3
+ 1014 0012 0C37     		adds	r7, r7, #12
+ 1015              		.cfi_def_cfa_offset 4
+ 1016 0014 BD46     		mov	sp, r7
+ 1017              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 22
 
 
- 1011              		.cfi_startproc
- 1012              		@ args = 0, pretend = 0, frame = 8
- 1013              		@ frame_needed = 1, uses_anonymous_args = 0
- 1014              		@ link register save eliminated.
- 1015 0000 80B4     		push	{r7}
- 1016              		.cfi_def_cfa_offset 4
- 1017              		.cfi_offset 7, -4
- 1018 0002 83B0     		sub	sp, sp, #12
- 1019              		.cfi_def_cfa_offset 16
- 1020 0004 00AF     		add	r7, sp, #0
- 1021              		.cfi_def_cfa_register 7
- 1022 0006 7860     		str	r0, [r7, #4]
- 171:sample.c      ****     return u[1];  
- 1023              		.loc 1 171 0
- 1024 0008 7B68     		ldr	r3, [r7, #4]
- 1025 000a D3E90223 		ldrd	r2, [r3, #8]
- 172:sample.c      **** }
- 1026              		.loc 1 172 0
- 1027 000e 1046     		mov	r0, r2
- 1028 0010 1946     		mov	r1, r3
- 1029 0012 0C37     		adds	r7, r7, #12
- 1030              		.cfi_def_cfa_offset 4
- 1031 0014 BD46     		mov	sp, r7
- 1032              		.cfi_def_cfa_register 13
- 1033              		@ sp needed
- 1034 0016 5DF8047B 		ldr	r7, [sp], #4
- 1035              		.cfi_restore 7
- 1036              		.cfi_def_cfa_offset 0
- 1037 001a 7047     		bx	lr
- 1038              		.cfi_endproc
- 1039              	.LFE68:
- 1040              		.size	calculate_50Hz_Amp, .-calculate_50Hz_Amp
- 1041              		.section	.text.calculate_50Hz_RMS,"ax",%progbits
- 1042              		.align	2
- 1043              		.global	calculate_50Hz_RMS
- 1044              		.thumb
- 1045              		.thumb_func
- 1046              		.type	calculate_50Hz_RMS, %function
- 1047              	calculate_50Hz_RMS:
- 1048              	.LFB69:
- 173:sample.c      **** 
- 174:sample.c      **** double calculate_50Hz_RMS(double *u)
- 175:sample.c      **** {
- 1049              		.loc 1 175 0
- 1050              		.cfi_startproc
- 1051              		@ args = 0, pretend = 0, frame = 8
- 1052              		@ frame_needed = 1, uses_anonymous_args = 0
- 1053 0000 80B5     		push	{r7, lr}
- 1054              		.cfi_def_cfa_offset 8
- 1055              		.cfi_offset 7, -8
- 1056              		.cfi_offset 14, -4
- 1057 0002 82B0     		sub	sp, sp, #8
- 1058              		.cfi_def_cfa_offset 16
- 1059 0004 00AF     		add	r7, sp, #0
- 1060              		.cfi_def_cfa_register 7
- 1061 0006 7860     		str	r0, [r7, #4]
- 176:sample.c      ****     return u[1]/sqrt(2);  
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 23
+ 1018              		@ sp needed
+ 1019 0016 5DF8047B 		ldr	r7, [sp], #4
+ 1020              		.cfi_restore 7
+ 1021              		.cfi_def_cfa_offset 0
+ 1022 001a 7047     		bx	lr
+ 1023              		.cfi_endproc
+ 1024              	.LFE68:
+ 1025              		.size	calculate_50Hz_Amp, .-calculate_50Hz_Amp
+ 1026              		.section	.text.calculate_50Hz_RMS,"ax",%progbits
+ 1027              		.align	2
+ 1028              		.global	calculate_50Hz_RMS
+ 1029              		.thumb
+ 1030              		.thumb_func
+ 1031              		.type	calculate_50Hz_RMS, %function
+ 1032              	calculate_50Hz_RMS:
+ 1033              	.LFB69:
+ 164:sample.c      **** 
+ 165:sample.c      **** double calculate_50Hz_RMS(double *u)
+ 166:sample.c      **** {
+ 1034              		.loc 1 166 0
+ 1035              		.cfi_startproc
+ 1036              		@ args = 0, pretend = 0, frame = 8
+ 1037              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1038 0000 80B5     		push	{r7, lr}
+ 1039              		.cfi_def_cfa_offset 8
+ 1040              		.cfi_offset 7, -8
+ 1041              		.cfi_offset 14, -4
+ 1042 0002 82B0     		sub	sp, sp, #8
+ 1043              		.cfi_def_cfa_offset 16
+ 1044 0004 00AF     		add	r7, sp, #0
+ 1045              		.cfi_def_cfa_register 7
+ 1046 0006 7860     		str	r0, [r7, #4]
+ 167:sample.c      ****     return u[1]/sqrt(2);  
+ 1047              		.loc 1 167 0
+ 1048 0008 7B68     		ldr	r3, [r7, #4]
+ 1049 000a 0833     		adds	r3, r3, #8
+ 1050 000c D3E90023 		ldrd	r2, [r3]
+ 1051 0010 1046     		mov	r0, r2
+ 1052 0012 1946     		mov	r1, r3
+ 1053 0014 06A3     		adr	r3, .L40
+ 1054 0016 D3E90023 		ldrd	r2, [r3]
+ 1055 001a FFF7FEFF 		bl	__aeabi_ddiv
+ 1056 001e 0246     		mov	r2, r0
+ 1057 0020 0B46     		mov	r3, r1
+ 168:sample.c      **** }
+ 1058              		.loc 1 168 0
+ 1059 0022 1046     		mov	r0, r2
+ 1060 0024 1946     		mov	r1, r3
+ 1061 0026 0837     		adds	r7, r7, #8
+ 1062              		.cfi_def_cfa_offset 8
+ 1063 0028 BD46     		mov	sp, r7
+ 1064              		.cfi_def_cfa_register 13
+ 1065              		@ sp needed
+ 1066 002a 80BD     		pop	{r7, pc}
+ 1067              	.L41:
+ 1068 002c AFF30080 		.align	3
+ 1069              	.L40:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 23
 
 
- 1062              		.loc 1 176 0
- 1063 0008 7B68     		ldr	r3, [r7, #4]
- 1064 000a 0833     		adds	r3, r3, #8
- 1065 000c D3E90023 		ldrd	r2, [r3]
- 1066 0010 1046     		mov	r0, r2
- 1067 0012 1946     		mov	r1, r3
- 1068 0014 06A3     		adr	r3, .L41
- 1069 0016 D3E90023 		ldrd	r2, [r3]
- 1070 001a FFF7FEFF 		bl	__aeabi_ddiv
- 1071 001e 0246     		mov	r2, r0
- 1072 0020 0B46     		mov	r3, r1
+ 1070 0030 CD3B7F66 		.word	1719614413
+ 1071 0034 9EA0F63F 		.word	1073127582
+ 1072              		.cfi_endproc
+ 1073              	.LFE69:
+ 1074              		.size	calculate_50Hz_RMS, .-calculate_50Hz_RMS
+ 1075              		.section	.text.calculate_50Hz_PF,"ax",%progbits
+ 1076              		.align	2
+ 1077              		.global	calculate_50Hz_PF
+ 1078              		.thumb
+ 1079              		.thumb_func
+ 1080              		.type	calculate_50Hz_PF, %function
+ 1081              	calculate_50Hz_PF:
+ 1082              	.LFB70:
+ 169:sample.c      **** 
+ 170:sample.c      **** double calculate_50Hz_PF()
+ 171:sample.c      **** {
+ 1083              		.loc 1 171 0
+ 1084              		.cfi_startproc
+ 1085              		@ args = 0, pretend = 0, frame = 16
+ 1086              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1087 0000 80B5     		push	{r7, lr}
+ 1088              		.cfi_def_cfa_offset 8
+ 1089              		.cfi_offset 7, -8
+ 1090              		.cfi_offset 14, -4
+ 1091 0002 84B0     		sub	sp, sp, #16
+ 1092              		.cfi_def_cfa_offset 24
+ 1093 0004 00AF     		add	r7, sp, #0
+ 1094              		.cfi_def_cfa_register 7
+ 172:sample.c      ****     double angle_Volt = atan(Im_volt[1]/Re_volt[1]);
+ 1095              		.loc 1 172 0
+ 1096 0006 194B     		ldr	r3, .L44
+ 1097 0008 D3E90201 		ldrd	r0, [r3, #8]
+ 1098 000c 184B     		ldr	r3, .L44+4
+ 1099 000e D3E90223 		ldrd	r2, [r3, #8]
+ 1100 0012 FFF7FEFF 		bl	__aeabi_ddiv
+ 1101 0016 0246     		mov	r2, r0
+ 1102 0018 0B46     		mov	r3, r1
+ 1103 001a 1046     		mov	r0, r2
+ 1104 001c 1946     		mov	r1, r3
+ 1105 001e FFF7FEFF 		bl	atan
+ 1106 0022 C7E90201 		strd	r0, [r7, #8]
+ 173:sample.c      ****     double angle_Ampere = atan(Im_Ampere[1]/Re_Ampere[1]);
+ 1107              		.loc 1 173 0
+ 1108 0026 134B     		ldr	r3, .L44+8
+ 1109 0028 D3E90201 		ldrd	r0, [r3, #8]
+ 1110 002c 124B     		ldr	r3, .L44+12
+ 1111 002e D3E90223 		ldrd	r2, [r3, #8]
+ 1112 0032 FFF7FEFF 		bl	__aeabi_ddiv
+ 1113 0036 0246     		mov	r2, r0
+ 1114 0038 0B46     		mov	r3, r1
+ 1115 003a 1046     		mov	r0, r2
+ 1116 003c 1946     		mov	r1, r3
+ 1117 003e FFF7FEFF 		bl	atan
+ 1118 0042 C7E90001 		strd	r0, [r7]
+ 174:sample.c      ****     
+ 175:sample.c      ****     return cos(angle_Ampere-angle_Volt);
+ 1119              		.loc 1 175 0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 24
+
+
+ 1120 0046 D7E90001 		ldrd	r0, [r7]
+ 1121 004a D7E90223 		ldrd	r2, [r7, #8]
+ 1122 004e FFF7FEFF 		bl	__aeabi_dsub
+ 1123 0052 0246     		mov	r2, r0
+ 1124 0054 0B46     		mov	r3, r1
+ 1125 0056 1046     		mov	r0, r2
+ 1126 0058 1946     		mov	r1, r3
+ 1127 005a FFF7FEFF 		bl	cos
+ 1128 005e 0246     		mov	r2, r0
+ 1129 0060 0B46     		mov	r3, r1
+ 176:sample.c      ****     
  177:sample.c      **** }
- 1073              		.loc 1 177 0
- 1074 0022 1046     		mov	r0, r2
- 1075 0024 1946     		mov	r1, r3
- 1076 0026 0837     		adds	r7, r7, #8
- 1077              		.cfi_def_cfa_offset 8
- 1078 0028 BD46     		mov	sp, r7
- 1079              		.cfi_def_cfa_register 13
- 1080              		@ sp needed
- 1081 002a 80BD     		pop	{r7, pc}
- 1082              	.L42:
- 1083 002c AFF30080 		.align	3
- 1084              	.L41:
- 1085 0030 CD3B7F66 		.word	1719614413
- 1086 0034 9EA0F63F 		.word	1073127582
- 1087              		.cfi_endproc
- 1088              	.LFE69:
- 1089              		.size	calculate_50Hz_RMS, .-calculate_50Hz_RMS
- 1090              		.section	.text.calculate_50Hz_PF,"ax",%progbits
- 1091              		.align	2
- 1092              		.global	calculate_50Hz_PF
- 1093              		.thumb
- 1094              		.thumb_func
- 1095              		.type	calculate_50Hz_PF, %function
- 1096              	calculate_50Hz_PF:
- 1097              	.LFB70:
+ 1130              		.loc 1 177 0
+ 1131 0062 1046     		mov	r0, r2
+ 1132 0064 1946     		mov	r1, r3
+ 1133 0066 1037     		adds	r7, r7, #16
+ 1134              		.cfi_def_cfa_offset 8
+ 1135 0068 BD46     		mov	sp, r7
+ 1136              		.cfi_def_cfa_register 13
+ 1137              		@ sp needed
+ 1138 006a 80BD     		pop	{r7, pc}
+ 1139              	.L45:
+ 1140              		.align	2
+ 1141              	.L44:
+ 1142 006c 00000000 		.word	Im_volt
+ 1143 0070 00000000 		.word	Re_volt
+ 1144 0074 00000000 		.word	Im_Ampere
+ 1145 0078 00000000 		.word	Re_Ampere
+ 1146              		.cfi_endproc
+ 1147              	.LFE70:
+ 1148              		.size	calculate_50Hz_PF, .-calculate_50Hz_PF
+ 1149              		.section	.text.calculate_THD,"ax",%progbits
+ 1150              		.align	2
+ 1151              		.global	calculate_THD
+ 1152              		.thumb
+ 1153              		.thumb_func
+ 1154              		.type	calculate_THD, %function
+ 1155              	calculate_THD:
+ 1156              	.LFB71:
  178:sample.c      **** 
- 179:sample.c      **** double calculate_50Hz_PF()
+ 179:sample.c      **** double calculate_THD()
  180:sample.c      **** {
- 1098              		.loc 1 180 0
- 1099              		.cfi_startproc
- 1100              		@ args = 0, pretend = 0, frame = 16
- 1101              		@ frame_needed = 1, uses_anonymous_args = 0
- 1102 0000 80B5     		push	{r7, lr}
- 1103              		.cfi_def_cfa_offset 8
- 1104              		.cfi_offset 7, -8
- 1105              		.cfi_offset 14, -4
- 1106 0002 84B0     		sub	sp, sp, #16
- 1107              		.cfi_def_cfa_offset 24
- 1108 0004 00AF     		add	r7, sp, #0
- 1109              		.cfi_def_cfa_register 7
- 181:sample.c      ****     double angle_Volt = atan(Im_volt[1]/Re_volt[1]);
- 1110              		.loc 1 181 0
- 1111 0006 194B     		ldr	r3, .L45
- 1112 0008 D3E90201 		ldrd	r0, [r3, #8]
- 1113 000c 184B     		ldr	r3, .L45+4
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 24
+ 1157              		.loc 1 180 0
+ 1158              		.cfi_startproc
+ 1159              		@ args = 0, pretend = 0, frame = 0
+ 1160              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1161 0000 B0B5     		push	{r4, r5, r7, lr}
+ 1162              		.cfi_def_cfa_offset 16
+ 1163              		.cfi_offset 4, -16
+ 1164              		.cfi_offset 5, -12
+ 1165              		.cfi_offset 7, -8
+ 1166              		.cfi_offset 14, -4
+ 1167 0002 00AF     		add	r7, sp, #0
+ 1168              		.cfi_def_cfa_register 7
+ 181:sample.c      ****    return sqrt(Abs_volt[2]*Abs_volt[2]+Abs_volt[3]*Abs_volt[3]+Abs_volt[4]*Abs_volt[4]+Abs_volt[5]*
+ 1169              		.loc 1 181 0
+ 1170 0004 264B     		ldr	r3, .L48
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 25
 
 
- 1114 000e D3E90223 		ldrd	r2, [r3, #8]
- 1115 0012 FFF7FEFF 		bl	__aeabi_ddiv
- 1116 0016 0246     		mov	r2, r0
- 1117 0018 0B46     		mov	r3, r1
- 1118 001a 1046     		mov	r0, r2
- 1119 001c 1946     		mov	r1, r3
- 1120 001e FFF7FEFF 		bl	atan
- 1121 0022 C7E90201 		strd	r0, [r7, #8]
- 182:sample.c      ****     double angle_Ampere = atan(Im_Ampere[1]/Re_Ampere[1]);
- 1122              		.loc 1 182 0
- 1123 0026 134B     		ldr	r3, .L45+8
- 1124 0028 D3E90201 		ldrd	r0, [r3, #8]
- 1125 002c 124B     		ldr	r3, .L45+12
- 1126 002e D3E90223 		ldrd	r2, [r3, #8]
- 1127 0032 FFF7FEFF 		bl	__aeabi_ddiv
- 1128 0036 0246     		mov	r2, r0
- 1129 0038 0B46     		mov	r3, r1
- 1130 003a 1046     		mov	r0, r2
- 1131 003c 1946     		mov	r1, r3
- 1132 003e FFF7FEFF 		bl	atan
- 1133 0042 C7E90001 		strd	r0, [r7]
- 183:sample.c      ****     
- 184:sample.c      ****     return cos(angle_Ampere-angle_Volt);
- 1134              		.loc 1 184 0
- 1135 0046 D7E90001 		ldrd	r0, [r7]
- 1136 004a D7E90223 		ldrd	r2, [r7, #8]
- 1137 004e FFF7FEFF 		bl	__aeabi_dsub
- 1138 0052 0246     		mov	r2, r0
- 1139 0054 0B46     		mov	r3, r1
- 1140 0056 1046     		mov	r0, r2
- 1141 0058 1946     		mov	r1, r3
- 1142 005a FFF7FEFF 		bl	cos
- 1143 005e 0246     		mov	r2, r0
- 1144 0060 0B46     		mov	r3, r1
- 185:sample.c      ****     
- 186:sample.c      **** }
- 1145              		.loc 1 186 0
- 1146 0062 1046     		mov	r0, r2
- 1147 0064 1946     		mov	r1, r3
- 1148 0066 1037     		adds	r7, r7, #16
- 1149              		.cfi_def_cfa_offset 8
- 1150 0068 BD46     		mov	sp, r7
- 1151              		.cfi_def_cfa_register 13
- 1152              		@ sp needed
- 1153 006a 80BD     		pop	{r7, pc}
- 1154              	.L46:
- 1155              		.align	2
- 1156              	.L45:
- 1157 006c 00000000 		.word	Im_volt
- 1158 0070 00000000 		.word	Re_volt
- 1159 0074 00000000 		.word	Im_Ampere
- 1160 0078 00000000 		.word	Re_Ampere
- 1161              		.cfi_endproc
- 1162              	.LFE70:
- 1163              		.size	calculate_50Hz_PF, .-calculate_50Hz_PF
- 1164              		.section	.text.calculate_THD,"ax",%progbits
- 1165              		.align	2
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 25
+ 1171 0006 D3E90401 		ldrd	r0, [r3, #16]
+ 1172 000a 254B     		ldr	r3, .L48
+ 1173 000c D3E90423 		ldrd	r2, [r3, #16]
+ 1174 0010 FFF7FEFF 		bl	__aeabi_dmul
+ 1175 0014 0246     		mov	r2, r0
+ 1176 0016 0B46     		mov	r3, r1
+ 1177 0018 1446     		mov	r4, r2
+ 1178 001a 1D46     		mov	r5, r3
+ 1179 001c 204B     		ldr	r3, .L48
+ 1180 001e D3E90601 		ldrd	r0, [r3, #24]
+ 1181 0022 1F4B     		ldr	r3, .L48
+ 1182 0024 D3E90623 		ldrd	r2, [r3, #24]
+ 1183 0028 FFF7FEFF 		bl	__aeabi_dmul
+ 1184 002c 0246     		mov	r2, r0
+ 1185 002e 0B46     		mov	r3, r1
+ 1186 0030 2046     		mov	r0, r4
+ 1187 0032 2946     		mov	r1, r5
+ 1188 0034 FFF7FEFF 		bl	__aeabi_dadd
+ 1189 0038 0246     		mov	r2, r0
+ 1190 003a 0B46     		mov	r3, r1
+ 1191 003c 1446     		mov	r4, r2
+ 1192 003e 1D46     		mov	r5, r3
+ 1193 0040 174B     		ldr	r3, .L48
+ 1194 0042 D3E90801 		ldrd	r0, [r3, #32]
+ 1195 0046 164B     		ldr	r3, .L48
+ 1196 0048 D3E90823 		ldrd	r2, [r3, #32]
+ 1197 004c FFF7FEFF 		bl	__aeabi_dmul
+ 1198 0050 0246     		mov	r2, r0
+ 1199 0052 0B46     		mov	r3, r1
+ 1200 0054 2046     		mov	r0, r4
+ 1201 0056 2946     		mov	r1, r5
+ 1202 0058 FFF7FEFF 		bl	__aeabi_dadd
+ 1203 005c 0246     		mov	r2, r0
+ 1204 005e 0B46     		mov	r3, r1
+ 1205 0060 1446     		mov	r4, r2
+ 1206 0062 1D46     		mov	r5, r3
+ 1207 0064 0E4B     		ldr	r3, .L48
+ 1208 0066 D3E90A01 		ldrd	r0, [r3, #40]
+ 1209 006a 0D4B     		ldr	r3, .L48
+ 1210 006c D3E90A23 		ldrd	r2, [r3, #40]
+ 1211 0070 FFF7FEFF 		bl	__aeabi_dmul
+ 1212 0074 0246     		mov	r2, r0
+ 1213 0076 0B46     		mov	r3, r1
+ 1214 0078 2046     		mov	r0, r4
+ 1215 007a 2946     		mov	r1, r5
+ 1216 007c FFF7FEFF 		bl	__aeabi_dadd
+ 1217 0080 0246     		mov	r2, r0
+ 1218 0082 0B46     		mov	r3, r1
+ 1219 0084 1046     		mov	r0, r2
+ 1220 0086 1946     		mov	r1, r3
+ 1221 0088 FFF7FEFF 		bl	sqrt
+ 1222 008c 044B     		ldr	r3, .L48
+ 1223 008e D3E90223 		ldrd	r2, [r3, #8]
+ 1224 0092 FFF7FEFF 		bl	__aeabi_ddiv
+ 1225 0096 0246     		mov	r2, r0
+ 1226 0098 0B46     		mov	r3, r1
+ 182:sample.c      **** }
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 26
 
 
- 1166              		.global	calculate_THD
- 1167              		.thumb
- 1168              		.thumb_func
- 1169              		.type	calculate_THD, %function
- 1170              	calculate_THD:
- 1171              	.LFB71:
- 187:sample.c      **** 
- 188:sample.c      **** double calculate_THD()
- 189:sample.c      **** {
- 1172              		.loc 1 189 0
- 1173              		.cfi_startproc
- 1174              		@ args = 0, pretend = 0, frame = 0
- 1175              		@ frame_needed = 1, uses_anonymous_args = 0
- 1176 0000 B0B5     		push	{r4, r5, r7, lr}
- 1177              		.cfi_def_cfa_offset 16
- 1178              		.cfi_offset 4, -16
- 1179              		.cfi_offset 5, -12
- 1180              		.cfi_offset 7, -8
- 1181              		.cfi_offset 14, -4
- 1182 0002 00AF     		add	r7, sp, #0
- 1183              		.cfi_def_cfa_register 7
- 190:sample.c      ****    return sqrt(Abs_volt[2]*Abs_volt[2]+Abs_volt[3]*Abs_volt[3]+Abs_volt[4]*Abs_volt[4]+Abs_volt[5]*
- 1184              		.loc 1 190 0
- 1185 0004 264B     		ldr	r3, .L49
- 1186 0006 D3E90401 		ldrd	r0, [r3, #16]
- 1187 000a 254B     		ldr	r3, .L49
- 1188 000c D3E90423 		ldrd	r2, [r3, #16]
- 1189 0010 FFF7FEFF 		bl	__aeabi_dmul
- 1190 0014 0246     		mov	r2, r0
- 1191 0016 0B46     		mov	r3, r1
- 1192 0018 1446     		mov	r4, r2
- 1193 001a 1D46     		mov	r5, r3
- 1194 001c 204B     		ldr	r3, .L49
- 1195 001e D3E90601 		ldrd	r0, [r3, #24]
- 1196 0022 1F4B     		ldr	r3, .L49
- 1197 0024 D3E90623 		ldrd	r2, [r3, #24]
- 1198 0028 FFF7FEFF 		bl	__aeabi_dmul
- 1199 002c 0246     		mov	r2, r0
- 1200 002e 0B46     		mov	r3, r1
- 1201 0030 2046     		mov	r0, r4
- 1202 0032 2946     		mov	r1, r5
- 1203 0034 FFF7FEFF 		bl	__aeabi_dadd
- 1204 0038 0246     		mov	r2, r0
- 1205 003a 0B46     		mov	r3, r1
- 1206 003c 1446     		mov	r4, r2
- 1207 003e 1D46     		mov	r5, r3
- 1208 0040 174B     		ldr	r3, .L49
- 1209 0042 D3E90801 		ldrd	r0, [r3, #32]
- 1210 0046 164B     		ldr	r3, .L49
- 1211 0048 D3E90823 		ldrd	r2, [r3, #32]
- 1212 004c FFF7FEFF 		bl	__aeabi_dmul
- 1213 0050 0246     		mov	r2, r0
- 1214 0052 0B46     		mov	r3, r1
- 1215 0054 2046     		mov	r0, r4
- 1216 0056 2946     		mov	r1, r5
- 1217 0058 FFF7FEFF 		bl	__aeabi_dadd
- 1218 005c 0246     		mov	r2, r0
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 26
+ 1227              		.loc 1 182 0
+ 1228 009a 1046     		mov	r0, r2
+ 1229 009c 1946     		mov	r1, r3
+ 1230 009e B0BD     		pop	{r4, r5, r7, pc}
+ 1231              	.L49:
+ 1232              		.align	2
+ 1233              	.L48:
+ 1234 00a0 00000000 		.word	Abs_volt
+ 1235              		.cfi_endproc
+ 1236              	.LFE71:
+ 1237              		.size	calculate_THD, .-calculate_THD
+ 1238              		.text
+ 1239              	.Letext0:
+ 1240              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 1241              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 1242              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 1243              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 1244              		.file 6 "sample.h"
+ 1245              		.section	.debug_info,"",%progbits
+ 1246              	.Ldebug_info0:
+ 1247 0000 A8040000 		.4byte	0x4a8
+ 1248 0004 0400     		.2byte	0x4
+ 1249 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1250 000a 04       		.byte	0x4
+ 1251 000b 01       		.uleb128 0x1
+ 1252 000c C0000000 		.4byte	.LASF45
+ 1253 0010 01       		.byte	0x1
+ 1254 0011 A9000000 		.4byte	.LASF46
+ 1255 0015 7F010000 		.4byte	.LASF47
+ 1256 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1257 001d 00000000 		.4byte	0
+ 1258 0021 00000000 		.4byte	.Ldebug_line0
+ 1259 0025 02       		.uleb128 0x2
+ 1260 0026 01       		.byte	0x1
+ 1261 0027 06       		.byte	0x6
+ 1262 0028 01020000 		.4byte	.LASF0
+ 1263 002c 02       		.uleb128 0x2
+ 1264 002d 01       		.byte	0x1
+ 1265 002e 08       		.byte	0x8
+ 1266 002f 59010000 		.4byte	.LASF1
+ 1267 0033 02       		.uleb128 0x2
+ 1268 0034 02       		.byte	0x2
+ 1269 0035 05       		.byte	0x5
+ 1270 0036 31000000 		.4byte	.LASF2
+ 1271 003a 02       		.uleb128 0x2
+ 1272 003b 02       		.byte	0x2
+ 1273 003c 07       		.byte	0x7
+ 1274 003d 31020000 		.4byte	.LASF3
+ 1275 0041 03       		.uleb128 0x3
+ 1276 0042 CD020000 		.4byte	.LASF9
+ 1277 0046 02       		.byte	0x2
+ 1278 0047 3F       		.byte	0x3f
+ 1279 0048 4C000000 		.4byte	0x4c
+ 1280 004c 02       		.uleb128 0x2
+ 1281 004d 04       		.byte	0x4
+ 1282 004e 05       		.byte	0x5
+ 1283 004f 65020000 		.4byte	.LASF4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 27
 
 
- 1219 005e 0B46     		mov	r3, r1
- 1220 0060 1446     		mov	r4, r2
- 1221 0062 1D46     		mov	r5, r3
- 1222 0064 0E4B     		ldr	r3, .L49
- 1223 0066 D3E90A01 		ldrd	r0, [r3, #40]
- 1224 006a 0D4B     		ldr	r3, .L49
- 1225 006c D3E90A23 		ldrd	r2, [r3, #40]
- 1226 0070 FFF7FEFF 		bl	__aeabi_dmul
- 1227 0074 0246     		mov	r2, r0
- 1228 0076 0B46     		mov	r3, r1
- 1229 0078 2046     		mov	r0, r4
- 1230 007a 2946     		mov	r1, r5
- 1231 007c FFF7FEFF 		bl	__aeabi_dadd
- 1232 0080 0246     		mov	r2, r0
- 1233 0082 0B46     		mov	r3, r1
- 1234 0084 1046     		mov	r0, r2
- 1235 0086 1946     		mov	r1, r3
- 1236 0088 FFF7FEFF 		bl	sqrt
- 1237 008c 044B     		ldr	r3, .L49
- 1238 008e D3E90223 		ldrd	r2, [r3, #8]
- 1239 0092 FFF7FEFF 		bl	__aeabi_ddiv
- 1240 0096 0246     		mov	r2, r0
- 1241 0098 0B46     		mov	r3, r1
- 191:sample.c      **** }
- 1242              		.loc 1 191 0
- 1243 009a 1046     		mov	r0, r2
- 1244 009c 1946     		mov	r1, r3
- 1245 009e B0BD     		pop	{r4, r5, r7, pc}
- 1246              	.L50:
- 1247              		.align	2
- 1248              	.L49:
- 1249 00a0 00000000 		.word	Abs_volt
- 1250              		.cfi_endproc
- 1251              	.LFE71:
- 1252              		.size	calculate_THD, .-calculate_THD
- 1253              		.text
- 1254              	.Letext0:
- 1255              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
- 1256              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
- 1257              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 1258              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
- 1259              		.file 6 "sample.h"
- 1260              		.section	.debug_info,"",%progbits
- 1261              	.Ldebug_info0:
- 1262 0000 B6040000 		.4byte	0x4b6
- 1263 0004 0400     		.2byte	0x4
- 1264 0006 00000000 		.4byte	.Ldebug_abbrev0
- 1265 000a 04       		.byte	0x4
- 1266 000b 01       		.uleb128 0x1
- 1267 000c 2F010000 		.4byte	.LASF45
- 1268 0010 01       		.byte	0x1
- 1269 0011 18010000 		.4byte	.LASF46
- 1270 0015 2A000000 		.4byte	.LASF47
- 1271 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 1272 001d 00000000 		.4byte	0
- 1273 0021 00000000 		.4byte	.Ldebug_line0
- 1274 0025 02       		.uleb128 0x2
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 27
+ 1284 0053 02       		.uleb128 0x2
+ 1285 0054 04       		.byte	0x4
+ 1286 0055 07       		.byte	0x7
+ 1287 0056 A7020000 		.4byte	.LASF5
+ 1288 005a 02       		.uleb128 0x2
+ 1289 005b 08       		.byte	0x8
+ 1290 005c 05       		.byte	0x5
+ 1291 005d B2000000 		.4byte	.LASF6
+ 1292 0061 02       		.uleb128 0x2
+ 1293 0062 08       		.byte	0x8
+ 1294 0063 07       		.byte	0x7
+ 1295 0064 0D020000 		.4byte	.LASF7
+ 1296 0068 04       		.uleb128 0x4
+ 1297 0069 04       		.byte	0x4
+ 1298 006a 05       		.byte	0x5
+ 1299 006b 696E7400 		.ascii	"int\000"
+ 1300 006f 02       		.uleb128 0x2
+ 1301 0070 04       		.byte	0x4
+ 1302 0071 07       		.byte	0x7
+ 1303 0072 24020000 		.4byte	.LASF8
+ 1304 0076 03       		.uleb128 0x3
+ 1305 0077 6E020000 		.4byte	.LASF10
+ 1306 007b 03       		.byte	0x3
+ 1307 007c 2C       		.byte	0x2c
+ 1308 007d 41000000 		.4byte	0x41
+ 1309 0081 05       		.uleb128 0x5
+ 1310 0082 8C000000 		.4byte	.LASF11
+ 1311 0086 04       		.byte	0x4
+ 1312 0087 9201     		.2byte	0x192
+ 1313 0089 2C000000 		.4byte	0x2c
+ 1314 008d 05       		.uleb128 0x5
+ 1315 008e 73000000 		.4byte	.LASF12
+ 1316 0092 04       		.byte	0x4
+ 1317 0093 9301     		.2byte	0x193
+ 1318 0095 3A000000 		.4byte	0x3a
+ 1319 0099 02       		.uleb128 0x2
+ 1320 009a 04       		.byte	0x4
+ 1321 009b 04       		.byte	0x4
+ 1322 009c A3000000 		.4byte	.LASF13
+ 1323 00a0 02       		.uleb128 0x2
+ 1324 00a1 08       		.byte	0x8
+ 1325 00a2 04       		.byte	0x4
+ 1326 00a3 B9020000 		.4byte	.LASF14
+ 1327 00a7 02       		.uleb128 0x2
+ 1328 00a8 01       		.byte	0x1
+ 1329 00a9 08       		.byte	0x8
+ 1330 00aa 60020000 		.4byte	.LASF15
+ 1331 00ae 02       		.uleb128 0x2
+ 1332 00af 04       		.byte	0x4
+ 1333 00b0 07       		.byte	0x7
+ 1334 00b1 3B000000 		.4byte	.LASF16
+ 1335 00b5 02       		.uleb128 0x2
+ 1336 00b6 08       		.byte	0x8
+ 1337 00b7 04       		.byte	0x4
+ 1338 00b8 00000000 		.4byte	.LASF17
+ 1339 00bc 06       		.uleb128 0x6
+ 1340 00bd F5010000 		.4byte	.LASF26
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 28
 
 
- 1275 0026 01       		.byte	0x1
- 1276 0027 06       		.byte	0x6
- 1277 0028 FA010000 		.4byte	.LASF0
- 1278 002c 02       		.uleb128 0x2
- 1279 002d 01       		.byte	0x1
- 1280 002e 08       		.byte	0x8
- 1281 002f C8010000 		.4byte	.LASF1
- 1282 0033 02       		.uleb128 0x2
- 1283 0034 02       		.byte	0x2
- 1284 0035 05       		.byte	0x5
- 1285 0036 A0000000 		.4byte	.LASF2
- 1286 003a 02       		.uleb128 0x2
- 1287 003b 02       		.byte	0x2
- 1288 003c 07       		.byte	0x7
- 1289 003d 2A020000 		.4byte	.LASF3
- 1290 0041 03       		.uleb128 0x3
- 1291 0042 C6020000 		.4byte	.LASF9
- 1292 0046 02       		.byte	0x2
- 1293 0047 3F       		.byte	0x3f
- 1294 0048 4C000000 		.4byte	0x4c
- 1295 004c 02       		.uleb128 0x2
- 1296 004d 04       		.byte	0x4
- 1297 004e 05       		.byte	0x5
- 1298 004f 5E020000 		.4byte	.LASF4
- 1299 0053 02       		.uleb128 0x2
- 1300 0054 04       		.byte	0x4
- 1301 0055 07       		.byte	0x7
- 1302 0056 A0020000 		.4byte	.LASF5
- 1303 005a 02       		.uleb128 0x2
- 1304 005b 08       		.byte	0x8
- 1305 005c 05       		.byte	0x5
- 1306 005d 21010000 		.4byte	.LASF6
- 1307 0061 02       		.uleb128 0x2
- 1308 0062 08       		.byte	0x8
- 1309 0063 07       		.byte	0x7
- 1310 0064 06020000 		.4byte	.LASF7
- 1311 0068 04       		.uleb128 0x4
- 1312 0069 04       		.byte	0x4
- 1313 006a 05       		.byte	0x5
- 1314 006b 696E7400 		.ascii	"int\000"
- 1315 006f 02       		.uleb128 0x2
- 1316 0070 04       		.byte	0x4
- 1317 0071 07       		.byte	0x7
- 1318 0072 1D020000 		.4byte	.LASF8
- 1319 0076 03       		.uleb128 0x3
- 1320 0077 67020000 		.4byte	.LASF10
- 1321 007b 03       		.byte	0x3
- 1322 007c 2C       		.byte	0x2c
- 1323 007d 41000000 		.4byte	0x41
- 1324 0081 05       		.uleb128 0x5
- 1325 0082 FB000000 		.4byte	.LASF11
- 1326 0086 04       		.byte	0x4
- 1327 0087 9201     		.2byte	0x192
- 1328 0089 2C000000 		.4byte	0x2c
- 1329 008d 05       		.uleb128 0x5
- 1330 008e E2000000 		.4byte	.LASF12
- 1331 0092 04       		.byte	0x4
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 28
+ 1341 00c1 01       		.byte	0x1
+ 1342 00c2 0E       		.byte	0xe
+ 1343 00c3 00000000 		.4byte	.LFB63
+ 1344 00c7 A0000000 		.4byte	.LFE63-.LFB63
+ 1345 00cb 01       		.uleb128 0x1
+ 1346 00cc 9C       		.byte	0x9c
+ 1347 00cd 24010000 		.4byte	0x124
+ 1348 00d1 07       		.uleb128 0x7
+ 1349 00d2 07030000 		.4byte	.LASF18
+ 1350 00d6 01       		.byte	0x1
+ 1351 00d7 0E       		.byte	0xe
+ 1352 00d8 24010000 		.4byte	0x124
+ 1353 00dc 02       		.uleb128 0x2
+ 1354 00dd 91       		.byte	0x91
+ 1355 00de 5C       		.sleb128 -36
+ 1356 00df 07       		.uleb128 0x7
+ 1357 00e0 2A000000 		.4byte	.LASF19
+ 1358 00e4 01       		.byte	0x1
+ 1359 00e5 0E       		.byte	0xe
+ 1360 00e6 24010000 		.4byte	0x124
+ 1361 00ea 02       		.uleb128 0x2
+ 1362 00eb 91       		.byte	0x91
+ 1363 00ec 58       		.sleb128 -40
+ 1364 00ed 07       		.uleb128 0x7
+ 1365 00ee C0020000 		.4byte	.LASF20
+ 1366 00f2 01       		.byte	0x1
+ 1367 00f3 0E       		.byte	0xe
+ 1368 00f4 68000000 		.4byte	0x68
+ 1369 00f8 02       		.uleb128 0x2
+ 1370 00f9 91       		.byte	0x91
+ 1371 00fa 54       		.sleb128 -44
+ 1372 00fb 08       		.uleb128 0x8
+ 1373 00fc 9C000000 		.4byte	.LASF21
+ 1374 0100 01       		.byte	0x1
+ 1375 0101 11       		.byte	0x11
+ 1376 0102 68000000 		.4byte	0x68
+ 1377 0106 02       		.uleb128 0x2
+ 1378 0107 91       		.byte	0x91
+ 1379 0108 6C       		.sleb128 -20
+ 1380 0109 08       		.uleb128 0x8
+ 1381 010a 7A000000 		.4byte	.LASF22
+ 1382 010e 01       		.byte	0x1
+ 1383 010f 11       		.byte	0x11
+ 1384 0110 68000000 		.4byte	0x68
+ 1385 0114 02       		.uleb128 0x2
+ 1386 0115 91       		.byte	0x91
+ 1387 0116 68       		.sleb128 -24
+ 1388 0117 09       		.uleb128 0x9
+ 1389 0118 6900     		.ascii	"i\000"
+ 1390 011a 01       		.byte	0x1
+ 1391 011b 11       		.byte	0x11
+ 1392 011c 68000000 		.4byte	0x68
+ 1393 0120 02       		.uleb128 0x2
+ 1394 0121 91       		.byte	0x91
+ 1395 0122 64       		.sleb128 -28
+ 1396 0123 00       		.byte	0
+ 1397 0124 0A       		.uleb128 0xa
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 29
 
 
- 1332 0093 9301     		.2byte	0x193
- 1333 0095 3A000000 		.4byte	0x3a
- 1334 0099 02       		.uleb128 0x2
- 1335 009a 04       		.byte	0x4
- 1336 009b 04       		.byte	0x4
- 1337 009c 12010000 		.4byte	.LASF13
- 1338 00a0 02       		.uleb128 0x2
- 1339 00a1 08       		.byte	0x8
- 1340 00a2 04       		.byte	0x4
- 1341 00a3 B2020000 		.4byte	.LASF14
- 1342 00a7 02       		.uleb128 0x2
- 1343 00a8 01       		.byte	0x1
- 1344 00a9 08       		.byte	0x8
- 1345 00aa 59020000 		.4byte	.LASF15
- 1346 00ae 02       		.uleb128 0x2
- 1347 00af 04       		.byte	0x4
- 1348 00b0 07       		.byte	0x7
- 1349 00b1 AA000000 		.4byte	.LASF16
- 1350 00b5 02       		.uleb128 0x2
- 1351 00b6 08       		.byte	0x8
- 1352 00b7 04       		.byte	0x4
- 1353 00b8 00000000 		.4byte	.LASF17
- 1354 00bc 06       		.uleb128 0x6
- 1355 00bd EE010000 		.4byte	.LASF26
- 1356 00c1 01       		.byte	0x1
- 1357 00c2 0E       		.byte	0xe
- 1358 00c3 00000000 		.4byte	.LFB63
- 1359 00c7 A0000000 		.4byte	.LFE63-.LFB63
- 1360 00cb 01       		.uleb128 0x1
- 1361 00cc 9C       		.byte	0x9c
- 1362 00cd 24010000 		.4byte	0x124
- 1363 00d1 07       		.uleb128 0x7
- 1364 00d2 00030000 		.4byte	.LASF18
- 1365 00d6 01       		.byte	0x1
- 1366 00d7 0E       		.byte	0xe
- 1367 00d8 24010000 		.4byte	0x124
- 1368 00dc 02       		.uleb128 0x2
- 1369 00dd 91       		.byte	0x91
- 1370 00de 5C       		.sleb128 -36
- 1371 00df 07       		.uleb128 0x7
- 1372 00e0 99000000 		.4byte	.LASF19
- 1373 00e4 01       		.byte	0x1
- 1374 00e5 0E       		.byte	0xe
- 1375 00e6 24010000 		.4byte	0x124
- 1376 00ea 02       		.uleb128 0x2
- 1377 00eb 91       		.byte	0x91
- 1378 00ec 58       		.sleb128 -40
- 1379 00ed 07       		.uleb128 0x7
- 1380 00ee B9020000 		.4byte	.LASF20
- 1381 00f2 01       		.byte	0x1
- 1382 00f3 0E       		.byte	0xe
- 1383 00f4 68000000 		.4byte	0x68
- 1384 00f8 02       		.uleb128 0x2
- 1385 00f9 91       		.byte	0x91
- 1386 00fa 54       		.sleb128 -44
- 1387 00fb 08       		.uleb128 0x8
- 1388 00fc 0B010000 		.4byte	.LASF21
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 29
+ 1398 0125 04       		.byte	0x4
+ 1399 0126 68000000 		.4byte	0x68
+ 1400 012a 0B       		.uleb128 0xb
+ 1401 012b 5E000000 		.4byte	.LASF48
+ 1402 012f 01       		.byte	0x1
+ 1403 0130 2D       		.byte	0x2d
+ 1404 0131 00000000 		.4byte	.LFB64
+ 1405 0135 EC010000 		.4byte	.LFE64-.LFB64
+ 1406 0139 01       		.uleb128 0x1
+ 1407 013a 9C       		.byte	0x9c
+ 1408 013b 4C010000 		.4byte	0x14c
+ 1409 013f 09       		.uleb128 0x9
+ 1410 0140 7000     		.ascii	"p\000"
+ 1411 0142 01       		.byte	0x1
+ 1412 0143 30       		.byte	0x30
+ 1413 0144 68000000 		.4byte	0x68
+ 1414 0148 02       		.uleb128 0x2
+ 1415 0149 91       		.byte	0x91
+ 1416 014a 74       		.sleb128 -12
+ 1417 014b 00       		.byte	0
+ 1418 014c 0C       		.uleb128 0xc
+ 1419 014d 96020000 		.4byte	.LASF24
+ 1420 0151 01       		.byte	0x1
+ 1421 0152 4A       		.byte	0x4a
+ 1422 0153 81000000 		.4byte	0x81
+ 1423 0157 00000000 		.4byte	.LFB65
+ 1424 015b 26000000 		.4byte	.LFE65-.LFB65
+ 1425 015f 01       		.uleb128 0x1
+ 1426 0160 9C       		.byte	0x9c
+ 1427 0161 82010000 		.4byte	0x182
+ 1428 0165 0D       		.uleb128 0xd
+ 1429 0166 6E756D00 		.ascii	"num\000"
+ 1430 016a 01       		.byte	0x1
+ 1431 016b 4A       		.byte	0x4a
+ 1432 016c A0000000 		.4byte	0xa0
+ 1433 0170 02       		.uleb128 0x2
+ 1434 0171 91       		.byte	0x91
+ 1435 0172 68       		.sleb128 -24
+ 1436 0173 08       		.uleb128 0x8
+ 1437 0174 6C000000 		.4byte	.LASF23
+ 1438 0178 01       		.byte	0x1
+ 1439 0179 4C       		.byte	0x4c
+ 1440 017a 8D000000 		.4byte	0x8d
+ 1441 017e 02       		.uleb128 0x2
+ 1442 017f 91       		.byte	0x91
+ 1443 0180 76       		.sleb128 -10
+ 1444 0181 00       		.byte	0
+ 1445 0182 0C       		.uleb128 0xc
+ 1446 0183 C5020000 		.4byte	.LASF25
+ 1447 0187 01       		.byte	0x1
+ 1448 0188 52       		.byte	0x52
+ 1449 0189 81000000 		.4byte	0x81
+ 1450 018d 00000000 		.4byte	.LFB66
+ 1451 0191 22000000 		.4byte	.LFE66-.LFB66
+ 1452 0195 01       		.uleb128 0x1
+ 1453 0196 9C       		.byte	0x9c
+ 1454 0197 B8010000 		.4byte	0x1b8
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 30
 
 
- 1389 0100 01       		.byte	0x1
- 1390 0101 11       		.byte	0x11
- 1391 0102 68000000 		.4byte	0x68
- 1392 0106 02       		.uleb128 0x2
- 1393 0107 91       		.byte	0x91
- 1394 0108 6C       		.sleb128 -20
- 1395 0109 08       		.uleb128 0x8
- 1396 010a E9000000 		.4byte	.LASF22
- 1397 010e 01       		.byte	0x1
- 1398 010f 11       		.byte	0x11
- 1399 0110 68000000 		.4byte	0x68
- 1400 0114 02       		.uleb128 0x2
- 1401 0115 91       		.byte	0x91
- 1402 0116 68       		.sleb128 -24
- 1403 0117 09       		.uleb128 0x9
- 1404 0118 6900     		.ascii	"i\000"
- 1405 011a 01       		.byte	0x1
- 1406 011b 11       		.byte	0x11
- 1407 011c 68000000 		.4byte	0x68
- 1408 0120 02       		.uleb128 0x2
- 1409 0121 91       		.byte	0x91
- 1410 0122 64       		.sleb128 -28
- 1411 0123 00       		.byte	0
- 1412 0124 0A       		.uleb128 0xa
- 1413 0125 04       		.byte	0x4
- 1414 0126 68000000 		.4byte	0x68
- 1415 012a 0B       		.uleb128 0xb
- 1416 012b CD000000 		.4byte	.LASF48
- 1417 012f 01       		.byte	0x1
- 1418 0130 2D       		.byte	0x2d
- 1419 0131 00000000 		.4byte	.LFB64
- 1420 0135 F4010000 		.4byte	.LFE64-.LFB64
- 1421 0139 01       		.uleb128 0x1
- 1422 013a 9C       		.byte	0x9c
- 1423 013b 4C010000 		.4byte	0x14c
- 1424 013f 09       		.uleb128 0x9
- 1425 0140 7000     		.ascii	"p\000"
- 1426 0142 01       		.byte	0x1
- 1427 0143 30       		.byte	0x30
- 1428 0144 68000000 		.4byte	0x68
- 1429 0148 02       		.uleb128 0x2
- 1430 0149 91       		.byte	0x91
- 1431 014a 74       		.sleb128 -12
- 1432 014b 00       		.byte	0
- 1433 014c 0C       		.uleb128 0xc
- 1434 014d 8F020000 		.4byte	.LASF24
- 1435 0151 01       		.byte	0x1
- 1436 0152 4A       		.byte	0x4a
- 1437 0153 81000000 		.4byte	0x81
- 1438 0157 00000000 		.4byte	.LFB65
- 1439 015b 26000000 		.4byte	.LFE65-.LFB65
- 1440 015f 01       		.uleb128 0x1
- 1441 0160 9C       		.byte	0x9c
- 1442 0161 82010000 		.4byte	0x182
- 1443 0165 0D       		.uleb128 0xd
- 1444 0166 6E756D00 		.ascii	"num\000"
- 1445 016a 01       		.byte	0x1
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 30
+ 1455 019b 0D       		.uleb128 0xd
+ 1456 019c 6E756D00 		.ascii	"num\000"
+ 1457 01a0 01       		.byte	0x1
+ 1458 01a1 52       		.byte	0x52
+ 1459 01a2 A0000000 		.4byte	0xa0
+ 1460 01a6 02       		.uleb128 0x2
+ 1461 01a7 91       		.byte	0x91
+ 1462 01a8 68       		.sleb128 -24
+ 1463 01a9 08       		.uleb128 0x8
+ 1464 01aa 6C000000 		.4byte	.LASF23
+ 1465 01ae 01       		.byte	0x1
+ 1466 01af 54       		.byte	0x54
+ 1467 01b0 8D000000 		.4byte	0x8d
+ 1468 01b4 02       		.uleb128 0x2
+ 1469 01b5 91       		.byte	0x91
+ 1470 01b6 76       		.sleb128 -10
+ 1471 01b7 00       		.byte	0
+ 1472 01b8 0E       		.uleb128 0xe
+ 1473 01b9 46465400 		.ascii	"FFT\000"
+ 1474 01bd 01       		.byte	0x1
+ 1475 01be 5C       		.byte	0x5c
+ 1476 01bf 00000000 		.4byte	.LFB67
+ 1477 01c3 2C040000 		.4byte	.LFE67-.LFB67
+ 1478 01c7 01       		.uleb128 0x1
+ 1479 01c8 9C       		.byte	0x9c
+ 1480 01c9 F0020000 		.4byte	0x2f0
+ 1481 01cd 0D       		.uleb128 0xd
+ 1482 01ce 6D00     		.ascii	"m\000"
+ 1483 01d0 01       		.byte	0x1
+ 1484 01d1 5C       		.byte	0x5c
+ 1485 01d2 4C000000 		.4byte	0x4c
+ 1486 01d6 03       		.uleb128 0x3
+ 1487 01d7 91       		.byte	0x91
+ 1488 01d8 F47E     		.sleb128 -140
+ 1489 01da 0D       		.uleb128 0xd
+ 1490 01db 7800     		.ascii	"x\000"
+ 1491 01dd 01       		.byte	0x1
+ 1492 01de 5C       		.byte	0x5c
+ 1493 01df F0020000 		.4byte	0x2f0
+ 1494 01e3 03       		.uleb128 0x3
+ 1495 01e4 91       		.byte	0x91
+ 1496 01e5 F07E     		.sleb128 -144
+ 1497 01e7 0D       		.uleb128 0xd
+ 1498 01e8 7900     		.ascii	"y\000"
+ 1499 01ea 01       		.byte	0x1
+ 1500 01eb 5C       		.byte	0x5c
+ 1501 01ec F0020000 		.4byte	0x2f0
+ 1502 01f0 03       		.uleb128 0x3
+ 1503 01f1 91       		.byte	0x91
+ 1504 01f2 EC7E     		.sleb128 -148
+ 1505 01f4 0D       		.uleb128 0xd
+ 1506 01f5 7500     		.ascii	"u\000"
+ 1507 01f7 01       		.byte	0x1
+ 1508 01f8 5C       		.byte	0x5c
+ 1509 01f9 F0020000 		.4byte	0x2f0
+ 1510 01fd 03       		.uleb128 0x3
+ 1511 01fe 91       		.byte	0x91
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 31
 
 
- 1446 016b 4A       		.byte	0x4a
- 1447 016c A0000000 		.4byte	0xa0
- 1448 0170 02       		.uleb128 0x2
- 1449 0171 91       		.byte	0x91
- 1450 0172 68       		.sleb128 -24
- 1451 0173 08       		.uleb128 0x8
- 1452 0174 DB000000 		.4byte	.LASF23
- 1453 0178 01       		.byte	0x1
- 1454 0179 4C       		.byte	0x4c
- 1455 017a 8D000000 		.4byte	0x8d
- 1456 017e 02       		.uleb128 0x2
- 1457 017f 91       		.byte	0x91
- 1458 0180 76       		.sleb128 -10
- 1459 0181 00       		.byte	0
- 1460 0182 0C       		.uleb128 0xc
- 1461 0183 BE020000 		.4byte	.LASF25
- 1462 0187 01       		.byte	0x1
- 1463 0188 52       		.byte	0x52
- 1464 0189 81000000 		.4byte	0x81
- 1465 018d 00000000 		.4byte	.LFB66
- 1466 0191 22000000 		.4byte	.LFE66-.LFB66
- 1467 0195 01       		.uleb128 0x1
- 1468 0196 9C       		.byte	0x9c
- 1469 0197 B8010000 		.4byte	0x1b8
- 1470 019b 0D       		.uleb128 0xd
- 1471 019c 6E756D00 		.ascii	"num\000"
- 1472 01a0 01       		.byte	0x1
- 1473 01a1 52       		.byte	0x52
- 1474 01a2 A0000000 		.4byte	0xa0
- 1475 01a6 02       		.uleb128 0x2
- 1476 01a7 91       		.byte	0x91
- 1477 01a8 68       		.sleb128 -24
- 1478 01a9 08       		.uleb128 0x8
- 1479 01aa DB000000 		.4byte	.LASF23
- 1480 01ae 01       		.byte	0x1
- 1481 01af 54       		.byte	0x54
- 1482 01b0 8D000000 		.4byte	0x8d
- 1483 01b4 02       		.uleb128 0x2
- 1484 01b5 91       		.byte	0x91
- 1485 01b6 76       		.sleb128 -10
- 1486 01b7 00       		.byte	0
- 1487 01b8 0E       		.uleb128 0xe
- 1488 01b9 46465400 		.ascii	"FFT\000"
- 1489 01bd 01       		.byte	0x1
- 1490 01be 5C       		.byte	0x5c
- 1491 01bf 00000000 		.4byte	.LFB67
- 1492 01c3 3C040000 		.4byte	.LFE67-.LFB67
- 1493 01c7 01       		.uleb128 0x1
- 1494 01c8 9C       		.byte	0x9c
- 1495 01c9 FE020000 		.4byte	0x2fe
- 1496 01cd 0D       		.uleb128 0xd
- 1497 01ce 64697200 		.ascii	"dir\000"
- 1498 01d2 01       		.byte	0x1
- 1499 01d3 5C       		.byte	0x5c
- 1500 01d4 68000000 		.4byte	0x68
- 1501 01d8 03       		.uleb128 0x3
- 1502 01d9 91       		.byte	0x91
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 31
+ 1512 01ff E87E     		.sleb128 -152
+ 1513 0201 09       		.uleb128 0x9
+ 1514 0202 6E00     		.ascii	"n\000"
+ 1515 0204 01       		.byte	0x1
+ 1516 0205 61       		.byte	0x61
+ 1517 0206 4C000000 		.4byte	0x4c
+ 1518 020a 02       		.uleb128 0x2
+ 1519 020b 91       		.byte	0x91
+ 1520 020c 64       		.sleb128 -28
+ 1521 020d 09       		.uleb128 0x9
+ 1522 020e 6900     		.ascii	"i\000"
+ 1523 0210 01       		.byte	0x1
+ 1524 0211 61       		.byte	0x61
+ 1525 0212 4C000000 		.4byte	0x4c
+ 1526 0216 02       		.uleb128 0x2
+ 1527 0217 91       		.byte	0x91
+ 1528 0218 60       		.sleb128 -32
+ 1529 0219 09       		.uleb128 0x9
+ 1530 021a 693100   		.ascii	"i1\000"
+ 1531 021d 01       		.byte	0x1
+ 1532 021e 61       		.byte	0x61
+ 1533 021f 4C000000 		.4byte	0x4c
+ 1534 0223 03       		.uleb128 0x3
+ 1535 0224 91       		.byte	0x91
+ 1536 0225 907F     		.sleb128 -112
+ 1537 0227 09       		.uleb128 0x9
+ 1538 0228 6A00     		.ascii	"j\000"
+ 1539 022a 01       		.byte	0x1
+ 1540 022b 61       		.byte	0x61
+ 1541 022c 4C000000 		.4byte	0x4c
+ 1542 0230 02       		.uleb128 0x2
+ 1543 0231 91       		.byte	0x91
+ 1544 0232 5C       		.sleb128 -36
+ 1545 0233 09       		.uleb128 0x9
+ 1546 0234 6B00     		.ascii	"k\000"
+ 1547 0236 01       		.byte	0x1
+ 1548 0237 61       		.byte	0x61
+ 1549 0238 4C000000 		.4byte	0x4c
+ 1550 023c 02       		.uleb128 0x2
+ 1551 023d 91       		.byte	0x91
+ 1552 023e 58       		.sleb128 -40
+ 1553 023f 09       		.uleb128 0x9
+ 1554 0240 693200   		.ascii	"i2\000"
+ 1555 0243 01       		.byte	0x1
+ 1556 0244 61       		.byte	0x61
+ 1557 0245 4C000000 		.4byte	0x4c
+ 1558 0249 03       		.uleb128 0x3
+ 1559 024a 91       		.byte	0x91
+ 1560 024b AC7F     		.sleb128 -84
+ 1561 024d 09       		.uleb128 0x9
+ 1562 024e 6C00     		.ascii	"l\000"
+ 1563 0250 01       		.byte	0x1
+ 1564 0251 61       		.byte	0x61
+ 1565 0252 4C000000 		.4byte	0x4c
+ 1566 0256 02       		.uleb128 0x2
+ 1567 0257 91       		.byte	0x91
+ 1568 0258 54       		.sleb128 -44
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 32
 
 
- 1503 01da F47E     		.sleb128 -140
- 1504 01dc 0D       		.uleb128 0xd
- 1505 01dd 6D00     		.ascii	"m\000"
- 1506 01df 01       		.byte	0x1
- 1507 01e0 5C       		.byte	0x5c
- 1508 01e1 4C000000 		.4byte	0x4c
- 1509 01e5 03       		.uleb128 0x3
- 1510 01e6 91       		.byte	0x91
- 1511 01e7 F07E     		.sleb128 -144
- 1512 01e9 0D       		.uleb128 0xd
- 1513 01ea 7800     		.ascii	"x\000"
- 1514 01ec 01       		.byte	0x1
- 1515 01ed 5C       		.byte	0x5c
- 1516 01ee FE020000 		.4byte	0x2fe
- 1517 01f2 03       		.uleb128 0x3
- 1518 01f3 91       		.byte	0x91
- 1519 01f4 EC7E     		.sleb128 -148
- 1520 01f6 0D       		.uleb128 0xd
- 1521 01f7 7900     		.ascii	"y\000"
- 1522 01f9 01       		.byte	0x1
- 1523 01fa 5C       		.byte	0x5c
- 1524 01fb FE020000 		.4byte	0x2fe
- 1525 01ff 03       		.uleb128 0x3
- 1526 0200 91       		.byte	0x91
- 1527 0201 E87E     		.sleb128 -152
- 1528 0203 0D       		.uleb128 0xd
- 1529 0204 7500     		.ascii	"u\000"
- 1530 0206 01       		.byte	0x1
- 1531 0207 5C       		.byte	0x5c
- 1532 0208 FE020000 		.4byte	0x2fe
- 1533 020c 02       		.uleb128 0x2
- 1534 020d 91       		.byte	0x91
- 1535 020e 00       		.sleb128 0
- 1536 020f 09       		.uleb128 0x9
- 1537 0210 6E00     		.ascii	"n\000"
- 1538 0212 01       		.byte	0x1
- 1539 0213 61       		.byte	0x61
- 1540 0214 4C000000 		.4byte	0x4c
- 1541 0218 02       		.uleb128 0x2
- 1542 0219 91       		.byte	0x91
- 1543 021a 64       		.sleb128 -28
- 1544 021b 09       		.uleb128 0x9
- 1545 021c 6900     		.ascii	"i\000"
- 1546 021e 01       		.byte	0x1
- 1547 021f 61       		.byte	0x61
- 1548 0220 4C000000 		.4byte	0x4c
- 1549 0224 02       		.uleb128 0x2
- 1550 0225 91       		.byte	0x91
- 1551 0226 60       		.sleb128 -32
- 1552 0227 09       		.uleb128 0x9
- 1553 0228 693100   		.ascii	"i1\000"
- 1554 022b 01       		.byte	0x1
- 1555 022c 61       		.byte	0x61
- 1556 022d 4C000000 		.4byte	0x4c
- 1557 0231 03       		.uleb128 0x3
- 1558 0232 91       		.byte	0x91
- 1559 0233 907F     		.sleb128 -112
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 32
+ 1569 0259 09       		.uleb128 0x9
+ 1570 025a 6C3100   		.ascii	"l1\000"
+ 1571 025d 01       		.byte	0x1
+ 1572 025e 61       		.byte	0x61
+ 1573 025f 4C000000 		.4byte	0x4c
+ 1574 0263 03       		.uleb128 0x3
+ 1575 0264 91       		.byte	0x91
+ 1576 0265 947F     		.sleb128 -108
+ 1577 0267 09       		.uleb128 0x9
+ 1578 0268 6C3200   		.ascii	"l2\000"
+ 1579 026b 01       		.byte	0x1
+ 1580 026c 61       		.byte	0x61
+ 1581 026d 4C000000 		.4byte	0x4c
+ 1582 0271 02       		.uleb128 0x2
+ 1583 0272 91       		.byte	0x91
+ 1584 0273 50       		.sleb128 -48
+ 1585 0274 09       		.uleb128 0x9
+ 1586 0275 633100   		.ascii	"c1\000"
+ 1587 0278 01       		.byte	0x1
+ 1588 0279 62       		.byte	0x62
+ 1589 027a A0000000 		.4byte	0xa0
+ 1590 027e 02       		.uleb128 0x2
+ 1591 027f 91       		.byte	0x91
+ 1592 0280 48       		.sleb128 -56
+ 1593 0281 09       		.uleb128 0x9
+ 1594 0282 633200   		.ascii	"c2\000"
+ 1595 0285 01       		.byte	0x1
+ 1596 0286 62       		.byte	0x62
+ 1597 0287 A0000000 		.4byte	0xa0
+ 1598 028b 02       		.uleb128 0x2
+ 1599 028c 91       		.byte	0x91
+ 1600 028d 40       		.sleb128 -64
+ 1601 028e 09       		.uleb128 0x9
+ 1602 028f 747800   		.ascii	"tx\000"
+ 1603 0292 01       		.byte	0x1
+ 1604 0293 62       		.byte	0x62
+ 1605 0294 A0000000 		.4byte	0xa0
+ 1606 0298 03       		.uleb128 0x3
+ 1607 0299 91       		.byte	0x91
+ 1608 029a A07F     		.sleb128 -96
+ 1609 029c 09       		.uleb128 0x9
+ 1610 029d 747900   		.ascii	"ty\000"
+ 1611 02a0 01       		.byte	0x1
+ 1612 02a1 62       		.byte	0x62
+ 1613 02a2 A0000000 		.4byte	0xa0
+ 1614 02a6 03       		.uleb128 0x3
+ 1615 02a7 91       		.byte	0x91
+ 1616 02a8 987F     		.sleb128 -104
+ 1617 02aa 09       		.uleb128 0x9
+ 1618 02ab 743100   		.ascii	"t1\000"
+ 1619 02ae 01       		.byte	0x1
+ 1620 02af 62       		.byte	0x62
+ 1621 02b0 A0000000 		.4byte	0xa0
+ 1622 02b4 03       		.uleb128 0x3
+ 1623 02b5 91       		.byte	0x91
+ 1624 02b6 887F     		.sleb128 -120
+ 1625 02b8 09       		.uleb128 0x9
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 33
 
 
- 1560 0235 09       		.uleb128 0x9
- 1561 0236 6A00     		.ascii	"j\000"
- 1562 0238 01       		.byte	0x1
- 1563 0239 61       		.byte	0x61
- 1564 023a 4C000000 		.4byte	0x4c
- 1565 023e 02       		.uleb128 0x2
- 1566 023f 91       		.byte	0x91
- 1567 0240 5C       		.sleb128 -36
- 1568 0241 09       		.uleb128 0x9
- 1569 0242 6B00     		.ascii	"k\000"
- 1570 0244 01       		.byte	0x1
- 1571 0245 61       		.byte	0x61
- 1572 0246 4C000000 		.4byte	0x4c
- 1573 024a 02       		.uleb128 0x2
- 1574 024b 91       		.byte	0x91
- 1575 024c 58       		.sleb128 -40
- 1576 024d 09       		.uleb128 0x9
- 1577 024e 693200   		.ascii	"i2\000"
- 1578 0251 01       		.byte	0x1
- 1579 0252 61       		.byte	0x61
- 1580 0253 4C000000 		.4byte	0x4c
- 1581 0257 03       		.uleb128 0x3
- 1582 0258 91       		.byte	0x91
- 1583 0259 AC7F     		.sleb128 -84
- 1584 025b 09       		.uleb128 0x9
- 1585 025c 6C00     		.ascii	"l\000"
- 1586 025e 01       		.byte	0x1
- 1587 025f 61       		.byte	0x61
- 1588 0260 4C000000 		.4byte	0x4c
- 1589 0264 02       		.uleb128 0x2
- 1590 0265 91       		.byte	0x91
- 1591 0266 54       		.sleb128 -44
- 1592 0267 09       		.uleb128 0x9
- 1593 0268 6C3100   		.ascii	"l1\000"
- 1594 026b 01       		.byte	0x1
- 1595 026c 61       		.byte	0x61
- 1596 026d 4C000000 		.4byte	0x4c
- 1597 0271 03       		.uleb128 0x3
- 1598 0272 91       		.byte	0x91
- 1599 0273 947F     		.sleb128 -108
- 1600 0275 09       		.uleb128 0x9
- 1601 0276 6C3200   		.ascii	"l2\000"
- 1602 0279 01       		.byte	0x1
- 1603 027a 61       		.byte	0x61
- 1604 027b 4C000000 		.4byte	0x4c
- 1605 027f 02       		.uleb128 0x2
- 1606 0280 91       		.byte	0x91
- 1607 0281 50       		.sleb128 -48
- 1608 0282 09       		.uleb128 0x9
- 1609 0283 633100   		.ascii	"c1\000"
- 1610 0286 01       		.byte	0x1
- 1611 0287 62       		.byte	0x62
- 1612 0288 A0000000 		.4byte	0xa0
- 1613 028c 02       		.uleb128 0x2
- 1614 028d 91       		.byte	0x91
- 1615 028e 48       		.sleb128 -56
- 1616 028f 09       		.uleb128 0x9
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 33
+ 1626 02b9 743200   		.ascii	"t2\000"
+ 1627 02bc 01       		.byte	0x1
+ 1628 02bd 62       		.byte	0x62
+ 1629 02be A0000000 		.4byte	0xa0
+ 1630 02c2 03       		.uleb128 0x3
+ 1631 02c3 91       		.byte	0x91
+ 1632 02c4 807F     		.sleb128 -128
+ 1633 02c6 09       		.uleb128 0x9
+ 1634 02c7 753100   		.ascii	"u1\000"
+ 1635 02ca 01       		.byte	0x1
+ 1636 02cb 62       		.byte	0x62
+ 1637 02cc A0000000 		.4byte	0xa0
+ 1638 02d0 03       		.uleb128 0x3
+ 1639 02d1 91       		.byte	0x91
+ 1640 02d2 B87F     		.sleb128 -72
+ 1641 02d4 09       		.uleb128 0x9
+ 1642 02d5 753200   		.ascii	"u2\000"
+ 1643 02d8 01       		.byte	0x1
+ 1644 02d9 62       		.byte	0x62
+ 1645 02da A0000000 		.4byte	0xa0
+ 1646 02de 03       		.uleb128 0x3
+ 1647 02df 91       		.byte	0x91
+ 1648 02e0 B07F     		.sleb128 -80
+ 1649 02e2 09       		.uleb128 0x9
+ 1650 02e3 7A00     		.ascii	"z\000"
+ 1651 02e5 01       		.byte	0x1
+ 1652 02e6 62       		.byte	0x62
+ 1653 02e7 A0000000 		.4byte	0xa0
+ 1654 02eb 03       		.uleb128 0x3
+ 1655 02ec 91       		.byte	0x91
+ 1656 02ed F87E     		.sleb128 -136
+ 1657 02ef 00       		.byte	0
+ 1658 02f0 0A       		.uleb128 0xa
+ 1659 02f1 04       		.byte	0x4
+ 1660 02f2 A0000000 		.4byte	0xa0
+ 1661 02f6 0F       		.uleb128 0xf
+ 1662 02f7 4D020000 		.4byte	.LASF27
+ 1663 02fb 01       		.byte	0x1
+ 1664 02fc A0       		.byte	0xa0
+ 1665 02fd A0000000 		.4byte	0xa0
+ 1666 0301 00000000 		.4byte	.LFB68
+ 1667 0305 1C000000 		.4byte	.LFE68-.LFB68
+ 1668 0309 01       		.uleb128 0x1
+ 1669 030a 9C       		.byte	0x9c
+ 1670 030b 1C030000 		.4byte	0x31c
+ 1671 030f 0D       		.uleb128 0xd
+ 1672 0310 7500     		.ascii	"u\000"
+ 1673 0312 01       		.byte	0x1
+ 1674 0313 A0       		.byte	0xa0
+ 1675 0314 F0020000 		.4byte	0x2f0
+ 1676 0318 02       		.uleb128 0x2
+ 1677 0319 91       		.byte	0x91
+ 1678 031a 74       		.sleb128 -12
+ 1679 031b 00       		.byte	0
+ 1680 031c 0C       		.uleb128 0xc
+ 1681 031d 17000000 		.4byte	.LASF28
+ 1682 0321 01       		.byte	0x1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 34
 
 
- 1617 0290 633200   		.ascii	"c2\000"
- 1618 0293 01       		.byte	0x1
- 1619 0294 62       		.byte	0x62
- 1620 0295 A0000000 		.4byte	0xa0
- 1621 0299 02       		.uleb128 0x2
- 1622 029a 91       		.byte	0x91
- 1623 029b 40       		.sleb128 -64
- 1624 029c 09       		.uleb128 0x9
- 1625 029d 747800   		.ascii	"tx\000"
- 1626 02a0 01       		.byte	0x1
- 1627 02a1 62       		.byte	0x62
- 1628 02a2 A0000000 		.4byte	0xa0
- 1629 02a6 03       		.uleb128 0x3
- 1630 02a7 91       		.byte	0x91
- 1631 02a8 A07F     		.sleb128 -96
- 1632 02aa 09       		.uleb128 0x9
- 1633 02ab 747900   		.ascii	"ty\000"
- 1634 02ae 01       		.byte	0x1
- 1635 02af 62       		.byte	0x62
- 1636 02b0 A0000000 		.4byte	0xa0
- 1637 02b4 03       		.uleb128 0x3
- 1638 02b5 91       		.byte	0x91
- 1639 02b6 987F     		.sleb128 -104
- 1640 02b8 09       		.uleb128 0x9
- 1641 02b9 743100   		.ascii	"t1\000"
- 1642 02bc 01       		.byte	0x1
- 1643 02bd 62       		.byte	0x62
- 1644 02be A0000000 		.4byte	0xa0
- 1645 02c2 03       		.uleb128 0x3
- 1646 02c3 91       		.byte	0x91
- 1647 02c4 887F     		.sleb128 -120
- 1648 02c6 09       		.uleb128 0x9
- 1649 02c7 743200   		.ascii	"t2\000"
- 1650 02ca 01       		.byte	0x1
- 1651 02cb 62       		.byte	0x62
- 1652 02cc A0000000 		.4byte	0xa0
- 1653 02d0 03       		.uleb128 0x3
- 1654 02d1 91       		.byte	0x91
- 1655 02d2 807F     		.sleb128 -128
- 1656 02d4 09       		.uleb128 0x9
- 1657 02d5 753100   		.ascii	"u1\000"
- 1658 02d8 01       		.byte	0x1
- 1659 02d9 62       		.byte	0x62
- 1660 02da A0000000 		.4byte	0xa0
- 1661 02de 03       		.uleb128 0x3
- 1662 02df 91       		.byte	0x91
- 1663 02e0 B87F     		.sleb128 -72
- 1664 02e2 09       		.uleb128 0x9
- 1665 02e3 753200   		.ascii	"u2\000"
- 1666 02e6 01       		.byte	0x1
- 1667 02e7 62       		.byte	0x62
- 1668 02e8 A0000000 		.4byte	0xa0
- 1669 02ec 03       		.uleb128 0x3
- 1670 02ed 91       		.byte	0x91
- 1671 02ee B07F     		.sleb128 -80
- 1672 02f0 09       		.uleb128 0x9
- 1673 02f1 7A00     		.ascii	"z\000"
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 34
+ 1683 0322 A5       		.byte	0xa5
+ 1684 0323 A0000000 		.4byte	0xa0
+ 1685 0327 00000000 		.4byte	.LFB69
+ 1686 032b 38000000 		.4byte	.LFE69-.LFB69
+ 1687 032f 01       		.uleb128 0x1
+ 1688 0330 9C       		.byte	0x9c
+ 1689 0331 42030000 		.4byte	0x342
+ 1690 0335 0D       		.uleb128 0xd
+ 1691 0336 7500     		.ascii	"u\000"
+ 1692 0338 01       		.byte	0x1
+ 1693 0339 A5       		.byte	0xa5
+ 1694 033a F0020000 		.4byte	0x2f0
+ 1695 033e 02       		.uleb128 0x2
+ 1696 033f 91       		.byte	0x91
+ 1697 0340 74       		.sleb128 -12
+ 1698 0341 00       		.byte	0
+ 1699 0342 10       		.uleb128 0x10
+ 1700 0343 84020000 		.4byte	.LASF29
+ 1701 0347 01       		.byte	0x1
+ 1702 0348 AA       		.byte	0xaa
+ 1703 0349 A0000000 		.4byte	0xa0
+ 1704 034d 00000000 		.4byte	.LFB70
+ 1705 0351 7C000000 		.4byte	.LFE70-.LFB70
+ 1706 0355 01       		.uleb128 0x1
+ 1707 0356 9C       		.byte	0x9c
+ 1708 0357 78030000 		.4byte	0x378
+ 1709 035b 08       		.uleb128 0x8
+ 1710 035c 0C000000 		.4byte	.LASF30
+ 1711 0360 01       		.byte	0x1
+ 1712 0361 AC       		.byte	0xac
+ 1713 0362 A0000000 		.4byte	0xa0
+ 1714 0366 02       		.uleb128 0x2
+ 1715 0367 91       		.byte	0x91
+ 1716 0368 70       		.sleb128 -16
+ 1717 0369 08       		.uleb128 0x8
+ 1718 036a 67010000 		.4byte	.LASF31
+ 1719 036e 01       		.byte	0x1
+ 1720 036f AD       		.byte	0xad
+ 1721 0370 A0000000 		.4byte	0xa0
+ 1722 0374 02       		.uleb128 0x2
+ 1723 0375 91       		.byte	0x91
+ 1724 0376 68       		.sleb128 -24
+ 1725 0377 00       		.byte	0
+ 1726 0378 11       		.uleb128 0x11
+ 1727 0379 76020000 		.4byte	.LASF49
+ 1728 037d 01       		.byte	0x1
+ 1729 037e B3       		.byte	0xb3
+ 1730 037f A0000000 		.4byte	0xa0
+ 1731 0383 00000000 		.4byte	.LFB71
+ 1732 0387 A4000000 		.4byte	.LFE71-.LFB71
+ 1733 038b 01       		.uleb128 0x1
+ 1734 038c 9C       		.byte	0x9c
+ 1735 038d 12       		.uleb128 0x12
+ 1736 038e E4020000 		.4byte	.LASF32
+ 1737 0392 05       		.byte	0x5
+ 1738 0393 9606     		.2byte	0x696
+ 1739 0395 99030000 		.4byte	0x399
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 35
 
 
- 1674 02f3 01       		.byte	0x1
- 1675 02f4 62       		.byte	0x62
- 1676 02f5 A0000000 		.4byte	0xa0
- 1677 02f9 03       		.uleb128 0x3
- 1678 02fa 91       		.byte	0x91
- 1679 02fb F87E     		.sleb128 -136
- 1680 02fd 00       		.byte	0
- 1681 02fe 0A       		.uleb128 0xa
- 1682 02ff 04       		.byte	0x4
- 1683 0300 A0000000 		.4byte	0xa0
- 1684 0304 0F       		.uleb128 0xf
- 1685 0305 46020000 		.4byte	.LASF27
- 1686 0309 01       		.byte	0x1
- 1687 030a A9       		.byte	0xa9
- 1688 030b A0000000 		.4byte	0xa0
- 1689 030f 00000000 		.4byte	.LFB68
- 1690 0313 1C000000 		.4byte	.LFE68-.LFB68
- 1691 0317 01       		.uleb128 0x1
- 1692 0318 9C       		.byte	0x9c
- 1693 0319 2A030000 		.4byte	0x32a
- 1694 031d 0D       		.uleb128 0xd
- 1695 031e 7500     		.ascii	"u\000"
- 1696 0320 01       		.byte	0x1
- 1697 0321 A9       		.byte	0xa9
- 1698 0322 FE020000 		.4byte	0x2fe
- 1699 0326 02       		.uleb128 0x2
- 1700 0327 91       		.byte	0x91
- 1701 0328 74       		.sleb128 -12
- 1702 0329 00       		.byte	0
- 1703 032a 0C       		.uleb128 0xc
- 1704 032b 17000000 		.4byte	.LASF28
- 1705 032f 01       		.byte	0x1
- 1706 0330 AE       		.byte	0xae
- 1707 0331 A0000000 		.4byte	0xa0
- 1708 0335 00000000 		.4byte	.LFB69
- 1709 0339 38000000 		.4byte	.LFE69-.LFB69
- 1710 033d 01       		.uleb128 0x1
- 1711 033e 9C       		.byte	0x9c
- 1712 033f 50030000 		.4byte	0x350
- 1713 0343 0D       		.uleb128 0xd
- 1714 0344 7500     		.ascii	"u\000"
- 1715 0346 01       		.byte	0x1
- 1716 0347 AE       		.byte	0xae
- 1717 0348 FE020000 		.4byte	0x2fe
- 1718 034c 02       		.uleb128 0x2
- 1719 034d 91       		.byte	0x91
- 1720 034e 74       		.sleb128 -12
- 1721 034f 00       		.byte	0
- 1722 0350 10       		.uleb128 0x10
- 1723 0351 7D020000 		.4byte	.LASF29
- 1724 0355 01       		.byte	0x1
- 1725 0356 B3       		.byte	0xb3
- 1726 0357 A0000000 		.4byte	0xa0
- 1727 035b 00000000 		.4byte	.LFB70
- 1728 035f 7C000000 		.4byte	.LFE70-.LFB70
- 1729 0363 01       		.uleb128 0x1
- 1730 0364 9C       		.byte	0x9c
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 35
+ 1740 0399 13       		.uleb128 0x13
+ 1741 039a 76000000 		.4byte	0x76
+ 1742 039e 14       		.uleb128 0x14
+ 1743 039f A0000000 		.4byte	0xa0
+ 1744 03a3 AE030000 		.4byte	0x3ae
+ 1745 03a7 15       		.uleb128 0x15
+ 1746 03a8 AE000000 		.4byte	0xae
+ 1747 03ac 3F       		.byte	0x3f
+ 1748 03ad 00       		.byte	0
+ 1749 03ae 16       		.uleb128 0x16
+ 1750 03af 9E020000 		.4byte	.LASF33
+ 1751 03b3 06       		.byte	0x6
+ 1752 03b4 1B       		.byte	0x1b
+ 1753 03b5 9E030000 		.4byte	0x39e
+ 1754 03b9 05       		.uleb128 0x5
+ 1755 03ba 03       		.byte	0x3
+ 1756 03bb 00000000 		.4byte	Abs_volt
+ 1757 03bf 16       		.uleb128 0x16
+ 1758 03c0 44000000 		.4byte	.LASF34
+ 1759 03c4 06       		.byte	0x6
+ 1760 03c5 1C       		.byte	0x1c
+ 1761 03c6 9E030000 		.4byte	0x39e
+ 1762 03ca 05       		.uleb128 0x5
+ 1763 03cb 03       		.byte	0x3
+ 1764 03cc 00000000 		.4byte	Re_volt
+ 1765 03d0 16       		.uleb128 0x16
+ 1766 03d1 4C000000 		.4byte	.LASF35
+ 1767 03d5 06       		.byte	0x6
+ 1768 03d6 1D       		.byte	0x1d
+ 1769 03d7 9E030000 		.4byte	0x39e
+ 1770 03db 05       		.uleb128 0x5
+ 1771 03dc 03       		.byte	0x3
+ 1772 03dd 00000000 		.4byte	Im_volt
+ 1773 03e1 16       		.uleb128 0x16
+ 1774 03e2 4E010000 		.4byte	.LASF36
+ 1775 03e6 06       		.byte	0x6
+ 1776 03e7 1F       		.byte	0x1f
+ 1777 03e8 9E030000 		.4byte	0x39e
+ 1778 03ec 05       		.uleb128 0x5
+ 1779 03ed 03       		.byte	0x3
+ 1780 03ee 00000000 		.4byte	Abs_Ampere
+ 1781 03f2 16       		.uleb128 0x16
+ 1782 03f3 92000000 		.4byte	.LASF37
+ 1783 03f7 06       		.byte	0x6
+ 1784 03f8 20       		.byte	0x20
+ 1785 03f9 9E030000 		.4byte	0x39e
+ 1786 03fd 05       		.uleb128 0x5
+ 1787 03fe 03       		.byte	0x3
+ 1788 03ff 00000000 		.4byte	Re_Ampere
+ 1789 0403 16       		.uleb128 0x16
+ 1790 0404 54000000 		.4byte	.LASF38
+ 1791 0408 06       		.byte	0x6
+ 1792 0409 21       		.byte	0x21
+ 1793 040a 9E030000 		.4byte	0x39e
+ 1794 040e 05       		.uleb128 0x5
+ 1795 040f 03       		.byte	0x3
+ 1796 0410 00000000 		.4byte	Im_Ampere
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 36
 
 
- 1731 0365 86030000 		.4byte	0x386
- 1732 0369 08       		.uleb128 0x8
- 1733 036a 0C000000 		.4byte	.LASF30
- 1734 036e 01       		.byte	0x1
- 1735 036f B5       		.byte	0xb5
- 1736 0370 A0000000 		.4byte	0xa0
- 1737 0374 02       		.uleb128 0x2
- 1738 0375 91       		.byte	0x91
- 1739 0376 70       		.sleb128 -16
- 1740 0377 08       		.uleb128 0x8
- 1741 0378 D6010000 		.4byte	.LASF31
- 1742 037c 01       		.byte	0x1
- 1743 037d B6       		.byte	0xb6
- 1744 037e A0000000 		.4byte	0xa0
- 1745 0382 02       		.uleb128 0x2
- 1746 0383 91       		.byte	0x91
- 1747 0384 68       		.sleb128 -24
- 1748 0385 00       		.byte	0
- 1749 0386 11       		.uleb128 0x11
- 1750 0387 6F020000 		.4byte	.LASF49
- 1751 038b 01       		.byte	0x1
- 1752 038c BC       		.byte	0xbc
- 1753 038d A0000000 		.4byte	0xa0
- 1754 0391 00000000 		.4byte	.LFB71
- 1755 0395 A4000000 		.4byte	.LFE71-.LFB71
- 1756 0399 01       		.uleb128 0x1
- 1757 039a 9C       		.byte	0x9c
- 1758 039b 12       		.uleb128 0x12
- 1759 039c DD020000 		.4byte	.LASF32
- 1760 03a0 05       		.byte	0x5
- 1761 03a1 9606     		.2byte	0x696
- 1762 03a3 A7030000 		.4byte	0x3a7
- 1763 03a7 13       		.uleb128 0x13
- 1764 03a8 76000000 		.4byte	0x76
- 1765 03ac 14       		.uleb128 0x14
- 1766 03ad A0000000 		.4byte	0xa0
- 1767 03b1 BC030000 		.4byte	0x3bc
- 1768 03b5 15       		.uleb128 0x15
- 1769 03b6 AE000000 		.4byte	0xae
- 1770 03ba 3F       		.byte	0x3f
- 1771 03bb 00       		.byte	0
- 1772 03bc 16       		.uleb128 0x16
- 1773 03bd 97020000 		.4byte	.LASF33
- 1774 03c1 06       		.byte	0x6
- 1775 03c2 1B       		.byte	0x1b
- 1776 03c3 AC030000 		.4byte	0x3ac
- 1777 03c7 05       		.uleb128 0x5
- 1778 03c8 03       		.byte	0x3
- 1779 03c9 00000000 		.4byte	Abs_volt
- 1780 03cd 16       		.uleb128 0x16
- 1781 03ce B3000000 		.4byte	.LASF34
- 1782 03d2 06       		.byte	0x6
- 1783 03d3 1C       		.byte	0x1c
- 1784 03d4 AC030000 		.4byte	0x3ac
- 1785 03d8 05       		.uleb128 0x5
- 1786 03d9 03       		.byte	0x3
- 1787 03da 00000000 		.4byte	Re_volt
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 36
+ 1797 0414 16       		.uleb128 0x16
+ 1798 0415 F1020000 		.4byte	.LASF39
+ 1799 0419 06       		.byte	0x6
+ 1800 041a 23       		.byte	0x23
+ 1801 041b A0000000 		.4byte	0xa0
+ 1802 041f 05       		.uleb128 0x5
+ 1803 0420 03       		.byte	0x3
+ 1804 0421 00000000 		.4byte	Amp_Volt
+ 1805 0425 16       		.uleb128 0x16
+ 1806 0426 44020000 		.4byte	.LASF40
+ 1807 042a 06       		.byte	0x6
+ 1808 042b 24       		.byte	0x24
+ 1809 042c A0000000 		.4byte	0xa0
+ 1810 0430 05       		.uleb128 0x5
+ 1811 0431 03       		.byte	0x3
+ 1812 0432 00000000 		.4byte	RMS_Volt
+ 1813 0436 16       		.uleb128 0x16
+ 1814 0437 81000000 		.4byte	.LASF41
+ 1815 043b 06       		.byte	0x6
+ 1816 043c 25       		.byte	0x25
+ 1817 043d A0000000 		.4byte	0xa0
+ 1818 0441 05       		.uleb128 0x5
+ 1819 0442 03       		.byte	0x3
+ 1820 0443 00000000 		.4byte	Amp_Ampere
+ 1821 0447 16       		.uleb128 0x16
+ 1822 0448 74010000 		.4byte	.LASF42
+ 1823 044c 06       		.byte	0x6
+ 1824 044d 26       		.byte	0x26
+ 1825 044e A0000000 		.4byte	0xa0
+ 1826 0452 05       		.uleb128 0x5
+ 1827 0453 03       		.byte	0x3
+ 1828 0454 00000000 		.4byte	RMS_Ampere
+ 1829 0458 17       		.uleb128 0x17
+ 1830 0459 504600   		.ascii	"PF\000"
+ 1831 045c 06       		.byte	0x6
+ 1832 045d 27       		.byte	0x27
+ 1833 045e A0000000 		.4byte	0xa0
+ 1834 0462 05       		.uleb128 0x5
+ 1835 0463 03       		.byte	0x3
+ 1836 0464 00000000 		.4byte	PF
+ 1837 0468 17       		.uleb128 0x17
+ 1838 0469 54484400 		.ascii	"THD\000"
+ 1839 046d 06       		.byte	0x6
+ 1840 046e 28       		.byte	0x28
+ 1841 046f A0000000 		.4byte	0xa0
+ 1842 0473 05       		.uleb128 0x5
+ 1843 0474 03       		.byte	0x3
+ 1844 0475 00000000 		.4byte	THD
+ 1845 0479 14       		.uleb128 0x14
+ 1846 047a 68000000 		.4byte	0x68
+ 1847 047e 89040000 		.4byte	0x489
+ 1848 0482 15       		.uleb128 0x15
+ 1849 0483 AE000000 		.4byte	0xae
+ 1850 0487 3F       		.byte	0x3f
+ 1851 0488 00       		.byte	0
+ 1852 0489 16       		.uleb128 0x16
+ 1853 048a FA020000 		.4byte	.LASF43
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 37
 
 
- 1788 03de 16       		.uleb128 0x16
- 1789 03df BB000000 		.4byte	.LASF35
- 1790 03e3 06       		.byte	0x6
- 1791 03e4 1D       		.byte	0x1d
- 1792 03e5 AC030000 		.4byte	0x3ac
- 1793 03e9 05       		.uleb128 0x5
- 1794 03ea 03       		.byte	0x3
- 1795 03eb 00000000 		.4byte	Im_volt
- 1796 03ef 16       		.uleb128 0x16
- 1797 03f0 BD010000 		.4byte	.LASF36
- 1798 03f4 06       		.byte	0x6
- 1799 03f5 1F       		.byte	0x1f
- 1800 03f6 AC030000 		.4byte	0x3ac
- 1801 03fa 05       		.uleb128 0x5
- 1802 03fb 03       		.byte	0x3
- 1803 03fc 00000000 		.4byte	Abs_Ampere
- 1804 0400 16       		.uleb128 0x16
- 1805 0401 01010000 		.4byte	.LASF37
- 1806 0405 06       		.byte	0x6
- 1807 0406 20       		.byte	0x20
- 1808 0407 AC030000 		.4byte	0x3ac
- 1809 040b 05       		.uleb128 0x5
- 1810 040c 03       		.byte	0x3
- 1811 040d 00000000 		.4byte	Re_Ampere
- 1812 0411 16       		.uleb128 0x16
- 1813 0412 C3000000 		.4byte	.LASF38
- 1814 0416 06       		.byte	0x6
- 1815 0417 21       		.byte	0x21
- 1816 0418 AC030000 		.4byte	0x3ac
- 1817 041c 05       		.uleb128 0x5
- 1818 041d 03       		.byte	0x3
- 1819 041e 00000000 		.4byte	Im_Ampere
- 1820 0422 16       		.uleb128 0x16
- 1821 0423 EA020000 		.4byte	.LASF39
- 1822 0427 06       		.byte	0x6
- 1823 0428 23       		.byte	0x23
- 1824 0429 A0000000 		.4byte	0xa0
- 1825 042d 05       		.uleb128 0x5
- 1826 042e 03       		.byte	0x3
- 1827 042f 00000000 		.4byte	Amp_Volt
- 1828 0433 16       		.uleb128 0x16
- 1829 0434 3D020000 		.4byte	.LASF40
- 1830 0438 06       		.byte	0x6
- 1831 0439 24       		.byte	0x24
- 1832 043a A0000000 		.4byte	0xa0
- 1833 043e 05       		.uleb128 0x5
- 1834 043f 03       		.byte	0x3
- 1835 0440 00000000 		.4byte	RMS_Volt
- 1836 0444 16       		.uleb128 0x16
- 1837 0445 F0000000 		.4byte	.LASF41
- 1838 0449 06       		.byte	0x6
- 1839 044a 25       		.byte	0x25
- 1840 044b A0000000 		.4byte	0xa0
- 1841 044f 05       		.uleb128 0x5
- 1842 0450 03       		.byte	0x3
- 1843 0451 00000000 		.4byte	Amp_Ampere
- 1844 0455 16       		.uleb128 0x16
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 37
+ 1854 048e 06       		.byte	0x6
+ 1855 048f 2F       		.byte	0x2f
+ 1856 0490 79040000 		.4byte	0x479
+ 1857 0494 05       		.uleb128 0x5
+ 1858 0495 03       		.byte	0x3
+ 1859 0496 00000000 		.4byte	SampleArrayU
+ 1860 049a 16       		.uleb128 0x16
+ 1861 049b D7020000 		.4byte	.LASF44
+ 1862 049f 06       		.byte	0x6
+ 1863 04a0 30       		.byte	0x30
+ 1864 04a1 79040000 		.4byte	0x479
+ 1865 04a5 05       		.uleb128 0x5
+ 1866 04a6 03       		.byte	0x3
+ 1867 04a7 00000000 		.4byte	SampleArrayI
+ 1868 04ab 00       		.byte	0
+ 1869              		.section	.debug_abbrev,"",%progbits
+ 1870              	.Ldebug_abbrev0:
+ 1871 0000 01       		.uleb128 0x1
+ 1872 0001 11       		.uleb128 0x11
+ 1873 0002 01       		.byte	0x1
+ 1874 0003 25       		.uleb128 0x25
+ 1875 0004 0E       		.uleb128 0xe
+ 1876 0005 13       		.uleb128 0x13
+ 1877 0006 0B       		.uleb128 0xb
+ 1878 0007 03       		.uleb128 0x3
+ 1879 0008 0E       		.uleb128 0xe
+ 1880 0009 1B       		.uleb128 0x1b
+ 1881 000a 0E       		.uleb128 0xe
+ 1882 000b 55       		.uleb128 0x55
+ 1883 000c 17       		.uleb128 0x17
+ 1884 000d 11       		.uleb128 0x11
+ 1885 000e 01       		.uleb128 0x1
+ 1886 000f 10       		.uleb128 0x10
+ 1887 0010 17       		.uleb128 0x17
+ 1888 0011 00       		.byte	0
+ 1889 0012 00       		.byte	0
+ 1890 0013 02       		.uleb128 0x2
+ 1891 0014 24       		.uleb128 0x24
+ 1892 0015 00       		.byte	0
+ 1893 0016 0B       		.uleb128 0xb
+ 1894 0017 0B       		.uleb128 0xb
+ 1895 0018 3E       		.uleb128 0x3e
+ 1896 0019 0B       		.uleb128 0xb
+ 1897 001a 03       		.uleb128 0x3
+ 1898 001b 0E       		.uleb128 0xe
+ 1899 001c 00       		.byte	0
+ 1900 001d 00       		.byte	0
+ 1901 001e 03       		.uleb128 0x3
+ 1902 001f 16       		.uleb128 0x16
+ 1903 0020 00       		.byte	0
+ 1904 0021 03       		.uleb128 0x3
+ 1905 0022 0E       		.uleb128 0xe
+ 1906 0023 3A       		.uleb128 0x3a
+ 1907 0024 0B       		.uleb128 0xb
+ 1908 0025 3B       		.uleb128 0x3b
+ 1909 0026 0B       		.uleb128 0xb
+ 1910 0027 49       		.uleb128 0x49
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 38
 
 
- 1845 0456 E3010000 		.4byte	.LASF42
- 1846 045a 06       		.byte	0x6
- 1847 045b 26       		.byte	0x26
- 1848 045c A0000000 		.4byte	0xa0
- 1849 0460 05       		.uleb128 0x5
- 1850 0461 03       		.byte	0x3
- 1851 0462 00000000 		.4byte	RMS_Ampere
- 1852 0466 17       		.uleb128 0x17
- 1853 0467 504600   		.ascii	"PF\000"
- 1854 046a 06       		.byte	0x6
- 1855 046b 27       		.byte	0x27
- 1856 046c A0000000 		.4byte	0xa0
- 1857 0470 05       		.uleb128 0x5
- 1858 0471 03       		.byte	0x3
- 1859 0472 00000000 		.4byte	PF
- 1860 0476 17       		.uleb128 0x17
- 1861 0477 54484400 		.ascii	"THD\000"
- 1862 047b 06       		.byte	0x6
- 1863 047c 28       		.byte	0x28
- 1864 047d A0000000 		.4byte	0xa0
- 1865 0481 05       		.uleb128 0x5
- 1866 0482 03       		.byte	0x3
- 1867 0483 00000000 		.4byte	THD
- 1868 0487 14       		.uleb128 0x14
- 1869 0488 68000000 		.4byte	0x68
- 1870 048c 97040000 		.4byte	0x497
- 1871 0490 15       		.uleb128 0x15
- 1872 0491 AE000000 		.4byte	0xae
- 1873 0495 3F       		.byte	0x3f
- 1874 0496 00       		.byte	0
- 1875 0497 16       		.uleb128 0x16
- 1876 0498 F3020000 		.4byte	.LASF43
- 1877 049c 06       		.byte	0x6
- 1878 049d 2F       		.byte	0x2f
- 1879 049e 87040000 		.4byte	0x487
- 1880 04a2 05       		.uleb128 0x5
- 1881 04a3 03       		.byte	0x3
- 1882 04a4 00000000 		.4byte	SampleArrayU
- 1883 04a8 16       		.uleb128 0x16
- 1884 04a9 D0020000 		.4byte	.LASF44
- 1885 04ad 06       		.byte	0x6
- 1886 04ae 30       		.byte	0x30
- 1887 04af 87040000 		.4byte	0x487
- 1888 04b3 05       		.uleb128 0x5
- 1889 04b4 03       		.byte	0x3
- 1890 04b5 00000000 		.4byte	SampleArrayI
- 1891 04b9 00       		.byte	0
- 1892              		.section	.debug_abbrev,"",%progbits
- 1893              	.Ldebug_abbrev0:
- 1894 0000 01       		.uleb128 0x1
- 1895 0001 11       		.uleb128 0x11
- 1896 0002 01       		.byte	0x1
- 1897 0003 25       		.uleb128 0x25
- 1898 0004 0E       		.uleb128 0xe
- 1899 0005 13       		.uleb128 0x13
- 1900 0006 0B       		.uleb128 0xb
- 1901 0007 03       		.uleb128 0x3
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 38
+ 1911 0028 13       		.uleb128 0x13
+ 1912 0029 00       		.byte	0
+ 1913 002a 00       		.byte	0
+ 1914 002b 04       		.uleb128 0x4
+ 1915 002c 24       		.uleb128 0x24
+ 1916 002d 00       		.byte	0
+ 1917 002e 0B       		.uleb128 0xb
+ 1918 002f 0B       		.uleb128 0xb
+ 1919 0030 3E       		.uleb128 0x3e
+ 1920 0031 0B       		.uleb128 0xb
+ 1921 0032 03       		.uleb128 0x3
+ 1922 0033 08       		.uleb128 0x8
+ 1923 0034 00       		.byte	0
+ 1924 0035 00       		.byte	0
+ 1925 0036 05       		.uleb128 0x5
+ 1926 0037 16       		.uleb128 0x16
+ 1927 0038 00       		.byte	0
+ 1928 0039 03       		.uleb128 0x3
+ 1929 003a 0E       		.uleb128 0xe
+ 1930 003b 3A       		.uleb128 0x3a
+ 1931 003c 0B       		.uleb128 0xb
+ 1932 003d 3B       		.uleb128 0x3b
+ 1933 003e 05       		.uleb128 0x5
+ 1934 003f 49       		.uleb128 0x49
+ 1935 0040 13       		.uleb128 0x13
+ 1936 0041 00       		.byte	0
+ 1937 0042 00       		.byte	0
+ 1938 0043 06       		.uleb128 0x6
+ 1939 0044 2E       		.uleb128 0x2e
+ 1940 0045 01       		.byte	0x1
+ 1941 0046 3F       		.uleb128 0x3f
+ 1942 0047 19       		.uleb128 0x19
+ 1943 0048 03       		.uleb128 0x3
+ 1944 0049 0E       		.uleb128 0xe
+ 1945 004a 3A       		.uleb128 0x3a
+ 1946 004b 0B       		.uleb128 0xb
+ 1947 004c 3B       		.uleb128 0x3b
+ 1948 004d 0B       		.uleb128 0xb
+ 1949 004e 27       		.uleb128 0x27
+ 1950 004f 19       		.uleb128 0x19
+ 1951 0050 11       		.uleb128 0x11
+ 1952 0051 01       		.uleb128 0x1
+ 1953 0052 12       		.uleb128 0x12
+ 1954 0053 06       		.uleb128 0x6
+ 1955 0054 40       		.uleb128 0x40
+ 1956 0055 18       		.uleb128 0x18
+ 1957 0056 9642     		.uleb128 0x2116
+ 1958 0058 19       		.uleb128 0x19
+ 1959 0059 01       		.uleb128 0x1
+ 1960 005a 13       		.uleb128 0x13
+ 1961 005b 00       		.byte	0
+ 1962 005c 00       		.byte	0
+ 1963 005d 07       		.uleb128 0x7
+ 1964 005e 05       		.uleb128 0x5
+ 1965 005f 00       		.byte	0
+ 1966 0060 03       		.uleb128 0x3
+ 1967 0061 0E       		.uleb128 0xe
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 39
 
 
- 1902 0008 0E       		.uleb128 0xe
- 1903 0009 1B       		.uleb128 0x1b
- 1904 000a 0E       		.uleb128 0xe
- 1905 000b 55       		.uleb128 0x55
- 1906 000c 17       		.uleb128 0x17
- 1907 000d 11       		.uleb128 0x11
- 1908 000e 01       		.uleb128 0x1
- 1909 000f 10       		.uleb128 0x10
- 1910 0010 17       		.uleb128 0x17
- 1911 0011 00       		.byte	0
- 1912 0012 00       		.byte	0
- 1913 0013 02       		.uleb128 0x2
- 1914 0014 24       		.uleb128 0x24
- 1915 0015 00       		.byte	0
- 1916 0016 0B       		.uleb128 0xb
- 1917 0017 0B       		.uleb128 0xb
- 1918 0018 3E       		.uleb128 0x3e
- 1919 0019 0B       		.uleb128 0xb
- 1920 001a 03       		.uleb128 0x3
- 1921 001b 0E       		.uleb128 0xe
- 1922 001c 00       		.byte	0
- 1923 001d 00       		.byte	0
- 1924 001e 03       		.uleb128 0x3
- 1925 001f 16       		.uleb128 0x16
- 1926 0020 00       		.byte	0
- 1927 0021 03       		.uleb128 0x3
- 1928 0022 0E       		.uleb128 0xe
- 1929 0023 3A       		.uleb128 0x3a
- 1930 0024 0B       		.uleb128 0xb
- 1931 0025 3B       		.uleb128 0x3b
- 1932 0026 0B       		.uleb128 0xb
- 1933 0027 49       		.uleb128 0x49
- 1934 0028 13       		.uleb128 0x13
- 1935 0029 00       		.byte	0
- 1936 002a 00       		.byte	0
- 1937 002b 04       		.uleb128 0x4
- 1938 002c 24       		.uleb128 0x24
- 1939 002d 00       		.byte	0
- 1940 002e 0B       		.uleb128 0xb
- 1941 002f 0B       		.uleb128 0xb
- 1942 0030 3E       		.uleb128 0x3e
- 1943 0031 0B       		.uleb128 0xb
- 1944 0032 03       		.uleb128 0x3
- 1945 0033 08       		.uleb128 0x8
- 1946 0034 00       		.byte	0
- 1947 0035 00       		.byte	0
- 1948 0036 05       		.uleb128 0x5
- 1949 0037 16       		.uleb128 0x16
- 1950 0038 00       		.byte	0
- 1951 0039 03       		.uleb128 0x3
- 1952 003a 0E       		.uleb128 0xe
- 1953 003b 3A       		.uleb128 0x3a
- 1954 003c 0B       		.uleb128 0xb
- 1955 003d 3B       		.uleb128 0x3b
- 1956 003e 05       		.uleb128 0x5
- 1957 003f 49       		.uleb128 0x49
- 1958 0040 13       		.uleb128 0x13
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 39
+ 1968 0062 3A       		.uleb128 0x3a
+ 1969 0063 0B       		.uleb128 0xb
+ 1970 0064 3B       		.uleb128 0x3b
+ 1971 0065 0B       		.uleb128 0xb
+ 1972 0066 49       		.uleb128 0x49
+ 1973 0067 13       		.uleb128 0x13
+ 1974 0068 02       		.uleb128 0x2
+ 1975 0069 18       		.uleb128 0x18
+ 1976 006a 00       		.byte	0
+ 1977 006b 00       		.byte	0
+ 1978 006c 08       		.uleb128 0x8
+ 1979 006d 34       		.uleb128 0x34
+ 1980 006e 00       		.byte	0
+ 1981 006f 03       		.uleb128 0x3
+ 1982 0070 0E       		.uleb128 0xe
+ 1983 0071 3A       		.uleb128 0x3a
+ 1984 0072 0B       		.uleb128 0xb
+ 1985 0073 3B       		.uleb128 0x3b
+ 1986 0074 0B       		.uleb128 0xb
+ 1987 0075 49       		.uleb128 0x49
+ 1988 0076 13       		.uleb128 0x13
+ 1989 0077 02       		.uleb128 0x2
+ 1990 0078 18       		.uleb128 0x18
+ 1991 0079 00       		.byte	0
+ 1992 007a 00       		.byte	0
+ 1993 007b 09       		.uleb128 0x9
+ 1994 007c 34       		.uleb128 0x34
+ 1995 007d 00       		.byte	0
+ 1996 007e 03       		.uleb128 0x3
+ 1997 007f 08       		.uleb128 0x8
+ 1998 0080 3A       		.uleb128 0x3a
+ 1999 0081 0B       		.uleb128 0xb
+ 2000 0082 3B       		.uleb128 0x3b
+ 2001 0083 0B       		.uleb128 0xb
+ 2002 0084 49       		.uleb128 0x49
+ 2003 0085 13       		.uleb128 0x13
+ 2004 0086 02       		.uleb128 0x2
+ 2005 0087 18       		.uleb128 0x18
+ 2006 0088 00       		.byte	0
+ 2007 0089 00       		.byte	0
+ 2008 008a 0A       		.uleb128 0xa
+ 2009 008b 0F       		.uleb128 0xf
+ 2010 008c 00       		.byte	0
+ 2011 008d 0B       		.uleb128 0xb
+ 2012 008e 0B       		.uleb128 0xb
+ 2013 008f 49       		.uleb128 0x49
+ 2014 0090 13       		.uleb128 0x13
+ 2015 0091 00       		.byte	0
+ 2016 0092 00       		.byte	0
+ 2017 0093 0B       		.uleb128 0xb
+ 2018 0094 2E       		.uleb128 0x2e
+ 2019 0095 01       		.byte	0x1
+ 2020 0096 3F       		.uleb128 0x3f
+ 2021 0097 19       		.uleb128 0x19
+ 2022 0098 03       		.uleb128 0x3
+ 2023 0099 0E       		.uleb128 0xe
+ 2024 009a 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 40
 
 
- 1959 0041 00       		.byte	0
- 1960 0042 00       		.byte	0
- 1961 0043 06       		.uleb128 0x6
- 1962 0044 2E       		.uleb128 0x2e
- 1963 0045 01       		.byte	0x1
- 1964 0046 3F       		.uleb128 0x3f
- 1965 0047 19       		.uleb128 0x19
- 1966 0048 03       		.uleb128 0x3
- 1967 0049 0E       		.uleb128 0xe
- 1968 004a 3A       		.uleb128 0x3a
- 1969 004b 0B       		.uleb128 0xb
- 1970 004c 3B       		.uleb128 0x3b
- 1971 004d 0B       		.uleb128 0xb
- 1972 004e 27       		.uleb128 0x27
- 1973 004f 19       		.uleb128 0x19
- 1974 0050 11       		.uleb128 0x11
- 1975 0051 01       		.uleb128 0x1
- 1976 0052 12       		.uleb128 0x12
- 1977 0053 06       		.uleb128 0x6
- 1978 0054 40       		.uleb128 0x40
- 1979 0055 18       		.uleb128 0x18
- 1980 0056 9642     		.uleb128 0x2116
- 1981 0058 19       		.uleb128 0x19
- 1982 0059 01       		.uleb128 0x1
- 1983 005a 13       		.uleb128 0x13
- 1984 005b 00       		.byte	0
- 1985 005c 00       		.byte	0
- 1986 005d 07       		.uleb128 0x7
- 1987 005e 05       		.uleb128 0x5
- 1988 005f 00       		.byte	0
- 1989 0060 03       		.uleb128 0x3
- 1990 0061 0E       		.uleb128 0xe
- 1991 0062 3A       		.uleb128 0x3a
- 1992 0063 0B       		.uleb128 0xb
- 1993 0064 3B       		.uleb128 0x3b
- 1994 0065 0B       		.uleb128 0xb
- 1995 0066 49       		.uleb128 0x49
- 1996 0067 13       		.uleb128 0x13
- 1997 0068 02       		.uleb128 0x2
- 1998 0069 18       		.uleb128 0x18
- 1999 006a 00       		.byte	0
- 2000 006b 00       		.byte	0
- 2001 006c 08       		.uleb128 0x8
- 2002 006d 34       		.uleb128 0x34
- 2003 006e 00       		.byte	0
- 2004 006f 03       		.uleb128 0x3
- 2005 0070 0E       		.uleb128 0xe
- 2006 0071 3A       		.uleb128 0x3a
- 2007 0072 0B       		.uleb128 0xb
- 2008 0073 3B       		.uleb128 0x3b
- 2009 0074 0B       		.uleb128 0xb
- 2010 0075 49       		.uleb128 0x49
- 2011 0076 13       		.uleb128 0x13
- 2012 0077 02       		.uleb128 0x2
- 2013 0078 18       		.uleb128 0x18
- 2014 0079 00       		.byte	0
- 2015 007a 00       		.byte	0
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 40
+ 2025 009b 0B       		.uleb128 0xb
+ 2026 009c 3B       		.uleb128 0x3b
+ 2027 009d 0B       		.uleb128 0xb
+ 2028 009e 11       		.uleb128 0x11
+ 2029 009f 01       		.uleb128 0x1
+ 2030 00a0 12       		.uleb128 0x12
+ 2031 00a1 06       		.uleb128 0x6
+ 2032 00a2 40       		.uleb128 0x40
+ 2033 00a3 18       		.uleb128 0x18
+ 2034 00a4 9642     		.uleb128 0x2116
+ 2035 00a6 19       		.uleb128 0x19
+ 2036 00a7 01       		.uleb128 0x1
+ 2037 00a8 13       		.uleb128 0x13
+ 2038 00a9 00       		.byte	0
+ 2039 00aa 00       		.byte	0
+ 2040 00ab 0C       		.uleb128 0xc
+ 2041 00ac 2E       		.uleb128 0x2e
+ 2042 00ad 01       		.byte	0x1
+ 2043 00ae 3F       		.uleb128 0x3f
+ 2044 00af 19       		.uleb128 0x19
+ 2045 00b0 03       		.uleb128 0x3
+ 2046 00b1 0E       		.uleb128 0xe
+ 2047 00b2 3A       		.uleb128 0x3a
+ 2048 00b3 0B       		.uleb128 0xb
+ 2049 00b4 3B       		.uleb128 0x3b
+ 2050 00b5 0B       		.uleb128 0xb
+ 2051 00b6 27       		.uleb128 0x27
+ 2052 00b7 19       		.uleb128 0x19
+ 2053 00b8 49       		.uleb128 0x49
+ 2054 00b9 13       		.uleb128 0x13
+ 2055 00ba 11       		.uleb128 0x11
+ 2056 00bb 01       		.uleb128 0x1
+ 2057 00bc 12       		.uleb128 0x12
+ 2058 00bd 06       		.uleb128 0x6
+ 2059 00be 40       		.uleb128 0x40
+ 2060 00bf 18       		.uleb128 0x18
+ 2061 00c0 9642     		.uleb128 0x2116
+ 2062 00c2 19       		.uleb128 0x19
+ 2063 00c3 01       		.uleb128 0x1
+ 2064 00c4 13       		.uleb128 0x13
+ 2065 00c5 00       		.byte	0
+ 2066 00c6 00       		.byte	0
+ 2067 00c7 0D       		.uleb128 0xd
+ 2068 00c8 05       		.uleb128 0x5
+ 2069 00c9 00       		.byte	0
+ 2070 00ca 03       		.uleb128 0x3
+ 2071 00cb 08       		.uleb128 0x8
+ 2072 00cc 3A       		.uleb128 0x3a
+ 2073 00cd 0B       		.uleb128 0xb
+ 2074 00ce 3B       		.uleb128 0x3b
+ 2075 00cf 0B       		.uleb128 0xb
+ 2076 00d0 49       		.uleb128 0x49
+ 2077 00d1 13       		.uleb128 0x13
+ 2078 00d2 02       		.uleb128 0x2
+ 2079 00d3 18       		.uleb128 0x18
+ 2080 00d4 00       		.byte	0
+ 2081 00d5 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 41
 
 
- 2016 007b 09       		.uleb128 0x9
- 2017 007c 34       		.uleb128 0x34
- 2018 007d 00       		.byte	0
- 2019 007e 03       		.uleb128 0x3
- 2020 007f 08       		.uleb128 0x8
- 2021 0080 3A       		.uleb128 0x3a
- 2022 0081 0B       		.uleb128 0xb
- 2023 0082 3B       		.uleb128 0x3b
- 2024 0083 0B       		.uleb128 0xb
- 2025 0084 49       		.uleb128 0x49
- 2026 0085 13       		.uleb128 0x13
- 2027 0086 02       		.uleb128 0x2
- 2028 0087 18       		.uleb128 0x18
- 2029 0088 00       		.byte	0
- 2030 0089 00       		.byte	0
- 2031 008a 0A       		.uleb128 0xa
- 2032 008b 0F       		.uleb128 0xf
- 2033 008c 00       		.byte	0
- 2034 008d 0B       		.uleb128 0xb
- 2035 008e 0B       		.uleb128 0xb
- 2036 008f 49       		.uleb128 0x49
- 2037 0090 13       		.uleb128 0x13
- 2038 0091 00       		.byte	0
- 2039 0092 00       		.byte	0
- 2040 0093 0B       		.uleb128 0xb
- 2041 0094 2E       		.uleb128 0x2e
- 2042 0095 01       		.byte	0x1
- 2043 0096 3F       		.uleb128 0x3f
- 2044 0097 19       		.uleb128 0x19
- 2045 0098 03       		.uleb128 0x3
- 2046 0099 0E       		.uleb128 0xe
- 2047 009a 3A       		.uleb128 0x3a
- 2048 009b 0B       		.uleb128 0xb
- 2049 009c 3B       		.uleb128 0x3b
- 2050 009d 0B       		.uleb128 0xb
- 2051 009e 11       		.uleb128 0x11
- 2052 009f 01       		.uleb128 0x1
- 2053 00a0 12       		.uleb128 0x12
- 2054 00a1 06       		.uleb128 0x6
- 2055 00a2 40       		.uleb128 0x40
- 2056 00a3 18       		.uleb128 0x18
- 2057 00a4 9642     		.uleb128 0x2116
- 2058 00a6 19       		.uleb128 0x19
- 2059 00a7 01       		.uleb128 0x1
- 2060 00a8 13       		.uleb128 0x13
- 2061 00a9 00       		.byte	0
- 2062 00aa 00       		.byte	0
- 2063 00ab 0C       		.uleb128 0xc
- 2064 00ac 2E       		.uleb128 0x2e
- 2065 00ad 01       		.byte	0x1
- 2066 00ae 3F       		.uleb128 0x3f
- 2067 00af 19       		.uleb128 0x19
- 2068 00b0 03       		.uleb128 0x3
- 2069 00b1 0E       		.uleb128 0xe
- 2070 00b2 3A       		.uleb128 0x3a
- 2071 00b3 0B       		.uleb128 0xb
- 2072 00b4 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 41
+ 2082 00d6 0E       		.uleb128 0xe
+ 2083 00d7 2E       		.uleb128 0x2e
+ 2084 00d8 01       		.byte	0x1
+ 2085 00d9 3F       		.uleb128 0x3f
+ 2086 00da 19       		.uleb128 0x19
+ 2087 00db 03       		.uleb128 0x3
+ 2088 00dc 08       		.uleb128 0x8
+ 2089 00dd 3A       		.uleb128 0x3a
+ 2090 00de 0B       		.uleb128 0xb
+ 2091 00df 3B       		.uleb128 0x3b
+ 2092 00e0 0B       		.uleb128 0xb
+ 2093 00e1 27       		.uleb128 0x27
+ 2094 00e2 19       		.uleb128 0x19
+ 2095 00e3 11       		.uleb128 0x11
+ 2096 00e4 01       		.uleb128 0x1
+ 2097 00e5 12       		.uleb128 0x12
+ 2098 00e6 06       		.uleb128 0x6
+ 2099 00e7 40       		.uleb128 0x40
+ 2100 00e8 18       		.uleb128 0x18
+ 2101 00e9 9642     		.uleb128 0x2116
+ 2102 00eb 19       		.uleb128 0x19
+ 2103 00ec 01       		.uleb128 0x1
+ 2104 00ed 13       		.uleb128 0x13
+ 2105 00ee 00       		.byte	0
+ 2106 00ef 00       		.byte	0
+ 2107 00f0 0F       		.uleb128 0xf
+ 2108 00f1 2E       		.uleb128 0x2e
+ 2109 00f2 01       		.byte	0x1
+ 2110 00f3 3F       		.uleb128 0x3f
+ 2111 00f4 19       		.uleb128 0x19
+ 2112 00f5 03       		.uleb128 0x3
+ 2113 00f6 0E       		.uleb128 0xe
+ 2114 00f7 3A       		.uleb128 0x3a
+ 2115 00f8 0B       		.uleb128 0xb
+ 2116 00f9 3B       		.uleb128 0x3b
+ 2117 00fa 0B       		.uleb128 0xb
+ 2118 00fb 27       		.uleb128 0x27
+ 2119 00fc 19       		.uleb128 0x19
+ 2120 00fd 49       		.uleb128 0x49
+ 2121 00fe 13       		.uleb128 0x13
+ 2122 00ff 11       		.uleb128 0x11
+ 2123 0100 01       		.uleb128 0x1
+ 2124 0101 12       		.uleb128 0x12
+ 2125 0102 06       		.uleb128 0x6
+ 2126 0103 40       		.uleb128 0x40
+ 2127 0104 18       		.uleb128 0x18
+ 2128 0105 9742     		.uleb128 0x2117
+ 2129 0107 19       		.uleb128 0x19
+ 2130 0108 01       		.uleb128 0x1
+ 2131 0109 13       		.uleb128 0x13
+ 2132 010a 00       		.byte	0
+ 2133 010b 00       		.byte	0
+ 2134 010c 10       		.uleb128 0x10
+ 2135 010d 2E       		.uleb128 0x2e
+ 2136 010e 01       		.byte	0x1
+ 2137 010f 3F       		.uleb128 0x3f
+ 2138 0110 19       		.uleb128 0x19
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 42
 
 
- 2073 00b5 0B       		.uleb128 0xb
- 2074 00b6 27       		.uleb128 0x27
- 2075 00b7 19       		.uleb128 0x19
- 2076 00b8 49       		.uleb128 0x49
- 2077 00b9 13       		.uleb128 0x13
- 2078 00ba 11       		.uleb128 0x11
- 2079 00bb 01       		.uleb128 0x1
- 2080 00bc 12       		.uleb128 0x12
- 2081 00bd 06       		.uleb128 0x6
- 2082 00be 40       		.uleb128 0x40
- 2083 00bf 18       		.uleb128 0x18
- 2084 00c0 9642     		.uleb128 0x2116
- 2085 00c2 19       		.uleb128 0x19
- 2086 00c3 01       		.uleb128 0x1
- 2087 00c4 13       		.uleb128 0x13
- 2088 00c5 00       		.byte	0
- 2089 00c6 00       		.byte	0
- 2090 00c7 0D       		.uleb128 0xd
- 2091 00c8 05       		.uleb128 0x5
- 2092 00c9 00       		.byte	0
- 2093 00ca 03       		.uleb128 0x3
- 2094 00cb 08       		.uleb128 0x8
- 2095 00cc 3A       		.uleb128 0x3a
- 2096 00cd 0B       		.uleb128 0xb
- 2097 00ce 3B       		.uleb128 0x3b
- 2098 00cf 0B       		.uleb128 0xb
- 2099 00d0 49       		.uleb128 0x49
- 2100 00d1 13       		.uleb128 0x13
- 2101 00d2 02       		.uleb128 0x2
- 2102 00d3 18       		.uleb128 0x18
- 2103 00d4 00       		.byte	0
- 2104 00d5 00       		.byte	0
- 2105 00d6 0E       		.uleb128 0xe
- 2106 00d7 2E       		.uleb128 0x2e
- 2107 00d8 01       		.byte	0x1
- 2108 00d9 3F       		.uleb128 0x3f
- 2109 00da 19       		.uleb128 0x19
- 2110 00db 03       		.uleb128 0x3
- 2111 00dc 08       		.uleb128 0x8
- 2112 00dd 3A       		.uleb128 0x3a
- 2113 00de 0B       		.uleb128 0xb
- 2114 00df 3B       		.uleb128 0x3b
- 2115 00e0 0B       		.uleb128 0xb
- 2116 00e1 27       		.uleb128 0x27
- 2117 00e2 19       		.uleb128 0x19
- 2118 00e3 11       		.uleb128 0x11
- 2119 00e4 01       		.uleb128 0x1
- 2120 00e5 12       		.uleb128 0x12
- 2121 00e6 06       		.uleb128 0x6
- 2122 00e7 40       		.uleb128 0x40
- 2123 00e8 18       		.uleb128 0x18
- 2124 00e9 9642     		.uleb128 0x2116
- 2125 00eb 19       		.uleb128 0x19
- 2126 00ec 01       		.uleb128 0x1
- 2127 00ed 13       		.uleb128 0x13
- 2128 00ee 00       		.byte	0
- 2129 00ef 00       		.byte	0
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 42
+ 2139 0111 03       		.uleb128 0x3
+ 2140 0112 0E       		.uleb128 0xe
+ 2141 0113 3A       		.uleb128 0x3a
+ 2142 0114 0B       		.uleb128 0xb
+ 2143 0115 3B       		.uleb128 0x3b
+ 2144 0116 0B       		.uleb128 0xb
+ 2145 0117 49       		.uleb128 0x49
+ 2146 0118 13       		.uleb128 0x13
+ 2147 0119 11       		.uleb128 0x11
+ 2148 011a 01       		.uleb128 0x1
+ 2149 011b 12       		.uleb128 0x12
+ 2150 011c 06       		.uleb128 0x6
+ 2151 011d 40       		.uleb128 0x40
+ 2152 011e 18       		.uleb128 0x18
+ 2153 011f 9642     		.uleb128 0x2116
+ 2154 0121 19       		.uleb128 0x19
+ 2155 0122 01       		.uleb128 0x1
+ 2156 0123 13       		.uleb128 0x13
+ 2157 0124 00       		.byte	0
+ 2158 0125 00       		.byte	0
+ 2159 0126 11       		.uleb128 0x11
+ 2160 0127 2E       		.uleb128 0x2e
+ 2161 0128 00       		.byte	0
+ 2162 0129 3F       		.uleb128 0x3f
+ 2163 012a 19       		.uleb128 0x19
+ 2164 012b 03       		.uleb128 0x3
+ 2165 012c 0E       		.uleb128 0xe
+ 2166 012d 3A       		.uleb128 0x3a
+ 2167 012e 0B       		.uleb128 0xb
+ 2168 012f 3B       		.uleb128 0x3b
+ 2169 0130 0B       		.uleb128 0xb
+ 2170 0131 49       		.uleb128 0x49
+ 2171 0132 13       		.uleb128 0x13
+ 2172 0133 11       		.uleb128 0x11
+ 2173 0134 01       		.uleb128 0x1
+ 2174 0135 12       		.uleb128 0x12
+ 2175 0136 06       		.uleb128 0x6
+ 2176 0137 40       		.uleb128 0x40
+ 2177 0138 18       		.uleb128 0x18
+ 2178 0139 9642     		.uleb128 0x2116
+ 2179 013b 19       		.uleb128 0x19
+ 2180 013c 00       		.byte	0
+ 2181 013d 00       		.byte	0
+ 2182 013e 12       		.uleb128 0x12
+ 2183 013f 34       		.uleb128 0x34
+ 2184 0140 00       		.byte	0
+ 2185 0141 03       		.uleb128 0x3
+ 2186 0142 0E       		.uleb128 0xe
+ 2187 0143 3A       		.uleb128 0x3a
+ 2188 0144 0B       		.uleb128 0xb
+ 2189 0145 3B       		.uleb128 0x3b
+ 2190 0146 05       		.uleb128 0x5
+ 2191 0147 49       		.uleb128 0x49
+ 2192 0148 13       		.uleb128 0x13
+ 2193 0149 3F       		.uleb128 0x3f
+ 2194 014a 19       		.uleb128 0x19
+ 2195 014b 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 43
 
 
- 2130 00f0 0F       		.uleb128 0xf
- 2131 00f1 2E       		.uleb128 0x2e
- 2132 00f2 01       		.byte	0x1
- 2133 00f3 3F       		.uleb128 0x3f
- 2134 00f4 19       		.uleb128 0x19
- 2135 00f5 03       		.uleb128 0x3
- 2136 00f6 0E       		.uleb128 0xe
- 2137 00f7 3A       		.uleb128 0x3a
- 2138 00f8 0B       		.uleb128 0xb
- 2139 00f9 3B       		.uleb128 0x3b
- 2140 00fa 0B       		.uleb128 0xb
- 2141 00fb 27       		.uleb128 0x27
- 2142 00fc 19       		.uleb128 0x19
- 2143 00fd 49       		.uleb128 0x49
- 2144 00fe 13       		.uleb128 0x13
- 2145 00ff 11       		.uleb128 0x11
- 2146 0100 01       		.uleb128 0x1
- 2147 0101 12       		.uleb128 0x12
- 2148 0102 06       		.uleb128 0x6
- 2149 0103 40       		.uleb128 0x40
- 2150 0104 18       		.uleb128 0x18
- 2151 0105 9742     		.uleb128 0x2117
- 2152 0107 19       		.uleb128 0x19
- 2153 0108 01       		.uleb128 0x1
- 2154 0109 13       		.uleb128 0x13
- 2155 010a 00       		.byte	0
- 2156 010b 00       		.byte	0
- 2157 010c 10       		.uleb128 0x10
- 2158 010d 2E       		.uleb128 0x2e
- 2159 010e 01       		.byte	0x1
- 2160 010f 3F       		.uleb128 0x3f
- 2161 0110 19       		.uleb128 0x19
- 2162 0111 03       		.uleb128 0x3
- 2163 0112 0E       		.uleb128 0xe
- 2164 0113 3A       		.uleb128 0x3a
- 2165 0114 0B       		.uleb128 0xb
- 2166 0115 3B       		.uleb128 0x3b
- 2167 0116 0B       		.uleb128 0xb
- 2168 0117 49       		.uleb128 0x49
- 2169 0118 13       		.uleb128 0x13
- 2170 0119 11       		.uleb128 0x11
- 2171 011a 01       		.uleb128 0x1
- 2172 011b 12       		.uleb128 0x12
- 2173 011c 06       		.uleb128 0x6
- 2174 011d 40       		.uleb128 0x40
- 2175 011e 18       		.uleb128 0x18
- 2176 011f 9642     		.uleb128 0x2116
- 2177 0121 19       		.uleb128 0x19
- 2178 0122 01       		.uleb128 0x1
- 2179 0123 13       		.uleb128 0x13
- 2180 0124 00       		.byte	0
- 2181 0125 00       		.byte	0
- 2182 0126 11       		.uleb128 0x11
- 2183 0127 2E       		.uleb128 0x2e
- 2184 0128 00       		.byte	0
- 2185 0129 3F       		.uleb128 0x3f
- 2186 012a 19       		.uleb128 0x19
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 43
+ 2196 014c 19       		.uleb128 0x19
+ 2197 014d 00       		.byte	0
+ 2198 014e 00       		.byte	0
+ 2199 014f 13       		.uleb128 0x13
+ 2200 0150 35       		.uleb128 0x35
+ 2201 0151 00       		.byte	0
+ 2202 0152 49       		.uleb128 0x49
+ 2203 0153 13       		.uleb128 0x13
+ 2204 0154 00       		.byte	0
+ 2205 0155 00       		.byte	0
+ 2206 0156 14       		.uleb128 0x14
+ 2207 0157 01       		.uleb128 0x1
+ 2208 0158 01       		.byte	0x1
+ 2209 0159 49       		.uleb128 0x49
+ 2210 015a 13       		.uleb128 0x13
+ 2211 015b 01       		.uleb128 0x1
+ 2212 015c 13       		.uleb128 0x13
+ 2213 015d 00       		.byte	0
+ 2214 015e 00       		.byte	0
+ 2215 015f 15       		.uleb128 0x15
+ 2216 0160 21       		.uleb128 0x21
+ 2217 0161 00       		.byte	0
+ 2218 0162 49       		.uleb128 0x49
+ 2219 0163 13       		.uleb128 0x13
+ 2220 0164 2F       		.uleb128 0x2f
+ 2221 0165 0B       		.uleb128 0xb
+ 2222 0166 00       		.byte	0
+ 2223 0167 00       		.byte	0
+ 2224 0168 16       		.uleb128 0x16
+ 2225 0169 34       		.uleb128 0x34
+ 2226 016a 00       		.byte	0
+ 2227 016b 03       		.uleb128 0x3
+ 2228 016c 0E       		.uleb128 0xe
+ 2229 016d 3A       		.uleb128 0x3a
+ 2230 016e 0B       		.uleb128 0xb
+ 2231 016f 3B       		.uleb128 0x3b
+ 2232 0170 0B       		.uleb128 0xb
+ 2233 0171 49       		.uleb128 0x49
+ 2234 0172 13       		.uleb128 0x13
+ 2235 0173 3F       		.uleb128 0x3f
+ 2236 0174 19       		.uleb128 0x19
+ 2237 0175 02       		.uleb128 0x2
+ 2238 0176 18       		.uleb128 0x18
+ 2239 0177 00       		.byte	0
+ 2240 0178 00       		.byte	0
+ 2241 0179 17       		.uleb128 0x17
+ 2242 017a 34       		.uleb128 0x34
+ 2243 017b 00       		.byte	0
+ 2244 017c 03       		.uleb128 0x3
+ 2245 017d 08       		.uleb128 0x8
+ 2246 017e 3A       		.uleb128 0x3a
+ 2247 017f 0B       		.uleb128 0xb
+ 2248 0180 3B       		.uleb128 0x3b
+ 2249 0181 0B       		.uleb128 0xb
+ 2250 0182 49       		.uleb128 0x49
+ 2251 0183 13       		.uleb128 0x13
+ 2252 0184 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 44
 
 
- 2187 012b 03       		.uleb128 0x3
- 2188 012c 0E       		.uleb128 0xe
- 2189 012d 3A       		.uleb128 0x3a
- 2190 012e 0B       		.uleb128 0xb
- 2191 012f 3B       		.uleb128 0x3b
- 2192 0130 0B       		.uleb128 0xb
- 2193 0131 49       		.uleb128 0x49
- 2194 0132 13       		.uleb128 0x13
- 2195 0133 11       		.uleb128 0x11
- 2196 0134 01       		.uleb128 0x1
- 2197 0135 12       		.uleb128 0x12
- 2198 0136 06       		.uleb128 0x6
- 2199 0137 40       		.uleb128 0x40
- 2200 0138 18       		.uleb128 0x18
- 2201 0139 9642     		.uleb128 0x2116
- 2202 013b 19       		.uleb128 0x19
- 2203 013c 00       		.byte	0
- 2204 013d 00       		.byte	0
- 2205 013e 12       		.uleb128 0x12
- 2206 013f 34       		.uleb128 0x34
- 2207 0140 00       		.byte	0
- 2208 0141 03       		.uleb128 0x3
- 2209 0142 0E       		.uleb128 0xe
- 2210 0143 3A       		.uleb128 0x3a
- 2211 0144 0B       		.uleb128 0xb
- 2212 0145 3B       		.uleb128 0x3b
- 2213 0146 05       		.uleb128 0x5
- 2214 0147 49       		.uleb128 0x49
- 2215 0148 13       		.uleb128 0x13
- 2216 0149 3F       		.uleb128 0x3f
- 2217 014a 19       		.uleb128 0x19
- 2218 014b 3C       		.uleb128 0x3c
- 2219 014c 19       		.uleb128 0x19
- 2220 014d 00       		.byte	0
- 2221 014e 00       		.byte	0
- 2222 014f 13       		.uleb128 0x13
- 2223 0150 35       		.uleb128 0x35
- 2224 0151 00       		.byte	0
- 2225 0152 49       		.uleb128 0x49
- 2226 0153 13       		.uleb128 0x13
- 2227 0154 00       		.byte	0
- 2228 0155 00       		.byte	0
- 2229 0156 14       		.uleb128 0x14
- 2230 0157 01       		.uleb128 0x1
- 2231 0158 01       		.byte	0x1
- 2232 0159 49       		.uleb128 0x49
- 2233 015a 13       		.uleb128 0x13
- 2234 015b 01       		.uleb128 0x1
- 2235 015c 13       		.uleb128 0x13
- 2236 015d 00       		.byte	0
- 2237 015e 00       		.byte	0
- 2238 015f 15       		.uleb128 0x15
- 2239 0160 21       		.uleb128 0x21
- 2240 0161 00       		.byte	0
- 2241 0162 49       		.uleb128 0x49
- 2242 0163 13       		.uleb128 0x13
- 2243 0164 2F       		.uleb128 0x2f
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 44
+ 2253 0185 19       		.uleb128 0x19
+ 2254 0186 02       		.uleb128 0x2
+ 2255 0187 18       		.uleb128 0x18
+ 2256 0188 00       		.byte	0
+ 2257 0189 00       		.byte	0
+ 2258 018a 00       		.byte	0
+ 2259              		.section	.debug_aranges,"",%progbits
+ 2260 0000 5C000000 		.4byte	0x5c
+ 2261 0004 0200     		.2byte	0x2
+ 2262 0006 00000000 		.4byte	.Ldebug_info0
+ 2263 000a 04       		.byte	0x4
+ 2264 000b 00       		.byte	0
+ 2265 000c 0000     		.2byte	0
+ 2266 000e 0000     		.2byte	0
+ 2267 0010 00000000 		.4byte	.LFB63
+ 2268 0014 A0000000 		.4byte	.LFE63-.LFB63
+ 2269 0018 00000000 		.4byte	.LFB64
+ 2270 001c EC010000 		.4byte	.LFE64-.LFB64
+ 2271 0020 00000000 		.4byte	.LFB65
+ 2272 0024 26000000 		.4byte	.LFE65-.LFB65
+ 2273 0028 00000000 		.4byte	.LFB66
+ 2274 002c 22000000 		.4byte	.LFE66-.LFB66
+ 2275 0030 00000000 		.4byte	.LFB67
+ 2276 0034 2C040000 		.4byte	.LFE67-.LFB67
+ 2277 0038 00000000 		.4byte	.LFB68
+ 2278 003c 1C000000 		.4byte	.LFE68-.LFB68
+ 2279 0040 00000000 		.4byte	.LFB69
+ 2280 0044 38000000 		.4byte	.LFE69-.LFB69
+ 2281 0048 00000000 		.4byte	.LFB70
+ 2282 004c 7C000000 		.4byte	.LFE70-.LFB70
+ 2283 0050 00000000 		.4byte	.LFB71
+ 2284 0054 A4000000 		.4byte	.LFE71-.LFB71
+ 2285 0058 00000000 		.4byte	0
+ 2286 005c 00000000 		.4byte	0
+ 2287              		.section	.debug_ranges,"",%progbits
+ 2288              	.Ldebug_ranges0:
+ 2289 0000 00000000 		.4byte	.LFB63
+ 2290 0004 A0000000 		.4byte	.LFE63
+ 2291 0008 00000000 		.4byte	.LFB64
+ 2292 000c EC010000 		.4byte	.LFE64
+ 2293 0010 00000000 		.4byte	.LFB65
+ 2294 0014 26000000 		.4byte	.LFE65
+ 2295 0018 00000000 		.4byte	.LFB66
+ 2296 001c 22000000 		.4byte	.LFE66
+ 2297 0020 00000000 		.4byte	.LFB67
+ 2298 0024 2C040000 		.4byte	.LFE67
+ 2299 0028 00000000 		.4byte	.LFB68
+ 2300 002c 1C000000 		.4byte	.LFE68
+ 2301 0030 00000000 		.4byte	.LFB69
+ 2302 0034 38000000 		.4byte	.LFE69
+ 2303 0038 00000000 		.4byte	.LFB70
+ 2304 003c 7C000000 		.4byte	.LFE70
+ 2305 0040 00000000 		.4byte	.LFB71
+ 2306 0044 A4000000 		.4byte	.LFE71
+ 2307 0048 00000000 		.4byte	0
+ 2308 004c 00000000 		.4byte	0
+ 2309              		.section	.debug_line,"",%progbits
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 45
 
 
- 2244 0165 0B       		.uleb128 0xb
- 2245 0166 00       		.byte	0
- 2246 0167 00       		.byte	0
- 2247 0168 16       		.uleb128 0x16
- 2248 0169 34       		.uleb128 0x34
- 2249 016a 00       		.byte	0
- 2250 016b 03       		.uleb128 0x3
- 2251 016c 0E       		.uleb128 0xe
- 2252 016d 3A       		.uleb128 0x3a
- 2253 016e 0B       		.uleb128 0xb
- 2254 016f 3B       		.uleb128 0x3b
- 2255 0170 0B       		.uleb128 0xb
- 2256 0171 49       		.uleb128 0x49
- 2257 0172 13       		.uleb128 0x13
- 2258 0173 3F       		.uleb128 0x3f
- 2259 0174 19       		.uleb128 0x19
- 2260 0175 02       		.uleb128 0x2
- 2261 0176 18       		.uleb128 0x18
- 2262 0177 00       		.byte	0
- 2263 0178 00       		.byte	0
- 2264 0179 17       		.uleb128 0x17
- 2265 017a 34       		.uleb128 0x34
- 2266 017b 00       		.byte	0
- 2267 017c 03       		.uleb128 0x3
- 2268 017d 08       		.uleb128 0x8
- 2269 017e 3A       		.uleb128 0x3a
- 2270 017f 0B       		.uleb128 0xb
- 2271 0180 3B       		.uleb128 0x3b
- 2272 0181 0B       		.uleb128 0xb
- 2273 0182 49       		.uleb128 0x49
- 2274 0183 13       		.uleb128 0x13
- 2275 0184 3F       		.uleb128 0x3f
- 2276 0185 19       		.uleb128 0x19
- 2277 0186 02       		.uleb128 0x2
- 2278 0187 18       		.uleb128 0x18
- 2279 0188 00       		.byte	0
- 2280 0189 00       		.byte	0
- 2281 018a 00       		.byte	0
- 2282              		.section	.debug_aranges,"",%progbits
- 2283 0000 5C000000 		.4byte	0x5c
- 2284 0004 0200     		.2byte	0x2
- 2285 0006 00000000 		.4byte	.Ldebug_info0
- 2286 000a 04       		.byte	0x4
- 2287 000b 00       		.byte	0
- 2288 000c 0000     		.2byte	0
- 2289 000e 0000     		.2byte	0
- 2290 0010 00000000 		.4byte	.LFB63
- 2291 0014 A0000000 		.4byte	.LFE63-.LFB63
- 2292 0018 00000000 		.4byte	.LFB64
- 2293 001c F4010000 		.4byte	.LFE64-.LFB64
- 2294 0020 00000000 		.4byte	.LFB65
- 2295 0024 26000000 		.4byte	.LFE65-.LFB65
- 2296 0028 00000000 		.4byte	.LFB66
- 2297 002c 22000000 		.4byte	.LFE66-.LFB66
- 2298 0030 00000000 		.4byte	.LFB67
- 2299 0034 3C040000 		.4byte	.LFE67-.LFB67
- 2300 0038 00000000 		.4byte	.LFB68
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 45
+ 2310              	.Ldebug_line0:
+ 2311 0000 1A030000 		.section	.debug_str,"MS",%progbits,1
+ 2311      02005501 
+ 2311      00000201 
+ 2311      FB0E0D00 
+ 2311      01010101 
+ 2312              	.LASF17:
+ 2313 0000 6C6F6E67 		.ascii	"long double\000"
+ 2313      20646F75 
+ 2313      626C6500 
+ 2314              	.LASF30:
+ 2315 000c 616E676C 		.ascii	"angle_Volt\000"
+ 2315      655F566F 
+ 2315      6C7400
+ 2316              	.LASF28:
+ 2317 0017 63616C63 		.ascii	"calculate_50Hz_RMS\000"
+ 2317      756C6174 
+ 2317      655F3530 
+ 2317      487A5F52 
+ 2317      4D5300
+ 2318              	.LASF19:
+ 2319 002a 49617272 		.ascii	"Iarray\000"
+ 2319      617900
+ 2320              	.LASF2:
+ 2321 0031 73686F72 		.ascii	"short int\000"
+ 2321      7420696E 
+ 2321      7400
+ 2322              	.LASF16:
+ 2323 003b 73697A65 		.ascii	"sizetype\000"
+ 2323      74797065 
+ 2323      00
+ 2324              	.LASF34:
+ 2325 0044 52655F76 		.ascii	"Re_volt\000"
+ 2325      6F6C7400 
+ 2326              	.LASF35:
+ 2327 004c 496D5F76 		.ascii	"Im_volt\000"
+ 2327      6F6C7400 
+ 2328              	.LASF38:
+ 2329 0054 496D5F41 		.ascii	"Im_Ampere\000"
+ 2329      6D706572 
+ 2329      6500
+ 2330              	.LASF48:
+ 2331 005e 73616D70 		.ascii	"sampleAndCalc\000"
+ 2331      6C65416E 
+ 2331      6443616C 
+ 2331      6300
+ 2332              	.LASF23:
+ 2333 006c 6E756D49 		.ascii	"numInt\000"
+ 2333      6E7400
+ 2334              	.LASF12:
+ 2335 0073 75696E74 		.ascii	"uint16\000"
+ 2335      313600
+ 2336              	.LASF22:
+ 2337 007a 696E6465 		.ascii	"indexI\000"
+ 2337      784900
+ 2338              	.LASF41:
+ 2339 0081 416D705F 		.ascii	"Amp_Ampere\000"
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 46
 
 
- 2301 003c 1C000000 		.4byte	.LFE68-.LFB68
- 2302 0040 00000000 		.4byte	.LFB69
- 2303 0044 38000000 		.4byte	.LFE69-.LFB69
- 2304 0048 00000000 		.4byte	.LFB70
- 2305 004c 7C000000 		.4byte	.LFE70-.LFB70
- 2306 0050 00000000 		.4byte	.LFB71
- 2307 0054 A4000000 		.4byte	.LFE71-.LFB71
- 2308 0058 00000000 		.4byte	0
- 2309 005c 00000000 		.4byte	0
- 2310              		.section	.debug_ranges,"",%progbits
- 2311              	.Ldebug_ranges0:
- 2312 0000 00000000 		.4byte	.LFB63
- 2313 0004 A0000000 		.4byte	.LFE63
- 2314 0008 00000000 		.4byte	.LFB64
- 2315 000c F4010000 		.4byte	.LFE64
- 2316 0010 00000000 		.4byte	.LFB65
- 2317 0014 26000000 		.4byte	.LFE65
- 2318 0018 00000000 		.4byte	.LFB66
- 2319 001c 22000000 		.4byte	.LFE66
- 2320 0020 00000000 		.4byte	.LFB67
- 2321 0024 3C040000 		.4byte	.LFE67
- 2322 0028 00000000 		.4byte	.LFB68
- 2323 002c 1C000000 		.4byte	.LFE68
- 2324 0030 00000000 		.4byte	.LFB69
- 2325 0034 38000000 		.4byte	.LFE69
- 2326 0038 00000000 		.4byte	.LFB70
- 2327 003c 7C000000 		.4byte	.LFE70
- 2328 0040 00000000 		.4byte	.LFB71
- 2329 0044 A4000000 		.4byte	.LFE71
- 2330 0048 00000000 		.4byte	0
- 2331 004c 00000000 		.4byte	0
- 2332              		.section	.debug_line,"",%progbits
- 2333              	.Ldebug_line0:
- 2334 0000 18030000 		.section	.debug_str,"MS",%progbits,1
- 2334      02005501 
- 2334      00000201 
- 2334      FB0E0D00 
- 2334      01010101 
- 2335              	.LASF17:
- 2336 0000 6C6F6E67 		.ascii	"long double\000"
- 2336      20646F75 
- 2336      626C6500 
- 2337              	.LASF30:
- 2338 000c 616E676C 		.ascii	"angle_Volt\000"
- 2338      655F566F 
- 2338      6C7400
- 2339              	.LASF28:
- 2340 0017 63616C63 		.ascii	"calculate_50Hz_RMS\000"
- 2340      756C6174 
- 2340      655F3530 
- 2340      487A5F52 
- 2340      4D5300
- 2341              	.LASF47:
- 2342 002a 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\EE-projekt-4-gruppe-1\\Maal"
- 2342      635C486F 
- 2342      6D655C44 
- 2342      65736B74 
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 46
+ 2339      416D7065 
+ 2339      726500
+ 2340              	.LASF11:
+ 2341 008c 75696E74 		.ascii	"uint8\000"
+ 2341      3800
+ 2342              	.LASF37:
+ 2343 0092 52655F41 		.ascii	"Re_Ampere\000"
+ 2343      6D706572 
+ 2343      6500
+ 2344              	.LASF21:
+ 2345 009c 696E6465 		.ascii	"indexU\000"
+ 2345      785500
+ 2346              	.LASF13:
+ 2347 00a3 666C6F61 		.ascii	"float\000"
+ 2347      7400
+ 2348              	.LASF46:
+ 2349 00a9 73616D70 		.ascii	"sample.c\000"
+ 2349      6C652E63 
+ 2349      00
+ 2350              	.LASF6:
+ 2351 00b2 6C6F6E67 		.ascii	"long long int\000"
+ 2351      206C6F6E 
+ 2351      6720696E 
+ 2351      7400
+ 2352              	.LASF45:
+ 2353 00c0 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2353      4320342E 
+ 2353      392E3320 
+ 2353      32303135 
+ 2353      30333033 
+ 2354 00f3 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 2354      20726576 
+ 2354      6973696F 
+ 2354      6E203232 
+ 2354      31323230 
+ 2355 0126 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 2355      66756E63 
+ 2355      74696F6E 
+ 2355      2D736563 
+ 2355      74696F6E 
+ 2356              	.LASF36:
+ 2357 014e 4162735F 		.ascii	"Abs_Ampere\000"
+ 2357      416D7065 
+ 2357      726500
+ 2358              	.LASF1:
+ 2359 0159 756E7369 		.ascii	"unsigned char\000"
+ 2359      676E6564 
+ 2359      20636861 
+ 2359      7200
+ 2360              	.LASF31:
+ 2361 0167 616E676C 		.ascii	"angle_Ampere\000"
+ 2361      655F416D 
+ 2361      70657265 
+ 2361      00
+ 2362              	.LASF42:
+ 2363 0174 524D535F 		.ascii	"RMS_Ampere\000"
+ 2363      416D7065 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 47
 
 
- 2342      6F705C45 
- 2343 0057 65656E68 		.ascii	"eenhed\\Maaleenhed\\Spaendingsmaaler - UART - Build"
- 2343      65645C4D 
- 2343      61616C65 
- 2343      656E6865 
- 2343      645C5370 
- 2344 0088 204F4B5C 		.ascii	" OK\\Maaler.cydsn\000"
- 2344      4D61616C 
- 2344      65722E63 
- 2344      7964736E 
- 2344      00
- 2345              	.LASF19:
- 2346 0099 49617272 		.ascii	"Iarray\000"
- 2346      617900
- 2347              	.LASF2:
- 2348 00a0 73686F72 		.ascii	"short int\000"
- 2348      7420696E 
- 2348      7400
- 2349              	.LASF16:
- 2350 00aa 73697A65 		.ascii	"sizetype\000"
- 2350      74797065 
- 2350      00
- 2351              	.LASF34:
- 2352 00b3 52655F76 		.ascii	"Re_volt\000"
- 2352      6F6C7400 
- 2353              	.LASF35:
- 2354 00bb 496D5F76 		.ascii	"Im_volt\000"
- 2354      6F6C7400 
- 2355              	.LASF38:
- 2356 00c3 496D5F41 		.ascii	"Im_Ampere\000"
- 2356      6D706572 
- 2356      6500
- 2357              	.LASF48:
- 2358 00cd 73616D70 		.ascii	"sampleAndCalc\000"
- 2358      6C65416E 
- 2358      6443616C 
- 2358      6300
- 2359              	.LASF23:
- 2360 00db 6E756D49 		.ascii	"numInt\000"
- 2360      6E7400
- 2361              	.LASF12:
- 2362 00e2 75696E74 		.ascii	"uint16\000"
- 2362      313600
- 2363              	.LASF22:
- 2364 00e9 696E6465 		.ascii	"indexI\000"
- 2364      784900
- 2365              	.LASF41:
- 2366 00f0 416D705F 		.ascii	"Amp_Ampere\000"
- 2366      416D7065 
- 2366      726500
- 2367              	.LASF11:
- 2368 00fb 75696E74 		.ascii	"uint8\000"
- 2368      3800
- 2369              	.LASF37:
- 2370 0101 52655F41 		.ascii	"Re_Ampere\000"
- 2370      6D706572 
- 2370      6500
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 47
+ 2363      726500
+ 2364              	.LASF47:
+ 2365 017f 433A5C55 		.ascii	"C:\\Users\\User\\Desktop\\GIT\\EE-projekt-4-gruppe-"
+ 2365      73657273 
+ 2365      5C557365 
+ 2365      725C4465 
+ 2365      736B746F 
+ 2366 01ad 315C4D61 		.ascii	"1\\Maaleenhed\\Maaleenhed\\Spaendingsmaaler - UART "
+ 2366      616C6565 
+ 2366      6E686564 
+ 2366      5C4D6161 
+ 2366      6C65656E 
+ 2367 01dd 2D204275 		.ascii	"- Build OK\\Maaler.cydsn\000"
+ 2367      696C6420 
+ 2367      4F4B5C4D 
+ 2367      61616C65 
+ 2367      722E6379 
+ 2368              	.LASF26:
+ 2369 01f5 73616D70 		.ascii	"sampleUandI\000"
+ 2369      6C655561 
+ 2369      6E644900 
+ 2370              	.LASF0:
+ 2371 0201 7369676E 		.ascii	"signed char\000"
+ 2371      65642063 
+ 2371      68617200 
+ 2372              	.LASF7:
+ 2373 020d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2373      206C6F6E 
+ 2373      6720756E 
+ 2373      7369676E 
+ 2373      65642069 
+ 2374              	.LASF8:
+ 2375 0224 756E7369 		.ascii	"unsigned int\000"
+ 2375      676E6564 
+ 2375      20696E74 
+ 2375      00
+ 2376              	.LASF3:
+ 2377 0231 73686F72 		.ascii	"short unsigned int\000"
+ 2377      7420756E 
+ 2377      7369676E 
+ 2377      65642069 
+ 2377      6E7400
+ 2378              	.LASF40:
+ 2379 0244 524D535F 		.ascii	"RMS_Volt\000"
+ 2379      566F6C74 
+ 2379      00
+ 2380              	.LASF27:
+ 2381 024d 63616C63 		.ascii	"calculate_50Hz_Amp\000"
+ 2381      756C6174 
+ 2381      655F3530 
+ 2381      487A5F41 
+ 2381      6D7000
+ 2382              	.LASF15:
+ 2383 0260 63686172 		.ascii	"char\000"
+ 2383      00
+ 2384              	.LASF4:
+ 2385 0265 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 48
 
 
- 2371              	.LASF21:
- 2372 010b 696E6465 		.ascii	"indexU\000"
- 2372      785500
- 2373              	.LASF13:
- 2374 0112 666C6F61 		.ascii	"float\000"
- 2374      7400
- 2375              	.LASF46:
- 2376 0118 73616D70 		.ascii	"sample.c\000"
- 2376      6C652E63 
- 2376      00
- 2377              	.LASF6:
- 2378 0121 6C6F6E67 		.ascii	"long long int\000"
- 2378      206C6F6E 
- 2378      6720696E 
- 2378      7400
- 2379              	.LASF45:
- 2380 012f 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 2380      4320342E 
- 2380      392E3320 
- 2380      32303135 
- 2380      30333033 
- 2381 0162 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 2381      20726576 
- 2381      6973696F 
- 2381      6E203232 
- 2381      31323230 
- 2382 0195 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 2382      66756E63 
- 2382      74696F6E 
- 2382      2D736563 
- 2382      74696F6E 
- 2383              	.LASF36:
- 2384 01bd 4162735F 		.ascii	"Abs_Ampere\000"
- 2384      416D7065 
- 2384      726500
- 2385              	.LASF1:
- 2386 01c8 756E7369 		.ascii	"unsigned char\000"
- 2386      676E6564 
- 2386      20636861 
- 2386      7200
- 2387              	.LASF31:
- 2388 01d6 616E676C 		.ascii	"angle_Ampere\000"
- 2388      655F416D 
- 2388      70657265 
- 2388      00
- 2389              	.LASF42:
- 2390 01e3 524D535F 		.ascii	"RMS_Ampere\000"
- 2390      416D7065 
- 2390      726500
- 2391              	.LASF26:
- 2392 01ee 73616D70 		.ascii	"sampleUandI\000"
- 2392      6C655561 
- 2392      6E644900 
- 2393              	.LASF0:
- 2394 01fa 7369676E 		.ascii	"signed char\000"
- 2394      65642063 
- 2394      68617200 
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 48
+ 2385      20696E74 
+ 2385      00
+ 2386              	.LASF10:
+ 2387 026e 696E7433 		.ascii	"int32_t\000"
+ 2387      325F7400 
+ 2388              	.LASF49:
+ 2389 0276 63616C63 		.ascii	"calculate_THD\000"
+ 2389      756C6174 
+ 2389      655F5448 
+ 2389      4400
+ 2390              	.LASF29:
+ 2391 0284 63616C63 		.ascii	"calculate_50Hz_PF\000"
+ 2391      756C6174 
+ 2391      655F3530 
+ 2391      487A5F50 
+ 2391      4600
+ 2392              	.LASF24:
+ 2393 0296 6D616B65 		.ascii	"makeMSB\000"
+ 2393      4D534200 
+ 2394              	.LASF33:
+ 2395 029e 4162735F 		.ascii	"Abs_volt\000"
+ 2395      766F6C74 
+ 2395      00
+ 2396              	.LASF5:
+ 2397 02a7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2397      20756E73 
+ 2397      69676E65 
+ 2397      6420696E 
+ 2397      7400
+ 2398              	.LASF14:
+ 2399 02b9 646F7562 		.ascii	"double\000"
+ 2399      6C6500
+ 2400              	.LASF20:
+ 2401 02c0 73697A65 		.ascii	"size\000"
+ 2401      00
+ 2402              	.LASF25:
+ 2403 02c5 6D616B65 		.ascii	"makeLSB\000"
+ 2403      4C534200 
+ 2404              	.LASF9:
+ 2405 02cd 5F5F696E 		.ascii	"__int32_t\000"
+ 2405      7433325F 
+ 2405      7400
+ 2406              	.LASF44:
+ 2407 02d7 53616D70 		.ascii	"SampleArrayI\000"
+ 2407      6C654172 
+ 2407      72617949 
+ 2407      00
+ 2408              	.LASF32:
+ 2409 02e4 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2409      52784275 
+ 2409      66666572 
+ 2409      00
+ 2410              	.LASF39:
+ 2411 02f1 416D705F 		.ascii	"Amp_Volt\000"
+ 2411      566F6C74 
+ 2411      00
+ 2412              	.LASF43:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccSj4pu6.s 			page 49
 
 
- 2395              	.LASF7:
- 2396 0206 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2396      206C6F6E 
- 2396      6720756E 
- 2396      7369676E 
- 2396      65642069 
- 2397              	.LASF8:
- 2398 021d 756E7369 		.ascii	"unsigned int\000"
- 2398      676E6564 
- 2398      20696E74 
- 2398      00
- 2399              	.LASF3:
- 2400 022a 73686F72 		.ascii	"short unsigned int\000"
- 2400      7420756E 
- 2400      7369676E 
- 2400      65642069 
- 2400      6E7400
- 2401              	.LASF40:
- 2402 023d 524D535F 		.ascii	"RMS_Volt\000"
- 2402      566F6C74 
- 2402      00
- 2403              	.LASF27:
- 2404 0246 63616C63 		.ascii	"calculate_50Hz_Amp\000"
- 2404      756C6174 
- 2404      655F3530 
- 2404      487A5F41 
- 2404      6D7000
- 2405              	.LASF15:
- 2406 0259 63686172 		.ascii	"char\000"
- 2406      00
- 2407              	.LASF4:
- 2408 025e 6C6F6E67 		.ascii	"long int\000"
- 2408      20696E74 
- 2408      00
- 2409              	.LASF10:
- 2410 0267 696E7433 		.ascii	"int32_t\000"
- 2410      325F7400 
- 2411              	.LASF49:
- 2412 026f 63616C63 		.ascii	"calculate_THD\000"
- 2412      756C6174 
- 2412      655F5448 
- 2412      4400
- 2413              	.LASF29:
- 2414 027d 63616C63 		.ascii	"calculate_50Hz_PF\000"
- 2414      756C6174 
- 2414      655F3530 
- 2414      487A5F50 
- 2414      4600
- 2415              	.LASF24:
- 2416 028f 6D616B65 		.ascii	"makeMSB\000"
- 2416      4D534200 
- 2417              	.LASF33:
- 2418 0297 4162735F 		.ascii	"Abs_volt\000"
- 2418      766F6C74 
- 2418      00
- 2419              	.LASF5:
- 2420 02a0 6C6F6E67 		.ascii	"long unsigned int\000"
-ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccTFSj0w.s 			page 49
-
-
- 2420      20756E73 
- 2420      69676E65 
- 2420      6420696E 
- 2420      7400
- 2421              	.LASF14:
- 2422 02b2 646F7562 		.ascii	"double\000"
- 2422      6C6500
- 2423              	.LASF20:
- 2424 02b9 73697A65 		.ascii	"size\000"
- 2424      00
- 2425              	.LASF25:
- 2426 02be 6D616B65 		.ascii	"makeLSB\000"
- 2426      4C534200 
- 2427              	.LASF9:
- 2428 02c6 5F5F696E 		.ascii	"__int32_t\000"
- 2428      7433325F 
- 2428      7400
- 2429              	.LASF44:
- 2430 02d0 53616D70 		.ascii	"SampleArrayI\000"
- 2430      6C654172 
- 2430      72617949 
- 2430      00
- 2431              	.LASF32:
- 2432 02dd 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 2432      52784275 
- 2432      66666572 
- 2432      00
- 2433              	.LASF39:
- 2434 02ea 416D705F 		.ascii	"Amp_Volt\000"
- 2434      566F6C74 
- 2434      00
- 2435              	.LASF43:
- 2436 02f3 53616D70 		.ascii	"SampleArrayU\000"
- 2436      6C654172 
- 2436      72617955 
- 2436      00
- 2437              	.LASF18:
- 2438 0300 55617272 		.ascii	"Uarray\000"
- 2438      617900
- 2439              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 2413 02fa 53616D70 		.ascii	"SampleArrayU\000"
+ 2413      6C654172 
+ 2413      72617955 
+ 2413      00
+ 2414              	.LASF18:
+ 2415 0307 55617272 		.ascii	"Uarray\000"
+ 2415      617900
+ 2416              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
