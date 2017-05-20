@@ -28,7 +28,7 @@ Algoritmen starter med at lave noget der kaldes "bit-reversal", Dette betyder at
 	\caption{Bit-reversal example} 
 	\label{tab:bit} 
 \end{table}
-Dette gøres for at FFT algoritmen, kan laves med et minimalt antal loops, og for at det samme array kan fyldes med de reale tal. Den næste del af funktionen, bryder DFT beregningen ned i mindre dele, som laves i nogle loops der fylder 2 arrays med hhv. de reale og imaginære. Det er en algoritme der har taget udgangspunkt i Cooley - Tukey's FFT algoritme \cite{Cooley}, som er udviklet i 1965, men stadigvæk er en af de hurtigste FFT algoritmer. Den sidste del af funktionen beregner størrelsen af signalet ved hvert frekvens bin, med følgende formel.
+Dette gøres for at FFT algoritmen, kan laves med et minimalt antal loops, og for at det samme array kan fyldes med de reale tal. Den næste del af funktionen, bryder DFT beregningen ned i mindre dele, som laves i nogle loops der fylder 2 arrays med hhv. de reale og imaginære værdiger. Det er en algoritme der har taget udgangspunkt i Cooley - Tukey's FFT algoritme \cite{Cooley}, som er udviklet i 1965, men stadigvæk er en af de hurtigste FFT algoritmer. Den sidste del af funktionen beregner størrelsen af signalet ved hvert frekvensbin, med følgende formel.
 
 
 
@@ -37,7 +37,7 @@ X_{amplitude} = \dfrac{2}{N}*\sqrt{X_{Real}^{2}+X_{Imag}^{2}}
 \end{align} 	  
 
 
-For at kunne bruge fourier til noget skal der udregnes hvor langt der er mellem hver frekvens bin. For at gøre det skal samplingstiden kendes. Når der samples 64 gange over 1 periode på bliver samplefrekvensen:
+For at kunne bruge fourier til noget skal der udregnes hvor langt der er mellem hver frekvensbin. For at gøre det skal samplingstiden kendes. Når der samples 64 gange over 1 periode bliver samplefrekvensen:
 
 \begin{align}
 f_{sample} = 64 * 50Hz = 3200Hz
@@ -58,13 +58,13 @@ FFT funktionen er testet ved at bruge MATLAB's FFT funktion på et array magen t
 	\centering 
 	\begin{tabular}{|l|l|l|l|l|l|} % Afstem antal tegn og kolonner! (l for venstre, c for center, r for højre, | for lodret streg) 
 		\hline 	% Vandret streg
-		PSOC Real				& PSOC Imag 	&Matlab Real    	&Matlab Imag 	 \\ \hline 	
-		161607		&0				&161607		&0 	 \\ \hline 
-		-2311,77	&1891,26		&-2311,77	&1891,26	 \\ \hline
-		-4846,65	&8975,04		&-4846,65	&8975,04	 \\ \hline
-		2909,31 	&-1067,90		&2909,31 	&-1067,90	 \\ \hline 
-		500,48 		&-3947,03		&500,48 	&-3947,03	 \\ \hline 
-		30,45		&-2556,68		&30,45		&-2556,68 \\ \hline   
+		Frekvensbin &PSOC Real				& PSOC Imag 	&Matlab Real    	&Matlab Imag 	 \\ \hline 	
+		0&161607		&0				&161607		&0 	 \\ \hline 
+		1&-2311,77	&1891,26		&-2311,77	&1891,26	 \\ \hline
+		2&-4846,65	&8975,04		&-4846,65	&8975,04	 \\ \hline
+		3&2909,31 	&-1067,90		&2909,31 	&-1067,90	 \\ \hline 
+		4&500,48 		&-3947,03		&500,48 	&-3947,03	 \\ \hline 
+		5&30,45		&-2556,68		&30,45		&-2556,68 \\ \hline   
 	\end{tabular} 
 	\caption{FFT test} 
 	\label{tab:fftTest} 
@@ -74,7 +74,7 @@ Resten af tabellen kan ses i bilag B1 "Måleenhed FFT samligning"
 \subsection{Beregning af rms og power faktor}
 
 \subsubsection{Beregning af rms ved 50Hz}
-Rms kan per definition beregnes for strøm og spænding på ved følgende: 
+Rms kan per definition beregnes for strøm og spænding ved følgende: 
 \begin{align}
  X_{rms}= \dfrac{X_{amplitude}}{\sqrt{2}}
 \end{align}
