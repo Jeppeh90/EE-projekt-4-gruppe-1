@@ -1,9 +1,9 @@
 % !TEX root = ../../prj4projektdokumentation.tex
 
 \section{Brugergrænseflade}
-\label{HMI}
+\label{sec:HMI}
 
-Brugergrænsefladen består i dette projekt af en HMI KTP 600. Denne sidder på samme board som PLC'en og kan tilgåes gennem swicthen !!!!CSM!!!. Den har to skærme; automatisk og manuel mode, hvoraf automatisk mode er startskærm ved opstart.
+Brugergrænsefladen består i dette projekt af en HMI KTP 600. Denne sidder på samme board som PLC'en og kan tilgåes gennem swicthen CSM 1277. Den har to skærme; automatisk og manuel mode, hvoraf automatisk mode er startskærm ved opstart.
 
 
 Det skal nævnes at systemet først var tiltænkt at have tre Måleenheder, så derfor er det klargjort til tre, men kun de to er brugt i systemet, da det vigtigste er proof of concept. Felterne under Måleenhed forbruger 2 er derfor ikke aktive.
@@ -29,7 +29,7 @@ For at skifte til manuel mode trykkes på knappen F2, for at det er tydeligt at 
 	\label{fig:ActivateScreen}
 \end{figure}
 
-Måleværdierne er koblet med de word arrays DataCentralEnhed og DataDecentralEnhed tidligere omtalt i afsnit !!!!REF TIL DEM!!!. Dette sker gennnem opsætning af Inoutblokkene. Et eksempel kan ses på figur \ref{fig:OutputblokMaelingStroemCentral} for strømmen ved den centrale måleenhed, hvor det tilknyttede PLC tag er DataCentralEnhed[0]. Plads 0 er altid strømmen, ligegyldigt hvilket array der tales om. Plads 1 er spændingen, plads 2 er powerfactor og plads 3 er THD. Blokken er sat til mode output, dvs. at man ikke kan ændre værdien gennem skærmen. Formatet er et decimaltal med to decimaler før punktummet og tre decimaler efter punktummet.
+Måleværdierne er koblet med de word arrays DataCentralEnhed og DataDecentralEnhed tidligere omtalt i afsnit \ref{sec:TCPkommunikation}. Dette sker gennnem opsætning af Inoutblokkene. Et eksempel kan ses på figur \ref{fig:OutputblokMaelingStroemCentral} for strømmen ved den centrale måleenhed, hvor det tilknyttede PLC tag er DataCentralEnhed[0]. Plads 0 er altid strømmen, ligegyldigt hvilket array der tales om. Plads 1 er spændingen, plads 2 er powerfactor og plads 3 er THD. Blokken er sat til mode output, dvs. at man ikke kan ændre værdien gennem skærmen. Formatet er et decimaltal med to decimaler før punktummet og tre decimaler efter punktummet.
 Værdien blokkene er tilknyttet er for strøm og spænding i milliammpere og millivolt, derfor er kommaet flyttede tre pladser frem, så værdierne der vises er i ampere og volt.
 
 

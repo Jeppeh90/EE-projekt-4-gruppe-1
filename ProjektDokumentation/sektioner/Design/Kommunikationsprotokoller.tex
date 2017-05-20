@@ -4,7 +4,16 @@
 \label{ch:KomProtokol}
 
 \section{TCP protokol}
-\label{TCPprotokol}
+\label{sec:TCPprotokol}
+Mellem kommunikationsmodulet og kontrolmodulet er anvendt en TCP protokol. TCP er valgt, da systemet ikke kræver hurtig, men derimod en meget pålidelig datatransmission. PLC'en anvender stikstandarden RJ-45 og har mulighed for at kommunikere med hastighederne 10/100 Mb/s. Her anvendes .....
+PLC'en er opsat som client, der forespørger data fra Arduinoen, som svarer med det forespurgte data. Kommunikation over TCP forbindelsen anvender protokollen vist på figur \ref{fig:TCPprotokol}.
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=\textwidth]{Figure/UARTprotokol}
+	\caption{Protokol for kommunikation mellem kommunikationsmodul og kontrolmodul}
+	\label{fig:TCPprotokol}
+\end{figure}
 
 \section{UART protokol}
 \label{sec:UARTprotokol}
