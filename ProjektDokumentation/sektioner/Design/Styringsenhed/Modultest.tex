@@ -7,19 +7,62 @@
 \begin{center}
 	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
 		\hline
-		\textbf{Test}					&Brugergrænsefladen modtager korrekte tal \\ \hline
-		\textbf{Testbeskrivelse}		&Der testes at de værdiger, der kommer ind på Måleenheden er ens me værdigerne der vises på brugergrænsefladen. \\ \hline
-		\textbf{Input}					&4VPP sinus på spænding indgang, 1VPP sinus på strøm indgang, 3,3ms forskydning \\ \hline
-		\textbf{Forventet output}		&1,414V spænding, 0,354A strøm, 0,509 PF se figur \ref{fig:PFtest1}, 0 THD \\ \hline
-		\textbf{Resultat}				&1,404V spænding, 0,359A strøm, 0,491, 0,2 THD,  se figur \ref*{fig:visningtest1} for resultat af skærm  \\ \hline
+		\textbf{Test}					&Opret forbindelse fra en TCP client på PLC'en til en TCP server på en Windows PC. \\ \hline
+		\textbf{Testbeskrivelse}		&Funktionen OpretForbindelse i PLC programmet testes ved hjælp af et en test server Winsock!!!!BILAG!!!!. Testen overvåges ved at gå online på PLC'en og gennem udskrifter fra Winsock programmet i en kommandoprompt på PC'en. EnableForbindelse styres af en switch forbundet til indgangen I0.0 i PLC'en.\\ \hline
+		\textbf{Input}					& Et on switch på I0.0.\\ \hline
+		\textbf{Forventet output}		&Clienten vil være aktiv i at oprette forbindelse, hvilket vil betyde at serveren udskriver at den har nedlagt listen socket og er klar til at modtage data.\\ \hline
+		\textbf{Resultat}				&EnableForbindelse bliver sat true og i kommandoprompten udskriver serveren at listen socket er nedlagt og at den er klar til at modtage data. Se figur \ref{fig:OpretForbindelseFoer} og figur \ref{fig:OpretForbindelseEfter}.   \\ \hline
 	\end{tabular}
 \end{center}
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[width=0.7\textwidth]{Test/PFTest1}
-	\caption{Visning af 3,3ms forsinkelse mellem strøm og spænding}
-	\label{fig:PFtest1}
+	\includegraphics[width=0.85\textwidth]{Test/ModultestStyringsenhed/OpretForbindelseFoer}
+	\caption{Før I0.0 swicthes on}
+	\label{fig:OpretForbindelseFoer}
+\end{figure}
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.85\textwidth]{Test/ModultestStyringsenhed/OpretForbindelseEfter}
+	\caption{Ffter I0.0 swicthes on}
+	\label{fig:OpretForbindelseEfter}
+\end{figure}
+
+\begin{center}
+	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
+		\hline
+		\textbf{Test}					&Send data fra en TCP client på PLC'en til en TCP server på en Windows PC. Samme data sendes retur fra server til client. \\ \hline
+		\textbf{Testbeskrivelse}		&Funktionerne SendData og ModtagData i PLC programmet testes ved hjælp af et en test server Winsock!!!!BILAG!!!!. Testen overvåges ved at gå online på PLC'en og gennem udskrifter fra Winsock programmet i en kommandoprompt på PC'en. EnableSend og EnableModtag styres af to switches forbundet til indgangene I0.1 og I0.2. \\ \hline
+		\textbf{Input}					& Et on switch på I0.0, I0.1 og I0.2.\\ \hline
+		\textbf{Forventet output}		&Char arrayet 'A', 'B', 'C', 'D' vil blive sendt og modtaget igen. Det kan ses på udskrifter at i kommandoprompten at 4 bytes er modtaget og sendt igen, hvorefter serveren er klar til at modtag ny data. På PLC'en kan det ses at de 4 sendte bytes matcher de 4 modtagne.\\ \hline
+		\textbf{Resultat}				&EnableForbindelse, EnableSend og EnableModtag bliver sat true og i kommandoprompten udskriver serveren at 4 bytes er modtaget og 4 er bytes er sendt og at den er klar til at ny modtage data. PLC'en har de samme 4 bytes i ModtagDat arrayet som i SendData arrayet. Se figur \ref{fig:ModtagDataOgSendData} \\ \hline
+	\end{tabular}
+\end{center}
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.85\textwidth]{Test/ModultestStyringsenhed/ModtagDataOgSendData}
+	\caption{Test af ModtagData og SendData}
+	\label{fig:ModtagDataOgSendData}
+\end{figure}
+
+\begin{center}
+	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
+		\hline
+		\textbf{Test}					&Nedlæg forbindelsen mellem en PLC client og en Windows server.\\ \hline
+		\textbf{Testbeskrivelse}		&Funktionen AfslutForbindelse i PLC programmet testes ved hjælp af en test server Winsock !!!BILAG!!!. Testen overvåges ved at gå online på PLC'en og gennem udskrifter fra Winsock programmet i en kommandoprompt på PC'en. DisbaleForbindelse styres af to swicthes forbundet til indgangen I0.3. \\ \hline
+		\textbf{Input}					& Et on switch på I0.3\\ \hline
+		\textbf{Forventet output}		&Winsock programmet vil udskrive en fejl, fordi det har mistet forbindelsen. \\ \hline
+		\textbf{Resultat}				&DisableForbindelse bliver sat true og i kommandoprompten udskriver serveren at der skete en fejl i modtagelse af ny data og udskriver fejlkode. Se figur \ref{fig:ModtagDataOgSendData} \\ \hline
+	\end{tabular}
+\end{center}
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.85\textwidth]{Test/ModultestStyringsenhed/AfslutForbindelse}
+	\caption{Test af AfslutForbindelse}
+	\label{fig:AfslutForbindelse}
 \end{figure}
 
 \subsection{Brugergrænseflade}
