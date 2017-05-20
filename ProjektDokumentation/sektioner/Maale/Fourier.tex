@@ -10,20 +10,24 @@ void FFT(long m,double *x,double *y, double *u);
 
 Denne funktion dækker over en algoritme der kan lave FFT\footnote{Fast Fourier Transformation} på et samplet signal. Algoritmen er fundet på et Cypress forum\cite{FFTalgo}. Funktionen kan lave FFT på et array med 64 tal, hvor den laver arrayet om til de reale tal og fylder et andet array med de imaginær tal. Derudover fylder den et tredje array med absolute amplitude værdiger. Det første argument m er eksponent til 2, så det giver størrelsen af arrayet. Ved 64 bliver eksponent 6.
 
-Algoritmen starter med at lave noget der kaldes "bit-reversal", Dette betyder at man bytter pladserne i arrayet på følgende måde:
+Algoritmen starter med at lave noget der kaldes "bit-reversal", Dette betyder at man bytter alle pladserne i arrayet på følgende måde:
 
 \begin{table}[H] 
 	\centering 
 	\begin{tabular}{|l|l|l|l|l|l|} % Afstem antal tegn og kolonner! (l for venstre, c for center, r for højre, | for lodret streg) 
 		\hline 	% Vandret streg
-		Array plads		& array plads binær & $\rightarrow$ 	& array plads binær    	& Array plads 	 \\ \hline 	% Linjeskift og vandret streg
-		 	&   			& $\rightarrow$ & 				& 	 \\ \hline 
-		 	&    			& $\rightarrow$ &					& 		 \\ \hline 
+		Array plads		&array plads binær & $\rightarrow$ 	&array plads binær    	&Array plads 	 \\ \hline 	% Linjeskift og vandret streg
+		0		 	& 000000  				& $\rightarrow$ &000000				&0 	 \\ \hline 
+		1		 	& 000001  				& $\rightarrow$ &100000				&32	 \\ \hline
+		2		 	& 000010  				& $\rightarrow$ &010000				&16	 \\ \hline
+		3		 	& 000011  				& $\rightarrow$ &110000				&48	 \\ \hline 
+		4		 	& 000100  				& $\rightarrow$ &001000				&8	 \\ \hline 
+		5		 	& 000101  				& $\rightarrow$ &101000				&40 \\ \hline   
 	\end{tabular} 
-	\caption{X} 
-	\label{tab:X} 
+	\caption{Bit-reversal example} 
+	\label{tab:bit} 
 \end{table}
- 
+Dette gøres for at FFT algoritmen, kan laves med et minimalt antal loops, og for at det samme array kan fyldes med de reale tal. Den næste del af funktionen, bryder DFT beregningen ned i mindre dele, der laves i nogle loops, der fylder 2 arrays med hhv. de reale og imaginære. Det er en algoritme der har taget udgangspunkt i Cooley - Tukey's FFT algoritme \cite{Cooley}, som blev udviklet i 1965 og i dag stadigvæk er en af de hurtigste FFT algoritmer.	  
 
 
 Ved samplingstiden der svare til at der kan måles over en periode på 50Hz og der samples 64 gange bliver samplefrekvensen:
