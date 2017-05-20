@@ -2,4 +2,46 @@
 
 \section{Modultest}
 
-Efter udvikling af Måleenheden er der lavet test på modulet 
+Efter udvikling af Måleenheden er der lavet test på modulet, for at sikre den lever op til  kravene.
+
+\subsection*{Test af spændingsmåling}
+\begin{center}
+	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
+		\hline
+		\textbf{Test}					&Spændingsmåling \\ \hline
+		\textbf{Testbeskrivelse}		&Der måles ved 3 forskellige spændingsniveauer for at sikre at systemet kan måler i hele måleområdet  \\ \hline
+		\textbf{Input}					&1V, 4V og 8V\\ \hline
+		\textbf{Forventet output}		&1V, 4V og 8V\\ \hline
+		\textbf{Resultat}				&\\ \hline
+	\end{tabular}
+\end{center}
+
+
+\subsection*{Test af strømmåling}
+\begin{center}
+	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
+		\hline
+		\textbf{Test}					&Strømmåling \\ \hline
+		\textbf{Testbeskrivelse}		&Der måles ved 3 forskellige strømniveauer for at sikre at systemet kan måler i hele måleområdet  \\ \hline
+		\textbf{Input}					&0,1V, 0,3V og 0,5V\\ \hline
+		\textbf{Forventet output}		&0,1A, 0,3A og 0,5A \\ \hline
+		\textbf{Resultat}				&\\ \hline
+	\end{tabular}
+\end{center}
+
+
+\subsection*{Test af power faktor}
+\begin{center}
+	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
+		\hline
+		\textbf{Test}					&Power faktor måling \\ \hline
+		\textbf{Testbeskrivelse}		&Der måles om Power faktor stemmer overens med den enlige Power faktor. Dette gøres vinklen mellem strøm og spænding på oscilloskop, og derefter regnes power faktor.   \\ \hline
+		\textbf{Input}					&2 sinus signaler med faseforskydning på \\ \hline
+		\textbf{Forventet output}		&Power faktor på \\ \hline
+		\textbf{Resultat}				&Power faktor på \\ \hline
+	\end{tabular}
+\end{center}   
+
+
+\subsection*{Test af THD måling}
+Test af THD kan ses i kapitel \ref{sek:THD}. 
