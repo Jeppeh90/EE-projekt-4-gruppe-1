@@ -1,12 +1,13 @@
 % !TEX root = ../../prj4projektdokumentation.tex
 
 \subsection{Fourier algoritme}
-Når Strøm og spænding er samplet. Laves der Fourier på dem hver især vha. funktionen \ref{FFTproto}
+Når Strøm og spænding er samplet, laves der Fourier på dem hver især vha. funktionen \ref{FFTproto}
 
 \lstset{caption={FFT prototype},label={FFTproto}}
 \begin{lstlisting}
 void FFT(long m,double *x,double *y, double *u);
 \end{lstlisting}
+Funktionen kan ses i bilag A1 i sample.cpp filen.
 
 Denne funktion dækker over en algoritme der kan lave FFT\footnote{Fast Fourier Transformation} på et samplet signal. Algoritmen er fundet på et Cypress forum\cite{FFTalgo}. Funktionen kan lave FFT på et array med 64 tal, hvor den laver arrayet om til de reale tal og fylder et andet array med de imaginær tal. Derudover fylder den et tredje array med absolute amplitude værdiger. Det første argument m er eksponent til 2, så det giver størrelsen af arrayet. Ved 64 bliver eksponent 6.
 
@@ -27,7 +28,7 @@ Algoritmen starter med at lave noget der kaldes "bit-reversal", Dette betyder at
 	\caption{Bit-reversal example} 
 	\label{tab:bit} 
 \end{table}
-Dette gøres for at FFT algoritmen, kan laves med et minimalt antal loops, og for at det samme array kan fyldes med de reale tal. Den næste del af funktionen, bryder DFT beregningen ned i mindre dele, der laves i nogle loops, der fylder 2 arrays med hhv. de reale og imaginære. Det er en algoritme der har taget udgangspunkt i Cooley - Tukey's FFT algoritme \cite{Cooley}, som blev udviklet i 1965 og er stadigvæk en af de hurtigste FFT algoritmer. Den sidste del af funktionen beregner størrelsen af signalet ved hvert frekvens bin, med følgende formel.
+Dette gøres for at FFT algoritmen, kan laves med et minimalt antal loops, og for at det samme array kan fyldes med de reale tal. Den næste del af funktionen, bryder DFT beregningen ned i mindre dele, som laves i nogle loops der fylder 2 arrays med hhv. de reale og imaginære. Det er en algoritme der har taget udgangspunkt i Cooley - Tukey's FFT algoritme \cite{Cooley}, som er udviklet i 1965, men stadigvæk er en af de hurtigste FFT algoritmer. Den sidste del af funktionen beregner størrelsen af signalet ved hvert frekvens bin, med følgende formel.
 
 
 
@@ -36,19 +37,19 @@ X_{amplitude} = \dfrac{2}{N}*\sqrt{X_{Real}^{2}+X_{Imag}^{2}}
 \end{align} 	  
 
 
-Ved samplingstiden der svare til at der kan måles over en periode på 50Hz og der samples 64 gange bliver samplefrekvensen:
+For at kunne bruge fourier til noget skal der udregnes hvor langt der er mellem hver frekvens bin. For at gøre det skal samplingstiden kendes. Når der samples 64 gange over 1 periode på bliver samplefrekvensen:
 
 \begin{align}
 f_{sample} = 64 * 50Hz = 3200Hz
 \end{align}   
 
-Hvilket betyder at hver bin i array'ne giver:
+Hvilket betyder at der mellem hver frekvens bin bliver:
 
 \begin{align}
-f_{Bin} = \dfrac{3200Hz}{64} = 50
+f_{Bin} = \dfrac{3200Hz}{64} = 50Hz
 \end{align}
 
-Dette betyder at på plads nummer 2 i arrayet med absolute værdiger, ligger størrelsen på de signaler der har en frekvens på 50Hz og på plads nummer 3, signaler med 100Hz osv.
+Dette betyder at der på plads nummer 2 kan findes værdiger for signaler med 50Hz, og der på plads nummer 3 kan findes værdiger for signaler med 100Hz, osv.
 
 \subsubsection{Test af Fourier funktionen}
 FFT funktionen er testet ved at bruge MATLAB's FFT funktion på et array magen til. Inputtet er et samplet sinus signal med et offset på 2,5 og en amplitude på 0,5.
@@ -68,6 +69,7 @@ FFT funktionen er testet ved at bruge MATLAB's FFT funktion på et array magen t
 	\caption{FFT test} 
 	\label{tab:fftTest} 
 \end{table}
+Resten af tabellen kan ses i bilag B1 "Måleenhed FFT samligning" 
 
 \subsection{Beregning af rms og power faktor}
 
@@ -85,11 +87,11 @@ return u[1]/sqrt(2);
 }
 \end{lstlisting}
 
-Hvor "u" er et array med absolute værdiger for spænding eller strøm med frekvensbin på 50.
+Hvor "u" er et array med absolute værdiger for spænding eller strøm med frekvensbin på 50Hz.
 
 \subsubsection{Beregning af Power faktor ved 50Hz}
 
-Power faktor kan er definition udregnes som cosinus til vinklen mellem strøm og spænding. Ved at lave Fourier på signalet, kan det komplekse tal anvendes til at lave en vektor. Power faktor for signalet på 50Hz bliver derfor vinklen mellem spænding og strøm på andet plads i arrayet.
+Power faktor kan per definition udregnes som cosinus til vinklen mellem strøm og spænding. Ved at lave Fourier på signalet, kan det komplekse tal anvendes til at lave en vektor. Power faktor for signalet på 50Hz bliver derfor vinklen mellem spænding og strøm på andet plads i arrayet.
 
 Vinklen på et kompleks tal er per definition:
 
