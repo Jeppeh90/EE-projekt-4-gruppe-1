@@ -27,7 +27,13 @@ Algoritmen starter med at lave noget der kaldes "bit-reversal", Dette betyder at
 	\caption{Bit-reversal example} 
 	\label{tab:bit} 
 \end{table}
-Dette gøres for at FFT algoritmen, kan laves med et minimalt antal loops, og for at det samme array kan fyldes med de reale tal. Den næste del af funktionen, bryder DFT beregningen ned i mindre dele, der laves i nogle loops, der fylder 2 arrays med hhv. de reale og imaginære. Det er en algoritme der har taget udgangspunkt i Cooley - Tukey's FFT algoritme \cite{Cooley}, som blev udviklet i 1965 og i dag stadigvæk er en af de hurtigste FFT algoritmer.	  
+Dette gøres for at FFT algoritmen, kan laves med et minimalt antal loops, og for at det samme array kan fyldes med de reale tal. Den næste del af funktionen, bryder DFT beregningen ned i mindre dele, der laves i nogle loops, der fylder 2 arrays med hhv. de reale og imaginære. Det er en algoritme der har taget udgangspunkt i Cooley - Tukey's FFT algoritme \cite{Cooley}, som blev udviklet i 1965 og er stadigvæk en af de hurtigste FFT algoritmer. Den sidste del af funktionen beregner størrelsen af signalet ved hvert frekvens bin, med følgende formel.
+
+
+
+\begin{align}
+X_{amplitude} = \dfrac{2}{N}*\sqrt{X_{Real}^{2}+X_{Imag}^{2}}
+\end{align} 	  
 
 
 Ved samplingstiden der svare til at der kan måles over en periode på 50Hz og der samples 64 gange bliver samplefrekvensen:
@@ -43,6 +49,25 @@ f_{Bin} = \dfrac{3200Hz}{64} = 50
 \end{align}
 
 Dette betyder at på plads nummer 2 i arrayet med absolute værdiger, ligger størrelsen på de signaler der har en frekvens på 50Hz og på plads nummer 3, signaler med 100Hz osv.
+
+\subsubsection{Test af Fourier funktionen}
+FFT funktionen er testet ved at bruge MATLAB's FFT funktion på et array magen til. Inputtet er et samplet sinus signal med et offset på 2,5 og en amplitude på 0,5.
+
+\begin{table}[H] 
+	\centering 
+	\begin{tabular}{|l|l|l|l|l|l|} % Afstem antal tegn og kolonner! (l for venstre, c for center, r for højre, | for lodret streg) 
+		\hline 	% Vandret streg
+		PSOC Real				& PSOC Imag 	&Matlab Real    	&Matlab Imag 	 \\ \hline 	
+		161607		&0				&161607		&0 	 \\ \hline 
+		-2311,77	&1891,26		&-2311,77	&1891,26	 \\ \hline
+		-4846,65	&8975,04		&-4846,65	&8975,04	 \\ \hline
+		2909,31 	&-1067,90		&2909,31 	&-1067,90	 \\ \hline 
+		500,48 		&-3947,03		&500,48 	&-3947,03	 \\ \hline 
+		30,45		&-2556,68		&30,45		&-2556,68 \\ \hline   
+	\end{tabular} 
+	\caption{FFT test} 
+	\label{tab:fftTest} 
+\end{table}
 
 \subsection{Beregning af rms og power faktor}
 
