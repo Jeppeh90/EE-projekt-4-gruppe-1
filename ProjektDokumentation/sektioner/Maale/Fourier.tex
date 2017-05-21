@@ -49,7 +49,7 @@ Hvilket betyder at der mellem hver frekvens bin bliver:
 f_{Bin} = \dfrac{3200Hz}{64} = 50Hz
 \end{align}
 
-Dette betyder at der på plads nummer 2 kan findes værdiger for signaler med 50Hz, og der på plads nummer 3 kan findes værdiger for signaler med 100Hz, osv.
+Dette betyder at der på plads nummer 2 kan findes værdiger for signaler med 50Hz, og der på plads nummer 3 kan findes værdier for signaler med 100Hz, osv.
 
 \subsubsection{Test af Fourier funktionen}
 FFT funktionen er testet ved at bruge MATLAB's FFT funktion på et array magen til. Inputtet er et samplet sinus signal med et offset på 2,5 og en amplitude på 0,5.
@@ -69,7 +69,7 @@ FFT funktionen er testet ved at bruge MATLAB's FFT funktion på et array magen t
 	\caption{FFT test} 
 	\label{tab:fftTest} 
 \end{table}
-Resten af tabellen kan ses i bilag B1 "Måleenhed FFT samligning" 
+Resten af tabellen kan ses i bilag B1 "Måleenhed FFT sammenligning" 
 
 \subsection{Beregning af rms og power faktor}
 
@@ -87,7 +87,7 @@ return u[1]/sqrt(2);
 }
 \end{lstlisting}
 
-Hvor "u" er et array med absolute værdiger for spænding eller strøm med frekvensbin på 50Hz.
+Hvor "u" er et array med absolute værdier for spænding eller strøm med frekvensbin på 50Hz.
 
 \subsubsection{Beregning af Power faktor ved 50Hz}
 
@@ -104,7 +104,7 @@ Power faktor kan derfor regnes som:
 PF = cos(\delta - \beta)
 \end{align}
 
-Måleenheden kan ikke se forskel på om det er et lag eller lead system. Det forventes næste altid at systemet har mere induktiv end kapacitiv belastning. Derudover betyder det heller ikke noget for effektiviteten om det er lag eller lead. Derfor er det blevet ned prioriteret på måleeneheden.
+Måleenheden kan ikke se forskel på om det er et lag eller lead system. Det forventes næsten altid at systemet har mere induktiv end kapacitiv belastning. Derudover betyder det heller ikke noget for effektiviteten om det er lag eller lead. Derfor er det blevet nedprioriteret på måleeneheden.
 
 \lstset{caption={Funktion til beregning af 50Hz PF},label={PFfunk}}
 \begin{lstlisting}
