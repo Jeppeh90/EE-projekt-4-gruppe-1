@@ -7,7 +7,7 @@
 \begin{enumerate}
 	\item Maks belastning af spændingsregulatoren er 20VA
 	\item Nominel spænding på primær siden er 24VAC
-	\item Nominel spænding på sekundær siden er 4VAC
+	\item Nominel spænding på sekundær siden er 4 , 5 eller 6 afhængigt af trin VAC
 	\item Skal minimum kunne levere 500mA	
 \end{enumerate}
 
@@ -28,4 +28,10 @@ Kravene til målingerne i Måleenheden, er opgivet i en procent, da det ikke er 
 	\item Beregne THD med en præcision på $\pm$ 5$\%$
 \end{enumerate}
 
+\subsection{Kommunikation}
+Kravene til kommunikationen gælder for hele kommunikationsvejen fra sensorer til brugergrænseflade. Disse krav er sat jf. "proof of concept"\, hvor fejlhåndtering ikke har prioritet. 
+\begin{enumerate}
+	\item Forsinkelsen på brugergrænsefladen ifht. ændringer i målte værdier må ikke overstige 2,5 sekund. 
+	\item 95\% af alle sendte data skal være korrekte, og uden forstyrrelser. 
+\end{enumerate}
 

@@ -1,0 +1,5 @@
+\\Mac\Home\Desktop\EE-projekt-4-gruppe-1\Maaleenhed\Maaleenhed\Spaendingsmaaler - FjernMulitplex\Maaler.cydsn\Maaler.cyprj|d3446ed0-e6e7-45c9-8288-533581287262
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|41b5e1c0-9507-4954-a09f-6a9fc3c44115
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|da2f6aee-5f31-462e-ae14-2cba4966f773
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|2189251c-867d-4cf2-9418-d2c06a60b19b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|214fda1a-8879-4151-9072-2b3131c6e22b
