@@ -73,7 +73,7 @@ Til implementering af belastninger/forbrugere er der på baggrund af foregående
 
 \section{Power factor}
 
-For yderligere monitorering ønskes det også at undersøge power factor i systemet. Når effekt transporteres gennem en distributionslinje består det af både aktiv og reaktiv effekt, og power factor fortæller ratioen mellem aktiv og tilsyneladende effekt. Denne parameter fortæller hvor meget effekt, der kan tages ud af systemet og udnyttes hos en belastning/forbruger. Da belastningerne i dette system er rent ohmske, forventes en power factor tæt på 1. Da der også er en spole på distributionslinjen forventes det dog også at der vil være en lagging power factor. Forholdet mellem aktiv, reaktiv og tilsyneladende effekt kan ses på figur \ref{fig:Effekttrekant}
+For yderligere monitorering ønskes det også at undersøge power factor i systemet. Når effekt transporteres gennem en distributionslinje består det af både aktiv og reaktiv effekt, og power factor fortæller ratioen mellem aktiv og tilsyneladende effekt. Denne parameter fortæller hvor meget effekt, der kan tages ud af systemet og udnyttes hos en belastning/forbruger. Da belastningerne i dette system er rent ohmske, og der kun er spolevirkning fra 'kablet, forventes der en power factor tæt på 1, men som vil være lagging netop pga, spolen. Forholdet mellem aktiv, reaktiv og tilsyneladende effekt kan ses på figur \ref{fig:Effekttrekant}
 
 \begin{figure}[H] 
 	\centering
@@ -87,27 +87,27 @@ På baggrund af dette kan den aktuelle power factor med de valgte kabelparametre
 \begin{align}
 Z_R=54 \Omega
 \end{align}
-
 \begin{align}
-Z_D=6,2+4,27j
+R_L=6,2\Omega
 \end{align}
-
 \begin{align}
-Z_L=Z_R+Z_D=60,2+4,27j
+X_L=2*\pi*50Hz*13,6mH=4,27\Omega
 \end{align}
-
 \begin{align}
-I=\frac{4}{\vert Z_L \vert} = 0,07 A
+Z_D=(6,2+4,27j)\Omega
 \end{align}
-
 \begin{align}
-S_L=I^2\cdot Z_L = 0,26+0,02j VA
+Z_L=Z_R+Z_D=(60,2+4,27j)\Omega
 \end{align}
-
+\begin{align}
+I=\frac{4V}{\vert Z_L \vert} = 0,07 A
+\end{align}
+\begin{align}
+S_L=I^2\cdot Z_L = (0,26+0,02j) VA
+\end{align}
 \begin{align}
 P=0,26 W
 \end{align}
-
 \begin{align}
 pf= \frac{P}{\vert S_L \vert} = 0,996
 \end{align}

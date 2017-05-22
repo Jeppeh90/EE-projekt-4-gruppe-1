@@ -19,19 +19,22 @@ Til testen skal der bruges:
 	\item 1 stk Arduino med ethernet shield
 	\item 1 stk PLC med hmi skærm
 	\item Ledning fra PSOC's UART til Arduino
-	\item Ethernet ledning fra ethrernet shield til PLC
+	\item Ethernet ledning fra ethernet shield til PLC
+	\item Analog Discovery
 \end{itemize}
 
-\begin{center}
+\begin{table}
 	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
 		\hline
 		\textbf{Test}					&Brugergrænsefladen modtager korrekte tal \\ \hline
 		\textbf{Testbeskrivelse}		&Der testes at de værdier, der kommer ind på Måleenheden er ens med værdierne der vises på brugergrænsefladen. \\ \hline
-		\textbf{Input}					&4VPP sinus på spænding indgang, 1VPP sinus på strøm indgang, 3,3ms forskydning \\ \hline
+		\textbf{Input}					&Analog Discovery anvendes til at lave 4VPP sinus på spænding indgang, 1VPP sinus på strøm indgang, 3,3ms forskydning \\ \hline
 		\textbf{Forventet output}		&1,414V spænding, 0,354A strøm, 0,509 PF se figur \ref{fig:PFtest1}, 0 THD \\ \hline
 		\textbf{Resultat}				&1,404V spænding, 0,359A strøm, 0,491, 0,2 THD,  se figur \ref*{fig:visningtest1} for resultat af skærm  \\ \hline
 	\end{tabular}
-\end{center}
+	\caption{Integrationstest 1} 
+\label{tab:int test 1} 
+\end{table}
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -48,19 +51,21 @@ Til testen skal der bruges:
 \end{figure}
 
 
-\begin{center}
+\begin{table}
 	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
 		\hline
 		\textbf{Test}					&Forsinkelse på brugergrænsefladen \\ \hline
 		\textbf{Testbeskrivelse}		&Tiden der går fra mellem ændringer på skærmen \\ \hline
 		\textbf{Input}					&4VPP \\ \hline
 		\textbf{Forventet output}		&At der maks. går 2,5 sekund, pga intern delay i PLC og kommunikation \\ \hline
-		\textbf{Resultat}				&2,01 2,00 1,99 2,00 1,95   \\ \hline
+		\textbf{Resultat}				&Der er målt 5 gange: 2,01s 2,00s 1,99s 2,00s 1,95s, der alle har vist sig at være inden for kravet.   \\ \hline
 	\end{tabular}
-\end{center}
+	\caption{Integrationstest 2} 
+\label{tab:int test 2} 
+\end{table}
 
 
-\begin{center}
+\begin{table}
 	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
 		\hline
 		\textbf{Test}					&Kommunikations pålidelighed \\ \hline
@@ -69,4 +74,6 @@ Til testen skal der bruges:
 		\textbf{Forventet output}		&5\% fejl ud af 120 inputs \\ \hline
 		\textbf{Resultat}				&5 fejl dvs. 4.17\%  \\ \hline
 	\end{tabular}
-\end{center}
+	\caption{Integrationstest 3} 
+\label{tab:int test 3} 
+\end{table}
