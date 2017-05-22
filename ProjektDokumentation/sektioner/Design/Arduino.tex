@@ -24,7 +24,7 @@ Herunder ses et eksempel af koden, hvor kommunikationsmodulet modtager data fra 
 
 
 For hver måledata er der oprettet 2 integers, der skrives til individuelt. Dette ses med MCStrom og MCStrom1, der tilsammen giver måleenhedens strømværdi i milliampere. 
-Den variable read1, der ses i kodeeksemplet \ref{ModtagelsesKode} er interruptstyret. Interruptet er benyttet for at vente på måleenheden får samplet en hel periode. Interruptet er implementeret på følgende måde i Arduinokoden: 
+Den variable read1, der ses i kodeeksemplet \ref{ModtagelsesKode} er interruptstyret. Interruptet er benyttet for at vente på måleenheden får samplet en hel periode. Interruptet er implementeret på følgende måde i Arduinokoden, se bilag A-3 for at se hele Arduinokoden: 
 
 \lstset{caption={Interrupt},label={InterruptKode}}
 \begin{lstlisting} % Start your code-block
@@ -45,7 +45,7 @@ int receive()
 
 Funktionen attachInterrupt() er en allerede implementeret funktion i Arduino udviklingsværktøjet. Funktionen skal have 3 parametre, hvor den første er lidt speciel, da den skal hedde digitalPinToInterrupt(pin), hvor pin er nummeret på arduinopinen der skal interruptes. Den anden parameter er navnet på Interrupt Service Routinen der skal køres når der fås et interrupt på pinen. Den sidste parameter bestemmer om interruptet skal triggeres på en lav værdi, et skift i tilstand, en rising edge eller falling edge. Der er i dette tilfælde valgt et interrupte på rising edge, da det er en UART-modtagelse der skal interruptes på. 
 
-Opsætningen af ethernet på Arduinoen, der er gjort mulig ved brug af R3 Ethernet Shieldet. W5100 chippen på Ethernet Shieldet bliver opsat igennem en SPI forbindelse der opsættes af SPI.h biblioteket. Ethernet.h biblioteket benytter denne SPI forbindelse til at opsætte socketen på Ethernet Shieldet med de parametre, der bliver givet i Arduino koden. Klassen EthernetServer opretter et element ved navn Server, der får parametren på hvilken port der skal aflyttes for forbindelse. Her er der valgt port 27015. Den mac adresse der indgår i koden skal være den der svarer til Ethernet Shield enheden. IP-adressen opsætter efter hvilken IP der ønskes, her er valgt 192.168.0.129, fordi PLC og HMI standard er på 192.168.0.xx netværket. Herunder på kodeeksempel \ref{EthernetKode} ses opsætningen af Ethernet kommunikation på Arduinoen:
+Opsætningen af ethernet på Arduinoen er gjort mulig ved brug af R3 Ethernet Shieldet. W5100 chippen på Ethernet Shieldet bliver opsat igennem en SPI forbindelse der opsættes af SPI.h biblioteket. Ethernet.h biblioteket benytter denne SPI forbindelse til at opsætte socketen på Ethernet Shieldet med de parametre, der bliver givet i Arduino koden. Klassen EthernetServer opretter et element ved navn Server, der får parametren på hvilken port der skal aflyttes for forbindelse. Her er der valgt port 27015. Den mac adresse der indgår i koden skal være den der svarer til Ethernet Shield enheden. IP-adressen opsætter efter hvilken IP der ønskes, her er valgt 192.168.0.129, fordi PLC og HMI standard er på 192.168.0.xx netværket. Herunder på kodeeksempel \ref{EthernetKode} ses opsætningen af Ethernet kommunikation på Arduinoen, se bilag A-3 for at se hele koden:
 
 
 \lstset{caption={Ethernet},label={EthernetKode}}
@@ -70,7 +70,7 @@ EthernetServer server = EthernetServer(27015);
 
 \end{lstlisting}
 
-Arduinoen modtager to forskellige kommandoer fra PLC'en én for hver af måleenhederne. De to kommandoer er henholdsvis req1 og req2. Arduinoen sammenligner hvert eneste char, for at vide hvilken måleenhed der skal sendes data fra. 
+Arduinoen modtager to forskellige kommandoer fra PLC'en én for hver af måleenhederne. De to kommandoer er henholdsvis req1 og req2. Arduinoen sammenligner hvert eneste char, for at vide hvilken måleenhed der skal sendes data fra. Se bilag A-3 for at se hele koden. 
 
 \lstset{caption={Ethernet modtagelse},label={EthernetModtagelsesKode}}
 \begin{lstlisting} % Start your code-block
