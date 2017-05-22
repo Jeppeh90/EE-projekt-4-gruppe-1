@@ -4,7 +4,9 @@
 
 \subsection{Kontrolmodul}
 
-\begin{center}
+\subsubsection{Test af PLC programmet som aktiv part i oprettelse af TCP forbindelsen}
+\begin{table}[H]
+	\centering
 	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
 		\hline
 		\textbf{Test}					&Opret forbindelse fra en TCP client på PLC'en til en TCP server på en Windows PC. \\ \hline
@@ -13,7 +15,9 @@
 		\textbf{Forventet output}		&Clienten vil være aktiv i at oprette forbindelse, hvilket vil betyde at serveren udskriver at den har nedlagt listen socket og er klar til at modtage data.\\ \hline
 		\textbf{Resultat}				&EnableForbindelse bliver sat true og i kommandoprompten udskriver serveren at listen socket er nedlagt og at den er klar til at modtage data. Se figur \ref{fig:OpretForbindelseFoer} og figur \ref{fig:OpretForbindelseEfter}.   \\ \hline
 	\end{tabular}
-\end{center}
+	\caption{Oprettelse af TCP forbindelse, PLC} 
+	\label{tab:PLCopretForbindelse}
+\end{table}
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -29,7 +33,10 @@
 	\label{fig:OpretForbindelseEfter}
 \end{figure}
 
-\begin{center}
+\subsubsection{Test af PLC programmets datatransmission over TCP forbindelsen}
+
+\begin{table}[H]
+	\centering
 	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
 		\hline
 		\textbf{Test}					&Send data fra en TCP client på PLC'en til en TCP server på en Windows PC. Samme data sendes retur fra server til client. \\ \hline
@@ -38,7 +45,9 @@
 		\textbf{Forventet output}		&Char arrayet 'A', 'B', 'C', 'D' vil blive sendt og modtaget igen. Det kan ses på udskrifter at i kommandoprompten at 4 bytes er modtaget og sendt igen, hvorefter serveren er klar til at modtag ny data. På PLC'en kan det ses at de 4 sendte bytes matcher de 4 modtagne.\\ \hline
 		\textbf{Resultat}				&EnableForbindelse, EnableSend og EnableModtag bliver sat true og i kommandoprompten udskriver serveren at 4 bytes er modtaget og 4 er bytes er sendt og at den er klar til at ny modtage data. PLC'en har de samme 4 bytes i ModtagDat arrayet som i SendData arrayet. Se figur \ref{fig:ModtagDataOgSendData} \\ \hline
 	\end{tabular}
-\end{center}
+	\caption{PLC datatransmission TCP} 
+	\label{tab:PLCTCP}
+\end{table}
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -47,7 +56,10 @@
 	\label{fig:ModtagDataOgSendData}
 \end{figure}
 
-\begin{center}
+\subsubsection{Test af PLC program som aktiv part i nedlæggelse af TCP forbindelsen}
+
+\begin{table}[H]
+	\centering
 	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
 		\hline
 		\textbf{Test}					&Nedlæg forbindelsen mellem en PLC client og en Windows server.\\ \hline
@@ -56,7 +68,9 @@
 		\textbf{Forventet output}		&Winsock programmet vil udskrive en fejl, fordi det har mistet forbindelsen. \\ \hline
 		\textbf{Resultat}				&DisableForbindelse bliver sat true og i kommandoprompten udskriver serveren at der skete en fejl i modtagelse af ny data og udskriver fejlkode. Se figur \ref{fig:AfslutForbindelse} \\ \hline
 	\end{tabular}
-\end{center}
+	\caption{Nedlæggelse af TCP forbindelse, PLC} 
+	\label{tab:PLCnedlaegForbindelse}
+\end{table}
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -65,7 +79,10 @@
 	\label{fig:AfslutForbindelse}
 \end{figure}
 
-\begin{center}
+\subsubsection{Test af PLC'ens udgange styret af digitale signaler}
+
+\begin{table}[H]
+	\centering
 	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
 		\hline
 		\textbf{Test}					&PLC udgangene til relæer leverer 24V, som skal til for at relæerne slår. \\ \hline
@@ -74,11 +91,15 @@
 		\textbf{Forventet output}		&Det forventes at der kan måles 24V med et multimeter.\\ \hline
 		\textbf{Resultat}				&Spænding målte på PLC udgang: 24.07 V, 23,97 V, 24.08 V   \\ \hline
 	\end{tabular}
-\end{center}
+	\caption{Digital styring af PLC udgange} 
+	\label{tab:PLCudgange}
+\end{table}
 
 \subsection{Brugergrænseflade}
 
-\begin{center}
+\subsubsection{Test af HMI softwarens interaktion med PLC programmet}
+\begin{table}[H]
+	\centering
 	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
 		\hline
 		\textbf{Test}					&HMI'en udskriver random generede tal der sendes til PLC'en fra PSoC'en. \\ \hline
@@ -87,7 +108,9 @@
 		\textbf{Forventet output}		&HMI'en opdateres med nye tilfældige værdier kontinuerligt.\\ \hline
 		\textbf{Resultat}				&Måleværdierne på skærmen bliver opdateret en gang hver 2s.  !!! MANGLER BILLEDE !!!\\ \hline
 	\end{tabular}
-\end{center}
+	\caption{Interaktion mellem HMI og PLC} 
+	\label{tab:HMIogPLC}
+\end{table}
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -99,7 +122,9 @@
 
 \subsection{Kommunikationsmodul}
 
-\begin{center}
+\subsubsection{Test af Arduinoens datatransmission over TCP forbindelsen}
+\begin{table}
+	\centering
 	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
 		\hline
 		\textbf{Test}					&Arduino'en modtager 'req1' over Ethernet fra PLC'en.  \\ \hline
@@ -108,7 +133,9 @@
 		\textbf{Forventet output}		&Arduinoen vil udskrive req1 på det serielle vindue, der kan åbnes i udviklingsprogrammet. \\ \hline
 		\textbf{Resultat}				&Arduinoen modtager 'req1' og udskriver det på det serielle vindue. Se figur  \ref{fig:RequestModtagelse} \\ \hline
 	\end{tabular}
-\end{center}
+	\caption{Arduinoens datatransmission TCP} 
+	\label{tab:ArduinoTCP}
+\end{table}
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -117,7 +144,10 @@
 	\label{fig:RequestModtagelse}
 \end{figure}
 
-\begin{center}
+\subsubsection{Test af Arduinoens datatransmission over UART forbindelsen}
+
+\begin{table}
+	\centering
 	\begin{tabular}{ | m{0.2\textwidth} | m{0.8\textwidth}|} 
 		\hline
 		\textbf{Test}					&Arduino'en kan modtage værdi over UART fra PSoC'en.   \\ \hline
@@ -126,7 +156,9 @@
 		\textbf{Forventet output}		&Arduinoen vil udskrive de modtagede tilfældige måledata på terminalvinduet \\ \hline
 		\textbf{Resultat}				&Arduinoen modtager udskriver måledata i terminalvinduet. Se figur \ref{fig:Hentmaaledata} \\ \hline
 	\end{tabular}
-\end{center}
+	\caption{Arduinoens datatransmission UART} 
+	\label{tab:ArduinoUART}
+\end{table}
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
