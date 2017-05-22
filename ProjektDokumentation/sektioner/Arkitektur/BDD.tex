@@ -2,7 +2,7 @@
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
 \section{Blok definitionsdiagram}
-Et BDD for spændingsregulator ses på figur \ref{fig:BDDSpaendingsregulator}. På diagrammet ses de overordnede blokke spændingsregulator består af. En beskrivelse af hver blok kan læses under figur \ref{fig:BDDSpaendingsregulator}.
+Et BDD for spændingsregulator ses på figur \ref{fig:BDDSpaendingsregulator}. På diagrammet ses de overordnede blokke, spændingsregulator består af. En beskrivelse af hver blok kan læses under figur \ref{fig:BDDSpaendingsregulator}.
 
 \begin{figure}[htbp] % (alternativt [H])
 	\centering
@@ -11,9 +11,12 @@ Et BDD for spændingsregulator ses på figur \ref{fig:BDDSpaendingsregulator}. P
 	\label{fig:BDDSpaendingsregulator}
 \end{figure}
 
+\textbf{Måleenhed} står for at måle spænding, strøm og faseforskydningen herimellem. Ligeledes skal denne kunne måle indeholdet af harmoniske frekvenser. Den skal bestå af hardware til måling af de nævnte parametre og en PSoC. På enheden skal behandlingen af rådataet også ligge, så dette kan formidles til styringsenheden.
+
+
 \textbf{Brugergrænsefladen} står for at formidle måledata til brugeren gennem en skærm, men det er også her at brugeren skal kunne inteagere med systemet i manuel tilstand.
 
-\textbf{Måleenhed} står for at måle spænding, strøm og faseforskydningen herimellem. Ligeledes skal denne kunne måle indeholdet af harmoniske frekvenser. Den skal bestå af hardware til måling af de nævnte parametre og en PSoC. På enheden skal behandlingen af rådataet også ligge, så dette kan formidles til styringsenheden.
+
 
 \textbf{Styringsenhed} har til opgave at styre trinskifteren ud fra de data den får fra målenehderne. Den består af en PLC, der skal kommunikerer med brugergrænsefladen, så en bruger kan følge med i data fra målenehderne.
 
