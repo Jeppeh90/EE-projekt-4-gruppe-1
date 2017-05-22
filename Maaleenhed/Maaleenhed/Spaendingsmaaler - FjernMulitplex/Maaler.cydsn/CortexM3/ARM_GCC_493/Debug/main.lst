@@ -1,0 +1,964 @@
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.comm	Abs_volt,512,8
+  19              		.comm	Re_volt,512,8
+  20              		.comm	Im_volt,512,8
+  21              		.comm	Abs_Ampere,512,8
+  22              		.comm	Re_Ampere,512,8
+  23              		.comm	Im_Ampere,512,8
+  24              		.comm	Amp_Volt,8,8
+  25              		.comm	RMS_Volt,8,8
+  26              		.comm	Amp_Ampere,8,8
+  27              		.comm	RMS_Ampere,8,8
+  28              		.comm	PF,8,8
+  29              		.comm	THD,8,8
+  30              		.comm	SampleArrayU,256,4
+  31              		.comm	SampleArrayI,256,4
+  32              		.global	__aeabi_dmul
+  33              		.section	.text.isr_RX,"ax",%progbits
+  34              		.align	2
+  35              		.global	isr_RX
+  36              		.thumb
+  37              		.thumb_func
+  38              		.type	isr_RX, %function
+  39              	isr_RX:
+  40              	.LFB63:
+  41              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** 
+  13:main.c        **** #include "sample.h"
+  14:main.c        **** 
+  15:main.c        **** 
+  16:main.c        **** CY_ISR(isr_RX)
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 2
+
+
+  17:main.c        **** {
+  42              		.loc 1 17 0
+  43              		.cfi_startproc
+  44              		@ args = 0, pretend = 0, frame = 0
+  45              		@ frame_needed = 1, uses_anonymous_args = 0
+  46 0000 80B5     		push	{r7, lr}
+  47              		.cfi_def_cfa_offset 8
+  48              		.cfi_offset 7, -8
+  49              		.cfi_offset 14, -4
+  50 0002 00AF     		add	r7, sp, #0
+  51              		.cfi_def_cfa_register 7
+  18:main.c        ****     switch (UART_1_ReadRxData()){
+  52              		.loc 1 18 0
+  53 0004 FFF7FEFF 		bl	UART_1_ReadRxData
+  54 0008 0346     		mov	r3, r0
+  55 000a 413B     		subs	r3, r3, #65
+  56 000c 032B     		cmp	r3, #3
+  57 000e 00F28D80 		bhi	.L9
+  58 0012 01A2     		adr	r2, .L4
+  59 0014 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+  60              		.p2align 2
+  61              	.L4:
+  62 0018 29000000 		.word	.L3+1
+  63 001c 5B000000 		.word	.L5+1
+  64 0020 89000000 		.word	.L6+1
+  65 0024 DB000000 		.word	.L7+1
+  66              		.p2align 1
+  67              	.L3:
+  19:main.c        ****         case 'A':
+  20:main.c        ****                     sampleAndCalc();
+  68              		.loc 1 20 0
+  69 0028 FFF7FEFF 		bl	sampleAndCalc
+  21:main.c        ****                     UART_1_WriteTxData(makeMSB(RMS_Ampere));
+  70              		.loc 1 21 0
+  71 002c 404B     		ldr	r3, .L10
+  72 002e D3E90023 		ldrd	r2, [r3]
+  73 0032 1046     		mov	r0, r2
+  74 0034 1946     		mov	r1, r3
+  75 0036 FFF7FEFF 		bl	makeMSB
+  76 003a 0346     		mov	r3, r0
+  77 003c 1846     		mov	r0, r3
+  78 003e FFF7FEFF 		bl	UART_1_WriteTxData
+  22:main.c        ****                     UART_1_WriteTxData(makeLSB(RMS_Ampere));
+  79              		.loc 1 22 0
+  80 0042 3B4B     		ldr	r3, .L10
+  81 0044 D3E90023 		ldrd	r2, [r3]
+  82 0048 1046     		mov	r0, r2
+  83 004a 1946     		mov	r1, r3
+  84 004c FFF7FEFF 		bl	makeLSB
+  85 0050 0346     		mov	r3, r0
+  86 0052 1846     		mov	r0, r3
+  87 0054 FFF7FEFF 		bl	UART_1_WriteTxData
+  23:main.c        ****                     break;
+  88              		.loc 1 23 0
+  89 0058 69E0     		b	.L1
+  90              	.L5:
+  24:main.c        ****         case 'B':
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 3
+
+
+  25:main.c        ****                     UART_1_WriteTxData(makeMSB(RMS_Volt));
+  91              		.loc 1 25 0
+  92 005a 364B     		ldr	r3, .L10+4
+  93 005c D3E90023 		ldrd	r2, [r3]
+  94 0060 1046     		mov	r0, r2
+  95 0062 1946     		mov	r1, r3
+  96 0064 FFF7FEFF 		bl	makeMSB
+  97 0068 0346     		mov	r3, r0
+  98 006a 1846     		mov	r0, r3
+  99 006c FFF7FEFF 		bl	UART_1_WriteTxData
+  26:main.c        ****                     UART_1_WriteTxData(makeLSB(RMS_Volt));
+ 100              		.loc 1 26 0
+ 101 0070 304B     		ldr	r3, .L10+4
+ 102 0072 D3E90023 		ldrd	r2, [r3]
+ 103 0076 1046     		mov	r0, r2
+ 104 0078 1946     		mov	r1, r3
+ 105 007a FFF7FEFF 		bl	makeLSB
+ 106 007e 0346     		mov	r3, r0
+ 107 0080 1846     		mov	r0, r3
+ 108 0082 FFF7FEFF 		bl	UART_1_WriteTxData
+  27:main.c        ****                     break;
+ 109              		.loc 1 27 0
+ 110 0086 52E0     		b	.L1
+ 111              	.L6:
+  28:main.c        ****         case 'C':
+  29:main.c        ****                     UART_1_WriteTxData(makeMSB(THD*1000));
+ 112              		.loc 1 29 0
+ 113 0088 2B4B     		ldr	r3, .L10+8
+ 114 008a D3E90023 		ldrd	r2, [r3]
+ 115 008e 1046     		mov	r0, r2
+ 116 0090 1946     		mov	r1, r3
+ 117 0092 4FF00002 		mov	r2, #0
+ 118 0096 294B     		ldr	r3, .L10+12
+ 119 0098 FFF7FEFF 		bl	__aeabi_dmul
+ 120 009c 0246     		mov	r2, r0
+ 121 009e 0B46     		mov	r3, r1
+ 122 00a0 1046     		mov	r0, r2
+ 123 00a2 1946     		mov	r1, r3
+ 124 00a4 FFF7FEFF 		bl	makeMSB
+ 125 00a8 0346     		mov	r3, r0
+ 126 00aa 1846     		mov	r0, r3
+ 127 00ac FFF7FEFF 		bl	UART_1_WriteTxData
+  30:main.c        ****                     UART_1_WriteTxData(makeLSB(THD*1000));
+ 128              		.loc 1 30 0
+ 129 00b0 214B     		ldr	r3, .L10+8
+ 130 00b2 D3E90023 		ldrd	r2, [r3]
+ 131 00b6 1046     		mov	r0, r2
+ 132 00b8 1946     		mov	r1, r3
+ 133 00ba 4FF00002 		mov	r2, #0
+ 134 00be 1F4B     		ldr	r3, .L10+12
+ 135 00c0 FFF7FEFF 		bl	__aeabi_dmul
+ 136 00c4 0246     		mov	r2, r0
+ 137 00c6 0B46     		mov	r3, r1
+ 138 00c8 1046     		mov	r0, r2
+ 139 00ca 1946     		mov	r1, r3
+ 140 00cc FFF7FEFF 		bl	makeLSB
+ 141 00d0 0346     		mov	r3, r0
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 4
+
+
+ 142 00d2 1846     		mov	r0, r3
+ 143 00d4 FFF7FEFF 		bl	UART_1_WriteTxData
+  31:main.c        ****                     break;
+ 144              		.loc 1 31 0
+ 145 00d8 29E0     		b	.L1
+ 146              	.L7:
+  32:main.c        ****         case 'D':
+  33:main.c        ****                     UART_1_WriteTxData(makeMSB(PF*1000));
+ 147              		.loc 1 33 0
+ 148 00da 194B     		ldr	r3, .L10+16
+ 149 00dc D3E90023 		ldrd	r2, [r3]
+ 150 00e0 1046     		mov	r0, r2
+ 151 00e2 1946     		mov	r1, r3
+ 152 00e4 4FF00002 		mov	r2, #0
+ 153 00e8 144B     		ldr	r3, .L10+12
+ 154 00ea FFF7FEFF 		bl	__aeabi_dmul
+ 155 00ee 0246     		mov	r2, r0
+ 156 00f0 0B46     		mov	r3, r1
+ 157 00f2 1046     		mov	r0, r2
+ 158 00f4 1946     		mov	r1, r3
+ 159 00f6 FFF7FEFF 		bl	makeMSB
+ 160 00fa 0346     		mov	r3, r0
+ 161 00fc 1846     		mov	r0, r3
+ 162 00fe FFF7FEFF 		bl	UART_1_WriteTxData
+  34:main.c        ****                     UART_1_WriteTxData(makeLSB(PF*1000));
+ 163              		.loc 1 34 0
+ 164 0102 0F4B     		ldr	r3, .L10+16
+ 165 0104 D3E90023 		ldrd	r2, [r3]
+ 166 0108 1046     		mov	r0, r2
+ 167 010a 1946     		mov	r1, r3
+ 168 010c 4FF00002 		mov	r2, #0
+ 169 0110 0A4B     		ldr	r3, .L10+12
+ 170 0112 FFF7FEFF 		bl	__aeabi_dmul
+ 171 0116 0246     		mov	r2, r0
+ 172 0118 0B46     		mov	r3, r1
+ 173 011a 1046     		mov	r0, r2
+ 174 011c 1946     		mov	r1, r3
+ 175 011e FFF7FEFF 		bl	makeLSB
+ 176 0122 0346     		mov	r3, r0
+ 177 0124 1846     		mov	r0, r3
+ 178 0126 FFF7FEFF 		bl	UART_1_WriteTxData
+  35:main.c        ****                     break;
+ 179              		.loc 1 35 0
+ 180 012a 00E0     		b	.L1
+ 181              	.L9:
+  36:main.c        ****         default:
+  37:main.c        ****                     break;
+ 182              		.loc 1 37 0
+ 183 012c 00BF     		nop
+ 184              	.L1:
+  38:main.c        ****     }
+  39:main.c        **** }
+ 185              		.loc 1 39 0
+ 186 012e 80BD     		pop	{r7, pc}
+ 187              	.L11:
+ 188              		.align	2
+ 189              	.L10:
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 5
+
+
+ 190 0130 00000000 		.word	RMS_Ampere
+ 191 0134 00000000 		.word	RMS_Volt
+ 192 0138 00000000 		.word	THD
+ 193 013c 00408F40 		.word	1083129856
+ 194 0140 00000000 		.word	PF
+ 195              		.cfi_endproc
+ 196              	.LFE63:
+ 197              		.size	isr_RX, .-isr_RX
+ 198              		.section	.text.main,"ax",%progbits
+ 199              		.align	2
+ 200              		.global	main
+ 201              		.thumb
+ 202              		.thumb_func
+ 203              		.type	main, %function
+ 204              	main:
+ 205              	.LFB64:
+  40:main.c        **** 
+  41:main.c        **** int main(void)
+  42:main.c        **** {
+ 206              		.loc 1 42 0
+ 207              		.cfi_startproc
+ 208              		@ args = 0, pretend = 0, frame = 0
+ 209              		@ frame_needed = 1, uses_anonymous_args = 0
+ 210 0000 80B5     		push	{r7, lr}
+ 211              		.cfi_def_cfa_offset 8
+ 212              		.cfi_offset 7, -8
+ 213              		.cfi_offset 14, -4
+ 214 0002 00AF     		add	r7, sp, #0
+ 215              		.cfi_def_cfa_register 7
+  43:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 216              		.loc 1 43 0
+ 217              	@ 43 "main.c" 1
+ 218 0004 62B6     		CPSIE   i
+ 219              	@ 0 "" 2
+  44:main.c        **** 
+  45:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  46:main.c        ****     
+  47:main.c        ****     isr_RX_StartEx(isr_RX);
+ 220              		.loc 1 47 0
+ 221              		.thumb
+ 222 0006 0648     		ldr	r0, .L14
+ 223 0008 FFF7FEFF 		bl	isr_RX_StartEx
+  48:main.c        ****     UART_1_Start();
+ 224              		.loc 1 48 0
+ 225 000c FFF7FEFF 		bl	UART_1_Start
+  49:main.c        ****     
+  50:main.c        ****     ADC_DelSig_1_Start();
+ 226              		.loc 1 50 0
+ 227 0010 FFF7FEFF 		bl	ADC_DelSig_1_Start
+  51:main.c        ****     ADC_DelSig_1_StartConvert();
+ 228              		.loc 1 51 0
+ 229 0014 FFF7FEFF 		bl	ADC_DelSig_1_StartConvert
+  52:main.c        ****     
+  53:main.c        ****     AMux_1_Start();
+ 230              		.loc 1 53 0
+ 231 0018 FFF7FEFF 		bl	AMux_1_Start
+ 232              	.L13:
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 6
+
+
+  54:main.c        ****         
+  55:main.c        ****     while(1)
+  56:main.c        ****     {
+  57:main.c        **** 
+  58:main.c        ****     }   
+ 233              		.loc 1 58 0 discriminator 1
+ 234 001c FEE7     		b	.L13
+ 235              	.L15:
+ 236 001e 00BF     		.align	2
+ 237              	.L14:
+ 238 0020 00000000 		.word	isr_RX
+ 239              		.cfi_endproc
+ 240              	.LFE64:
+ 241              		.size	main, .-main
+ 242              		.text
+ 243              	.Letext0:
+ 244              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 245              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 246              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+ 247              		.file 5 "sample.h"
+ 248              		.section	.debug_info,"",%progbits
+ 249              	.Ldebug_info0:
+ 250 0000 E5010000 		.4byte	0x1e5
+ 251 0004 0400     		.2byte	0x4
+ 252 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 253 000a 04       		.byte	0x4
+ 254 000b 01       		.uleb128 0x1
+ 255 000c EF000000 		.4byte	.LASF29
+ 256 0010 01       		.byte	0x1
+ 257 0011 EC010000 		.4byte	.LASF30
+ 258 0015 4F000000 		.4byte	.LASF31
+ 259 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 260 001d 00000000 		.4byte	0
+ 261 0021 00000000 		.4byte	.Ldebug_line0
+ 262 0025 02       		.uleb128 0x2
+ 263 0026 01       		.byte	0x1
+ 264 0027 06       		.byte	0x6
+ 265 0028 35000000 		.4byte	.LASF0
+ 266 002c 02       		.uleb128 0x2
+ 267 002d 01       		.byte	0x1
+ 268 002e 08       		.byte	0x8
+ 269 002f 41000000 		.4byte	.LASF1
+ 270 0033 02       		.uleb128 0x2
+ 271 0034 02       		.byte	0x2
+ 272 0035 05       		.byte	0x5
+ 273 0036 0C020000 		.4byte	.LASF2
+ 274 003a 02       		.uleb128 0x2
+ 275 003b 02       		.byte	0x2
+ 276 003c 07       		.byte	0x7
+ 277 003d CF000000 		.4byte	.LASF3
+ 278 0041 03       		.uleb128 0x3
+ 279 0042 09000000 		.4byte	.LASF9
+ 280 0046 02       		.byte	0x2
+ 281 0047 3F       		.byte	0x3f
+ 282 0048 4C000000 		.4byte	0x4c
+ 283 004c 02       		.uleb128 0x2
+ 284 004d 04       		.byte	0x4
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 7
+
+
+ 285 004e 05       		.byte	0x5
+ 286 004f 2A020000 		.4byte	.LASF4
+ 287 0053 02       		.uleb128 0x2
+ 288 0054 04       		.byte	0x4
+ 289 0055 07       		.byte	0x7
+ 290 0056 BD000000 		.4byte	.LASF5
+ 291 005a 02       		.uleb128 0x2
+ 292 005b 08       		.byte	0x8
+ 293 005c 05       		.byte	0x5
+ 294 005d DE010000 		.4byte	.LASF6
+ 295 0061 02       		.uleb128 0x2
+ 296 0062 08       		.byte	0x8
+ 297 0063 07       		.byte	0x7
+ 298 0064 AE010000 		.4byte	.LASF7
+ 299 0068 04       		.uleb128 0x4
+ 300 0069 04       		.byte	0x4
+ 301 006a 05       		.byte	0x5
+ 302 006b 696E7400 		.ascii	"int\000"
+ 303 006f 02       		.uleb128 0x2
+ 304 0070 04       		.byte	0x4
+ 305 0071 07       		.byte	0x7
+ 306 0072 96010000 		.4byte	.LASF8
+ 307 0076 03       		.uleb128 0x3
+ 308 0077 CD010000 		.4byte	.LASF10
+ 309 007b 03       		.byte	0x3
+ 310 007c 2C       		.byte	0x2c
+ 311 007d 41000000 		.4byte	0x41
+ 312 0081 02       		.uleb128 0x2
+ 313 0082 04       		.byte	0x4
+ 314 0083 04       		.byte	0x4
+ 315 0084 2F000000 		.4byte	.LASF11
+ 316 0088 02       		.uleb128 0x2
+ 317 0089 08       		.byte	0x8
+ 318 008a 04       		.byte	0x4
+ 319 008b 1B000000 		.4byte	.LASF12
+ 320 008f 02       		.uleb128 0x2
+ 321 0090 01       		.byte	0x1
+ 322 0091 08       		.byte	0x8
+ 323 0092 F3010000 		.4byte	.LASF13
+ 324 0096 02       		.uleb128 0x2
+ 325 0097 04       		.byte	0x4
+ 326 0098 07       		.byte	0x7
+ 327 0099 D5010000 		.4byte	.LASF14
+ 328 009d 02       		.uleb128 0x2
+ 329 009e 08       		.byte	0x8
+ 330 009f 04       		.byte	0x4
+ 331 00a0 33020000 		.4byte	.LASF15
+ 332 00a4 05       		.uleb128 0x5
+ 333 00a5 7D010000 		.4byte	.LASF32
+ 334 00a9 01       		.byte	0x1
+ 335 00aa 10       		.byte	0x10
+ 336 00ab 00000000 		.4byte	.LFB63
+ 337 00af 44010000 		.4byte	.LFE63-.LFB63
+ 338 00b3 01       		.uleb128 0x1
+ 339 00b4 9C       		.byte	0x9c
+ 340 00b5 06       		.uleb128 0x6
+ 341 00b6 84010000 		.4byte	.LASF33
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 8
+
+
+ 342 00ba 01       		.byte	0x1
+ 343 00bb 29       		.byte	0x29
+ 344 00bc 68000000 		.4byte	0x68
+ 345 00c0 00000000 		.4byte	.LFB64
+ 346 00c4 24000000 		.4byte	.LFE64-.LFB64
+ 347 00c8 01       		.uleb128 0x1
+ 348 00c9 9C       		.byte	0x9c
+ 349 00ca 07       		.uleb128 0x7
+ 350 00cb E2000000 		.4byte	.LASF16
+ 351 00cf 04       		.byte	0x4
+ 352 00d0 9606     		.2byte	0x696
+ 353 00d2 D6000000 		.4byte	0xd6
+ 354 00d6 08       		.uleb128 0x8
+ 355 00d7 76000000 		.4byte	0x76
+ 356 00db 09       		.uleb128 0x9
+ 357 00dc 88000000 		.4byte	0x88
+ 358 00e0 EB000000 		.4byte	0xeb
+ 359 00e4 0A       		.uleb128 0xa
+ 360 00e5 96000000 		.4byte	0x96
+ 361 00e9 3F       		.byte	0x3f
+ 362 00ea 00       		.byte	0
+ 363 00eb 0B       		.uleb128 0xb
+ 364 00ec 21020000 		.4byte	.LASF17
+ 365 00f0 05       		.byte	0x5
+ 366 00f1 1B       		.byte	0x1b
+ 367 00f2 DB000000 		.4byte	0xdb
+ 368 00f6 05       		.uleb128 0x5
+ 369 00f7 03       		.byte	0x3
+ 370 00f8 00000000 		.4byte	Abs_volt
+ 371 00fc 0B       		.uleb128 0xb
+ 372 00fd 13000000 		.4byte	.LASF18
+ 373 0101 05       		.byte	0x5
+ 374 0102 1C       		.byte	0x1c
+ 375 0103 DB000000 		.4byte	0xdb
+ 376 0107 05       		.uleb128 0x5
+ 377 0108 03       		.byte	0x3
+ 378 0109 00000000 		.4byte	Re_volt
+ 379 010d 0B       		.uleb128 0xb
+ 380 010e C5010000 		.4byte	.LASF19
+ 381 0112 05       		.byte	0x5
+ 382 0113 1D       		.byte	0x1d
+ 383 0114 DB000000 		.4byte	0xdb
+ 384 0118 05       		.uleb128 0x5
+ 385 0119 03       		.byte	0x3
+ 386 011a 00000000 		.4byte	Im_volt
+ 387 011e 0B       		.uleb128 0xb
+ 388 011f 48020000 		.4byte	.LASF20
+ 389 0123 05       		.byte	0x5
+ 390 0124 1F       		.byte	0x1f
+ 391 0125 DB000000 		.4byte	0xdb
+ 392 0129 05       		.uleb128 0x5
+ 393 012a 03       		.byte	0x3
+ 394 012b 00000000 		.4byte	Abs_Ampere
+ 395 012f 0B       		.uleb128 0xb
+ 396 0130 F8010000 		.4byte	.LASF21
+ 397 0134 05       		.byte	0x5
+ 398 0135 20       		.byte	0x20
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 9
+
+
+ 399 0136 DB000000 		.4byte	0xdb
+ 400 013a 05       		.uleb128 0x5
+ 401 013b 03       		.byte	0x3
+ 402 013c 00000000 		.4byte	Re_Ampere
+ 403 0140 0B       		.uleb128 0xb
+ 404 0141 02020000 		.4byte	.LASF22
+ 405 0145 05       		.byte	0x5
+ 406 0146 21       		.byte	0x21
+ 407 0147 DB000000 		.4byte	0xdb
+ 408 014b 05       		.uleb128 0x5
+ 409 014c 03       		.byte	0x3
+ 410 014d 00000000 		.4byte	Im_Ampere
+ 411 0151 0B       		.uleb128 0xb
+ 412 0152 00000000 		.4byte	.LASF23
+ 413 0156 05       		.byte	0x5
+ 414 0157 23       		.byte	0x23
+ 415 0158 88000000 		.4byte	0x88
+ 416 015c 05       		.uleb128 0x5
+ 417 015d 03       		.byte	0x3
+ 418 015e 00000000 		.4byte	Amp_Volt
+ 419 0162 0B       		.uleb128 0xb
+ 420 0163 3F020000 		.4byte	.LASF24
+ 421 0167 05       		.byte	0x5
+ 422 0168 24       		.byte	0x24
+ 423 0169 88000000 		.4byte	0x88
+ 424 016d 05       		.uleb128 0x5
+ 425 016e 03       		.byte	0x3
+ 426 016f 00000000 		.4byte	RMS_Volt
+ 427 0173 0B       		.uleb128 0xb
+ 428 0174 16020000 		.4byte	.LASF25
+ 429 0178 05       		.byte	0x5
+ 430 0179 25       		.byte	0x25
+ 431 017a 88000000 		.4byte	0x88
+ 432 017e 05       		.uleb128 0x5
+ 433 017f 03       		.byte	0x3
+ 434 0180 00000000 		.4byte	Amp_Ampere
+ 435 0184 0B       		.uleb128 0xb
+ 436 0185 A3010000 		.4byte	.LASF26
+ 437 0189 05       		.byte	0x5
+ 438 018a 26       		.byte	0x26
+ 439 018b 88000000 		.4byte	0x88
+ 440 018f 05       		.uleb128 0x5
+ 441 0190 03       		.byte	0x3
+ 442 0191 00000000 		.4byte	RMS_Ampere
+ 443 0195 0C       		.uleb128 0xc
+ 444 0196 504600   		.ascii	"PF\000"
+ 445 0199 05       		.byte	0x5
+ 446 019a 27       		.byte	0x27
+ 447 019b 88000000 		.4byte	0x88
+ 448 019f 05       		.uleb128 0x5
+ 449 01a0 03       		.byte	0x3
+ 450 01a1 00000000 		.4byte	PF
+ 451 01a5 0C       		.uleb128 0xc
+ 452 01a6 54484400 		.ascii	"THD\000"
+ 453 01aa 05       		.byte	0x5
+ 454 01ab 28       		.byte	0x28
+ 455 01ac 88000000 		.4byte	0x88
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 10
+
+
+ 456 01b0 05       		.uleb128 0x5
+ 457 01b1 03       		.byte	0x3
+ 458 01b2 00000000 		.4byte	THD
+ 459 01b6 09       		.uleb128 0x9
+ 460 01b7 68000000 		.4byte	0x68
+ 461 01bb C6010000 		.4byte	0x1c6
+ 462 01bf 0A       		.uleb128 0xa
+ 463 01c0 96000000 		.4byte	0x96
+ 464 01c4 3F       		.byte	0x3f
+ 465 01c5 00       		.byte	0
+ 466 01c6 0B       		.uleb128 0xb
+ 467 01c7 89010000 		.4byte	.LASF27
+ 468 01cb 05       		.byte	0x5
+ 469 01cc 2F       		.byte	0x2f
+ 470 01cd B6010000 		.4byte	0x1b6
+ 471 01d1 05       		.uleb128 0x5
+ 472 01d2 03       		.byte	0x3
+ 473 01d3 00000000 		.4byte	SampleArrayU
+ 474 01d7 0B       		.uleb128 0xb
+ 475 01d8 22000000 		.4byte	.LASF28
+ 476 01dc 05       		.byte	0x5
+ 477 01dd 30       		.byte	0x30
+ 478 01de B6010000 		.4byte	0x1b6
+ 479 01e2 05       		.uleb128 0x5
+ 480 01e3 03       		.byte	0x3
+ 481 01e4 00000000 		.4byte	SampleArrayI
+ 482 01e8 00       		.byte	0
+ 483              		.section	.debug_abbrev,"",%progbits
+ 484              	.Ldebug_abbrev0:
+ 485 0000 01       		.uleb128 0x1
+ 486 0001 11       		.uleb128 0x11
+ 487 0002 01       		.byte	0x1
+ 488 0003 25       		.uleb128 0x25
+ 489 0004 0E       		.uleb128 0xe
+ 490 0005 13       		.uleb128 0x13
+ 491 0006 0B       		.uleb128 0xb
+ 492 0007 03       		.uleb128 0x3
+ 493 0008 0E       		.uleb128 0xe
+ 494 0009 1B       		.uleb128 0x1b
+ 495 000a 0E       		.uleb128 0xe
+ 496 000b 55       		.uleb128 0x55
+ 497 000c 17       		.uleb128 0x17
+ 498 000d 11       		.uleb128 0x11
+ 499 000e 01       		.uleb128 0x1
+ 500 000f 10       		.uleb128 0x10
+ 501 0010 17       		.uleb128 0x17
+ 502 0011 00       		.byte	0
+ 503 0012 00       		.byte	0
+ 504 0013 02       		.uleb128 0x2
+ 505 0014 24       		.uleb128 0x24
+ 506 0015 00       		.byte	0
+ 507 0016 0B       		.uleb128 0xb
+ 508 0017 0B       		.uleb128 0xb
+ 509 0018 3E       		.uleb128 0x3e
+ 510 0019 0B       		.uleb128 0xb
+ 511 001a 03       		.uleb128 0x3
+ 512 001b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 11
+
+
+ 513 001c 00       		.byte	0
+ 514 001d 00       		.byte	0
+ 515 001e 03       		.uleb128 0x3
+ 516 001f 16       		.uleb128 0x16
+ 517 0020 00       		.byte	0
+ 518 0021 03       		.uleb128 0x3
+ 519 0022 0E       		.uleb128 0xe
+ 520 0023 3A       		.uleb128 0x3a
+ 521 0024 0B       		.uleb128 0xb
+ 522 0025 3B       		.uleb128 0x3b
+ 523 0026 0B       		.uleb128 0xb
+ 524 0027 49       		.uleb128 0x49
+ 525 0028 13       		.uleb128 0x13
+ 526 0029 00       		.byte	0
+ 527 002a 00       		.byte	0
+ 528 002b 04       		.uleb128 0x4
+ 529 002c 24       		.uleb128 0x24
+ 530 002d 00       		.byte	0
+ 531 002e 0B       		.uleb128 0xb
+ 532 002f 0B       		.uleb128 0xb
+ 533 0030 3E       		.uleb128 0x3e
+ 534 0031 0B       		.uleb128 0xb
+ 535 0032 03       		.uleb128 0x3
+ 536 0033 08       		.uleb128 0x8
+ 537 0034 00       		.byte	0
+ 538 0035 00       		.byte	0
+ 539 0036 05       		.uleb128 0x5
+ 540 0037 2E       		.uleb128 0x2e
+ 541 0038 00       		.byte	0
+ 542 0039 3F       		.uleb128 0x3f
+ 543 003a 19       		.uleb128 0x19
+ 544 003b 03       		.uleb128 0x3
+ 545 003c 0E       		.uleb128 0xe
+ 546 003d 3A       		.uleb128 0x3a
+ 547 003e 0B       		.uleb128 0xb
+ 548 003f 3B       		.uleb128 0x3b
+ 549 0040 0B       		.uleb128 0xb
+ 550 0041 27       		.uleb128 0x27
+ 551 0042 19       		.uleb128 0x19
+ 552 0043 11       		.uleb128 0x11
+ 553 0044 01       		.uleb128 0x1
+ 554 0045 12       		.uleb128 0x12
+ 555 0046 06       		.uleb128 0x6
+ 556 0047 40       		.uleb128 0x40
+ 557 0048 18       		.uleb128 0x18
+ 558 0049 9642     		.uleb128 0x2116
+ 559 004b 19       		.uleb128 0x19
+ 560 004c 00       		.byte	0
+ 561 004d 00       		.byte	0
+ 562 004e 06       		.uleb128 0x6
+ 563 004f 2E       		.uleb128 0x2e
+ 564 0050 00       		.byte	0
+ 565 0051 3F       		.uleb128 0x3f
+ 566 0052 19       		.uleb128 0x19
+ 567 0053 03       		.uleb128 0x3
+ 568 0054 0E       		.uleb128 0xe
+ 569 0055 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 12
+
+
+ 570 0056 0B       		.uleb128 0xb
+ 571 0057 3B       		.uleb128 0x3b
+ 572 0058 0B       		.uleb128 0xb
+ 573 0059 27       		.uleb128 0x27
+ 574 005a 19       		.uleb128 0x19
+ 575 005b 49       		.uleb128 0x49
+ 576 005c 13       		.uleb128 0x13
+ 577 005d 11       		.uleb128 0x11
+ 578 005e 01       		.uleb128 0x1
+ 579 005f 12       		.uleb128 0x12
+ 580 0060 06       		.uleb128 0x6
+ 581 0061 40       		.uleb128 0x40
+ 582 0062 18       		.uleb128 0x18
+ 583 0063 9642     		.uleb128 0x2116
+ 584 0065 19       		.uleb128 0x19
+ 585 0066 00       		.byte	0
+ 586 0067 00       		.byte	0
+ 587 0068 07       		.uleb128 0x7
+ 588 0069 34       		.uleb128 0x34
+ 589 006a 00       		.byte	0
+ 590 006b 03       		.uleb128 0x3
+ 591 006c 0E       		.uleb128 0xe
+ 592 006d 3A       		.uleb128 0x3a
+ 593 006e 0B       		.uleb128 0xb
+ 594 006f 3B       		.uleb128 0x3b
+ 595 0070 05       		.uleb128 0x5
+ 596 0071 49       		.uleb128 0x49
+ 597 0072 13       		.uleb128 0x13
+ 598 0073 3F       		.uleb128 0x3f
+ 599 0074 19       		.uleb128 0x19
+ 600 0075 3C       		.uleb128 0x3c
+ 601 0076 19       		.uleb128 0x19
+ 602 0077 00       		.byte	0
+ 603 0078 00       		.byte	0
+ 604 0079 08       		.uleb128 0x8
+ 605 007a 35       		.uleb128 0x35
+ 606 007b 00       		.byte	0
+ 607 007c 49       		.uleb128 0x49
+ 608 007d 13       		.uleb128 0x13
+ 609 007e 00       		.byte	0
+ 610 007f 00       		.byte	0
+ 611 0080 09       		.uleb128 0x9
+ 612 0081 01       		.uleb128 0x1
+ 613 0082 01       		.byte	0x1
+ 614 0083 49       		.uleb128 0x49
+ 615 0084 13       		.uleb128 0x13
+ 616 0085 01       		.uleb128 0x1
+ 617 0086 13       		.uleb128 0x13
+ 618 0087 00       		.byte	0
+ 619 0088 00       		.byte	0
+ 620 0089 0A       		.uleb128 0xa
+ 621 008a 21       		.uleb128 0x21
+ 622 008b 00       		.byte	0
+ 623 008c 49       		.uleb128 0x49
+ 624 008d 13       		.uleb128 0x13
+ 625 008e 2F       		.uleb128 0x2f
+ 626 008f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 13
+
+
+ 627 0090 00       		.byte	0
+ 628 0091 00       		.byte	0
+ 629 0092 0B       		.uleb128 0xb
+ 630 0093 34       		.uleb128 0x34
+ 631 0094 00       		.byte	0
+ 632 0095 03       		.uleb128 0x3
+ 633 0096 0E       		.uleb128 0xe
+ 634 0097 3A       		.uleb128 0x3a
+ 635 0098 0B       		.uleb128 0xb
+ 636 0099 3B       		.uleb128 0x3b
+ 637 009a 0B       		.uleb128 0xb
+ 638 009b 49       		.uleb128 0x49
+ 639 009c 13       		.uleb128 0x13
+ 640 009d 3F       		.uleb128 0x3f
+ 641 009e 19       		.uleb128 0x19
+ 642 009f 02       		.uleb128 0x2
+ 643 00a0 18       		.uleb128 0x18
+ 644 00a1 00       		.byte	0
+ 645 00a2 00       		.byte	0
+ 646 00a3 0C       		.uleb128 0xc
+ 647 00a4 34       		.uleb128 0x34
+ 648 00a5 00       		.byte	0
+ 649 00a6 03       		.uleb128 0x3
+ 650 00a7 08       		.uleb128 0x8
+ 651 00a8 3A       		.uleb128 0x3a
+ 652 00a9 0B       		.uleb128 0xb
+ 653 00aa 3B       		.uleb128 0x3b
+ 654 00ab 0B       		.uleb128 0xb
+ 655 00ac 49       		.uleb128 0x49
+ 656 00ad 13       		.uleb128 0x13
+ 657 00ae 3F       		.uleb128 0x3f
+ 658 00af 19       		.uleb128 0x19
+ 659 00b0 02       		.uleb128 0x2
+ 660 00b1 18       		.uleb128 0x18
+ 661 00b2 00       		.byte	0
+ 662 00b3 00       		.byte	0
+ 663 00b4 00       		.byte	0
+ 664              		.section	.debug_aranges,"",%progbits
+ 665 0000 24000000 		.4byte	0x24
+ 666 0004 0200     		.2byte	0x2
+ 667 0006 00000000 		.4byte	.Ldebug_info0
+ 668 000a 04       		.byte	0x4
+ 669 000b 00       		.byte	0
+ 670 000c 0000     		.2byte	0
+ 671 000e 0000     		.2byte	0
+ 672 0010 00000000 		.4byte	.LFB63
+ 673 0014 44010000 		.4byte	.LFE63-.LFB63
+ 674 0018 00000000 		.4byte	.LFB64
+ 675 001c 24000000 		.4byte	.LFE64-.LFB64
+ 676 0020 00000000 		.4byte	0
+ 677 0024 00000000 		.4byte	0
+ 678              		.section	.debug_ranges,"",%progbits
+ 679              	.Ldebug_ranges0:
+ 680 0000 00000000 		.4byte	.LFB63
+ 681 0004 44010000 		.4byte	.LFE63
+ 682 0008 00000000 		.4byte	.LFB64
+ 683 000c 24000000 		.4byte	.LFE64
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 14
+
+
+ 684 0010 00000000 		.4byte	0
+ 685 0014 00000000 		.4byte	0
+ 686              		.section	.debug_line,"",%progbits
+ 687              	.Ldebug_line0:
+ 688 0000 8A010000 		.section	.debug_str,"MS",%progbits,1
+ 688      02004601 
+ 688      00000201 
+ 688      FB0E0D00 
+ 688      01010101 
+ 689              	.LASF23:
+ 690 0000 416D705F 		.ascii	"Amp_Volt\000"
+ 690      566F6C74 
+ 690      00
+ 691              	.LASF9:
+ 692 0009 5F5F696E 		.ascii	"__int32_t\000"
+ 692      7433325F 
+ 692      7400
+ 693              	.LASF18:
+ 694 0013 52655F76 		.ascii	"Re_volt\000"
+ 694      6F6C7400 
+ 695              	.LASF12:
+ 696 001b 646F7562 		.ascii	"double\000"
+ 696      6C6500
+ 697              	.LASF28:
+ 698 0022 53616D70 		.ascii	"SampleArrayI\000"
+ 698      6C654172 
+ 698      72617949 
+ 698      00
+ 699              	.LASF11:
+ 700 002f 666C6F61 		.ascii	"float\000"
+ 700      7400
+ 701              	.LASF0:
+ 702 0035 7369676E 		.ascii	"signed char\000"
+ 702      65642063 
+ 702      68617200 
+ 703              	.LASF1:
+ 704 0041 756E7369 		.ascii	"unsigned char\000"
+ 704      676E6564 
+ 704      20636861 
+ 704      7200
+ 705              	.LASF31:
+ 706 004f 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\EE-projekt-4-gruppe-1\\Maal"
+ 706      635C486F 
+ 706      6D655C44 
+ 706      65736B74 
+ 706      6F705C45 
+ 707 007c 65656E68 		.ascii	"eenhed\\Maaleenhed\\Spaendingsmaaler - FjernMulitpl"
+ 707      65645C4D 
+ 707      61616C65 
+ 707      656E6865 
+ 707      645C5370 
+ 708 00ad 65785C4D 		.ascii	"ex\\Maaler.cydsn\000"
+ 708      61616C65 
+ 708      722E6379 
+ 708      64736E00 
+ 709              	.LASF5:
+ 710 00bd 6C6F6E67 		.ascii	"long unsigned int\000"
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 15
+
+
+ 710      20756E73 
+ 710      69676E65 
+ 710      6420696E 
+ 710      7400
+ 711              	.LASF3:
+ 712 00cf 73686F72 		.ascii	"short unsigned int\000"
+ 712      7420756E 
+ 712      7369676E 
+ 712      65642069 
+ 712      6E7400
+ 713              	.LASF16:
+ 714 00e2 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 714      52784275 
+ 714      66666572 
+ 714      00
+ 715              	.LASF29:
+ 716 00ef 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 716      4320342E 
+ 716      392E3320 
+ 716      32303135 
+ 716      30333033 
+ 717 0122 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 717      20726576 
+ 717      6973696F 
+ 717      6E203232 
+ 717      31323230 
+ 718 0155 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 718      66756E63 
+ 718      74696F6E 
+ 718      2D736563 
+ 718      74696F6E 
+ 719              	.LASF32:
+ 720 017d 6973725F 		.ascii	"isr_RX\000"
+ 720      525800
+ 721              	.LASF33:
+ 722 0184 6D61696E 		.ascii	"main\000"
+ 722      00
+ 723              	.LASF27:
+ 724 0189 53616D70 		.ascii	"SampleArrayU\000"
+ 724      6C654172 
+ 724      72617955 
+ 724      00
+ 725              	.LASF8:
+ 726 0196 756E7369 		.ascii	"unsigned int\000"
+ 726      676E6564 
+ 726      20696E74 
+ 726      00
+ 727              	.LASF26:
+ 728 01a3 524D535F 		.ascii	"RMS_Ampere\000"
+ 728      416D7065 
+ 728      726500
+ 729              	.LASF7:
+ 730 01ae 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 730      206C6F6E 
+ 730      6720756E 
+ 730      7369676E 
+ 730      65642069 
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 16
+
+
+ 731              	.LASF19:
+ 732 01c5 496D5F76 		.ascii	"Im_volt\000"
+ 732      6F6C7400 
+ 733              	.LASF10:
+ 734 01cd 696E7433 		.ascii	"int32_t\000"
+ 734      325F7400 
+ 735              	.LASF14:
+ 736 01d5 73697A65 		.ascii	"sizetype\000"
+ 736      74797065 
+ 736      00
+ 737              	.LASF6:
+ 738 01de 6C6F6E67 		.ascii	"long long int\000"
+ 738      206C6F6E 
+ 738      6720696E 
+ 738      7400
+ 739              	.LASF30:
+ 740 01ec 6D61696E 		.ascii	"main.c\000"
+ 740      2E6300
+ 741              	.LASF13:
+ 742 01f3 63686172 		.ascii	"char\000"
+ 742      00
+ 743              	.LASF21:
+ 744 01f8 52655F41 		.ascii	"Re_Ampere\000"
+ 744      6D706572 
+ 744      6500
+ 745              	.LASF22:
+ 746 0202 496D5F41 		.ascii	"Im_Ampere\000"
+ 746      6D706572 
+ 746      6500
+ 747              	.LASF2:
+ 748 020c 73686F72 		.ascii	"short int\000"
+ 748      7420696E 
+ 748      7400
+ 749              	.LASF25:
+ 750 0216 416D705F 		.ascii	"Amp_Ampere\000"
+ 750      416D7065 
+ 750      726500
+ 751              	.LASF17:
+ 752 0221 4162735F 		.ascii	"Abs_volt\000"
+ 752      766F6C74 
+ 752      00
+ 753              	.LASF4:
+ 754 022a 6C6F6E67 		.ascii	"long int\000"
+ 754      20696E74 
+ 754      00
+ 755              	.LASF15:
+ 756 0233 6C6F6E67 		.ascii	"long double\000"
+ 756      20646F75 
+ 756      626C6500 
+ 757              	.LASF24:
+ 758 023f 524D535F 		.ascii	"RMS_Volt\000"
+ 758      566F6C74 
+ 758      00
+ 759              	.LASF20:
+ 760 0248 4162735F 		.ascii	"Abs_Ampere\000"
+ 760      416D7065 
+ 760      726500
+ARM GAS  C:\Users\Soren\AppData\Local\Temp\ccogahl2.s 			page 17
+
+
+ 761              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
