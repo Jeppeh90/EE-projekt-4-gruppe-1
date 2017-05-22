@@ -10,7 +10,7 @@ Softwaren til Måleenheden er allokeret på PSOC. Det overordnede flow i koden e
 
 Som det første åbnes der for globale interrupts, så der kan modtages receive-interrupts fra UART forbindelsen til Styringsenheden. Herefter inittieres de anvendte blokke i PSOC, herunder ADC og UART. 
 
-Efter initialiseringen går koden i et uendeligt loop hvor der ikke er nogen aktivitet.  Her ventes der på et receive-interrupt fra UART forbindelsen. Ifølge protokollen for kommunikation mellem Måleenhed og Styringsenhed (se kapitel \ref{ch:KomProtokol}) forventes det at rækkefølgen af karakterer der modtages er "A-B-C-D". Denne rækkefølge er afgørende, da sampling og udregning, først starter ved modtagelse af karakteren 'A'. 
+Efter initialiseringen går koden i et uendeligt loop hvor der ikke er nogen aktivitet.  Her ventes der på et receive-interrupt fra UART forbindelsen. Ifølge protokollen for kommunikation mellem Måleenhed og Styringsenhed, se kapitel \ref{ch:KomProtokol}, forventes det at rækkefølgen af karakterer der modtages er "A-B-C-D". Denne rækkefølge er afgørende, da sampling og udregning, først starter ved modtagelse af karakteren 'A'. 
 
 Når udregningerne er udført, sendes den udregnede RMS-værdi for den målte strøm, over UART-forbindelsen. Værdien, som er en 16bit integer, sendes i to bytes, henholdsvis MSB og LSB. 
 
