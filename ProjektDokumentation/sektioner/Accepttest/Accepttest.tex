@@ -64,7 +64,7 @@
 		\textbf{Trintransformer} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
 		Nominel spænding på primærsiden er 24VAC & Spændingen på primærsiden måles. & Den målte værdi er 24VAC. & Der måles 23.88 VAC & \checkmark \\\hline
 		Nominel spænding på sekundær side er 4, 5 eller 6 VAC afhængig af trin & Spændingen på sekundærsiden måles for hhv. trin 4, 5 og 6. & Den målte værdi er 4, 5 eller 6 VAC alt efter valgt trin. & Der måles hhv. 4, 5 og 6 VAC & \checkmark \\\hline
-		Maks strøm på sekundær side er 5 A. & Strømmen på sekundærsiden måles. & Den målte værdi overstiger ikke 5A. & xx  & xx \\\hline
+		Skal minimum kunne levere 500mA	. & Strømmen på sekundærsiden måles. & Transformeren kan levere over 500mA & xx  & xx \\\hline
 	\end{tabular}
 	
 \end{table}
@@ -75,7 +75,7 @@
 	\begin{tabular}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|p{1cm}|}
 		\hline
 		\textbf{Belastning} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
-		Modstandsværdi på 43 $\Omega$ giver spændingsfald på 10\%, når spændingen fra regulatoren er 4V. & Den givne modstand indsættes som belastning, og spændingen herover måles. & Spændingen over belastningen måles til 3,6V. & Den målte værdi er 3.61 VAC & \checkmark \\\hline	
+		Modstandsværdi på 54$\Omega$ giver spændingsfald på 10\%, når spændingen fra regulatoren er 4V. & Den givne modstand indsættes som belastning, og spændingen herover måles. & Spændingen over belastningen måles til 3,6V. & xx & xx \\\hline	
 	\end{tabular}
 	
 	
@@ -88,11 +88,11 @@
 	\hline
 	\textbf{Måleenhed} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
 	Måle spændingen ved trinskifteren og forbrugerne mellem 0 og 8 Vrms & Måleenheden testes med spændinger fra 0 til 8Vrms, i intervaller af 500mV. & Korrekt spændingsmåling i hele intervallet. & Korrekte spændingsmålinger i hele intervallet & \checkmark\\\hline
-	Måle spændingen med en præcision på $\pm$ 10\%& Måleenheden påtrykkes en spænding på 3,5Vrms. Der laves herefter ti målinger& Gennemsnits afvigelsen forventes at være under $\pm$10\%.& Afvigelsen er fundet til 1,6\%. &\checkmark\\\hline
+	Måle spændingen med en præcision på $\pm$ 5\%& Måleenheden påtrykkes en spænding på 3,5Vrms. Der laves herefter ti målinger& Gennemsnits afvigelsen forventes at være under $\pm$5\%.& Afvigelsen er fundet til 1,6\%. &\checkmark\\\hline
 	Måle strømmen ved trinskifteren og forbrugerne mellem 0 og 500mA& Måleenheden testes med strømme fra 0 til 500mA i intervaller af 50mA&Korrekt strømmåling i hele intervallet.&Korrekt strømmåling i hele intervallet&\checkmark\\\hline
-	Måle strømmen med en præcision på $\pm$ 10\%&Måleenheden påtrykkes en spænding på 300mVrms (Svarende til 300mA), der laves herefter ti målinger&Gennemsnits afvigelsen forventes at være under $\pm$10\%&Afvigelsen er fundet til 0,8\%.&\checkmark\\\hline
-	Måle og beregne power factor med en præcision på $\pm$ 10$\%$&Måleenheden måler power factor over en belastning på distributionslinjen, der sammenlignes med beregnet power factor&Afvigelsen forventes at være under $\pm$ 10\% &Afvigelsen er fundet til ??&xx\\\hline
-	Beregne THD med en præcision på $\pm$ 10$\%$&Måleenheden påtrykkes en firkantsignal med 1V amplituder og 1V offset. Der sammenlignes med beregnet THD for firkantsignal& Afvigelsen forventes at være under $\pm$ 10\%&Afvigelsen er fundet til 0,5\%&\checkmark\\\hline
+	Måle strømmen med en præcision på $\pm$ 5\%&Måleenheden påtrykkes en spænding på 300mVrms (Svarende til 300mA), der laves herefter ti målinger&Gennemsnits afvigelsen forventes at være under $\pm$5\%&Afvigelsen er fundet til 0,8\%.&\checkmark\\\hline
+	Måle og beregne power factor med en præcision på $\pm$ 5$\%$&Måleenheden måler power factor over en belastning på distributionslinjen, der sammenlignes med beregnet power factor&Afvigelsen forventes at være under $\pm$ 5\% &Afvigelsen er fundet til ??&xx\\\hline
+	Beregne THD med en præcision på $\pm$ 5$\%$&Måleenheden påtrykkes en firkantsignal med 1V amplituder og 1V offset. Der sammenlignes med beregnet THD for firkantsignal& Afvigelsen forventes at være under $\pm$ 5\%&Afvigelsen er fundet til 0,5\%&\checkmark\\\hline
 	
 \end{longtable}
 
