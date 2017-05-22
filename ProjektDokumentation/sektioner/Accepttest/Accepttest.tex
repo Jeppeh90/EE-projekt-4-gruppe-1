@@ -1,0 +1,100 @@
+\chapter{Accepttest}
+
+% !TEX root = ../../prj4projektdokumentation.tex
+
+\section{Funktionelle Krav}
+%usecase 1
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{4.5cm}|p{1cm}|}
+		\hline
+		\textbf{UC1} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
+		Start manuel styring & Bruger vælger Manuel Mode & På skærmen vises Manuel Mode med mulighed for valg af trin & Skærmen viser Manuel Mode & \checkmark \\\hline
+		
+		
+	\end{tabular}
+	
+	
+\end{table}
+
+%usecase2
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{4.5cm}|p{1cm}|}
+		\hline
+		\textbf{UC2} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
+		Stop manuel styring & Bruger vælger Automatisk Mode & Skærmen viser Automatisk Mode, hvor trinknapperne er deaktiverede & Der vises Automatisk Mode & \checkmark \\\hline
+		
+		
+	\end{tabular}
+\end{table}
+
+% usecase3a
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{4.5cm}|p{1cm}|}
+		\hline
+		\textbf{UC3a} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
+		Skift trin op & Systemet er i Manuel Mode. Bruger vælger Trin Op på skærmen & Systemet skifter trin op på transformeren og skærmen opdateres med nye værdier. & Transformeren skifter trin efter 2s. Derefter opdateres spænding, strøm, pf og THD på skærmen inden 2s.  & \checkmark \\\hline
+		
+		
+	\end{tabular}
+\end{table}
+
+%usecase3b
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{4.5cm}|p{1cm}|}
+		\hline
+		\textbf{UC3b} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
+		Skift trin ned & Systemet er i Manuel Mode. Bruger vælger Trin Ned på skærmen & Systemet skifter trin ned på transformeren og skærmen opdateres med nye værdier. & Transformeren skifter trin efter 2s. Derefter opdateres spænding, strøm, pf og THD på skærmen inden 2s.  & \checkmark \\\hline
+		
+		
+	\end{tabular}
+	
+	
+\end{table}
+
+\section{Ikke funktionelle krav}
+% for spændingsregulator
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|p{1cm}|}
+		\hline
+		\textbf{Trintransformer} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
+		Nominel spænding på primærsiden er 24VAC & Spændingen på primærsiden måles. & Den målte værdi er 24VAC. & Der måles 23.88 VAC & \checkmark \\\hline
+		Nominel spænding på sekundær side er 4, 5 eller 6 VAC afhængig af trin & Spændingen på sekundærsiden måles for hhv. trin 4, 5 og 6. & Den målte værdi er 4, 5 eller 6 VAC alt efter valgt trin. & Der måles hhv. 4, 5 og 6 VAC & \checkmark \\\hline
+		Maks strøm på sekundær side er 5 A. & Strømmen på sekundærsiden måles. & Den målte værdi overstiger ikke 5A. & xx  & xx \\\hline
+	\end{tabular}
+	
+\end{table}
+
+% for belastning
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|p{1cm}|}
+		\hline
+		\textbf{Belastning} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
+		Modstandsværdi på 43 $\Omega$ giver spændingsfald på 10\%, når spændingen fra regulatoren er 4V. & Den givne modstand indsættes som belastning, og spændingen herover måles. & Spændingen over belastningen måles til 3,6V. & Den målte værdi er 3.61 VAC & \checkmark \\\hline	
+	\end{tabular}
+	
+	
+\end{table}
+
+% for måleenhed
+%\begin{table}[htbp]
+%	\centering
+\begin{longtable}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|p{1cm}|}
+	\hline
+	\textbf{Måleenhed} & \textbf{Handling} & \textbf{Forventet resultat} & \textbf{Resultat} &\textbf{OK} \\\hline
+	Måle spændingen ved trinskifteren og forbrugerne mellem 0 og 8 Vrms & Måleenheden testes med spændinger fra 0 til 8Vrms, i intervaller af 500mV. & Korrekt spændingsmåling i hele intervallet. & Korrekte spændingsmålinger i hele intervallet & \checkmark\\\hline
+	Måle spændingen med en præcision på $\pm$ 10\%& Måleenheden påtrykkes en spænding på 3,5Vrms. Der laves herefter ti målinger& Gennemsnits afvigelsen forventes at være under $\pm$10\%.& Afvigelsen er fundet til 1,6\%. &\checkmark\\\hline
+	Måle strømmen ved trinskifteren og forbrugerne mellem 0 og 500mA& Måleenheden testes med strømme fra 0 til 500mA i intervaller af 50mA&Korrekt strømmåling i hele intervallet.&Korrekt strømmåling i hele intervallet&\checkmark\\\hline
+	Måle strømmen med en præcision på $\pm$ 10\%&Måleenheden påtrykkes en spænding på 300mVrms (Svarende til 300mA), der laves herefter ti målinger&Gennemsnits afvigelsen forventes at være under $\pm$10\%&Afvigelsen er fundet til 0,8\%.&\checkmark\\\hline
+	Måle og beregne power factor med en præcision på $\pm$ 10$\%$&Måleenheden måler power factor over en belastning på distributionslinjen, der sammenlignes med beregnet power factor&Afvigelsen forventes at være under $\pm$ 10\% &Afvigelsen er fundet til ??&xx\\\hline
+	Beregne THD med en præcision på $\pm$ 10$\%$&Måleenheden påtrykkes en firkantsignal med 1V amplituder og 1V offset. Der sammenlignes med beregnet THD for firkantsignal& Afvigelsen forventes at være under $\pm$ 10\%&Afvigelsen er fundet til 0,5\%&\checkmark\\\hline
+	
+\end{longtable}
+
+
+%\end{table}
