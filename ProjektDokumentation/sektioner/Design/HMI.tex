@@ -29,7 +29,7 @@ For at skifte til manuel mode trykkes på knappen F2. Knappen er valgt for at de
 	\label{fig:ActivateScreen}
 \end{figure}
 
-Måleværdierne er koblet med de word arrays DataCentralEnhed og DataDecentralEnhed tidligere omtalt i afsnit \ref{sec:TCPkommunikation}. Dette sker gennnem opsætning af Inoutblokkene. Et eksempel kan ses på figur \ref{fig:OutputblokMaelingStroemCentral} for strømmen ved den centrale måleenhed, hvor det tilknyttede PLC tag er DataCentralEnhed[0]. Plads 0 er altid strømmen, ligegyldigt hvilket array der tales om. Plads 1 er spændingen, plads 2 er powerfactor og plads 3 er THD. Mode er sat til output, dvs. at man ikke kan ændre værdien gennem skærmen. Formatet er et decimaltal med to decimaler før punktummet og tre decimaler efter punktummet.
+Måleværdierne er koblet med de word arrays DataCentralEnhed og DataDecentralEnhed tidligere omtalt i afsnit \ref{sec:TCPkommunikation}. Dette sker gennnem opsætning af Inoutblokkene. Et eksempel kan ses på figur \ref{fig:OutputblokMaelingStroemCentral} for strømmen ved den centrale måleenhed, hvor det tilknyttede PLC tag er DataCentralEnhed[0]. Plads 0 er altid strømmen, ligegyldigt hvilket array der tales om. Plads 1 er spændingen, plads 2 er THD og plads 3 er powerfactor. Mode er sat til output, dvs. at man ikke kan ændre værdien gennem skærmen. Formatet er et decimaltal med to decimaler før punktummet og tre decimaler efter punktummet.
 Værdien blokkene er tilknyttet er for strøm og spænding i milliammpere og millivolt, derfor er kommaet flyttede tre pladser frem, så værdierne der vises er i ampere og volt.
 
 
