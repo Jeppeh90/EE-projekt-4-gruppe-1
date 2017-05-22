@@ -16,7 +16,7 @@ OpretForbindelse består af funktionsblokken TCON, som er vist på figur \ref{fi
 
 ID er identifikationen på forbindelsen internt i PLC'en, som de resterende blokke bruger til at identificere hvilken forbindelse de er tilknyttet, hvis der skulle være flere. Her er ID sat til 1, da der kun er en forbindelse til kommunikationsmodulet.
 
-CONNECT parameteren er en pointer til data området der indeholder forbindelsesinformation. TCON muliggør at få informationer om forbindelsen tilstand gennem DONE, BUSY, ERROR og STATUS. Disse outputs ligger i den tilhørende DB TCON\_DB og kan kaldes gennem den. I dette projekt er der dog ikke udviklet nogen form for fejlhåndtering og disse outputs anvendes ikke. Der henvises til !!!!SYSTEM MANUAL REFERNCE!!!! for mere dybdegående forklaring af disse.
+CONNECT parameteren er en pointer til data området der indeholder forbindelsesinformation. TCON muliggør at få informationer om forbindelsen tilstand gennem DONE, BUSY, ERROR og STATUS. Disse outputs ligger i den tilhørende DB TCON\_DB og kan kaldes gennem den. I dette projekt er der dog ikke udviklet nogen form for fejlhåndtering og disse outputs anvendes ikke. Der henvises til bilag B-2,kapitel 11, for mere dybdegående forklaring af disse.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -38,7 +38,7 @@ På partnersiden er Arduinoen ikke et Siemens modul og derfor unspecified. Her e
 
 Funktionen AfslutForbindelse står for at nedlægge forbindelse. Da der kun kommunikeres med en enhed, anvender programmet aldrig denne mulighed. Alligevel er funktionen lavet for at det er nemt at videreudvikle, med henblik på at tilføje flere TCP forbindelser. 
 
-Funktionsblokken TDISCON anvendes til denne opgave. Når blokkens REQ ser en rising edge nedlægges forbindelsen og det vil kræve en rising edge på TCON's REQ for at genetablere forbindelsen. Blokken skal også bruge et ID på forbindelsen, ID'et er sat i konfigurationen af TCON. Igen kan informationer omkring blokken fåes gennem DONE, BUSY, ERROR og STATUS. Disse anvendes ikke, da der ikke er lagt vægt på fejlhåndtering i dette projekt. De kan kaldes gennem datablokken TDISCON\_DB. Der henvises til !!!!SYSTEM MANUAL REFERNCE!!!! for mere dybdegående forklaring af disse.
+Funktionsblokken TDISCON anvendes til denne opgave. Når blokkens REQ ser en rising edge nedlægges forbindelsen og det vil kræve en rising edge på TCON's REQ for at genetablere forbindelsen. Blokken skal også bruge et ID på forbindelsen, ID'et er sat i konfigurationen af TCON. Igen kan informationer omkring blokken fåes gennem DONE, BUSY, ERROR og STATUS. Disse anvendes ikke, da der ikke er lagt vægt på fejlhåndtering i dette projekt. De kan kaldes gennem datablokken TDISCON\_DB. Der henvises til bilag B-2, kapitel 11 for mere dybdegående forklaring af disse.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -49,7 +49,7 @@ Funktionsblokken TDISCON anvendes til denne opgave. Når blokkens REQ ser en ris
 
 Når forbindelsen er oprettet bruges funktionerne SendData og ModtagData til  kommunikering af data. SendData anvender funktionsblokken TSEND til at afsende data placeret i den globale static SendData. Når REQ modtager en rising edge afsendes dataet. Mens ID specificerer hvilken forbindelse, der skal sendes over.
 
-Ligesom TCON og TDISCON anvendes DONE, BUSY, ERROR og STATUS ikke. Der henvises til !!!!SYSTEM MANUAL REFERNCE!!!! for mere dybdegående forklaring af disse.
+Ligesom TCON og TDISCON anvendes DONE, BUSY, ERROR og STATUS ikke. Der henvises til bilag B-2, kapitel 11 for mere dybdegående forklaring af disse.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -76,7 +76,7 @@ Til sidst på figur \ref{fig:ValgAfEnhedSend} flyttes kommandoen for den valgte 
 
 ModtagData funktionen er opbygget på meget samme måde som SendData funktionen med en funktionsblok TRCV vist på figur \ref{fig:TRCV} til selve TCP kommunikation og et netværk deisgnet til at gemme det modtagede data. Netværket kan ses på figur \ref{fig:GemModtagetdata}. TRCV er opbygget med en EN\_R, der så længe den er true vil modtage data. Den globale static EnableModtag er default true, da funktionsblokken bliver udført asynkront, så den vil ikke blokkere programmet herved. Ligeså snart en forespørgelse på ny data er sendt er programmet altså klar til at modtage et svar.
 
-ID er det samme som for de resterende kommunikationsblokke. DATA dækker over hvor modtaget data skal gemmes. Som i de resterende blokke anvendes outputs ikke. Der henvises til !!!!SYSTEM MANUAL REFERNCE!!!! for mere dybdegående forklaring af disse.
+ID er det samme som for de resterende kommunikationsblokke. DATA dækker over hvor modtaget data skal gemmes. Som i de resterende blokke anvendes outputs ikke. Der henvises til bilag B-2, kapitel 11 for mere dybdegående forklaring af disse.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -134,7 +134,7 @@ I manuel mode er konceptet ikke at trinskiftene skal styres af spænidngsmåling
 
 Hvordan et trinskift udføres i programmet er gennemgående det samme, forskellen ligger i hvilke trin der skiftes imellem og om det er et skift op eller ned. Dette gælder både for manuel og automatisk mode.
 
-Herunder er derfor kun vist et eksempel på et trinskiftnetværk. De resterende og resten af programmet kan findes i !!!!REFERENCE TIL PLCOgHMIprogram!!!. Dette eksempel er et trinskift op fra trin 2 til trin 3. For at sikre at der altid er forsyning på distributionslinjen skal der altid være et trin på transformeren der er aktivt. Derfor er en on delay timer, TrinSkift2til3, anvendt. Det nye trin, i dette tilfælde trin 3 sættes true, så snart Step bliver 4, mens det gamle trin resettes efter 2 sekunder, hvorefter Step bliver sat til 5 og systemet er nu sikkert og uden afbrydelser blevet flyttet til et nyt trin. For flere kredsløbsdetaljer om skiftet på selve transformeren, henvises til afsnit \ref{sec:Trinskifter}.
+Herunder er derfor kun vist et eksempel på et trinskiftnetværk. De resterende og resten af programmet kan findes i bilag A-2. Dette eksempel er et trinskift op fra trin 2 til trin 3. For at sikre at der altid er forsyning på distributionslinjen skal der altid være et trin på transformeren der er aktivt. Derfor er en on delay timer, TrinSkift2til3, anvendt. Det nye trin, i dette tilfælde trin 3 sættes true, så snart Step bliver 4, mens det gamle trin resettes efter 2 sekunder, hvorefter Step bliver sat til 5 og systemet er nu sikkert og uden afbrydelser blevet flyttet til et nyt trin. For flere kredsløbsdetaljer om skiftet på selve transformeren, henvises til afsnit \ref{sec:Trinskifter}.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
