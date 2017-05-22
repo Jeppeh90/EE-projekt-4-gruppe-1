@@ -39,29 +39,27 @@ Det kan dermed ud fra modultesten konkluderes, at spændingen over belastningern
 
 \subsection{Power factor}
 
-For at teste at systemet virker som ønsket, laves en sammenligning af forventede power factor værdier og de værdier, der rent faktisk måles i systemet. Resultaterne herfra ses i tabel \ref{tab:Modultestpow}
+For at teste at systemet virker som ønsket, laves en sammenligning af forventede power factor værdier og de værdier, der rent faktisk måles i systemet. Resultaterne herfra ses i tabel \ref{tab:Modultestpow}. Det ses at variationen i power factor er meget lille, og der ses derfor heller ingen forskel i de målte værdier. 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
 		\hline
-		\textbf{Trin} & \textbf{Belastning} & \textbf{Forventet resultat} & \textbf{Resultat} \\\hline
+		\textbf{Trin} & \textbf{Belastning} & \textbf{Simulering} & \textbf{Målt værdi} \\\hline
 		
 		\multirow{6}{*}{4 V AC} 
-		& $50 \Omega\parallel 50 \Omega$ & 0,990 & 2,9 V AC målt over belastning \\\hhline{~---} 	
-		& $50 \Omega\parallel 16 \Omega$ & 0,974 & 2,0 V AC målt over belastning \\\hhline{~---}
-		& $54 \Omega$ & 0,997 &  \\\hhline{~---} 
-		& $50 \Omega$ &0,997  &  \\\hhline{~---} 	
-		& $39 \Omega$ & 0,996 &  \\\hhline{~---} 
-		& $16 \Omega$ & 0,982 &  \\\hline 
+	
+		& $54 \Omega$ & 0,997 &  0,999\\\hhline{~---} 
+		& $50 \Omega$ &0,997  &  0,999\\\hhline{~---} 	
+		& $39 \Omega$ & 0,996 &  0,999\\\hhline{~---} 
+		& $16 \Omega$ & 0,982 &  0,999\\\hline 
 		
 		
 		\multirow{6}{*}{5 V AC} 
-		& $50 \Omega\parallel 50 \Omega$ & 0,990 & 2,9 V AC målt over belastning \\\hhline{~---} 	
-		& $50 \Omega\parallel 16 \Omega$ & 0,974 & 2,0 V AC målt over belastning \\\hhline{~---}
-		& $54 \Omega$ & 0,997 &  \\\hhline{~---} 
-		& $50 \Omega$ & 0,997 &  \\\hhline{~---} 	
-		& $39 \Omega$ & 0,996 &  \\\hhline{~---} 
-		& $16 \Omega$ & 0,982 &  \\\hline 
+	
+		& $54 \Omega$ & 0,997 & 0,999 \\\hhline{~---} 
+		& $50 \Omega$ & 0,997 & 0,999 \\\hhline{~---} 	
+		& $39 \Omega$ & 0,996 & 0,999 \\\hhline{~---} 
+		& $16 \Omega$ & 0,982 & 0,999 \\\hline 
 
 		
 	\end{tabular}
