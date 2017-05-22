@@ -106,7 +106,7 @@
 		\textbf{Testbeskrivelse}		&PSoC'en er opsat med en speciel kode se figur \ref{fig:PSoCkodeeksempel}, der genererer tilfældige værdier for strøm, spænding, powerfactor og THD.  \\ \hline
 		\textbf{Input}					& Måledata over fra PsoC'en til PLC'en, hvor HMI'en kan hente data fra og vise dem på skærmen.\\ \hline
 		\textbf{Forventet output}		&HMI'en opdateres med nye tilfældige værdier kontinuerligt.\\ \hline
-		\textbf{Resultat}				&Måleværdierne på skærmen bliver opdateret en gang hver 2s.  !!! MANGLER BILLEDE !!!\\ \hline
+		\textbf{Resultat}				&Måleværdierne på skærmen bliver opdateret en gang hver 2s.  \ref{fig:HMItest}\\ \hline
 	\end{tabular}
 	\caption{Interaktion mellem HMI og PLC} 
 	\label{tab:HMIogPLC}
@@ -117,6 +117,13 @@
 	\includegraphics[width=0.85\textwidth]{Test/ModultestStyringsenhed/PSoCkodeeksempel}
 	\caption{PSoC tæller op og sender derfor tilfældige data}
 	\label{fig:PSoCkodeeksempel}
+\end{figure}
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.85\textwidth]{Test/ModultestStyringsenhed/HMItest}
+	\caption{HMI'en viser tilfældigt generede værdier}
+	\label{fig:HMItest}
 \end{figure}
 
 
