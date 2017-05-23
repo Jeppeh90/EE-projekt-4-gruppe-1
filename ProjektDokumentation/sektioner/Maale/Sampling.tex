@@ -19,7 +19,7 @@ f_{sample} = 41666 Hz
 	\label{fig:MEADC}
 \end{figure}
 
-Som det fremgår af Figur \ref{fig:MEADC} er der anvendt 2 multiplexere, til at skifte mellem hvilke signaler der skal samples. Dette skyldes at der kun er én ADC i PSOCen. Samplingen af signalet styres i C-koden, hvor der anvendes to af ADC-blokkens API funktioner. 
+Som det fremgår af Figur \ref{fig:MEADC} er der anvendt en multiplexer, til at skifte mellem hvilkt signal der skal samples. Dette skyldes at der kun er én ADC i PSOCen. Samplingen af signalet styres i C-koden, hvor der anvendes to af ADC-blokkens API funktioner. 
 \\
 
 \textbf{GetResult16() }starter en ADC konvertering, venter på at denne er færdig, stopper konverteringen og returnerer en 16bit signed integer værdi af resultatet. 
