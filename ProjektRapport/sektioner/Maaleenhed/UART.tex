@@ -1,0 +1,17 @@
+% !TEX root = ../../prj4projektrapport.tex
+% SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
+
+\subsubsection{THD beregning}
+Beregningen af, og baggrunden for THD er beskrevet i Afsnit \ref{sec:THD}. Den beregning der laves i PSOC, medregner kun indholdet af de fire første harmoniske i signalet. Formlen der anvendes i softwaren er givet i Ligning \ref{eq:THDsoft}.
+\begin{align}
+\label{eq:THDsoft}
+THD = \dfrac{\sqrt{V_2^{2}+V_3^{2}+V_4^{2}+V_5^{2}}}{V_{1}}
+\end{align}
+ 
+
+\subsubsection{UART kommunikation}
+Kommunikationen mellem Måleenheden og Styringsenheden er af Figur \ref{fig:allokering} allokeret på en UART forbindelse. UART forbindelsen transmitterer 16bit værdier for strøm, spænding, THD og power factor. Værdierne deles inden transmissionen op i to pakke af 8bit, og samles igen i Styringsenheden. Protokol og indstilling af UART forbindelsen er beskrevet i dokumentationen\footnote{Projektdokumentation, 7.2, UART protokol}.
+
+
+
+
