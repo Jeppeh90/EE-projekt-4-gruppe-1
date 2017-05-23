@@ -4,4 +4,9 @@
 \section{Kontrolmodul}
 
 Kontrolmodulet består af en Siemens PLC S7-1200 med signalmodulet AQ1x12BIT. Det kan tilgåes gennem en switch af typen CSM 1277.
-Softwaren består af to dele; en kommunikationsdel med interface til kommunikationsmodulet og en kontroldel med interface til Trinskifter. Den detaljeret gennemgang af softwaren kan findes i dokumentationen.\footnote{Projektdokumentation, 10.1, Kontrolmodul}
+Softwaren består af to dele; en kommunikationsdel med interface til kommunikationsmodulet og en kontroldel med interface til Trinskifter. Den detaljerede gennemgang af softwaren kan findes i dokumentationen.\footnote{Projektdokumentation, 10.1, Kontrolmodul} Her vil i stedet blive lagt fokus på de overvejelser der har været undervejs i designet af Kontrolmodulet.
+
+\subsection{Kommunikation}
+Datatransmission til Kontrolmodulet er en vigtig del af projektet, da dette forbinder sensorer i form af Måleenhederne med aktuatorer i form af Trinskifter. Derfor er der blevet lagt mange overvejelser i hvordan kommunikationen skulle etableres.
+
+
