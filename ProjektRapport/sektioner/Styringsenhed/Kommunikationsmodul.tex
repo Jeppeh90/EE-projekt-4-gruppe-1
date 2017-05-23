@@ -3,6 +3,8 @@
 
 \section{Kommunikationsmodul}
 
+I starten af projektet var det tænkt at et separat kommunikationsmodul ikke var nødvendigt, da PSoC'en med et tilhørende Ethernetmodul ENC28J60 burde 
+
 Kommunikationsmodulet består af en Arduino Mega2560 forbundet til et Ethernet Shield R3. Kommunikationsmodulet står for kommunikationen mellem Måleenhederne og Kontrolmodulet, det skal dermed modtage data fra Måleenhederne over UART kommunikation og sende det videre til Kontrolmodulet ved brug af TCP kommunikation. 
 
 Arduinoen opsætter Ethernet Shield'et ved brug af en SPI forbindelse, der oprettes af SPI.h biblioteket, der kaldes som det første i koden. Dernæst er Ethernet.h biblioteket kaldt, for at kunne benytte de meget brugbare funktioner i dette bibliotek. 
