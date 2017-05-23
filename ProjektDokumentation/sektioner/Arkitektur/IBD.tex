@@ -11,14 +11,6 @@ På figur \ref{fig:IBDSp} og figur \ref{fig:IBDSt} ses IBD for henholdsvis Spæn
 	\label{fig:IBDSp}
 \end{figure}
 
-\begin{figure}[htbp] % (alternativt [H])
-	\centering
-	\includegraphics[width=0.8\textwidth]{Figure/IBDStyringsenhed1}
-	\caption{IBD for Styringsenhed}
-	\label{fig:IBDSt}
-\end{figure}
-
-
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|p{4cm}|}
@@ -35,7 +27,7 @@ På figur \ref{fig:IBDSp} og figur \ref{fig:IBDSt} ses IBD for henholdsvis Spæn
 		& Måledata & UART & Inout & UART forbindelse til Måleenhed \\\hhline{~----} 
 		& Berøring & Kraft & In & Tryk på Brugergrænseflade \\\hhline{~----} 
 		& Trinskift & Digital & Out & Trinskift er en digital kommando til Trinskifter \\\hline
-	
+		
 		\multirow{3}{*}{Trinskifter} 
 		& Trinskift & Digital & In & Trinskift er en digital kommando fra Styringsenhed. \\\hhline{~----} 
 		& Højspænding & Spænding & In & Er spændingen på højspændingssiden af tranformeren. \\\hhline{~----} 
@@ -45,6 +37,14 @@ På figur \ref{fig:IBDSp} og figur \ref{fig:IBDSt} ses IBD for henholdsvis Spæn
 	\label{tab:SignalbeskrivelseSp}
 	
 \end{table}
+
+
+\begin{figure}[htbp] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figure/IBDStyringsenhed1}
+	\caption{IBD for Styringsenhed}
+	\label{fig:IBDSt}
+\end{figure}
 
 \begin{table}[H]
 	\centering
