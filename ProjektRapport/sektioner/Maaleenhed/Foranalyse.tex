@@ -2,3 +2,19 @@
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
 \section{Foranalyse}
+Det var først tænkt at købe nogle sensorer til PLC'en der kunne måle de ønskede værdier. Men da PLC'en ikke kan sample hurtigt nok til at give et reelt billede af signalet, er det valgt at bruge en PSOC til at sample signalet. Derefter kan værdierne sendes til PLC vha. kommunikationsmodulet.
+
+\section{Fourier}
+Ved at sample et signal med en bestemt frekvens over tid, gives et antal værdier på signalet, se figurer \ref{fig:sample}.
+
+\begin{figure}[htbp] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.5\textwidth]{figure/sampling}
+	\caption{Eksempel af sampling af sinuskurve}
+	\label{fig:sample}
+\end{figure}  
+
+Iht. Shannons samplings teori\cite{Shannon}, kan der ses et reelt billede af et signal, når samplings frekvensen er dobbelt så stor som selve signalet. Da systemet er proof of concept, er det besluttet kun at aflæse på de fire første harmoniske til 50Hz signalet. Det vil sige at der undersøges, hvor meget energi der er i frekvenser 100, 150, 200 og 250Hz. Det betyder at der minimum skal samples med 500Hz i projektet.
+
+Når et signal er samplet til det digitalspektrum, kan signalet analyseres. Til at undersøge signalers størrelse, power faktor og THD kan Fourier anvendes. Ved at lave Fourier på et række samplede værdier, fås en ny række komplekse tal. Hvert kompleks tal, angiver værdien for en bestemt frekvens i et signal, der kaldes for frekvens bins. Ud fra denne komplekse værdi kan størrelsen og fasevinklen ved bestemte frekvenser findes. Det anvendes i projektet til at beregne rms værdier af spænding og strøm for 50Hz, men også vinklen mellem spænding og strøm der giver udtryk for power faktoren. Derudover kan signalet også undersøges i højere frekvenser så de THD kan udregnes.  
+
