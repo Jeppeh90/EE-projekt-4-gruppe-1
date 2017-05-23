@@ -134,16 +134,15 @@ linkcolor=Black, citecolor=Black]{hyperref}
 %%%%%%%%%%%%%%%%%%%%%%%
 		       % FORSIDEN %			
 %%%%%%%%%%%%%%%%%%%%%%%
-
 \include{sektioner/forside}
-
 \frontmatter
-
 %%%%%%%%%%%%%%%%%%%%%%%
+
              % RESUME & ABSTRACT %			
+             
+%%%%%%%%%%%%%%%%%%%%%%%            
 \section{Resume}
 \section{Abstract}
-
 %%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -155,9 +154,11 @@ linkcolor=Black, citecolor=Black]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%
                         % KAPITLER %			
+%%%%%%%%%%%%%%%%%%%%%%%                        
+\mainmatter
 \chapter{Forord}                       
 \chapter{Indledning}
-\include{sektioner/Indledning}
+\input{sektioner/Indledning}
 \chapter{Kravspecifikation}
 \input{sektioner/Krav}
 \input{sektioner/FunktionelleKrav}
@@ -166,10 +167,10 @@ linkcolor=Black, citecolor=Black]{hyperref}
 \chapter{Foranalyse}
 \include{sektioner/Foranalyse}
 \chapter{Arkitektur}
-\include{sektioner/Arkitektur/Indledning}
-\include{sektioner/Arkitektur/BDD}
-\include{sektioner/Arkitektur/IBD}
-\include{sektioner/Arkitektur/Allokering}
+\input{sektioner/Arkitektur/Indledning}
+\input{sektioner/Arkitektur/BDD}
+\input{sektioner/Arkitektur/IBD}
+\input{sektioner/Arkitektur/Allokering}
 \chapter{Design af distributionslinje, belastning og trinskifter}
 \chapter{Design af Måleenhed}
 \chapter{Design af Styringsenhed}
