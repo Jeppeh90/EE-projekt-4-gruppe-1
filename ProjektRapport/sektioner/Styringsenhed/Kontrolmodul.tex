@@ -5,13 +5,13 @@
 
 Kontrolmodulet består af en Siemens PLC S7-1200 med signalmodulet AQ1x12BIT. Det kan tilgåes gennem en switch af typen CSM 1277.
 Softwaren består af to dele; en kommunikationsdel med interface til kommunikationsmodulet og en kontroldel med interface til Trinskifter. Den detaljerede gennemgang af softwaren kan findes i dokumentationen.\footnote{Projektdokumentation, 10.1, Kontrolmodul} Her vil i stedet blive lagt fokus på de overvejelser der har været undervejs i designet af Kontrolmodulet.
-Kontrolmodulet er lavet i en OB, der looper. Heri er så placeret de fire FC'er der er lavet i forbindelse med kommunikationen og den FB der er fremstillet til styring af Trinskifter.
+Kontrolmodulet er lavet i en OB, der looper. Heri er placeret fire FC'er der er oprettet i forbindelse med kommunikationen og den FB der er fremstillet til styring af Trinskifter.
 
 \subsection{Kommunikation}
 Datatransmission til Kontrolmodulet er en vigtig del af projektet, da dette forbinder sensorer i form af Måleenhederne med aktuatorer i form af Trinskifter. Derfor er der blevet lagt mange overvejelser i hvordan kommunikationen skulle etableres.
 
 
-Først og fremmest skulle flere Måleenheder kunne kommunikere med det samme kontrolmodul, derfor var en switch i overvejelser, grundet der kun er en fri RJ-45 port på PLC'en. Dette var ikke umiddelbart muligt at fremskaffe hos Embedded Stock, hvorfor et kommunikationsmodul blev nødvendigt at udvikle for at kunne samle kommunikationen før PLC'en. Se afsnit !!!!KOMUNIKATIONSMODUL!!!!
+Først og fremmest skulle flere Måleenheder kunne kommunikere med det samme kontrolmodul, derfor var en switch i overvejelser, grundet der kun er en fri RJ-45 port på PLC'en. Dette var ikke umiddelbart muligt at fremskaffe hos Embedded Stock. For mere om løsningerne på dette, se afsnit \ref{Kommunikationsmodul}.
 
 
 Næste beslutning gik på valget af protokol til Ethernet kommunikation. TCP var det oplagte valg for at sikre pålidelig kommunikation, selvom UDP også var en kendt protokol fra faget Internet kommunikationsnetværk(IKN).
@@ -20,11 +20,11 @@ Næste beslutning gik på valget af protokol til Ethernet kommunikation. TCP var
 Udvilingsværktøjet TIA Portal V13 har gode muligheder for at sætte TCP kommunikation op til forskellige ikke Siemens produkter, gennem dets open user communication. Først blev blokkene TSEND\_C og TRCV\_C forsøgt anvendt. Disse blokke har dog indbygget funktionalitet i forbindelse med at oprette og nedlægge forbindelsen, hvilket var uhensigtmæssigt, når der skulle være en fyldene datastrøm. Det endelig valg blev herfor blokkene TCON, TDISCON, TSEND og TRCV, hvor man som programmør kan styre oprettelse og nedlæggelse af forbindelsen med TCON og TDISCON.
 
 
-Med en pålidelig og testet form TCP kommunikation, var de næste overvejelser angående styringen af disse blokke. Her blev det besluttet at et client/server forhold ville være bedst. Kontrolmodulet er i den sammenhæng client og skal forespørge data fra serveren, kommunikationsmodulet.
+Med en pålidelig og testet TCP kommunikation, var de næste overvejelser angående styringen af disse blokke. Her blev det besluttet at et client/server forhold ville være bedst. Kontrolmodulet er i den sammenhæng client og skal forespørge data fra serveren, kommunikationsmodulet.
 Da systemet ikke er et beskyttelsessystem, kræver det ikke hurtig reaktion mellem sensor og aktuator. Derfor blev det valgt at det kun var nødvendigt at opdatere data hvert 2 sekunder. Dette blev realiseret med to separate netværk; et tilknyttet FC'en med TSEND og et tilknyttet FC'en med TRCV.
 
 
-FC'er valgt da tanken var at hukommelsen skulle ligge andetsteds i koden. Det er dog blevet nødvendigt at oprette en global DB, for kunne styre variable i forbindelse med styring af koommunikationen.
+FC'er er valgt da tanken var at hukommelsen skulle ligge andetsteds i koden. Det er dog blevet nødvendigt at oprette en global DB, for kunne styre variable i forbindelse med styring af koommunikationen. For yderlige uddybelse, se dokumentationen\footnote{Projektdokumentation, 10.1.1, TCP kommunikation}.
 
 \subsection{Styring af Trinskifter}
 
