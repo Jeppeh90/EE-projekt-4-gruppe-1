@@ -5,17 +5,17 @@
 I dette afsnit beskrives de ikke funktionelle krav. Der findes ikke funktionelle krav til trintransformeren, målingerne og kommunikation. Disse beskrives hver især i følgende afsnit.
 
 \subsubsection{Trintransformer}
-Der er valgt en trintransformer, som simulering af belastning skal laves ud fra. Denne valgt trintransformer har følgende specifikationer. Det er dog besluttet ikke at lave større strømforbrug i systemet end 20mA. 
+Der er valgt en trintransformer, som simulering af belastning skal laves ud fra. Den valgte trintransformer har følgende specifikationer. Det er dog besluttet ikke at lave større strømforbrug i systemet end 500mA. 
 
 \begin{enumerate}
 	\item Maks belastning af transformer er 20VA
 	\item Nominel spænding på primær siden er 24V
-	\item Nominel spænding på sekundær siden afhænger af trin, transformerne har 8 trin fra 0 til 8V.
+	\item Nominel spænding på sekundær siden afhænger af trin, transformerne har 8 trin fra 1 til 8V.
 	\item Skal minimum levere 500mA til systemet. 
 \end{enumerate}
 
 \subsubsection{Måleenhed}
-Til en måleenhed burde der laves nøjagtigheds beregninger, og defineres præcision. Dette er der bestemte standarder til, men da det ikke er noget vi har haft undervisning i og vores projekt er "proof of concept". Er det besluttet at måleenheden skal kunne måle indenfor en bestemt procent af det rigtige værdig.
+Til en måleenhed burde der laves nøjagtigheds beregninger, og defineres præcision. Dette er der bestemte standarder til, men da det ikke er noget vi har haft undervisning i og projektet er "proof of concept". Er det besluttet at måleenheden skal kunne måle indenfor en bestemt procent af det rigtige værdig og ikke gå længere ned i nøjagtigheds begreberne.
 
 \begin{enumerate}
 	\item Måle spændingen ved trinskifteren og forbrugerne mellem 0 og 8 Vrms
@@ -27,7 +27,7 @@ Til en måleenhed burde der laves nøjagtigheds beregninger, og defineres præci
 \end{enumerate} 
 
 \subsubsection{kommunikation}
-For at sikre at der laves en pålidelig dokumentation, stilles der krav til at der i de fleste tilfælde ikke må ske fejl, men da det igen er "proof of concept" er det igen valgt ikke, at gøre hvis der skulle ske fejl i en forsendelse.
+For at sikre at der laves en pålidelig kommunikation, stilles der krav til at der i de fleste tilfælde ikke må ske fejl, men da det igen er "proof of concept" er det valgt ikke, at gøre noget hvis der skulle ske fejl i en forsendelse.
 
 \begin{enumerate}
 	\item Forsinkelsen på brugergrænsefladen ifht. ændringer i målte værdier må ikke overstige 2,5 sekund. 
