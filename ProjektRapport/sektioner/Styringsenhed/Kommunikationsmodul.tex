@@ -4,7 +4,11 @@
 \section{Kommunikationsmodul}
 \label{Kommunikationsmodul}
 
-I starten af projektet var det tænkt at et separat kommunikationsmodul ikke var nødvendigt, da PSoC'en med et tilhørende Ethernetmodul ENC28J60 burde 
+I starten af projektet var det tænkt at et separat kommunikationsmodul ikke var nødvendigt, da PSoC'en med et tilhørende Ethernetmodul ENC28J60 ville kunne oprette forbindelse til Kontrolmodulet. Der var dog et problem med antallet af Måleenheder på denne måde, da PLC'en kun har ét frit RJ-45 stik ville det stadig være nødvendigt at benytte en switch eller at samle måledata på en enhed og derfra sende dem til PLC'en. Grundet det ikke var muligt at få en switch på værkstedet blev det besluttet at benytte en ekstra microcontroller til at samle data på, denne microcontroller er Kommunikationsmodulet.   
+
+Da det ikke er en nødvendighed for projektet at kommunikationen skal være voldsom hurtig mellem Måleenhederne og Kommunikationsmodulet er der her valgt at benytte UART kommunikation. Denne kommunikationsform er valgt da det før har været benyttet på både Arduino og PSoC, dog uafhængigt af hinanden.
+
+%Arduino
 
 Kommunikationsmodulet består af en Arduino Mega2560 forbundet til et Ethernet Shield R3. Kommunikationsmodulet står for kommunikationen mellem Måleenhederne og Kontrolmodulet, det skal dermed modtage data fra Måleenhederne over UART kommunikation og sende det videre til Kontrolmodulet ved brug af TCP kommunikation. 
 
