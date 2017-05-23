@@ -2,23 +2,26 @@
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
 
-	 \section{IBD}
-	 
-	 Herunder ses de interne blokdiagrammer for spændingsregulator systemet. 
-	 
-	\begin{figure}[htbp] % (alternativt [H])
-		\centering
-		\includegraphics[width=0.8\textwidth]{figure/IBDSpaendingsregulator.pdf}
-		\caption{IBD for Spændingsregulator}
-		\label{fig:IBDSp}
-	\end{figure}
-	
-	\begin{figure}[htbp] % (alternativt [H])
-		\centering
-		\includegraphics[width=0.8\textwidth]{figure/IBDStyringsenhed.pdf}
-		\caption{IBD for Styringsenhed}
-		\label{fig:IBDSt}
-	\end{figure} 
+\section{Interne blokdiagramer}
+
+Herunder ses de interne blokdiagrammer for spændingsregulator systemet. De interne blokdiagrammer er dannet for at give et indtryk af hvordan enhederne kommunikerer og sender signaler indbyrdes. Først ses det overordnede blokdiagram for hele systemet, hvor de overordnede forbindelser i spændingsregulatoren kan ses. Se figur \ref{fig:IBDSp}. Derefter ses et internt blokdiagram for selve styringsenhed, der yderligere består af tre mindre dele. 
+
+\begin{figure}[htbp] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.8\textwidth]{figure/IBDSpaendingsregulator.pdf}
+	\caption{IBD for Spændingsregulator}
+	\label{fig:IBDSp}
+\end{figure}
+
+Det interne blokdiagram for styringsenheden er udviklet for at beskrive hvordan modulerne i styringsenheden kommunikerer indbyrdes. Det ses samtidig hvilke inputs og outputs der er til den samlede styringsenhed. Se figur \ref{fig:IBDSp}. 
+
+
+\begin{figure}[htbp] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.8\textwidth]{figure/IBDStyringsenhed.pdf}
+	\caption{IBD for Styringsenhed}
+	\label{fig:IBDSt}
+\end{figure} 
 	 
 
 
