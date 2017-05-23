@@ -1,20 +1,23 @@
-	\documentclass[a4paper, 11pt,oneside,openany, danish]{memoir} % Starter dokumentet af klassen memoir
+\documentclass[a4paper, 11pt,oneside,openany, danish]{memoir} % Starter dokumentet af klassen memoir
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
-		       % PREAMBLE %			
+% PREAMBLE %			
 %%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 % Papirstørrelse og margener
 \usepackage[paper=a4paper, hmargin=1.1in, vmargin=1.1in]{geometry}
 
 % Font encoding og sprog
-\usepackage[T1]{fontenc}					% Output encoding
+\usepackage[T1]{fontenc}				% Output encoding
 \usepackage[utf8]{inputenc}				% Input encoding
 \usepackage[danish]{babel}				% Sprog (orddeling)
 \renewcommand{\danishhyphenmins}{22} 	% bedre orddeling, minimum to tegn før og efter deling
 \usepackage{lmodern}  					% gør underscores pænere
 \usepackage{microtype} 					% laver micro ændringer i text for at udgå luft og orddeling
+
 
 %% Forside text
 %\usepackage{soul} % lege lege
@@ -24,21 +27,49 @@
 % Fyldetekst (Lorem ipsum)
 \usepackage{blindtext}
 
-% Biblatex til referencer
-\usepackage[backend=bibtex]{biblatex}
-\addbibresource{bibfil.bib}
+% Til kodeeksempler
+\usepackage{listings}
+
+\lstdefinestyle{customc}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	frame=L,
+	xleftmargin=\parindent,
+	language=C,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+	belowcaptionskip=1\baselineskip,
+	frame=L,
+	xleftmargin=\parindent,
+	language=[x86masm]Assembler,
+	basicstyle=\footnotesize\ttfamily,
+	commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
 
 % Tabeller
 \usepackage{booktabs}
 \usepackage{threeparttable}
 \usepackage[tableposition=top]{caption}
 \usepackage{tabularx}
-
+\usepackage{multirow}					% For at lave pæne tabeller
+\usepackage{hhline}						% For at lave endnu pænere tabller
+\newcolumntype{C}{>{\let\newline\\\arraybackslash\hspace{0pt}}X}
+\usepackage{float}
 %matematik
 \usepackage{amsmath,amssymb,mathtools,bm}
 \newcommand{\tsub}[1]{_{\textup{#1}}}
 \def\doubleunderline#1{\underline{\underline{#1}}}
 \usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
+\usepackage{longtable}
 
 % XColor: Farver
 \usepackage[svgnames,dvipsnames,x11names]{xcolor}
@@ -55,8 +86,12 @@
 %\definecolor{mygray}{rgb}{0.5,0.5,0.5}
 
 % Biblatex til referencer
-%\usepackage[backend=biber]{biblatex}
-%\addbibresource{bib.bib}
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{bibfil.bib}
+
+
+
+
 
 % Hyper ref
 \usepackage[ unicode=true, colorlinks=false, linktocpage=true, 
@@ -74,6 +109,7 @@ linkcolor=Black, citecolor=Black]{hyperref}
 \settocdepth{subsection}
 \setsecnumdepth{subsection}
 
+% Sidetal
 % Sidetal
 \let\footruleskip\undefined
 \usepackage{fancyhdr}
@@ -105,23 +141,23 @@ linkcolor=Black, citecolor=Black]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%
              % RESUME & ABSTRACT %			
-\section*{Resume}
+\section{Resume}
 \include{sektioner/Resume}
-\section*{Abstract}
+\section{Abstract}
 \include{sektioner/Abstract}
+
 %%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
          % INDHOLDSFORTEGNELSE %			
-\include{sektioner/Indholdsfortegnelse}
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%
                         % KAPITLER %			
-\chapter{Forord}                        
+\chapter{Forord}                       
 \include{sektioner/Forord}
 \include{sektioner/Termliste}
 \chapter{Indledning}
@@ -129,6 +165,8 @@ linkcolor=Black, citecolor=Black]{hyperref}
 \chapter{Kravspecifikation}
 \include{sektioner/Krav}
 \input{sektioner/NotFunc}
+\input{sektioner/Krav}
+\input{sektioner/FunktionelleKrav}
 \chapter{Foranalyse}
 \include{sektioner/Foranalyse}
 \chapter{Arkitektur}
