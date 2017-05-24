@@ -6,7 +6,7 @@
 
 I starten af projektet var det tænkt at et separat kommunikationsmodul ikke var nødvendigt, da PSoC'en med et tilhørende Ethernetmodul ENC28J60 ville kunne oprette forbindelse til Kontrolmodulet. Der var dog et problem med antallet af Måleenheder på denne måde, da PLC'en kun har ét frit RJ-45 stik ville det stadig være nødvendigt at benytte en switch eller at samle måledata på en enhed og derfra sende dem til PLC'en. Grundet det ikke var muligt at få en switch på værkstedet blev det besluttet at benytte en ekstra microcontroller til at samle data på, denne microcontroller er Kommunikationsmodulet.   
 
-Da det ikke er en nødvendighed for projektet at kommunikationen skal være voldsom hurtig mellem Måleenhederne og Kommunikationsmodulet er der her valgt at benytte UART kommunikation. Denne kommunikationsform er valgt da det før har været benyttet på både Arduino og PSoC, dog uafhængigt af hinanden.
+Da det ikke er en nødvendighed for projektet at kommunikationen skal være voldsom hurtig mellem Måleenhederne og Kommunikationsmodulet er der her valgt at benytte UART kommunikation. Denne kommunikationsform er valgt da det før har været benyttet på både Arduino og PSoC, dog uafhængigt af hinanden. Samtidig er UART rigtig god, hvis der skal tilføjes flere enheder senere, da det kun kræver en lille opdatering i protokolen, således hver enhed får en unik adresse.  
 
 Efter mange timers arbejde med at oprette LAN-kommunikation på en PSoC og det stadig ikke var lykkedes, blev det besluttet at der skulle prøves med en Arduino som Kommunikationsmodul i stedet. 
 
