@@ -41,14 +41,20 @@ FC'er er valgt da tanken var at hukommelsen skulle ligge andetsteds i koden. Det
 
 \subsection{Styring af Trinskifter}
 
-Angående styring af Trinskifteren blev det tidligt besluttet at benytte dens analoge udgange på Q0.6, Q0.7 og Q1.0 til styringen af relæerne på triskifter. Der henvises til Trinskifter for mere om relækredsløbet !!!!!TRINSKIFTERHENVISNING!!!!.
-Samtidig er projektet proof of concept, så det er kun spændingsmålinger fra en forbruger der vil blive reguleret i forhold til. Dette simplificere den FB, der udvikles til denne styring væsentligt, da der kun er et input.
+Angående styring af Trinskifteren blev det tidligt besluttet at benytte dens analoge 24VDC udgange på Q0.6, Q0.7 og Q1.0 til styringen af relæerne på triskifter. Disse udgang bliver dog styret med et logisk højt (24VDC) eller lavt(0V) signal. Der henvises til Trinskifter for mere om relækredsløbet, se afsnit !!!!!TRINSKIFTERHENVISNING!!!! %\ref{sec:relae}.
+Samtidig er projektet proof of concept, så det er kun spændingsmålinger fra en forbruger der vil blive reguleret med hensyn til. Dette simplificerer den FB, der udvikles til denne styringen væsentligt, da der kun er et input.
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figure/PLCTrinskifter}
+	\caption{FB'en Trinskifter}
+	\label{fig:PLCTrinskifter}
+\end{figure}
+
+Første tanke i forhold til denne blok var at den hovedsageligt skulle være automatiseret. Derfor er det besluttet at koden blev skrevet som sekventiel, hvor en lokal static Step, står for at styre hvilken sekvens, der er aktiv. Dette sikre også imod fejl, da systemet har få muligheder videre fra hvert step. Et sikkert system var også et af de vigtige punkter, hvilket bl.a. er opnået ved at opdele koden i sekvenser af trin og trinskift. Der er 3 trin, som hver især er tilknyttet en af udgangene på PLC'en. For trin 2 er der både mulighed for et trinskift op og ned, mens der for de ydertrin kun kan skiftes ned/op til trin 2. Det er kun når koden er i et trin at man kan skifte mellem automatisk og manuel tilstand. I automatisk mode er der dog to undtagelser i trin 1 og trin 3, hvor trinskiftet er lagt sammen med trinet. Disse trinskift burde have været flyttet til deres egen sekvens, for at undgå at et trinskift og et tilstandsskift kan forekomme samtidigt.
 
 
-Indsæt billede af Trinskifterblok
+I første udkast til blokken var ikke taget højde for at programmet blev ekseveret hurtigere end data blev opdateret, derfor kunne programmet nå at skifte flere trin på den samme måling, hvilket vil skabe et ustabilt system, for når det havde lavet et dobbeltskift, vil det så få en ny måling, der indikerer skift i modsat retning. Denne fejl er fjernet ved at indsætte et delay, når systemet kommer i et nyt trin, da der hentes ny data hvert 2 sekunder er dette delay sat til 2,5 sekunder.
 
-Skriv lidt om overvejelser i forhold til skift.
 
-Multiskift.
-
-Emirs forslag med det ikke behøver reagere instant.
+En vigtig pointe at få med er at forbrugeren aldrig må miste forsyning. Så et trinskift indebærer et overlap imellem de trin der skiftes fra og til på 2 sekunder. Herved er der altid forsyning på distributionslinje. Selve overlappet set fra trintransformeren uddybes i afsnit !!!Trintransformer trinskift!!!.
