@@ -7,7 +7,7 @@ Ved projektets start fik gruppen udleveret en trintransformer\footnote{Projektdo
 De forskellige trin og dermed spændingsniveauer på sekundærside af transformeren er bestemt af antallet af tilkoblede viklinger. Det ønskede spændingsniveau hos forbrugeren er valgt til 4V, og det er i systemet muligt at skifte mellem trin 4V,5V og 6V på trintransformeren. Disse tre trin gør at muligt at holde spændingen hos forbrugeren på $\pm$10$\%$ af 4V, når belastningen varierer.
 
 \subsection{Design og implementering af relækredsløb}
-Til at styre tilkoblingen af trin på transformeren er der designet et relækredsløb. Relæerne er sat til Normally Open og virker som kontakter, der slutter, når relæerne trækker. Kontaktrelæerne skal styres af en PLC, og skal derfor kunne holde til et 24VDC styresignal \footnote{Projektdokumentation, 8.4, Trinskifter}. Det færdige print med relæer ses på figur \ref{fig:Relae}. De sorte banastik kobles til henholdsvis trin 4V,5V og 6V på transformeren. Øverst til ses pin, der kobles til Distributionslinjen. De tre pins nederst til venstre er til styresignal fra PLC og den fjerde er stelforbindelse for PLC. 
+Til at styre tilkoblingen af trin på transformeren er der designet et relækredsløb. Relæerne er sat til Normally Open og virker som kontakter, der slutter, når relæerne trækker. Kontaktrelæerne skal styres af en PLC, og skal derfor kunne holde til et 24VDC styresignal \footnote{Projektdokumentation, 8.4, Trinskifter}. Det færdige print med relæer ses på figur \ref{fig:Relae}. De sorte bananstik kobles til henholdsvis trin 4V,5V og 6V på transformeren. Øverst til ses pin, der kobles til Distributionslinjen. De tre pins nederst til venstre er til styresignal fra PLC og den fjerde er stelforbindelse for PLC. 
 
 \begin{figure}[H]
 	\centering
@@ -27,7 +27,7 @@ Trinskifter består af trintransformer og relækredsløb. På figur \ref{fig:Tri
 	\label{fig:Trinskift}
 \end{figure}
 
-Det ses hvorledes hvert trin på transformeren er tilkoblet hvert kontaktrelæ. Gennem PLC styresignalet tilkobles ønsket trin. Eksempelvis for at skifte fra trin 4 til trin 5, sluttes trin 4 og trin 5. Efter to sekunder, slås trin 4 fra og dermed bliver trin 5 det gældende trin. På denne måde sikres det at forsyningen til systemet er konstant.  
+Det ses hvorledes hvert trin på transformeren er tilkoblet hvert kontaktrelæ. Gennem PLC styresignalet tilkobles ønsket trin. Eksempelvis for at skifte fra trin 4 til trin 5, kobles trin 4 og trin 5. Efter to sekunder, slås trin 4 fra og dermed bliver trin 5 det gældende trin. På denne måde sikres det at forsyningen til systemet ikke forsvinder ved trinskift. Det er muligt at koble to trin på samme tid, da strømmen altid vil vælge den korteste vej i viklingerne på transformerens sekundærside. 
 
 
 
