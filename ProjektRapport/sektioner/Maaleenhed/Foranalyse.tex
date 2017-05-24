@@ -1,6 +1,8 @@
 % !TEX root = ../../prj4projektrapport.tex
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
+For at Spændingsregulatoren kan foretage en regulering af spændingen i systemet, skal den løbende have informationer om de reelle forhold i nettet. Denne information står Måleenheden for at indsamle. Måleenhedens opgave er at måle spænding, strøm, indhold af harmoniske og power faktor. I kapitlet vil der blive redegjort for hvilke løsninger er valgt for at opnå den ønskede funktionalitet. 
+
 \section{Foranalyse}
 Det var først tænkt at købe nogle sensorer til PLC'en der kunne måle de ønskede værdier. Men da PLC'en ikke kan sample hurtigt nok til at give et reelt billede af signalet, er det valgt at bruge en PSOC til at sample signalet. Derefter kan værdierne sendes til PLC vha. kommunikationsmodulet.
 
