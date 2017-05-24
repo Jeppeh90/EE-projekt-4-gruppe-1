@@ -1,13 +1,13 @@
 % !TEX root =../prj4projektrapport.tex
 
 \section{Trinskifter}
-
+\label{sec:relae}
 Ved projektets start fik gruppen udleveret en trintransformer\footnote{Projektdokumentation, 6.1, Valg af transformer}. Denne transformer har på primærside 24V og trin af 1V fra 0-8V på sekundærside. Disse forhold afgjorde skaleringen af systemet, se bilag C3 og C4 for billeder af transformer og tilhørende mærkeplade. 
 
 De forskellige trin og dermed spændingsniveauer på sekundærside af transformeren er bestemt af antallet af tilkoblede viklinger. Det ønskede spændingsniveau hos forbrugeren er valgt til 4V, og det er i systemet muligt at skifte mellem trin 4V,5V og 6V på trintransformeren. Disse tre trin gør at muligt at holde spændingen hos forbrugeren på $\pm$10$\%$ af 4V, når belastningen varierer.
 
 \subsection{Design og implementering af relækredsløb}
-Til at styre tilkoblingen af trin på transformeren er der designet et relækredsløb. Relæerne er sat til Normally Open og virker som kontakter, der slutter, når relæet trækker. Relæerne skal styres af en PLC, og skal derfor kunne holde til et 24VDC styresignal \footnote{Projektdokumentation, 8.4, Trinskifter}. Det færdige print med relæer ses på figur \ref{fig:Relae}. De sorte banastik kobles til henholdsvis trin 4V,5V og 6V på transformeren. Øverst til ses pin, der kobles til Distributionslinjen. De tre pins nederst til venstre er til styresignal fra PLC og den fjerde er stelforbindelse for PLC. 
+Til at styre tilkoblingen af trin på transformeren er der designet et relækredsløb. Relæerne er sat til Normally Open og virker som kontakter, der slutter, når relæerne trækker. Kontaktrelæerne skal styres af en PLC, og skal derfor kunne holde til et 24VDC styresignal \footnote{Projektdokumentation, 8.4, Trinskifter}. Det færdige print med relæer ses på figur \ref{fig:Relae}. De sorte banastik kobles til henholdsvis trin 4V,5V og 6V på transformeren. Øverst til ses pin, der kobles til Distributionslinjen. De tre pins nederst til venstre er til styresignal fra PLC og den fjerde er stelforbindelse for PLC. 
 
 \begin{figure}[H]
 	\centering
@@ -22,8 +22,12 @@ Trinskifter består af trintransformer og relækredsløb. På figur \ref{fig:Tri
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figure/Trinskiftertegning2}
+	\includegraphics[width=0.9\textwidth]{figure/Trinskiftertegning2}
 	\caption{Kredsløbstegning af Distributionslinje, belastninger og Trinskifter}
 	\label{fig:Trinskift}
 \end{figure}
+
+Det ses hvorledes hvert trin på transformeren er tilkoblet hvert kontaktrelæ. Gennem PLC styresignalet tilkobles ønsket trin. For at skifte mellem hvert trin, sluttes både aktuelle og ønsket trin. Efter to sekunder slår det aktuelle trin fra og dermed bliver det ønsket trin det aktuelle trin. Dette er muligt grundet opbygning af trintransformerens viklinger på sekundærside. 
+
+
 
