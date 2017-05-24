@@ -5,7 +5,7 @@
 \label{sec:THD}
 Harmoniske svingninger i et elektrisk energisystem er spændinger og strømme, med højere frekvenser, som dannes af ulineære belastninger, der trækker strøm i korte pulser. Sådanne belastninger kan være strømforsyninger til elektroniske apparater, frekvensomformere og meget mere. Hvis indholdet af harmoniske svingninger i energisystemet bliver for stort, kan det resultere i varmeudvikling i elektrisk udstyr på nettet, og i værste tilfælde få udstyr til at fejle. \newline
 
-En ulineær belastning er kendetegnet ved at strømmen den trækker, i modsætning til en lineær, ikke følger den sinusformede spænding.  Som det ses af Figur \ref{fig:nonLinear} indeholder den røde kurve, som er ulineær, højere frekvenser end grundfrekvensen, som er repræsenteret med den blå kurve. 
+En ulineær belastning er kendetegnet ved at strømmen den trækker ikke følger den sinusformede spænding.  Som det ses af Figur \ref{fig:nonLinear} indeholder den røde kurve, som er ulineær, højere frekvenser end grundfrekvensen, som er repræsenteret med den blå kurve. 
 
 
 \begin{figure}[H] % (alternativt [H])
@@ -25,7 +25,7 @@ THD = \dfrac{\sqrt{\sum_{n=2}^{\infty}V_n^{2}}}{V_{1}}
 \end{align}
 THD udregnes for spændingen, da det er denne som er fælles for alle komponenter på elnettet. Teoretisk set indeholder vekselstrømsnettet kun de ulige harmoniske, altså 1, 3, 5 osv. I balancerede systemer kan der også ses bort fra harmoniske der kan deles med tre, altså 3, 9, 15 osv. Men da elnettet i virkeligheden sjældent er balanceret, er det vigtigt at være opmærksom på at disse harmoniske kan opstå. \newline
 
-Hvis problemet med harmoniske når til et kritisk niveau, kan systemet analyseres for at finde kilden til forvrængningen, og herefter fjerne denne. Der findes også filterkomponenter som kan minimere transmissionen af harmoniske på elnettet. Disse filtre findes som analoge/passive, hvor de består af spoler og kondensatorer, som dæmper de høje frekvenser. Der findes ligeledes digitale/aktive filtre, som analyserer forvrængningen og generer inverse signaler, for at ophæve de harmoniske.\cite{HarmoniskeFiltre}\newline
+Hvis problemet med harmoniske når til et kritisk niveau, kan systemet analyseres for at finde kilden til forvrængningen, og herefter fjerne denne. Der findes også filterkomponenter som kan minimere transmissionen af harmoniske på elnettet. Disse filtre findes som analoge/passive, som består af spoler og kondensatorer, der dæmper de høje frekvenser. Der findes ligeledes digitale/aktive filtre, som analyserer forvrængningen og generer inverse signaler, for at ophæve de harmoniske.\cite{HarmoniskeFiltre}\newline
 
 
 Kildehenvisning: \cite{HarmoniskeVideo}

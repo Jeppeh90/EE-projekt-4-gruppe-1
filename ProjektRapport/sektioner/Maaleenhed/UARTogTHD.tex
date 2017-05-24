@@ -5,10 +5,10 @@
 For at beregne de ønskede værdier er der lavet en række funktioner der kan beregne disse. Disse funktioner er kort beskrevet herunder. Yderlig information findes i dokumentation\footnote{Projektdokumentation, 9.2.4, Beregning af rms og power faktor}
 
 \textbf{Rms:}
-Funktionen modtagere et array af absolute værdier for et signal og beregner rms værdien, ved den frekvens bin der passer til 50Hz.
+Funktionen modtager et array af absolutte værdier for et signal og beregner rms værdien, ved den frekvens bin der passer til 50Hz.
 
 \textbf{Power faktor:}
-Funktionen beregner vinklen for strøm og spænding for derefter at beregne power faktor ved at tage cosinus til vinkel differencen. Funktionen tager ikke højde for om det er lead eller lag system.
+Funktionen beregner vinklen for strøm og spænding for derefter at beregne power faktor ved at tage cosinus til vinkel differencen. Funktionen tager ikke højde for om strømmen er leading eller lagging.
 
 \textbf{THD:}
 Beregningen af, og baggrunden for THD, er beskrevet i Afsnit \ref{sec:THD}. Den beregning der laves i PSOC, medregner kun indholdet af de fire første harmoniske i signalet. Formlen der anvendes i softwaren er givet i Ligning \ref{eq:THDsoft}.
@@ -19,7 +19,7 @@ THD = \dfrac{\sqrt{V_2^{2}+V_3^{2}+V_4^{2}+V_5^{2}}}{V_{1}}
  
 
 \subsubsection{UART kommunikation}
-Kommunikationen mellem Måleenheden og Styringsenheden er allokeret på en UART forbindelse, se Figur \ref{fig:Allokering} for overordnet allokeringsdiagram. UART forbindelsen transmitterer 16bit værdier for strøm, spænding, THD og power factor. Værdierne deles inden transmissionen op i to pakke af 8bit, og samles igen i Styringsenheden. Protokol og indstilling af UART forbindelsen er beskrevet i dokumentationen\footnote{Projektdokumentation, 7.2, UART protokol}.
+Kommunikationen mellem Måleenheden og Styringsenheden er allokeret på en UART forbindelse, se Figur \ref{fig:Allokering} for overordnet allokeringsdiagram. UART forbindelsen transmitterer 16bit værdier for strøm, spænding, THD og power factor. Værdierne deles inden transmissionen op i to pakker af 8bit, og samles igen i Styringsenheden. Protokol og indstilling af UART forbindelsen er beskrevet i dokumentationen\footnote{Projektdokumentation, 7.2, UART protokol}.
 
 
 

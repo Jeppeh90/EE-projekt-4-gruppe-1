@@ -2,11 +2,11 @@
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
 \section{Design og implementering}
-I dette afsnit beskrives, hvordan Måleenheden er udviklet. Måleenheden er designet til at kunne måle strøm og spænding centralt og decentralt. Spændingen måles direkte mellem fase og nul, hvor strømmen måles, ved at måle spænding hen over en 1$\Omega$ modstand i serie med hver forbruger og transmissionslinje. 
+I dette afsnit beskrives, hvordan Måleenheden er udviklet. Måleenheden er designet til at kunne måle strøm og spænding centralt og decentralt. Spændingen måles parallelt over forbrugeren. Strømmen måles som spændingsfaldet hen over en 1$\Omega$ modstand i serie med hver forbruger og transmissionslinje. 
 
 \subsection{Hardware}
 
-Under udviklingen af hardwaren har det vist sig at det ikke kunne måle differentielt mellem to tilfældige punkter, men at det kun kan måles mellem et punkt og stel forbindelse. Dette gav ikke noget problem iht. målingen ved forbrugerne, men det betød der ikke kunne måles centralt ved den viste opstilling på figur \ref{fig:MaalForanalyse}. Dette blev løst ved at flytte 1$\Omega$ modstanden ned til N, som vist på figur \ref{fig:MaalAktuel}.
+Under udviklingen af hardwaren har det vist sig at der ikke kunne måles differentielt mellem to tilfældige punkter, men at der kun kan måles mellem et punkt og Nul. Dette gav ikke noget problem ift. målingen ved forbrugerne, men det betød at der ikke kunne måles centralt ved den viste opstilling på figur \ref{fig:MaalForanalyse}. Dette blev løst ved at flytte 1$\Omega$ modstanden ned til N, som vist på figur \ref{fig:MaalAktuel}. Der må derfor accepteres et spændingsfald over denne modstand.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -17,7 +17,7 @@ Under udviklingen af hardwaren har det vist sig at det ikke kunne måle differen
 
 
 \subsubsection{Hardware beskrivelse}
-PSOC'ens sample område ligger mellem 0 og 5V, hvor signalerne til spændingen og strømmen forventes at svinge omkring 0V. Derfor er der udviklet hardware der kan hæve signalerne til at svinge omkring 2,5V. Måleenheden skal kunne måle op til 8V, så derfor har det været nødvendigt at dæmpe spændings signalet. Strøm niveauet er tilgengæld meget lille, hvor vi derfor gerne vil forstærke det. På figurer \ref{fig:MaalHardware} ses diagrammet for hardwaren. Det er valgt at bruge operations forstærkeren AD823, da den kan forsynes med 5Vdc og udnytte hele dens forsyningsspændings område.  
+PSOC'ens sample område ligger mellem 0 og 5V, hvor signalerne til spændingen og strømmen forventes at svinge omkring 0V. Derfor er der udviklet hardware der kan hæve signalerne til at svinge omkring 2,5V. Måleenheden skal kunne måle op til 8V, så derfor har det været nødvendigt at dæmpe spændings signalet. Strøm niveauet er tilgengæld meget lille, hvor vi derfor gerne vil forstærke det. På figurer \ref{fig:MaalHardware} ses diagrammet for hardwaren. Det er valgt at bruge operations forstærkeren AD823, der er en rail-to-rail-forstærker, som kan forsynes med 5VDC fra PSOC'en. Yderligere information om hardwaren kan findes i dokumentationen\footnote{Projektdokumentation, 9.1, Hardware}.  
   
 
 \begin{figure}[htbp] % (alternativt [H])
@@ -26,37 +26,4 @@ PSOC'ens sample område ligger mellem 0 og 5V, hvor signalerne til spændingen o
 	\caption{Diagram for hardwaren til Måleenheden}
 	\label{fig:MaalHardware}
 \end{figure} 
-
-
-\subsubsection{Spændingsmåling}
-Da det er 8V rms, skal det ganges op for at få hele signalet med.
-\begin{align}
-Vpp = 8V*\sqrt{2} = 11,3Vpp
-\end{align}
-
-Den mindste dæmpning der kan laves for at signalerne holder sig inden for 0 - 5V skal derfor være:
-
-\begin{align}
-min_{daemp} = \dfrac{11.3}{5} = 2,26 gange
-\end{align}
-
-Dette ses realiseret vha. modstand R1 og R2.
-
-\subsubsection{Strømmåling}
-
-Da  den maksimale strøm er 500mA rms vil det give en peak to peak værdi på:
-
-\begin{align}
-Ipp = 0,5*\sqrt{2} = 0,71A
-\end{align}
-
-Hvilket betyder den maks. må forstærkes med:
-
-\begin{align}
-maks_{forstaerkning} = \dfrac{5}{0,71} = 7
-\end{align}
-Denne forstærkning ses realiseret vha. modstand R7 og R8.  
-
-
-
  
