@@ -3,3 +3,10 @@
 
 \subsubsection{Fourier}
 
+Til beregning af Fourier på de samplede signaler er der fundet en funktion på et Cypress forum\cite{FFTalgo}. Dette er en FFT funktion, der har den fordel at være meget hurtigere end den normale DFT. Tilgengæld skal antalet af samples gå op i $2^{x}$. Det er valgt at anvende den funktion, da den er udviklet til PSOC creator og kunne derfor nemt anvendes i projektet og det har ikke været et problem at tilpasse antal samples til at gå op i $2^{x}$. Funktionen kan lave FFT på et samplet array med 64 værdier. Hvis der samples 64 gange hen over 1 periode på 50 Hz, bliver sample frekvensen:
+
+\begin{align}
+f_{sample} = 64 * 50Hz = 3200Hz
+\end{align}
+
+Hvilket betyder at Shannons samplings teori er overholdt i forhold til at skulle kunne måle THD på de 4 første harmoniske.    
