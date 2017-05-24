@@ -4,7 +4,14 @@
 For at Spændingsregulatoren kan foretage en regulering af spændingen i systemet, skal den løbende have informationer om de reelle forhold i nettet. Denne information står Måleenheden for at indsamle. Måleenhedens opgave er at måle spænding, strøm, indhold af harmoniske og power faktor. I kapitlet vil der blive redegjort for hvilke løsninger er valgt for at opnå den ønskede funktionalitet. 
 
 \section{Foranalyse}
-Det var først tænkt at købe nogle sensorer til PLC'en der kunne måle de ønskede værdier. Men da PLC'en ikke kan sample hurtigt nok til at give et reelt billede af signalet, er det valgt at bruge en PSOC til at sample signalet. Derefter kan værdierne sendes til PLC vha. kommunikationsmodulet.
+Det var først tænkt at købe nogle sensorer til PLC'en der kunne måle de ønskede værdier. Men da PLC'en ikke kan sample hurtigt nok til at give et reelt billede af signalet, er der valgt at bruge en PSOC til at sample signalet. Derefter kan værdierne sendes til PLC vha. kommunikationsmodulet. Måleenheden er tænkt til at skulle måle differentielt som vist på figur \ref{fig:MaalForanalyse}. Spændingen måles over forbrugeren og 1$\Omega$ modstand, hvor strømmen måles som spændingen over den 1$\Omega$ modstand.
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.8\textwidth]{figure/MaalForanalyse}
+	\caption{Tænkt tilslutning af måleenhed}
+	\label{fig:MaalForanalyse}
+\end{figure}
 
 \section{Signal behandling}
 
