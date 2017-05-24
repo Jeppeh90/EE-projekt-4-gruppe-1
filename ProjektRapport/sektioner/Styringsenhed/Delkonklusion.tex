@@ -1,2 +1,15 @@
 % !TEX root = ../../prj4projektrapport.tex
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
+
+\section{Delkonklusion}
+
+Styringsenheden har haft tre gennemgående fokuspunkter; Sikkerhed og overskuelighed, pålidelige kommunikation og mulighed for nem udvidelse af softwaren til data fra flere Måleenheder.
+
+
+I kontrolmodulet var Trinskifter en funktionsblok der på sikker vis bragte systemet rundt mellem sekvenser, herfor opdelt i tilstande, trin og trinskift. Samtidig skulle kommunikationen være pålidelige, hvilket førte til valget af TCP og seperate netværk der styrer data sendt og hvor data skal gemmes. De seperate netværk gør det også nemt at udvide med flere kommandoer og steder at gemme modtaget data.
+
+
+Brugergrænsefladen blev udviklet med henblik på brugervenlighed og simplicitet, samtidig med at den indeholder mange informationer om systemet. Den er igen her vist at der mulighed for udvidelse, der er dog en fysisk begrænsning på skærmen brugt i produktet.
+
+
+Kommunikationsmodulet har løst opgaven om at lave en overgang fra en kommunikationsform, UART, til en anden, TCP. Dette platformsinterface er et kritisk punkt for den pålidelige kommunikation. Her er koden igen udviklet, så flere enheder kan tilkobles. En ændring i opsætning af UART forbindelse, vil gøre at stadig kun en Arduino er nødvendig for at muliggøre tilføjelsen af mange flere Måleenheder.
