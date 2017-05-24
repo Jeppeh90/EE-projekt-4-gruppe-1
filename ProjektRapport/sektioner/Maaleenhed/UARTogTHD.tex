@@ -1,7 +1,16 @@
 % !TEX root = ../../prj4projektrapport.tex
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
-\subsubsection{THD beregning}
+\subsubsection{Beregnings funktioner}
+For at beregne de ønskede værdier er der lavet en række funktioner der kan beregne disse. Disse funktioner er kort beskrevet herunder. Yderlig information findes i dokumentation\footnote{Projektdokumentation, 9.2.4, Beregning af rms og power faktor}
+
+\textbf{Rms:}
+Funktionen modtagere et array af absolute værdier for et signal og beregner rms værdien, ved den frekvens bin der passer til 50Hz.
+
+\textbf{Power faktor:}
+Funktionen beregner vinklen for strøm og spænding for derefter at beregne power faktor ved at tage cosinus til vinkel differencen. Funktionen tager ikke højde for om det er lead eller lag system.
+
+\textbf{THD:}
 Beregningen af, og baggrunden for THD, er beskrevet i Afsnit \ref{sec:THD}. Den beregning der laves i PSOC, medregner kun indholdet af de fire første harmoniske i signalet. Formlen der anvendes i softwaren er givet i Ligning \ref{eq:THDsoft}.
 \begin{align}
 \label{eq:THDsoft}
