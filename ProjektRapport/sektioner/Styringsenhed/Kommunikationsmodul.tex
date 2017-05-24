@@ -36,7 +36,7 @@ server.begin();
 \end{lstlisting}
 
 
-Kommunikationen over TCP mellem Kommunikationsmodul og Kontrolmodulet starter ved at Kontrolmodulet opretter forbindelse til Kommunikationsmodul. Dette detekteres af Kommunikationsmodulet og den starter med at modtage request kommandoer fra Kontrolmodulet. Hver Måleenhed har en forskellig request kommando, i dette tilfælde er der brugt 'req1' og req2' for de to Måleenheder. Når Kommunikationsmodulet modtager 'req1' sendes dataene fra den tilsvarende Måleenhed til Kontrolmodulet. Måledataene sendes videre præcis som de er modtaget, det vil sige at hver måling sendes som to 8-bit integers, men da alle målinger sendes efter hinanden refereres de oftest til som måledata. Se figur \ref{fig:TCPProtokol}.
+Kommunikationen over TCP mellem Kommunikationsmodul og Kontrolmodulet starter ved at Kontrolmodulet opretter forbindelse til Kommunikationsmodulet. Dette detekteres af Kommunikationsmodulet og den starter med at modtage request kommandoer fra Kontrolmodulet. Hver Måleenhed har en forskellig request kommando, i dette tilfælde er der brugt 'req1' og req2' for de to Måleenheder. Når Kommunikationsmodulet modtager 'req1' sendes dataene fra den tilsvarende Måleenhed til Kontrolmodulet. Måledataene sendes videre præcis som de er modtaget, det vil sige at hver måling sendes som to 8-bit integers, men da alle målinger sendes efter hinanden refereres de til som måledata. Se figur \ref{fig:TCPProtokol}.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
