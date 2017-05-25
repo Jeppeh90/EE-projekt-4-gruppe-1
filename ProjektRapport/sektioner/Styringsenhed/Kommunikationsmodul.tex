@@ -6,7 +6,7 @@
 
 I starten af projektet var det tænkt at et separat kommunikationsmodul ikke var nødvendigt, da PSoC'en med et tilhørende Ethernetmodul ENC28J60 ville kunne oprette forbindelse til Kontrolmodulet. Der var dog et problem med antallet af Måleenheder på denne måde, da PLC'en kun har ét frit RJ-45 stik ville det stadig være nødvendigt at benytte en switch eller at samle måledata på en enhed og derfra sende dem til PLC'en. Grundet det ikke var muligt at få en switch på værkstedet blev det besluttet at benytte en ekstra microcontroller til at samle data på, denne microcontroller er Kommunikationsmodulet.   
 
-Da det ikke er en nødvendighed for projektet at kommunikationen skal være voldsom hurtig mellem Måleenhederne og Kommunikationsmodulet er der her valgt at benytte UART kommunikation. Denne kommunikationsform er valgt da det før har været benyttet på både Arduino og PSoC, dog uafhængigt af hinanden. Samtidig er UART rigtig god, hvis der skal tilføjes flere enheder senere, da det kun kræver en lille opdatering i protokolen, således hver enhed får en unik adresse.  
+Da det ikke er en nødvendighed for projektet at kommunikationen skal foregå hurtigt mellem Måleenhederne og Kommunikationsmodulet er der her valgt at benytte UART kommunikation. Denne kommunikationsform er valgt da det før har været benyttet på både Arduino og PSoC, dog uafhængigt af hinanden. Samtidig er UART rigtig god, hvis der skal tilføjes flere enheder senere, da det kun kræver en lille opdatering i protokolen, således hver enhed får en unik adresse.  
 
 Efter mange timers arbejde med at oprette LAN-kommunikation på en PSoC og det stadig ikke var lykkedes, blev det besluttet at der skulle prøves med en Arduino som Kommunikationsmodul i stedet. 
 
@@ -36,7 +36,7 @@ server.begin();
 \end{lstlisting}
 
 
-Kommunikationen over TCP mellem Kommunikationsmodul og Kontrolmodulet starter ved at Kontrolmodulet opretter forbindelse til Kommunikationsmodulet. Dette detekteres af Kommunikationsmodulet og den starter med at modtage request kommandoer fra Kontrolmodulet. Hver Måleenhed har en forskellig request kommando, i dette tilfælde er der brugt 'req1' og req2' for de to Måleenheder. Når Kommunikationsmodulet modtager 'req1' sendes dataene fra den tilsvarende Måleenhed til Kontrolmodulet. Måledataene sendes videre præcis som de er modtaget, det vil sige at hver måling sendes som to 8-bit integers, men da alle målinger sendes efter hinanden refereres de til som måledata. Se figur \ref{fig:TCPProtokol}.
+Kommunikationen over TCP mellem Kommunikationsmodul og Kontrolmodulet starter ved at Kontrolmodulet opretter forbindelse til Kommunikationsmodulet. Dette detekteres af Kommunikationsmodulet og den starter med at modtage request kommandoer fra Kontrolmodulet. Hver Måleenhed har en unik request kommando, i dette tilfælde er der brugt 'req1' og req2' for de to Måleenheder. Når Kommunikationsmodulet modtager 'req1' sendes dataene fra den tilsvarende Måleenhed til Kontrolmodulet. Måledataene sendes videre præcis som de er modtaget, det vil sige at hver måling sendes som to 8-bit integers, men da alle målinger sendes efter hinanden refereres de til som måledata. Se figur \ref{fig:TCPProtokol}.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
