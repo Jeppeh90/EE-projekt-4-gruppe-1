@@ -45,13 +45,13 @@ Det er vigtigt at pointere at systemet skal være nemt at udvide til at underst�
 \subsection{Styring af Trinskifter}
 
 Angående styring af Trinskifteren blev det tidligt besluttet at benytte dens analoge 24VDC udgange på Q0.6, Q0.7 og Q1.0 til styringen af relæerne på triskifter. Disse udgang bliver dog styret med et logisk højt (24VDC) eller lavt(0V) signal. Der henvises til Trinskifter for mere om relækredsløbet, se afsnit !!!!!TRINSKIFTERHENVISNING!!!! %\ref{sec:relae}.
-Samtidig er projektet proof of concept, så det er kun spændingsmålinger fra én forbruger der vil blive reguleret med hensyn til. Dette simplificerer den FB, der udvikles til denne styring væsentligt, da der kun er et input.
+Samtidig er projektet proof of concept, så det er kun spændingsmålinger fra én forbruger der vil blive reguleret med hensyn til. Dette simplificerer den FB, der udvikles til denne styring væsentligt, da der kun er et input. På \ref{fig:GraphTrinskifterPLC} ses et diagram over sekvenserne og flowet imellem dem for FB'en Trinskifter.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[width=0.5\textwidth]{Figure/PLCTrinskifter}
+	\includegraphics[width=1\textwidth]{Figure/GraphTrinskifterPLC}
 	\caption{FB'en Trinskifter}
-	\label{fig:PLCTrinskifter}
+	\label{fig:GraphTrinskifterPLC}
 \end{figure}
 
 Første tanke i forhold til denne blok var at den hovedsageligt skulle være automatiseret. Derfor er det besluttet at koden blev skrevet som sekventiel, hvor en lokal static Step, står for at styre hvilken sekvens, der er aktiv. Dette sikrer også imod fejl, da systemet har få muligheder videre fra hvert step. Et sikkert system var også et af de vigtige punkter, hvilket bl.a. er opnået ved at opdele koden i sekvenser af trin og trinskift. Der er 3 trin, som hver især er tilknyttet en af udgangene på PLC'en. For trin 2 er der både mulighed for et trinskift op og ned, mens der for ydertrinene kun kan skiftes ned/op til trin 2. Det er kun når koden er i et trin at man kan skifte mellem automatisk og manuel tilstand. I automatisk mode er der dog to undtagelser i trin 1 og trin 3, hvor trinskiftet er lagt sammen med trinet. Disse trinskift burde have været flyttet til deres egen sekvens, for at undgå at et trinskift og et tilstandsskift kan forekomme samtidigt.
