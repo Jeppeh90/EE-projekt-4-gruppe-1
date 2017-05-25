@@ -17,7 +17,7 @@ Først og fremmest skulle flere Måleenheder kunne kommunikere med det samme kon
 Næste beslutning gik på valget af protokol til Ethernet kommunikation. TCP var det oplagte valg for at sikre pålidelig kommunikation, selvom UDP også var en kendt protokol fra faget Internet kommunikationsnetværk(IKN).
 
 
-Udvilingsværktøjet TIA Portal V13 har gode muligheder for at sætte TCP kommunikation op til forskellige ikke Siemens produkter, gennem dets open user communication. Først blev blokkene TSEND\_C og TRCV\_C forsøgt anvendt. Disse blokke har dog indbygget funktionalitet i forbindelse med at oprette og nedlægge forbindelsen, hvilket var uhensigtmæssigt, når der skulle være en fyldene datastrøm. Det endelige valg blev herfor blokkene TCON, TDISCON, TSEND og TRCV, hvor man som programmør kan styre oprettelse og nedlæggelse af forbindelsen med TCON og TDISCON. På figur \ref{fig:TSEND} ses blokken TSEND, som et eksempel på open user communication blokkene.
+Udvilingsværktøjet TIA Portal V13 har gode muligheder for at sætte TCP kommunikation op til forskellige ikke Siemens produkter, gennem dets open user communication. Først blev blokkene TSEND\_C og TRCV\_C forsøgt anvendt. Disse blokke har dog indbygget funktionalitet i forbindelse med at oprette og nedlægge forbindelsen, hvilket var uhensigtmæssigt, når der skulle være en flydende datastrøm. Det endelige valg blev herfor blokkene TCON, TDISCON, TSEND og TRCV, hvor man som programmør kan styre oprettelse og nedlæggelse af forbindelsen med TCON og TDISCON. På figur \ref{fig:TSEND} ses blokken TSEND, som et eksempel på open user communication blokkene.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -37,14 +37,14 @@ Da systemet ikke er et beskyttelsessystem, kræver det ikke hurtig reaktion mell
 	\label{fig:ValgAfEnhedSend}
 \end{figure}
 
-FC'er er valgt da tanken var at hukommelsen skulle ligge andetsteds i koden. Det er dog blevet nødvendigt at oprette en global DB, for kunne styre variable i forbindelse med styring af kommunikationen. For yderlige uddybelse, se dokumentationen\footnote{Projektdokumentation, 10.1.1, TCP kommunikation}.
+FC'er er valgt da tanken var at hukommelsen skulle ligge andetsteds i koden. Det er dog blevet nødvendigt at oprette en global DB, for at kunne styre variable i forbindelse med styring af kommunikationen. For yderlige uddybelse, se dokumentationen\footnote{Projektdokumentation, 10.1.1, TCP kommunikation}.
 
 
 Det er vigtigt at pointere at systemet skal være nemt at udvide til at understøtte mange Måleenheder i den virkelige verden. Det vil udvide tiden det tager at eksekvere programmet, men er nemt da der ikke skal ændres i selve kommunikationen, men kun i de netværk der styrer kommunikationen, hvor der her skal tilføjes flere forgreninger.
 
 \subsection{Styring af Trinskifter}
 
-Angående styring af Trinskifteren blev det tidligt besluttet at benytte dens analoge 24VDC udgange på Q0.6, Q0.7 og Q1.0 til styringen af relæerne på triskifter. Disse udgang bliver dog styret med et logisk højt (24VDC) eller lavt(0V) signal. Der henvises til Trinskifter for mere om relækredsløbet, se afsnit \ref{sec:relae}.
+Angående styring af Trinskifteren blev det tidligt besluttet at benytte dens analoge 24VDC udgange på Q0.6, Q0.7 og Q1.0 til styringen af relæerne på Trinskifter. Disse udgang bliver dog styret med et logisk højt (24VDC) eller lavt(0V) signal. Der henvises til Trinskifter for mere om relækredsløbet, se afsnit \ref{sec:relae}.
 Samtidig er projektet proof of concept, så det er kun spændingsmålinger fra én forbruger der vil blive reguleret med hensyn til. Dette simplificerer den FB, der udvikles til denne styring væsentligt, da der kun er et input. På \ref{fig:GraphTrinskifterPLC} ses et diagram over sekvenserne og flowet imellem dem for FB'en Trinskifter.
 
 \begin{figure}[H] % (alternativt [H])

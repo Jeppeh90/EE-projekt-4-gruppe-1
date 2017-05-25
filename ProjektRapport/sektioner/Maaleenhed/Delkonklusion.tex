@@ -3,11 +3,11 @@
 
 \section{Delkonklusion}
 
-Måleenheden er implementeret på en PSOC, da denne indeholder en ADC som kan omsætte de analoge spændingssignaler til digitale værdier, som kan behandles i PSOCens processor. 
+Måleenheden er implementeret på en PSoC, da denne indeholder en ADC som kan omsætte de analoge spændingssignaler til digitale værdier, som kan behandles i PSoC'ens processor. 
 
-Spændingssignalerne ligger ikke inden for ADCens input range, så der er implementeret hardware til at forstærke og dæmpe signalerne, så de passer til ADCens range. Hardwaren har en begrænsning, da den ikke kan måle differentielt, hvilket betyder at der måtte laves ændringer i den centrale måling. 
+Spændingssignalerne ligger ikke inden for ADC'ens input range, så der er implementeret hardware til at forstærke og dæmpe signalerne, så de passer til ADC'ens range. Hardwaren har en begrænsning, da den ikke kan måle differentielt, hvilket betyder at der måtte laves ændringer i den centrale måling. 
 
-Ved at lave FFT på de samplede værdier har det været muligt at beregne værdier for spænding, strøm, indholdet af harmonikse og power factor. Til angivelse af hvor stort et indhold af harmoniske der er i signalet, er formlen for Total Harmonic Distortion anvendt.
+Ved at lave FFT på de samplede værdier har det været muligt at beregne værdier for spænding, strøm, indholdet af harmoniske og power factor. Til angivelse af hvor stort et indhold af harmoniske der er i signalet, er formlen for Total Harmonic Distortion anvendt.
 
 Den færdige Måleenhed opfylder de krav der er specificeret i dokumentationen\footnote{Projektdokumentation, 3.4.3, Måleenhed}
 
