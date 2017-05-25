@@ -3,7 +3,7 @@
 
 I forhold til Kommunikationsmodulet i projekt er det desværre tydeligt at se at der er brugt meget arbejde på at udvikle TCP kommunikation på en PSoC i starten af projektet, dette har medført at enkelte ting der ville være nødvendige i en færdig prototype ikke er blevet implementeret.
 
-Deriblandt kan for eksempel nævnes at som prototypen fungerer er der ingen behandling af forkerte måledata. Dette kunne for eksempel implementeres ved at lave et gennemsnit over flere målinger, hvilket ville gøre uregelmæssige målingers påvirkning på systemet mindre. Helt forkerte data, grundet f.eks. støj på transmissionen kunne fjernes ved at se på hvilket interval realistiske målinger ville ligge i.
+Deriblandt kan for eksempel nævnes at som prototypen fungerer er der ingen behandling af forkerte måledata. Dette kunne for eksempel implementeres ved at lave et gennemsnit over flere målinger, hvilket ville gøre uregelmæssige målingers påvirkning på systemet mindre. Helt forkerte data, grundet f.eks. støj på transmissionen kunne fjernes ved at se på hvilket interval realistiske målinger ville ligge i. En log af dataet kunne eventuelt tilføjes prototypen, så man kunne bruge den til at observere hvordan systemet reagerer over en længere periode og derved forbedre af systemet.
 
 Derudover er der i dette projekt benyttet UART mellem Måleenhederne og Kommunikationsmodulet, men der burde i en realiseret Spændingsregulator blive benyttet en anden form for kommunikation, der kan leverer pålidelig data over store afstande. Her ville det være essentielt at koble Måleenhederne på internettet og på den måde sende data til Kommunikationsmodulet.
 
