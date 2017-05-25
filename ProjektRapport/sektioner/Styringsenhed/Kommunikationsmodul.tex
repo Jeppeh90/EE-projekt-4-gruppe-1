@@ -12,7 +12,7 @@ Efter mange timers arbejde med at oprette LAN-kommunikation på en PSoC og det s
 
 Kommunikationsmodulet består derfor af en Arduino Mega2560 forbundet til et Ethernet Shield R3. Kommunikationsmodulet skal derved modtage data fra Måleenhederne over UART kommunikation og sende det videre til Kontrolmodulet ved brug af TCP kommunikation. 
 
-Arduinoen opsætter Ethernet Shield'et ved brug af en SPI forbindelse, der oprettes af SPI.h biblioteket, der kaldes som det første i koden. Dernæst er Ethernet.h biblioteket kaldt, for at kunne benytte de meget brugbare funktioner i dette bibliotek\cite{Ethernet}. Der ses herunder et eksempel på nogle af de meget nyttige funktioner, der bruges til at opsætte TCP kommunikation, se figur \ref{EthernetKode}. For mere uddybelse af hele koden refereres der til dokumentationen\footnote{Projektdokumentation, 10.3, Kommunikationsmodul}.
+Arduinoen opsætter Ethernet Shield'et ved brug af en SPI forbindelse, der oprettes af SPI.h biblioteket, der kaldes som det første i koden. Dernæst er Ethernet.h biblioteket kaldt, for at kunne benytte de meget brugbare funktioner i dette bibliotek\cite{Ethernet}. Der ses herunder et eksempel på nogle af de meget nyttige funktioner, der bruges til at opsætte TCP kommunikation, se kodeeksempel \ref{EthernetKode}. For mere uddybelse af hele koden refereres der til dokumentationen\footnote{Projektdokumentation, 10.3, Kommunikationsmodul}.
 
 \lstset{caption={Ethernet},label={EthernetKode}}
 \begin{lstlisting} % Start your code-block
