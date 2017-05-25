@@ -60,5 +60,5 @@ Første tanke i forhold til denne blok var at den hovedsageligt skulle være aut
 I første udkast til blokken var der ikke taget højde for at programmet blev eksekveret hurtigere end data blev opdateret, derfor kunne programmet nå at skifte flere trin på den samme måling, hvilket vil skabe et ustabilt system, for når det havde lavet et dobbeltskift, vil det så få en ny måling, der indikerer skift i modsat retning. Denne fejl er fjernet ved at indsætte et delay, når systemet kommer i et nyt trin, da der hentes ny data hvert 2 sekunder er dette delay sat til 2,5 sekunder.
 
 
-En vigtig pointe at få med er at forbrugeren aldrig må miste forsyning. Så et trinskift indebærer et overlap imellem de trin der skiftes fra og til på 2 sekunder. Herved er der altid forsyning på distributionslinjen. Selve overlappet set fra trintransformeren uddybes i afsnit !!!Trintransformer trinskift!!!.
+En vigtig pointe at få med er at forbrugeren aldrig må miste forsyning. Så et trinskift indebærer et overlap imellem de trin der skiftes fra og til på 2 sekunder. Herved er der altid forsyning på distributionslinjen. Selve overlappet set fra trintransformeren uddybes i afsnit \ref{sec:ImpTrinskift}.
 For mere om styringen af trinskifteren, se dokumentationen.\footnote{Projektdokumentation, 10.1.2, Styring af trinskifteren.}
