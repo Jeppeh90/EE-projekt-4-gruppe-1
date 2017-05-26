@@ -1,0 +1,51 @@
+Sun2Water Review:
+
+Termliste:
+ Systemet er klar til brug
+  - Vag beskrivelse. Hvad er tilsluttet?
+
+ Logdata
+  - Hvilke parametre?
+UCD:
+ Er vejrstation og server aktører??
+
+Use case 1:
+ Forudsætning - hvis ingen vand kører use casen vel alligevel.
+ Vandknap kunne måske komme i termliste.
+ punkt 4. systemet stopper dispensering.
+
+Use case 2:
+ Optimer vandstand eller pumpning?
+ Måske skal denne vises på en anden måde(tilstandsdiagram) da det jo er noget der foregår automatisk. Der er heller ikke nogen aktør.
+
+Use case 3:
+ Igen måske bare et diagram. Bliver det ved at lade batteriet(overopladning)? Måske behøver det ikke andet end en beskrivelse.
+ Løsningen er fin, bare et alternativ.
+
+Use case 4:
+ Er den nødvendig. Næsten ingen funktionalitet. Måske bare lig den ind under UC2.
+
+Ikke funktionelle:
+ Styringsenhed = systemet?? (senere hedder den systemstyring)
+ Energiforbrug har flere tilstand, de står ikke i funktionelle?
+ Ikke dem her =
+ Gætter på den stadig er lidt ufuldstændig :)
+
+Overordnet arkitektur:
+ Hvad tilhører log og prognose?
+ 
+Frekvensomformer
+ Den regulerer da ikke spænding?? Og alt ser ud til at være DC i jeres signalbeskrivelse??
+
+Vandsystem
+ Vandmåler skal vel forbindes til vandtank. Skal vandtank ikke beskrives?
+
+Signalbeskrivelse
+ Generelt svært at overskue navngivningen. Giv dem nogle mere sigende navne.
+
+Sekvensdiagrammer
+ Ser ud som om man altid får vand.
+ Samme gælder næste diagram.
+ 
+Accepttest
+ I har lavet punkter i accepttesten som ikke optræder i use case. UC1 punkt 3.
