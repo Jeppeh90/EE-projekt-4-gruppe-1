@@ -1,7 +1,7 @@
 % !TEX root = ../../prj4projektrapport.tex
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
-\section{Foranalyse for Styringsenhed}
+\section{Foranalyse}
 
 \subsection{Kontrolmodul og Brugergrænseflade}
 Det er en oplagt mulighed at anvende en PLC og et HMI som Kontrolmodul og Brugergrænseflade i projektet. Dette skyldes, at der som krav til projektet skulle anvendes relevante faglige elementer fra semesterets kurser. Faget Instrumentering og Automatisering(IOA) omhandler netop brugen af PLC og HMI i industrien. Hermed kommer to gode argumenter for PLC og HMI; relevant faglig viden anvendes, og i den virkelige verden ville det være oplagt at bruge lignende enheder til et projekt som dette.
@@ -13,10 +13,10 @@ PLC'en kan programmeres i flere forskellige sprog. Ladder er dog blevet valgt, f
 Kravet om pålidelig transmission af data mellem udvalgte enheder understøtter også valget af en PLC, da denne indeholder mulighed for LAN kommunikation gennem en RJ-45 port.
 
 \subsection{Kommunikationsmodul}
-Det blev hurtigt i projektfasen valgt, at der skulle udvikles kommunikation over en LAN forbindelse, da det i projektet var et krav, at der skal være pålidelig transmission af data mellem udvalgte enheder. Der blev undersøgt hvilke muligheder, der var for at gøre kommunikation over en LAN forbindelse med en microcontroller mulig. Da gruppen tidligere har haft undervisning i PSoC og Arduino programmering blev der i Embedded Stock bestilt et Ethernet shield til hver af disse. Men da Måleenheden bliver implementeret på en PSoC blev det besluttet at prøve at implementere LAN kommunikationen på samme PSoC som en af Måleenhederne. 
+Det blev hurtigt i projektfasen valgt, at der skulle udvikles kommunikation over en LAN forbindelse, da det i projektet var et krav, at der skal være pålidelig transmission af data mellem udvalgte enheder. Der blev undersøgt hvilke muligheder, der var for at gøre kommunikation over en LAN forbindelse med en microcontroller mulig. Da gruppen tidligere har haft undervisning i PSoC og Arduino programmering blev der i værkstedet bestilt et Ethernet shield til hver af disse. Men da Måleenheden bliver implementeret på en PSoC blev det besluttet at prøve at implementere LAN kommunikationen på samme PSoC som en af Måleenhederne. 
 
 
-Arduinoen blev holdt som en back-up mulighed, da det er et lettere udviklingsmiljø og samtidig mere populært end PSoC-miljøet, hvorfor der også er mere hjælp at finde om Arduinoen på nettet. Det ville dog være nødvendigt, at anvende en form for kommunikation mellem Måleenhederne og Arduinoen. 
+Arduinoen blev holdt som en back-up mulighed, da det er et lettere udviklingsmiljø og samtidig mere populært end PSoC-miljøet, hvorfor der også er mere hjælp at finde om Arduinoen på nettet. Det ville dog være nødvendigt at anvende en form for kommunikation mellem Måleenhederne og Arduinoen. 
 
 
 

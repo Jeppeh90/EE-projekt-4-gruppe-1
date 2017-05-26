@@ -1,9 +1,9 @@
 % !TEX root = ../../prj4projektrapport.tex
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
-\section{Kalibrering af måleenhed}
+\section{Kalibrering af Måleenhed}
 
-Den forstærkning og dæmpning, der er implementeret i Måleenhedens hardware, giver anledning til en offset fejl på målingerne. Da forstærkningen og dæmpningen begge er lineære, kan der laves en simpel kalibrering af måleenheden, som er beskrevet i dokumentationen\footnote{Projektdokumentation, 9.2.7, Kalibrering af Måleenhed}.\newline
+Den forstærkning og dæmpning, der er implementeret i Måleenhedens hardware, giver anledning til en lineær fejl på målingerne. Da forstærkningen og dæmpningen begge er lineære, kan der laves en simpel kalibrering af måleenheden, som er beskrevet i dokumentationen\footnote{Projektdokumentation, 9.2.7, Kalibrering af Måleenhed}.\newline
 
 Ved at påtrykke Måleenheden en kendt spænding og aflæse den målte værdi på Måleenheden kan sammenhængen mellem reel spænding og målt spænding plottes som en lineær sammenhæng. Hældningen af den lineære tendenslinje vil give kalibreringskonstanten, som skal ganges på målingen i softwaren. 
 

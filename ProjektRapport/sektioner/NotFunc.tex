@@ -1,17 +1,17 @@
 % !TEX root = ../prj4projektrapport.tex
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
-\section{Ikke Funktionelle Krav}
-I dette afsnit beskrives de ikke funktionelle krav. Der findes ikke funktionelle krav til trintransformeren, målingerne og kommunikation. Disse beskrives hver især i følgende afsnit.
+\section{Ikke funktionelle krav}
+I dette afsnit beskrives de ikke funktionelle krav. Der findes ikke funktionelle krav til trintransformeren, målingerne og kommunikationen. Disse beskrives hver især i følgende afsnit.
 
 \subsubsection{Trintransformer}
-Der er valgt en trintransformer, som simulering af belastning skal laves ud fra. Den valgte trintransformer har nedenstående specifikationer. Det er dog besluttet ikke at lave større strømforbrug i systemet end 500mA. 
+Den valgte trintransformer har nedenstående specifikationer. Det er besluttet ikke at lave større strømforbrug i systemet end 500mA. 
 
 \begin{enumerate}
 	\item Maks belastning af transformer er 20VA
 	\item Nominel spænding på primær siden er 24V
 	\item Nominel spænding på sekundær siden afhænger af trin, transformerne har 8 trin fra 1 til 8V.
-	\item Skal minimum levere 500mA til systemet. 
+	\item Skal minimum kunne levere 500mA til systemet. 
 \end{enumerate}
 
 \subsubsection{Måleenhed}
@@ -27,10 +27,10 @@ Til en måleenhed burde der laves nøjagtighedsberegninger og defineres præcisi
 \end{enumerate} 
 
 \subsubsection{Kommunikation}
-For at sikre at der udvikles en pålidelig kommunikation, stilles der krav til, at der i de fleste tilfælde ikke må ske fejl, men da det igen er proof of concept, er det valgt ikke at have fejlhåndtering, hvis der skulle ske fejl i en forsendelse.
+For at sikre at der udvikles en pålidelig kommunikation, stilles der krav til, at der i de fleste tilfælde ikke må ske fejl, men da det er proof of concept, er det valgt ikke at have fejlhåndtering, hvis der skulle ske fejl i en forsendelse.
 
 \begin{enumerate}
-	\item Forsinkelsen på brugergrænsefladen ifht. ændringer i målte værdier må ikke overstige 2,5 sekund. 
-	\item 95\% af alle sendte data skal være korrekte, og uden forstyrrelser. 
+	\item Forsinkelsen på brugergrænsefladen ift. ændringer i målte værdier må ikke overstige 2,5 sekunder. 
+	\item 95\% af alle sendte data skal være korrekte og uden forstyrrelser. 
 \end{enumerate} 
 

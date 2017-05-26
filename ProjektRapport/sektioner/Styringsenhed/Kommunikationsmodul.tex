@@ -8,7 +8,7 @@ I starten af projektet var det tænkt, at et separat kommunikationsmodul ikke va
 
 Da det ikke er en nødvendighed for projektet, at kommunikationen skal foregå hurtigt mellem Måleenhederne og Kommunikationsmodulet, er der her valgt at benytte UART kommunikation. Denne kommunikationsform er valgt, da det før har været benyttet på både Arduino og PSoC dog uafhængigt af hinanden. Samtidig er UART rigtig god, hvis der skal tilføjes flere enheder senere, da det kun kræver en lille opdatering i protokollen, således hver enhed får en unik adresse.  
 
-Efter mange timers arbejde med at oprette LAN-kommunikation på en PSoC og det stadig ikke var lykkedes, blev det besluttet, at der skulle prøves med en Arduino som Kommunikationsmodul i stedet. 
+Efter mange timers arbejde med at oprette LAN kommunikation på en PSoC og det stadig ikke var lykkedes, blev det besluttet, at der skulle prøves med en Arduino som Kommunikationsmodul i stedet. 
 
 Kommunikationsmodulet består derfor af en Arduino Mega2560 forbundet til et Ethernet Shield R3. Kommunikationsmodulet skal derved modtage data fra Måleenhederne over UART kommunikation og sende det videre til Kontrolmodulet ved brug af TCP kommunikation. 
 

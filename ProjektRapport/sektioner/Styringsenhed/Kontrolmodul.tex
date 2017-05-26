@@ -11,7 +11,7 @@ Kontrolmodulet er lavet i en OB, der looper. Heri er placeret fire FC'er, der er
 Datatransmission til Kontrolmodulet er en vigtig del af projektet, da dette forbinder sensorer i form af Måleenhederne med aktuatorer i form af Trinskifter. Derfor er der blevet lagt mange overvejelser i, hvordan kommunikationen skulle etableres.
 
 
-Først og fremmest skulle flere Måleenheder kunne kommunikere med det samme kontrolmodul, derfor var en switch i overvejelser, grundet der kun er én fri RJ-45 port på PLC'en. Dette var ikke umiddelbart muligt at fremskaffe hos Embedded Stock. For mere om løsningerne på dette, se afsnit \ref{Kommunikationsmodul}.
+Først og fremmest skulle flere Måleenheder kunne kommunikere med det samme kontrolmodul, derfor var en switch i overvejelser, grundet der kun er én fri RJ-45 port på PLC'en. Dette var ikke umiddelbart muligt at fremskaffe hos værkstedet. For mere om løsningerne på dette, se afsnit \ref{Kommunikationsmodul}.
 
 
 Næste beslutning gik på valget af protokol til Ethernet kommunikation. TCP var det oplagte valg for at sikre pålidelig kommunikation, selvom UDP også var en kendt protokol fra faget Internet kommunikationsnetværk(IKN).
