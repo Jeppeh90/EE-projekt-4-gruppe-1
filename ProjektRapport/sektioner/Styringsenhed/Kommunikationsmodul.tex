@@ -4,7 +4,7 @@
 \section{Kommunikationsmodul}
 \label{Kommunikationsmodul}
 
-I starten af projektet var det tænkt, at et separat kommunikationsmodul ikke var nødvendigt, da PSoC'en med et tilhørende Ethernetmodul ENC28J60 ville kunne oprette forbindelse til Kontrolmodulet. Der var dog et problem med antallet af Måleenheder på denne måde, da PLC'en kun har ét frit RJ-45 stik ville det stadig være nødvendigt at benytte en switch eller at samle måledata på en enhed og derfra sende dem til PLC'en. Grundet det ikke var muligt at få en switch på værkstedet blev det besluttet at benytte en ekstra microcontroller til at samle data på. Denne microcontroller er Kommunikationsmodulet.   
+I starten af projektet var det tænkt, at et separat kommunikationsmodul ikke var nødvendigt, da PSoC'en med et tilhørende Ethernetmodul ENC28J60, se bilag B4, ville kunne oprette forbindelse til Kontrolmodulet. Der var dog et problem med antallet af Måleenheder på denne måde, da PLC'en kun har ét frit RJ-45 stik ville det stadig være nødvendigt at benytte en switch eller at samle måledata på en enhed og derfra sende dem til PLC'en. Grundet det ikke var muligt at få en switch på værkstedet blev det besluttet at benytte en ekstra microcontroller til at samle data på. Denne microcontroller er Kommunikationsmodulet.   
 
 Da det ikke er en nødvendighed for projektet, at kommunikationen skal foregå hurtigt mellem Måleenhederne og Kommunikationsmodulet, er der her valgt at benytte UART kommunikation. Denne kommunikationsform er valgt, da det før har været benyttet på både Arduino og PSoC dog uafhængigt af hinanden. Samtidig er UART rigtig god, hvis der skal tilføjes flere enheder senere, da det kun kræver en lille opdatering i protokollen, således hver enhed får en unik adresse.  
 
@@ -12,7 +12,7 @@ Efter mange timers arbejde med at oprette LAN kommunikation på en PSoC og det s
 
 Kommunikationsmodulet består derfor af en Arduino Mega2560 forbundet til et Ethernet Shield R3. Kommunikationsmodulet skal derved modtage data fra Måleenhederne over UART kommunikation og sende det videre til Kontrolmodulet ved brug af TCP kommunikation. 
 
-Arduinoen opsætter Ethernet Shield'et ved brug af en SPI forbindelse, der oprettes af SPI.h biblioteket, der kaldes som det første i koden. Dernæst er Ethernet.h biblioteket kaldt for at kunne benytte de meget brugbare funktioner i dette bibliotek\cite{Ethernet}. Der ses herunder et eksempel på nogle af de meget nyttige funktioner, der bruges til at opsætte TCP kommunikation, se kodeeksempel \ref{EthernetKode}. For mere uddybelse af hele koden refereres der til dokumentationen\footnote{Projektdokumentation, 10.3, Kommunikationsmodul}.
+Arduinoen opsætter Ethernet Shield'et ved brug af en SPI forbindelse, der oprettes af SPI.h biblioteket, der kaldes som det første i koden. Dernæst er Ethernet.h biblioteket kaldt for at kunne benytte de meget brugbare funktioner i dette bibliotek\cite{Ethernet}. Der ses herunder et eksempel på hvordan funktionerne er benyttet til at opsætte TCP serveren, der er en meget essentiel del i kommunikationsmodulet, se kodeeksempel \ref{EthernetKode}. For mere uddybelse af hele koden refereres der til dokumentationen\footnote{Projektdokumentation, 10.3, Kommunikationsmodul}.
 
 \lstset{caption={Ethernet},label={EthernetKode}}
 \begin{lstlisting} % Start your code-block
